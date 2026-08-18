@@ -1,0 +1,846 @@
+{
+  "images": [
+    {
+      "key": "001",
+      "number": 1,
+      "bisCount": 0,
+      "caption": "Vereda del tribunal oral federal (TOF) de Resistencia, Chaco, en Hipólito Irigoyen 33, durante una de las audiencias de la causa Brigada II, 4 de agosto de 2016",
+      "credit": "Prensa CPM CHACO",
+      "file": "IMG_001_TOF VEREDA. BRIG.II.JPG"
+    },
+    {
+      "key": "002",
+      "number": 2,
+      "bisCount": 0,
+      "caption": "En 2008 el Equipo Argentino de Antropología Forense (EAAF) realizó el relevamiento de dos sótanos utilizados para tortura en la ex Brigada de Investigaciones",
+      "credit": "Gentileza EAFF",
+      "file": "IMG_002_ Sótanos Brigada.jpg"
+    },
+    {
+      "key": "003",
+      "number": 3,
+      "bisCount": 0,
+      "caption": "Epicentro del plan sistemático de represión genocida en Chaco",
+      "credit": "Dibujo de Juan Britos",
+      "file": "IMG_003_LA BRIGADA.jpg"
+    },
+    {
+      "key": "004",
+      "number": 4,
+      "bisCount": 0,
+      "caption": "Ex detenido político Aníbal Ponti, en su primera declaración en TOF. Causa Brigada I. Dibujo de Juan Britos",
+      "credit": null,
+      "file": "IMG_004_ Crónica 1 Aníbal Ponti_ BRIG.I.jpg"
+    },
+    {
+      "key": "005",
+      "number": 5,
+      "bisCount": 0,
+      "caption": "José Marín, (alias Cabo Sotelo, “el acordeonista”) y Enzo Breard, causa Brigada I, TOF, 11 de agosto de 2010",
+      "credit": "Prensa CPM Chaco",
+      "file": "IMG_005_TOF BRIG.I José Marín ( el acordeonista) y Enzo Breard.jpg"
+    },
+    {
+      "key": "006",
+      "number": 6,
+      "bisCount": 0,
+      "caption": "Anuncio en El Diario de la Región, sobre la inminencia del juicio oral, que inició el 3 de junio de 2010",
+      "credit": "Gentileza",
+      "file": "IMG_006_ COMIENZA EL 5 DE MAYO_ 30 MAR 2010.jpg"
+    },
+    {
+      "key": "007",
+      "number": 7,
+      "bisCount": 0,
+      "caption": "Ex presos políticos Eugenio Silva y Horacio Cracogna en el TOF, el 26 de noviembre de 2010",
+      "credit": "Prensa CPM Chaco",
+      "file": "IMG_007_TOF_ Eugenio Domínguez Silva y Horacio Cracogna BRIG.I.JPG"
+    },
+    {
+      "key": "008",
+      "number": 8,
+      "bisCount": 0,
+      "caption": "Ex detenida policía María Julia Morresi, dibujo de Alejandro Gallardo",
+      "credit": null,
+      "file": "IMG_008_MARÍA JULIA MORRESI. ALEJANDRO GALLARDO.jpg"
+    },
+    {
+      "key": "009",
+      "number": 9,
+      "bisCount": 0,
+      "caption": "Inspección ocular en la ex Brigada, el 8 de noviembre de 2010",
+      "credit": "Prensa CPM Chaco",
+      "file": "IMG_009_ INSPECCIÓN OCULAR EX BRIGADA  VALDI UFERER SEÑALA SALA NEGRA.jpg"
+    },
+    {
+      "key": "010",
+      "number": 10,
+      "bisCount": 0,
+      "caption": "",
+      "credit": null,
+      "file": "IMG_010_ CONDENADOS_BR_I.jpg"
+    },
+    {
+      "key": "011",
+      "number": 11,
+      "bisCount": 0,
+      "caption": "ex detenida María Ines Rodríguez de Caire, dibujo de Alejandro Gallardo",
+      "credit": "gentileza",
+      "file": "IMG_011 _ Máría Inés Rodriguez de Caire.jpg"
+    },
+    {
+      "key": "012",
+      "number": 12,
+      "bisCount": 0,
+      "caption": "Tribunal Causa Brigada II Dra. Deogens, Dr. Iglesias y Dr. (pte.) Eduardo Belforte",
+      "credit": "Prensa CPM",
+      "file": "IMG_012_Brig. II_Dra Deogens Dr Juan Manuel Iglesias Pte Eduardo Belforte dr Aldo Alurralde.jpg"
+    },
+    {
+      "key": "013",
+      "number": 13,
+      "bisCount": 0,
+      "caption": "Fiscales Diego Vigay, Carlos Amad y querellante Mario Bosch y Silvina Canteros, causa Brigada II",
+      "credit": "Prensa CPM",
+      "file": "IMG_013_ FISCALES Y QUERELLANTE MARIO BOSCH_ BI.jpg"
+    },
+    {
+      "key": "013bis",
+      "number": 13,
+      "bisCount": 1,
+      "caption": "Lucio Humberto Caballero, archivo",
+      "credit": null,
+      "file": "IMG_013bis_Caballero Lucio Humberto.jpg"
+    },
+    {
+      "key": "014",
+      "number": 14,
+      "bisCount": 0,
+      "caption": "La calle del TOF, el 16 de junio de 2016, causa Brigada II",
+      "credit": "Prensa CPM",
+      "file": "IMG_014_B II (3).JPG"
+    },
+    {
+      "key": "015",
+      "number": 15,
+      "bisCount": 0,
+      "caption": "El testimonio de Aníbal Ponti, Eligia Flor, María Gregoria Pérez y Juan Manuel Gonzáles, en El Diario de la Región",
+      "credit": "gentileza",
+      "file": "IMG_015_BI_ 13 LA POLICÍA DEL CHACO FUE EL GRUPO DE TAREA DEL EJÉRCITO JUEV 8 JUL 10 .jpg"
+    },
+    {
+      "key": "016",
+      "number": 16,
+      "bisCount": 0,
+      "caption": "Los represores juzgados, dibujo de Alejandro Gallardo.",
+      "credit": null,
+      "file": "IMG_016_dibujo imputados.jpg"
+    },
+    {
+      "key": "017",
+      "number": 17,
+      "bisCount": 0,
+      "caption": "Inspección ocular en la Alcaidía de Chaco, con la participación de los ex detenidos Carlos Aranda, Víctor Giménez, y Roberto Greca",
+      "credit": "Prensa CPM",
+      "file": "IMG_017_ INSPECCIÓN  OCULAR ALCAIDÍA  ARANDA GIMENEZ GRECA.jpg"
+    },
+    {
+      "key": "018",
+      "number": 18,
+      "bisCount": 0,
+      "caption": "Ex detenido Hugo Rodríguez en la señalización de la prisión federal Unidad 7 como sitio en el que se cometieron crímenes de lesa humanidad durante la última dictadura cívico militar 1976-1983, agosto de 2022",
+      "credit": "Prensa CPM CHACO",
+      "file": "IMG_018_SEÑALIZACIÓN U7 .JPG"
+    },
+    {
+      "key": "018bis",
+      "number": 18,
+      "bisCount": 1,
+      "caption": "Gregorio “Chachi” Quintana 1955-2010. Pilar del juicio y castigo al terrorismo de Estado en Chaco",
+      "credit": null,
+      "file": "IMG_018_BIS CHACHI V (1).JPG"
+    },
+    {
+      "key": "018bisbis",
+      "number": 18,
+      "bisCount": 2,
+      "caption": "Presidió Club de Veteranos de Fútbol, otra de sus pasiones.",
+      "credit": null,
+      "file": "IMG_018_BIS BIS CHACHI FULBO.jpg"
+    },
+    {
+      "key": "019",
+      "number": 19,
+      "bisCount": 0,
+      "caption": "Ex detenido Armando Benítez, durante su testimonio en la causa Brigada III, abril 2021",
+      "credit": "Prensa CPM",
+      "file": "IMG_019_ARMANDO BENÍTEZ .jpg"
+    },
+    {
+      "key": "020",
+      "number": 20,
+      "bisCount": 0,
+      "caption": "Ingreso al sótano más grande (SBI) del centro clandestino de detención de la Brigada de Investigaciones",
+      "credit": "Prensa CPM",
+      "file": "IMG_020_ccd.jpg"
+    },
+    {
+      "key": "021",
+      "number": 21,
+      "bisCount": 0,
+      "caption": "Evidencias del genocidio perpetrado en las instalaciones de la ex Brigada",
+      "credit": null,
+      "file": "IMG_021_PLano_CPM.jpg"
+    },
+    {
+      "key": "022",
+      "number": 22,
+      "bisCount": 0,
+      "caption": "Un inédito cruce frente a frente entre el ex detenido Osvaldo Uferer y uno de sus torturadores, Francisco Rodríguez Valiente, durante una inspección en la ex Brigada, en 2010",
+      "credit": "Prensa CPM",
+      "file": "IMG_022_INSPECCIÓN OCULAR EX BRIGADA  Valdi  vs. Rodríguez Valiente.jpg"
+    },
+    {
+      "key": "023",
+      "number": 23,
+      "bisCount": 0,
+      "caption": "El ex policía Fortunato Caballero, citado en una nota del diario Primera Línea",
+      "credit": "gentileza",
+      "file": "IMG_023_ MANADER ERA MUY AUTORITARIO Y MANDABA MÁS QUE EL JEFE.jpg"
+    },
+    {
+      "key": "024",
+      "number": 24,
+      "bisCount": 0,
+      "caption": "Genocida Gabino Manader, archivo.",
+      "credit": null,
+      "file": "IMG_024_ Manader Gabino.jpg"
+    },
+    {
+      "key": "024bis",
+      "number": 24,
+      "bisCount": 1,
+      "caption": "Sobrevivientes del genocidio brindaron testimonio en una sala del TOF semivacía y por video conferencia, en observancia de los protocolos sanitarios por COVID19, en la causa Brigada III, abril 2021",
+      "credit": "Prensa CPM Chaco",
+      "file": "IMG_024BIS_BR. III DÍA 5  TESTIGOS.jpg"
+    },
+    {
+      "key": "025",
+      "number": 25,
+      "bisCount": 0,
+      "caption": "Manifestación en la vereda del TOF",
+      "credit": "Prensa CPM Chaco",
+      "file": "IMG_025_BRIGADA.jpg"
+    },
+    {
+      "key": "026",
+      "number": 26,
+      "bisCount": 0,
+      "caption": "Rodríguez Valiente, dibujo de Juan Britos",
+      "credit": null,
+      "file": "IMG_026_B II R VALIENTE Dibujo de Juan Britos.jpg"
+    },
+    {
+      "key": "027",
+      "number": 27,
+      "bisCount": 0,
+      "caption": "Inspección ocular en la Alcaidía policial durante el juicio oral Brigada I",
+      "credit": null,
+      "file": "IMG_027_ ALCAIDIA INSP. OCULAR BRIGADA .jpg"
+    },
+    {
+      "key": "028",
+      "number": 28,
+      "bisCount": 0,
+      "caption": "José Marín, condenado por torturas en los tres juicios realizados referentes a crímenes de lesa humanidad en la ex Brigada",
+      "credit": "Prensa CPM",
+      "file": "IMG_028_  Marín. Cabo Sotelo. El acordeonista.jpg"
+    },
+    {
+      "key": "029",
+      "number": 29,
+      "bisCount": 0,
+      "caption": "Fiscal Diego Vigay, y querellantes Silvio , Silvina Canteros y",
+      "credit": null,
+      "file": "IMG_029_ BRIG.jpg"
+    },
+    {
+      "key": "030",
+      "number": 30,
+      "bisCount": 0,
+      "caption": "Acto por la aparición con vida de Santiago Maldonado, en el marco de la realización de una de las audiencias en la causa Brigada II",
+      "credit": "Prensa CPM",
+      "file": "IMG_030_ Br II Maldonado.JPG"
+    },
+    {
+      "key": "031",
+      "number": 31,
+      "bisCount": 0,
+      "caption": "Fachada de la ex Brigada de Investigaciones, antes de su conformación como sitio histórico de memoria y sede de la Comisión Provincial por la Memoria Chaco, en 2004.",
+      "credit": null,
+      "file": "IMG_031_ APA.JPG"
+    },
+    {
+      "key": "032",
+      "number": 32,
+      "bisCount": 0,
+      "caption": "Patio interno de la Casa por la Memoria, desde el hall de ingreso, 2024",
+      "credit": "Prensa CPM Chaco",
+      "file": "IMG_032 _ Casa x Memo 2024.JPG"
+    },
+    {
+      "key": "033",
+      "number": 33,
+      "bisCount": 0,
+      "caption": "Ex detenido político Gerardo Delgado, dibujo de Juan Britos",
+      "credit": null,
+      "file": "IMG_033_Gerardo Delgado_ JBritos.jpg"
+    },
+    {
+      "key": "034",
+      "number": 34,
+      "bisCount": 0,
+      "caption": "Inspección ocular en la Alcaidía, 2010, Prensa CPM Chaco",
+      "credit": null,
+      "file": "IMG_034 _ALCAIDIA INSP. OCULAR 2010.JPG"
+    },
+    {
+      "key": "035",
+      "number": 35,
+      "bisCount": 0,
+      "caption": "En el marco de una inspección ocular en la ex Brigada, Rodríguez Valiente regresa al lugar de los hechos, esta vez esposado y custodiado por el Servicio Penitenciario Federal, Causa Brigada I, 2010",
+      "credit": "prensa CPM",
+      "file": "IMG_035 _INSPECCIÓN OCULAR EX BRIGADA  R. VALIENTE.jpg"
+    },
+    {
+      "key": "036",
+      "number": 36,
+      "bisCount": 0,
+      "caption": "El represor Jorge Ibarra, causa Brigada II, Prensa CPM",
+      "credit": null,
+      "file": "IMG_036 _Jorge Ibarra. Brigada II.jpg"
+    },
+    {
+      "key": "037",
+      "number": 37,
+      "bisCount": 0,
+      "caption": "Referentes de organismos de DDHH en el inicio del juicio oral Brigada III, el 12 de abril de 2021",
+      "credit": "Prensa CPM CHACO",
+      "file": "IMG_037 _INICIO BRIGADA III  (12).JPG"
+    },
+    {
+      "key": "038",
+      "number": 38,
+      "bisCount": 0,
+      "caption": "Diario Primera Línea, gentileza",
+      "credit": null,
+      "file": "IMG_038_  COSAS RARAS EN LA BRIGADA.jpg"
+    },
+    {
+      "key": "039",
+      "number": 39,
+      "bisCount": 0,
+      "caption": "Marín, “el acordeonista”, dibujo de Alejandro Gallardo.",
+      "credit": null,
+      "file": "IMG_039 _ Marín.jpg"
+    },
+    {
+      "key": "040",
+      "number": 40,
+      "bisCount": 0,
+      "caption": "El juicio oral Brigada III se realizó en modalidad remota por videoconferencia, dado a las restricciones por la pandemia de COVID19, abril 2021",
+      "credit": "Prensa CPM CHACO",
+      "file": "IMG_040 _INICIO BRIGADA III. REMOTO.jpg"
+    },
+    {
+      "key": "041",
+      "number": 41,
+      "bisCount": 0,
+      "caption": "Cobertura de El Diario de la Región, a un escrache realizado en protesta por el beneficio de prisión domiciliaria concedido a Gabino Manader, condenado en sendas oportunidades a raíz de su participación protagónica en el genocidio",
+      "credit": "gentileza",
+      "file": "IMG_041_taapa escrache Manader.jpg"
+    },
+    {
+      "key": "042",
+      "number": 42,
+      "bisCount": 0,
+      "caption": "Pedro Crisólogo Morel, militante de PRT, secuestrado y desaparecido en la Brigada de Investigaciones EDAD!",
+      "credit": "Archivo RUV",
+      "file": "IMG_042 _MOREL_Pedro_Crisólogo (1).jpg"
+    },
+    {
+      "key": "043",
+      "number": 43,
+      "bisCount": 0,
+      "caption": "Silvia Fulvia Ayala de Morel militante de PRT, secuestrada y desaparecida en la Brigada de Investigaciones EDAD!",
+      "credit": "Archivo RUV",
+      "file": "IMG_043 _MOREL_Pedro_Crisólogo (2).jpg"
+    },
+    {
+      "key": "044",
+      "number": 44,
+      "bisCount": 0,
+      "caption": "Querellante Duilio Ramírez, fiscal Diego Vigay, defensor oficial Juan Manuel Costilla, juez Rubén Quiñones, causa Brigada III, abril 2021",
+      "credit": "Prensa CPM Chaco",
+      "file": "IMG_044_ BRI III DÍA 7. Querellante Duilio Ramírez. Fiscal Diego Vigay. Def. Of. Juan Manuel Costilla. Presidente TOF Rubén Quiñones.jpg"
+    },
+    {
+      "key": "045",
+      "number": 45,
+      "bisCount": 0,
+      "caption": "Imputados durante un cuarto intermedio en la causa Brigada II, TOF, 9 de agosto de 2017",
+      "credit": "Prensa CPM",
+      "file": "IMG_045_ BR II .JPG"
+    },
+    {
+      "key": "046",
+      "number": 46,
+      "bisCount": 0,
+      "caption": "Hijos de militantes desaparecidos por el terrorismo de Estado e integrantes de la CPM Chaco Juan Carlos Fernández y Mauricio Amarilla , en la reseañalización de la prisión U7 como sitio en el que se perpetraron crímenes de lesa humanidad durante la última dictadura",
+      "credit": "Prensa Cpm Chaco",
+      "file": "IMG_046_SEÑALIZACIÓN U7 2.JPG"
+    },
+    {
+      "key": "047",
+      "number": 47,
+      "bisCount": 0,
+      "caption": "Sobrevivientes e imputados, tribunal y partes, recorren las instalaciones del sitio histórico ex centro clandestino de la Brigada, 2010",
+      "credit": "Prensa CPM CHACO",
+      "file": "IMG_047_INSPECCIÓN OCULAR EX BRIGADA  MULTITUD SOTANO.jpg"
+    },
+    {
+      "key": "048",
+      "number": 48,
+      "bisCount": 0,
+      "caption": "Inspección ocular en la sede de la Brigada de Investigaciones por Juan B Justo",
+      "credit": "Prensa CPM Chaco",
+      "file": "IMG_048_INSPECCION BRIGADA JUAN B JUSTO.jpg"
+    },
+    {
+      "key": "049",
+      "number": 49,
+      "bisCount": 0,
+      "caption": "Ex detenida De La Rosa , dibujo de Alejandro Gallardo",
+      "credit": null,
+      "file": "IMG_049 _ De la rosa.jpg"
+    },
+    {
+      "key": "050",
+      "number": 50,
+      "bisCount": 0,
+      "caption": "La Casa por la Memoria, 10 de noviembre de 2009",
+      "credit": "Prensa CPM Chaco",
+      "file": "IMG_050_frente 2baja.jpg"
+    },
+    {
+      "key": "051",
+      "number": 51,
+      "bisCount": 0,
+      "caption": "José Rodríguez Valiente y Gabino Manader, dos represores emblemáticos del genocidio en Chaco",
+      "credit": null,
+      "file": "IMG_051_ manader y rv.jpg"
+    },
+    {
+      "key": "052",
+      "number": 52,
+      "bisCount": 0,
+      "caption": "Una de las picanas eléctricas recuperadas por el EAFF durante la inspección que reveló uno de los sótanos oculto debajo de escombros",
+      "credit": "gentileza",
+      "file": "IMG_052_ picana eléctrica.jpg"
+    },
+    {
+      "key": "053",
+      "number": 53,
+      "bisCount": 0,
+      "caption": "Fusible recuperado por el EAFF durante la inspección que reveló uno de los sótanos oculto debajo de escombros",
+      "credit": "gentileza",
+      "file": "IMG_053_fusible.jpg"
+    },
+    {
+      "key": "054",
+      "number": 54,
+      "bisCount": 0,
+      "caption": "Pieza de un fusil del Ejército hallado por el EAFF en el sótano oculto debajo de escombros",
+      "credit": "gentileza",
+      "file": "IMG_054_fierro.jpg"
+    },
+    {
+      "key": "055",
+      "number": 55,
+      "bisCount": 0,
+      "caption": "Caja eléctrica hallada por el EAFF durante la inspección que reveló uno de los sótanos oculto debajo de escombros",
+      "credit": "gentileza",
+      "file": "IMG_055_caja eléctrica.jpg"
+    },
+    {
+      "key": "056",
+      "number": 56,
+      "bisCount": 0,
+      "caption": "Hugo Dedieu, dibujo de Juan Britos",
+      "credit": null,
+      "file": "IMG_056 _ DeDIEU.jpg"
+    },
+    {
+      "key": "057",
+      "number": 57,
+      "bisCount": 0,
+      "caption": "Olga Chamorro, relató las torturas y amenazas que sufrió en la Brigada, en El Diario de la Región",
+      "credit": "gentileza",
+      "file": "IMG_057_ VAMOS A MATAR A TU HIJA MAR 5 OCT 10.jpg"
+    },
+    {
+      "key": "058",
+      "number": 58,
+      "bisCount": 0,
+      "caption": "Enzo Breard, archivo",
+      "credit": null,
+      "file": "IMG_058_Breard Enzo .jpg"
+    },
+    {
+      "key": "059",
+      "number": 59,
+      "bisCount": 0,
+      "caption": "Rodríguez Valiente y Ramón Meza, causa Brigada II, 23 de junio de 2016, causa Brigada II",
+      "credit": "Prensa CPM Chaco",
+      "file": "IMG_059_BII _ R.Valiente y Ramón Meza (15).JPG"
+    },
+    {
+      "key": "060",
+      "number": 60,
+      "bisCount": 0,
+      "caption": "Sentencia Brigada II, querellante Paulo Pereyra, fiscales Patricio Sabadini y Diego Vigay, querellante",
+      "credit": null,
+      "file": "IMG_060 _ sentencia brigada II2.jpg"
+    },
+    {
+      "key": "061",
+      "number": 61,
+      "bisCount": 0,
+      "caption": "Gregorio Magno “Chachi” Quintana, referente del colectivo de ex detenidos políticos sobrevivientes al genocidio del Nea",
+      "credit": "gentileza",
+      "file": "IMG_061_ CHACHI V.JPG"
+    },
+    {
+      "key": "062",
+      "number": 62,
+      "bisCount": 0,
+      "caption": "La “caprichosa” otra de las pasiones de Chachi, siempre en torno de lo popular y colectivo",
+      "credit": "gentileza",
+      "file": "IMG_062_CHACHI FUTBOLT.jpg"
+    },
+    {
+      "key": "063",
+      "number": 63,
+      "bisCount": 0,
+      "caption": "La cobertura de El Diario de La Región del testimonio de la ex detenida política y referente de Salud Mental y DDHH Lic Mirta Clara de Sala",
+      "credit": "gentileza",
+      "file": "IMG_063_B I MIRTA CLARA MIERC 30 JUN 10.jpg"
+    },
+    {
+      "key": "064",
+      "number": 64,
+      "bisCount": 0,
+      "caption": "La Brigada de Investigaciones de la Policía del Chaco, una marca en la ciudad, y en la identidad de la región",
+      "credit": "Dibujo de Juan Britos",
+      "file": "IMG_064_BRIGADA BLANCO.jpg"
+    },
+    {
+      "key": "065",
+      "number": 65,
+      "bisCount": 0,
+      "caption": "El ex detenido político Juan Argañaráz, retratado por Juan Britos",
+      "credit": null,
+      "file": "IMG_065 _ Juan Argañaráz.jpg"
+    },
+    {
+      "key": "066",
+      "number": 66,
+      "bisCount": 0,
+      "caption": "Querellantes Silvina Canteros -de la Secretaría de DDHH y Géneros de Chaco y Manuel Brest de la Secretaría de DDHH de Nación.",
+      "credit": "Prensa CPM CHACO",
+      "file": "IMG_066 _ Fiscales Brigada II.jpg"
+    },
+    {
+      "key": "067",
+      "number": 67,
+      "bisCount": 0,
+      "caption": "José Rodríguez Valiente",
+      "credit": "Archivo",
+      "file": "IMG_067_ Rodriguez Valiente Francisco Jose.jpg"
+    },
+    {
+      "key": "068",
+      "number": 68,
+      "bisCount": 0,
+      "caption": "En el marco de la causa Brigada II organismos de DDHH reclaman contra el beneficio de prisión domiciliaria concedido al genocida Gabino Manader por la Justicia Federal, febrero de 2016",
+      "credit": "Prensa CPM CHACO",
+      "file": "IMG_068_CÁRCEL COMÚN (3).jpeg"
+    },
+    {
+      "key": "069",
+      "number": 69,
+      "bisCount": 0,
+      "caption": "José Marín, dibujado por Juan Britos",
+      "credit": null,
+      "file": "IMG_069_ MARIN.jpg"
+    },
+    {
+      "key": "070",
+      "number": 70,
+      "bisCount": 0,
+      "caption": "El 13 de diciembre de 2010 tuvo lugar la primera sentencia en un juicio oral por crímenes del genocidio, en el marco de la causa Brigada I",
+      "credit": "Prensa CPM Chaco",
+      "file": "IMG_070_ B SENTENCIA I .JPG"
+    },
+    {
+      "key": "071",
+      "number": 71,
+      "bisCount": 0,
+      "caption": "Alegría luego de las condenas a genocidas en la sentencia de la causa Brigada II, 31 de mayo de 2018",
+      "credit": "Prensa CPM Chaco",
+      "file": "IMG_071 _sentencia brigada II.jpg"
+    },
+    {
+      "key": "072",
+      "number": 72,
+      "bisCount": 0,
+      "caption": "Declaración de Rodolfo Sobko, Gerardo Delgado y Vicente Canteros en la causa Brigada I",
+      "credit": "gentileza",
+      "file": "IMG_072_ MÁQUINA DE TORTURAR Y MATAR MIERC 25 AGO 10.jpg"
+    },
+    {
+      "key": "073",
+      "number": 73,
+      "bisCount": 0,
+      "caption": "Ramón Meza, comisario general e integrante de la “patota” de la Brigada",
+      "credit": "archivo",
+      "file": "IMG_073_Meza Ramon Esteban.jpg"
+    },
+    {
+      "key": "074",
+      "number": 74,
+      "bisCount": 0,
+      "caption": "Abogada Susana Chiarotti y licenciada María Zurutuza, especialistas en casos de violencia sexual en contexto de terrorismo de Estado",
+      "credit": "Prensa CPM",
+      "file": "IMG_074_B II dra Chiarotti y Lic  Zurutuza.JPG"
+    },
+    {
+      "key": "075",
+      "number": 75,
+      "bisCount": 0,
+      "caption": "La calle del Tribunal Oral Federal el día de la sentencia en la causa Brigada I",
+      "credit": "Prensa CPM",
+      "file": "IMG_075_ Sentencia Brigada I 2010.JPG"
+    },
+    {
+      "key": "076",
+      "number": 76,
+      "bisCount": 0,
+      "caption": "La Casa por la Memoria, en el amanecer del 24 de marzo de 2020",
+      "credit": "Prensa CPM",
+      "file": "IMG_076 _ 24.3.20 CASA X MEMORIA  (2).jpg"
+    },
+    {
+      "key": "077",
+      "number": 77,
+      "bisCount": 0,
+      "caption": "En la víspera del 24 de marzo de 2018, organismos de DDHH y organizaciones sociales encabezaron un “escrache” en protesta por la prisión domiciliaria del genocida Gabino Manader.",
+      "credit": null,
+      "file": "IMG_077_ MANDER GENOCIDA CÁRCEL COMÚN.jpg"
+    },
+    {
+      "key": "078",
+      "number": 78,
+      "bisCount": 0,
+      "caption": "La Casa por la Memoria, sede de la CPM Chaco",
+      "credit": "Prensa CPM Chaco",
+      "file": "IMG_078_ CASA X MEMO 2012.jpg"
+    },
+    {
+      "key": "078bis",
+      "number": 78,
+      "bisCount": 1,
+      "caption": "Manader, Patetta, Rodríguez Valiente, Ibarra, en el TOF, el 22 de septiembre de 2017 en el juicio oral Brigada II",
+      "credit": "Prensa CPM",
+      "file": "IMG_078 bis_ BRIGADA II_Manader Patetta RValiente Ibarra.jpg"
+    },
+    {
+      "key": "079",
+      "number": 79,
+      "bisCount": 0,
+      "caption": "En la sala de audiencias del TOF, la “barra de la memoria” espera el pronunciamiento del tribunal en la causa Brigada II, mayo de 2018",
+      "credit": "Prensa CPM",
+      "file": "IMG_079_sentencia brigada II3.jpg"
+    },
+    {
+      "key": "080",
+      "number": 80,
+      "bisCount": 0,
+      "caption": "La calle saltó y gritó el 12 de diciembre de 2010, con la primeras condenas a ejecutores materiales del plan sistemático de genocidio orquestado en la Brigada de Investigaciones",
+      "credit": null,
+      "file": "IMG_080_ SENTENCIA 2 B I .JPG"
+    },
+    {
+      "key": "081",
+      "number": 81,
+      "bisCount": 0,
+      "caption": "Titulares de las coberturas del primer juicio oral",
+      "credit": "Archivo",
+      "file": "IMG_081_TAPAS EL DIARIO DE LA REG.jpg"
+    },
+    {
+      "key": "082",
+      "number": 82,
+      "bisCount": 0,
+      "caption": "La calle durante la sentencia de la causa Brigada I",
+      "credit": "Juan Britos",
+      "file": "IMG_082_SENTENCIA B I.jpg"
+    },
+    {
+      "key": "083",
+      "number": 83,
+      "bisCount": 0,
+      "caption": "Planos de los sótanos y fotografías de alguns elementos econtrados por el EAAF en 2008",
+      "credit": null,
+      "file": "IMG_083_planos 03.jpg"
+    },
+    {
+      "key": "084",
+      "number": 84,
+      "bisCount": 0,
+      "caption": "Plano de la vieja casona de Marcelo T. de Alvear 32",
+      "credit": "Gentileza",
+      "file": "IMG_084_planos 01.jpg"
+    },
+    {
+      "key": "085",
+      "number": 85,
+      "bisCount": 0,
+      "caption": "Plano de la vieja casona de Marcelo T. de Alvear 32",
+      "credit": "Gentileza",
+      "file": "IMG_085_planos 02.jpg"
+    },
+    {
+      "key": "086",
+      "number": 86,
+      "bisCount": 0,
+      "caption": "Testimonio de María Presa de Parodi Ocampo en la causa Brigada I",
+      "credit": "gentileza",
+      "file": "IMG_086_B I  MARÍA PRESSA DE PARODI OCAMPO MIERC 11 AGO 10.jpg"
+    },
+    {
+      "key": "087",
+      "number": 87,
+      "bisCount": 0,
+      "caption": "El genocida José Marín",
+      "credit": "Archivo",
+      "file": "IMG_087_Marin Jose.jpg"
+    },
+    {
+      "key": "088",
+      "number": 88,
+      "bisCount": 0,
+      "caption": "La Casa por la Memoria, sitio histórico y lugar de encuentro",
+      "credit": "Prensa CPM",
+      "file": "IMG_088_ CASA X MEMO 08.JPG"
+    },
+    {
+      "key": "089",
+      "number": 89,
+      "bisCount": 0,
+      "caption": "Hall de ingreso, con homenajes a Julio López y al mural de Amanda Piérola, “Argentina, dolor y esperanza”",
+      "credit": "PRENSA CPM",
+      "file": "IMG_089_ Hall 2009.JPG"
+    },
+    {
+      "key": "090",
+      "number": 90,
+      "bisCount": 0,
+      "caption": "Actividad “Bicis y Memoria” en diciembre de 2010",
+      "credit": "Prensa CPM",
+      "file": "IMG_090_ bicis y memoria 2010.jpg"
+    },
+    {
+      "key": "091",
+      "number": 91,
+      "bisCount": 0,
+      "caption": "Denuncias contra el genocida Meza, durante la causa Brigada I",
+      "credit": "GENTILEZA",
+      "file": "IMG_091_ MEZA DIJO QUE ME TENÍAN QUE MATAR VIER 13 AGO 10 copia.jpg"
+    },
+    {
+      "key": "092",
+      "number": 92,
+      "bisCount": 0,
+      "caption": "Planos de los sótanos ubicados en la parte trasera de la ex Brigada",
+      "credit": null,
+      "file": "IMG_092_planos 03 3D.png"
+    },
+    {
+      "key": "093",
+      "number": 93,
+      "bisCount": 0,
+      "caption": "Plano de la ex Brigada",
+      "credit": null,
+      "file": "IMG_093_informe plano 1.jpg"
+    },
+    {
+      "key": "094",
+      "number": 94,
+      "bisCount": 0,
+      "caption": "Los comienzos del primer juicio oral , Brigada I",
+      "credit": "gentileza",
+      "file": "IMG_094_B I NI EL CORTE DE LUZ FRENÓ LA AUDIENCIA JUEV 20 DE MAY 10.jpg"
+    },
+    {
+      "key": "095",
+      "number": 95,
+      "bisCount": 0,
+      "caption": "Proyección 3d de con el detalle de los sótanos de la Brigada",
+      "credit": null,
+      "file": "IMG_095_Izquierda 3D Sotanos.jpg"
+    },
+    {
+      "key": "096",
+      "number": 96,
+      "bisCount": 0,
+      "caption": "El juicio oral, en las páginas del periódico Primera Línea",
+      "credit": "gentileza",
+      "file": "IMG_096_br I.jpg"
+    },
+    {
+      "key": "097",
+      "number": 97,
+      "bisCount": 0,
+      "caption": "Rodríguez Valiente, Jorge Ibarra, Gabino Manader y José Marín, en el TOF, el 22 de septiembre de 2017 en el juicio oral Brigada II",
+      "credit": "Prensa CPM",
+      "file": "IMG_097_ IMPUTADOS_ Brigada II.JPG"
+    },
+    {
+      "key": "098",
+      "number": 98,
+      "bisCount": 0,
+      "caption": "La Casa por la Memoria, dibujo de Juan Britos",
+      "credit": null,
+      "file": "IMG_098_CASA POR LA MEMORIA COLOR.jpg"
+    },
+    {
+      "key": "099",
+      "number": 99,
+      "bisCount": 0,
+      "caption": "Espacios de la Casa por la Memoria, en las instalaciones del ex ccd Brigada",
+      "credit": "Prensa CPM",
+      "file": "IMG_099 _ antes y despues.jpg"
+    },
+    {
+      "key": "100",
+      "number": 100,
+      "bisCount": 0,
+      "caption": "Testimonio de sobreviviente, sobre una de las paredes de la Casa por la Memoria",
+      "credit": "Prensa CPM",
+      "file": "IMG_100_testimoni casa 24 junio (17).JPG"
+    }
+  ],
+  "filesWithoutCaption": [],
+  "captionsWithoutFile": []
+}

@@ -1,0 +1,53 @@
+{
+  "note": "Recorrido por el edificio de la ex Brigada de Investigaciones, hoy Casa por la Memoria. Los 19 archivos de src/edificio/ no traen epígrafe: el campo `label` reproduce el nombre que el archivo trae del propio acervo y `pending: true` marca que falta el epígrafe redactado por la CPM. No se inventó ninguna descripción.",
+  "intro": "Marcelo T. de Alvear 32, Resistencia. La casona funcionó como Brigada de Investigaciones de la Policía del Chaco y, entre 1976 y 1983, como centro clandestino de detención. En sus sótanos estuvo la Sala Negra. Cuando la Brigada abandonó el edificio, el sótano fue tapado con escombros y su ingreso clausurado con una pared; el Equipo Argentino de Antropología Forense lo relevó en 2008. Hoy el inmueble es sitio histórico de memoria y sede de la Comisión Provincial por la Memoria Chaco.",
+  "groups": [
+    {
+      "id": "el-edificio-hoy",
+      "title": "El edificio hoy",
+      "blurb": "Fotografías del inmueble recuperado como sitio histórico de memoria.",
+      "images": [
+        { "file": "foto-entrada", "label": "Entrada", "pending": true },
+        { "file": "fotografia-del-hall-de-entrada", "label": "Hall de entrada", "pending": true },
+        { "file": "foto-pasillo", "label": "Pasillo", "pending": true },
+        { "file": "frente-de-la-fachada-por-marcelo-t-de-alvear", "label": "Fachada sobre Marcelo T. de Alvear", "pending": true },
+        { "file": "vista-del-frente", "label": "Vista del frente", "pending": true }
+      ]
+    },
+    {
+      "id": "los-planos",
+      "title": "Los planos",
+      "blurb": "El relevamiento planimétrico de la casona y la función que tuvo cada ambiente.",
+      "images": [
+        { "file": "plano-de-la-planta-baja", "label": "Planta baja", "pending": true },
+        { "file": "plano-con-funcionalidad", "label": "Planta con la funcionalidad de cada ambiente", "pending": true }
+      ]
+    },
+    {
+      "id": "el-modelo",
+      "title": "El modelo tridimensional",
+      "blurb": "La reconstrucción volumétrica del edificio, planta por planta.",
+      "images": [
+        { "file": "modelo-3d-planta-baja", "label": "Modelo 3D — planta baja", "pending": true },
+        { "file": "modelo-3d-de-la-planta-baja", "label": "Modelo 3D — planta baja", "pending": true },
+        { "file": "modelo-3d-planta-baja-con-entrepiso", "label": "Modelo 3D — planta baja con entrepiso", "pending": true },
+        { "file": "modelo-3d-planta-alta", "label": "Modelo 3D — planta alta", "pending": true },
+        { "file": "vista-aerea-con-techos", "label": "Vista aérea con techos", "pending": true },
+        { "file": "vista-cabellera-planta-baja", "label": "Vista de la planta baja", "pending": true },
+        { "file": "vista-derecha", "label": "Vista derecha", "pending": true },
+        { "file": "izquierda", "label": "Vista izquierda", "pending": true },
+        { "file": "vista-desde-atras", "label": "Vista desde atrás", "pending": true }
+      ]
+    },
+    {
+      "id": "los-sotanos",
+      "title": "Los sótanos",
+      "blurb": "Los dos sótanos usados para tortura, ocultos bajo escombros hasta el relevamiento del Equipo Argentino de Antropología Forense en 2008.",
+      "images": [
+        { "file": "modelo-3d-con-ubicacion-de-los-sotanos", "label": "Ubicación de los sótanos en el volumen del edificio", "pending": true },
+        { "file": "vista-de-los-sotanos", "label": "Vista de los sótanos", "pending": true },
+        { "file": "corte-transversal-del-plano-3d", "label": "Corte transversal", "pending": true }
+      ]
+    }
+  ]
+}

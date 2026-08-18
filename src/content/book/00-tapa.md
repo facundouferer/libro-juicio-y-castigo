@@ -1,0 +1,18 @@
+---
+title: "Juicio y Castigo en el Chaco (Vol II)"
+docSlug: "tapa"
+order: 0
+section: "inicio"
+pageType: "landing"
+words: 232
+sourceFile: "section00_inicio/00.tapa y contratapa.md"
+---
+El terror genocida desplegado en la Argentina entre 1976 y 1983 por la última dictadura cívico-militar formó parte de un plan racional con un objetivo preciso: disciplinar a la sociedad para transformar las relaciones sociales, económicas y políticas existentes hasta entonces. Ese proyecto buscó consolidar un modelo basado en la concentración de la riqueza, el extractivismo, la exportación de materias primas y la acumulación financiera, en detrimento de una distribución más igualitaria y del desarrollo industrial y del mercado interno.
+
+Ese fue el objetivo de quienes diseñaron el plan genocida desde la cúspide del poder. En los sótanos y calabozos de la Brigada de Investigaciones, ese diseño se materializó sobre los cuerpos de hombres y mujeres detenidos por razones políticas.
+
+Las crónicas reunidas en este volumen reconstruyen el largo recorrido que unió el centro clandestino de detención de la Brigada de Investigaciones con las salas de audiencia donde, décadas después, comenzaron a dictarse las condenas a sus responsables.
+
+Los "peones" del genocidio se mancharon las manos de sangre y sus "capataces" les dieron "cancha libre" para desplegar sin límites su capacidad de crueldad y violencia, con la expectativa de obtener silencio, olvido e impunidad.
+
+Pero las Madres, las Abuelas, los hijos y las hijas, junto a quienes sobrevivieron al horror genocida, tenían otra idea de futuro en la mente y en el corazón. Y de parte de esa Historia trata este libro.

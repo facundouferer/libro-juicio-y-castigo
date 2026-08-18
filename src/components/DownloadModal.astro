@@ -1,0 +1,45 @@
+---
+/**
+ * The download panel.
+ *
+ * Both files are built ahead of the deploy and served straight from disk —
+ * nothing is generated on click, as the spec requires. Sizes come from the
+ * build manifest so the reader knows what they are about to pull down before
+ * they tap it on a phone.
+ */
+import Icon from './Icon.astro';
+import { withBase } from '../lib/site.mjs';
+import downloads from '../data/downloads.json';
+
+const format = (bytes) =>
+  bytes >= 1024 * 1024 ? `${(bytes / 1024 / 1024).toFixed(1)} MB` : `${Math.round(bytes / 1024)} kB`;
+---
+
+<dialog class="modal" id="dlg-download" aria-labelledby="download-title">
+  <div class="modal-panel">
+    <header class="modal-head">
+      <h2 id="download-title">Descargar</h2>
+      <button class="modal-close" type="button" data-close aria-label="Cerrar la descarga">
+        <Icon name="close" size={20} />
+      </button>
+    </header>
+
+    <div class="download-body">
+      {
+        downloads.files.map((file) => (
+          <a class="download-option" href={withBase(file.path)} download={file.filename}>
+            <span class="fmt">{file.format}</span>
+            <span>
+              <span class="what">{file.what}</span>
+              <br />
+              <span class="meta">
+                {file.bytes ? format(file.bytes) : 'pendiente de generar'}
+                {file.pages ? ` · ${file.pages} páginas` : ''}
+              </span>
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</dialog>

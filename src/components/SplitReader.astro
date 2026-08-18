@@ -1,0 +1,90 @@
+---
+/**
+ * The split reader — the book's main layout.
+ *
+ * Two columns: a plate that stays put on the left while the prose scrolls on
+ * the right. The plate's photograph is whichever one belongs to the heading
+ * currently in view; when that heading has none, the plate is simply empty and
+ * the ground shows through.
+ *
+ * The photographs themselves are not written here. They are injected into the
+ * prose after their heading by the rehype plugin, and the plate mirrors them
+ * at runtime — one copy in the DOM, two ways of showing it.
+ */
+import Icon from './Icon.astro';
+import { documentImage } from '../lib/book.mjs';
+
+interface Props {
+  docSlug: string;
+  title: string;
+  section: string;
+}
+
+const { docSlug, title, section } = Astro.props;
+
+/**
+ * A document with no headings of its own can still carry one photograph. It
+ * becomes the plate's resting state for the whole document — and, on a phone,
+ * an ordinary figure at the head of the text.
+ */
+const base = documentImage(docSlug);
+const SIZES = '(max-width: 900px) 100vw, 46vw';
+---
+
+<article class="doc reader" id={docSlug} data-doc={docSlug} data-section={section} aria-label={title}>
+  <div class="plate" data-plate>
+    <div class="plate-frame" data-plate-frame>
+      <img alt="" data-plate-img aria-hidden="true" />
+      <img alt="" data-plate-img aria-hidden="true" />
+    </div>
+
+    <div class="plate-tools">
+      <button type="button" data-plate-zoom aria-label="Ampliar la imagen" title="Ampliar la imagen">
+        <Icon name="search" size={21} />
+      </button>
+    </div>
+
+    <figcaption class="plate-caption" data-plate-caption aria-live="polite"></figcaption>
+  </div>
+
+  <div class="prose" data-prose>
+    {
+      base && (
+        <figure
+          class="figure"
+          id={`fig-${base.key}`}
+          data-doc-default
+          data-key={base.key}
+          data-caption={base.caption?.caption ?? ''}
+          data-credit={base.caption?.credit ?? ''}
+          data-avif={base.src.avif}
+          data-webp={base.src.webp}
+          data-src={base.src.fallback}
+        >
+          <button type="button" data-zoom={base.key} aria-label={`Ampliar: ${base.alt || title}`}>
+            <picture>
+              <source type="image/avif" srcset={base.src.avif} sizes={SIZES} />
+              <source type="image/webp" srcset={base.src.webp} sizes={SIZES} />
+              <img
+                src={base.src.fallback}
+                alt={base.alt}
+                role={base.alt ? undefined : 'presentation'}
+                width={base.src.width}
+                height={base.src.height}
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+          </button>
+          {(base.caption?.caption || base.caption?.credit) && (
+            <figcaption>
+              {base.caption?.caption}
+              {base.caption?.credit && <span class="credit">{base.caption.credit}</span>}
+            </figcaption>
+          )}
+        </figure>
+      )
+    }
+    <slot />
+  </div>
+</article>

@@ -1,0 +1,2276 @@
+{
+  "content": {
+    "100": {
+      "key": "100",
+      "source": "src/images/content/IMG_100_testimoni casa 24 junio (17).JPG",
+      "width": 2976,
+      "height": 1984,
+      "aspect": 1.5,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAQCdASoMAAgAA4BaJZwAAxcCe81GzoAA/dtSRqMxoYFO8Nx7dXLB7WeRvU1wYcpAAA=="
+    },
+    "001": {
+      "key": "001",
+      "source": "src/images/content/IMG_001_TOF VEREDA. BRIG.II.JPG",
+      "width": 3648,
+      "height": 2736,
+      "aspect": 1.3333,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADQAQCdASoMAAkAA4BaJQBOgCFsKvSHAAD+T6GC9axea7bYrWMz3iAH+D6LMlgT7NBg18JA5YAJSF3bmyBMpkJBhYBhzEc4AAA="
+    },
+    "002": {
+      "key": "002",
+      "source": "src/images/content/IMG_002_ Sótanos Brigada.jpg",
+      "width": 590,
+      "height": 590,
+      "aspect": 1,
+      "orientation": "square",
+      "printQuality": "low",
+      "avif": [
+        590
+      ],
+      "webp": [
+        590
+      ],
+      "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAwAgCdASoMAAwAA4BaJZgCdAEQ+r2SRtqLAAD+7irjj+JsW0peG5pv/reOPu2egGoDr4oNyEf03UcRrfWuNPYs3LjTtrqLlrzPmBZ0vL9N1vnHQJDfQgtmT1IBsx4bbehoX5wFQhckAA=="
+    },
+    "003": {
+      "key": "003",
+      "source": "src/images/content/IMG_003_LA BRIGADA.jpg",
+      "width": 1600,
+      "height": 1392,
+      "aspect": 1.1494,
+      "orientation": "landscape",
+      "printQuality": "reduced",
+      "avif": [
+        640,
+        1280
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAwAgCdASoMAAoAA4BaJZQC7AEPAmxMd0kc2AD+76ECnr9h3cqY16Fp1Y4e5vZiDgo6B7iIeqBFbuyOwcKlmAOL0X7lv0AA"
+    },
+    "004": {
+      "key": "004",
+      "source": "src/images/content/IMG_004_ Crónica 1 Aníbal Ponti_ BRIG.I.jpg",
+      "width": 1248,
+      "height": 1207,
+      "aspect": 1.034,
+      "orientation": "landscape",
+      "printQuality": "reduced",
+      "avif": [
+        640
+      ],
+      "webp": [
+        640
+      ],
+      "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoMAAwAA4BaJaQAAlxGGN4UAAD++LkCI+u71+d7TJhs1RMyK5oWtjOriBUCIO0Eix/vdYRKfObm2TLyVIGBAAAA"
+    },
+    "005": {
+      "key": "005",
+      "source": "src/images/content/IMG_005_TOF BRIG.I José Marín ( el acordeonista) y Enzo Breard.jpg",
+      "width": 850,
+      "height": 562,
+      "aspect": 1.5125,
+      "orientation": "landscape",
+      "printQuality": "low",
+      "avif": [
+        640
+      ],
+      "webp": [
+        640
+      ],
+      "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoMAAgAA4BaJYgCdAD7JVKmdgAA+6MiEfU7I+YN7+PK2uvYPeLVgkq34OX+O5S6zv93kb865oLZ1s3xPMq6M+GPHSlwAA=="
+    },
+    "006": {
+      "key": "006",
+      "source": "src/images/content/IMG_006_ COMIENZA EL 5 DE MAYO_ 30 MAR 2010.jpg",
+      "width": 7015,
+      "height": 9921,
+      "aspect": 0.7071,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoIAAwAA4BaJaQAAud6clxygAD+65EoiskVARqtPta0ACoIF3U73SLqGg5ycYGoavN3WpX+AAA="
+    },
+    "007": {
+      "key": "007",
+      "source": "src/images/content/IMG_007_TOF_ Eugenio Domínguez Silva y Horacio Cracogna BRIG.I.JPG",
+      "width": 1600,
+      "height": 1200,
+      "aspect": 1.3333,
+      "orientation": "landscape",
+      "printQuality": "reduced",
+      "avif": [
+        640,
+        1280
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAABQAgCdASoMAAkAA4BaJZQC7O/7Be+khMt3x0AA/vPQTwW+qIASWt+929uPNLBMLYmgivaXBUmnaZk12N0is8npTa7eoCDQ5DZVIAAA"
+    },
+    "008": {
+      "key": "008",
+      "source": "src/images/content/IMG_008_MARÍA JULIA MORRESI. ALEJANDRO GALLARDO.jpg",
+      "width": 3407,
+      "height": 4881,
+      "aspect": 0.698,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAACwAQCdASoIAAwAA4BaJaQAAppsmmBkAP7zyWF8gZs2IsVpSDBR5hmgeIGdr8unIZ77YtD14tLAAAAA"
+    },
+    "009": {
+      "key": "009",
+      "source": "src/images/content/IMG_009_ INSPECCIÓN OCULAR EX BRIGADA  VALDI UFERER SEÑALA SALA NEGRA.jpg",
+      "width": 850,
+      "height": 1134,
+      "aspect": 0.7496,
+      "orientation": "portrait",
+      "printQuality": "reduced",
+      "avif": [
+        640
+      ],
+      "webp": [
+        640
+      ],
+      "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQAgCdASoJAAwAA4BaJYwCdAYuva7kD2d4AP7HZYahbuqteYYswWfSP1ErfYDs1cdSrb1MaYtPi7dNI5/274+Rf+5g03DbhbJg8KAA"
+    },
+    "010": {
+      "key": "010",
+      "source": "src/images/content/IMG_010_ CONDENADOS_BR_I.jpg",
+      "width": 1850,
+      "height": 1864,
+      "aspect": 0.9925,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAQCdASoMAAwAA4BaJaQAD5LQbip1MDAA/phfelM3whyRzsKaJOgLj2t76wqUA7nJlM2gzPgo3d+T06wl7DbEvqlGqONhW5/BH43cv8KPAWCfq/0tAAAA"
+    },
+    "011": {
+      "key": "011",
+      "source": "src/images/content/IMG_011 _ Máría Inés Rodriguez de Caire.jpg",
+      "width": 1428,
+      "height": 1806,
+      "aspect": 0.7907,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADwAQCdASoJAAwAA4BaJZwAA1dRUhFkA4AA/uhfyEfkKP9cmBt1FOvnWdPEy6ORhBRa2Ot9Jmr8i+VuQsLYDyy+AAA="
+    },
+    "012": {
+      "key": "012",
+      "source": "src/images/content/IMG_012_Brig. II_Dra Deogens Dr Juan Manuel Iglesias Pte Eduardo Belforte dr Aldo Alurralde.jpg",
+      "width": 3976,
+      "height": 2284,
+      "aspect": 1.7408,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoMAAcAA4BaJZQCdAD0tvnvAAD+5Oq2mIjNGrO4bnzido4kQLF8xFUPwSeggAAA"
+    },
+    "013": {
+      "key": "013",
+      "source": "src/images/content/IMG_013_ FISCALES Y QUERELLANTE MARIO BOSCH_ BI.jpg",
+      "width": 2048,
+      "height": 1536,
+      "aspect": 1.3333,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAAAQAgCdASoMAAkAA4BaJZgC7AEQEsYAy0QAAPqf36V2+torOlN2dsyfsFBLnxhXMNM0zYk6/JBlb5DOSrHNYd9J8W4OAC9W3uwAAA=="
+    },
+    "013bis": {
+      "key": "013bis",
+      "source": "src/images/content/IMG_013bis_Caballero Lucio Humberto.jpg",
+      "width": 1574,
+      "height": 2421,
+      "aspect": 0.6501,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoIAAwAA4BaJZwAAsb2DOjWAAD+tlXUrvgfgQlFUouuPi7aMgWo/Mbb/BLKhwsmqWDrpyTLar1cuROSaJ30KAAA"
+    },
+    "014": {
+      "key": "014",
+      "source": "src/images/content/IMG_014_B II (3).JPG",
+      "width": 3696,
+      "height": 2448,
+      "aspect": 1.5098,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADwAQCdASoMAAgAA4BaJZQC7ADbalo+zgAA/VAPDtLysfsXe36uHw7a3hyOqCTkfzv6UvP3qNJ04r674FFXbLmaUqOAAA=="
+    },
+    "015": {
+      "key": "015",
+      "source": "src/images/content/IMG_015_BI_ 13 LA POLICÍA DEL CHACO FUE EL GRUPO DE TAREA DEL EJÉRCITO JUEV 8 JUL 10 .jpg",
+      "width": 7015,
+      "height": 9921,
+      "aspect": 0.7071,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAABwAQCdASoIAAwAA4BaJaQAApnJgAD+7YszPR6hgW4qN9trRBtfL6Hw5/utMspO9dAt35jUJgAAAA=="
+    },
+    "016": {
+      "key": "016",
+      "source": "src/images/content/IMG_016_dibujo imputados.jpg",
+      "width": 2362,
+      "height": 1402,
+      "aspect": 1.6847,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoMAAcAA4BaJaQAAlghNATyAAD+9SRh+MpDGWXRIf21sn488dznj55lcjI32sOjK+Ox/M0vwUtUp8o3QaZ4mAAA"
+    },
+    "017": {
+      "key": "017",
+      "source": "src/images/content/IMG_017_ INSPECCIÓN  OCULAR ALCAIDÍA  ARANDA GIMENEZ GRECA.jpg",
+      "width": 2166,
+      "height": 2046,
+      "aspect": 1.0587,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAQCdASoMAAsAA4BaJQBOgCKPHAgBwAAA+Vgiyxw+34gf+iG87MxxOqwzz857zh1GZnCdTjBxD3H6KhmuOoAA"
+    },
+    "018bisbis": {
+      "key": "018bisbis",
+      "source": "src/images/content/IMG_018_BIS BIS CHACHI FULBO.jpg",
+      "width": 1700,
+      "height": 2338,
+      "aspect": 0.7271,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAQCdASoJAAwAA4BaJZgCdADcNyVIWiAAywGCQ8KHnqNhHlG4MP0Cxd035JUwFYGCesXv1aQFV8jEF3rAggAA"
+    },
+    "018bis": {
+      "key": "018bis",
+      "source": "src/images/content/IMG_018_BIS CHACHI V (1).JPG",
+      "width": 1984,
+      "height": 1488,
+      "aspect": 1.3333,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADQAQCdASoMAAkAA4BaJYwCsADhas2ygAD+t+1xvPLtbq+DWRm+FQO29VATRYnCMfY5HHEbv0x3dJHqhonWnqlklDG+/zYKyDsextZt3OwAUdBSgxAAAA=="
+    },
+    "018": {
+      "key": "018",
+      "source": "src/images/content/IMG_018_SEÑALIZACIÓN U7 .JPG",
+      "width": 2976,
+      "height": 1984,
+      "aspect": 1.5,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACwAQCdASoMAAgAA4BaJYwAAlvH9KAAAP6VCG+S3YTHp9jYf+b3houJ3XwdXnmddAJ8FFqtX4YKAksm60RfGKBSReVIAAAA"
+    },
+    "019": {
+      "key": "019",
+      "source": "src/images/content/IMG_019_ARMANDO BENÍTEZ .jpg",
+      "width": 1551,
+      "height": 747,
+      "aspect": 2.0763,
+      "orientation": "landscape",
+      "printQuality": "reduced",
+      "avif": [
+        640,
+        1280
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAACwAQCdASoMAAYAA4BaJYwAAlvJ/LQAAN4tGElQtmw9xezwnqCLUsRoMtRrfZ5hc79bpdsvjAGoxs/DZwAAAA=="
+    },
+    "020": {
+      "key": "020",
+      "source": "src/images/content/IMG_020_ccd.jpg",
+      "width": 1839,
+      "height": 1226,
+      "aspect": 1.5,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoMAAgAA4BaJQBOgCL4j8gBVgAA/u+tJXL/PRL8X+Ix5rA5qN6jvhE95jEAeaahIngOaIosJybLLUWfkV8N4wQAAAA="
+    },
+    "021": {
+      "key": "021",
+      "source": "src/images/content/IMG_021_PLano_CPM.jpg",
+      "width": 2114,
+      "height": 2122,
+      "aspect": 0.9962,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAQCdASoMAAwAA4BaJaQAD5CNqVO2gIAA/teR122+IHtzF3N1xOBF1dXeU1hNRMTe5HibV2TCEgRrhYxOcH6cppVdb48oDvFlUhKdTqBM3gAA"
+    },
+    "022": {
+      "key": "022",
+      "source": "src/images/content/IMG_022_INSPECCIÓN OCULAR EX BRIGADA  Valdi  vs. Rodríguez Valiente.jpg",
+      "width": 1278,
+      "height": 1299,
+      "aspect": 0.9838,
+      "orientation": "portrait",
+      "printQuality": "reduced",
+      "avif": [
+        640,
+        1280
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAwAgCdASoMAAwAA4BaJZQCdAELVzL/DEqsAAD+5jp+7RiSoo9J4EZhxAX8GOTUMwApy0LgRQt8VggzkJ1beet1uL+//X/b7wyelAxiKAA="
+    },
+    "023": {
+      "key": "023",
+      "source": "src/images/content/IMG_023_ MANADER ERA MUY AUTORITARIO Y MANDABA MÁS QUE EL JEFE.jpg",
+      "width": 7015,
+      "height": 9921,
+      "aspect": 0.7071,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACwAQCdASoIAAwAA4BaJaQAAp1XiRHwAP7yLuIGw1+mK6D7oJ5FZdn1mkVslqI3eJM1MfGbM7bQf3ca/xa43wAA"
+    },
+    "024bis": {
+      "key": "024bis",
+      "source": "src/images/content/IMG_024BIS_BR. III DÍA 5  TESTIGOS.jpg",
+      "width": 3508,
+      "height": 1851,
+      "aspect": 1.8952,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoMAAYAA4BaJZQC7AD0UKIuBAAA+VeMxJM8UUKcX9XMh0TlxDKq5GG9f7Hy70l6vp8+MfGl2xGiWKJ0TBrW4WvMeAAAAA=="
+    },
+    "024": {
+      "key": "024",
+      "source": "src/images/content/IMG_024_ Manader Gabino.jpg",
+      "width": 1591,
+      "height": 2382,
+      "aspect": 0.6679,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAQCdASoIAAwAA4BaJaQAAxZhsSLTxwAA/uJIugwgRFcnPUWJKyhiczRY/Dl4GKLSCJheWRpAR7gAAAA="
+    },
+    "025": {
+      "key": "025",
+      "source": "src/images/content/IMG_025_BRIGADA.jpg",
+      "width": 2048,
+      "height": 1356,
+      "aspect": 1.5103,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAQCdASoMAAgAA4BaJaACdADcpyM/BfAA+VtxONRHhBdQCZAgbbwR4741PsRd2hjCsV7a60WcRaMOjA/G2l7YuQYbBYCOSoZkkzFbHvyaxKAA"
+    },
+    "026": {
+      "key": "026",
+      "source": "src/images/content/IMG_026_B II R VALIENTE Dibujo de Juan Britos.jpg",
+      "width": 4870,
+      "height": 3918,
+      "aspect": 1.243,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAAAQAgCdASoMAAoAA4BaJaQAD4QtYp2jXFbAAP73PWPO4xlXfX+jCHMkWMrbgTM52YyPR3X3hgA1HCosD3bytbxJ2mdMyoQSGAAAAA=="
+    },
+    "027": {
+      "key": "027",
+      "source": "src/images/content/IMG_027_ ALCAIDIA INSP. OCULAR BRIGADA .jpg",
+      "width": 850,
+      "height": 568,
+      "aspect": 1.4965,
+      "orientation": "landscape",
+      "printQuality": "low",
+      "avif": [
+        640
+      ],
+      "webp": [
+        640
+      ],
+      "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAQCdASoMAAgAA4BaJZQAAvqpT1BEKwAA/tgS1YWwVwUCua9N9qrmfdBva358bIuTp3gi2teEfmsTO3W4pMAVofcCwAAA"
+    },
+    "028": {
+      "key": "028",
+      "source": "src/images/content/IMG_028_  Marín. Cabo Sotelo. El acordeonista.jpg",
+      "width": 1368,
+      "height": 1024,
+      "aspect": 1.3359,
+      "orientation": "landscape",
+      "printQuality": "reduced",
+      "avif": [
+        640,
+        1280
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAQCdASoMAAkAA4BaJYwAAsRDa1129AAA/TSNbxpO2nLCzSupUDIHzGnEP3+b40AAAA=="
+    },
+    "029": {
+      "key": "029",
+      "source": "src/images/content/IMG_029_ BRIG.jpg",
+      "width": 2048,
+      "height": 1360,
+      "aspect": 1.5059,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoMAAgAA4BaJZQCdAEU8uYeoQAA9kcfM0/17ofluDIHGEJ9Id4LNNeT9L7iD7odUtefCxopJgt+K/ZDC+E+19AAAAA="
+    },
+    "030": {
+      "key": "030",
+      "source": "src/images/content/IMG_030_ Br II Maldonado.JPG",
+      "width": 4288,
+      "height": 2848,
+      "aspect": 1.5056,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADQAQCdASoMAAgAA4BaJZQC7ADdiwG48AD+5N6mB0vVyjTZMfxw8R76KMEudyqi5nQGfFq2CzVLraHheRp0AZAkaAA="
+    },
+    "031": {
+      "key": "031",
+      "source": "src/images/content/IMG_031_ APA.JPG",
+      "width": 1184,
+      "height": 896,
+      "aspect": 1.3214,
+      "orientation": "landscape",
+      "printQuality": "reduced",
+      "avif": [
+        640
+      ],
+      "webp": [
+        640
+      ],
+      "lqip": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoMAAkAA4BaJZQCdADFZqzYAAD8DWc7sx1ugDwvyPIy8S1Z0bm7+d4K3pz5KL+Ls1/k9eUIK1kAAA=="
+    },
+    "032": {
+      "key": "032",
+      "source": "src/images/content/IMG_032 _ Casa x Memo 2024.JPG",
+      "width": 1984,
+      "height": 2976,
+      "aspect": 0.6667,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACwAQCdASoIAAwAA4BaJZwAAxU/iIjgAP7vqVOOPdTmKUEM0ERb6PQzZpHg6fUaW/YCoV/H8oKAAA=="
+    },
+    "033": {
+      "key": "033",
+      "source": "src/images/content/IMG_033_Gerardo Delgado_ JBritos.jpg",
+      "width": 2048,
+      "height": 1505,
+      "aspect": 1.3608,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAAAQAgCdASoMAAkAA4BaJaQAD4Ww7Sw16+xwAP74tnAy0ofGwvsvjS4wG0Sz2iChcAyBjot7crTJTmyK+59UDgiAxNeascPzUAAAAA=="
+    },
+    "034": {
+      "key": "034",
+      "source": "src/images/content/IMG_034 _ALCAIDIA INSP. OCULAR 2010.JPG",
+      "width": 3776,
+      "height": 2520,
+      "aspect": 1.4984,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoMAAgAA4BaJZwAAurf/ZwLwADOAdebliXWsgDFTnxn1wvKIl20/rIWR3hkAS6CDgveiIEtAAA="
+    },
+    "035": {
+      "key": "035",
+      "source": "src/images/content/IMG_035 _INSPECCIÓN OCULAR EX BRIGADA  R. VALIENTE.jpg",
+      "width": 3543,
+      "height": 4724,
+      "aspect": 0.75,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAQCdASoJAAwAA4BaJZwAAlj5xWpsAPZyncHeQB2XcVOGVsB3fn3yAK0xko8sGlgOLriBP05BQbBIdBmvpGtBJ3RwAA=="
+    },
+    "036": {
+      "key": "036",
+      "source": "src/images/content/IMG_036 _Jorge Ibarra. Brigada II.jpg",
+      "width": 2048,
+      "height": 1447,
+      "aspect": 1.4153,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAQCdASoMAAgAA4BaJZACdACCPSgAAPozxQ6i0+p14lRP0/5AObeWoDpvUK0T7H3o7iteeX3faBSmpjgMCK9JJoAAAA=="
+    },
+    "037": {
+      "key": "037",
+      "source": "src/images/content/IMG_037 _INICIO BRIGADA III  (12).JPG",
+      "width": 3872,
+      "height": 2592,
+      "aspect": 1.4938,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoMAAgAA4BaJQAAYvO77KWLcAD+0PdwCm1Qk3DYZvOAP4IDOy1sz+3UOw5h151SmKnDUX59PKrBaNx/bX42IAAA"
+    },
+    "038": {
+      "key": "038",
+      "source": "src/images/content/IMG_038_  COSAS RARAS EN LA BRIGADA.jpg",
+      "width": 7015,
+      "height": 9921,
+      "aspect": 0.7071,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAQAgCdASoIAAwAA4BaJaQAD48OzkazBJUAAP7wOYjuYYV+tL78v3zDOmIgRHbJ3cN/ATEa9o62x90lApLyNQQz+DelAAAA"
+    },
+    "039": {
+      "key": "039",
+      "source": "src/images/content/IMG_039 _ Marín.jpg",
+      "width": 1043,
+      "height": 1772,
+      "aspect": 0.5886,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAQCdASoHAAwAA4BaJaQAAp1sBKZIAP7oVyXCAFLk5Escws2hKRlSCam9c/ZX2DZML+oGqPrKAItYwLB6dBJo0AAAAA=="
+    },
+    "040": {
+      "key": "040",
+      "source": "src/images/content/IMG_040 _INICIO BRIGADA III. REMOTO.jpg",
+      "width": 1673,
+      "height": 996,
+      "aspect": 1.6797,
+      "orientation": "landscape",
+      "printQuality": "reduced",
+      "avif": [
+        640,
+        1280
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADQAQCdASoMAAcAA4BaJaQAAud/VdIiWAD+5gr9qHepCohVZLGm27ptBJqi6uZ1Sbsh6M2mrThrNX/ls06l5+rpQAAAAA=="
+    },
+    "041": {
+      "key": "041",
+      "source": "src/images/content/IMG_041_taapa escrache Manader.jpg",
+      "width": 724,
+      "height": 960,
+      "aspect": 0.7542,
+      "orientation": "portrait",
+      "printQuality": "reduced",
+      "avif": [
+        640
+      ],
+      "webp": [
+        640
+      ],
+      "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoJAAwAA4BaJZQAAueDaH99YAD+5+5Lm+MjYXDiY5u9KveQtSvD5656R5Yb+rAOTicuDQnrpNKiuQFEPjRoQIAA"
+    },
+    "042": {
+      "key": "042",
+      "source": "src/images/content/IMG_042 _MOREL_Pedro_Crisólogo (1).jpg",
+      "width": 2362,
+      "height": 2362,
+      "aspect": 1,
+      "orientation": "square",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADwAQCdASoMAAwAA4BaJaQAArP/JDKvMwAAzj5SYX0xmk2LVfnA0X2/Rki0thQzUYYmnz3eILAgF1LzHw2+k8if+VAzss9K6BHWbSCZ+AEZ3Qbi+AAAAA=="
+    },
+    "043": {
+      "key": "043",
+      "source": "src/images/content/IMG_043 _MOREL_Pedro_Crisólogo (2).jpg",
+      "width": 2716,
+      "height": 3897,
+      "aspect": 0.6969,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAwAgCdASoIAAwAA4BaJaQAD45RduKKJIfsAAD+5lID8kVMnrMko6Q2G7R0dCZ1OSmsq1IquMym63kcN0bfVs7wKOX/y+tDsiRNnLAAAAA="
+    },
+    "044": {
+      "key": "044",
+      "source": "src/images/content/IMG_044_ BRI III DÍA 7. Querellante Duilio Ramírez. Fiscal Diego Vigay. Def. Of. Juan Manuel Costilla. Presidente TOF Rubén Quiñones.jpg",
+      "width": 3508,
+      "height": 2111,
+      "aspect": 1.6618,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAQAgCdASoMAAcAA4BaJZQC7AEDe7WfBFYAAPz9KDsO/J4M81oOjgaiajYNMcD+RpFKAPv8uazBKwb3jFqpW9emzJMqgAAA"
+    },
+    "045": {
+      "key": "045",
+      "source": "src/images/content/IMG_045_ BR II .JPG",
+      "width": 2958,
+      "height": 2016,
+      "aspect": 1.4673,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQAgCdASoMAAgAA4BaJZQCdAEVMH2uMu4AAP2qFCOirH0yZiZaiKodQPTNRPsMz2LynkndbMtKIU0qggFrkwiVe/o8qiN2AnyOcB4AAAA="
+    },
+    "046": {
+      "key": "046",
+      "source": "src/images/content/IMG_046_SEÑALIZACIÓN U7 2.JPG",
+      "width": 2976,
+      "height": 1984,
+      "aspect": 1.5,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAACwAQCdASoMAAgAA4BaJYwAAlnUHl6QAPwRGrzkAnkkur1Diak7vFU5GNRB2iuPCNVrrwsTc+nwyVBnANrxX6XNAAA="
+    },
+    "047": {
+      "key": "047",
+      "source": "src/images/content/IMG_047_INSPECCIÓN OCULAR EX BRIGADA  MULTITUD SOTANO.jpg",
+      "width": 850,
+      "height": 1134,
+      "aspect": 0.7496,
+      "orientation": "portrait",
+      "printQuality": "reduced",
+      "avif": [
+        640
+      ],
+      "webp": [
+        640
+      ],
+      "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAQCdASoJAAwAA4BaJYwCsAELX3tSLAAA/sq2vfEvKHSLxfYoUzeAqAX5cdDVfNA00j5/f6PgUgmUqsmIPo5BfQ88YMwTCAU+lHnTl9o8AAAA"
+    },
+    "048": {
+      "key": "048",
+      "source": "src/images/content/IMG_048_INSPECCION BRIGADA JUAN B JUSTO.jpg",
+      "width": 1868,
+      "height": 1247,
+      "aspect": 1.498,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoMAAgAA4BaJZQC7ADcZUqIzIAA/uZOQNTf8I9rbM/lRCqkFYDvJt7TD4rJKgY20ieZEMQkEWXqXGjj035DoDiNnwAAAA=="
+    },
+    "049": {
+      "key": "049",
+      "source": "src/images/content/IMG_049 _ De la rosa.jpg",
+      "width": 1584,
+      "height": 2388,
+      "aspect": 0.6633,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAABQAQCdASoIAAwAA4BaJZwABDOAAP7cDpNd2tJcnG4W/ThAi5yjm8drxH4XAhQ/DWT4AA=="
+    },
+    "050": {
+      "key": "050",
+      "source": "src/images/content/IMG_050_frente 2baja.jpg",
+      "width": 1781,
+      "height": 1772,
+      "aspect": 1.0051,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAQAgCdASoMAAwAA4BaJZwAD4xvt90G26rAAP7thMWy/xEcFIc3OLidEtu/ptZ1o4e6TDwIldkZdgY8zhzv3LS6hsKUZl4bJFq5/sBq9KQAAA=="
+    },
+    "051": {
+      "key": "051",
+      "source": "src/images/content/IMG_051_ manader y rv.jpg",
+      "width": 2048,
+      "height": 1536,
+      "aspect": 1.3333,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoMAAkAA4BaJYwCdAEOwSEbWAAA4gdAKEGwYrtszqqhMF8VT1O+GyZWLCQBcS/FPZThejjC3NallkNYLuv05XUHrSjD8EeAAAA="
+    },
+    "052": {
+      "key": "052",
+      "source": "src/images/content/IMG_052_ picana eléctrica.jpg",
+      "width": 1073,
+      "height": 304,
+      "aspect": 3.5296,
+      "orientation": "landscape",
+      "printQuality": "reduced",
+      "avif": [
+        640
+      ],
+      "webp": [
+        640
+      ],
+      "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAACwAQCdASoMAAMAA4BaJZwAAu02+vqQAP7wep5oNIdSYu3/aBOdYRhoL4M7fK+mXAAAAA=="
+    },
+    "053": {
+      "key": "053",
+      "source": "src/images/content/IMG_053_fusible.jpg",
+      "width": 393,
+      "height": 560,
+      "aspect": 0.7018,
+      "orientation": "portrait",
+      "printQuality": "low",
+      "avif": [
+        560
+      ],
+      "webp": [
+        560
+      ],
+      "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAQAgCdASoIAAwAA4BaJZQC7AD0ZqEO0cAAAP7wTFz4Rf592WpYgSx0WuOy+HtmhC7UbGHml3QT66FAtRIMlXzjPhkMAAAA"
+    },
+    "054": {
+      "key": "054",
+      "source": "src/images/content/IMG_054_fierro.jpg",
+      "width": 1050,
+      "height": 470,
+      "aspect": 2.234,
+      "orientation": "landscape",
+      "printQuality": "reduced",
+      "avif": [
+        640
+      ],
+      "webp": [
+        640
+      ],
+      "lqip": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAAAQAgCdASoMAAUAA4BaJZQCdH8AGBsby99AAP7yFuBlsSzZ1AMccBkkF6WwU5PUHHyyBN5kAAA="
+    },
+    "055": {
+      "key": "055",
+      "source": "src/images/content/IMG_055_caja eléctrica.jpg",
+      "width": 421,
+      "height": 491,
+      "aspect": 0.8574,
+      "orientation": "portrait",
+      "printQuality": "low",
+      "avif": [
+        491
+      ],
+      "webp": [
+        491
+      ],
+      "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoKAAwAA4BaJZACdAELYHaW9AAA/mwzdqgFGTAfIon5sHWQDP5QoJ3W272I+kPztZrsUeippVdJr8TndLokIhZxgttag3QAAAA="
+    },
+    "056": {
+      "key": "056",
+      "source": "src/images/content/IMG_056 _ DeDIEU.jpg",
+      "width": 2260,
+      "height": 1564,
+      "aspect": 1.445,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACQAQCdASoMAAgAA4BaJZwAAkcBWwAA/c+UHMS15oOAus4mNiR0m1/9yQZPgAAA"
+    },
+    "057": {
+      "key": "057",
+      "source": "src/images/content/IMG_057_ VAMOS A MATAR A TU HIJA MAR 5 OCT 10.jpg",
+      "width": 7015,
+      "height": 9921,
+      "aspect": 0.7071,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACwAQCdASoIAAwAA4BaJaQAApp088AAAP7oSPhFMgyRijWXKnzKgeP87f2SURS4gAA="
+    },
+    "058": {
+      "key": "058",
+      "source": "src/images/content/IMG_058_Breard Enzo .jpg",
+      "width": 1552,
+      "height": 2427,
+      "aspect": 0.6395,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADQAQCdASoIAAwAA4BaJaQAAp216QRYAAD+2A2O6b7OHssSBO2+nNg9njvgtmPl+iUcYJk74Do8PCYfqHS6jGL3cbkAAA=="
+    },
+    "059": {
+      "key": "059",
+      "source": "src/images/content/IMG_059_BII _ R.Valiente y Ramón Meza (15).JPG",
+      "width": 3648,
+      "height": 2736,
+      "aspect": 1.3333,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADwAQCdASoMAAkAA4BaJYwCdAEDes8OxbgA/U+GmhGbFR+8FLrGAUe3NQwAQXLLEMC836HPBrhidk+D0yd4AQDAAAA="
+    },
+    "060": {
+      "key": "060",
+      "source": "src/images/content/IMG_060 _ sentencia brigada II2.jpg",
+      "width": 2048,
+      "height": 1301,
+      "aspect": 1.5742,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADQAQCdASoMAAgAA4BaJQBOgCHIOD1dgAD+wH/DmRYzu79ECCTGwOmoWUGMc19Mvhd2Md1xgVXrJenfzyOiKt85HMTKCUAQhXMIvi3iAAA="
+    },
+    "061": {
+      "key": "061",
+      "source": "src/images/content/IMG_061_ CHACHI V.JPG",
+      "width": 1984,
+      "height": 1488,
+      "aspect": 1.3333,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADQAQCdASoMAAkAA4BaJYwCsADhas2ygAD+t+1xvPLtbq+DWRm+FQO29VATRYnCMfY5HHEbv0x3dJHqhonWnqlklDG+/zYKyDsextZt3OwAUdBSgxAAAA=="
+    },
+    "062": {
+      "key": "062",
+      "source": "src/images/content/IMG_062_CHACHI FUTBOLT.jpg",
+      "width": 1700,
+      "height": 2338,
+      "aspect": 0.7271,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAQCdASoJAAwAA4BaJZgCdADcNyVIWiAAywGCQ8KHnqNhHlG4MP0Cxd035JUwFYGCesXv1aQFV8jEF3rAggAA"
+    },
+    "063": {
+      "key": "063",
+      "source": "src/images/content/IMG_063_B I MIRTA CLARA MIERC 30 JUN 10.jpg",
+      "width": 7015,
+      "height": 9921,
+      "aspect": 0.7071,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAACwAQCdASoIAAwAA4BaJaQAAp0MJ3MAAP7qquo03/K+o/l0KA6rLqznkJQfManRBAAAAA=="
+    },
+    "064": {
+      "key": "064",
+      "source": "src/images/content/IMG_064_BRIGADA BLANCO.jpg",
+      "width": 2080,
+      "height": 1835,
+      "aspect": 1.1335,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAQCdASoMAAsAA4BaJaQAD43tSYZCKAAA/rIvlDZFEC4HAmTSxmuXKoo5T9ipKu9Lth6gI7Ssr5K8mS1CWAOur2SVEJZw7/8CCnxh4QFSwlIQw2Tlh9V7gAA="
+    },
+    "065": {
+      "key": "065",
+      "source": "src/images/content/IMG_065 _ Juan Argañaráz.jpg",
+      "width": 2048,
+      "height": 1457,
+      "aspect": 1.4056,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADwAQCdASoMAAkAA4BaJaQAEPALLfZG0IgA/vc9O8bHvOWpg9cGBKI/Ik5UUoklABpsN6ZcPhJ7TNxNFn9n+gllgAA="
+    },
+    "066": {
+      "key": "066",
+      "source": "src/images/content/IMG_066 _ Fiscales Brigada II.jpg",
+      "width": 1024,
+      "height": 677,
+      "aspect": 1.5126,
+      "orientation": "landscape",
+      "printQuality": "reduced",
+      "avif": [
+        640
+      ],
+      "webp": [
+        640
+      ],
+      "lqip": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAQAgCdASoMAAgAA4BaJYgC7AEXe8I/9d0AAP5qsWN1mLxhLHjPoFkEN3PsUfAOumbYmrOaMQYX6nFjqhnv+dZ8o+8AAR+Txt1gdDWZFcAAAA=="
+    },
+    "067": {
+      "key": "067",
+      "source": "src/images/content/IMG_067_ Rodriguez Valiente Francisco Jose.jpg",
+      "width": 1599,
+      "height": 2319,
+      "aspect": 0.6895,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAAAwAgCdASoIAAwAA4BaJZwAAxU/9GsE3QchgAD+12F27UJM//Cb3OAbGkSv8rCOjrr6jOFBoHX0tNLVbVV1gAAA"
+    },
+    "068": {
+      "key": "068",
+      "source": "src/images/content/IMG_068_CÁRCEL COMÚN (3).jpeg",
+      "width": 1280,
+      "height": 720,
+      "aspect": 1.7778,
+      "orientation": "landscape",
+      "printQuality": "reduced",
+      "avif": [
+        640,
+        1280
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoMAAcAA4BaJZQCdADdH9d8QAD+eT7myHvkyEBrNra2zXTIxsllJdQ/yJFon4Wfs8L1LUC2tFzBIkAJdRRE7eQA"
+    },
+    "069": {
+      "key": "069",
+      "source": "src/images/content/IMG_069_ MARIN.jpg",
+      "width": 2048,
+      "height": 1639,
+      "aspect": 1.2495,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQAQCdASoMAAoAA4BaJaQAAn/Uf5gJgAD+9+0vjVE5G9VTbeft8ek/WfWADnWI85Do1Glm3cLo0D01DaJZs2k0MogELpXJy/4AAA=="
+    },
+    "070": {
+      "key": "070",
+      "source": "src/images/content/IMG_070_ B SENTENCIA I .JPG",
+      "width": 4320,
+      "height": 3240,
+      "aspect": 1.3333,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoMAAkAA4BaJYwCdADdJjVdi5AA/sFc+gOh2fLFMF8ly5/9k8at7z6WWkrc1WEAU07ai9BuCHPEC9TkmiKrHlSj5KphgAAA"
+    },
+    "071": {
+      "key": "071",
+      "source": "src/images/content/IMG_071 _sentencia brigada II.jpg",
+      "width": 2048,
+      "height": 1360,
+      "aspect": 1.5059,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADwAQCdASoMAAgAA4BaJYwCdAD0kWvJQ8AAzinMpiSoHwcVR72DVTFcF6YRJb/gcquGABjGu3zDDDey527ZAAaIAAA="
+    },
+    "072": {
+      "key": "072",
+      "source": "src/images/content/IMG_072_ MÁQUINA DE TORTURAR Y MATAR MIERC 25 AGO 10.jpg",
+      "width": 7015,
+      "height": 9921,
+      "aspect": 0.7071,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADwAQCdASoIAAwAA4BaJaQAAud1qpZ4gAAA/u3uKMQpHXpV2HtEYMLDuHqFchuLx6+MpjT/6DwAAA=="
+    },
+    "073": {
+      "key": "073",
+      "source": "src/images/content/IMG_073_Meza Ramon Esteban.jpg",
+      "width": 1536,
+      "height": 2407,
+      "aspect": 0.6381,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAACwAQCdASoIAAwAA4BaJaQAAxf6I2XgAP7wrxIAO+ZVi3z5IRoGAQ02tLgFRWY8aey6AAAA"
+    },
+    "074": {
+      "key": "074",
+      "source": "src/images/content/IMG_074_B II dra Chiarotti y Lic  Zurutuza.JPG",
+      "width": 4156,
+      "height": 2780,
+      "aspect": 1.495,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADwAQCdASoMAAgAA4BaJQBOgBu2hTqKGIgA+Wj3rj27/vnEuTKFLJAxcSv1XAbgGuET0ApTWjpnK0a9uf8lQ1H/tO/ERlAIksTgSeoIcAAAAA=="
+    },
+    "075": {
+      "key": "075",
+      "source": "src/images/content/IMG_075_ Sentencia Brigada I 2010.JPG",
+      "width": 3264,
+      "height": 2448,
+      "aspect": 1.3333,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADQAQCdASoMAAkAA4BaJZwAAucjYBDBAAD+9KAlc0kTvlf6Zv1Cbks+XvEGR+RkxWFu/ZBTY9gbO/AA"
+    },
+    "076": {
+      "key": "076",
+      "source": "src/images/content/IMG_076 _ 24.3.20 CASA X MEMORIA  (2).jpg",
+      "width": 3576,
+      "height": 2192,
+      "aspect": 1.6314,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADwAQCdASoMAAcAA4BaJZQAAv1xk9c+N0AA/cOHDr8lY86a6y8J01rIdsjMWgkdR4u8W9xVGB+GIesj78nhRdczpZgAAA=="
+    },
+    "077": {
+      "key": "077",
+      "source": "src/images/content/IMG_077_ MANDER GENOCIDA CÁRCEL COMÚN.jpg",
+      "width": 815,
+      "height": 540,
+      "aspect": 1.5093,
+      "orientation": "landscape",
+      "printQuality": "low",
+      "avif": [
+        640
+      ],
+      "webp": [
+        640
+      ],
+      "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAQCdASoMAAgAA4BaJQBOgCKd7hzUIAD+15qtVJx89M6LsQuGAs8HmRM6R9Wco5pJJ8SBsTZImRG3ZUNEeiZzp2ElMv5oZnAoAAAA"
+    },
+    "078bis": {
+      "key": "078bis",
+      "source": "src/images/content/IMG_078 bis_ BRIGADA II_Manader Patetta RValiente Ibarra.jpg",
+      "width": 1467,
+      "height": 1022,
+      "aspect": 1.4354,
+      "orientation": "landscape",
+      "printQuality": "reduced",
+      "avif": [
+        640,
+        1280
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADQAQCdASoMAAgAA4BaJQBOgB9MfgnpAADylKxjbIo/ilM1xNDxckRctmofpbrLIJ7WKWu+pOPRoDnAAaB8LsZhhsAAAA=="
+    },
+    "078": {
+      "key": "078",
+      "source": "src/images/content/IMG_078_ CASA X MEMO 2012.jpg",
+      "width": 480,
+      "height": 640,
+      "aspect": 0.75,
+      "orientation": "portrait",
+      "printQuality": "low",
+      "avif": [
+        640
+      ],
+      "webp": [
+        640
+      ],
+      "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAABwAQCdASoJAAwAA4BaJaQAAlHNQAD+4AvK9f/3kP7sdI6cwPKYIbncx4TVbafRLL7+F2bqOVf2wcAA"
+    },
+    "079": {
+      "key": "079",
+      "source": "src/images/content/IMG_079_sentencia brigada II3.jpg",
+      "width": 2048,
+      "height": 1360,
+      "aspect": 1.5059,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAQCdASoMAAgAA4BaJYwCdAD2O+2TMwAA/vL+QK1mKV+M77gwjejAtidh4neWvQiLr5C9Nc1cBYAA"
+    },
+    "080": {
+      "key": "080",
+      "source": "src/images/content/IMG_080_ SENTENCIA 2 B I .JPG",
+      "width": 3264,
+      "height": 2448,
+      "aspect": 1.3333,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADQAQCdASoMAAkAA4BaJaACdADcPTFagAD+Rrb/F+TnYmKlTkpaJ5zV60cLPr9uk5OsJiclw7iORroiW+ehpAvTaDjoQ3UgF27YMXJF+3leqOtELGaAAA=="
+    },
+    "081": {
+      "key": "081",
+      "source": "src/images/content/IMG_081_TAPAS EL DIARIO DE LA REG.jpg",
+      "width": 3508,
+      "height": 4961,
+      "aspect": 0.7071,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACwAQCdASoIAAwAA4BaJQBfnCHMKEGAAP7uPBD66kTpk5f8tb2ywPWgVkgXOPJ0kNpREIDmB0AAAA=="
+    },
+    "082": {
+      "key": "082",
+      "source": "src/images/content/IMG_082_SENTENCIA B I.jpg",
+      "width": 3437,
+      "height": 2448,
+      "aspect": 1.404,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADQAQCdASoMAAkAA4BaJaQAAt0Dso2JNAD+4MuT8JjDXfc+0dEnfsiZkc5YzVFY+CDF6qP4S8j0J32xkfrLQ4cDXPnfIN7zX8Jb4UZa2tAAAA=="
+    },
+    "083": {
+      "key": "083",
+      "source": "src/images/content/IMG_083_planos 03.jpg",
+      "width": 2244,
+      "height": 3189,
+      "aspect": 0.7037,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADQAQCdASoIAAwAA4BaJQBOgCHNDAWJgAD+4AsQ3mJ1AkbBocFxQfi5u58WQeF8usYaJqc6bG76twmlvidNhmcKYPcaS++EcoU9pohCyRAAAA=="
+    },
+    "084": {
+      "key": "084",
+      "source": "src/images/content/IMG_084_planos 01.jpg",
+      "width": 2244,
+      "height": 3189,
+      "aspect": 0.7037,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADwAQCdASoIAAwAA4BaJZQAD4QtUwBXoAAA+7zxPrkb9PL53JJYLfbWts3R+PaYsSvaR8Q2PHQO65HVisUorT8CxAAAAA=="
+    },
+    "085": {
+      "key": "085",
+      "source": "src/images/content/IMG_085_planos 02.jpg",
+      "width": 2244,
+      "height": 3189,
+      "aspect": 0.7037,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAAAwAQCdASoIAAwAA4BaJaQAA3AA/vQQ/U3Hmd9DaaEYtwee1wyUTIAA"
+    },
+    "086": {
+      "key": "086",
+      "source": "src/images/content/IMG_086_B I  MARÍA PRESSA DE PARODI OCAMPO MIERC 11 AGO 10.jpg",
+      "width": 7015,
+      "height": 9921,
+      "aspect": 0.7071,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAACQAQCdASoIAAwAA4BaJaQAAuUkPgAA/vH8Pi6MawEiOLoL6d+rbxhB/CDJNDMraAAAAA=="
+    },
+    "087": {
+      "key": "087",
+      "source": "src/images/content/IMG_087_Marin Jose.jpg",
+      "width": 1508,
+      "height": 2067,
+      "aspect": 0.7296,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAQCdASoJAAwAA4BaJaQAAudFbSycrAAA/vKFWnU8QoRQx1RBQSfKSmc3R6Hx+U9SbDAFMmxa1XjMGiSIAAAA"
+    },
+    "088": {
+      "key": "088",
+      "source": "src/images/content/IMG_088_ CASA X MEMO 08.JPG",
+      "width": 1024,
+      "height": 681,
+      "aspect": 1.5037,
+      "orientation": "landscape",
+      "printQuality": "reduced",
+      "avif": [
+        640
+      ],
+      "webp": [
+        640
+      ],
+      "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAQAgCdASoMAAgAA4BaJQBOgCPOq4JWAGXAAP6tqVGvojz07+7yyCUC254K56DLUOgBVDqCVd2/zNbqVumKEYaNYMttggAA"
+    },
+    "089": {
+      "key": "089",
+      "source": "src/images/content/IMG_089_ Hall 2009.JPG",
+      "width": 3264,
+      "height": 2448,
+      "aspect": 1.3333,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAQCdASoMAAkAA4BaJQBOj+ACdtx2HMAAzab4BRXKvxEf34veN6B2yKfze6ZRdVHfrDaJceeBnR3axuMw/VID3pNFOEvf9MNjtS11804nEJJNsAA="
+    },
+    "090": {
+      "key": "090",
+      "source": "src/images/content/IMG_090_ bicis y memoria 2010.jpg",
+      "width": 2309,
+      "height": 3479,
+      "aspect": 0.6637,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACQAQCdASoIAAwAA4BaJQAAXLMzagAA/vCs+hnYWSm2u9gV4aQmogSH+6AhOX3QEG0XJB56SQiZLQXaCmk6FhARhRJAAA=="
+    },
+    "091": {
+      "key": "091",
+      "source": "src/images/content/IMG_091_ MEZA DIJO QUE ME TENÍAN QUE MATAR VIER 13 AGO 10 copia.jpg",
+      "width": 7015,
+      "height": 9921,
+      "aspect": 0.7071,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACQAQCdASoIAAwAA4BaJaQAAuUj2YAA/urGPegwlQA/k8W+vCheeinIZEr8p9VxImlxG57GkAAAAA=="
+    },
+    "092": {
+      "key": "092",
+      "source": "src/images/content/IMG_092_planos 03 3D.png",
+      "width": 2154,
+      "height": 764,
+      "aspect": 2.8194,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4WAoAAAAQAAAACwAAAwAAQUxQSDEAAAAAqZ5lWEBDSDWN/6kAyP/9//////ju/9kXl+ja4OPf8v32/O2ECgwKFiMVWXtorCsTAFZQOCA0AAAAkAEAnQEqDAAEAAOAWiWUAAJcJcswAP7CF66+jTlAtuM7FkIt4w3CEPp56PDjyAmjvAAAAA=="
+    },
+    "093": {
+      "key": "093",
+      "source": "src/images/content/IMG_093_informe plano 1.jpg",
+      "width": 827,
+      "height": 1169,
+      "aspect": 0.7074,
+      "orientation": "portrait",
+      "printQuality": "reduced",
+      "avif": [
+        640
+      ],
+      "webp": [
+        640
+      ],
+      "lqip": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAACwAQCdASoIAAwAA4BaJZwAAudR7lAAAP6b8v/feve7K1s7K6mKupYTOoqgZblWMnYdjrNHv/BIrV72mkq6BI4AAAA="
+    },
+    "094": {
+      "key": "094",
+      "source": "src/images/content/IMG_094_B I NI EL CORTE DE LUZ FRENÓ LA AUDIENCIA JUEV 20 DE MAY 10.jpg",
+      "width": 7015,
+      "height": 9921,
+      "aspect": 0.7071,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAQCdASoIAAwAA4BaJaQAAuWnk4AAAP7q7MPO06u1uqGF2B7W2o51t+iRdY0SPzZEBynHtyRzKd6S5zv0mtL3zTwAAA=="
+    },
+    "095": {
+      "key": "095",
+      "source": "src/images/content/IMG_095_Izquierda 3D Sotanos.jpg",
+      "width": 1024,
+      "height": 768,
+      "aspect": 1.3333,
+      "orientation": "landscape",
+      "printQuality": "reduced",
+      "avif": [
+        640
+      ],
+      "webp": [
+        640
+      ],
+      "lqip": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoMAAkAA4BaJaQAAupBfQVgAAD++cfALUWSZx8Pf8MxmDQj02wXSf11eWPj8orf1GtocoAAAAA="
+    },
+    "096": {
+      "key": "096",
+      "source": "src/images/content/IMG_096_br I.jpg",
+      "width": 7015,
+      "height": 9921,
+      "aspect": 0.7071,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADQAQCdASoIAAwAA4BaJaQAAucWg+liAAD+8KM9H6k++8tLm2dViPFxsrGtDqa7IcUHZlyX0mdTZ3boHvsDF8UAAAA="
+    },
+    "097": {
+      "key": "097",
+      "source": "src/images/content/IMG_097_ IMPUTADOS_ Brigada II.JPG",
+      "width": 3648,
+      "height": 2736,
+      "aspect": 1.3333,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAACwAQCdASoMAAkAA4BaJQBOgB6oDYOwAPkSbw0P8o+aRhqfiORAnvjwMg/oerFnJEFUGdS6mMxo8d7ThThEPSNPDAA="
+    },
+    "098": {
+      "key": "098",
+      "source": "src/images/content/IMG_098_CASA POR LA MEMORIA COLOR.jpg",
+      "width": 803,
+      "height": 715,
+      "aspect": 1.1231,
+      "orientation": "landscape",
+      "printQuality": "low",
+      "avif": [
+        640
+      ],
+      "webp": [
+        640
+      ],
+      "lqip": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAABQAgCdASoMAAsAA4BaJbACdH8AGBjL5ff3hAAA/my/tr8qRpMFGyagXG9L3WsP8irFyresa67PNiGXUxhESe3BAynJhLDvuqFxULRB3snSS7k75OkOJiacnISCHyZw1AAAAA=="
+    },
+    "099": {
+      "key": "099",
+      "source": "src/images/content/IMG_099 _ antes y despues.jpg",
+      "width": 1287,
+      "height": 1513,
+      "aspect": 0.8506,
+      "orientation": "portrait",
+      "printQuality": "reduced",
+      "avif": [
+        640,
+        1280
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADwAQCdASoKAAwAA4BaJZgCdADbak96agAA+P3vyU5Pt6B9q7inFjH8K/4NnRqV3iZN68ZNc1ZMUldz1/Nx1pTJFsxUY4kaqlAdvNGiEJtVgFS50O2a640lwRnWEmBXV+VroAAA"
+    }
+  },
+  "edificio": {
+    "corte-transversal-del-plano-3d": {
+      "key": "corte-transversal-del-plano-3d",
+      "source": "src/edificio/corte transversal del plano 3d.png",
+      "width": 2154,
+      "height": 764,
+      "aspect": 2.8194,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4WAoAAAAQAAAACwAAAwAAQUxQSDEAAAAAqZ5lWEBDSDWN/6kAyP/9//////ju/9kXl+ja4OPf8v32/O2ECgwKFiMVWXtorCsTAFZQOCA0AAAAkAEAnQEqDAAEAAOAWiWUAAJcJcswAP7CF66+jTlAtuM7FkIt4w3CEPp56PDjyAmjvAAAAA=="
+    },
+    "foto-entrada": {
+      "key": "foto-entrada",
+      "source": "src/edificio/foto entrada.png",
+      "width": 756,
+      "height": 946,
+      "aspect": 0.7992,
+      "orientation": "portrait",
+      "printQuality": "reduced",
+      "avif": [
+        640
+      ],
+      "webp": [
+        640
+      ],
+      "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAQAgCdASoKAAwAA4BaJZwAAxRGzsZNfFQAAPajKkaQPWikrEONwsjLFDvquOTidwwfZGeZpLwUcujASeugdXbJjRCuX8MjbeAHEf3Uxb9oac5brAA="
+    },
+    "foto-pasillo": {
+      "key": "foto-pasillo",
+      "source": "src/edificio/foto pasillo.png",
+      "width": 1042,
+      "height": 1386,
+      "aspect": 0.7518,
+      "orientation": "portrait",
+      "printQuality": "reduced",
+      "avif": [
+        640,
+        1280
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAQCdASoJAAwAA4BaJZQCdADdib5Y5XAA/fiQRNhknWv6O16Ra1NgVldkwuokm43Nh4pG+3Hm9/kAAAA="
+    },
+    "fotografia-del-hall-de-entrada": {
+      "key": "fotografia-del-hall-de-entrada",
+      "source": "src/edificio/fotografía del hall de entrada.JPG",
+      "width": 3264,
+      "height": 2448,
+      "aspect": 1.3333,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAQCdASoMAAkAA4BaJQBOj+ACdtx2HMAAzab4BRXKvxEf34veN6B2yKfze6ZRdVHfrDaJceeBnR3axuMw/VID3pNFOEvf9MNjtS11804nEJJNsAA="
+    },
+    "frente-de-la-fachada-por-marcelo-t-de-alvear": {
+      "key": "frente-de-la-fachada-por-marcelo-t-de-alvear",
+      "source": "src/edificio/frente de la fachada por marcelo t de alvear.jpg",
+      "width": 1781,
+      "height": 1772,
+      "aspect": 1.0051,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAQAgCdASoMAAwAA4BaJZwAD4xvt90G26rAAP7thMWy/xEcFIc3OLidEtu/ptZ1o4e6TDwIldkZdgY8zhzv3LS6hsKUZl4bJFq5/sBq9KQAAA=="
+    },
+    "izquierda": {
+      "key": "izquierda",
+      "source": "src/edificio/izquierda.png",
+      "width": 1188,
+      "height": 1254,
+      "aspect": 0.9474,
+      "orientation": "portrait",
+      "printQuality": "reduced",
+      "avif": [
+        640
+      ],
+      "webp": [
+        640
+      ],
+      "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAwAgCdASoLAAwAA4BaJaQAD4qReFH5wzE4AAD+9rRW//m24PlRf1fGcZmlKT0nMm33H2fWRtNu/ydoUJHA2SMOtpooLFoKb4PKNjYSVRplrwVWraHHnCzAAAA="
+    },
+    "modelo-3d-con-ubicacion-de-los-sotanos": {
+      "key": "modelo-3d-con-ubicacion-de-los-sotanos",
+      "source": "src/edificio/modelo 3d con ubicación de los sótanos.png",
+      "width": 2400,
+      "height": 1098,
+      "aspect": 2.1858,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAACwAQCdASoMAAUAA4BaJaQAAlc8oQAAAP72+pwUbEpQ5Cz+OL5KmS+444f4bCXoHkPc85SSAAA="
+    },
+    "modelo-3d-de-la-planta-baja": {
+      "key": "modelo-3d-de-la-planta-baja",
+      "source": "src/edificio/modelo 3d de la planta baja.jpg",
+      "width": 2244,
+      "height": 3189,
+      "aspect": 0.7037,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADwAQCdASoIAAwAA4BaJZQAD4QtUwBXoAAA+7zxPrkb9PL53JJYLfbWts3R+PaYsSvaR8Q2PHQO65HVisUorT8CxAAAAA=="
+    },
+    "modelo-3d-planta-alta": {
+      "key": "modelo-3d-planta-alta",
+      "source": "src/edificio/modelo 3d planta alta.png",
+      "width": 2590,
+      "height": 1312,
+      "aspect": 1.9741,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADQAQCdASoMAAYAA4BaJZwAAl0Y3kYbiAD+rdueWGKJPxCK7NuEzxAw/OrgTbZF3RbYr4ne2DsAlmZ4aLivorgAAAA="
+    },
+    "modelo-3d-planta-baja-con-entrepiso": {
+      "key": "modelo-3d-planta-baja-con-entrepiso",
+      "source": "src/edificio/modelo 3d planta baja con entrepiso.png",
+      "width": 2426,
+      "height": 1242,
+      "aspect": 1.9533,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAACQAQCdASoMAAYAA4BaJaQAAlj9ZhgA/Dv6qHOhBmz53JfgvsoefLqDRgNmpoeWDQp++1pp1WivSETdEAAAAA=="
+    },
+    "modelo-3d-planta-baja": {
+      "key": "modelo-3d-planta-baja",
+      "source": "src/edificio/modelo 3d planta baja.png",
+      "width": 2318,
+      "height": 1268,
+      "aspect": 1.8281,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQAgCdASoMAAcAA4BaJZQAD4cu1I10lpsAAPa+jN5pXQ7jfgJS3lEdbfc2TfFJszMNLjNXS2mcOseg9wEQmaZFf+iJrXiAAAA="
+    },
+    "plano-con-funcionalidad": {
+      "key": "plano-con-funcionalidad",
+      "source": "src/edificio/plano con funcionalidad.png",
+      "width": 1906,
+      "height": 1014,
+      "aspect": 1.8797,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAACQAQCdASoMAAYAA4BaJaQAApY+ZFAA/vBywxCxczF8ulIjN0xsVvINuE5FblNQkAAAAA=="
+    },
+    "plano-de-la-planta-baja": {
+      "key": "plano-de-la-planta-baja",
+      "source": "src/edificio/plano de la planta baja.jpg",
+      "width": 2244,
+      "height": 3189,
+      "aspect": 0.7037,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAAAwAQCdASoIAAwAA4BaJaQAA3AA/vQQ/U3Hmd9DaaEYtwee1wyUTIAA"
+    },
+    "vista-aerea-con-techos": {
+      "key": "vista-aerea-con-techos",
+      "source": "src/edificio/vista aerea con techos.png",
+      "width": 2594,
+      "height": 1294,
+      "aspect": 2.0046,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoMAAYAA4BaJZQAAxPusiCAaAD+nCizvg+g67jHl6Q26ZmBZHrwNo+CiFKgXmtcGsxToKbpt3Akdme0djyUgAAA"
+    },
+    "vista-cabellera-planta-baja": {
+      "key": "vista-cabellera-planta-baja",
+      "source": "src/edificio/vista cabellera planta baja.jpg",
+      "width": 2114,
+      "height": 2122,
+      "aspect": 0.9962,
+      "orientation": "portrait",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAQCdASoMAAwAA4BaJaQAD5CNqVO2gIAA/teR122+IHtzF3N1xOBF1dXeU1hNRMTe5HibV2TCEgRrhYxOcH6cppVdb48oDvFlUhKdTqBM3gAA"
+    },
+    "vista-de-los-sotanos": {
+      "key": "vista-de-los-sotanos",
+      "source": "src/edificio/vista de los sótanos.jpg",
+      "width": 590,
+      "height": 590,
+      "aspect": 1,
+      "orientation": "square",
+      "printQuality": "low",
+      "avif": [
+        590
+      ],
+      "webp": [
+        590
+      ],
+      "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAwAgCdASoMAAwAA4BaJZgCdAEQ+r2SRtqLAAD+7irjj+JsW0peG5pv/reOPu2egGoDr4oNyEf03UcRrfWuNPYs3LjTtrqLlrzPmBZ0vL9N1vnHQJDfQgtmT1IBsx4bbehoX5wFQhckAA=="
+    },
+    "vista-del-frente": {
+      "key": "vista-del-frente",
+      "source": "src/edificio/vista del frente.png",
+      "width": 2486,
+      "height": 1338,
+      "aspect": 1.858,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADQAQCdASoMAAYAA4BaJYwCdAEO/brIAAD+Rx+ivuLppGmknEks4ON3boHUuRgBKmCp3yZgAp5v/4qySp7SoAAA"
+    },
+    "vista-derecha": {
+      "key": "vista-derecha",
+      "source": "src/edificio/vista derecha.png",
+      "width": 2576,
+      "height": 864,
+      "aspect": 2.9815,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADQAQCdASoMAAQAA4BaJaQAA1V0dDEUgAD+qc/9C1T93wQBVcV50IuG26fD2TMAAAA="
+    },
+    "vista-desde-atras": {
+      "key": "vista-desde-atras",
+      "source": "src/edificio/vista desde atras.png",
+      "width": 2534,
+      "height": 1524,
+      "aspect": 1.6627,
+      "orientation": "landscape",
+      "printQuality": "full",
+      "avif": [
+        640,
+        1280,
+        2048
+      ],
+      "webp": [
+        640,
+        1280
+      ],
+      "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQAgCdASoMAAcAA4BaJZwAD4ftZz709beAAP7zV2k1qfOtbk739D3Ow9k1beyyiUeBSS63hIKLXJqy/4gW21v32HiGR3pf84PfQgAA"
+    }
+  }
+}

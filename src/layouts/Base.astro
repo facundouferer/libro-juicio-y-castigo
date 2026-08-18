@@ -1,0 +1,66 @@
+---
+import '@fontsource/oswald/500.css';
+import '@fontsource/oswald/600.css';
+import '@fontsource/oswald/700.css';
+import '@fontsource-variable/source-sans-3';
+import '../styles/cpm.css';
+import '../styles/book.css';
+import { BOOK } from '../lib/site.mjs';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** The reading-position memory and the scroll hint belong to the book only. */
+  isBook?: boolean;
+}
+
+const { title, description = BOOK.description, isBook = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const cover = new URL(`${import.meta.env.BASE_URL.replace(/\/$/, '')}/img/fondo-tapa-1600.webp`, Astro.site).href;
+---
+
+<!doctype html>
+<html lang="es-AR" data-base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#1e81b0" />
+
+    <meta property="og:type" content="book" />
+    <meta property="og:site_name" content={`${BOOK.title} (${BOOK.volume})`} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={cover} />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`} type="image/svg+xml" />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Book',
+        name: `${BOOK.title} (${BOOK.volume})`,
+        alternateName: BOOK.subtitle,
+        description: BOOK.description,
+        inLanguage: 'es-AR',
+        publisher: { '@type': 'Organization', name: BOOK.publisher },
+        about: 'Juicios por crímenes de lesa humanidad en Chaco, Argentina',
+      })}
+    />
+  </head>
+
+  <body data-book={isBook ? 'true' : undefined}>
+    <a class="skip-link btn btn-primary" href="#contenido">Ir al contenido</a>
+    <div class="progress" aria-hidden="true"></div>
+    <slot />
+    <script>
+      import '../scripts/book.ts';
+    </script>
+  </body>
+</html>

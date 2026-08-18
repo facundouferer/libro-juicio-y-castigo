@@ -1,0 +1,126 @@
+---
+/**
+ * The colophon that closes the book: the link into the building section, the
+ * download offer once more, and the photographic credits.
+ *
+ * The credit list is derived from the epigraphs themselves rather than typed
+ * out — every attribution the archive recorded appears here, and any image
+ * whose credit line the source left blank is counted rather than invented.
+ */
+import Icon from './Icon.astro';
+import { withBase, BOOK } from '../lib/site.mjs';
+import captions from '../data/captions.json';
+
+const credits = new Map<string, number>();
+let uncredited = 0;
+for (const image of captions.images) {
+  if (!image.credit) {
+    uncredited += 1;
+    continue;
+  }
+  const name = image.credit.replace(/^(gentileza|archivo)\b\s*/i, (m) => m.trim()).trim();
+  credits.set(name, (credits.get(name) ?? 0) + 1);
+}
+const ordered = [...credits.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'es'));
+const year = new Date().getFullYear();
+---
+
+<footer class="colophon" data-pagefind-ignore>
+  <div class="colophon-inner">
+    <section class="colophon-cta">
+      <h2><span class="hl">La casa</span></h2>
+      <p>
+        La ex Brigada de Investigaciones de la Policía del Chaco es hoy la Casa por la Memoria. Planos,
+        cortes y modelos tridimensionales del edificio donde ocurrió todo lo que cuenta este libro.
+      </p>
+      <a class="btn btn-primary" href={withBase('/edificio')}>
+        Recorrer el edificio
+        <Icon name="arrowRight" size={17} />
+      </a>
+    </section>
+
+    <section class="colophon-credits">
+      <h3>Créditos fotográficos</h3>
+      <ul>
+        {ordered.map(([name, count]) => (
+          <li>
+            <span>{name}</span>
+            <b>{count}</b>
+          </li>
+        ))}
+        {uncredited > 0 && (
+          <li class="is-pending">
+            <span>Sin crédito asentado en el archivo</span>
+            <b>{uncredited}</b>
+          </li>
+        )}
+      </ul>
+    </section>
+
+    <section class="colophon-meta">
+      <p><b>{BOOK.title} ({BOOK.volume})</b></p>
+      <p>{BOOK.subtitle} · {BOOK.kicker}</p>
+      <p class="text-muted">{BOOK.publisher} · {year}</p>
+    </section>
+  </div>
+</footer>
+
+<style>
+  .colophon {
+    background: var(--color-neutral-900);
+    color: var(--color-neutral-200);
+    padding: clamp(56px, 10vh, 112px) var(--space-6);
+  }
+  .colophon-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    gap: clamp(32px, 5vw, 64px);
+    grid-template-columns: 1.4fr 1fr;
+  }
+  .colophon h2 {
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.5;
+    margin-bottom: var(--space-4);
+  }
+  .colophon h3 {
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    color: var(--color-accent-300);
+    margin-bottom: var(--space-3);
+  }
+  .colophon-cta p {
+    max-width: 52ch;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+  }
+  .colophon-credits ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+  }
+  .colophon-credits li {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+    padding: 5px 0;
+    border-bottom: 1px solid color-mix(in srgb, #fff 10%, transparent);
+  }
+  .colophon-credits li span { flex: 1; }
+  .colophon-credits li b { color: var(--color-accent-300); font-variant-numeric: tabular-nums; }
+  .colophon-credits li.is-pending span { color: var(--color-neutral-500); font-style: italic; }
+  .colophon-meta {
+    grid-column: 1 / -1;
+    padding-top: var(--space-6);
+    border-top: 1px solid color-mix(in srgb, #fff 14%, transparent);
+    font-size: 14px;
+  }
+  .colophon-meta p { margin: 0 0 3px; }
+  .colophon-meta .text-muted { color: var(--color-neutral-500); }
+
+  @media (max-width: 900px) {
+    .colophon-inner { grid-template-columns: 1fr; }
+  }
+</style>

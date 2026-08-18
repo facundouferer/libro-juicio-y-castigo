@@ -1,0 +1,294 @@
+/*
+ * CPM — design-system tokens and component classes.
+ *
+ * Mirrors the CPM design system project. Two deliberate departures from the
+ * source: the Google Fonts @import is gone (the faces are self-hosted through
+ * @fontsource, imported from the layout) and the `.washed` treatment is milder
+ * on archival material — several of these photographs are already degraded
+ * scans and a grayscale pass on top reads as damage rather than as style.
+ *
+ * This file is the source of truth for the system's look. Site-specific layout
+ * lives in book.css and takes every value from the variables declared here.
+ */
+
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #fafbfc;
+  --color-text: #333333;
+  --color-accent: #1e81b0;
+  --color-accent-2: #e28743;
+  --color-divider: color-mix(in srgb, #333333 18%, transparent);
+
+  /* Tonal ramps — generated in OKLCH on one shared lightness scale, so the
+     same step of any role matches the others in visual value. */
+  --color-neutral-100: #f7f8f9;
+  --color-neutral-200: #eceef0;
+  --color-neutral-300: #d9dcdf;
+  --color-neutral-400: #b8bdc2;
+  --color-neutral-500: #979da3;
+  --color-neutral-600: #767c83;
+  --color-neutral-700: #575d63;
+  --color-neutral-800: #3d4247;
+  --color-neutral-900: #26292c;
+
+  --color-accent-100: #eaf4f9;
+  --color-accent-200: #cbe4f0;
+  --color-accent-300: #9fcde3;
+  --color-accent-400: #62aecf;
+  --color-accent-500: #2a90bf;
+  --color-accent-600: #196b93;
+  --color-accent-700: #145575;
+  --color-accent-800: #0f3f57;
+  --color-accent-900: #0a2b3b;
+
+  --color-accent-2-100: #fdf1e8;
+  --color-accent-2-200: #fadfc9;
+  --color-accent-2-300: #f5c49b;
+  --color-accent-2-400: #eda66d;
+  --color-accent-2-500: #e28743;
+  --color-accent-2-600: #c06d31;
+  --color-accent-2-700: #9a5525;
+  --color-accent-2-800: #723d1a;
+  --color-accent-2-900: #4c2810;
+
+  --font-heading: 'Oswald', 'Arial Narrow', system-ui, sans-serif;
+  --font-heading-weight: 700;
+  --font-body: 'Source Sans 3 Variable', 'Source Sans 3', system-ui, sans-serif;
+
+  --space-1: 4.4px;
+  --space-2: 8.8px;
+  --space-3: 13.2px;
+  --space-4: 17.6px;
+  --space-6: 26.4px;
+  --space-8: 35.2px;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+
+  --shadow-sm: 0 1px 2px color-mix(in srgb, #26292c 12%, transparent);
+  --shadow-md: 0 4px 12px color-mix(in srgb, #26292c 14%, transparent);
+  --shadow-lg: 0 14px 36px color-mix(in srgb, #26292c 20%, transparent);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  line-height: 1.04;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  margin: 0 0 var(--space-2);
+}
+h1 { font-size: 46px; }
+h2 { font-size: 34px; }
+h3 { font-size: 26px; }
+h4 { font-size: 20px; }
+h5 { font-size: 16px; }
+h6 { font-size: 13px; letter-spacing: 0.08em; }
+
+p { margin: 0 0 var(--space-3); }
+a { color: var(--color-accent); text-underline-offset: 3px; }
+img { display: block; max-width: 100%; }
+figure { margin: 0; }
+figcaption {
+  font-size: 11px;
+  margin-top: var(--space-1);
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+}
+.text-muted { color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
+
+/* Archival scans carry their own damage; a light contrast lift unifies the set
+   without the grayscale pass the source system applies to modern photography. */
+.washed { filter: contrast(1.04) saturate(0.94); }
+
+.hr {
+  height: 1px;
+  border: 0;
+  margin: var(--space-4) 0;
+  background: var(--color-divider);
+}
+
+/* — buttons — */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  font-size: 13px;
+  line-height: 1.2;
+  color: var(--color-text);
+  background: transparent;
+  border: 1px solid transparent;
+  padding: calc(var(--space-2) * 0.85) var(--space-3);
+  border-radius: 999px;
+}
+.btn svg { display: block; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-primary { background: var(--color-accent); color: var(--color-bg); }
+.btn-primary:hover { background: var(--color-accent-600); }
+.btn-primary:active { background: var(--color-accent-700); }
+.btn-secondary { border-color: var(--color-divider); }
+.btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
+.btn-ghost { color: var(--color-accent); padding-inline: var(--space-1); }
+.btn-ghost:hover { background: color-mix(in srgb, var(--color-accent) 10%, transparent); }
+.btn-ghost:active { background: color-mix(in srgb, var(--color-accent) 18%, transparent); }
+.btn-icon { width: 34px; height: 34px; padding: 0; }
+.btn-block { width: 100%; margin-top: var(--space-2); }
+
+/* — forms — */
+.field > label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 5px;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+.input {
+  width: 100%;
+  min-height: 36px;
+  padding: 6px 14px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--color-text);
+  caret-color: var(--color-accent);
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider);
+  border-radius: 999px;
+}
+.input:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transparent); }
+.input:focus-visible { border-color: var(--color-accent); outline-offset: 0; }
+
+/* — cards — */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border-radius: calc(var(--radius-lg) * 1.15);
+  background: var(--color-surface);
+}
+.card-kicker {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+.card-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  font-size: 17px;
+  line-height: 1.2;
+}
+.card-body { margin: 0; font-size: 13px; opacity: 0.8; flex: 1; }
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: color-mix(in srgb, var(--color-text) 50%, transparent);
+}
+.elev-sm { box-shadow: var(--shadow-sm); }
+.elev-md { box-shadow: var(--shadow-md); }
+.elev-lg { box-shadow: var(--shadow-lg); }
+
+/* — tags — */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.tag-accent { background: var(--color-accent-100); color: var(--color-accent-800); }
+.tag-accent-2 { background: var(--color-accent-2-100); color: var(--color-accent-2-800); }
+.tag-neutral { background: var(--color-neutral-100); color: var(--color-neutral-800); }
+.tag-outline { border: 1px solid var(--color-accent); color: var(--color-accent); }
+
+/* — tables — */
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.table th {
+  text-align: left;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+  padding: var(--space-2);
+  border-bottom: 1px solid var(--color-divider);
+}
+.table td {
+  padding: var(--space-2);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+}
+.table tbody tr:hover { background: color-mix(in srgb, var(--color-text) 4%, transparent); }
+
+/* — highlight bars: the system's signature. A condensed uppercase heading sits
+   on a solid accent band that hugs each line (multi-line safe). — */
+.hl,
+.hl-soft {
+  display: inline;
+  padding: 0.06em 0.28em 0.1em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.hl { background: var(--color-accent); color: var(--color-bg); }
+.hl-soft { background: var(--color-accent-300); color: var(--color-text); }
+
+/* — editorial text roles — */
+.eyebrow {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 20px;
+  line-height: 1.1;
+  color: var(--color-accent);
+}
+.lead {
+  font-weight: 700;
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.35;
+  max-width: 34ch;
+}
+.byline { font-weight: 700; color: var(--color-accent-600); }
+.pullquote {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: none;
+  font-size: 34px;
+  line-height: 1.1;
+  color: var(--color-accent);
+  margin: 0 0 var(--space-3);
+  text-wrap: pretty;
+}
+.pullquote-source { font-size: 15px; line-height: 1.4; max-width: 60ch; }

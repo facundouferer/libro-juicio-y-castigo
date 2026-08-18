@@ -1,0 +1,1706 @@
+{
+  "sections": [
+    {
+      "id": "inicio",
+      "title": "Inicio",
+      "part": null,
+      "blurb": "La editorial de los organismos de derechos humanos, la declaración de propósitos y los antecedentes de los tres procesos."
+    },
+    {
+      "id": "una-casa-con-una-sala-negra",
+      "title": "Una casa con una Sala Negra",
+      "part": "PRIMERA PARTE",
+      "partNumber": 1,
+      "blurb": "Las crónicas y los textos que aluden a las denuncias sobre torturas en la Brigada, entendida como sitio y como documento histórico, sede del dispositivo del terror."
+    },
+    {
+      "id": "violencia-sexual-como-crimen-de-lesa-humanidad",
+      "title": "La violencia sexual como crimen de lesa humanidad",
+      "part": "SEGUNDA PARTE",
+      "partNumber": 2,
+      "blurb": "El desarrollo del Programa de Asistencia a Víctimas del Terrorismo de Estado y el modo en que se conjugaron la salud mental y el papel protagónico de las y los sobrevivientes que testimoniaron en los juicios."
+    },
+    {
+      "id": "desaparecer-en-la-brigada",
+      "title": "Desaparecer en la Brigada",
+      "part": "TERCERA PARTE",
+      "partNumber": 3,
+      "blurb": "Crónicas y textos sobre los testimonios que aludieron al plan sistemático de desapariciones forzadas."
+    },
+    {
+      "id": "la-patota-de-la-brigada",
+      "title": "La patota de la Brigada",
+      "part": "CUARTA PARTE",
+      "partNumber": 4,
+      "blurb": "Registros de las participaciones de los genocidas imputados y del modo en que les fueron reconocidas todas las garantías judiciales propias de un juicio democrático, junto a la evidencia de su nulo arrepentimiento."
+    },
+    {
+      "id": "juicio-y-castigo",
+      "title": "Juicio y Castigo",
+      "part": "QUINTA PARTE",
+      "partNumber": 5,
+      "blurb": "El desenlace: los alegatos de las partes, las respectivas condenas y una síntesis de los fundamentos de cada uno de los fallos."
+    },
+    {
+      "id": "anexo",
+      "title": "Anexo informativo",
+      "part": null,
+      "blurb": "Información documental y de contexto: la historia del edificio y el detalle de tribunales, partes y penas de cada una de las tres causas."
+    }
+  ],
+  "entries": [
+    {
+      "slug": "tapa",
+      "title": "Juicio y Castigo en el Chaco (Vol II)",
+      "section": "inicio",
+      "order": 0,
+      "pageType": "landing",
+      "headings": []
+    },
+    {
+      "slug": "primera-pagina",
+      "title": "Primera página",
+      "section": "inicio",
+      "order": 1,
+      "pageType": "interlude",
+      "headings": []
+    },
+    {
+      "slug": "la-memoria-y-la-palabra",
+      "title": "La memoria y la palabra: los juicios al genocidio",
+      "section": "inicio",
+      "order": 2,
+      "pageType": "reader",
+      "headings": []
+    },
+    {
+      "slug": "introduccion",
+      "title": "Introducción",
+      "section": "inicio",
+      "order": 3,
+      "pageType": "reader",
+      "headings": [
+        {
+          "depth": 2,
+          "text": "JUICIO Y CASTIGO EN EL CHACO",
+          "slug": "juicio-y-castigo-en-el-chaco",
+          "blocks": 6
+        }
+      ]
+    },
+    {
+      "slug": "tres-procesos-un-juicio-y-castigo",
+      "title": "La Brigada: tres procesos, un juicio y castigo",
+      "section": "inicio",
+      "order": 4,
+      "pageType": "reader",
+      "headings": [
+        {
+          "depth": 2,
+          "text": "TRES PROCESOS, UN JUICIO Y CASTIGO",
+          "slug": "tres-procesos-un-juicio-y-castigo",
+          "blocks": 1
+        },
+        {
+          "depth": 3,
+          "text": "CAUSA BRIGADA I (2010)",
+          "slug": "causa-brigada-i-2010",
+          "blocks": 4
+        },
+        {
+          "depth": 3,
+          "text": "CAUSA BRIGADA II (2016/18)",
+          "slug": "causa-brigada-ii-201618",
+          "blocks": 3
+        },
+        {
+          "depth": 3,
+          "text": "CAUSA BRIGADA III (2021)",
+          "slug": "causa-brigada-iii-2021",
+          "blocks": 8
+        }
+      ]
+    },
+    {
+      "slug": "en-el-lugar-sin-limites",
+      "title": "En el lugar sin límites",
+      "section": "una-casa-con-una-sala-negra",
+      "order": 5,
+      "pageType": "chapter-opening",
+      "headings": [
+        {
+          "depth": 3,
+          "text": "EN EL LUGAR SIN LÍMITES",
+          "slug": "en-el-lugar-sin-límites",
+          "blocks": 3
+        }
+      ]
+    },
+    {
+      "slug": "cronicas-una-casa-con-una-sala-negra",
+      "title": "Crónicas: una casa con una Sala Negra",
+      "section": "una-casa-con-una-sala-negra",
+      "order": 6,
+      "pageType": "reader",
+      "headings": [
+        {
+          "depth": 1,
+          "text": "CAUSA BRIGADA I 7 julio 2010",
+          "slug": "causa-brigada-i-7-julio-2010",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "“LA TORTURA EN EL CHACO COMENZÓ EN EL 74, CON UN GOBIERNO CONSTITUCIONAL”",
+          "slug": "la-tortura-en-el-chaco-comenzó-en-el-74-con-un-gobierno-constitucional",
+          "blocks": 10
+        },
+        {
+          "depth": 2,
+          "text": "LA DEGRADACIÓN TOTAL DEL SER",
+          "slug": "la-degradación-total-del-ser",
+          "blocks": 8
+        },
+        {
+          "depth": 2,
+          "text": "SIETE DÍAS CONTRA LA PARED",
+          "slug": "siete-días-contra-la-pared",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "“LA RISA DEL DEMONIO”",
+          "slug": "la-risa-del-demonio",
+          "blocks": 6
+        },
+        {
+          "depth": 2,
+          "text": "BREARD: DESACATADO",
+          "slug": "breard-desacatado",
+          "blocks": 5
+        },
+        {
+          "depth": 1,
+          "text": "CAUSA BRIGADA I 8 julio 2010",
+          "slug": "causa-brigada-i-8-julio-2010",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "UNA MADRE Y SU HIJO DE SIETE MESES TORTURADOS EN LA BRIGADA",
+          "slug": "una-madre-y-su-hijo-de-siete-meses-torturados-en-la-brigada",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "EL HORROR EN LA CIUDAD",
+          "slug": "el-horror-en-la-ciudad",
+          "blocks": 7
+        },
+        {
+          "depth": 2,
+          "text": "LA PATOTA DE LA BRIGADA",
+          "slug": "la-patota-de-la-brigada",
+          "blocks": 2
+        },
+        {
+          "depth": 2,
+          "text": "IDAS Y VUELTAS DE UN ENCUENTRO",
+          "slug": "idas-y-vueltas-de-un-encuentro",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "“VERDUGOS DE ALMA”",
+          "slug": "verdugos-de-alma",
+          "blocks": 2
+        },
+        {
+          "depth": 2,
+          "text": "VIAJE AL FONDO DE LA NOCHE",
+          "slug": "viaje-al-fondo-de-la-noche",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "ALCAIDÍA. VERDUGO: OCTAVIO AYALA",
+          "slug": "alcaidía-verdugo-octavio-ayala",
+          "blocks": 2
+        },
+        {
+          "depth": 2,
+          "text": "U7. VERDUGO: CASCO",
+          "slug": "u7-verdugo-casco",
+          "blocks": 1
+        },
+        {
+          "depth": 3,
+          "text": "REGALO DE CUMPLEAÑOS: ESTADÍA EN LA U9",
+          "slug": "regalo-de-cumpleaños-estadía-en-la-u9",
+          "blocks": 1
+        },
+        {
+          "depth": 3,
+          "text": "ARSENAL DE LITERATURA MARXISTA",
+          "slug": "arsenal-de-literatura-marxista",
+          "blocks": 4
+        },
+        {
+          "depth": 3,
+          "text": "PICANA",
+          "slug": "picana",
+          "blocks": 3
+        },
+        {
+          "depth": 1,
+          "text": "CAUSA BRIGADA I 13 julio 2010",
+          "slug": "causa-brigada-i-13-julio-2010",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "“LA BRIGADA, UN INFIERNO PERMANENTE",
+          "slug": "la-brigada-un-infierno-permanente",
+          "blocks": 5
+        },
+        {
+          "depth": 2,
+          "text": "1973 1976: EL PODER EN LA SOMBRAS",
+          "slug": "1973-1976-el-poder-en-la-sombras",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "DIEZ DÍAS EN “UN INFIERNO PERMANENTE”",
+          "slug": "diez-días-en-un-infierno-permanente",
+          "blocks": 5
+        },
+        {
+          "depth": 2,
+          "text": "ALCAIDÍA UNA ZONA GRIS",
+          "slug": "alcaidía-una-zona-gris",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "LA CRUELDAD Y LA IGNORANCIA",
+          "slug": "la-crueldad-y-la-ignorancia",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "24 AÑOS Y 11 MESES DE CONDENA",
+          "slug": "24-años-y-11-meses-de-condena",
+          "blocks": 3
+        },
+        {
+          "depth": 1,
+          "text": "Causa Brigada I 10 agosto 2010",
+          "slug": "causa-brigada-i-10-agosto-2010",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "LA BRIGADA: “SALIR DE AHÍ, AUNQUE SEA MUERTOS”",
+          "slug": "la-brigada-salir-de-ahí-aunque-sea-muertos",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "María Teresa Pressa",
+          "slug": "maría-teresa-pressa",
+          "blocks": 8
+        },
+        {
+          "depth": 2,
+          "text": "Dito Saliva",
+          "slug": "dito-saliva",
+          "blocks": 4
+        },
+        {
+          "depth": 2,
+          "text": "Jorge Giles",
+          "slug": "jorge-giles",
+          "blocks": 6
+        },
+        {
+          "depth": 2,
+          "text": "DEDIEU",
+          "slug": "dedieu",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "CARLOS “FLACO” PÁEZ",
+          "slug": "carlos-flaco-páez",
+          "blocks": 4
+        },
+        {
+          "depth": 1,
+          "text": "Brigada I 15/9/2010",
+          "slug": "brigada-i-1592010",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "CONSEJOS DE GUERRA: LA (IN) JUSTICIA MILITAR",
+          "slug": "consejos-de-guerra-la-in-justicia-militar",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "EUSEBIO “CHELO” ESQUIVEL",
+          "slug": "eusebio-chelo-esquivel",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "Militares",
+          "slug": "militares",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "Alcaidía: dos costillas rotas",
+          "slug": "alcaidía-dos-costillas-rotas",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "Gira carcelaria (U7 Resistencia, U9 La Plata, U3 Rawson)",
+          "slug": "gira-carcelaria-u7-resistencia-u9-la-plata-u3-rawson",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "JUAN ARGAÑARAZ",
+          "slug": "juan-argañaraz",
+          "blocks": 2
+        },
+        {
+          "depth": 2,
+          "text": "USTED ESTÁ DESPEDIDO",
+          "slug": "usted-está-despedido",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "(IN) JUSTICIA MILITAR: 24 AÑOS Y 11 MESES DE CONDENA",
+          "slug": "in-justicia-militar-24-años-y-11-meses-de-condena",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "LA DEFENSA DE LOS IMPUTADOS",
+          "slug": "la-defensa-de-los-imputados",
+          "blocks": 2
+        },
+        {
+          "depth": 1,
+          "text": "Causa Brigada I 22 de septiembre de 2010",
+          "slug": "causa-brigada-i-22-de-septiembre-de-2010",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "EL SOBREVIVIENTE DE LA CASA DE TARZÁN",
+          "slug": "el-sobreviviente-de-la-casa-de-tarzán",
+          "blocks": 4
+        },
+        {
+          "depth": 2,
+          "text": "LA CASA DE TARZÁN",
+          "slug": "la-casa-de-tarzán",
+          "blocks": 7
+        },
+        {
+          "depth": 2,
+          "text": "“SÚBANLO”",
+          "slug": "súbanlo",
+          "blocks": 4
+        },
+        {
+          "depth": 2,
+          "text": "CAMINITO…",
+          "slug": "caminito",
+          "blocks": 2
+        },
+        {
+          "depth": 1,
+          "text": "Causa Brigada I 4/10/2010",
+          "slug": "causa-brigada-i-4102010",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "“VAMOS A MATAR A TU HIJO”",
+          "slug": "vamos-a-matar-a-tu-hijo",
+          "blocks": 4
+        },
+        {
+          "depth": 2,
+          "text": "MARTIRIO EN LA BRIGADA",
+          "slug": "martirio-en-la-brigada",
+          "blocks": 7
+        },
+        {
+          "depth": 2,
+          "text": "LA CÁRCEL: ALCAIDÍA / VILLA DEVOTO",
+          "slug": "la-cárcel-alcaidía--villa-devoto",
+          "blocks": 2
+        },
+        {
+          "depth": 2,
+          "text": "EL EXILIO: CANADÁ",
+          "slug": "el-exilio-canadá",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "ELVIO LORENZO BORRINI – CENIQUEL AL TELÉFONO",
+          "slug": "elvio-lorenzo-borrini--ceniquel-al-teléfono",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "LA HIJA",
+          "slug": "la-hija",
+          "blocks": 4
+        },
+        {
+          "depth": 2,
+          "text": "EL YERNO",
+          "slug": "el-yerno",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "LADRONES",
+          "slug": "ladrones",
+          "blocks": 1
+        },
+        {
+          "depth": 1,
+          "text": "Causa Brigada I 18/10/2010",
+          "slug": "causa-brigada-i-18102010",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "NIÑOS DETENIDOS EN LA BRIGADA",
+          "slug": "niños-detenidos-en-la-brigada",
+          "blocks": 2
+        },
+        {
+          "depth": 2,
+          "text": "SERGIO ROMERO – DETENIDO CON SU MUJER Y SU HIJO",
+          "slug": "sergio-romero--detenido-con-su-mujer-y-su-hijo",
+          "blocks": 6
+        },
+        {
+          "depth": 2,
+          "text": "MANADER-CURSO DE TORTURA EN PARAGUAY",
+          "slug": "manader-curso-de-tortura-en-paraguay",
+          "blocks": 2
+        },
+        {
+          "depth": 2,
+          "text": "PERSECUCIÓN IMPLACABLE",
+          "slug": "persecución-implacable",
+          "blocks": 2
+        },
+        {
+          "depth": 2,
+          "text": "HÉCTOR COSTAS – 40 DÍAS EN BRIGADA",
+          "slug": "héctor-costas--40-días-en-brigada",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "LA TORTURA",
+          "slug": "la-tortura",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "ENCUENTRO CON PATRICIO BLAS TIERNO",
+          "slug": "encuentro-con-patricio-blas-tierno",
+          "blocks": 2
+        },
+        {
+          "depth": 2,
+          "text": "ALCAIDÍA, CONSEJOS DE GUERRA y MARTÍNEZ SEGÓN",
+          "slug": "alcaidía-consejos-de-guerra-y-martínez-segón",
+          "blocks": 2
+        },
+        {
+          "depth": 2,
+          "text": "MIGUEL NIEVA–E.A.F.F. “LA SANGRE DERRAMADA NO SERÁ NEGOCIADA”",
+          "slug": "miguel-nievaeaff-la-sangre-derramada-no-será-negociada",
+          "blocks": 6
+        },
+        {
+          "depth": 1,
+          "text": "CAUSA BRIGADA I 26 de octubre de 2010",
+          "slug": "causa-brigada-i-26-de-octubre-de-2010",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "EL POLICÍA QUE SE NEGÓ A TORTURAR",
+          "slug": "el-policía-que-se-negó-a-torturar",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "RAÚL ALBERTO MAZAITE – “Torturas vox populi en la Brigada”",
+          "slug": "raúl-alberto-mazaite--torturas-vox-populi-en-la-brigada",
+          "blocks": 9
+        },
+        {
+          "depth": 2,
+          "text": "DONATO NAVARRO – No entraba a la Brigada ni para ir al baño",
+          "slug": "donato-navarro--no-entraba-a-la-brigada-ni-para-ir-al-baño",
+          "blocks": 2
+        },
+        {
+          "depth": 2,
+          "text": "UNO: “MARÍN TOCABA EL ACORDEÓN”",
+          "slug": "uno-marín-tocaba-el-acordeón",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "DOS: MANADER Y COMPAÑÍA",
+          "slug": "dos-manader-y-compañía",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "TRES: LA PICANA",
+          "slug": "tres-la-picana",
+          "blocks": 5
+        },
+        {
+          "depth": 1,
+          "text": "CAUSA BRIGADA I 8 de noviembre de 2010",
+          "slug": "causa-brigada-i-8-de-noviembre-de-2010",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "INSPECCIÓN OCULAR EN LA CASA POR LA MEMORIA",
+          "slug": "inspección-ocular-en-la-casa-por-la-memoria",
+          "blocks": 2
+        },
+        {
+          "depth": 2,
+          "text": "LA INSPECCIÓN: CINCO LUGARES",
+          "slug": "la-inspección-cinco-lugares",
+          "blocks": 5
+        },
+        {
+          "depth": 3,
+          "text": "RODRÍGUEZ VALIENTE, DE REGRESO A LA ESCENA DEL CRIMEN",
+          "slug": "rodríguez-valiente-de-regreso-a-la-escena-del-crimen",
+          "blocks": 1
+        },
+        {
+          "depth": 3,
+          "text": "1 EL DESPACHO DE THOMAS",
+          "slug": "1-el-despacho-de-thomas",
+          "blocks": 1
+        },
+        {
+          "depth": 3,
+          "text": "2 EL SÓTANO CHICO",
+          "slug": "2-el-sótano-chico",
+          "blocks": 1
+        },
+        {
+          "depth": 3,
+          "text": "3 EL SÓTANO DEL FONDO DEL EDIFICIO",
+          "slug": "3-el-sótano-del-fondo-del-edificio",
+          "blocks": 2
+        },
+        {
+          "depth": 3,
+          "text": "4 LA SALA NEGRA Y LOS CALABOZOS",
+          "slug": "4-la-sala-negra-y-los-calabozos",
+          "blocks": 2
+        },
+        {
+          "depth": 3,
+          "text": "5 EL “CÓNCLAVE”",
+          "slug": "5-el-cónclave",
+          "blocks": 1
+        },
+        {
+          "depth": 1,
+          "text": "CAUSA BRIGADA II – Jueves 24 de noviembre de 2016",
+          "slug": "causa-brigada-ii--jueves-24-de-noviembre-de-2016",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "Comenzaron las testimoniales en la causa",
+          "slug": "comenzaron-las-testimoniales-en-la-causa",
+          "blocks": 2
+        },
+        {
+          "depth": 2,
+          "text": "SOBREVIVIENTES",
+          "slug": "sobrevivientes",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "BRIGADA DE INVESTIGACIONES",
+          "slug": "brigada-de-investigaciones",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "PATETTA, EL VERDUGO",
+          "slug": "patetta-el-verdugo",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "MARIO BOSCH, PRESENTE",
+          "slug": "mario-bosch-presente",
+          "blocks": 1
+        },
+        {
+          "depth": 1,
+          "text": "CAUSA BRIGADA II Febrero de 2017",
+          "slug": "causa-brigada-ii-febrero-de-2017",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "Reclamaron cárcel común y efectiva para Gabino Manader",
+          "slug": "reclamaron-cárcel-común-y-efectiva-para-gabino-manader",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "IGLESIAS: UN JUEZ EN LA U7",
+          "slug": "iglesias-un-juez-en-la-u7",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "RECLAMO DE“CÁRCEL COMUN”",
+          "slug": "reclamo-decárcel-comun",
+          "blocks": 1
+        },
+        {
+          "depth": 1,
+          "text": "CAUSA BRIGADA III /MARTES 13 DE ABRIL",
+          "slug": "causa-brigada-iii-martes-13-de-abril",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "Con relatos del horror en la Brigada/Alcaidía comenzó la etapa de testimoniales",
+          "slug": "con-relatos-del-horror-en-la-brigadaalcaidía-comenzó-la-etapa-de-testimoniales",
+          "blocks": 4
+        },
+        {
+          "depth": 2,
+          "text": "ARMANDO BENÍTEZ: “ES BRAVO RECORDAR”",
+          "slug": "armando-benítez-es-bravo-recordar",
+          "blocks": 4
+        },
+        {
+          "depth": 2,
+          "text": "MANADER: “HOY TE TOCA”",
+          "slug": "manader-hoy-te-toca",
+          "blocks": 4
+        },
+        {
+          "depth": 2,
+          "text": "“ARSENAL DE LITERATURA MARXISTA”",
+          "slug": "arsenal-de-literatura-marxista-1",
+          "blocks": 6
+        }
+      ]
+    },
+    {
+      "slug": "chachi",
+      "title": "Chachi",
+      "section": "una-casa-con-una-sala-negra",
+      "order": 7,
+      "pageType": "interlude",
+      "headings": [
+        {
+          "depth": 1,
+          "text": "CHACHI. Gregorio “Chachi” Quintana 1955-2010.",
+          "slug": "chachi-gregorio-chachi-quintana-1955-2010",
+          "blocks": 16
+        }
+      ]
+    },
+    {
+      "slug": "de-victimas-a-sobrevivientes",
+      "title": "De víctimas a sobrevivientes",
+      "section": "violencia-sexual-como-crimen-de-lesa-humanidad",
+      "order": 8,
+      "pageType": "chapter-opening",
+      "headings": []
+    },
+    {
+      "slug": "salud-mental-y-juicio-y-castigo",
+      "title": "Salud mental y juicio y castigo",
+      "section": "violencia-sexual-como-crimen-de-lesa-humanidad",
+      "order": 9,
+      "pageType": "reader",
+      "headings": [
+        {
+          "depth": 2,
+          "text": "PAIVTE",
+          "slug": "paivte",
+          "blocks": 6
+        }
+      ]
+    },
+    {
+      "slug": "cronicas-violencia-sexual",
+      "title": "Crónicas: la violencia sexual como crimen de lesa humanidad",
+      "section": "violencia-sexual-como-crimen-de-lesa-humanidad",
+      "order": 10,
+      "pageType": "reader",
+      "headings": [
+        {
+          "depth": 1,
+          "text": "CAUSA BRIGADA II Viernes 16 de diciembre de 2016",
+          "slug": "causa-brigada-ii-viernes-16-de-diciembre-de-2016",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "Carlos Aguirre y Antonio Zárate",
+          "slug": "carlos-aguirre-y-antonio-zárate",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "EL “LOQUITO” IBARRA",
+          "slug": "el-loquito-ibarra",
+          "blocks": 2
+        },
+        {
+          "depth": 2,
+          "text": "“SECUELAS 76”",
+          "slug": "secuelas-76",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "RATIFICACIÓN",
+          "slug": "ratificación",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "AMPLIACIÓN",
+          "slug": "ampliación",
+          "blocks": 2
+        },
+        {
+          "depth": 1,
+          "text": "Causa Brigada I 20 agosto 2010",
+          "slug": "causa-brigada-i-20-agosto-2010",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "Héctor Marín: violaciones en la Brigada",
+          "slug": "héctor-marín-violaciones-en-la-brigada",
+          "blocks": 4
+        },
+        {
+          "depth": 2,
+          "text": "LUIS ALARCÓN EL DESPRECIO POR LA DIGNIDAD HUMANA",
+          "slug": "luis-alarcón-el-desprecio-por-la-dignidad-humana",
+          "blocks": 4
+        },
+        {
+          "depth": 2,
+          "text": "“EL JUEZ ERA PARTE DEL SISTEMA REPRESIVO DE LA BRIGADA DE INVESTIGACIONES”",
+          "slug": "el-juez-era-parte-del-sistema-represivo-de-la-brigada-de-investigaciones",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "PATRICIO BLAS TIERNO: LA PARTIDA DE AJEDREZ INCONCLUSA",
+          "slug": "patricio-blas-tierno-la-partida-de-ajedrez-inconclusa",
+          "blocks": 2
+        },
+        {
+          "depth": 2,
+          "text": "LUIS ALBANO ROSSI",
+          "slug": "luis-albano-rossi",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "BRIGADA: TORTURAS",
+          "slug": "brigada-torturas",
+          "blocks": 5
+        },
+        {
+          "depth": 2,
+          "text": "ALCAIDÍA: PALIZAS",
+          "slug": "alcaidía-palizas",
+          "blocks": 2
+        },
+        {
+          "depth": 2,
+          "text": "FLORES LEYES: PISTOLA AL CINTO",
+          "slug": "flores-leyes-pistola-al-cinto",
+          "blocks": 3
+        },
+        {
+          "depth": 1,
+          "text": "Causa Brigada I 14/9/2010",
+          "slug": "causa-brigada-i-1492010",
+          "blocks": 6
+        },
+        {
+          "depth": 2,
+          "text": "ALCAIDÍA – MALTRATO PERMANENTE",
+          "slug": "alcaidía--maltrato-permanente",
+          "blocks": 4
+        },
+        {
+          "depth": 2,
+          "text": "Roberto “Patón” Greca",
+          "slug": "roberto-patón-greca",
+          "blocks": 2
+        },
+        {
+          "depth": 2,
+          "text": "Alcaidía y U7",
+          "slug": "alcaidía-y-u7",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "Julio Argentino Cossio",
+          "slug": "julio-argentino-cossio",
+          "blocks": 5
+        },
+        {
+          "depth": 2,
+          "text": "Rubén Arce",
+          "slug": "rubén-arce",
+          "blocks": 2
+        },
+        {
+          "depth": 1,
+          "text": "CAUSA BRIGADA II Febrero 2017",
+          "slug": "causa-brigada-ii-febrero-2017",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "La violación, crimen de lesa humanidad",
+          "slug": "la-violación-crimen-de-lesa-humanidad",
+          "blocks": 5
+        },
+        {
+          "depth": 2,
+          "text": "EN LA BRIGADA",
+          "slug": "en-la-brigada",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "NICOLAIDES Y LARRATEGUY",
+          "slug": "nicolaides-y-larrateguy",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "LA VIOLENCIA SEXUAL",
+          "slug": "la-violencia-sexual",
+          "blocks": 2
+        },
+        {
+          "depth": 2,
+          "text": "MANADER, UN LÍDER",
+          "slug": "manader-un-líder",
+          "blocks": 2
+        },
+        {
+          "depth": 2,
+          "text": "JUICIO Y CASTIGO",
+          "slug": "juicio-y-castigo",
+          "blocks": 1
+        },
+        {
+          "depth": 1,
+          "text": "CAUSA BRIGADA II 16 de febrero 2017",
+          "slug": "causa-brigada-ii-16-de-febrero-2017",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "Con la declaración de un testigo, culminaron los debates de febrero",
+          "slug": "con-la-declaración-de-un-testigo-culminaron-los-debates-de-febrero",
+          "blocks": 10
+        },
+        {
+          "depth": 2,
+          "text": "LA PATOTA",
+          "slug": "la-patota",
+          "blocks": 3
+        },
+        {
+          "depth": 1,
+          "text": "CAUSA BRIGADA 1 de marzo de 2017",
+          "slug": "causa-brigada-1-de-marzo-de-2017",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "Manader en su domicilio y el juez Iglesias en el Tribunal",
+          "slug": "manader-en-su-domicilio-y-el-juez-iglesias-en-el-tribunal",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "LA VIOLACIÓN COMO SISTEMA",
+          "slug": "la-violación-como-sistema",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "CRÍTICAS DE PEDRINI Y PILATTI VERGARA",
+          "slug": "críticas-de-pedrini-y-pilatti-vergara",
+          "blocks": 3
+        },
+        {
+          "depth": 1,
+          "text": "CAUSA BRIGADA II Miércoles 22 de marzo de 2017",
+          "slug": "causa-brigada-ii-miércoles-22-de-marzo-de-2017",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "Rossi: testimonio y cátedra de deber cívico",
+          "slug": "rossi-testimonio-y-cátedra-de-deber-cívico",
+          "blocks": 5
+        },
+        {
+          "depth": 2,
+          "text": "“DEMORADA” EN LA BRIGADA",
+          "slug": "demorada-en-la-brigada",
+          "blocks": 4
+        },
+        {
+          "depth": 2,
+          "text": "MANADER, “MAREADO”",
+          "slug": "manader-mareado",
+          "blocks": 3
+        },
+        {
+          "depth": 1,
+          "text": "CAUSA BRIGADA II Jueves 6 de abril 2017",
+          "slug": "causa-brigada-ii-jueves-6-de-abril-2017",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "Declararon dos ex presos políticos y el juicio oral continúa este viernes",
+          "slug": "declararon-dos-ex-presos-políticos-y-el-juicio-oral-continúa-este-viernes",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "DOS MISIONEROS",
+          "slug": "dos-misioneros",
+          "blocks": 2
+        },
+        {
+          "depth": 2,
+          "text": "EN LA BRIGADA",
+          "slug": "en-la-brigada-1",
+          "blocks": 2
+        },
+        {
+          "depth": 2,
+          "text": "MARÍN, EL DELATOR",
+          "slug": "marín-el-delator",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "“NO LO DUDO”",
+          "slug": "no-lo-dudo",
+          "blocks": 1
+        },
+        {
+          "depth": 1,
+          "text": "CAUSA BRIGADA II Viernes 7 de abril 2017",
+          "slug": "causa-brigada-ii-viernes-7-de-abril-2017",
+          "blocks": 5
+        },
+        {
+          "depth": 2,
+          "text": "GENOCIDIO",
+          "slug": "genocidio",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "PARTO Y TRASLADO",
+          "slug": "parto-y-traslado",
+          "blocks": 4
+        },
+        {
+          "depth": 1,
+          "text": "CAUSA CABALLERO II Jueves 11 de mayo 2017",
+          "slug": "causa-caballero-ii-jueves-11-de-mayo-2017",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "Continúa el juicio por crímenes de lesa humanidad en la Brigada",
+          "slug": "continúa-el-juicio-por-crímenes-de-lesa-humanidad-en-la-brigada",
+          "blocks": 36
+        },
+        {
+          "depth": 1,
+          "text": "BRIGADA II 18 de mayo de 2017",
+          "slug": "brigada-ii-18-de-mayo-de-2017",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "Culminaron los debates de mayo en el juicio oral",
+          "slug": "culminaron-los-debates-de-mayo-en-el-juicio-oral",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "SALVADA DE LA MASACRE",
+          "slug": "salvada-de-la-masacre",
+          "blocks": 3
+        },
+        {
+          "depth": 1,
+          "text": "CAUSA BRIGADA II Viernes 16/6/18",
+          "slug": "causa-brigada-ii-viernes-16618",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "La violencia sexual como delito autónomo de lesa humanidad",
+          "slug": "la-violencia-sexual-como-delito-autónomo-de-lesa-humanidad",
+          "blocks": 5
+        },
+        {
+          "depth": 2,
+          "text": "CHIAROTTI: JUSTICIA PARA LA REPARACIÓN",
+          "slug": "chiarotti-justicia-para-la-reparación",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "“NI UNA MENOS”",
+          "slug": "ni-una-menos",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "ZURUTUZA: SUBJETIVIDAD ARRASADA",
+          "slug": "zurutuza-subjetividad-arrasada",
+          "blocks": 3
+        },
+        {
+          "depth": 1,
+          "text": "BRIGADA III",
+          "slug": "brigada-iii",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "Viernes 16 de abril de 2021",
+          "slug": "viernes-16-de-abril-de-2021",
+          "blocks": 7
+        },
+        {
+          "depth": 2,
+          "text": "“PEOR QUE EL INFIERNO”",
+          "slug": "peor-que-el-infierno",
+          "blocks": 5
+        },
+        {
+          "depth": 2,
+          "text": "VIOLACION: SUBJETIVIDAD ARRASADA",
+          "slug": "violacion-subjetividad-arrasada",
+          "blocks": 1
+        }
+      ]
+    },
+    {
+      "slug": "desaparecer",
+      "title": "Desaparecer",
+      "section": "desaparecer-en-la-brigada",
+      "order": 11,
+      "pageType": "chapter-opening",
+      "headings": [
+        {
+          "depth": 2,
+          "text": "SISTEMÁTICA DE LA DESAPARICIÓN",
+          "slug": "sistemática-de-la-desaparición",
+          "blocks": 4
+        },
+        {
+          "depth": 2,
+          "text": "CUERPOS AL RÍO",
+          "slug": "cuerpos-al-río",
+          "blocks": 5
+        }
+      ]
+    },
+    {
+      "slug": "cronicas-desaparecer",
+      "title": "Crónicas: desaparecer en la Brigada",
+      "section": "desaparecer-en-la-brigada",
+      "order": 12,
+      "pageType": "reader",
+      "headings": [
+        {
+          "depth": 1,
+          "text": "CAUSA BRIGADA I 11 agosto 2010",
+          "slug": "causa-brigada-i-11-agosto-2010",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "DE SOBREVIVIENTES Y DESAPARECIDOS",
+          "slug": "de-sobrevivientes-y-desaparecidos",
+          "blocks": 5
+        },
+        {
+          "depth": 2,
+          "text": "DESAPARECIDOS",
+          "slug": "desaparecidos",
+          "blocks": 8
+        },
+        {
+          "depth": 2,
+          "text": "RICARDO UFERER",
+          "slug": "ricardo-uferer",
+          "blocks": 6
+        },
+        {
+          "depth": 2,
+          "text": "CARLOS AGUIRRE",
+          "slug": "carlos-aguirre",
+          "blocks": 7
+        },
+        {
+          "depth": 2,
+          "text": "OTRA VEZ MARÍN: \"KILÓMETRO 11\"",
+          "slug": "otra-vez-marín-kilómetro-11",
+          "blocks": 1
+        },
+        {
+          "depth": 1,
+          "text": "CAUSA BRIGADA- 24 AGOSTO 2010",
+          "slug": "causa-brigada--24-agosto-2010",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "PEDRO Y SARA",
+          "slug": "pedro-y-sara",
+          "blocks": 4
+        },
+        {
+          "depth": 2,
+          "text": "TORTURAS",
+          "slug": "torturas",
+          "blocks": 5
+        },
+        {
+          "depth": 2,
+          "text": "CALABOZOS",
+          "slug": "calabozos",
+          "blocks": 6
+        },
+        {
+          "depth": 2,
+          "text": "UN “PADRINO”",
+          "slug": "un-padrino",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "SOBKO",
+          "slug": "sobko",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "VICENTE CANTEROS",
+          "slug": "vicente-canteros",
+          "blocks": 5
+        },
+        {
+          "depth": 1,
+          "text": "CAUSA BRIGADA III- MIÉRCOLES 14 DE ABRIL DE 2021",
+          "slug": "causa-brigada-iii--miércoles-14-de-abril-de-2021",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "LA BRIGADA, DESTINO FINAL DE VARIOS DESAPARECIDOS",
+          "slug": "la-brigada-destino-final-de-varios-desaparecidos",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "LAS VOCES DE LA TORTURA",
+          "slug": "las-voces-de-la-tortura",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "TORMENTOS POR CONDICIONES DE DETENCIÓN",
+          "slug": "tormentos-por-condiciones-de-detención",
+          "blocks": 4
+        },
+        {
+          "depth": 2,
+          "text": "IMPUNIDAD NUNCA MÁS",
+          "slug": "impunidad-nunca-más",
+          "blocks": 3
+        },
+        {
+          "depth": 1,
+          "text": "CAUSA BRIGADA III / DÍA 4 – 15 DE ABRIL DE 2021",
+          "slug": "causa-brigada-iii--día-4--15-de-abril-de-2021",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "EL TRIBUNAL ANUNCIÓ QUE DICTARÁ SENTENCIA EL LUNES 26",
+          "slug": "el-tribunal-anunció-que-dictará-sentencia-el-lunes-26",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "OVIEDO, ARCE, LAURONI, ALMIRÓN",
+          "slug": "oviedo-arce-lauroni-almirón",
+          "blocks": 5
+        },
+        {
+          "depth": 2,
+          "text": "EL DERECHO A UN SEPULCRO",
+          "slug": "el-derecho-a-un-sepulcro",
+          "blocks": 4
+        },
+        {
+          "depth": 2,
+          "text": "PABLO CÉSAR CASCO, EL VERDUGO DE LA U7",
+          "slug": "pablo-césar-casco-el-verdugo-de-la-u7",
+          "blocks": 2
+        }
+      ]
+    },
+    {
+      "slug": "arganaraz-la-tortura-metafisica",
+      "title": "Argañaráz: la tortura metafísica",
+      "section": "desaparecer-en-la-brigada",
+      "order": 13,
+      "pageType": "interlude",
+      "headings": []
+    },
+    {
+      "slug": "una-patota-para-la-miseria-planificada",
+      "title": "Una patota para la miseria planificada",
+      "section": "la-patota-de-la-brigada",
+      "order": 14,
+      "pageType": "chapter-opening",
+      "headings": []
+    },
+    {
+      "slug": "genocidas-al-frente",
+      "title": "Genocidas al frente",
+      "section": "la-patota-de-la-brigada",
+      "order": 15,
+      "pageType": "reader",
+      "headings": [
+        {
+          "depth": 2,
+          "text": "UNO DE LOS JEFES",
+          "slug": "uno-de-los-jefes",
+          "blocks": 13
+        },
+        {
+          "depth": 2,
+          "text": "RODRÍGUEZ VALIENTE: “SUMARIANTE SUBVERSIVO”",
+          "slug": "rodríguez-valiente-sumariante-subversivo",
+          "blocks": 5
+        },
+        {
+          "depth": 1,
+          "text": "BRIGADA",
+          "slug": "brigada",
+          "blocks": 2
+        },
+        {
+          "depth": 2,
+          "text": "MILITARES",
+          "slug": "militares",
+          "blocks": 5
+        },
+        {
+          "depth": 1,
+          "text": "BRIGADA II",
+          "slug": "brigada-ii",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "“CONSULTORÌA BETTOLLI",
+          "slug": "consultorìa-bettolli",
+          "blocks": 4
+        },
+        {
+          "depth": 2,
+          "text": "RAMÓN MEZA, “EL FUMIGADOR”",
+          "slug": "ramón-meza-el-fumigador",
+          "blocks": 2
+        },
+        {
+          "depth": 1,
+          "text": "BRIGADA III",
+          "slug": "brigada-iii",
+          "blocks": 1
+        },
+        {
+          "depth": 2,
+          "text": "VIGAY, “FISCAL SIN LÍMITES”",
+          "slug": "vigay-fiscal-sin-límites",
+          "blocks": 5
+        }
+      ]
+    },
+    {
+      "slug": "carcel-comun",
+      "title": "Cárcel común",
+      "section": "la-patota-de-la-brigada",
+      "order": 16,
+      "pageType": "interlude",
+      "headings": []
+    },
+    {
+      "slug": "condenados",
+      "title": "Condenados",
+      "section": "juicio-y-castigo",
+      "order": 17,
+      "pageType": "chapter-opening",
+      "headings": []
+    },
+    {
+      "slug": "alegatos",
+      "title": "Alegatos",
+      "section": "juicio-y-castigo",
+      "order": 18,
+      "pageType": "reader",
+      "headings": [
+        {
+          "depth": 2,
+          "text": "BRIGADA I",
+          "slug": "brigada-i",
+          "blocks": 5
+        },
+        {
+          "depth": 2,
+          "text": "BRIGADA II",
+          "slug": "brigada-ii",
+          "blocks": 5
+        },
+        {
+          "depth": 2,
+          "text": "“PLAN SISTEMÁTICO”",
+          "slug": "plan-sistemático",
+          "blocks": 8
+        },
+        {
+          "depth": 2,
+          "text": "BRIGADA III",
+          "slug": "brigada-iii",
+          "blocks": 4
+        },
+        {
+          "depth": 2,
+          "text": "ALEGATO FISCAL",
+          "slug": "alegato-fiscal",
+          "blocks": 5
+        },
+        {
+          "depth": 2,
+          "text": "DEFENSA",
+          "slug": "defensa",
+          "blocks": 2
+        }
+      ]
+    },
+    {
+      "slug": "las-condenas",
+      "title": "Las condenas",
+      "section": "juicio-y-castigo",
+      "order": 19,
+      "pageType": "reader",
+      "headings": [
+        {
+          "depth": 1,
+          "text": "13.12.10. BRIGADA",
+          "slug": "131210-brigada",
+          "blocks": 10
+        },
+        {
+          "depth": 2,
+          "text": "“PARTEAGUAS”",
+          "slug": "parteaguas",
+          "blocks": 4
+        },
+        {
+          "depth": 2,
+          "text": "31.5.18. BRIGADA II",
+          "slug": "31518-brigada-ii",
+          "blocks": 6
+        },
+        {
+          "depth": 1,
+          "text": "SENTENCIA: JUICIO Y CASTIGO RECARGADO",
+          "slug": "sentencia-juicio-y-castigo-recargado",
+          "blocks": 8
+        },
+        {
+          "depth": 2,
+          "text": "8.4.21. BRIGADA III",
+          "slug": "8421-brigada-iii",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "LA TERCERA",
+          "slug": "la-tercera",
+          "blocks": 7
+        },
+        {
+          "depth": 2,
+          "text": "CONDENADOS",
+          "slug": "condenados",
+          "blocks": 0
+        },
+        {
+          "depth": 3,
+          "text": "Gabino Manader (Policía del Chaco)",
+          "slug": "gabino-manader-policía-del-chaco",
+          "blocks": 3
+        },
+        {
+          "depth": 2,
+          "text": "José Francisco Rodríguez Valiente (Policía del Chaco)",
+          "slug": "josé-francisco-rodríguez-valiente-policía-del-chaco",
+          "blocks": 3
+        },
+        {
+          "depth": 3,
+          "text": "Humberto Lucio Caballero (Policía del Chaco)",
+          "slug": "humberto-lucio-caballero-policía-del-chaco",
+          "blocks": 1
+        },
+        {
+          "depth": 3,
+          "text": "José Marín (alias “Cabo Sotelo”) (Policía del Chaco)",
+          "slug": "josé-marín-alias-cabo-sotelo-policía-del-chaco",
+          "blocks": 3
+        },
+        {
+          "depth": 3,
+          "text": "Ramón Esteban Meza (Policía del Chaco)",
+          "slug": "ramón-esteban-meza-policía-del-chaco",
+          "blocks": 2
+        },
+        {
+          "depth": 3,
+          "text": "Luis Alberto Patetta (Ejército)",
+          "slug": "luis-alberto-patetta-ejército",
+          "blocks": 2
+        },
+        {
+          "depth": 3,
+          "text": "José Tadeo Luis Bettolli (Ejército)",
+          "slug": "josé-tadeo-luis-bettolli-ejército",
+          "blocks": 3
+        },
+        {
+          "depth": 3,
+          "text": "Francisco Orlando Álvarez (Alcaidía):",
+          "slug": "francisco-orlando-álvarez-alcaidía",
+          "blocks": 2
+        },
+        {
+          "depth": 3,
+          "text": "Rubén Héctor Roldán (Alcaidía):",
+          "slug": "rubén-héctor-roldán-alcaidía",
+          "blocks": 1
+        },
+        {
+          "depth": 3,
+          "text": "Oscar Alberto Galarza (Alcaidía)",
+          "slug": "oscar-alberto-galarza-alcaidía",
+          "blocks": 1
+        },
+        {
+          "depth": 3,
+          "text": "Ramón Andrés Gandola (Policía del Chaco)",
+          "slug": "ramón-andrés-gandola-policía-del-chaco",
+          "blocks": 1
+        },
+        {
+          "depth": 3,
+          "text": "Enzo Breard(Policía del Chaco):",
+          "slug": "enzo-breardpolicía-del-chaco",
+          "blocks": 2
+        },
+        {
+          "depth": 3,
+          "text": "Jorge Ibarra (Policía del Chaco)",
+          "slug": "jorge-ibarra-policía-del-chaco",
+          "blocks": 2
+        },
+        {
+          "depth": 3,
+          "text": "Albino Borda (Policía del Chaco)",
+          "slug": "albino-borda-policía-del-chaco",
+          "blocks": 1
+        },
+        {
+          "depth": 3,
+          "text": "Antonio Musa Azar (Policía Sgo. Del Estero)",
+          "slug": "antonio-musa-azar-policía-sgo-del-estero",
+          "blocks": 1
+        },
+        {
+          "depth": 3,
+          "text": "Miguel Garbi (Policía Sgo. Del Estero)",
+          "slug": "miguel-garbi-policía-sgo-del-estero",
+          "blocks": 1
+        },
+        {
+          "depth": 3,
+          "text": "César Pablo Casco (Serv. Penitenciario U7)",
+          "slug": "césar-pablo-casco-serv-penitenciario-u7",
+          "blocks": 1
+        }
+      ]
+    },
+    {
+      "slug": "los-fallos",
+      "title": "Los fallos: fundamentos de las sentencias",
+      "section": "juicio-y-castigo",
+      "order": 20,
+      "pageType": "reader",
+      "headings": [
+        {
+          "depth": 2,
+          "text": "FALLO BRIGADA I (157 páginas)",
+          "slug": "fallo-brigada-i-157-páginas",
+          "blocks": 9
+        },
+        {
+          "depth": 2,
+          "text": "FALLO BRIGADA II (208 páginas)",
+          "slug": "fallo-brigada-ii-208-páginas",
+          "blocks": 0
+        },
+        {
+          "depth": 3,
+          "text": "Valor de prueba de los testimonios. “(…)",
+          "slug": "valor-de-prueba-de-los-testimonios-",
+          "blocks": 13
+        },
+        {
+          "depth": 2,
+          "text": "FALLO BRIGADA III (136 páginas)",
+          "slug": "fallo-brigada-iii-136-páginas",
+          "blocks": 5
+        }
+      ]
+    },
+    {
+      "slug": "juicio-y-castigo-ayer-y-hoy",
+      "title": "Juicio y castigo a la Brigada: ayer y hoy",
+      "section": "juicio-y-castigo",
+      "order": 21,
+      "pageType": "reader",
+      "headings": []
+    },
+    {
+      "slug": "una-casa-con-historia",
+      "title": "Una casa con historia",
+      "section": "anexo",
+      "order": 22,
+      "pageType": "reader",
+      "headings": [
+        {
+          "depth": 2,
+          "text": "UNA CASA CON HISTORIA",
+          "slug": "una-casa-con-historia",
+          "blocks": 6
+        },
+        {
+          "depth": 2,
+          "text": "CASA POR LA MEMORIA 13.7.2005",
+          "slug": "casa-por-la-memoria-1372005",
+          "blocks": 4
+        }
+      ]
+    },
+    {
+      "slug": "tribunal-partes-y-penas",
+      "title": "Tribunal, partes y penas",
+      "section": "anexo",
+      "order": 23,
+      "pageType": "reader",
+      "headings": [
+        {
+          "depth": 2,
+          "text": "Tribunal y partes",
+          "slug": "tribunal-y-partes",
+          "blocks": 0
+        },
+        {
+          "depth": 2,
+          "text": "CAUSA BRIGADA I (2010)",
+          "slug": "causa-brigada-i-2010",
+          "blocks": 4
+        },
+        {
+          "depth": 2,
+          "text": "CAUSA BRIGADA II",
+          "slug": "causa-brigada-ii",
+          "blocks": 4
+        },
+        {
+          "depth": 2,
+          "text": "CAUSA BRIGADA III",
+          "slug": "causa-brigada-iii",
+          "blocks": 14
+        }
+      ]
+    }
+  ]
+}

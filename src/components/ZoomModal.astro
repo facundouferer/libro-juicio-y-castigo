@@ -1,0 +1,28 @@
+---
+/**
+ * Full-screen image view.
+ *
+ * The magnifier on the plate opens it; plus and minus scale the photograph and
+ * the cursor becomes a hand to drag it around. On a phone this is the only
+ * place the epigraph appears, which is what the spec asks for: the photograph
+ * first, its caption when you go looking for it.
+ *
+ * One <img> reused for every image — the source is swapped on open, so the
+ * 105 photographs cost nothing until one is actually asked for.
+ */
+import Icon from './Icon.astro';
+---
+
+<dialog class="modal" id="dlg-zoom" aria-label="Imagen ampliada">
+  <div class="zoom-stage" data-zoom-stage>
+    <img data-zoom-img alt="" />
+  </div>
+
+  <div class="zoom-bar">
+    <button type="button" data-close aria-label="Cerrar la imagen"><Icon name="close" size={21} /></button>
+    <button type="button" data-zoom-out aria-label="Alejar"><Icon name="minus" size={21} /></button>
+    <button type="button" data-zoom-in aria-label="Acercar"><Icon name="plus" size={21} /></button>
+  </div>
+
+  <figcaption class="zoom-caption" data-zoom-caption hidden></figcaption>
+</dialog>

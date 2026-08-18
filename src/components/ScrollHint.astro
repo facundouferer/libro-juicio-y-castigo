@@ -1,0 +1,23 @@
+---
+/**
+ * The scroll affordance pinned to the bottom-right corner: a mouse with a
+ * travelling wheel on pointer devices, a rising finger on touch. Both are
+ * swapped by media query rather than by script, so the correct one is right
+ * on the first paint. It fades out once the reader has started scrolling.
+ */
+---
+
+<div class="scroll-hint" id="scroll-hint" aria-hidden="true">
+  <svg class="hint-mouse" width="30" height="46" viewBox="0 0 30 46" fill="none" stroke="currentColor" stroke-width="2.4">
+    <rect x="1.5" y="1.5" width="27" height="43" rx="13.5" />
+    <rect class="mouse-wheel" x="13.2" y="9" width="3.6" height="9" rx="1.8" fill="currentColor" stroke="none" />
+  </svg>
+
+  <svg class="hint-finger" width="32" height="46" viewBox="0 0 24 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <g class="finger">
+      <path d="M12 3.5v8" />
+      <path d="M8 9a4 4 0 0 1 8 0v6.6a5 5 0 0 1-5 5h-.4a4.6 4.6 0 0 1-4.6-4.6v-3" />
+    </g>
+    <path d="M6 26.5h12" opacity="0.4" />
+  </svg>
+</div>

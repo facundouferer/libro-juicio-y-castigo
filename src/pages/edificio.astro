@@ -1,0 +1,227 @@
+---
+/**
+ * The building.
+ *
+ * A separate route from the book: the ex Brigada de Investigaciones as a place
+ * rather than as a chapter — photographs of the recovered site, the survey
+ * drawings, the volumetric model and the two basements that were buried under
+ * rubble until 2008.
+ *
+ * None of these 19 files carries an epigraph in the archive. Each label here
+ * is the name the file itself arrived with, marked as provisional; nothing is
+ * described that the archive did not already name.
+ */
+import Base from '../layouts/Base.astro';
+import Controls from '../components/Controls.astro';
+import Icon from '../components/Icon.astro';
+import ContentsModal from '../components/ContentsModal.astro';
+import DownloadModal from '../components/DownloadModal.astro';
+import ZoomModal from '../components/ZoomModal.astro';
+import { imageEntry, sources } from '../lib/book.mjs';
+import { withBase } from '../lib/site.mjs';
+import edificio from '../data/edificio.json';
+
+const SIZES = '(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw';
+
+const groups = edificio.groups.map((group) => ({
+  ...group,
+  images: group.images
+    .map((image) => {
+      const entry = imageEntry(image.file, 'edificio');
+      return entry ? { ...image, entry, src: sources(entry, 'edificio') } : null;
+    })
+    .filter(Boolean),
+}));
+
+const total = groups.reduce((n, g) => n + g.images.length, 0);
+const pending = groups.reduce((n, g) => n + g.images.filter((i) => i.pending).length, 0);
+---
+
+<Base
+  title="El edificio — Juicio y Castigo en el Chaco (Vol II)"
+  description="Planos, cortes y modelos tridimensionales de la ex Brigada de Investigaciones de la Policía del Chaco, hoy Casa por la Memoria."
+>
+  <Controls />
+
+  <main id="contenido" class="edificio" data-pagefind-body>
+    <header class="edificio-head">
+      <a class="btn btn-secondary back" href={withBase('/')}>
+        <Icon name="book" size={16} />
+        Volver al libro
+      </a>
+      <p class="eyebrow">Marcelo T. de Alvear 32, Resistencia</p>
+      <h1><span class="hl">El edificio</span></h1>
+      <p class="edificio-intro">{edificio.intro}</p>
+
+      <nav class="edificio-nav" aria-label="Secciones del edificio">
+        {groups.map((group) => <a href={`#${group.id}`}>{group.title}</a>)}
+      </nav>
+    </header>
+
+    {
+      groups.map((group) => (
+        <section class="edificio-group" id={group.id}>
+          <div class="group-head">
+            <h2><span class="hl-soft">{group.title}</span></h2>
+            <p>{group.blurb}</p>
+          </div>
+
+          <div class="grid">
+            {group.images.map((image) => (
+              <figure class:list={['plate-card', image.entry.orientation]}>
+                <button type="button" data-zoom={image.file} aria-label={`Ampliar: ${image.label}`}>
+                  <picture>
+                    <source type="image/avif" srcset={image.src.avif} sizes={SIZES} />
+                    <source type="image/webp" srcset={image.src.webp} sizes={SIZES} />
+                    <img
+                      src={image.src.fallback}
+                      alt={image.label}
+                      width={image.src.width}
+                      height={image.src.height}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                  <span class="magnify"><Icon name="search" size={19} /></span>
+                </button>
+                <figcaption>
+                  {image.label}
+                  {image.pending && <span class="pending" title="Falta el epígrafe redactado por la CPM">epígrafe pendiente</span>}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      ))
+    }
+
+    <footer class="edificio-foot">
+      <p>
+        {total} imágenes del edificio.
+        {pending > 0 && ` ${pending} esperan el epígrafe de la Comisión Provincial por la Memoria: los rótulos que se leen acá son los nombres con que cada archivo llegó al acervo, no descripciones redactadas.`}
+      </p>
+      <a class="btn btn-primary" href={withBase('/')}>
+        Volver al libro
+        <Icon name="arrowRight" size={17} />
+      </a>
+    </footer>
+  </main>
+
+  <ContentsModal />
+  <DownloadModal />
+  <ZoomModal />
+</Base>
+
+<style>
+  .edificio { padding-bottom: clamp(48px, 9vh, 96px); }
+
+  .edificio-head {
+    max-width: 74ch;
+    margin: 0 auto;
+    padding: clamp(56px, 12vh, 132px) var(--space-6) clamp(28px, 5vh, 56px);
+  }
+  .edificio-head .back { margin-bottom: var(--space-6); }
+  .edificio-head .eyebrow { margin-bottom: var(--space-3); }
+  .edificio-head h1 { font-size: clamp(38px, 7vw, 76px); line-height: 1.45; margin-bottom: var(--space-6); }
+  .edificio-intro { font-size: 18px; line-height: 1.62; max-width: 62ch; }
+
+  .edificio-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-6);
+  }
+  .edificio-nav a {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    padding: 6px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: var(--color-accent-800);
+    background: var(--color-accent-100);
+  }
+  .edificio-nav a:hover { background: var(--color-accent); color: var(--color-bg); }
+
+  .edificio-group {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: clamp(36px, 6vh, 72px) var(--space-6);
+    scroll-margin-top: 12vh;
+  }
+  .group-head { max-width: 62ch; margin-bottom: var(--space-6); }
+  .group-head h2 { font-size: clamp(22px, 3vw, 34px); line-height: 1.5; margin-bottom: var(--space-3); }
+  .group-head p { color: var(--color-neutral-700); }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-4);
+  }
+  /* A floor plan is wide and loses everything at thumbnail width. */
+  .plate-card.landscape { grid-column: span 2; }
+  @media (max-width: 700px) {
+    .plate-card.landscape { grid-column: span 1; }
+  }
+
+  .plate-card button {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    cursor: zoom-in;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--color-neutral-100);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 200ms ease, transform 200ms ease;
+  }
+  .plate-card button:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .plate-card img { width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+
+  .magnify {
+    position: absolute;
+    top: var(--space-2);
+    left: var(--space-2);
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--color-bg) 90%, transparent);
+    color: var(--color-accent-700);
+    opacity: 0;
+    transition: opacity 180ms ease;
+  }
+  .plate-card button:hover .magnify,
+  .plate-card button:focus-visible .magnify { opacity: 1; }
+
+  .plate-card figcaption {
+    margin-top: var(--space-2);
+    font-size: 13.5px;
+    line-height: 1.4;
+    color: var(--color-neutral-800);
+  }
+  .pending {
+    display: inline-block;
+    margin-left: var(--space-2);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--color-accent-2-100);
+    color: var(--color-accent-2-800);
+  }
+
+  .edificio-foot {
+    max-width: 74ch;
+    margin: clamp(32px, 6vh, 72px) auto 0;
+    padding: clamp(28px, 5vh, 56px) var(--space-6) 0;
+    border-top: 1px solid var(--color-neutral-200);
+  }
+  .edificio-foot p { color: var(--color-neutral-700); font-size: 15px; margin-bottom: var(--space-4); }
+</style>

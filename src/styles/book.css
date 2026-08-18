@@ -1,0 +1,920 @@
+/*
+ * The book layout, built on the CPM tokens.
+ *
+ * The site is one continuous document: the landing, then every chapter in
+ * reading order, scrolled front to back like the printed edition. There is no
+ * pagination and no route change inside the book — which is what makes the
+ * reading-position memory and the single scrollbar meaningful.
+ *
+ * Three layouts, as specified:
+ *   .landing   full-bleed cover that lifts away as the reader scrolls past it
+ *   .opening   a section title page: photograph, part number, banded title
+ *   .reader    the split reader — sticky plate left, scrolling prose right
+ */
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Page shell
+   ══════════════════════════════════════════════════════════════════════ */
+
+html {
+  scroll-behavior: smooth;
+  /* Firefox — the WebKit equivalent is further down. */
+  scrollbar-color: var(--color-accent-400) var(--color-neutral-100);
+  scrollbar-width: thin;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  font-size: 17px;
+  text-wrap: pretty;
+  overflow-x: hidden;
+}
+body.is-locked { overflow: hidden; }
+
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: var(--color-neutral-100); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-400);
+  border-radius: 999px;
+  border: 3px solid var(--color-neutral-100);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-accent-600); }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 100;
+  transform: translateY(-200%);
+  transition: transform 160ms ease;
+}
+.skip-link:focus-visible { transform: translateY(0); }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Floating controls — present at every point of the book
+   ══════════════════════════════════════════════════════════════════════ */
+
+.controls {
+  position: fixed;
+  top: var(--space-4);
+  right: var(--space-4);
+  z-index: 40;
+  display: flex;
+  gap: var(--space-2);
+}
+.controls .btn {
+  background: color-mix(in srgb, var(--color-bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-md);
+  font-size: 14px;
+  padding: 10px 16px;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+.controls .btn:hover { background: var(--color-accent); color: var(--color-bg); }
+.controls .btn:active { transform: scale(0.96); }
+.controls .btn[aria-expanded='true'] { background: var(--color-accent); color: var(--color-bg); }
+
+/* On the cover the controls sit over a dark photograph and have to invert. */
+.controls.is-over-cover .btn {
+  background: color-mix(in srgb, var(--color-neutral-900) 55%, transparent);
+  color: #fff;
+}
+.controls.is-over-cover .btn:hover { background: var(--color-accent); }
+
+@media (max-width: 700px) {
+  .controls { top: var(--space-2); right: var(--space-2); gap: var(--space-1); }
+  .controls .btn { padding: 9px 12px; font-size: 12px; }
+  .controls .btn .btn-label { display: none; }
+}
+
+/* — reading progress, a hairline along the top of the viewport — */
+.progress {
+  position: fixed;
+  inset: 0 auto auto 0;
+  z-index: 45;
+  height: 3px;
+  width: 100%;
+  transform-origin: 0 50%;
+  transform: scaleX(var(--progress, 0));
+  background: var(--color-accent);
+  pointer-events: none;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Scroll hint — a mouse on pointer devices, a finger on touch
+   ══════════════════════════════════════════════════════════════════════ */
+
+.scroll-hint {
+  position: fixed;
+  right: var(--space-6);
+  bottom: var(--space-6);
+  z-index: 35;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 68px;
+  color: var(--color-accent-700);
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+.scroll-hint.is-hidden { opacity: 0; transform: translateY(12px); }
+.scroll-hint.is-over-cover { color: #fff; }
+.scroll-hint .mouse-wheel { animation: wheel 1.9s ease-in-out infinite; }
+.scroll-hint .finger { animation: finger 1.9s ease-in-out infinite; }
+.scroll-hint .hint-finger { display: none; }
+
+@keyframes wheel {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  55% { transform: translateY(6px); opacity: 0.25; }
+}
+@keyframes finger {
+  0%, 100% { transform: translateY(0); }
+  55% { transform: translateY(-9px); }
+}
+@media (hover: none), (pointer: coarse) {
+  .scroll-hint .hint-mouse { display: none; }
+  .scroll-hint .hint-finger { display: block; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hint .mouse-wheel,
+  .scroll-hint .finger { animation: none; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   1. Landing — full-bleed cover
+   ══════════════════════════════════════════════════════════════════════ */
+
+.landing {
+  position: relative;
+  min-height: 100dvh;
+  display: grid;
+  align-content: center;
+  padding: clamp(28px, 7vw, 110px);
+  overflow: clip;
+  color: #fff;
+  isolation: isolate;
+}
+.landing-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* The type sits over a photograph of the building; the scrim keeps it legible
+   without flattening the image. */
+.landing::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    105deg,
+    color-mix(in srgb, var(--color-neutral-900) 82%, transparent) 0%,
+    color-mix(in srgb, var(--color-neutral-900) 62%, transparent) 45%,
+    color-mix(in srgb, var(--color-neutral-900) 30%, transparent) 100%
+  );
+}
+.landing-inner { max-width: min(760px, 100%); }
+.landing-logo { width: clamp(74px, 9vw, 112px); margin-bottom: clamp(16px, 3vh, 34px); }
+.landing h1 {
+  /* Banded lines need leading of their own so consecutive .hl rectangles never
+     touch — which is also what makes the title tall, so the ceiling is set to
+     keep the whole cover inside one viewport. */
+  font-size: clamp(30px, 5.4vw, 68px);
+  line-height: 1.34;
+  margin: 0;
+  max-width: 100%;
+  text-wrap: balance;
+}
+.landing .landing-sub {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: clamp(14px, 1.6vw, 20px);
+  letter-spacing: 0.04em;
+  margin: clamp(18px, 3vh, 30px) 0 0;
+  color: var(--color-accent-200);
+}
+.landing .landing-kicker {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: clamp(14px, 1.6vw, 19px);
+  margin-top: var(--space-2);
+  color: color-mix(in srgb, #fff 78%, transparent);
+}
+
+/* The cover lifts away as the reader scrolls into the book. Scroll-driven
+   animation where it exists; a static cover everywhere else, which reads fine. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .landing {
+      animation: cover-lift linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 100%;
+    }
+    @keyframes cover-lift {
+      to { transform: translateY(-22%); opacity: 0.15; }
+    }
+  }
+}
+
+/* — the back-cover blurb, on the ground below the cover — */
+.blurb {
+  max-width: 62ch;
+  margin: 0 auto;
+  padding: clamp(56px, 12vh, 120px) var(--space-6);
+  font-size: 19px;
+  line-height: 1.62;
+}
+.blurb p:first-of-type::first-letter {
+  float: left;
+  font-family: var(--font-heading);
+  font-size: 3.4em;
+  line-height: 0.82;
+  padding: 0.06em 0.12em 0 0;
+  color: var(--color-accent);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   2. Chapter opening — photograph, part number, banded title
+   ══════════════════════════════════════════════════════════════════════ */
+
+.opening {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+}
+.opening-plate {
+  position: relative;
+  flex: 0 0 auto;
+  height: clamp(220px, 42vh, 480px);
+}
+.opening-plate img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-mask-image: var(--wave);
+  mask-image: var(--wave);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+:root {
+  --wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 680' preserveAspectRatio='none'%3E%3Cpath d='M0 0 H1920 V620 C1680 700 1460 560 1200 640 C940 720 700 580 460 650 C280 702 120 640 0 680 Z' fill='%23000'/%3E%3C/svg%3E");
+}
+.opening-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: clamp(28px, 5vh, 80px) clamp(20px, 6vw, 120px) clamp(40px, 8vh, 104px);
+}
+.opening-num {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(52px, 9vw, 122px);
+  line-height: 1;
+  color: var(--color-accent-200);
+  margin: 0 0 clamp(14px, 3vh, 32px);
+  font-feature-settings: 'tnum' 1;
+}
+.opening-title {
+  /* Banded lines need relaxed leading so consecutive .hl rects never intersect. */
+  font-size: clamp(28px, 5vw, 60px);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 24ch;
+}
+.opening-blurb {
+  font-size: clamp(15px, 1.5vw, 19px);
+  line-height: 1.6;
+  max-width: 62ch;
+  margin: clamp(22px, 4vh, 40px) 0 0;
+  color: var(--color-neutral-800);
+}
+.opening-prose {
+  max-width: 62ch;
+  margin: clamp(30px, 5vh, 56px) auto 0;
+  text-align: left;
+  font-size: 17px;
+  line-height: 1.62;
+}
+.opening-prose h3 {
+  font-size: 22px;
+  margin-bottom: var(--space-3);
+  color: var(--color-accent-700);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   3. Split reader — sticky plate left, prose right
+   ══════════════════════════════════════════════════════════════════════ */
+
+.reader {
+  display: grid;
+  grid-template-columns: 46fr 54fr;
+  align-items: start;
+  background: var(--color-bg);
+}
+
+.plate {
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  overflow: hidden;
+  /* Empty is genuinely empty: the ground shows through when the heading in
+     view has no photograph of its own. */
+  background: var(--color-bg);
+  border-right: 1px solid var(--color-neutral-200);
+}
+.plate-frame { position: absolute; inset: 0; }
+.plate-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 520ms ease;
+}
+.plate-frame img.is-active { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .plate-frame img { transition: none; }
+}
+
+.plate-tools {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  z-index: 3;
+  display: flex;
+  gap: var(--space-2);
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 260ms ease, transform 260ms ease;
+}
+.plate.has-image .plate-tools { opacity: 1; transform: translateY(0); }
+.plate-tools button {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  background: var(--color-bg);
+  color: var(--color-accent-700);
+  box-shadow: var(--shadow-md);
+  transition: background 160ms ease, color 160ms ease, transform 140ms ease;
+}
+.plate-tools button:hover { background: var(--color-accent); color: var(--color-bg); }
+.plate-tools button:active { transform: scale(0.93); }
+
+.plate-caption {
+  position: absolute;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  z-index: 3;
+  max-width: 32ch;
+  margin: 0;
+  text-align: right;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-bg) 90%, transparent);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-sm);
+  font-size: 13px;
+  line-height: 1.42;
+  color: var(--color-neutral-800);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+.plate.has-image .plate-caption { opacity: 1; transform: translateY(0); }
+.plate-caption .credit {
+  display: block;
+  margin-top: 3px;
+  font-weight: 700;
+  color: var(--color-accent-700);
+}
+
+/* — the prose column — */
+.prose {
+  padding: clamp(56px, 11vh, 128px) clamp(24px, 4.5vw, 84px);
+  max-width: 68ch;
+  font-size: 17.5px;
+  line-height: 1.68;
+}
+.prose > * + * { margin-top: var(--space-4); }
+.prose p { margin: 0; }
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  margin: 0;
+  scroll-margin-top: 12vh;
+  line-height: 1.5;
+}
+.prose h1 { font-size: clamp(28px, 3.2vw, 42px); margin-top: clamp(48px, 8vh, 96px); }
+.prose h2 { font-size: clamp(22px, 2.3vw, 30px); margin-top: clamp(38px, 6vh, 72px); }
+.prose h3 { font-size: clamp(19px, 1.8vw, 24px); margin-top: clamp(30px, 4.5vh, 52px); }
+.prose h4 { font-size: 18px; margin-top: var(--space-8); }
+.prose h1:first-child,
+.prose h2:first-child,
+.prose h3:first-child { margin-top: 0; }
+
+.prose strong { font-weight: 700; }
+.prose em { font-style: italic; }
+.prose a { text-decoration: underline; }
+
+.prose blockquote {
+  margin: var(--space-6) 0;
+  padding: var(--space-4) var(--space-6);
+  border-left: 3px solid var(--color-accent-300);
+  background: var(--color-accent-100);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: 17px;
+  line-height: 1.6;
+}
+.prose blockquote p { margin: 0; }
+.prose blockquote p + p { margin-top: var(--space-3); }
+.prose blockquote em { font-style: italic; }
+/* The attribution line the author sets as the last paragraph of a quote. */
+.prose blockquote p:last-child strong { color: var(--color-accent-700); }
+
+.prose hr {
+  border: 0;
+  height: 2px;
+  background: var(--color-accent-300);
+  margin: clamp(36px, 6vh, 64px) 0;
+}
+.prose ul,
+.prose ol { margin: 0; padding-left: var(--space-6); }
+.prose li + li { margin-top: var(--space-2); }
+
+/* Anchored figures live in the prose so the document has one source of truth;
+   inside the split reader the desktop plate mirrors them, so this copy stays
+   hidden and only reappears on a phone (see the mobile block below). */
+.prose .figure { display: none; }
+
+/* Everywhere else there is no plate to mirror them, so the figure renders
+   where it sits — inside a chapter opening's essay or an interlude's column. */
+.opening-prose .figure,
+.interlude-text .figure {
+  display: block;
+  margin: var(--space-6) 0;
+}
+.opening-prose .figure button,
+.interlude-text .figure button {
+  /* inline-block, not block: the button shrinks to the image so a portrait
+     scan never sits inside a full-width letterbox. */
+  display: inline-block;
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 200ms ease;
+}
+.opening-prose .figure button:hover,
+.interlude-text .figure button:hover { box-shadow: var(--shadow-md); }
+.opening-prose .figure img,
+.interlude-text .figure img {
+  width: auto;
+  max-width: 100%;
+  /* A portrait scan would otherwise run past a full screen on its own. */
+  max-height: 68vh;
+}
+.opening-prose .figure figcaption,
+.interlude-text .figure figcaption {
+  margin-top: var(--space-2);
+  font-size: 12.5px;
+  line-height: 1.4;
+  text-align: left;
+  color: var(--color-neutral-700);
+}
+.opening-prose .figure figcaption .credit,
+.interlude-text .figure figcaption .credit {
+  display: block;
+  font-weight: 700;
+  color: var(--color-accent-700);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   4. Interlude — a standalone vignette between chronicle blocks
+   ══════════════════════════════════════════════════════════════════════ */
+
+.interlude {
+  display: grid;
+  place-items: center;
+  min-height: 82dvh;
+  padding: clamp(48px, 10vh, 120px) var(--space-6);
+  background: var(--color-accent-100);
+}
+.interlude-inner {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+  max-width: 1080px;
+  grid-template-columns: 1fr 1fr;
+}
+.interlude-inner.is-textonly { grid-template-columns: minmax(0, 66ch); }
+.interlude figure { position: relative; text-align: center; }
+.interlude figure button {
+  display: inline-block;
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.interlude figure img {
+  width: auto;
+  max-width: 100%;
+  /* Several of these are tall portraits; without a ceiling they push the
+     vignette past a full screen and the text beside them scrolls out of reach. */
+  max-height: 74vh;
+}
+.interlude figcaption {
+  margin-top: var(--space-2);
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+.interlude-text { font-size: 18px; line-height: 1.62; }
+.interlude-text h1,
+.interlude-text h2,
+.interlude-text h3 { font-size: clamp(22px, 2.6vw, 34px); line-height: 1.45; margin-bottom: var(--space-4); }
+.interlude-text blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: none;
+  font-size: clamp(20px, 2.4vw, 30px);
+  line-height: 1.22;
+  color: var(--color-accent-800);
+}
+.interlude-text blockquote p + p {
+  margin-top: var(--space-4);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-neutral-700);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Section rule between documents
+   ══════════════════════════════════════════════════════════════════════ */
+
+.doc + .doc { border-top: 1px solid var(--color-neutral-200); }
+.opening + .doc,
+.doc + .opening,
+.interlude + .doc,
+.doc + .interlude { border-top: 0; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Modals — each grows out of the control that opened it
+   ══════════════════════════════════════════════════════════════════════ */
+
+dialog.modal {
+  padding: 0;
+  border: 0;
+  max-width: none;
+  max-height: none;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+}
+dialog.modal::backdrop {
+  background: color-mix(in srgb, var(--color-neutral-900) 62%, transparent);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  transition: opacity 260ms ease;
+}
+dialog.modal[open]::backdrop { opacity: 1; }
+
+.modal-panel {
+  position: absolute;
+  /* --ox/--oy are written by the script from the button's own position, so the
+     panel appears to grow out of the control the reader pressed. */
+  transform-origin: var(--ox, 100%) var(--oy, 0%);
+  animation: panel-in 300ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border-radius: calc(var(--radius-lg) * 1.15);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+dialog.modal.is-closing .modal-panel { animation: panel-out 190ms ease both; }
+dialog.modal.is-closing::backdrop { opacity: 0; }
+
+@keyframes panel-in {
+  from { opacity: 0; transform: scale(0.6) translateY(-14px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes panel-out {
+  to { opacity: 0; transform: scale(0.82) translateY(-8px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .modal-panel,
+  dialog.modal.is-closing .modal-panel { animation-duration: 1ms; }
+}
+
+.modal-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-4) var(--space-3);
+}
+.modal-head h2 { font-size: 22px; margin: 0; margin-right: auto; }
+.modal-close {
+  width: 36px;
+  height: 36px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  background: transparent;
+  color: var(--color-text);
+}
+.modal-close:hover { background: color-mix(in srgb, var(--color-text) 9%, transparent); }
+
+/* — contents — */
+#dlg-contents .modal-panel {
+  top: 0;
+  right: 0;
+  width: min(520px, 100%);
+  height: 100%;
+  border-radius: 0;
+}
+.contents-search { padding: 0 var(--space-4) var(--space-3); }
+.contents-list {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0 var(--space-4) var(--space-8);
+}
+.contents-section {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-700);
+  margin: var(--space-6) 0 var(--space-2);
+  padding-bottom: var(--space-1);
+  border-bottom: 1px solid var(--color-accent-200);
+}
+.contents-section:first-child { margin-top: 0; }
+.contents-list a {
+  display: block;
+  padding: 7px 10px;
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  text-decoration: none;
+  line-height: 1.35;
+}
+.contents-list a:hover { background: var(--color-accent-100); color: var(--color-accent-800); }
+.contents-list a mark { background: var(--color-accent-2-200); color: inherit; border-radius: 3px; }
+.contents-list a[data-depth='doc'] { font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; font-size: 15px; }
+.contents-list a[data-depth='1'] { font-weight: 700; font-size: 14.5px; }
+.contents-list a[data-depth='2'] { padding-left: 22px; font-size: 14px; }
+.contents-list a[data-depth='3'] { padding-left: 36px; font-size: 13.5px; color: var(--color-neutral-700); }
+.contents-list a[data-depth='4'] { padding-left: 50px; font-size: 13px; color: var(--color-neutral-700); }
+.contents-empty { padding: var(--space-6) 10px; color: var(--color-neutral-600); font-size: 14px; }
+.contents-hint {
+  padding: 0 var(--space-4) var(--space-3);
+  font-size: 12px;
+  color: var(--color-neutral-600);
+}
+
+/* full-text results, folded in under the title matches */
+.result-item { padding: 9px 10px; border-radius: var(--radius-sm); }
+.result-item:hover { background: var(--color-accent-100); }
+.result-item a { padding: 0; font-weight: 700; font-size: 14.5px; }
+.result-item p {
+  margin: 3px 0 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--color-neutral-700);
+}
+.result-item mark { background: var(--color-accent-2-200); color: inherit; border-radius: 3px; }
+
+/* — download — */
+#dlg-download .modal-panel {
+  top: calc(var(--space-4) + 52px);
+  right: var(--space-4);
+  width: min(400px, calc(100vw - var(--space-4) * 2));
+}
+.download-body { padding: 0 var(--space-4) var(--space-4); display: grid; gap: var(--space-3); }
+.download-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-divider);
+  background: var(--color-bg);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: border-color 160ms ease, background 160ms ease, transform 140ms ease;
+}
+.download-option:hover { border-color: var(--color-accent); background: var(--color-accent-100); }
+.download-option:active { transform: scale(0.985); }
+.download-option .fmt {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-accent);
+  width: 62px;
+  flex: none;
+}
+.download-option .what { font-weight: 700; font-size: 15px; line-height: 1.25; }
+.download-option .meta { font-size: 12.5px; color: var(--color-neutral-600); }
+
+/* — image zoom — */
+#dlg-zoom { background: var(--color-neutral-900); }
+#dlg-zoom .zoom-stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+}
+#dlg-zoom .zoom-stage.is-panning { cursor: grabbing; }
+#dlg-zoom .zoom-stage img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: none;
+  transform: translate(-50%, -50%) translate(var(--tx, 0px), var(--ty, 0px)) scale(var(--scale, 1));
+  transform-origin: center;
+  transition: transform 160ms ease;
+  will-change: transform;
+}
+#dlg-zoom .zoom-stage.is-panning img { transition: none; }
+.zoom-bar {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  z-index: 3;
+  display: flex;
+  gap: var(--space-2);
+}
+.zoom-bar button {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  background: color-mix(in srgb, #fff 92%, transparent);
+  color: var(--color-accent-800);
+  box-shadow: var(--shadow-md);
+}
+.zoom-bar button:hover { background: var(--color-accent); color: #fff; }
+.zoom-caption {
+  position: absolute;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  z-index: 3;
+  max-width: 46ch;
+  margin: 0;
+  padding: var(--space-3);
+  text-align: right;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-neutral-900) 72%, transparent);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+.zoom-caption .credit { display: block; margin-top: 3px; font-weight: 700; color: var(--color-accent-300); }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Resume toast — offers the reader their last position instead of jumping
+   ══════════════════════════════════════════════════════════════════════ */
+
+.resume {
+  position: fixed;
+  left: var(--space-6);
+  bottom: var(--space-6);
+  z-index: 44;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  max-width: min(430px, calc(100vw - var(--space-6) * 2));
+  padding: var(--space-3) var(--space-4);
+  border-radius: calc(var(--radius-lg) * 1.15);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+  animation: resume-in 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.resume[hidden] { display: none; }
+.resume-text { font-size: 14px; line-height: 1.35; }
+.resume-text b { display: block; font-family: var(--font-heading); text-transform: uppercase; font-size: 13px; }
+.resume-text span { color: var(--color-neutral-600); font-size: 12.5px; }
+@keyframes resume-in {
+  from { opacity: 0; transform: translateY(16px); }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Mobile — the plate collapses into the flow
+   ══════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  body { font-size: 16px; }
+
+  .reader { grid-template-columns: 1fr; }
+  /* On a phone the sticky plate is dead weight: the image belongs inline,
+     directly under the heading it illustrates. */
+  .plate { display: none; }
+
+  .prose {
+    padding: clamp(40px, 7vh, 72px) var(--space-4);
+    max-width: none;
+    font-size: 17px;
+  }
+
+  .prose .figure { display: block; margin: var(--space-6) 0; }
+  .prose .figure button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: zoom-in;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+  .prose .figure img { width: 100%; border-radius: var(--radius-md); }
+  /* The caption stays out of the way until the reader opens the image — the
+     spec asks for the photograph first, its epigraph on demand. */
+  .prose .figure figcaption { display: none; }
+
+  .interlude-inner { grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }
+  .opening-title { font-size: clamp(26px, 7vw, 40px); }
+  .scroll-hint { right: var(--space-4); bottom: var(--space-4); }
+  .resume { left: var(--space-3); right: var(--space-3); bottom: var(--space-3); max-width: none; }
+  #dlg-download .modal-panel { top: auto; bottom: 0; left: 0; right: 0; width: 100%; border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+  #dlg-contents .modal-panel { width: 100%; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Print — the browser's own print view, distinct from the downloadable PDF
+   ══════════════════════════════════════════════════════════════════════ */
+
+@media print {
+  .controls,
+  .scroll-hint,
+  .progress,
+  .resume,
+  dialog { display: none !important; }
+  .reader { grid-template-columns: 1fr; }
+  .plate { display: none; }
+  .prose .figure { display: block; break-inside: avoid; }
+  .prose .figure figcaption { display: block; }
+  .landing { min-height: auto; color: var(--color-text); }
+  .landing::before, .landing-bg { display: none; }
+}

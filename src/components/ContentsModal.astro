@@ -1,0 +1,71 @@
+---
+/**
+ * The contents panel: every title in the book, grouped by section, over a
+ * search field that filters titles as you type and — once you pass three
+ * characters — folds in full-text hits from the Pagefind index built at
+ * deploy time.
+ *
+ * The whole tree is rendered server-side, so the panel works with the script
+ * still loading and the anchors remain crawlable.
+ */
+import Icon from './Icon.astro';
+import { SECTIONS, ENTRIES } from '../lib/book.mjs';
+
+const bySection = SECTIONS.map((section) => ({
+  ...section,
+  entries: ENTRIES.filter((e) => e.section === section.id),
+})).filter((s) => s.entries.length);
+---
+
+<dialog class="modal" id="dlg-contents" aria-labelledby="contents-title">
+  <div class="modal-panel">
+    <header class="modal-head">
+      <h2 id="contents-title">Contenido</h2>
+      <button class="modal-close" type="button" data-close aria-label="Cerrar el contenido">
+        <Icon name="close" size={20} />
+      </button>
+    </header>
+
+    <div class="contents-search">
+      <label class="visually-hidden" for="contents-q">Buscar en el libro</label>
+      <input
+        class="input"
+        type="search"
+        id="contents-q"
+        placeholder="Buscar un capítulo, un nombre, una fecha…"
+        autocomplete="off"
+        spellcheck="false"
+      />
+    </div>
+    <p class="contents-hint" id="contents-hint">
+      {ENTRIES.reduce((n, e) => n + e.headings.length, 0)} títulos. Escribí tres letras o más para buscar
+      también dentro del texto.
+    </p>
+
+    <nav class="contents-list" id="contents-list" aria-label="Índice del libro">
+      {
+        bySection.map((section) => (
+          <>
+            <p class="contents-section" data-section-label={section.id}>
+              {section.part ? `${section.part} — ${section.title}` : section.title}
+            </p>
+            {section.entries.map((entry) => (
+              <>
+                <a href={`#${entry.slug}`} data-depth="doc" data-title={entry.title}>
+                  {entry.title}
+                </a>
+                {entry.headings.map((heading) => (
+                  <a href={`#${heading.slug}`} data-depth={String(heading.depth)} data-title={heading.text}>
+                    {heading.text}
+                  </a>
+                ))}
+              </>
+            ))}
+          </>
+        ))
+      }
+    </nav>
+
+    <div class="contents-list" id="contents-results" hidden aria-live="polite"></div>
+  </div>
+</dialog>

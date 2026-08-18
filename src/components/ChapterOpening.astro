@@ -1,0 +1,57 @@
+---
+/**
+ * A section title page: photograph across the top under a soft curved edge,
+ * then the part number, the banded title and the section's standfirst on the
+ * ground below. The opening essay that follows it in the manuscript runs under
+ * the title at reading width.
+ *
+ * In the PDF this splits in two — image on the first page, text on the second —
+ * as the spec asks; on screen it is one full-height view.
+ */
+import { documentImage, SECTIONS } from '../lib/book.mjs';
+
+interface Props {
+  docSlug: string;
+  title: string;
+  section: string;
+}
+
+const { docSlug, title, section } = Astro.props;
+const meta = SECTIONS.find((s) => s.id === section);
+const image = documentImage(docSlug);
+const SIZES = '100vw';
+---
+
+<section class="doc opening" id={docSlug} data-doc={docSlug} data-section={section}>
+  {
+    image && (
+      <figure class="opening-plate">
+        <picture>
+          <source type="image/avif" srcset={image.src.avif} sizes={SIZES} />
+          <source type="image/webp" srcset={image.src.webp} sizes={SIZES} />
+          <img
+            class="washed"
+            src={image.src.fallback}
+            alt={image.alt}
+            role={image.alt ? undefined : 'presentation'}
+            width={image.src.width}
+            height={image.src.height}
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+      </figure>
+    )
+  }
+
+  <div class="opening-body">
+    {meta?.partNumber && <p class="opening-num">{String(meta.partNumber).padStart(2, '0')}</p>}
+    <h2 class="opening-title" data-pagefind-meta={`title:${meta?.title ?? title}`}>
+      <span class="hl">{meta?.title ?? title}</span>
+    </h2>
+    {meta?.blurb && <p class="opening-blurb">{meta.blurb}</p>}
+    <div class="opening-prose">
+      <slot />
+    </div>
+  </div>
+</section>

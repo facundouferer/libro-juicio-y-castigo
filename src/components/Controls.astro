@@ -1,0 +1,34 @@
+---
+/**
+ * The two floating controls the spec asks to keep visible at every point of
+ * the book. They invert over the cover photograph and drop their labels on
+ * narrow screens, but they never leave the corner.
+ */
+import Icon from './Icon.astro';
+---
+
+<div class="controls" id="controls">
+  <button
+    class="btn"
+    type="button"
+    id="btn-download"
+    aria-haspopup="dialog"
+    aria-expanded="false"
+    aria-controls="dlg-download"
+  >
+    <Icon name="download" size={17} />
+    <span class="btn-label">Descargar</span>
+  </button>
+
+  <button
+    class="btn"
+    type="button"
+    id="btn-contents"
+    aria-haspopup="dialog"
+    aria-expanded="false"
+    aria-controls="dlg-contents"
+  >
+    <Icon name="book" size={17} />
+    <span class="btn-label">Contenido</span>
+  </button>
+</div>

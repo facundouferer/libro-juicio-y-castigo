@@ -1,0 +1,54 @@
+---
+/**
+ * A vignette between chronicle blocks — the "mosaico" pieces the book uses as
+ * separators: a portrait, a quote, a short profile. Tinted ground so the
+ * reader feels the change of register without a rule or a page break.
+ */
+import { documentImage } from '../lib/book.mjs';
+
+interface Props {
+  docSlug: string;
+  title: string;
+  section: string;
+}
+
+const { docSlug, title, section } = Astro.props;
+const image = documentImage(docSlug);
+const SIZES = '(max-width: 900px) 100vw, 46vw';
+---
+
+<section class="doc interlude" id={docSlug} data-doc={docSlug} data-section={section} aria-label={title}>
+  <div class:list={['interlude-inner', !image && 'is-textonly']}>
+    {
+      image && (
+        <figure>
+          <button type="button" data-zoom={image.key} aria-label={`Ampliar: ${image.alt || title}`}>
+            <picture>
+              <source type="image/avif" srcset={image.src.avif} sizes={SIZES} />
+              <source type="image/webp" srcset={image.src.webp} sizes={SIZES} />
+              <img
+                src={image.src.fallback}
+                alt={image.alt}
+                role={image.alt ? undefined : 'presentation'}
+                width={image.src.width}
+                height={image.src.height}
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+          </button>
+          {(image.caption?.caption || image.caption?.credit) && (
+            <figcaption>
+              {image.caption?.caption}
+              {image.caption?.credit && <span class="credit"> / {image.caption.credit}</span>}
+            </figcaption>
+          )}
+        </figure>
+      )
+    }
+
+    <div class="interlude-text">
+      <slot />
+    </div>
+  </div>
+</section>

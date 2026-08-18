@@ -1,0 +1,196 @@
+---
+title: "Las condenas"
+docSlug: "las-condenas"
+order: 19
+section: "juicio-y-castigo"
+pageType: "reader"
+words: 3664
+sourceFile: "section05-juicio-y-castigo/18. LAS CONDENAS.md"
+---
+# 13.12.10. BRIGADA
+
+En 2010, Bicentenario de la Revolución de Mayo, Argentina vivió sucesos de gran implicancia histórica. En una apretada síntesis podemos destacar que el censo nacional realizado el 27 de octubre reveló una población de 40.117.096 habitantes, reflejando un crecimiento del 10,6% respecto a 2001, en el Chaco, 1.053.466 personas. La muerte del ex presidente Néstor Kirchner ese (27 de octubre impactó en la vida política conmocionando al país y generando una gran movilización popular.
+
+Argentina transitaba un ciclo de recuperación económica luego de la debacle de 2001 y la crisis global de 2008, con crecimiento y consolidación de políticas de promoción del mercado interno y ampliación del empleo.
+
+"Con una economía en crecimiento, un tipo de cambio oficial cercano a los cuatro pesos por dólar y una inflación todavía de un dígito alto, el país atravesaba una etapa de recuperación que convivía con persistentes desigualdades en la distribución del ingreso, aunque con una reducción significativa de la pobreza respecto de la década anterior.
+
+En ese marco, la presidenta Cristina Fernández de Kirchner anunciaba la ampliación de las asignaciones familiares como un derecho de justicia social y una herramienta para fortalecer el mercado interno. Ese mismo año, la sanción de la ley de matrimonio igualitario convirtió a la Argentina en el primer país de América Latina en legalizarlo.
+
+Asimismo, bajo la primera gestión de Jorge Capitanich, el Chaco buscó posicionarse como polo industrial y político del Norte Grande, con inversiones en infraestructura y un fuerte impulso a la obra pública; realización de autovías, la repavimentación de rutas inauguración de acueductos, etc.
+
+En Córdoba, se dictó prisión perpetua para los represores Jorge Rafael Videla y Luciano Benjamín Menéndez por delitos de lesa humanidad, un avance destacado por medios de todo el arco ideológico como un triunfo de la democracia.
+
+En el orden internacional, las filtraciones de “Wikileaks” expusieron cables diplomáticos del Departamento de Estado de Estados Unidos, revelando maniobras de poder, intereses económicos y prácticas de lavado de dinero de corporaciones y figuras influyentes.  
+En relación con los crímenes del genocidio en la provincia, se vivía una etapa de reparación muy fuerte, luego de décadas de impunidad. La causa Brigada I fue la primera sentencia en un juicio por crímenes de lesa humanidad en Chaco y ocurrió un día especial: el 13 de diciembre de 2010, en el trigésimo cuarto aniversario de la Masacre de Margarita Belén (13/12/76).
+
+Ese cruce de fechas convirtió la jornada en una conmemoración atípica. La Casa por la Memoria fue epicentro de una vigilia inédita, con intervenciones artísticas, teatro, música y proyecciones de documentales vinculados a la memoria y a los juicios, participación de referentes culturales y gran acompañamiento de la sociedad a la lucha de organismos de DDHH, familiares y sobrevivientes.
+
+La tapa de los diarios ese lunes 13 a nivel nacional informaba que Estudiantes se coronaba campeón del Apertura tras vencer 2-0 a Arsenal, relegando a Vélez al segundo puesto. Martín Palermo llega  a los 300 goles luego del empate de Boca con Gimnasia 1-1 en la última fecha del torneo Apertura. La venta de autos usados romperá en ese diciembre el récord histórico. La UIA y la CGT arrancan el diálogo formal de cara al “desdibujado” Pacto Social.
+
+A nivel local además del dictado de la primera sentencia sobre crímenes de lesa humanidad, el Chaco se de emoción por el festejo de los cien años del Hospital Perrando; en la celebración el gobernador Capitanich declaró que el 11% del presupuesto del año entrante sería destinado al sistema de salud. Gremios de sectores estatales y privados se sumaron al pedido de un plus salarial de fin de año.
+
+## “PARTEAGUAS”
+
+Aquel 13 de diciembre de 2010 dejaba atrás siete meses de debates y casi un centenar de testimonios. Dentro de la sala, la tensión era evidente. El sector de los familiares de los imputados estaba colmado de rostros adustos. Mario Bosch lucía una corbata acorde con el momento: una estrella federal y la consigna *Juicio y Castigo*, obra serigráfica del pintor y dibujante Juan Britos  
+Afuera, una multitud desbordada por el optimismo copó la calle frente al tribunal en la mañana clara y calurosa de ese lunes 13 de diciembre: familiares de víctimas, militantes, organismos de DDHH y referentes sociales.
+
+El juez Alonso fue expeditivo: en menos de veinte minutos leyó la primera sentencia por crímenes de lesa humanidad en el Chaco. Los 12 imputados fueron condenados por torturas cometidas en la Brigada y en la Alcaidía, con las **máximas penas** previstas, como autores penalmente responsables de torturas agravadas “por condición de perseguidos políticos de sus víctimas”, según estableció el fallo del tribunal.
+
+Al finalizar la lectura del dictamen, las imágenes fueron plenamente contrapuestas: alegría y emoción entre exdetenidos y familiares; llanto y amargura del lado de los familiares de los condenados.  Afuera otra vez, el juicio se siguió mediante una pantalla del Instituto de Cultura: gritos, música, abrazos, lágrimas de alegría y el recuerdo siempre presente.
+
+A las cinco de la tarde, una muchedumbre comenzó a concentrarse en la Casa por la Memoria, epicentro de la marcha para homenajear a los caídos del 13 de diciembre de 1976 Ante el monumento a los caídos, en Ruta 11, durante el acto central de homenaje a militantes víctimas del fusilamiento clandestino la sobreviviente Mirta Clara calificó la jornada como un “día de conmoción, una jornada que marca un parteaguas en la historia del juicio y castigo en la provincia y en la región”.  “Luchamos por condenas judiciales ejemplares y por encontrar a nuestros familiares desaparecidos, y para que no vuelva a repetirse. La pena debe ser ejemplar porque no puede haber ningún policía torturando, deteniendo con total impunidad. La sentencia es importante, a pesar de que el Poder Judicial continúa siendo mafioso y siniestro”.
+
+## 31.5.18. BRIGADA II
+
+Ocho años después, en una coyuntura política muy distinta, la causa Brigada II llegó a su fin con una sentencia ejemplar: **altas penas para once de los doce imputados**, con reconocimiento —por primera vez— de privaciones ilegítimas de la libertad, delitos de violencia sexual y dos desapariciones forzadas cometidas en la ex Brigada de Investigaciones. La única absolución, la de Miguel Pellozo, sería apelada por la fiscalía.
+
+En 2018, Argentina atravesaba un proceso de estancamiento económico, con caída sostenida del salario real, una inflación superior al 34 % y fuerte presión sobre el tipo de cambio. En los primeros ocho meses del año, el peso perdió más del 50 % de su valor frente al dólar. Ante la falta de financiamiento externo, el gobierno de Mauricio Macri solicitó un préstamo al Fondo Monetario Internacional (FMI) por 57.000 millones de dólares, el mayor en la historia del organismo, destinado a financiar la formación de activos externos (fuga de capitales), incumpliendo los estatutos del propio FMI. Todo esto derivó en una transferencia desde el trabajo hacia sectores concentrados ligados a la renta financiera, y a exportadoras.
+
+La crisis impactó duramente en la provincia, gobernada por Domingo Peppo, que sufrió el recorte de subsidios nacionales al transporte y la energía. El Gran Resistencia superó el 40 % de pobreza y desocupación, en un escenario de paros recurrentes, cierre de comercios y encarecimiento de insumos por la volatilidad del dólar que complicaba hasta al sector agropecuario.
+
+Justamente, el año del pronunciamiento judicial en la Causa Brigada II coincidió con una jornada de máxima tensión en el Congreso de la Nación y en las calles de Resistencia y otras ciudades, en octubre y noviembre a propósito del debate por el presupuesto de ajuste ordenado por el FMI.  Además, se debatió por primera vez la legalización de la interrupción voluntaria del embarazo; rechazado en el Senado el 8 de agosto, tras ser aprobado con media sanción en Diputados luego de un debate plural durante varios meses.
+
+Sincronía de contrastes; un país que retrocedía en su soberanía económica bajo el tutelaje financiero externo, como había ocurrido gran parte del siglo XX, pero que lograba avanzar en el juzgamiento a la violencia genocida que en gran medida fue el brazo ejecutor de ese proyecto económico.
+
+Por otra parte, la política judicializada ganó cada vez más preponderancia en el debate público desde la asunción de Mauricio Macri en 2015 y los años subsiguientes mediante la persecución por vía jurídica y mediática al principal espacio político opositor – el kirchnerismo- Sobre la base de un alineamiento de sectores judiciales, políticos, mediáticos, económicos y de servicios de inteligencia se orquestaron operaciones para atacar y deslegitimar a dirigentes y referentes sociales bajo la apariencia causas judiciales. En realidad este tipo de procesos se caracterizó por la violación sistemática de las garantías más elementales, y atropellos flagrantes mediante la tergiversaron de herramientas jurídicas y la inexistencia de pruebas para el armado de causas.
+
+# SENTENCIA: JUICIO Y CASTIGO RECARGADO
+
+El 31 de mayo de 2018 la sentencia fue leída por el presidente del tribunal, Eduardo Belforte, acompañado por los jueces Aldo Alurralde y Juan Manuel Iglesias, poco antes de las 13 h. La sala estaba colmada, y afuera se reunían organizaciones sociales, organismos de DDHH y vecinos sobre la vereda y la calle del Tribunal Oral.
+
+Desde el inicio del juicio, el 16 de junio de 2016, tras casi dos años de proceso, llegaba el desenlace de una causa que atravesó la gestión presidencial de Mauricio Macri, marcada por recortes presupuestarios a políticas de memoria, retiro de querellas en diversos procesos y disminución del acompañamiento institucional a juicios de lesa humanidad. Hubo también desarticulación de programas dedicados a investigar la complicidad civil con la dictadura.
+
+Ese escenario de “cancha inclinada” quedó cristalizado en el aval al “fallo 2x1” de la Corte Suprema de Justicia de la Nación (CSJN) que buscó habilitar la liberación de genocidas procesados y condenados. El 3 de mayo de 2017, en la causa “Bignone, Reynaldo Benito Antonio y otro s/ recurso extraordinario”, la CSJN convalidó que los condenados por delitos de lesa humanidad pudieran computar doble el tiempo de detención preventiva a partir de los dos años, aplicando el derogado artículo 7 de la Ley 24.390. Un intento explícito de reinstalar la impunidad que generó un rechazo masivo: organizaciones de DDHH, sindicatos, partidos políticos y una amplia mayoría social se movilizaron en todo el país. Esa presión derivó en una ley que prohibió aplicar el 2x1 a crímenes de lesa humanidad en diciembre de 2018, en la reversión del fallo por parte de la propia Corte.
+
+Sin embargo, la sentencia cumplió las expectativas de sobrevivientes y organismos de DD.HH. en un contexto político y social que amenazaba con retrocesos en las políticas de Memoria, Verdad y Justicia. El tribunal dio por probados el 99 % de los hechos denunciados y profundizó el análisis penal respecto de Brigada I: la privación ilegítima de la libertad fue reconocida como delito autónomo, y se estableció un reproche penal inédito por violencia sexual. También se dictó la primera condena por desaparición forzada vinculada a la ex Brigada, por el secuestro de Pedro Morel y Sara Ayala. La sentencia expuso la responsabilidad conjunta del Ejército y la Policía del Chaco.
+
+Por todo ello, las once condenas con altas penas representaron un nuevo hito en la reconstrucción del funcionamiento del centro clandestino de la Brigada de Investigaciones. Este fallo incorporó elementos que no habían sido parte de Brigada I. Si en aquella causa se condenó exclusivamente por torturas, en este segundo proceso se profundizó el análisis penal y se estableció la privación ilegítima de la libertad como delito en sí mismo, subrayando que los operativos de detención fueron ilegales desde su origen: sin orden judicial, sin defensas, bajo clandestinidad y en condiciones degradantes.
+
+Otro aspecto decisivo fue el **reproche penal inédito y contundente por violencia sexual**, con dos hechos imputados a Gabino Manader y Albino Borda. Borda recibió 21 años por cuatro hechos; y tanto Manader como Rodríguez Valiente —por imputaciones adicionales— fueron condenados a penas cercanas a 25 y 20 años, respectivamente.
+
+El tercer punto central fue la condena por **desaparición forzada**, la primera vinculada a crímenes cometidos en la ex Brigada. Se trata del secuestro del matrimonio de Pedro Morel y Sara Ayala, vistos con vida por última vez en los calabozos del lugar. La sentencia expuso con claridad la responsabilidad compartida entre el Ejército y la Policía del Chaco en su destino final y reforzó la hipótesis sobre otros cuatro casos similares, también de militantes del Partido Revolucionario de los Trabajadores.El úni
+
+co absuelto fue Miguel Pellozo, llevado a juicio por la detención y torturas contra Carlos Aranda. Aunque fue reconocido en fotografías de época como partícipe del centro clandestino de Marcelo T. de Alvear 32, su legajo consigna que no prestó servicio en la Brigada en 1976, lo que complicó la imputación.
+
+## 8.4.21. BRIGADA III
+
+Nuevo salto temporal hacia 2021, más de una década después del inicio del proceso de juzgamiento. Este tercer capítulo de juzgamiento al genocidio se desarrolló bajo protocolos sanitarios por la pandemia de covid19, con la emergencia de las redes (anti) sociales en un país muy castigado luego de varios años de recesión económica, crisis social y política, con una sociedad exhausta por la inflación.Bajo la pr
+
+esidencia de Alberto Fernández, el 2021 fue el año de la vacunación masiva y el inicio de la recuperación económica tras el desplome de 2020 a raíz de la pandemia. Sancionada el 30 de diciembre del mismo año, la legalización de la interrupción voluntaria del embarazo entró en plena vigencia ese año, resultado de la lucha del colectivo de mujeres y demás organizaciones sociales de un amplio y heterogéneo arco político, hecho que posicionó a Argentina como un referente regional en derechos reproductivos.  
+En el plano financiero el gobierno renegoció la deuda con bonistas privados. El crecimiento económico (cercano al 10% del PBI) no se tradujo en mejoras salariales, los ingresos continuaron perdiendo poder adquisitivo frente a una inflación que ya superaba el 50%. La desigualdad se mantuvo elevada y la pobreza se consolidó como estructural.
+
+El regreso de Capitanich a la gobernación de la provincia estuvo marcado por la gestión sanitaria y la fragilidad social, con el Gran Resistencia como una de las zonas más castigadas desde el inicio de la pandemia. En 2021, la vacunación masiva fue eje central de la agenda oficial para reactivar la economía popular. En el Impenetrable las denuncias de organizaciones ambientales sobre desmontes ilegales se intensificaron, en un aumento de la tensión entre el avance de la frontera agropecuaria y la protección de los recursos naturales.
+
+## LA TERCERA
+
+Con ese contexto, la tercera sentencia en un juicio sobre el funcionamiento de la Brigada de Investigaciones como centro clandestino del genocidio dio por probados los crímenes denunciados, con **ocho condenas a 3, 14 y 25 años**, según la cantidad de hechos que se imputaron. No obstante, el tribunal absolvió a los acusados en los cuatro hechos de desaparición forzada que se juzgaron.
+
+El veredicto se dictó en horas de la siesta del martes 30 de abril, fecha que coincidió con el **44º aniversario de la primera marcha de Madres de Plaza de Mayo**. El tribunal estuvo integrado por Rubén Quiñones, Luciano Lauría y José María Escobar Cuello.
+
+Ese mismo día, en un proceso paralelo, Luis Alfredo Chas fue condenado a 15 años de prisión por su participación en la Masacre de Margarita Belén, con un retraso de diez años respecto de la sentencia original (16/5/11).
+
+El fallo reconoció la **prisión ilegítima de menores, detenciones y torturas cometidas en 1974**. Pese a la contramarcha que implicó la absolución por desaparición forzada —cuestión que sería apelada ante Casación—, la sentencia confirmó la continuidad del proceso iniciado en 2010 y desarrollado a lo largo de los seis juicios posteriores por delitos del terrorismo de Estado en Chaco.
+
+La audiencia comenzó a las 8 h, cuando el presidente Quiñones ofreció a cada imputado la posibilidad de pronunciar sus “últimas palabras” antes de la lectura de la parte resolutiva. Varios declinaron; quienes hablaron repitieron lo dicho en sus ampliaciones indagatorias: agradecimientos formales al tribunal, descalificación de las denuncias y afirmaciones de inocencia. Acto seguido, Quiñones anunció que el tribunal pasaba a deliberar hasta las 14 h. En ese intervalo se realizaron los alegatos y la sentencia de la causa Chas.
+
+De este modo, la fecha de la sentencia , aniversario de la primera ronda realizada por Madres de Plaza de Mayo 44 años atrás, se incorporó al cronograma victorioso del Juicio y Castigo, junto con el 1° de octubre de 2019 y la condena en la causa Mazzoni Casco por complicidad civil, el 25 de junio de 2019 (causa Ligas Agrarias); el 31 de mayo de 2018 (Brigada II); el 26 de abril de 2013 (causa Tozzo, Masacre de Margarita Belén II); el 16 de mayo de 2011 (causa Masacre de Margarita Belén) y el 13 de diciembre de 2010 (causa Brigada I).
+
+A continuación, la lista de condenados en los respetivos procesos judiciales:
+
+## CONDENADOS
+
+### Gabino Manader (Policía del Chaco)
+
+Brigada I; 25 años de prisión por tormentos agravados por la condición de detenido político de la víctima (25 hechos).
+
+Brigada II; 25 años de prisión por tormentos agravados (10 hechos), por privación ilegítima de la libertad (7 hechos) y abuso sexual con acceso carnal calificado (violación) en 1 hecho y desaparición forzada (2 hechos).
+
+Brigada III; 25 años de prisión por 5 hechos de privación ilegítima de libertad agravada, 13 hechos de tormentos agravados, y 1 caso de violación agravada por la condición de detenida política de la víctima .
+
+## José Francisco Rodríguez Valiente (Policía del Chaco)
+
+Brigada: 25 años de prisión por tormentos agravados por la condición de detenido político de la víctima (15 hechos).
+
+Brigada II: 20 años de prisión por tormentos agravados por la condición de detenido político de la víctima ( 7 hechos), por privación ilegítima de la libertad (7 hechos) y desaparición forzada (2 hechos) y abuso sexual con acceso carnal calificado (violación) en 1 hecho.
+
+Brigada III: 25 años de prisión por violación de domicilio (1 hecho), por tormentos agravados ( 9 hechos), y por abuso sexual con acceso carnal calificado (1 hecho).
+
+### Humberto Lucio Caballero (Policía del Chaco)
+
+Brigada I: 25 años de prisión por tormentos agravados (14 hechos).
+
+### José Marín (alias “Cabo Sotelo”) (Policía del Chaco)
+
+Brigada: 25 años de prisión por tormentos agravados (7 hechos).
+
+Brigada II: 18 años de prisión por tormentos agravados por la condición de detenido político de la víctima ( 5 hechos), por privación ilegítima de la libertad (4 hechos) y desaparición forzada (2 hechos).
+
+Brigada III: 3 años de prisión por tormentos agravados (1 hecho).
+
+### Ramón Esteban Meza (Policía del Chaco)
+
+Brigada: 25 años de prisión por tormentos agravados (4 hechos).
+
+Brigada II: 19 años de prisión por tormentos agravados (6 hechos), por privación ilegítima de la libertad ( 6 hechos), desaparición forzada (2 hechos).
+
+### Luis Alberto Patetta (Ejército)
+
+Brigada I; 25 años de prisión por tormentos agravados por la condición de detenido político de la víctima (2 hechos).  
+Brigada II; 19 años de prisión por tormentos agravados (6 hechos), por privación ilegítima de la libertad (5 hechos) y desaparición forzada (2 hechos).Briga
+
+da III; 11 años y 6 meses de prisión por tormentos agravados (3 hechos) y violación de domicilio (1 hecho).
+
+### José Tadeo Luis Bettolli (Ejército)
+
+Brigada I; 25 años de prisión por tormentos agravados por la condición de detenido político de la víctima (2 hechos).
+
+Brigada II;12 años de prisión por tormentos agravados por la condición de detenido político de la víctima (2 hechos), por privación ilegítima de la libertad (2 hechos) y desaparición forzada (2 hechos).
+
+Brigada III; 25 años de prisión por tormentos agravados por la condición de detenido político de la víctima (2 hechos).
+
+### Francisco Orlando Álvarez (Alcaidía):
+
+Brigada I; 25 años de prisión por tormentos agravados por la condición de detenido político de la víctima (3 hechos).
+
+Brigada III; 14  años de prisión por tormentos agravados por la condición de detenido político de la víctima (4 hechos).
+
+### Rubén Héctor Roldán (Alcaidía):
+
+Brigada I: 25 años de prisión por tormentos agravados por la condición de detenido político de la víctima (2 hechos).
+
+### Oscar Alberto Galarza (Alcaidía)
+
+Brigada I: 25 años de prisión por tormentos agravados por la condición de detenido político de la víctima (3 hechos).
+
+### Ramón Andrés Gandola (Policía del Chaco)
+
+Brigada: 15 años de prisión por tormentos agravados por la condición de detenido político de la víctima (1 hecho).
+
+### Enzo Breard(Policía del Chaco):
+
+Brigada: 15 años de prisión por tormentos agravados por la condición de detenido político de la víctima (1 hecho).
+
+Brigada II: 18  años de prisión por tormentos agravados por la condición de detenido político de la víctima (5 hechos) , por privación ilegítima de la libertad (4  hechos) y por desaparición forzada (2 hechos).
+
+### Jorge Ibarra (Policía del Chaco)
+
+Brigada II: 12 años de prisión por tormentos agravados por la condición de detenido político de la víctima (2 hechos) y  por privación ilegítima de la libertad (2 hechos).
+
+Brigada III; 6 años de prisión por tormentos agravados por la condición de detenido político de la víctima (2 hechos) .
+
+### Albino Borda (Policía del Chaco)
+
+Brigada II : 22 años de prisión por tormentos agravados por la condición de detenido político de la víctima (4 hechos) y por privación ilegítima de la libertad (4 hechos), por desaparición forzada (2 hechos) y por violación (1 hecho).
+
+### Antonio Musa Azar (Policía Sgo. Del Estero)
+
+Brigada II: 10 años de prisión por tormentos agravados por la condición de detenido político de la víctima y por privación ilegítima de la libertad agravada (1 hecho).
+
+### Miguel Garbi (Policía Sgo. Del Estero)
+
+Brigada II: 10 años de prisión por tormentos agravados por la condición de detenido político de la víctima y por privación ilegítima de la libertad agravada (1 hecho).
+
+### César Pablo Casco (Serv. Penitenciario U7)
+
+Brigada III: 3 años y nueve meses de prisión por tormentos agravados por la condición de detenido político de la víctima (1 hecho).

@@ -1,0 +1,249 @@
+/*
+ * The A5 edition.
+ *
+ * Same tokens as the site, retuned for paper: dark type on a white ground so
+ * the book is cheap to print, a measure that fits 148 mm, and hard rules about
+ * where a page may break. Chrome paginates this; page numbers and the outline
+ * are stamped afterwards by scripts/build-pdf.mjs.
+ *
+ * The trim is 148 × 210 mm. The content box is therefore 119 mm wide and
+ * 180 mm tall, and every image ceiling below is derived from that.
+ */
+
+@page {
+  size: A5;
+  /* Asymmetric: the inner margin carries the gutter if this is ever bound. */
+  margin: 14mm 13mm 16mm 16mm;
+}
+
+:root {
+  --page-content-height: 180mm;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  font-size: 10pt;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #1c1f22;
+  font-family: 'Source Sans 3', 'Source Sans Pro', Georgia, serif;
+  font-size: 9.6pt;
+  line-height: 1.46;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  orphans: 3;
+  widows: 3;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.12;
+  letter-spacing: 0.005em;
+  text-align: left;
+  hyphens: none;
+  break-after: avoid;
+  page-break-after: avoid;
+  margin: 0 0 2.4mm;
+}
+h1 { font-size: 17pt; margin-top: 9mm; color: #145575; }
+h2 { font-size: 13pt; margin-top: 7mm; color: #145575; }
+h3 { font-size: 11pt; margin-top: 5.5mm; }
+h4 { font-size: 9.8pt; margin-top: 4.5mm; }
+
+p { margin: 0 0 2.6mm; }
+strong { font-weight: 700; }
+em { font-style: italic; }
+a { color: inherit; text-decoration: none; }
+
+blockquote {
+  margin: 4mm 0 4mm 4mm;
+  padding-left: 4mm;
+  border-left: 0.6mm solid #9fcde3;
+  font-size: 9pt;
+  line-height: 1.42;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+blockquote p { margin-bottom: 2mm; }
+blockquote p:last-child { margin-bottom: 0; }
+
+ul, ol { margin: 0 0 2.6mm; padding-left: 6mm; }
+li { margin-bottom: 1.2mm; }
+
+hr {
+  border: 0;
+  height: 0.5mm;
+  background: #9fcde3;
+  margin: 6mm auto;
+  width: 32mm;
+}
+
+/* ── Photographs ────────────────────────────────────────────────────────────
+   No image may straddle a page break, and none may exceed one page. The
+   ceilings below leave room for the caption underneath, and the eight scans
+   the manifest marks as low resolution are capped at half a page — at that
+   size their softness reads as a small archival print, not as a defect. */
+
+figure.figure {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin: 5mm 0;
+  text-align: center;
+}
+figure.figure img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  /* 180 mm page − caption and surrounding leading. */
+  max-height: 148mm;
+  object-fit: contain;
+}
+figure.figure.portrait img { max-height: 148mm; }
+figure.figure.landscape img { max-height: 110mm; }
+figure.figure.q-reduced img { max-height: 96mm; }
+figure.figure.q-low img { max-height: 74mm; }
+
+figure.figure figcaption {
+  margin-top: 1.8mm;
+  font-size: 7.4pt;
+  line-height: 1.32;
+  text-align: left;
+  color: #575d63;
+  hyphens: none;
+}
+figure.figure figcaption .credit {
+  display: block;
+  font-weight: 700;
+  color: #196b93;
+}
+
+/* ── Front matter ───────────────────────────────────────────────────────── */
+
+.page-cover {
+  break-after: page;
+  page-break-after: always;
+  height: var(--page-content-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+.page-cover h1 {
+  font-size: 30pt;
+  line-height: 1.14;
+  margin: 0 0 6mm;
+  color: #1e81b0;
+}
+.page-cover .sub {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12pt;
+  letter-spacing: 0.04em;
+  margin: 0 0 2mm;
+}
+.page-cover .kicker { font-style: italic; font-size: 10pt; color: #575d63; }
+.page-cover .publisher {
+  margin-top: auto;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 8.6pt;
+  letter-spacing: 0.06em;
+  color: #575d63;
+}
+
+.page-blurb {
+  break-after: page;
+  page-break-after: always;
+  font-size: 9.4pt;
+}
+.page-blurb h2 { font-size: 12pt; margin-top: 0; }
+
+/* ── Table of contents ──────────────────────────────────────────────────── */
+
+.page-toc {
+  break-after: page;
+  page-break-after: always;
+}
+.page-toc h2 { margin-top: 0; }
+.toc-list { list-style: none; margin: 0; padding: 0; font-size: 8.8pt; }
+.toc-list li { margin-bottom: 1.4mm; text-align: left; hyphens: none; }
+.toc-list .toc-part {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 9.2pt;
+  color: #145575;
+  margin-top: 4mm;
+}
+.toc-list .toc-doc { padding-left: 3mm; }
+.toc-list .toc-h2 { padding-left: 7mm; color: #575d63; font-size: 8.2pt; }
+
+/* ── Chapter openings ───────────────────────────────────────────────────────
+   The spec is explicit: in the PDF the photograph takes the first page and the
+   text the second. */
+
+.chapter {
+  break-before: page;
+  page-break-before: always;
+}
+.chapter-image {
+  height: var(--page-content-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  break-after: page;
+  page-break-after: always;
+  margin: 0;
+}
+.chapter-image img {
+  max-width: 100%;
+  max-height: var(--page-content-height);
+  object-fit: contain;
+}
+.chapter-title-block { text-align: left; }
+.chapter-num {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 40pt;
+  line-height: 1;
+  color: #cbe4f0;
+  margin: 0 0 3mm;
+}
+.chapter-title-block h1 { margin-top: 0; font-size: 22pt; line-height: 1.1; }
+.chapter-blurb {
+  font-size: 9pt;
+  font-style: italic;
+  color: #575d63;
+  margin-bottom: 6mm;
+  text-align: left;
+}
+
+/* ── Ordinary documents ─────────────────────────────────────────────────── */
+
+.doc { break-before: page; page-break-before: always; }
+.doc.interlude {
+  break-before: page;
+  page-break-before: always;
+  break-after: page;
+  page-break-after: always;
+}
+.doc.interlude blockquote {
+  border: 0;
+  margin-left: 0;
+  padding-left: 0;
+  font-size: 11pt;
+  line-height: 1.34;
+  color: #145575;
+}
+
+/* The stamped page number needs clear space at the foot of every page. */
+.doc, .chapter, .page-toc { padding-bottom: 2mm; }

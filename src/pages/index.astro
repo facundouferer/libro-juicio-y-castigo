@@ -1,0 +1,79 @@
+---
+/**
+ * The book, as one continuous document.
+ *
+ * Every chapter renders into a single page in reading order, so the reader
+ * goes from the cover to the last page of the annex on one scrollbar — which
+ * is what makes it read like a book and what makes the reading-position
+ * memory mean anything.
+ */
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Controls from '../components/Controls.astro';
+import ScrollHint from '../components/ScrollHint.astro';
+import Landing from '../components/Landing.astro';
+import ChapterOpening from '../components/ChapterOpening.astro';
+import SplitReader from '../components/SplitReader.astro';
+import Interlude from '../components/Interlude.astro';
+import ContentsModal from '../components/ContentsModal.astro';
+import DownloadModal from '../components/DownloadModal.astro';
+import ZoomModal from '../components/ZoomModal.astro';
+import BookFooter from '../components/BookFooter.astro';
+import { BOOK } from '../lib/site.mjs';
+
+const entries = (await getCollection('book')).sort((a, b) => a.data.order - b.data.order);
+
+const rendered = await Promise.all(
+  entries.map(async (entry) => ({ entry, Content: (await render(entry)).Content })),
+);
+---
+
+<Base title={`${BOOK.title} (${BOOK.volume}) — ${BOOK.subtitle}`} isBook>
+  <Controls />
+  <ScrollHint />
+
+  <main id="contenido" data-pagefind-body>
+    {
+      rendered.map(({ entry, Content }) => {
+        const props = {
+          docSlug: entry.data.docSlug,
+          title: entry.data.title,
+          section: entry.data.section,
+        };
+
+        if (entry.data.pageType === 'landing') {
+          return (
+            <Landing>
+              <Content />
+            </Landing>
+          );
+        }
+        if (entry.data.pageType === 'chapter-opening') {
+          return (
+            <ChapterOpening {...props}>
+              <Content />
+            </ChapterOpening>
+          );
+        }
+        if (entry.data.pageType === 'interlude') {
+          return (
+            <Interlude {...props}>
+              <Content />
+            </Interlude>
+          );
+        }
+        return (
+          <SplitReader {...props}>
+            <Content />
+          </SplitReader>
+        );
+      })
+    }
+
+    <BookFooter />
+  </main>
+
+  <ContentsModal />
+  <DownloadModal />
+  <ZoomModal />
+</Base>
