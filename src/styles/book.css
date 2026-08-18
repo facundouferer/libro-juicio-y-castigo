@@ -192,7 +192,9 @@ body.is-locked { overflow: hidden; }
   );
 }
 .landing-inner { max-width: min(760px, 100%); }
-.landing-logo { width: clamp(74px, 9vw, 112px); margin-bottom: clamp(16px, 3vh, 34px); }
+/* A wide wordmark, not a square mark: sized by width so its height lands in
+   the 52-74px band the cover was designed around. */
+.landing-logo { width: clamp(140px, 16vw, 200px); height: auto; margin-bottom: clamp(16px, 3vh, 34px); }
 .landing h1 {
   /* Banded lines need leading of their own so consecutive .hl rectangles never
      touch — which is also what makes the title tall, so the ceiling is set to
@@ -336,7 +338,7 @@ body.is-locked { overflow: hidden; }
 
 .reader {
   display: grid;
-  grid-template-columns: 46fr 54fr;
+  grid-template-columns: 42fr 58fr;
   align-items: start;
   background: var(--color-bg);
 }
@@ -426,7 +428,7 @@ body.is-locked { overflow: hidden; }
 /* — the prose column — */
 .prose {
   padding: clamp(56px, 11vh, 128px) clamp(24px, 4.5vw, 84px);
-  max-width: 68ch;
+  max-width: 88ch;
   font-size: 17.5px;
   line-height: 1.68;
 }
@@ -447,6 +449,30 @@ body.is-locked { overflow: hidden; }
 .prose h1:first-child,
 .prose h2:first-child,
 .prose h3:first-child { margin-top: 0; }
+
+/* The heading whose photograph just landed on the plate glows for a moment,
+   so the eye can pair the two across the gutter. Duration must match the
+   timeout in spotlightHeading (book.ts). */
+.prose :is(h1, h2, h3, h4).is-lit {
+  animation: heading-glow 2600ms ease-in-out both;
+}
+@keyframes heading-glow {
+  0%,
+  100% {
+    color: inherit;
+    text-shadow: 0 0 0 transparent;
+  }
+  12%,
+  55% {
+    color: var(--color-accent-700);
+    text-shadow:
+      0 0 16px var(--color-accent-300),
+      0 0 40px color-mix(in srgb, var(--color-accent) 30%, transparent);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .prose :is(h1, h2, h3, h4).is-lit { animation: none; }
+}
 
 .prose strong { font-weight: 700; }
 .prose em { font-style: italic; }
@@ -509,6 +535,9 @@ body.is-locked { overflow: hidden; }
 .opening-prose .figure img,
 .interlude-text .figure img {
   width: auto;
+  /* height: auto beats the height attribute's presentational hint, which would
+     otherwise hold the image at its intrinsic height while max-width shrinks it. */
+  height: auto;
   max-width: 100%;
   /* A portrait scan would otherwise run past a full screen on its own. */
   max-height: 68vh;
@@ -561,6 +590,7 @@ body.is-locked { overflow: hidden; }
 }
 .interlude figure img {
   width: auto;
+  height: auto;
   max-width: 100%;
   /* Several of these are tall portraits; without a ceiling they push the
      vignette past a full screen and the text beside them scrolls out of reach. */
@@ -785,7 +815,10 @@ dialog.modal.is-closing::backdrop { opacity: 0; }
   position: absolute;
   top: 50%;
   left: 50%;
-  max-width: none;
+  max-width: 100%;
+  max-height: 100%;
+  user-select: none;
+  -webkit-user-drag: none;
   transform: translate(-50%, -50%) translate(var(--tx, 0px), var(--ty, 0px)) scale(var(--scale, 1));
   transform-origin: center;
   transition: transform 160ms ease;
@@ -888,7 +921,7 @@ dialog.modal.is-closing::backdrop { opacity: 0; }
     border-radius: var(--radius-md);
     overflow: hidden;
   }
-  .prose .figure img { width: 100%; border-radius: var(--radius-md); }
+  .prose .figure img { width: 100%; height: auto; border-radius: var(--radius-md); }
   /* The caption stays out of the way until the reader opens the image — the
      spec asks for the photograph first, its epigraph on demand. */
   .prose .figure figcaption { display: none; }

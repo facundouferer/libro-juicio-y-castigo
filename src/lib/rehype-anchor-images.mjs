@@ -32,7 +32,7 @@ function loadJson(relative, fallback) {
 }
 
 /** Widths the plate and the inline figure actually render at. */
-const SIZES = '(max-width: 900px) 100vw, 46vw';
+const SIZES = '(max-width: 900px) 100vw, 42vw';
 
 const el = (tagName, properties, children = []) => ({ type: 'element', tagName, properties, children });
 const text = (value) => ({ type: 'text', value });

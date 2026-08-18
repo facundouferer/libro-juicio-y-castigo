@@ -141,6 +141,28 @@ function measurePlates() {
   }
 }
 
+/**
+ * The heading whose photograph just landed on the plate is lit for a moment,
+ * so the eye can pair the two across the gutter. The timeout must match the
+ * heading-glow animation length in book.css.
+ */
+let litHeading: HTMLElement | null = null;
+let litTimer = 0;
+
+function spotlightHeading(el: HTMLElement | undefined) {
+  if (!el || !/^H[1-4]$/.test(el.tagName)) return;
+  litHeading?.classList.remove('is-lit');
+  window.clearTimeout(litTimer);
+  // Forces a restyle so the animation restarts when the same heading fires twice.
+  void el.offsetWidth;
+  el.classList.add('is-lit');
+  litHeading = el;
+  litTimer = window.setTimeout(() => {
+    el.classList.remove('is-lit');
+    litHeading = null;
+  }, 2600);
+}
+
 function showOnPlate(plate: Plate, anchor: Anchor | null) {
   const key = anchor?.key ?? null;
   if (key === plate.activeKey) return;
@@ -158,7 +180,7 @@ function showOnPlate(plate: Plate, anchor: Anchor | null) {
 
   // srcset before src, so the browser picks the right width on first look
   // rather than fetching the fallback and then upgrading.
-  layer.setAttribute('sizes', '46vw');
+  layer.setAttribute('sizes', '42vw');
   layer.setAttribute('srcset', plate.avifSupported ? anchor.avif : anchor.webp);
   layer.src = anchor.src;
   layer.alt = anchor.alt;
@@ -168,6 +190,7 @@ function showOnPlate(plate: Plate, anchor: Anchor | null) {
     layer.classList.add('is-active');
     plate.front = next;
     plate.root.classList.add('has-image');
+    spotlightHeading((anchor as Anchor & { el?: HTMLElement }).el);
   };
 
   if (layer.complete && layer.naturalWidth) reveal();
@@ -318,6 +341,8 @@ function setupZoom() {
 
   stage.addEventListener('pointerdown', (event) => {
     if (scale <= 1) return;
+    // Blocks the browser's native image drag, which would cancel the pan.
+    event.preventDefault();
     dragging = true;
     originX = event.clientX - tx;
     originY = event.clientY - ty;
