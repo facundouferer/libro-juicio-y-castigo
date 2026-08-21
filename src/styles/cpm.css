@@ -15,7 +15,7 @@
   --color-bg: #ffffff;
   --color-surface: #fafbfc;
   --color-text: #333333;
-  --color-accent: #1e81b0;
+  /* --color-accent and the ramp arrive from src/lib/palette.mjs. */
   --color-accent-2: #e28743;
   --color-divider: color-mix(in srgb, #333333 18%, transparent);
 
@@ -31,15 +31,9 @@
   --color-neutral-800: #3d4247;
   --color-neutral-900: #26292c;
 
-  --color-accent-100: #eaf4f9;
-  --color-accent-200: #cbe4f0;
-  --color-accent-300: #9fcde3;
-  --color-accent-400: #62aecf;
-  --color-accent-500: #2a90bf;
-  --color-accent-600: #196b93;
-  --color-accent-700: #145575;
-  --color-accent-800: #0f3f57;
-  --color-accent-900: #0a2b3b;
+  /* The accent ramp is generated from a single hue by src/lib/palette.mjs and
+     injected by the layout, so the site, the PDF and the EPUB share one
+     definition (spec 07, RF-07.2). */
 
   --color-accent-2-100: #fdf1e8;
   --color-accent-2-200: #fadfc9;
@@ -260,7 +254,9 @@ figcaption {
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
-.hl { background: var(--color-accent); color: var(--color-bg); }
+/* The band follows the section's depth, so the movement of the book is felt
+   in the titling rather than announced (spec 07, RF-07.3 and RF-07.6). */
+.hl { background: var(--section-accent); color: var(--color-bg); }
 .hl-soft { background: var(--color-accent-300); color: var(--color-text); }
 
 /* — editorial text roles — */

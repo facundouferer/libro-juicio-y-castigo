@@ -4,6 +4,7 @@ docSlug: "tapa"
 order: 0
 section: "inicio"
 pageType: "landing"
+showTitle: false
 words: 232
 sourceFile: "section00_inicio/00.tapa y contratapa.md"
 ---

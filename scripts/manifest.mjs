@@ -12,6 +12,8 @@
  *   chapter-opening — a section title page: image, then part + title + standfirst
  *   reader          — the split reader: sticky image left, scrolling text right
  *   interlude       — a short vignette or pull quote used as a separator
+ *   citations       — the epigraph page that opens the book (spec 01, RF-01.2)
+ *   colophon        — credits, legal notice and imprint (spec 01, RF-01.4)
  */
 
 export const SECTIONS = [
@@ -74,6 +76,10 @@ export const SECTIONS = [
 /**
  * `strip` lists heading lines removed from the body because the normalizer
  * promotes them into frontmatter — the chapter-opening layout renders them.
+ *
+ * `showTitle: false` marks the handful of documents whose `title` is an
+ * internal label rather than an editorial title, so no edition prints it.
+ * `kicker` is the overline printed above a title (spec 02, RF-02.3 and RF-02.7).
  */
 export const ENTRIES = [
   {
@@ -82,6 +88,7 @@ export const ENTRIES = [
     title: 'Juicio y Castigo en el Chaco (Vol II)',
     section: 'inicio',
     pageType: 'landing',
+    showTitle: false,
     // Title, subtitle and kicker are rendered by the landing layout itself, so
     // all five cover headings come out and only the back-cover prose remains.
     strip: 5,
@@ -89,9 +96,31 @@ export const ENTRIES = [
   {
     source: 'section00_inicio/00b.primera pagina.md',
     slug: 'primera-pagina',
-    title: 'Primera página',
+    title: 'Citas',
     section: 'inicio',
-    pageType: 'interlude',
+    pageType: 'citations',
+    // "Primera página" names the page, not the text on it: this is the
+    // citations page and it stays typographic (spec 02, RF-02.3).
+    showTitle: false,
+  },
+  {
+    // Editorial front matter, not manuscript: the book had no credits page at
+    // all (spec 01, RF-01.4). `pending` lists what the editorial team still
+    // has to supply; check-build reports it rather than inventing it.
+    source: 'section00_inicio/00c.creditos.md',
+    slug: 'creditos',
+    title: 'Créditos',
+    section: 'inicio',
+    pageType: 'colophon',
+    showTitle: false,
+    strip: 1,
+    pending: [
+      'datos de impresión',
+      'ISBN',
+      'licencia copyleft',
+      'ficha de catalogación',
+      'crédito de la fotografía de tapa',
+    ],
   },
   {
     source: 'section00_inicio/01. DOC ORGANISMOS. La memoria y la palabra.md',
@@ -99,6 +128,7 @@ export const ENTRIES = [
     title: 'La memoria y la palabra: los juicios al genocidio',
     section: 'inicio',
     pageType: 'reader',
+    kicker: 'Declaración de los organismos de derechos humanos — CPM Chaco',
     strip: 1,
   },
   {
@@ -139,6 +169,10 @@ export const ENTRIES = [
     title: 'Chachi',
     section: 'una-casa-con-una-sala-negra',
     pageType: 'interlude',
+    // The body opens with its own full title — "CHACHI. Gregorio 'Chachi'
+    // Quintana 1955-2010" — so printing this label above it would say the same
+    // thing twice (spec 02, RF-02.3).
+    showTitle: false,
   },
 
   {

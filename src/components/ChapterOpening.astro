@@ -1,9 +1,13 @@
 ---
 /**
  * A section title page: photograph across the top under a soft curved edge,
- * then the part number, the banded title and the section's standfirst on the
- * ground below. The opening essay that follows it in the manuscript runs under
- * the title at reading width.
+ * then the part number, the section's name as an overline and the opening
+ * text's own title on the ground below. The opening essay runs under it at
+ * reading width.
+ *
+ * The hierarchy is deliberate (spec 02, RF-02.4): reading "Una casa con una
+ * Sala Negra" as the dominant title made the essay beneath it look untitled.
+ * The section names the part; the title names the text.
  *
  * In the PDF this splits in two — image on the first page, text on the second —
  * as the spec asks; on screen it is one full-height view.
@@ -46,10 +50,10 @@ const SIZES = '100vw';
 
   <div class="opening-body">
     {meta?.partNumber && <p class="opening-num">{String(meta.partNumber).padStart(2, '0')}</p>}
-    <h2 class="opening-title" data-pagefind-meta={`title:${meta?.title ?? title}`}>
-      <span class="hl">{meta?.title ?? title}</span>
+    {meta?.title && <p class="opening-volanta">{meta.title}</p>}
+    <h2 class="opening-title" data-pagefind-meta={`title:${title}`}>
+      <span class="hl">{title}</span>
     </h2>
-    {meta?.blurb && <p class="opening-blurb">{meta.blurb}</p>}
     <div class="opening-prose">
       <slot />
     </div>

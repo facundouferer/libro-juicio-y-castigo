@@ -1,9 +1,10 @@
 ---
-title: "Primera página"
+title: "Citas"
 docSlug: "primera-pagina"
 order: 1
 section: "inicio"
-pageType: "interlude"
+pageType: "citations"
+showTitle: false
 words: 92
 sourceFile: "section00_inicio/00b.primera pagina.md"
 ---

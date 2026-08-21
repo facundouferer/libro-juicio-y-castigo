@@ -17,7 +17,11 @@ const book = defineCollection({
     docSlug: z.string(),
     order: z.number().int().nonnegative(),
     section: z.string(),
-    pageType: z.enum(['landing', 'chapter-opening', 'reader', 'interlude']),
+    pageType: z.enum(['landing', 'chapter-opening', 'reader', 'interlude', 'citations', 'colophon']),
+    /** False for documents whose title is an internal label (spec 02, RF-02.3). */
+    showTitle: z.boolean().default(true),
+    /** Overline printed above the title, e.g. the institutional attribution. */
+    kicker: z.string().optional(),
     words: z.number().int().nonnegative(),
     sourceFile: z.string(),
   }),

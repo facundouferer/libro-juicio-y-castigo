@@ -2,244 +2,365 @@
  * Turns the proposed image anchors into the map the site, the PDF and the EPUB
  * all build against.
  *
- * The proposals are read as suggestions, not as truth. Each one is checked
- * against the real heading index, and where several readers converged on the
- * same obvious heading — the one naming the witness or the hearing date — the
- * contest is resolved by placement rather than by discarding a photograph:
+ * The folder numbering is the book's visual score. The editorial team numbered
+ * the 105 photographs and drawings in the order they are meant to appear, and
+ * that order outranks any resemblance between an epigraph and a heading. So the
+ * allocator walks the images in folder order and never looks backwards: image
+ * 042 can only land at or after wherever 041 landed.
  *
- *   1. the proposed heading, if it still has room
- *   2. the nearest heading with room in the same document
- *   3. the nearest document with room in the same section
- *   4. the section's closing gallery
+ * Semantic affinity still has a job, but a smaller one. A proposal is honoured
+ * only when it falls inside the gap the order already leaves — between where
+ * the previous image landed and where the next one will. Most proposals do not,
+ * and that is the trade the spec asks for: see
+ * docs/specs/spec-04-secuencia-de-imagenes.md, RF-04.1 and RF-04.2, and the
+ * note at the foot of that document about what it costs.
+ *
+ * Pacing is measured in capacity, not in slots. Four documents hold 206 of the
+ * book's 241 headings, so spacing the images evenly across headings would empty
+ * the short documents and crowd the chronicles. Capacity follows the text.
  *
  * A heading's room is derived from how much text follows it. A chronicle with
  * twenty paragraphs can carry a sequence of photographs that the plate advances
  * through as the reader scrolls; a two-paragraph note cannot, and crowding it
  * would put four images on one screen of text.
  *
- * The output carries a `review` list — every anchor a person should look at,
- * least certain first. That list is the deliverable for the editorial pass.
+ * Two lists come out alongside the map: `review`, the inventory of where every
+ * image ended up, and a duplicates report for the editorial pass to act on.
  */
 
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const DATA = path.join(ROOT, 'src', 'data');
+const BUILD = path.join(ROOT, 'build');
 const PROPOSALS = path.join(ROOT, 'scripts', 'proposed-anchors.json');
+const SKIP_FILE = path.join(ROOT, 'scripts', 'image-skip.json');
 
-/** Below this, an anchor is placed but flagged for a human to confirm. */
+/** Below this, the proposal that placed an image is worth a second look. */
 const REVIEW_BELOW = 70;
 /** Roughly how many paragraphs a heading needs before it can carry one more image. */
 const BLOCKS_PER_IMAGE = 4;
 /** No heading holds more than this, however long it runs. */
 const MAX_PER_HEADING = 4;
 
-const { entries, sections } = JSON.parse(await readFile(path.join(DATA, 'headings.json'), 'utf8'));
+/**
+ * Documents that never carry a photograph, whatever the mapping proposes.
+ * `tapa` composes its own art; `primera-pagina` is the citations page and
+ * `creditos` the colophon, both of which spec 01 requires to stay typographic.
+ *
+ * Leaving `creditos` out of this list put image 001 on the credits page, where
+ * no edition renders it — so the photograph vanished from the book without any
+ * check noticing, because the map still counted it as placed.
+ */
+const NO_IMAGE_DOCS = new Set(['tapa', 'primera-pagina', 'creditos']);
+
+const { entries } = JSON.parse(await readFile(path.join(DATA, 'headings.json'), 'utf8'));
 const captions = JSON.parse(await readFile(path.join(DATA, 'captions.json'), 'utf8'));
-
-const docs = new Map(entries.map((e) => [e.slug, e]));
-const headingText = new Map(entries.flatMap((e) => e.headings.map((h) => [`${e.slug}#${h.slug}`, h.text])));
-const allKeys = captions.images.map((c) => c.key);
-const captionByKey = new Map(captions.images.map((c) => [c.key, c]));
-
-/** Documents of each section, in reading order — the spill path. */
-const sectionDocs = new Map();
-for (const entry of entries) {
-  if (!sectionDocs.has(entry.section)) sectionDocs.set(entry.section, []);
-  sectionDocs.get(entry.section).push(entry.slug);
-}
-
-const capacity = new Map();
-const used = new Map();
-for (const entry of entries) {
-  for (const heading of entry.headings) {
-    const slot = `${entry.slug}#${heading.slug}`;
-    capacity.set(slot, Math.max(1, Math.min(MAX_PER_HEADING, Math.ceil(heading.blocks / BLOCKS_PER_IMAGE))));
-    used.set(slot, 0);
-  }
-}
-
-const room = (slot) => (capacity.get(slot) ?? 0) - (used.get(slot) ?? 0) > 0;
-const take = (slot) => used.set(slot, (used.get(slot) ?? 0) + 1);
 
 if (!existsSync(PROPOSALS)) {
   throw new Error(
     `Falta ${path.relative(ROOT, PROPOSALS)}. Ese archivo lo escribe la pasada de mapeo con los anclajes propuestos.`,
   );
 }
-
 const proposals = JSON.parse(await readFile(PROPOSALS, 'utf8'));
 const rawMatches = Array.isArray(proposals) ? proposals : (proposals.matches ?? []);
 
-/** anchors[doc][heading] is an ordered list — the plate advances through it. */
-const anchors = {};
-const documentImages = {};
-const galleries = {};
-const review = [];
-const rejected = [];
-const relocated = [];
+/** Images the editorial pass decided not to print. See RF-04.4. */
+const skipConfig = existsSync(SKIP_FILE) ? JSON.parse(await readFile(SKIP_FILE, 'utf8')) : { skip: [] };
+const skipReason = new Map((skipConfig.skip ?? []).map((s) => [String(s.key).trim(), String(s.reason ?? '')]));
 
-const placedKeys = new Set();
+const captionByKey = new Map(captions.images.map((c) => [c.key, c]));
+const headingText = new Map(entries.flatMap((e) => e.headings.map((h) => [`${e.slug}#${h.slug}`, h.text])));
 
-/** Nearest heading with room in a document, searching forward before back. */
-function nearestFree(docSlug, headingSlug) {
-  const order = docs.get(docSlug)?.headings.map((h) => h.slug) ?? [];
-  const start = order.indexOf(headingSlug);
-  if (start === -1) return order.find((h) => room(`${docSlug}#${h}`)) ?? null;
+/** The images to place, in folder order, minus the ones the editors dropped. */
+const orderedKeys = captions.images.map((c) => c.key).filter((key) => !skipReason.has(key));
 
-  for (let step = 1; step < order.length; step += 1) {
-    for (const index of [start + step, start - step]) {
-      if (index < 0 || index >= order.length) continue;
-      if (room(`${docSlug}#${order[index]}`)) {
-        return order[index];
-      }
-    }
+/* ── The slot list ──────────────────────────────────────────────────────────
+   Every place an image can go, in reading order. Index into this array is the
+   only notion of "position" the allocator has, and it only ever moves forward. */
+
+const slots = [];
+
+/** Openings and interludes carry one photograph for the whole document, and so
+ *  does any document with no headings of its own — the plate's resting state. */
+const carriesDocumentImage = (entry) =>
+  !NO_IMAGE_DOCS.has(entry.slug) &&
+  entry.pageType !== 'landing' &&
+  (entry.pageType === 'chapter-opening' || entry.pageType === 'interlude' || entry.headings.length === 0);
+
+for (const entry of entries) {
+  if (carriesDocumentImage(entry)) {
+    slots.push({ docSlug: entry.slug, headingSlug: null, section: entry.section, capacity: 1, used: 0 });
   }
-  return null;
-}
-
-/** Nearest document with room in the same section. */
-function nearestDoc(docSlug) {
-  const doc = docs.get(docSlug);
-  const siblings = sectionDocs.get(doc.section) ?? [];
-  const start = siblings.indexOf(docSlug);
-
-  for (let step = 1; step < siblings.length; step += 1) {
-    for (const index of [start + step, start - step]) {
-      if (index < 0 || index >= siblings.length) continue;
-      const candidate = siblings[index];
-      const heading = nearestFree(candidate, '');
-      if (heading) return { docSlug: candidate, headingSlug: heading };
-    }
-  }
-  return null;
-}
-
-// Highest confidence first, so the best-argued reading gets its first choice
-// and the weaker ones do the moving.
-const sorted = [...rawMatches].sort((a, b) => (b.confidence ?? 0) - (a.confidence ?? 0));
-
-for (const match of sorted) {
-  const key = String(match.imageKey ?? '').trim();
-  const proposedDoc = String(match.documentSlug ?? '').trim();
-  const proposedHeading = String(match.headingSlug ?? '').trim();
-  const confidence = Number(match.confidence ?? 0);
-  const reasoning = String(match.reasoning ?? '').trim();
-
-  const fail = (why) => rejected.push({ key, docSlug: proposedDoc, headingSlug: proposedHeading, why });
-
-  if (!captionByKey.has(key)) {
-    fail('la imagen no existe');
-    continue;
-  }
-  if (placedKeys.has(key)) {
-    fail('la imagen ya estaba anclada con más confianza');
-    continue;
-  }
-  if (!docs.has(proposedDoc)) {
-    fail('el documento no existe');
-    continue;
-  }
-
-  let docSlug = proposedDoc;
-  let headingSlug = proposedHeading;
-  let move = null;
-
-  // A chapter opening or an interlude carries a single photograph.
-  if (!headingSlug && !documentImages[docSlug]) {
-    documentImages[docSlug] = key;
-    placedKeys.add(key);
-  } else {
-    if (headingSlug && !capacity.has(`${docSlug}#${headingSlug}`)) {
-      fail('el título no existe en ese documento');
-      continue;
-    }
-
-    if (!headingSlug || !room(`${docSlug}#${headingSlug}`)) {
-      const within = nearestFree(docSlug, headingSlug);
-      if (within) {
-        move = { kind: 'título', from: headingSlug || '(documento)', to: within };
-        headingSlug = within;
-      } else {
-        const elsewhere = nearestDoc(docSlug);
-        if (elsewhere) {
-          move = { kind: 'documento', from: `${docSlug}#${headingSlug || '(documento)'}`, to: `${elsewhere.docSlug}#${elsewhere.headingSlug}` };
-          docSlug = elsewhere.docSlug;
-          headingSlug = elsewhere.headingSlug;
-        } else {
-          // Nothing left in the section: the image closes it as a plate.
-          const section = docs.get(docSlug).section;
-          galleries[section] ??= [];
-          galleries[section].push(key);
-          placedKeys.add(key);
-          move = { kind: 'galería', from: `${docSlug}#${headingSlug || '(documento)'}`, to: `galería de ${section}` };
-          headingSlug = null;
-        }
-      }
-    }
-
-    if (headingSlug) {
-      take(`${docSlug}#${headingSlug}`);
-      anchors[docSlug] ??= {};
-      anchors[docSlug][headingSlug] ??= [];
-      anchors[docSlug][headingSlug].push(key);
-      placedKeys.add(key);
-    }
-  }
-
-  if (move) relocated.push({ key, ...move });
-
-  // A relocated anchor is by construction less certain than the reading that
-  // produced it, so it goes to review whatever its original confidence.
-  if (confidence < REVIEW_BELOW || move) {
-    review.push({
-      key,
-      caption: captionByKey.get(key)?.caption?.slice(0, 110) ?? '',
-      docSlug,
-      headingSlug,
-      heading: headingSlug ? (headingText.get(`${docSlug}#${headingSlug}`) ?? '') : move?.kind === 'galería' ? '(galería de sección)' : '(documento entero)',
-      confidence: move ? Math.min(confidence, 55) : confidence,
-      reasoning: move
-        ? `${reasoning} — Reubicada por falta de lugar: se movió de ${move.from} a ${move.to}.`
-        : reasoning,
+  if (NO_IMAGE_DOCS.has(entry.slug)) continue;
+  for (const heading of entry.headings) {
+    slots.push({
+      docSlug: entry.slug,
+      headingSlug: heading.slug,
+      section: entry.section,
+      capacity: Math.max(1, Math.min(MAX_PER_HEADING, Math.ceil(heading.blocks / BLOCKS_PER_IMAGE))),
+      used: 0,
     });
   }
 }
 
-const unplaced = allKeys.filter((key) => !placedKeys.has(key));
-for (const key of unplaced) {
-  review.push({
-    key,
-    caption: captionByKey.get(key)?.caption?.slice(0, 110) ?? '',
-    docSlug: null,
-    headingSlug: null,
-    heading: '(sin ubicar)',
-    confidence: 0,
-    reasoning: 'La pasada de mapeo no propuso ubicación para esta imagen.',
+const slotIndex = new Map(slots.map((s, i) => [`${s.docSlug}#${s.headingSlug ?? ''}`, i]));
+const room = (i) => i >= 0 && i < slots.length && slots[i].used < slots[i].capacity;
+
+/* ── Allocation ─────────────────────────────────────────────────────────────
+   Folder order in, monotonic positions out.
+
+   Every slot contributes as many "units" as it has room for, so the book turns
+   into one flat ribbon of `totalCapacity` places measured in text rather than
+   in headings. Image i takes the unit at (i + ½) · totalCapacity / n. That is
+   strictly increasing, so the sequence can never double back, and it is evenly
+   spread by construction, so no document is crowded while another runs blank —
+   the two failures the first draft of this allocator produced.
+
+   Two passes refine the result without breaking either property, because both
+   stay inside the gap left by the image before and the image after:
+     · openings and interludes claim the image passing closest to them
+     · a proposal is honoured when it falls inside that same gap */
+
+const units = [];
+for (let i = 0; i < slots.length; i += 1) {
+  for (let n = 0; n < slots[i].capacity; n += 1) units.push(i);
+}
+const totalCapacity = units.length;
+
+const proposalOf = new Map();
+for (const match of rawMatches) {
+  const key = String(match.imageKey ?? '').trim();
+  const doc = String(match.documentSlug ?? '').trim();
+  const heading = String(match.headingSlug ?? '').trim();
+  const index = slotIndex.get(`${doc}#${heading}`);
+  proposalOf.set(key, {
+    index: index ?? -1,
+    confidence: Number(match.confidence ?? 0),
+    reasoning: String(match.reasoning ?? '').trim(),
+    proposed: `${doc}#${heading || '(documento)'}`,
   });
 }
 
+const n = orderedKeys.length;
+/** Pass 1 — the evenly spread baseline. */
+const assigned = orderedKeys.map((_, i) => units[Math.min(units.length - 1, Math.floor(((i + 0.5) * totalCapacity) / n))]);
+
+/** The room an image has to move without overtaking either neighbour. */
+const lowerBound = (i) => (i === 0 ? 0 : assigned[i - 1]);
+const upperBound = (i) => (i === n - 1 ? slots.length - 1 : assigned[i + 1]);
+
+let plated = 0;
+/** Pass 2 — openings and interludes show one photograph for the whole document,
+ *  and the layouts fall back to a bare title page without one. */
+const taken = new Set();
+for (let d = 0; d < slots.length; d += 1) {
+  if (slots[d].headingSlug !== null) continue;
+  let best = -1;
+  for (let i = 0; i < n; i += 1) {
+    if (taken.has(i)) continue;
+    if (d < lowerBound(i) || d > upperBound(i)) continue;
+    if (best === -1 || Math.abs(assigned[i] - d) < Math.abs(assigned[best] - d)) best = i;
+  }
+  if (best === -1) continue;
+  assigned[best] = d;
+  taken.add(best);
+  plated += 1;
+}
+
+let honoured = 0;
+/** Pass 3 — semantic affinity, but only inside the gap the order already left. */
+for (let i = 0; i < n; i += 1) {
+  if (taken.has(i)) continue;
+  const proposal = proposalOf.get(orderedKeys[i]);
+  if (!proposal || proposal.index < 0) continue;
+  if (proposal.index === assigned[i]) {
+    honoured += 1;
+    continue;
+  }
+  if (proposal.index < lowerBound(i) || proposal.index > upperBound(i)) continue;
+  if (slots[proposal.index].headingSlug === null) continue;
+  assigned[i] = proposal.index;
+  honoured += 1;
+}
+
+const anchors = {};
+const documentImages = {};
+const review = [];
+const placement = [];
+
+orderedKeys.forEach((key, i) => {
+  const slot = slots[assigned[i]];
+  const proposal = proposalOf.get(key) ?? { index: -1, confidence: 0, reasoning: '', proposed: '(sin propuesta)' };
+
+  if (slot.headingSlug === null) {
+    documentImages[slot.docSlug] = key;
+  } else {
+    anchors[slot.docSlug] ??= {};
+    anchors[slot.docSlug][slot.headingSlug] ??= [];
+    anchors[slot.docSlug][slot.headingSlug].push(key);
+  }
+
+  placement.push({ key, index: assigned[i], docSlug: slot.docSlug, headingSlug: slot.headingSlug });
+
+  const moved = proposal.index !== assigned[i];
+  if (proposal.confidence < REVIEW_BELOW || moved) {
+    review.push({
+      key,
+      caption: captionByKey.get(key)?.caption?.slice(0, 110) ?? '',
+      docSlug: slot.docSlug,
+      headingSlug: slot.headingSlug,
+      heading: slot.headingSlug
+        ? (headingText.get(`${slot.docSlug}#${slot.headingSlug}`) ?? '')
+        : '(documento entero)',
+      confidence: moved ? Math.min(proposal.confidence, 55) : proposal.confidence,
+      reasoning: moved
+        ? `${proposal.reasoning} — Reubicada para respetar el orden de carpeta: se propuso ${proposal.proposed}.`
+        : proposal.reasoning,
+    });
+  }
+});
+
+const paced = n - honoured - plated;
+
 review.sort((a, b) => a.confidence - b.confidence);
 
-const galleryCount = Object.values(galleries).reduce((n, g) => n + g.length, 0);
+/* ── Monotonicity check (RF-04.3) ───────────────────────────────────────── */
+
+const regressions = [];
+for (let i = 1; i < placement.length; i += 1) {
+  if (placement[i].index < placement[i - 1].index) {
+    regressions.push({ key: placement[i].key, after: placement[i - 1].key });
+  }
+}
+
+/* ── Duplicates report (RF-04.4) ────────────────────────────────────────── */
+
+const normalise = (text) =>
+  String(text ?? '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+const STOP = new Set('de la el los las en y a del un una con por para su sus al es que se o e'.split(' '));
+const tokensOf = (text) => new Set(normalise(text).split(' ').filter((w) => w.length > 2 && !STOP.has(w)));
+
+const jaccard = (a, b) => {
+  if (!a.size || !b.size) return 0;
+  let shared = 0;
+  for (const token of a) if (b.has(token)) shared += 1;
+  return shared / (a.size + b.size - shared);
+};
+
+/**
+ * Institutions, places and roles that are capitalised all over the epigraphs.
+ * Counting them as names made every photograph taken at the Brigada look like a
+ * duplicate of every other one.
+ */
+const NOT_A_PERSON = new Set(
+  ('brigada investigaciones chaco resistencia alcaidia inspeccion senalizacion prensa gentileza ' +
+   'causa tribunal argentina estado policia ejercito diario region audiencia juicio memoria ' +
+   'comision provincial dibujo archivo plano planta sotanos federal nacion unidad plaza catedral ' +
+   'julio junio agosto marzo abril mayo enero febrero septiembre octubre noviembre diciembre').split(' '),
+);
+
+/** Capitalised runs read as proper names — enough to catch two portraits of the
+ *  same person filed under different numbers. */
+const namesOf = (text) =>
+  new Set(
+    (String(text ?? '').match(/\b[A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,}\b/g) ?? [])
+      .map((w) => normalise(w))
+      .filter((w) => w.length > 3 && !NOT_A_PERSON.has(w)),
+  );
+
+const duplicates = [];
+const all = captions.images;
+for (let i = 0; i < all.length; i += 1) {
+  for (let j = i + 1; j < all.length; j += 1) {
+    const a = all[i];
+    const b = all[j];
+    if (!a.caption || !b.caption) continue;
+
+    const identical = normalise(a.caption) === normalise(b.caption);
+    const similarity = jaccard(tokensOf(a.caption), tokensOf(b.caption));
+    const namesA = namesOf(a.caption);
+    const namesB = namesOf(b.caption);
+    const sharedNames = [...namesA].filter((n) => namesB.has(n));
+
+    let why = null;
+    if (identical) why = 'epígrafe idéntico';
+    else if (similarity >= 0.7) why = `epígrafe muy similar (${Math.round(similarity * 100)} %)`;
+    else if (sharedNames.length >= 3) why = `mismas personas nombradas: ${sharedNames.join(', ')}`;
+
+    if (!why) continue;
+    duplicates.push({
+      keys: [a.key, b.key],
+      why,
+      captions: [a.caption, b.caption],
+      placed: [
+        placement.find((p) => p.key === a.key)?.docSlug ?? '(descartada)',
+        placement.find((p) => p.key === b.key)?.docSlug ?? '(descartada)',
+      ],
+    });
+  }
+}
+
+await mkdir(BUILD, { recursive: true });
+await writeFile(
+  path.join(BUILD, 'revision-duplicados.md'),
+  [
+    '# Imágenes candidatas a duplicado',
+    '',
+    'Generado por `scripts/build-image-map.mjs`. Cada par de abajo comparte epígrafe,',
+    'vocabulario o las personas que nombra. **Ninguna se descarta automáticamente**: la',
+    'decisión es editorial (spec 04, RF-04.4).',
+    '',
+    'Para descartar una imagen, agregala a `scripts/image-skip.json` con su motivo. El',
+    'archivo de imagen no se borra: sólo se excluye de la colocación.',
+    '',
+    duplicates.length ? '' : '_No se detectaron pares candidatos._',
+    ...duplicates.flatMap((d) => [
+      `## \`${d.keys[0]}\` + \`${d.keys[1]}\` — ${d.why}`,
+      '',
+      `- \`${d.keys[0]}\` — ${d.captions[0]}`,
+      `  <br>ubicada en: ${d.placed[0]}`,
+      `- \`${d.keys[1]}\` — ${d.captions[1]}`,
+      `  <br>ubicada en: ${d.placed[1]}`,
+      '',
+    ]),
+  ].join('\n'),
+  'utf8',
+);
+
+/* ── Output ─────────────────────────────────────────────────────────────── */
+
+const placedCount = placement.length;
 
 await writeFile(
   path.join(DATA, 'image-map.json'),
   `${JSON.stringify(
     {
-      note: 'Generado por scripts/build-image-map.mjs a partir de scripts/proposed-anchors.json. `anchors[documento][título]` es la secuencia de imágenes que la placa va pasando mientras se lee ese título. `document` ancla una imagen a un documento entero (aperturas e interludios). `galleries` reúne las que cierran una sección. `review` es la lista que conviene que revise una persona, de menor a mayor confianza.',
+      note: 'Generado por scripts/build-image-map.mjs a partir de scripts/proposed-anchors.json. Las imágenes se recorren en el orden de la carpeta y se ubican sin retroceder nunca (spec 04). `anchors[documento][título]` es la secuencia de imágenes que la placa va pasando mientras se lee ese título. `document` ancla una imagen a un documento entero (aperturas e interludios). `review` es el inventario de la colocación, de menor a mayor confianza.',
       generated: {
-        images: allKeys.length,
-        placed: placedKeys.size,
-        relocated: relocated.length,
-        inGalleries: galleryCount,
+        images: captions.images.length,
+        skipped: skipReason.size,
+        placed: placedCount,
+        onOpenings: plated,
+        byAffinity: honoured,
+        bySequence: paced,
+        regressions: regressions.length,
         needsReview: review.length,
+        duplicateCandidates: duplicates.length,
       },
+      sequence: placement.map((p) => p.key),
+      skipped: [...skipReason].map(([key, reason]) => ({ key, reason })),
       anchors,
       document: documentImages,
-      galleries,
       review,
     },
     null,
@@ -248,16 +369,20 @@ await writeFile(
   'utf8',
 );
 
-console.log(`Imágenes:          ${allKeys.length}`);
-console.log(`Ancladas:          ${placedKeys.size}`);
-console.log(`  a un título:     ${placedKeys.size - Object.keys(documentImages).length - galleryCount}`);
-console.log(`  a un documento:  ${Object.keys(documentImages).length}`);
-console.log(`  en galería:      ${galleryCount}`);
-console.log(`Reubicadas:        ${relocated.length}`);
-console.log(`Para revisar:      ${review.length}`);
-if (rejected.length) {
-  console.log(`\nRechazadas (${rejected.length}):`);
-  for (const r of rejected.slice(0, 10)) console.log(`  ${r.key} → ${r.docSlug} — ${r.why}`);
+console.log(`Imágenes:            ${captions.images.length}`);
+if (skipReason.size) console.log(`Descartadas:         ${skipReason.size} (${[...skipReason.keys()].join(', ')})`);
+console.log(`Ubicadas:            ${placedCount}`);
+console.log(`  en aperturas:      ${plated}`);
+console.log(`  por afinidad:      ${honoured}`);
+console.log(`  por secuencia:     ${paced}`);
+console.log(`Saltos hacia atrás:  ${regressions.length}`);
+console.log(`Para revisar:        ${review.length}`);
+console.log(`Candidatas a duplicado: ${duplicates.length} → build/revision-duplicados.md`);
+
+if (regressions.length) {
+  console.error(`\nLa secuencia retrocede en ${regressions.length} ${regressions.length === 1 ? 'punto' : 'puntos'}:`);
+  for (const r of regressions.slice(0, 10)) console.error(`  ${r.key} quedó antes que ${r.after}`);
+  process.exit(1);
 }
-if (unplaced.length) console.log(`\nSin ubicar (${unplaced.length}): ${unplaced.join(', ')}`);
+
 console.log(`\nMapa → src/data/image-map.json`);

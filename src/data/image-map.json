@@ -1,841 +1,1368 @@
 {
-  "note": "Generado por scripts/build-image-map.mjs a partir de scripts/proposed-anchors.json. `anchors[documento][título]` es la secuencia de imágenes que la placa va pasando mientras se lee ese título. `document` ancla una imagen a un documento entero (aperturas e interludios). `galleries` reúne las que cierran una sección. `review` es la lista que conviene que revise una persona, de menor a mayor confianza.",
+  "note": "Generado por scripts/build-image-map.mjs a partir de scripts/proposed-anchors.json. Las imágenes se recorren en el orden de la carpeta y se ubican sin retroceder nunca (spec 04). `anchors[documento][título]` es la secuencia de imágenes que la placa va pasando mientras se lee ese título. `document` ancla una imagen a un documento entero (aperturas e interludios). `review` es el inventario de la colocación, de menor a mayor confianza.",
   "generated": {
     "images": 105,
+    "skipped": 0,
     "placed": 105,
-    "relocated": 14,
-    "inGalleries": 0,
-    "needsReview": 57
+    "onOpenings": 10,
+    "byAffinity": 2,
+    "bySequence": 93,
+    "regressions": 0,
+    "needsReview": 103,
+    "duplicateCandidates": 8
   },
+  "sequence": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "005",
+    "006",
+    "007",
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "013bis",
+    "014",
+    "015",
+    "016",
+    "017",
+    "018",
+    "018bis",
+    "018bisbis",
+    "019",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "024bis",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030",
+    "031",
+    "032",
+    "033",
+    "034",
+    "035",
+    "036",
+    "037",
+    "038",
+    "039",
+    "040",
+    "041",
+    "042",
+    "043",
+    "044",
+    "045",
+    "046",
+    "047",
+    "048",
+    "049",
+    "050",
+    "051",
+    "052",
+    "053",
+    "054",
+    "055",
+    "056",
+    "057",
+    "058",
+    "059",
+    "060",
+    "061",
+    "062",
+    "063",
+    "064",
+    "065",
+    "066",
+    "067",
+    "068",
+    "069",
+    "070",
+    "071",
+    "072",
+    "073",
+    "074",
+    "075",
+    "076",
+    "077",
+    "078",
+    "078bis",
+    "079",
+    "080",
+    "081",
+    "082",
+    "083",
+    "084",
+    "085",
+    "086",
+    "087",
+    "088",
+    "089",
+    "090",
+    "091",
+    "092",
+    "093",
+    "094",
+    "095",
+    "096",
+    "097",
+    "098",
+    "099",
+    "100"
+  ],
+  "skipped": [],
   "anchors": {
+    "tres-procesos-un-juicio-y-castigo": {
+      "causa-brigada-i-2010": [
+        "002"
+      ]
+    },
     "cronicas-una-casa-con-una-sala-negra": {
-      "armando-benítez-es-bravo-recordar": [
-        "019"
-      ],
-      "causa-brigada-i-7-julio-2010": [
-        "015"
-      ],
-      "con-relatos-del-horror-en-la-brigadaalcaidía-comenzó-la-etapa-de-testimoniales": [
-        "044"
-      ],
-      "rodríguez-valiente-de-regreso-a-la-escena-del-crimen": [
-        "035"
-      ],
-      "dedieu": [
-        "056"
-      ],
-      "miguel-nievaeaff-la-sangre-derramada-no-será-negociada": [
-        "052"
-      ],
       "la-tortura-en-el-chaco-comenzó-en-el-74-con-un-gobierno-constitucional": [
-        "004"
+        "004",
+        "005"
       ],
-      "maría-teresa-pressa": [
-        "086"
-      ],
-      "2-el-sótano-chico": [
-        "022"
-      ],
-      "uno-marín-tocaba-el-acordeón": [
-        "039"
-      ],
-      "juan-argañaraz": [
-        "065"
-      ],
-      "4-la-sala-negra-y-los-calabozos": [
-        "009"
-      ],
-      "la-hija": [
-        "008"
-      ],
-      "breard-desacatado": [
-        "058"
-      ],
-      "3-el-sótano-del-fondo-del-edificio": [
-        "020"
-      ],
-      "reclamaron-cárcel-común-y-efectiva-para-gabino-manader": [
-        "068"
-      ],
-      "la-inspección-cinco-lugares": [
-        "047"
-      ],
-      "vamos-a-matar-a-tu-hijo": [
-        "057"
-      ],
-      "causa-brigada-iii-martes-13-de-abril": [
-        "024bis"
+      "siete-días-contra-la-pared": [
+        "006"
       ],
       "causa-brigada-i-8-julio-2010": [
         "007"
       ],
-      "inspección-ocular-en-la-casa-por-la-memoria": [
-        "017"
+      "el-horror-en-la-ciudad": [
+        "008"
       ],
-      "reclamo-decárcel-comun": [
-        "077"
+      "idas-y-vueltas-de-un-encuentro": [
+        "009"
       ],
-      "dos-manader-y-compañía": [
-        "087"
+      "alcaidía-verdugo-octavio-ayala": [
+        "010"
       ],
-      "causa-brigada-i-10-agosto-2010": [
-        "091"
-      ],
-      "la-defensa-de-los-imputados": [
-        "078bis"
-      ],
-      "causa-brigada-i-18102010": [
-        "083"
-      ],
-      "usted-está-despedido": [
-        "061"
-      ],
-      "el-policía-que-se-negó-a-torturar": [
-        "048"
-      ],
-      "causa-brigada-ii-febrero-de-2017": [
-        "041"
-      ],
-      "la-degradación-total-del-ser": [
-        "063"
-      ],
-      "causa-brigada-ii--jueves-24-de-noviembre-de-2016": [
-        "001"
-      ],
-      "niños-detenidos-en-la-brigada": [
+      "arsenal-de-literatura-marxista": [
         "011"
       ],
-      "causa-brigada-i-26-de-octubre-de-2010": [
-        "034"
+      "la-brigada-un-infierno-permanente": [
+        "012"
       ],
-      "alcaidía-una-zona-gris": [
-        "027"
+      "diez-días-en-un-infierno-permanente": [
+        "013"
       ],
-      "1-el-despacho-de-thomas": [
-        "084"
+      "la-crueldad-y-la-ignorancia": [
+        "013bis"
       ],
-      "5-el-cónclave": [
-        "092"
+      "la-brigada-salir-de-ahí-aunque-sea-muertos": [
+        "014"
       ],
-      "la-casa-de-tarzán": [
-        "054"
+      "dito-saliva": [
+        "015"
       ],
-      "tres-la-picana": [
-        "053"
+      "dedieu": [
+        "016"
       ],
-      "picana": [
-        "055"
+      "eusebio-chelo-esquivel": [
+        "017"
       ],
-      "u7-verdugo-casco": [
-        "046"
+      "gira-carcelaria-u7-resistencia-u9-la-plata-u3-rawson": [
+        "018"
       ],
-      "comenzaron-las-testimoniales-en-la-causa": [
-        "093"
+      "in-justicia-militar-24-años-y-11-meses-de-condena": [
+        "018bis"
       ],
       "el-sobreviviente-de-la-casa-de-tarzán": [
-        "095"
+        "018bisbis"
       ],
-      "la-brigada-un-infierno-permanente": [
+      "súbanlo": [
+        "019"
+      ],
+      "vamos-a-matar-a-tu-hijo": [
+        "020"
+      ],
+      "la-cárcel-alcaidía--villa-devoto": [
         "021"
       ],
-      "viaje-al-fondo-de-la-noche": [
-        "085"
+      "la-hija": [
+        "022"
+      ],
+      "causa-brigada-i-18102010": [
+        "023"
+      ],
+      "sergio-romero--detenido-con-su-mujer-y-su-hijo": [
+        "024"
+      ],
+      "héctor-costas--40-días-en-brigada": [
+        "024bis"
+      ],
+      "alcaidía-consejos-de-guerra-y-martínez-segón": [
+        "025"
+      ],
+      "el-policía-que-se-negó-a-torturar": [
+        "026"
+      ],
+      "raúl-alberto-mazaite--torturas-vox-populi-en-la-brigada": [
+        "027"
+      ],
+      "dos-manader-y-compañía": [
+        "028"
+      ],
+      "causa-brigada-i-8-de-noviembre-de-2010": [
+        "029"
+      ],
+      "la-inspección-cinco-lugares": [
+        "030"
+      ],
+      "2-el-sótano-chico": [
+        "031"
+      ],
+      "5-el-cónclave": [
+        "032"
+      ],
+      "sobrevivientes": [
+        "033"
+      ],
+      "mario-bosch-presente": [
+        "034"
       ],
       "iglesias-un-juez-en-la-u7": [
-        "030"
+        "035"
+      ],
+      "con-relatos-del-horror-en-la-brigadaalcaidía-comenzó-la-etapa-de-testimoniales": [
+        "036"
       ]
     },
     "chachi": {
       "chachi-gregorio-chachi-quintana-1955-2010": [
-        "018bis",
-        "062"
-      ]
-    },
-    "las-condenas": {
-      "131210-brigada": [
-        "070"
-      ],
-      "31518-brigada-ii": [
-        "071",
-        "060"
-      ],
-      "josé-marín-alias-cabo-sotelo-policía-del-chaco": [
-        "028"
-      ],
-      "sentencia-juicio-y-castigo-recargado": [
-        "079"
-      ],
-      "parteaguas": [
-        "080"
-      ],
-      "josé-francisco-rodríguez-valiente-policía-del-chaco": [
-        "067"
-      ],
-      "condenados": [
-        "051"
-      ],
-      "ramón-esteban-meza-policía-del-chaco": [
-        "059"
-      ],
-      "humberto-lucio-caballero-policía-del-chaco": [
-        "023"
-      ],
-      "gabino-manader-policía-del-chaco": [
-        "010"
-      ]
-    },
-    "tribunal-partes-y-penas": {
-      "causa-brigada-ii": [
-        "012"
-      ],
-      "tribunal-y-partes": [
-        "029"
-      ]
-    },
-    "una-casa-con-historia": {
-      "casa-por-la-memoria-1372005": [
-        "002"
-      ],
-      "una-casa-con-historia": [
-        "064"
-      ]
-    },
-    "genocidas-al-frente": {
-      "ramón-meza-el-fumigador": [
-        "073"
-      ],
-      "uno-de-los-jefes": [
-        "024"
-      ],
-      "rodríguez-valiente-sumariante-subversivo": [
-        "026"
-      ],
-      "brigada-ii": [
-        "045"
-      ]
-    },
-    "cronicas-desaparecer": {
-      "pedro-y-sara": [
-        "042"
-      ],
-      "causa-brigada--24-agosto-2010": [
-        "072"
-      ],
-      "calabozos": [
-        "043"
-      ],
-      "torturas": [
-        "033"
-      ],
-      "otra-vez-marín-kilómetro-11": [
-        "005"
-      ],
-      "pablo-césar-casco-el-verdugo-de-la-u7": [
-        "018"
-      ]
-    },
-    "tres-procesos-un-juicio-y-castigo": {
-      "causa-brigada-iii-2021": [
-        "040"
-      ],
-      "causa-brigada-ii-201618": [
-        "014"
-      ],
-      "causa-brigada-i-2010": [
-        "006"
-      ],
-      "tres-procesos-un-juicio-y-castigo": [
-        "094"
+        "038"
       ]
     },
     "cronicas-violencia-sexual": {
-      "la-violencia-sexual-como-delito-autónomo-de-lesa-humanidad": [
-        "074"
+      "causa-brigada-ii-viernes-16-de-diciembre-de-2016": [
+        "040"
       ],
-      "el-loquito-ibarra": [
-        "036"
+      "secuelas-76": [
+        "041"
       ],
-      "continúa-el-juicio-por-crímenes-de-lesa-humanidad-en-la-brigada": [
+      "causa-brigada-i-20-agosto-2010": [
+        "042"
+      ],
+      "el-juez-era-parte-del-sistema-represivo-de-la-brigada-de-investigaciones": [
+        "043"
+      ],
+      "brigada-torturas": [
+        "044"
+      ],
+      "flores-leyes-pistola-al-cinto": [
+        "045"
+      ],
+      "alcaidía--maltrato-permanente": [
+        "046"
+      ],
+      "julio-argentino-cossio": [
+        "047"
+      ],
+      "causa-brigada-ii-febrero-2017": [
+        "048"
+      ],
+      "nicolaides-y-larrateguy": [
         "049"
       ],
-      "marín-el-delator": [
+      "juicio-y-castigo": [
+        "050"
+      ],
+      "con-la-declaración-de-un-testigo-culminaron-los-debates-de-febrero": [
+        "051"
+      ],
+      "causa-brigada-1-de-marzo-de-2017": [
+        "052"
+      ],
+      "críticas-de-pedrini-y-pilatti-vergara": [
+        "053"
+      ],
+      "rossi-testimonio-y-cátedra-de-deber-cívico": [
+        "054"
+      ],
+      "causa-brigada-ii-jueves-6-de-abril-2017": [
+        "055"
+      ],
+      "en-la-brigada-1": [
+        "056"
+      ],
+      "causa-brigada-ii-viernes-7-de-abril-2017": [
+        "057"
+      ],
+      "parto-y-traslado": [
+        "058"
+      ],
+      "continúa-el-juicio-por-crímenes-de-lesa-humanidad-en-la-brigada": [
+        "059"
+      ],
+      "brigada-ii-18-de-mayo-de-2017": [
+        "060"
+      ],
+      "la-violencia-sexual-como-delito-autónomo-de-lesa-humanidad": [
+        "061"
+      ],
+      "ni-una-menos": [
+        "062"
+      ],
+      "viernes-16-de-abril-de-2021": [
+        "063"
+      ],
+      "peor-que-el-infierno": [
+        "064"
+      ]
+    },
+    "cronicas-desaparecer": {
+      "causa-brigada-i-11-agosto-2010": [
+        "066"
+      ],
+      "desaparecidos": [
+        "067"
+      ],
+      "ricardo-uferer": [
+        "068"
+      ],
+      "otra-vez-marín-kilómetro-11": [
         "069"
       ],
-      "causa-caballero-ii-jueves-11-de-mayo-2017": [
-        "013bis"
+      "torturas": [
+        "070"
       ],
-      "manader-en-su-domicilio-y-el-juez-iglesias-en-el-tribunal": [
-        "025"
+      "calabozos": [
+        "071"
+      ],
+      "vicente-canteros": [
+        "072"
+      ],
+      "las-voces-de-la-tortura": [
+        "073"
+      ],
+      "causa-brigada-iii--día-4--15-de-abril-de-2021": [
+        "074"
+      ],
+      "oviedo-arce-lauroni-almirón": [
+        "075"
+      ]
+    },
+    "genocidas-al-frente": {
+      "rodríguez-valiente-sumariante-subversivo": [
+        "078"
+      ],
+      "militares": [
+        "078bis"
+      ],
+      "consultorìa-bettolli": [
+        "079"
       ]
     },
     "alegatos": {
       "brigada-ii": [
-        "066"
-      ],
-      "plan-sistemático": [
-        "013"
+        "082"
       ],
       "brigada-iii": [
-        "037"
+        "083"
       ],
-      "brigada-i": [
-        "096"
+      "defensa": [
+        "084"
       ]
     },
-    "en-el-lugar-sin-limites": {
-      "en-el-lugar-sin-límites": [
-        "003"
+    "las-condenas": {
+      "131210-brigada": [
+        "085"
+      ],
+      "31518-brigada-ii": [
+        "086"
+      ],
+      "8421-brigada-iii": [
+        "087"
+      ],
+      "condenados": [
+        "088"
+      ],
+      "humberto-lucio-caballero-policía-del-chaco": [
+        "089"
+      ],
+      "luis-alberto-patetta-ejército": [
+        "090"
+      ],
+      "rubén-héctor-roldán-alcaidía": [
+        "091"
+      ],
+      "enzo-breardpolicía-del-chaco": [
+        "092"
+      ],
+      "antonio-musa-azar-policía-sgo-del-estero": [
+        "093"
       ]
     },
     "los-fallos": {
       "fallo-brigada-i-157-páginas": [
-        "032",
-        "088",
-        "089"
-      ],
-      "fallo-brigada-ii-208-páginas": [
-        "076"
+        "094"
       ],
       "valor-de-prueba-de-los-testimonios-": [
-        "078",
-        "098",
-        "050",
-        "082"
-      ],
-      "fallo-brigada-iii-136-páginas": [
-        "090",
-        "038"
+        "095",
+        "096"
       ]
     },
-    "introduccion": {
-      "juicio-y-castigo-en-el-chaco": [
-        "081"
+    "una-casa-con-historia": {
+      "casa-por-la-memoria-1372005": [
+        "098"
+      ]
+    },
+    "tribunal-partes-y-penas": {
+      "causa-brigada-ii": [
+        "099"
+      ],
+      "causa-brigada-iii": [
+        "100"
       ]
     }
   },
   "document": {
-    "chachi": "018bisbis",
-    "carcel-comun": "097",
-    "juicio-y-castigo-ayer-y-hoy": "099",
-    "una-patota-para-la-miseria-planificada": "016",
-    "condenados": "075",
-    "de-victimas-a-sobrevivientes": "100",
-    "la-memoria-y-la-palabra": "031"
+    "la-memoria-y-la-palabra": "001",
+    "en-el-lugar-sin-limites": "003",
+    "chachi": "037",
+    "de-victimas-a-sobrevivientes": "039",
+    "desaparecer": "065",
+    "arganaraz-la-tortura-metafisica": "076",
+    "una-patota-para-la-miseria-planificada": "077",
+    "carcel-comun": "080",
+    "condenados": "081",
+    "juicio-y-castigo-ayer-y-hoy": "097"
   },
-  "galleries": {},
   "review": [
     {
       "key": "030",
       "caption": "Acto por la aparición con vida de Santiago Maldonado, en el marco de la realización de una de las audiencias e",
       "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "iglesias-un-juez-en-la-u7",
-      "heading": "IGLESIAS: UN JUEZ EN LA U7",
+      "headingSlug": "la-inspección-cinco-lugares",
+      "heading": "LA INSPECCIÓN: CINCO LUGARES",
       "confidence": 20,
-      "reasoning": "Santiago Maldonado no se menciona en ninguna parte del libro: la dejo en la crónica de Brigada II de febrero de 2017 que narra las movilizaciones frente al TOF, en un título libre, con anclaje puramente temático."
+      "reasoning": "Santiago Maldonado no se menciona en ninguna parte del libro: la dejo en la crónica de Brigada II de febrero de 2017 que narra las movilizaciones frente al TOF, en un título libre, con anclaje puramente temático. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#iglesias-un-juez-en-la-u7."
     },
     {
       "key": "038",
       "caption": "Diario Primera Línea, gentileza",
-      "docSlug": "los-fallos",
-      "headingSlug": "fallo-brigada-iii-136-páginas",
-      "heading": "FALLO BRIGADA III (136 páginas)",
+      "docSlug": "chachi",
+      "headingSlug": "chachi-gregorio-chachi-quintana-1955-2010",
+      "heading": "CHACHI. Gregorio “Chachi” Quintana 1955-2010.",
       "confidence": 20,
-      "reasoning": "\"Diario Primera Línea\" no aparece en ninguna parte del libro y el título que hablaba de la tapa de los diarios quedó para 070; la ubico en un apartado de fundamentos de sentencia solo por zona temática, sin ningún dato literal. — Reubicada por falta de lugar: se movió de fallo-brigada-ii-208-páginas a fallo-brigada-iii-136-páginas."
+      "reasoning": "\"Diario Primera Línea\" no aparece en ninguna parte del libro y el título que hablaba de la tapa de los diarios quedó para 070; la ubico en un apartado de fundamentos de sentencia solo por zona temática, sin ningún dato literal. — Reubicada para respetar el orden de carpeta: se propuso los-fallos#fallo-brigada-ii-208-páginas."
     },
     {
       "key": "085",
       "caption": "Plano de la vieja casona de Marcelo T. de Alvear 32",
-      "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "viaje-al-fondo-de-la-noche",
-      "heading": "VIAJE AL FONDO DE LA NOCHE",
+      "docSlug": "las-condenas",
+      "headingSlug": "131210-brigada",
+      "heading": "13.12.10. BRIGADA",
       "confidence": 22,
-      "reasoning": "Segundo plano idéntico de la casona: desplazado por 047 y por 084, queda anclado a un título de la crónica de la Brigada sin ninguna mención a planos; ubicación por zona temática."
+      "reasoning": "Segundo plano idéntico de la casona: desplazado por 047 y por 084, queda anclado a un título de la crónica de la Brigada sin ninguna mención a planos; ubicación por zona temática. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#viaje-al-fondo-de-la-noche."
     },
     {
       "key": "021",
       "caption": "Evidencias del genocidio perpetrado en las instalaciones de la ex Brigada",
       "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "la-brigada-un-infierno-permanente",
-      "heading": "“LA BRIGADA, UN INFIERNO PERMANENTE",
+      "headingSlug": "la-cárcel-alcaidía--villa-devoto",
+      "heading": "LA CÁRCEL: ALCAIDÍA / VILLA DEVOTO",
       "confidence": 25,
-      "reasoning": "El epígrafe es genérico (\"Evidencias del genocidio perpetrado en las instalaciones\") y los títulos del EAAF y de los sótanos ya están tomados; la ubico por afinidad en la crónica que describe la Brigada como dispositivo, sin dato literal."
+      "reasoning": "El epígrafe es genérico (\"Evidencias del genocidio perpetrado en las instalaciones\") y los títulos del EAAF y de los sótanos ya están tomados; la ubico por afinidad en la crónica que describe la Brigada como dispositivo, sin dato literal. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#la-brigada-un-infierno-permanente."
     },
     {
       "key": "031",
       "caption": "Fachada de la ex Brigada de Investigaciones, antes de su conformación como sitio histórico de memoria y sede d",
-      "docSlug": "la-memoria-y-la-palabra",
-      "headingSlug": "",
-      "heading": "(documento entero)",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "2-el-sótano-chico",
+      "heading": "2 EL SÓTANO CHICO",
       "confidence": 25,
-      "reasoning": "Desplazada por 064, la fachada de 2004 queda sin pasaje disponible sobre el edificio previo a 2005; la ancle al texto editorial de apertura (sin títulos internos), sin ningún dato literal que la sostenga."
+      "reasoning": "Desplazada por 064, la fachada de 2004 queda sin pasaje disponible sobre el edificio previo a 2005; la ancle al texto editorial de apertura (sin títulos internos), sin ningún dato literal que la sostenga. — Reubicada para respetar el orden de carpeta: se propuso la-memoria-y-la-palabra#(documento)."
     },
     {
       "key": "046",
       "caption": "Hijos de militantes desaparecidos por el terrorismo de Estado e integrantes de la CPM Chaco Juan Carlos Fernán",
-      "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "u7-verdugo-casco",
-      "heading": "U7. VERDUGO: CASCO",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "alcaidía--maltrato-permanente",
+      "heading": "ALCAIDÍA – MALTRATO PERMANENTE",
       "confidence": 28,
-      "reasoning": "Desplazada por 018, la mando al otro título del libro sobre la U7 como lugar de crímenes; la reseñalización de 2022 y Mauricio Amarilla no se mencionan en ningún pasaje."
+      "reasoning": "Desplazada por 018, la mando al otro título del libro sobre la U7 como lugar de crímenes; la reseñalización de 2022 y Mauricio Amarilla no se mencionan en ningún pasaje. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#u7-verdugo-casco."
     },
     {
       "key": "093",
       "caption": "Plano de la ex Brigada",
-      "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "comenzaron-las-testimoniales-en-la-causa",
-      "heading": "Comenzaron las testimoniales en la causa",
+      "docSlug": "las-condenas",
+      "headingSlug": "antonio-musa-azar-policía-sgo-del-estero",
+      "heading": "Antonio Musa Azar (Policía Sgo. Del Estero)",
       "confidence": 28,
-      "reasoning": "Desplazado por 047, el plano general de la ex Brigada queda en el último de los espacios relevados en la inspección ocular; el texto no menciona ningún plano. — Reubicada por falta de lugar: se movió de 5-el-cónclave a comenzaron-las-testimoniales-en-la-causa."
+      "reasoning": "Desplazado por 047, el plano general de la ex Brigada queda en el último de los espacios relevados en la inspección ocular; el texto no menciona ningún plano. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#5-el-cónclave."
     },
     {
       "key": "095",
       "caption": "Proyección 3d de con el detalle de los sótanos de la Brigada",
-      "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "el-sobreviviente-de-la-casa-de-tarzán",
-      "heading": "EL SOBREVIVIENTE DE LA CASA DE TARZÁN",
+      "docSlug": "los-fallos",
+      "headingSlug": "valor-de-prueba-de-los-testimonios-",
+      "heading": "Valor de prueba de los testimonios. “(…)",
       "confidence": 28,
-      "reasoning": "Desplazada por 022, mando la proyección 3D de los sótanos al título que introduce el sótano al que los testigos llamaban \"Casa de Tarzán\"; el libro no alude a ninguna reconstrucción 3D."
+      "reasoning": "Desplazada por 022, mando la proyección 3D de los sótanos al título que introduce el sótano al que los testigos llamaban \"Casa de Tarzán\"; el libro no alude a ninguna reconstrucción 3D. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#el-sobreviviente-de-la-casa-de-tarzán."
     },
     {
       "key": "096",
       "caption": "El juicio oral, en las páginas del periódico Primera Línea",
-      "docSlug": "alegatos",
-      "headingSlug": "brigada-i",
-      "heading": "BRIGADA I",
+      "docSlug": "los-fallos",
+      "headingSlug": "valor-de-prueba-de-los-testimonios-",
+      "heading": "Valor de prueba de los testimonios. “(…)",
       "confidence": 28,
-      "reasoning": "El periódico Primera Línea no aparece en el libro; la ancle al apartado del alegato del primer juicio oral por afinidad temática (página de diario sobre el juicio), sin dato literal."
-    },
-    {
-      "key": "053",
-      "caption": "Fusible recuperado por el EAFF durante la inspección que reveló uno de los sótanos oculto debajo de escombros",
-      "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "tres-la-picana",
-      "heading": "TRES: LA PICANA",
-      "confidence": 30,
-      "reasoning": "Desplazada por 022, ancle el fusible hallado por el EAFF al apartado sobre la picana; el texto no menciona ningún fusible, así que el vínculo es solo con la instalación eléctrica de la tortura."
-    },
-    {
-      "key": "055",
-      "caption": "Caja eléctrica hallada por el EAFF durante la inspección que reveló uno de los sótanos oculto debajo de escomb",
-      "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "picana",
-      "heading": "PICANA",
-      "confidence": 30,
-      "reasoning": "Desplazada por 002, la caja eléctrica hallada por el EAFF queda anclada al apartado sobre la picana; los \"restos de una instalación eléctrica\" se mencionan en los apartados del EAAF, ya ocupados."
+      "reasoning": "El periódico Primera Línea no aparece en el libro; la ancle al apartado del alegato del primer juicio oral por afinidad temática (página de diario sobre el juicio), sin dato literal. — Reubicada para respetar el orden de carpeta: se propuso alegatos#brigada-i."
     },
     {
       "key": "018",
       "caption": "Ex detenido Hugo Rodríguez en la señalización de la prisión federal Unidad 7 como sitio en el que se cometiero",
-      "docSlug": "cronicas-desaparecer",
-      "headingSlug": "pablo-césar-casco-el-verdugo-de-la-u7",
-      "heading": "PABLO CÉSAR CASCO, EL VERDUGO DE LA U7",
-      "confidence": 30,
-      "reasoning": "Confirmo que la señalización de la U7 de agosto de 2022 y Hugo Rodríguez ligado a ese acto no aparecen en el libro; queda por afinidad en el título dedicado a los crímenes cometidos en la U7."
-    },
-    {
-      "key": "054",
-      "caption": "Pieza de un fusil del Ejército hallado por el EAFF en el sótano oculto debajo de escombros",
       "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "la-casa-de-tarzán",
-      "heading": "LA CASA DE TARZÁN",
-      "confidence": 32,
-      "reasoning": "Sin lugar libre en los apartados del EAAF, la ancle al título que nombra el sótano donde se hallaron los objetos (los testigos llamaban \"Casa de Tarzán\" a ese sótano); el texto no menciona la pieza de fusil ahí."
+      "headingSlug": "gira-carcelaria-u7-resistencia-u9-la-plata-u3-rawson",
+      "heading": "Gira carcelaria (U7 Resistencia, U9 La Plata, U3 Rawson)",
+      "confidence": 30,
+      "reasoning": "Confirmo que la señalización de la U7 de agosto de 2022 y Hugo Rodríguez ligado a ese acto no aparecen en el libro; queda por afinidad en el título dedicado a los crímenes cometidos en la U7. — Reubicada para respetar el orden de carpeta: se propuso cronicas-desaparecer#pablo-césar-casco-el-verdugo-de-la-u7."
     },
     {
-      "key": "023",
-      "caption": "El ex policía Fortunato Caballero, citado en una nota del diario Primera Línea",
-      "docSlug": "las-condenas",
-      "headingSlug": "humberto-lucio-caballero-policía-del-chaco",
-      "heading": "Humberto Lucio Caballero (Policía del Chaco)",
-      "confidence": 32,
-      "reasoning": "Confirmo que no existe ningún \"Fortunato Caballero\" ni la nota de Primera Línea en el libro; el único ex policía Caballero es Lucio Humberto Caballero, así que queda en su ficha de condenas con confianza baja."
+      "key": "053",
+      "caption": "Fusible recuperado por el EAFF durante la inspección que reveló uno de los sótanos oculto debajo de escombros",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "críticas-de-pedrini-y-pilatti-vergara",
+      "heading": "CRÍTICAS DE PEDRINI Y PILATTI VERGARA",
+      "confidence": 30,
+      "reasoning": "Desplazada por 022, ancle el fusible hallado por el EAFF al apartado sobre la picana; el texto no menciona ningún fusible, así que el vínculo es solo con la instalación eléctrica de la tortura. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#tres-la-picana."
+    },
+    {
+      "key": "055",
+      "caption": "Caja eléctrica hallada por el EAFF durante la inspección que reveló uno de los sótanos oculto debajo de escomb",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "causa-brigada-ii-jueves-6-de-abril-2017",
+      "heading": "CAUSA BRIGADA II Jueves 6 de abril 2017",
+      "confidence": 30,
+      "reasoning": "Desplazada por 002, la caja eléctrica hallada por el EAFF queda anclada al apartado sobre la picana; los \"restos de una instalación eléctrica\" se mencionan en los apartados del EAAF, ya ocupados. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#picana."
     },
     {
       "key": "010",
       "caption": "",
-      "docSlug": "las-condenas",
-      "headingSlug": "gabino-manader-policía-del-chaco",
-      "heading": "Gabino Manader (Policía del Chaco)",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "alcaidía-verdugo-octavio-ayala",
+      "heading": "ALCAIDÍA. VERDUGO: OCTAVIO AYALA",
       "confidence": 32,
-      "reasoning": "La imagen no tiene epígrafe y el único dato es el archivo \"CONDENADOS_BR_I\": la mando a la primera ficha de la lista de condenados, encabezada por las condenas de Manader en Brigada I; anclaje por afinidad, sin confirmación textual."
+      "reasoning": "La imagen no tiene epígrafe y el único dato es el archivo \"CONDENADOS_BR_I\": la mando a la primera ficha de la lista de condenados, encabezada por las condenas de Manader en Brigada I; anclaje por afinidad, sin confirmación textual. — Reubicada para respetar el orden de carpeta: se propuso las-condenas#gabino-manader-policía-del-chaco."
+    },
+    {
+      "key": "023",
+      "caption": "El ex policía Fortunato Caballero, citado en una nota del diario Primera Línea",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "causa-brigada-i-18102010",
+      "heading": "Causa Brigada I 18/10/2010",
+      "confidence": 32,
+      "reasoning": "Confirmo que no existe ningún \"Fortunato Caballero\" ni la nota de Primera Línea en el libro; el único ex policía Caballero es Lucio Humberto Caballero, así que queda en su ficha de condenas con confianza baja. — Reubicada para respetar el orden de carpeta: se propuso las-condenas#humberto-lucio-caballero-policía-del-chaco."
+    },
+    {
+      "key": "054",
+      "caption": "Pieza de un fusil del Ejército hallado por el EAFF en el sótano oculto debajo de escombros",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "rossi-testimonio-y-cátedra-de-deber-cívico",
+      "heading": "Rossi: testimonio y cátedra de deber cívico",
+      "confidence": 32,
+      "reasoning": "Sin lugar libre en los apartados del EAAF, la ancle al título que nombra el sótano donde se hallaron los objetos (los testigos llamaban \"Casa de Tarzán\" a ese sótano); el texto no menciona la pieza de fusil ahí. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#la-casa-de-tarzán."
     },
     {
       "key": "081",
       "caption": "Titulares de las coberturas del primer juicio oral",
-      "docSlug": "introduccion",
-      "headingSlug": "juicio-y-castigo-en-el-chaco",
-      "heading": "JUICIO Y CASTIGO EN EL CHACO",
+      "docSlug": "condenados",
+      "headingSlug": null,
+      "heading": "(documento entero)",
       "confidence": 32,
-      "reasoning": "Desplazada por 015, la llevo al apartado que enmarca el inicio de los juicios orales en el Chaco; el libro no menciona esas coberturas periodísticas, así que el anclaje es temático."
+      "reasoning": "Desplazada por 015, la llevo al apartado que enmarca el inicio de los juicios orales en el Chaco; el libro no menciona esas coberturas periodísticas, así que el anclaje es temático. — Reubicada para respetar el orden de carpeta: se propuso introduccion#juicio-y-castigo-en-el-chaco."
     },
     {
       "key": "100",
       "caption": "Testimonio de sobreviviente, sobre una de las paredes de la Casa por la Memoria",
-      "docSlug": "de-victimas-a-sobrevivientes",
-      "headingSlug": "",
-      "heading": "(documento entero)",
+      "docSlug": "tribunal-partes-y-penas",
+      "headingSlug": "causa-brigada-iii",
+      "heading": "CAUSA BRIGADA III",
       "confidence": 32,
-      "reasoning": "Desplazada por 002, el testimonio pintado en una pared de la Casa lo ancle al texto de apertura sobre el pasaje de víctimas a sobrevivientes y su palabra; el libro no menciona esa pared ni ese testimonio."
+      "reasoning": "Desplazada por 002, el testimonio pintado en una pared de la Casa lo ancle al texto de apertura sobre el pasaje de víctimas a sobrevivientes y su palabra; el libro no menciona esa pared ni ese testimonio. — Reubicada para respetar el orden de carpeta: se propuso de-victimas-a-sobrevivientes#(documento)."
     },
     {
       "key": "050",
       "caption": "La Casa por la Memoria, 10 de noviembre de 2009",
-      "docSlug": "los-fallos",
-      "headingSlug": "valor-de-prueba-de-los-testimonios-",
-      "heading": "Valor de prueba de los testimonios. “(…)",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "juicio-y-castigo",
+      "heading": "JUICIO Y CASTIGO",
       "confidence": 35,
-      "reasoning": "Confirmo que el 10 de noviembre de 2009 no aparece en el libro; al quedar tomado el apartado de la Casa por la Memoria, la mando al ensayo sobre la Casa, documento sin títulos internos. — Reubicada por falta de lugar: se movió de juicio-y-castigo-ayer-y-hoy#(documento) a los-fallos#valor-de-prueba-de-los-testimonios-."
+      "reasoning": "Confirmo que el 10 de noviembre de 2009 no aparece en el libro; al quedar tomado el apartado de la Casa por la Memoria, la mando al ensayo sobre la Casa, documento sin títulos internos. — Reubicada para respetar el orden de carpeta: se propuso juicio-y-castigo-ayer-y-hoy#(documento)."
     },
     {
       "key": "082",
       "caption": "La calle durante la sentencia de la causa Brigada I",
-      "docSlug": "los-fallos",
-      "headingSlug": "valor-de-prueba-de-los-testimonios-",
-      "heading": "Valor de prueba de los testimonios. “(…)",
+      "docSlug": "alegatos",
+      "headingSlug": "brigada-ii",
+      "heading": "BRIGADA II",
       "confidence": 35,
-      "reasoning": "Al quedar tomados \"PARTEAGUAS\" y \"13.12.10. BRIGADA\", mando el dibujo de la calle durante la sentencia al apartado dedicado al fallo de Brigada I; el vínculo es con la causa, no con un dato del dibujo. — Reubicada por falta de lugar: se movió de fallo-brigada-i-157-páginas a valor-de-prueba-de-los-testimonios-."
+      "reasoning": "Al quedar tomados \"PARTEAGUAS\" y \"13.12.10. BRIGADA\", mando el dibujo de la calle durante la sentencia al apartado dedicado al fallo de Brigada I; el vínculo es con la causa, no con un dato del dibujo. — Reubicada para respetar el orden de carpeta: se propuso los-fallos#fallo-brigada-i-157-páginas."
     },
     {
       "key": "090",
       "caption": "Actividad “Bicis y Memoria” en diciembre de 2010",
-      "docSlug": "los-fallos",
-      "headingSlug": "fallo-brigada-iii-136-páginas",
-      "heading": "FALLO BRIGADA III (136 páginas)",
+      "docSlug": "las-condenas",
+      "headingSlug": "luis-alberto-patetta-ejército",
+      "heading": "Luis Alberto Patetta (Ejército)",
       "confidence": 35,
-      "reasoning": "Desplazada del apartado del 13.12.10, la llevo al ensayo sobre la Casa por la Memoria (documento sin títulos internos), que describe la Casa como espacio abierto de actividades; el texto no nombra \"Bicis y Memoria\". — Reubicada por falta de lugar: se movió de juicio-y-castigo-ayer-y-hoy#(documento) a los-fallos#fallo-brigada-iii-136-páginas."
+      "reasoning": "Desplazada del apartado del 13.12.10, la llevo al ensayo sobre la Casa por la Memoria (documento sin títulos internos), que describe la Casa como espacio abierto de actividades; el texto no nombra \"Bicis y Memoria\". — Reubicada para respetar el orden de carpeta: se propuso juicio-y-castigo-ayer-y-hoy#(documento)."
     },
     {
       "key": "092",
       "caption": "Planos de los sótanos ubicados en la parte trasera de la ex Brigada",
-      "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "5-el-cónclave",
-      "heading": "5 EL “CÓNCLAVE”",
+      "docSlug": "las-condenas",
+      "headingSlug": "enzo-breardpolicía-del-chaco",
+      "heading": "Enzo Breard(Policía del Chaco):",
       "confidence": 35,
-      "reasoning": "Desplazada por 020, mando los planos de la parte trasera al título que describe esa misma zona posterior del edificio (sótanos abajo, Sala Negra y calabozos arriba); el texto no menciona planos. — Reubicada por falta de lugar: se movió de 4-la-sala-negra-y-los-calabozos a 5-el-cónclave."
+      "reasoning": "Desplazada por 020, mando los planos de la parte trasera al título que describe esa misma zona posterior del edificio (sótanos abajo, Sala Negra y calabozos arriba); el texto no menciona planos. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#4-la-sala-negra-y-los-calabozos."
     },
     {
       "key": "025",
       "caption": "Manifestación en la vereda del TOF",
-      "docSlug": "cronicas-violencia-sexual",
-      "headingSlug": "manader-en-su-domicilio-y-el-juez-iglesias-en-el-tribunal",
-      "heading": "Manader en su domicilio y el juez Iglesias en el Tribunal",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "alcaidía-consejos-de-guerra-y-martínez-segón",
+      "heading": "ALCAIDÍA, CONSEJOS DE GUERRA y MARTÍNEZ SEGÓN",
       "confidence": 38,
-      "reasoning": "Desplazada por 077, la mando a la crónica del 1 de marzo de 2017 sobre la domiciliaria de Manader y el juez Iglesias, el otro foco de las protestas; el epígrafe no trae fecha ni dato literal."
-    },
-    {
-      "key": "075",
-      "caption": "La calle del Tribunal Oral Federal el día de la sentencia en la causa Brigada I",
-      "docSlug": "condenados",
-      "headingSlug": "",
-      "heading": "(documento entero)",
-      "confidence": 38,
-      "reasoning": "Desplazada por 080, la foto de la calle del TOF el día de la sentencia de Brigada I va al texto de apertura del capítulo \"Juicio y Castigo\", que evoca el primer juicio y el alegato de Bosch; ese documento no tiene títulos internos."
+      "reasoning": "Desplazada por 077, la mando a la crónica del 1 de marzo de 2017 sobre la domiciliaria de Manader y el juez Iglesias, el otro foco de las protestas; el epígrafe no trae fecha ni dato literal. — Reubicada para respetar el orden de carpeta: se propuso cronicas-violencia-sexual#manader-en-su-domicilio-y-el-juez-iglesias-en-el-tribunal."
     },
     {
       "key": "027",
       "caption": "Inspección ocular en la Alcaidía policial durante el juicio oral Brigada I",
       "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "alcaidía-una-zona-gris",
-      "heading": "ALCAIDÍA UNA ZONA GRIS",
+      "headingSlug": "raúl-alberto-mazaite--torturas-vox-populi-en-la-brigada",
+      "heading": "RAÚL ALBERTO MAZAITE – “Torturas vox populi en la Brigada”",
       "confidence": 38,
-      "reasoning": "Tercera foto casi idéntica de la inspección en la Alcaidía: la mando al único título dedicado a la Alcaidía como espacio del circuito represivo; ese pasaje no habla de ninguna inspección ocular."
+      "reasoning": "Tercera foto casi idéntica de la inspección en la Alcaidía: la mando al único título dedicado a la Alcaidía como espacio del circuito represivo; ese pasaje no habla de ninguna inspección ocular. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#alcaidía-una-zona-gris."
+    },
+    {
+      "key": "075",
+      "caption": "La calle del Tribunal Oral Federal el día de la sentencia en la causa Brigada I",
+      "docSlug": "cronicas-desaparecer",
+      "headingSlug": "oviedo-arce-lauroni-almirón",
+      "heading": "OVIEDO, ARCE, LAURONI, ALMIRÓN",
+      "confidence": 38,
+      "reasoning": "Desplazada por 080, la foto de la calle del TOF el día de la sentencia de Brigada I va al texto de apertura del capítulo \"Juicio y Castigo\", que evoca el primer juicio y el alegato de Bosch; ese documento no tiene títulos internos. — Reubicada para respetar el orden de carpeta: se propuso condenados#(documento)."
     },
     {
       "key": "084",
       "caption": "Plano de la vieja casona de Marcelo T. de Alvear 32",
-      "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "1-el-despacho-de-thomas",
-      "heading": "1 EL DESPACHO DE THOMAS",
+      "docSlug": "alegatos",
+      "headingSlug": "defensa",
+      "heading": "DEFENSA",
       "confidence": 38,
-      "reasoning": "Desplazado por 064, el plano de la casona acompaña el primero de los espacios recorridos en la inspección ocular, el despacho de Thomas; el texto no menciona ningún plano."
+      "reasoning": "Desplazado por 064, el plano de la casona acompaña el primero de los espacios recorridos en la inspección ocular, el despacho de Thomas; el texto no menciona ningún plano. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#1-el-despacho-de-thomas."
     },
     {
       "key": "098",
       "caption": "La Casa por la Memoria, dibujo de Juan Britos",
-      "docSlug": "los-fallos",
-      "headingSlug": "valor-de-prueba-de-los-testimonios-",
-      "heading": "Valor de prueba de los testimonios. “(…)",
+      "docSlug": "una-casa-con-historia",
+      "headingSlug": "casa-por-la-memoria-1372005",
+      "heading": "CASA POR LA MEMORIA 13.7.2005",
       "confidence": 40,
-      "reasoning": "Desplazada por 017, el dibujo de la Casa por la Memoria pasa al ensayo íntegramente dedicado a la Casa en el presente (documento sin títulos internos); el vínculo es con el lugar, no con un dato del dibujo. — Reubicada por falta de lugar: se movió de juicio-y-castigo-ayer-y-hoy#(documento) a los-fallos#valor-de-prueba-de-los-testimonios-."
+      "reasoning": "Desplazada por 017, el dibujo de la Casa por la Memoria pasa al ensayo íntegramente dedicado a la Casa en el presente (documento sin títulos internos); el vínculo es con el lugar, no con un dato del dibujo. — Reubicada para respetar el orden de carpeta: se propuso juicio-y-castigo-ayer-y-hoy#(documento)."
     },
     {
       "key": "034",
       "caption": "Inspección ocular en la Alcaidía, 2010, Prensa CPM Chaco",
       "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "causa-brigada-i-26-de-octubre-de-2010",
-      "heading": "CAUSA BRIGADA I 26 de octubre de 2010",
+      "headingSlug": "mario-bosch-presente",
+      "heading": "MARIO BOSCH, PRESENTE",
       "confidence": 42,
-      "reasoning": "Desplazada por 048, la mando al título de la jornada cuyo copete anuncia \"la inspección ocular en la Alcaidía y la Brigada el 8 y 9 de noviembre\"; el contenido de esa audiencia es el testimonio de Mazaite, no la inspección."
+      "reasoning": "Desplazada por 048, la mando al título de la jornada cuyo copete anuncia \"la inspección ocular en la Alcaidía y la Brigada el 8 y 9 de noviembre\"; el contenido de esa audiencia es el testimonio de Mazaite, no la inspección. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#causa-brigada-i-26-de-octubre-de-2010."
     },
     {
       "key": "037",
       "caption": "Referentes de organismos de DDHH en el inicio del juicio oral Brigada III, el 12 de abril de 2021",
-      "docSlug": "alegatos",
-      "headingSlug": "brigada-iii",
-      "heading": "BRIGADA III",
+      "docSlug": "chachi",
+      "headingSlug": null,
+      "heading": "(documento entero)",
       "confidence": 42,
-      "reasoning": "Desplazada por 040, la mando al apartado de los alegatos de Brigada III, cuya introducción fecha el inicio del juicio \"el lunes 12 de abril de 2021\"; el texto no menciona a los referentes de organismos presentes en la apertura."
-    },
-    {
-      "key": "063",
-      "caption": "La cobertura de El Diario de La Región del testimonio de la ex detenida política y referente de Salud Mental y",
-      "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "la-degradación-total-del-ser",
-      "heading": "LA DEGRADACIÓN TOTAL DEL SER",
-      "confidence": 45,
-      "reasoning": "Desplazada por 006, la llevo al único pasaje de las crónicas donde se nombra a Mirta Clara (María Gregoria Pérez la escuchaba mientras la torturaban); el libro no narra el testimonio de Mirta Clara de Sala."
-    },
-    {
-      "key": "076",
-      "caption": "La Casa por la Memoria, en el amanecer del 24 de marzo de 2020",
-      "docSlug": "los-fallos",
-      "headingSlug": "fallo-brigada-ii-208-páginas",
-      "heading": "FALLO BRIGADA II (208 páginas)",
-      "confidence": 45,
-      "reasoning": "Confirmo el anclaje temático al ensayo sobre la Casa por la Memoria en el presente, documento sin títulos internos; el texto no menciona el 24 de marzo de 2020 ni ese amanecer. — Reubicada por falta de lugar: se movió de juicio-y-castigo-ayer-y-hoy#(documento) a los-fallos#fallo-brigada-ii-208-páginas."
-    },
-    {
-      "key": "078",
-      "caption": "La Casa por la Memoria, sede de la CPM Chaco",
-      "docSlug": "los-fallos",
-      "headingSlug": "valor-de-prueba-de-los-testimonios-",
-      "heading": "Valor de prueba de los testimonios. “(…)",
-      "confidence": 45,
-      "reasoning": "Desplazada por 002, la foto de la sede de la CPM va al ensayo que describe la Casa hoy como \"una Casa abierta, sostenida por el trabajo cotidiano de sus equipos\"; el documento no tiene títulos internos. — Reubicada por falta de lugar: se movió de juicio-y-castigo-ayer-y-hoy#(documento) a los-fallos#valor-de-prueba-de-los-testimonios-."
+      "reasoning": "Desplazada por 040, la mando al apartado de los alegatos de Brigada III, cuya introducción fecha el inicio del juicio \"el lunes 12 de abril de 2021\"; el texto no menciona a los referentes de organismos presentes en la apertura. — Reubicada para respetar el orden de carpeta: se propuso alegatos#brigada-iii."
     },
     {
       "key": "001",
       "caption": "Vereda del tribunal oral federal (TOF) de Resistencia, Chaco, en Hipólito Irigoyen 33, durante una de las audi",
-      "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "causa-brigada-ii--jueves-24-de-noviembre-de-2016",
-      "heading": "CAUSA BRIGADA II – Jueves 24 de noviembre de 2016",
+      "docSlug": "la-memoria-y-la-palabra",
+      "headingSlug": null,
+      "heading": "(documento entero)",
       "confidence": 45,
-      "reasoning": "Desplazada del título que gana 014, la mando a la crónica de la única audiencia de Brigada II de 2016 que narra el libro (\"a sala llena\"); el 4 de agosto de 2016 no aparece en ningún pasaje."
+      "reasoning": "Desplazada del título que gana 014, la mando a la crónica de la única audiencia de Brigada II de 2016 que narra el libro (\"a sala llena\"); el 4 de agosto de 2016 no aparece en ningún pasaje. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#causa-brigada-ii--jueves-24-de-noviembre-de-2016."
     },
     {
       "key": "011",
       "caption": "ex detenida María Ines Rodríguez de Caire, dibujo de Alejandro Gallardo",
       "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "niños-detenidos-en-la-brigada",
-      "heading": "NIÑOS DETENIDOS EN LA BRIGADA",
+      "headingSlug": "arsenal-de-literatura-marxista",
+      "heading": "ARSENAL DE LITERATURA MARXISTA",
       "confidence": 45,
-      "reasoning": "Confirmo que el apellido Caire aparece una sola vez en el libro, en ese bloque (\"la familia Caire\"), y que el texto no nombra a María Inés Rodríguez de Caire ni afirma su detención: el vínculo sigue siendo indirecto."
+      "reasoning": "Confirmo que el apellido Caire aparece una sola vez en el libro, en ese bloque (\"la familia Caire\"), y que el texto no nombra a María Inés Rodríguez de Caire ni afirma su detención: el vínculo sigue siendo indirecto. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#niños-detenidos-en-la-brigada."
+    },
+    {
+      "key": "063",
+      "caption": "La cobertura de El Diario de La Región del testimonio de la ex detenida política y referente de Salud Mental y",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "viernes-16-de-abril-de-2021",
+      "heading": "Viernes 16 de abril de 2021",
+      "confidence": 45,
+      "reasoning": "Desplazada por 006, la llevo al único pasaje de las crónicas donde se nombra a Mirta Clara (María Gregoria Pérez la escuchaba mientras la torturaban); el libro no narra el testimonio de Mirta Clara de Sala. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#la-degradación-total-del-ser."
+    },
+    {
+      "key": "076",
+      "caption": "La Casa por la Memoria, en el amanecer del 24 de marzo de 2020",
+      "docSlug": "arganaraz-la-tortura-metafisica",
+      "headingSlug": null,
+      "heading": "(documento entero)",
+      "confidence": 45,
+      "reasoning": "Confirmo el anclaje temático al ensayo sobre la Casa por la Memoria en el presente, documento sin títulos internos; el texto no menciona el 24 de marzo de 2020 ni ese amanecer. — Reubicada para respetar el orden de carpeta: se propuso juicio-y-castigo-ayer-y-hoy#(documento)."
+    },
+    {
+      "key": "078",
+      "caption": "La Casa por la Memoria, sede de la CPM Chaco",
+      "docSlug": "genocidas-al-frente",
+      "headingSlug": "rodríguez-valiente-sumariante-subversivo",
+      "heading": "RODRÍGUEZ VALIENTE: “SUMARIANTE SUBVERSIVO”",
+      "confidence": 45,
+      "reasoning": "Desplazada por 002, la foto de la sede de la CPM va al ensayo que describe la Casa hoy como \"una Casa abierta, sostenida por el trabajo cotidiano de sus equipos\"; el documento no tiene títulos internos. — Reubicada para respetar el orden de carpeta: se propuso juicio-y-castigo-ayer-y-hoy#(documento)."
     },
     {
       "key": "094",
       "caption": "Los comienzos del primer juicio oral , Brigada I",
-      "docSlug": "tres-procesos-un-juicio-y-castigo",
-      "headingSlug": "tres-procesos-un-juicio-y-castigo",
-      "heading": "TRES PROCESOS, UN JUICIO Y CASTIGO",
+      "docSlug": "los-fallos",
+      "headingSlug": "fallo-brigada-i-157-páginas",
+      "heading": "FALLO BRIGADA I (157 páginas)",
       "confidence": 45,
-      "reasoning": "Desplazada del apartado de Brigada I por 006, la ancle al título contiguo que abre la reseña de los tres procesos; \"los comienzos del primer juicio oral\" no tiene otro pasaje literal disponible."
+      "reasoning": "Desplazada del apartado de Brigada I por 006, la ancle al título contiguo que abre la reseña de los tres procesos; \"los comienzos del primer juicio oral\" no tiene otro pasaje literal disponible. — Reubicada para respetar el orden de carpeta: se propuso tres-procesos-un-juicio-y-castigo#tres-procesos-un-juicio-y-castigo."
     },
     {
       "key": "016",
       "caption": "Los represores juzgados, dibujo de Alejandro Gallardo.",
-      "docSlug": "una-patota-para-la-miseria-planificada",
-      "headingSlug": "",
-      "heading": "(documento entero)",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "dedieu",
+      "heading": "DEDIEU",
       "confidence": 48,
-      "reasoning": "Confirmo el anclaje del dibujo colectivo de imputados a la apertura del capítulo sobre \"la patota\", que presenta a los ejecutores materiales como conjunto; el documento no tiene títulos y ningún texto menciona el dibujo."
+      "reasoning": "Confirmo el anclaje del dibujo colectivo de imputados a la apertura del capítulo sobre \"la patota\", que presenta a los ejecutores materiales como conjunto; el documento no tiene títulos y ningún texto menciona el dibujo. — Reubicada para respetar el orden de carpeta: se propuso una-patota-para-la-miseria-planificada#(documento)."
     },
     {
       "key": "088",
       "caption": "La Casa por la Memoria, sitio histórico y lugar de encuentro",
-      "docSlug": "los-fallos",
-      "headingSlug": "fallo-brigada-i-157-páginas",
-      "heading": "FALLO BRIGADA I (157 páginas)",
+      "docSlug": "las-condenas",
+      "headingSlug": "condenados",
+      "heading": "CONDENADOS",
       "confidence": 48,
-      "reasoning": "El epígrafe define la Casa como sitio histórico y lugar de encuentro, y ese ensayo la describe como espacio \"de encuentro y producción de memoria\"; ancla al documento entero porque no tiene títulos. — Reubicada por falta de lugar: se movió de juicio-y-castigo-ayer-y-hoy#(documento) a los-fallos#fallo-brigada-i-157-páginas."
+      "reasoning": "El epígrafe define la Casa como sitio histórico y lugar de encuentro, y ese ensayo la describe como espacio \"de encuentro y producción de memoria\"; ancla al documento entero porque no tiene títulos. — Reubicada para respetar el orden de carpeta: se propuso juicio-y-castigo-ayer-y-hoy#(documento)."
     },
     {
       "key": "089",
       "caption": "Hall de ingreso, con homenajes a Julio López y al mural de Amanda Piérola, “Argentina, dolor y esperanza”",
-      "docSlug": "los-fallos",
-      "headingSlug": "fallo-brigada-i-157-páginas",
-      "heading": "FALLO BRIGADA I (157 páginas)",
-      "confidence": 48,
-      "reasoning": "La foto del hall de ingreso encaja con este ensayo, que describe la planta baja y las salas del museo; verifiqué que Julio López no se menciona nunca y que el mural de Amanda Piérola solo aparece en \"CAUSA BRIGADA I (2010)\" y referido al Aula Magna de Humanidades. — Reubicada por falta de lugar: se movió de juicio-y-castigo-ayer-y-hoy#(documento) a los-fallos#fallo-brigada-i-157-páginas."
-    },
-    {
-      "key": "059",
-      "caption": "Rodríguez Valiente y Ramón Meza, causa Brigada II, 23 de junio de 2016, causa Brigada II",
       "docSlug": "las-condenas",
-      "headingSlug": "ramón-esteban-meza-policía-del-chaco",
-      "heading": "Ramón Esteban Meza (Policía del Chaco)",
-      "confidence": 50,
-      "reasoning": "Desplazada por 073, la foto de Rodríguez Valiente y Meza va a la ficha de condenas de Meza, que incluye su condena en Brigada II; la fecha del epígrafe (23 de junio de 2016) no aparece en el libro."
-    },
-    {
-      "key": "041",
-      "caption": "Cobertura de El Diario de la Región, a un escrache realizado en protesta por el beneficio de prisión domicilia",
-      "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "causa-brigada-ii-febrero-de-2017",
-      "heading": "CAUSA BRIGADA II Febrero de 2017",
-      "confidence": 50,
-      "reasoning": "Desplazada por 068, la tapa de diario sobre la protesta contra la domiciliaria queda anclada al título de esa jornada de febrero de 2017; el texto habla de una conferencia de prensa, no de un escrache, y no cita a El Diario de la Región."
+      "headingSlug": "humberto-lucio-caballero-policía-del-chaco",
+      "heading": "Humberto Lucio Caballero (Policía del Chaco)",
+      "confidence": 48,
+      "reasoning": "La foto del hall de ingreso encaja con este ensayo, que describe la planta baja y las salas del museo; verifiqué que Julio López no se menciona nunca y que el mural de Amanda Piérola solo aparece en \"CAUSA BRIGADA I (2010)\" y referido al Aula Magna de Humanidades. — Reubicada para respetar el orden de carpeta: se propuso juicio-y-castigo-ayer-y-hoy#(documento)."
     },
     {
       "key": "029",
       "caption": "Fiscal Diego Vigay, y querellantes Silvio , Silvina Canteros y",
-      "docSlug": "tribunal-partes-y-penas",
-      "headingSlug": "tribunal-y-partes",
-      "heading": "Tribunal y partes",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "causa-brigada-i-8-de-noviembre-de-2010",
+      "heading": "CAUSA BRIGADA I 8 de noviembre de 2010",
       "confidence": 50,
-      "reasoning": "Desplazada por 012, la mando al título contiguo que abre la nómina de tribunal y partes de las tres causas, donde Vigay y Silvina Canteros figuran en los listados; el nombre \"Silvio\" del epígrafe no existe en el libro."
+      "reasoning": "Desplazada por 012, la mando al título contiguo que abre la nómina de tribunal y partes de las tres causas, donde Vigay y Silvina Canteros figuran en los listados; el nombre \"Silvio\" del epígrafe no existe en el libro. — Reubicada para respetar el orden de carpeta: se propuso tribunal-partes-y-penas#tribunal-y-partes."
     },
     {
-      "key": "061",
-      "caption": "Gregorio Magno “Chachi” Quintana, referente del colectivo de ex detenidos políticos sobrevivientes al genocidi",
-      "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "usted-está-despedido",
-      "heading": "USTED ESTÁ DESPEDIDO",
-      "confidence": 52,
-      "reasoning": "Desplazada por 018bis, la llevo al único pasaje fuera del texto de Chachi donde se lo nombra literalmente como \"expresidente de la Asociación de Presos Políticos de Chaco y uno de los referentes\", que es justo lo que dice el epígrafe."
+      "key": "041",
+      "caption": "Cobertura de El Diario de la Región, a un escrache realizado en protesta por el beneficio de prisión domicilia",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "secuelas-76",
+      "heading": "“SECUELAS 76”",
+      "confidence": 50,
+      "reasoning": "Desplazada por 068, la tapa de diario sobre la protesta contra la domiciliaria queda anclada al título de esa jornada de febrero de 2017; el texto habla de una conferencia de prensa, no de un escrache, y no cita a El Diario de la Región. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#causa-brigada-ii-febrero-de-2017."
     },
     {
-      "key": "045",
-      "caption": "Imputados durante un cuarto intermedio en la causa Brigada II, TOF, 9 de agosto de 2017",
-      "docSlug": "genocidas-al-frente",
-      "headingSlug": "brigada-ii",
-      "heading": "BRIGADA II",
-      "confidence": 52,
-      "reasoning": "Desplazada por 073, la foto de los imputados en un cuarto intermedio de Brigada II va al título que agrupa las declaraciones de los imputados en esa causa; el 9 de agosto de 2017 no aparece en el texto."
-    },
-    {
-      "key": "048",
-      "caption": "Inspección ocular en la sede de la Brigada de Investigaciones por Juan B Justo",
-      "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "el-policía-que-se-negó-a-torturar",
-      "heading": "EL POLICÍA QUE SE NEGÓ A TORTURAR",
-      "confidence": 52,
-      "reasoning": "Desplazada por 017, la mando al título cuyo copete anuncia \"la inspección ocular en la Alcaidía y la Brigada el 8 y 9 de noviembre\"; el texto aclara que en la sede de Juan B. Justo la inspección no llegó a hacerse."
+      "key": "059",
+      "caption": "Rodríguez Valiente y Ramón Meza, causa Brigada II, 23 de junio de 2016, causa Brigada II",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "continúa-el-juicio-por-crímenes-de-lesa-humanidad-en-la-brigada",
+      "heading": "Continúa el juicio por crímenes de lesa humanidad en la Brigada",
+      "confidence": 50,
+      "reasoning": "Desplazada por 073, la foto de Rodríguez Valiente y Meza va a la ficha de condenas de Meza, que incluye su condena en Brigada II; la fecha del epígrafe (23 de junio de 2016) no aparece en el libro. — Reubicada para respetar el orden de carpeta: se propuso las-condenas#ramón-esteban-meza-policía-del-chaco."
     },
     {
       "key": "032",
       "caption": "Patio interno de la Casa por la Memoria, desde el hall de ingreso, 2024",
-      "docSlug": "los-fallos",
-      "headingSlug": "fallo-brigada-i-157-páginas",
-      "heading": "FALLO BRIGADA I (157 páginas)",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "5-el-cónclave",
+      "heading": "5 EL “CÓNCLAVE”",
       "confidence": 52,
-      "reasoning": "Desplazada del apartado de la Casa por la Memoria (que gana 002 con una coincidencia textual), va al ensayo sobre la Casa en el presente, que describe la planta baja, las visitas escolares y \"los salones abiertos y luminosos\"; ese documento no tiene títulos internos. — Reubicada por falta de lugar: se movió de juicio-y-castigo-ayer-y-hoy#(documento) a los-fallos#fallo-brigada-i-157-páginas."
+      "reasoning": "Desplazada del apartado de la Casa por la Memoria (que gana 002 con una coincidencia textual), va al ensayo sobre la Casa en el presente, que describe la planta baja, las visitas escolares y \"los salones abiertos y luminosos\"; ese documento no tiene títulos internos. — Reubicada para respetar el orden de carpeta: se propuso juicio-y-castigo-ayer-y-hoy#(documento)."
     },
     {
-      "key": "062",
-      "caption": "La “caprichosa” otra de las pasiones de Chachi, siempre en torno de lo popular y colectivo",
-      "docSlug": "chachi",
-      "headingSlug": "chachi-gregorio-chachi-quintana-1955-2010",
-      "heading": "CHACHI. Gregorio “Chachi” Quintana 1955-2010.",
-      "confidence": 55,
-      "reasoning": "El epígrafe dice \"otra de sus pasiones\" y el texto usa esa misma frase al contar que presidió el Club de Veteranos de Fútbol; ancla al documento entero porque su único título quedó para 018bis. — Reubicada por falta de lugar: se movió de (documento) a chachi-gregorio-chachi-quintana-1955-2010."
-    },
-    {
-      "key": "087",
-      "caption": "El genocida José Marín",
-      "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "dos-manader-y-compañía",
-      "heading": "DOS: MANADER Y COMPAÑÍA",
-      "confidence": 55,
-      "reasoning": "Desplazada por 028, la foto de archivo de Marín va al título dedicado íntegramente a él, donde el testigo Navarro afirma que \"José Marín (alias 'Cabo Sotelo') tocaba el acordeón\". — Reubicada por falta de lugar: se movió de uno-marín-tocaba-el-acordeón a dos-manader-y-compañía."
-    },
-    {
-      "key": "051",
-      "caption": "José Rodríguez Valiente y Gabino Manader, dos represores emblemáticos del genocidio en Chaco",
-      "docSlug": "las-condenas",
-      "headingSlug": "condenados",
-      "heading": "CONDENADOS",
-      "confidence": 55,
-      "reasoning": "Desplazada por 024, la mando al título que abre la nómina de condenados (\"A continuación, la lista de condenados\"), encabezada justamente por Manader y Rodríguez Valiente; no hay un pasaje que los presente como dupla."
-    },
-    {
-      "key": "083",
-      "caption": "Planos de los sótanos y fotografías de alguns elementos econtrados por el EAAF en 2008",
-      "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "causa-brigada-i-18102010",
-      "heading": "Causa Brigada I 18/10/2010",
-      "confidence": 58,
-      "reasoning": "La mando al título de la jornada en que declaró el EAAF (cuyo copete anuncia \"Miguel Nieva explicó cómo se hizo el relevamiento de dos sótanos\"), porque el apartado de Nieva quedó tomado por 052 y allí se describe el relevamiento \"planimetral, fotográfico y fílmico\" del epígrafe."
-    },
-    {
-      "key": "077",
-      "caption": "En la víspera del 24 de marzo de 2018, organismos de DDHH y organizaciones sociales encabezaron un “escrache” ",
-      "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "reclamo-decárcel-comun",
-      "heading": "RECLAMO DE“CÁRCEL COMUN”",
-      "confidence": 60,
-      "reasoning": "Gana el título porque el epígrafe describe un escrache de organismos de DDHH y organizaciones sociales contra la domiciliaria de Manader y ese apartado relata la conferencia de repudio con el reclamo de \"cárcel común y efectiva\"; la fecha no coincide (2018 vs. febrero de 2017)."
-    },
-    {
-      "key": "013",
-      "caption": "Fiscales Diego Vigay, Carlos Amad y querellante Mario Bosch y Silvina Canteros, causa Brigada II",
-      "docSlug": "alegatos",
-      "headingSlug": "plan-sistemático",
-      "heading": "“PLAN SISTEMÁTICO”",
-      "confidence": 60,
-      "reasoning": "Desplazada por 066, la mando al apartado contiguo del alegato fiscal de Brigada II, donde se nombra literalmente al fiscal Amad y al fiscal Diego Vigay; Bosch y Canteros no aparecen ahí."
-    },
-    {
-      "key": "091",
-      "caption": "Denuncias contra el genocida Meza, durante la causa Brigada I",
-      "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "causa-brigada-i-10-agosto-2010",
-      "heading": "Causa Brigada I 10 agosto 2010",
-      "confidence": 60,
-      "reasoning": "Confirmo el anclaje: la apertura de esa jornada consigna que \"De Ramón Meza se supo que robó un sobre con el dinero de dos sueldos y varios crucifijos de oro a uno de los testigos\", pero no sé qué denuncias concretas reproduce el recorte."
-    },
-    {
-      "key": "013bis",
-      "caption": "Lucio Humberto Caballero, archivo",
+      "key": "045",
+      "caption": "Imputados durante un cuarto intermedio en la causa Brigada II, TOF, 9 de agosto de 2017",
       "docSlug": "cronicas-violencia-sexual",
-      "headingSlug": "causa-caballero-ii-jueves-11-de-mayo-2017",
-      "heading": "CAUSA CABALLERO II Jueves 11 de mayo 2017",
-      "confidence": 60,
-      "reasoning": "Ubicación manual: el epígrafe nombra a Lucio Humberto Caballero y ese título abre la audiencia de la causa Caballero II."
+      "headingSlug": "flores-leyes-pistola-al-cinto",
+      "heading": "FLORES LEYES: PISTOLA AL CINTO",
+      "confidence": 52,
+      "reasoning": "Desplazada por 073, la foto de los imputados en un cuarto intermedio de Brigada II va al título que agrupa las declaraciones de los imputados en esa causa; el 9 de agosto de 2017 no aparece en el texto. — Reubicada para respetar el orden de carpeta: se propuso genocidas-al-frente#brigada-ii."
     },
     {
-      "key": "078bis",
-      "caption": "Manader, Patetta, Rodríguez Valiente, Ibarra, en el TOF, el 22 de septiembre de 2017 en el juicio oral Brigada",
-      "docSlug": "cronicas-una-casa-con-una-sala-negra",
-      "headingSlug": "la-defensa-de-los-imputados",
-      "heading": "LA DEFENSA DE LOS IMPUTADOS",
-      "confidence": 60,
-      "reasoning": "Ubicación manual: el epígrafe muestra a los cuatro imputados en el TOF durante el juicio Brigada II; ese título trata la defensa de los imputados."
-    },
-    {
-      "key": "060",
-      "caption": "Sentencia Brigada II, querellante Paulo Pereyra, fiscales Patricio Sabadini y Diego Vigay, querellante",
-      "docSlug": "las-condenas",
-      "headingSlug": "31518-brigada-ii",
-      "heading": "31.5.18. BRIGADA II",
-      "confidence": 62,
-      "reasoning": "Desplazada por 079, la mando al título contiguo sobre la sentencia de Brigada II; Pereyra, Sabadini y Vigay figuran como partes de esa causa en otros documentos, no en este párrafo."
-    },
-    {
-      "key": "069",
-      "caption": "José Marín, dibujado por Juan Britos",
+      "key": "048",
+      "caption": "Inspección ocular en la sede de la Brigada de Investigaciones por Juan B Justo",
       "docSlug": "cronicas-violencia-sexual",
-      "headingSlug": "marín-el-delator",
-      "heading": "MARÍN, EL DELATOR",
-      "confidence": 65,
-      "reasoning": "Confirmo el anclaje: esa sección es la única dedicada por entero a caracterizar a Marín (Cabo Sotelo, el acordeón, su delación en la Sala Negra), aunque nada ata el dibujo de Britos a ese título frente a otras menciones."
+      "headingSlug": "causa-brigada-ii-febrero-2017",
+      "heading": "CAUSA BRIGADA II Febrero 2017",
+      "confidence": 52,
+      "reasoning": "Desplazada por 017, la mando al título cuyo copete anuncia \"la inspección ocular en la Alcaidía y la Brigada el 8 y 9 de noviembre\"; el texto aclara que en la sede de Juan B. Justo la inspección no llegó a hacerse. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#el-policía-que-se-negó-a-torturar."
+    },
+    {
+      "key": "061",
+      "caption": "Gregorio Magno “Chachi” Quintana, referente del colectivo de ex detenidos políticos sobrevivientes al genocidi",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "la-violencia-sexual-como-delito-autónomo-de-lesa-humanidad",
+      "heading": "La violencia sexual como delito autónomo de lesa humanidad",
+      "confidence": 52,
+      "reasoning": "Desplazada por 018bis, la llevo al único pasaje fuera del texto de Chachi donde se lo nombra literalmente como \"expresidente de la Asociación de Presos Políticos de Chaco y uno de los referentes\", que es justo lo que dice el epígrafe. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#usted-está-despedido."
+    },
+    {
+      "key": "002",
+      "caption": "En 2008 el Equipo Argentino de Antropología Forense (EAAF) realizó el relevamiento de dos sótanos utilizados p",
+      "docSlug": "tres-procesos-un-juicio-y-castigo",
+      "headingSlug": "causa-brigada-i-2010",
+      "heading": "CAUSA BRIGADA I (2010)",
+      "confidence": 55,
+      "reasoning": "El epígrafe reproduce casi palabra por palabra la frase de ese título: \"En febrero de 2008, el Equipo Argentino de Antropología Forense realizó el relevamiento de dos sótanos\". — Reubicada para respetar el orden de carpeta: se propuso una-casa-con-historia#casa-por-la-memoria-1372005."
     },
     {
       "key": "003",
       "caption": "Epicentro del plan sistemático de represión genocida en Chaco",
       "docSlug": "en-el-lugar-sin-limites",
-      "headingSlug": "en-el-lugar-sin-límites",
-      "heading": "EN EL LUGAR SIN LÍMITES",
-      "confidence": 68,
-      "reasoning": "Confirmo el anclaje: el epígrafe habla del \"epicentro\" del plan genocida y este texto de apertura cierra con el detenido \"confinado en el epicentro del país genocida\"; el dibujo funciona como apertura del capítulo."
+      "headingSlug": null,
+      "heading": "(documento entero)",
+      "confidence": 55,
+      "reasoning": "Confirmo el anclaje: el epígrafe habla del \"epicentro\" del plan genocida y este texto de apertura cierra con el detenido \"confinado en el epicentro del país genocida\"; el dibujo funciona como apertura del capítulo. — Reubicada para respetar el orden de carpeta: se propuso en-el-lugar-sin-limites#en-el-lugar-sin-límites."
+    },
+    {
+      "key": "005",
+      "caption": "José Marín, (alias Cabo Sotelo, “el acordeonista”) y Enzo Breard, causa Brigada I, TOF, 11 de agosto de 2010",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "la-tortura-en-el-chaco-comenzó-en-el-74-con-un-gobierno-constitucional",
+      "heading": "“LA TORTURA EN EL CHACO COMENZÓ EN EL 74, CON UN GOBIERNO CONSTITUCIONAL”",
+      "confidence": 55,
+      "reasoning": "El epígrafe fecha la foto el 11 de agosto de 2010 y ese título pertenece a la crónica \"CAUSA BRIGADA I 11 agosto 2010\", donde se relata a Marín tocando el chamamé \"Kilómetro 11\" mientras torturaba, es decir el \"acordeonista\" del epígrafe; Breard no es nombrado en esa jornada. — Reubicada para respetar el orden de carpeta: se propuso cronicas-desaparecer#otra-vez-marín-kilómetro-11."
+    },
+    {
+      "key": "006",
+      "caption": "Anuncio en El Diario de la Región, sobre la inminencia del juicio oral, que inició el 3 de junio de 2010",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "siete-días-contra-la-pared",
+      "heading": "SIETE DÍAS CONTRA LA PARED",
+      "confidence": 55,
+      "reasoning": "Gana el título en disputa porque el archivo se llama \"COMIENZA EL 5 DE MAYO\" y ese apartado es el único que fecha el inicio del juicio: \"El juicio oral comenzó el 5 de mayo de 2010\". — Reubicada para respetar el orden de carpeta: se propuso tres-procesos-un-juicio-y-castigo#causa-brigada-i-2010."
+    },
+    {
+      "key": "008",
+      "caption": "Ex detenida policía María Julia Morresi, dibujo de Alejandro Gallardo",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "el-horror-en-la-ciudad",
+      "heading": "EL HORROR EN LA CIUDAD",
+      "confidence": 55,
+      "reasoning": "Es el único lugar del libro donde aparece el nombre completo María Julia Morresi: Borrini cuenta que su hija Gladys \"compartió detención con María Julia Morresi\" en la Brigada. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#la-hija."
+    },
+    {
+      "key": "009",
+      "caption": "Inspección ocular en la ex Brigada, el 8 de noviembre de 2010",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "idas-y-vueltas-de-un-encuentro",
+      "heading": "IDAS Y VUELTAS DE UN ENCUENTRO",
+      "confidence": 55,
+      "reasoning": "El archivo es \"INSPECCIÓN OCULAR EX BRIGADA VALDI UFERER SEÑALA SALA NEGRA\" y este apartado de la inspección del 8 de noviembre de 2010 es justamente donde Valdi Uferer describe y señala la Sala Negra y los calabozos. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#4-la-sala-negra-y-los-calabozos."
+    },
+    {
+      "key": "012",
+      "caption": "Tribunal Causa Brigada II Dra. Deogens, Dr. Iglesias y Dr. (pte.) Eduardo Belforte",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "la-brigada-un-infierno-permanente",
+      "heading": "“LA BRIGADA, UN INFIERNO PERMANENTE",
+      "confidence": 55,
+      "reasoning": "Gana el título porque allí figura literalmente \"Tribunal: Eduardo Belforte; Mario Alurralde; Juan Manuel Iglesias y Delfina Deogens\", y Deogens no aparece en ninguna otra parte del libro. — Reubicada para respetar el orden de carpeta: se propuso tribunal-partes-y-penas#causa-brigada-ii."
+    },
+    {
+      "key": "013",
+      "caption": "Fiscales Diego Vigay, Carlos Amad y querellante Mario Bosch y Silvina Canteros, causa Brigada II",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "diez-días-en-un-infierno-permanente",
+      "heading": "DIEZ DÍAS EN “UN INFIERNO PERMANENTE”",
+      "confidence": 55,
+      "reasoning": "Desplazada por 066, la mando al apartado contiguo del alegato fiscal de Brigada II, donde se nombra literalmente al fiscal Amad y al fiscal Diego Vigay; Bosch y Canteros no aparecen ahí. — Reubicada para respetar el orden de carpeta: se propuso alegatos#plan-sistemático."
+    },
+    {
+      "key": "013bis",
+      "caption": "Lucio Humberto Caballero, archivo",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "la-crueldad-y-la-ignorancia",
+      "heading": "LA CRUELDAD Y LA IGNORANCIA",
+      "confidence": 55,
+      "reasoning": "Ubicación manual: el epígrafe nombra a Lucio Humberto Caballero y ese título abre la audiencia de la causa Caballero II. — Reubicada para respetar el orden de carpeta: se propuso cronicas-violencia-sexual#causa-caballero-ii-jueves-11-de-mayo-2017."
+    },
+    {
+      "key": "014",
+      "caption": "La calle del TOF, el 16 de junio de 2016, causa Brigada II",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "la-brigada-salir-de-ahí-aunque-sea-muertos",
+      "heading": "LA BRIGADA: “SALIR DE AHÍ, AUNQUE SEA MUERTOS”",
+      "confidence": 55,
+      "reasoning": "Gana el título en disputa porque el epígrafe fecha la foto el 16 de junio de 2016 y ese apartado dice literalmente \"El juicio oral comenzó el 16 de junio de 2016 y culminó el 31 de mayo de 2018\". — Reubicada para respetar el orden de carpeta: se propuso tres-procesos-un-juicio-y-castigo#causa-brigada-ii-201618."
+    },
+    {
+      "key": "015",
+      "caption": "El testimonio de Aníbal Ponti, Eligia Flor, María Gregoria Pérez y Juan Manuel Gonzáles, en El Diario de la Re",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "dito-saliva",
+      "heading": "Dito Saliva",
+      "confidence": 55,
+      "reasoning": "Gana el título porque el epígrafe nombra a Aníbal Ponti, Eligia Flor, María Gregoria Pérez y Juan Manuel González, los cuatro testigos que esa crónica describe uno por uno. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#causa-brigada-i-7-julio-2010."
+    },
+    {
+      "key": "017",
+      "caption": "Inspección ocular en la Alcaidía de Chaco, con la participación de los ex detenidos Carlos Aranda, Víctor Gimé",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "eusebio-chelo-esquivel",
+      "heading": "EUSEBIO “CHELO” ESQUIVEL",
+      "confidence": 55,
+      "reasoning": "Gana el título porque su copete dice que \"el martes la inspección continúa en la Alcaidía\" y que a ella \"será convocado el exdetenido Carlos 'Ratón' Aranda\", y Víctor Giménez integra la comitiva; a Greca no lo menciona. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#inspección-ocular-en-la-casa-por-la-memoria."
+    },
+    {
+      "key": "018bis",
+      "caption": "Gregorio “Chachi” Quintana 1955-2010. Pilar del juicio y castigo al terrorismo de Estado en Chaco",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "in-justicia-militar-24-años-y-11-meses-de-condena",
+      "heading": "(IN) JUSTICIA MILITAR: 24 AÑOS Y 11 MESES DE CONDENA",
+      "confidence": 55,
+      "reasoning": "Gana el título porque el epígrafe reproduce palabra por palabra el título y su bajada: \"Gregorio 'Chachi' Quintana 1955-2010\" y \"Pilar del juicio y castigo al terrorismo de Estado en Chaco\". — Reubicada para respetar el orden de carpeta: se propuso chachi#chachi-gregorio-chachi-quintana-1955-2010."
+    },
+    {
+      "key": "018bisbis",
+      "caption": "Presidió Club de Veteranos de Fútbol, otra de sus pasiones.",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "el-sobreviviente-de-la-casa-de-tarzán",
+      "heading": "EL SOBREVIVIENTE DE LA CASA DE TARZÁN",
+      "confidence": 55,
+      "reasoning": "El texto dice literalmente que Chachi \"tuvo tiempo para presidir el Club de Veteranos de Fútbol, otra de sus pasiones\", pero ese párrafo está en el mismo documento que tiene un solo título, ya usado por 018bis, así que anclo al documento entero. — Reubicada para respetar el orden de carpeta: se propuso chachi#(documento)."
+    },
+    {
+      "key": "019",
+      "caption": "Ex detenido Armando Benítez, durante su testimonio en la causa Brigada III, abril 2021",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "súbanlo",
+      "heading": "“SÚBANLO”",
+      "confidence": 55,
+      "reasoning": "El epígrafe nombra a Armando Benítez declarando en la causa Brigada III en abril de 2021 y ese título es exactamente su testimonio presencial del martes 13 de abril (\"Es bravo recordar de nuevo\"). — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#armando-benítez-es-bravo-recordar."
+    },
+    {
+      "key": "020",
+      "caption": "Ingreso al sótano más grande (SBI) del centro clandestino de detención de la Brigada de Investigaciones",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "vamos-a-matar-a-tu-hijo",
+      "heading": "“VAMOS A MATAR A TU HIJO”",
+      "confidence": 55,
+      "reasoning": "Gana el título porque el epígrafe muestra el ingreso al sótano mayor (SB1) y ese apartado narra que \"Los jueces observaron el sótano mayor a través de una reja de seguridad (el sitio está inundado)\". — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#3-el-sótano-del-fondo-del-edificio."
+    },
+    {
+      "key": "022",
+      "caption": "Un inédito cruce frente a frente entre el ex detenido Osvaldo Uferer y uno de sus torturadores, Francisco Rodr",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "la-hija",
+      "heading": "LA HIJA",
+      "confidence": 55,
+      "reasoning": "Gana el título porque allí está el cruce literal del epígrafe: Valdi Uferer le contesta a Rodríguez Valiente \"Vos callate, si tenías tu oficina ahí arriba\" durante la inspección de 2010. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#2-el-sótano-chico."
+    },
+    {
+      "key": "024",
+      "caption": "Genocida Gabino Manader, archivo.",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "sergio-romero--detenido-con-su-mujer-y-su-hijo",
+      "heading": "SERGIO ROMERO – DETENIDO CON SU MUJER Y SU HIJO",
+      "confidence": 55,
+      "reasoning": "Gana el título porque es el retrato de archivo de Manader y ese apartado abre con \"Gabino Manader fue uno de los jefes de la 'Patota de Investigaciones'\", con su foja de servicio y sus declaraciones. — Reubicada para respetar el orden de carpeta: se propuso genocidas-al-frente#uno-de-los-jefes."
+    },
+    {
+      "key": "024bis",
+      "caption": "Sobrevivientes del genocidio brindaron testimonio en una sala del TOF semivacía y por video conferencia, en ob",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "héctor-costas--40-días-en-brigada",
+      "heading": "HÉCTOR COSTAS – 40 DÍAS EN BRIGADA",
+      "confidence": 55,
+      "reasoning": "Desplazada por 044, la mando al título de esa misma jornada, cuya crónica describe el \"escenario atípico a raíz de la emergencia sanitaria por coronavirus\" con un testigo presencial y el resto por videoconferencia. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#causa-brigada-iii-martes-13-de-abril."
+    },
+    {
+      "key": "026",
+      "caption": "Rodríguez Valiente, dibujo de Juan Britos",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "el-policía-que-se-negó-a-torturar",
+      "heading": "EL POLICÍA QUE SE NEGÓ A TORTURAR",
+      "confidence": 55,
+      "reasoning": "Gana el título porque es el retrato dibujado de Rodríguez Valiente y ese apartado es su semblanza y su declaración como imputado (\"Quiero aclarar que no tengo nada que ver con los hechos que se me imputan\"). — Reubicada para respetar el orden de carpeta: se propuso genocidas-al-frente#rodríguez-valiente-sumariante-subversivo."
+    },
+    {
+      "key": "028",
+      "caption": "José Marín, condenado por torturas en los tres juicios realizados referentes a crímenes de lesa humanidad en l",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "dos-manader-y-compañía",
+      "heading": "DOS: MANADER Y COMPAÑÍA",
+      "confidence": 55,
+      "reasoning": "Gana el título porque el epígrafe dice que Marín fue condenado por torturas en los tres juicios y esa ficha lista exactamente sus tres condenas: Brigada (25 años), Brigada II (18) y Brigada III (3). — Reubicada para respetar el orden de carpeta: se propuso las-condenas#josé-marín-alias-cabo-sotelo-policía-del-chaco."
+    },
+    {
+      "key": "033",
+      "caption": "Ex detenido político Gerardo Delgado, dibujo de Juan Britos",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "sobrevivientes",
+      "heading": "SOBREVIVIENTES",
+      "confidence": 55,
+      "reasoning": "El epígrafe retrata al ex detenido Gerardo Delgado y este título, dentro de la crónica 'CAUSA BRIGADA- 24 AGOSTO 2010', es el tramo donde se relata textualmente el testimonio de Delgado sobre las torturas que sufrió en la Brigada. — Reubicada para respetar el orden de carpeta: se propuso cronicas-desaparecer#torturas."
+    },
+    {
+      "key": "035",
+      "caption": "En el marco de una inspección ocular en la ex Brigada, Rodríguez Valiente regresa al lugar de los hechos, esta",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "iglesias-un-juez-en-la-u7",
+      "heading": "IGLESIAS: UN JUEZ EN LA U7",
+      "confidence": 55,
+      "reasoning": "El epígrafe describe a Rodríguez Valiente volviendo esposado y custodiado por el SPF a la ex Brigada durante la inspección de la causa Brigada I en 2010, y el texto bajo este título dice literalmente que 'ingresó por el estacionamiento del edificio, cabizbajo, esposado y con la custodia de los agentes del SPF'. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#rodríguez-valiente-de-regreso-a-la-escena-del-crimen."
+    },
+    {
+      "key": "036",
+      "caption": "El represor Jorge Ibarra, causa Brigada II, Prensa CPM",
+      "docSlug": "cronicas-una-casa-con-una-sala-negra",
+      "headingSlug": "con-relatos-del-horror-en-la-brigadaalcaidía-comenzó-la-etapa-de-testimoniales",
+      "heading": "Con relatos del horror en la Brigada/Alcaidía comenzó la etapa de testimoniales",
+      "confidence": 55,
+      "reasoning": "El epígrafe es un retrato del represor Jorge Ibarra en la causa Brigada II y este título de la audiencia del 16 de diciembre de 2016 relata que Ibarra, 'uno de los imputados traídos a juicio por primera vez', negaba con la cabeza mientras Aguirre declaraba. — Reubicada para respetar el orden de carpeta: se propuso cronicas-violencia-sexual#el-loquito-ibarra."
+    },
+    {
+      "key": "039",
+      "caption": "Marín, “el acordeonista”, dibujo de Alejandro Gallardo.",
+      "docSlug": "de-victimas-a-sobrevivientes",
+      "headingSlug": null,
+      "heading": "(documento entero)",
+      "confidence": 55,
+      "reasoning": "El epígrafe llama a Marín 'el acordeonista' y este título de la audiencia del 26 de octubre de 2010 está dedicado por completo a que José Marín (alias Cabo Sotelo) tocaba el acordeón para tapar los alaridos de los torturados. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#uno-marín-tocaba-el-acordeón."
+    },
+    {
+      "key": "040",
+      "caption": "El juicio oral Brigada III se realizó en modalidad remota por videoconferencia, dado a las restricciones por l",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "causa-brigada-ii-viernes-16-de-diciembre-de-2016",
+      "heading": "CAUSA BRIGADA II Viernes 16 de diciembre de 2016",
+      "confidence": 55,
+      "reasoning": "Gana el título porque el apartado dice literalmente que Brigada III \"se desarrolló entre el 12 y 30 de abril de 2021, con modalidad de videoconferencia ya que todavía regían los protocolos sanitarios por la pandemia de COVID19\". — Reubicada para respetar el orden de carpeta: se propuso tres-procesos-un-juicio-y-castigo#causa-brigada-iii-2021."
+    },
+    {
+      "key": "042",
+      "caption": "Pedro Crisólogo Morel, militante de PRT, secuestrado y desaparecido en la Brigada de Investigaciones EDAD!",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "causa-brigada-i-20-agosto-2010",
+      "heading": "Causa Brigada I 20 agosto 2010",
+      "confidence": 55,
+      "reasoning": "El epígrafe nombra a Pedro Crisólogo Morel, militante del PRT desaparecido en la Brigada, y este título está dedicado íntegramente a \"la historia de los formoseños Pedro Morel y Sara Fulvia Ayala\", vistos por última vez en los calabozos de la Brigada. — Reubicada para respetar el orden de carpeta: se propuso cronicas-desaparecer#pedro-y-sara."
+    },
+    {
+      "key": "043",
+      "caption": "Silvia Fulvia Ayala de Morel militante de PRT, secuestrada y desaparecida en la Brigada de Investigaciones EDA",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "el-juez-era-parte-del-sistema-represivo-de-la-brigada-de-investigaciones",
+      "heading": "“EL JUEZ ERA PARTE DEL SISTEMA REPRESIVO DE LA BRIGADA DE INVESTIGACIONES”",
+      "confidence": 55,
+      "reasoning": "El epígrafe nombra a Silvia Fulvia Ayala de Morel y este título contiene la mención literal \"Fulvia Ayala de Morel\" en el relato de Gerardo Delgado sobre los calabozos donde estuvo el matrimonio; va al título contiguo porque \"PEDRO Y SARA\" ya quedó tomado por la imagen 042. — Reubicada para respetar el orden de carpeta: se propuso cronicas-desaparecer#calabozos."
+    },
+    {
+      "key": "044",
+      "caption": "Querellante Duilio Ramírez, fiscal Diego Vigay, defensor oficial Juan Manuel Costilla, juez Rubén Quiñones, ca",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "brigada-torturas",
+      "heading": "BRIGADA: TORTURAS",
+      "confidence": 55,
+      "reasoning": "Gana el título porque Duilio Ramírez, Diego Vigay, Juan Manuel Costilla y Rubén Quiñones aparecen los cuatro nombrados juntos en esos párrafos (audiencia del martes 13 de abril de 2021). — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#con-relatos-del-horror-en-la-brigadaalcaidía-comenzó-la-etapa-de-testimoniales."
+    },
+    {
+      "key": "047",
+      "caption": "Sobrevivientes e imputados, tribunal y partes, recorren las instalaciones del sitio histórico ex centro clande",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "julio-argentino-cossio",
+      "heading": "Julio Argentino Cossio",
+      "confidence": 55,
+      "reasoning": "Gana el título porque el epígrafe describe a sobrevivientes, imputados, tribunal y partes recorriendo el sitio en 2010 y ese apartado enumera los cinco espacios relevados en esa recorrida. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#la-inspección-cinco-lugares."
+    },
+    {
+      "key": "049",
+      "caption": "Ex detenida De La Rosa , dibujo de Alejandro Gallardo",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "nicolaides-y-larrateguy",
+      "heading": "NICOLAIDES Y LARRATEGUY",
+      "confidence": 55,
+      "reasoning": "El epígrafe nombra a la ex detenida De La Rosa y este título es la crónica de la jornada Nº 30 en la que declaró la senadora formoseña Graciela de La Rosa, con su relato de la Brigada y de la Sala Negra. — Reubicada para respetar el orden de carpeta: se propuso cronicas-violencia-sexual#continúa-el-juicio-por-crímenes-de-lesa-humanidad-en-la-brigada."
+    },
+    {
+      "key": "051",
+      "caption": "José Rodríguez Valiente y Gabino Manader, dos represores emblemáticos del genocidio en Chaco",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "con-la-declaración-de-un-testigo-culminaron-los-debates-de-febrero",
+      "heading": "Con la declaración de un testigo, culminaron los debates de febrero",
+      "confidence": 55,
+      "reasoning": "Desplazada por 024, la mando al título que abre la nómina de condenados (\"A continuación, la lista de condenados\"), encabezada justamente por Manader y Rodríguez Valiente; no hay un pasaje que los presente como dupla. — Reubicada para respetar el orden de carpeta: se propuso las-condenas#condenados."
+    },
+    {
+      "key": "052",
+      "caption": "Una de las picanas eléctricas recuperadas por el EAFF durante la inspección que reveló uno de los sótanos ocul",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "causa-brigada-1-de-marzo-de-2017",
+      "heading": "CAUSA BRIGADA 1 de marzo de 2017",
+      "confidence": 55,
+      "reasoning": "Gana el título porque el texto dice que el sótano SB9 \"estaba lleno de escombros\" y que allí se halló \"una picana a pila\", exactamente la picana del epígrafe. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#miguel-nievaeaff-la-sangre-derramada-no-será-negociada."
+    },
+    {
+      "key": "056",
+      "caption": "Hugo Dedieu, dibujo de Juan Britos",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "en-la-brigada-1",
+      "heading": "EN LA BRIGADA",
+      "confidence": 55,
+      "reasoning": "El epígrafe es un retrato de Hugo Dedieu y ese título (DEDIEU, audiencia del 10 de agosto de 2010, causa Brigada I) es la sección dedicada íntegramente a su declaración. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#dedieu."
+    },
+    {
+      "key": "057",
+      "caption": "Olga Chamorro, relató las torturas y amenazas que sufrió en la Brigada, en El Diario de la Región",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "causa-brigada-ii-viernes-7-de-abril-2017",
+      "heading": "CAUSA BRIGADA II Viernes 7 de abril 2017",
+      "confidence": 55,
+      "reasoning": "El epígrafe nombra a Olga Chamorro relatando torturas y amenazas en la Brigada; en esa crónica (Causa Brigada I 4/10/2010) declara una ex detenida identificada solo por las iniciales \"O.Ch.\" a quien amenazaron con \"vamos a matar a tu hijo\": las iniciales coinciden, pero el libro no la nombra completa. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#vamos-a-matar-a-tu-hijo."
+    },
+    {
+      "key": "058",
+      "caption": "Enzo Breard, archivo",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "parto-y-traslado",
+      "heading": "PARTO Y TRASLADO",
+      "confidence": 55,
+      "reasoning": "El epígrafe es una foto de archivo de Enzo Breard y ese título es la sección dedicada por entero a él (su interrupción a los gritos en la audiencia del 7 de julio de 2010). — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#breard-desacatado."
+    },
+    {
+      "key": "060",
+      "caption": "Sentencia Brigada II, querellante Paulo Pereyra, fiscales Patricio Sabadini y Diego Vigay, querellante",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "brigada-ii-18-de-mayo-de-2017",
+      "heading": "BRIGADA II 18 de mayo de 2017",
+      "confidence": 55,
+      "reasoning": "Desplazada por 079, la mando al título contiguo sobre la sentencia de Brigada II; Pereyra, Sabadini y Vigay figuran como partes de esa causa en otros documentos, no en este párrafo. — Reubicada para respetar el orden de carpeta: se propuso las-condenas#31518-brigada-ii."
+    },
+    {
+      "key": "062",
+      "caption": "La “caprichosa” otra de las pasiones de Chachi, siempre en torno de lo popular y colectivo",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "ni-una-menos",
+      "heading": "“NI UNA MENOS”",
+      "confidence": 55,
+      "reasoning": "El epígrafe dice \"otra de sus pasiones\" y el texto usa esa misma frase al contar que presidió el Club de Veteranos de Fútbol; ancla al documento entero porque su único título quedó para 018bis. — Reubicada para respetar el orden de carpeta: se propuso chachi#(documento)."
+    },
+    {
+      "key": "064",
+      "caption": "La Brigada de Investigaciones de la Policía del Chaco, una marca en la ciudad, y en la identidad de la región",
+      "docSlug": "cronicas-violencia-sexual",
+      "headingSlug": "peor-que-el-infierno",
+      "heading": "“PEOR QUE EL INFIERNO”",
+      "confidence": 55,
+      "reasoning": "Gana el título porque el epígrafe habla de la Brigada como \"una marca en la ciudad, y en la identidad de la región\" y ese apartado abre con \"la casona de Marcelo T. de Alvear 32 es un hito en la historia y la identidad de la provincia\". — Reubicada para respetar el orden de carpeta: se propuso una-casa-con-historia#una-casa-con-historia."
+    },
+    {
+      "key": "065",
+      "caption": "El ex detenido político Juan Argañaráz, retratado por Juan Britos",
+      "docSlug": "desaparecer",
+      "headingSlug": null,
+      "heading": "(documento entero)",
+      "confidence": 55,
+      "reasoning": "El epígrafe es el retrato del ex detenido Juan Argañaráz y ese título (audiencia Brigada I del 15/9/2010) es la sección donde se relata su declaración y sus dos consejos de guerra. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#juan-argañaraz."
+    },
+    {
+      "key": "066",
+      "caption": "Querellantes Silvina Canteros -de la Secretaría de DDHH y Géneros de Chaco y Manuel Brest de la Secretaría de ",
+      "docSlug": "cronicas-desaparecer",
+      "headingSlug": "causa-brigada-i-11-agosto-2010",
+      "heading": "CAUSA BRIGADA I 11 agosto 2010",
+      "confidence": 55,
+      "reasoning": "Gana el título porque esa sección describe el alegato de Silvina Canteros y la bajada del documento presenta a Manuel Brest, de la Secretaría de DDHH de la Nación, como el otro querellante de Brigada II. — Reubicada para respetar el orden de carpeta: se propuso alegatos#brigada-ii."
+    },
+    {
+      "key": "067",
+      "caption": "José Rodríguez Valiente",
+      "docSlug": "cronicas-desaparecer",
+      "headingSlug": "desaparecidos",
+      "heading": "DESAPARECIDOS",
+      "confidence": 55,
+      "reasoning": "Desplazada por 026, la foto de archivo de Rodríguez Valiente va a su ficha de condenas en las tres causas; la coincidencia es de persona, no de un hecho o fecha concretos. — Reubicada para respetar el orden de carpeta: se propuso las-condenas#josé-francisco-rodríguez-valiente-policía-del-chaco."
+    },
+    {
+      "key": "068",
+      "caption": "En el marco de la causa Brigada II organismos de DDHH reclaman contra el beneficio de prisión domiciliaria con",
+      "docSlug": "cronicas-desaparecer",
+      "headingSlug": "ricardo-uferer",
+      "heading": "RICARDO UFERER",
+      "confidence": 55,
+      "reasoning": "Gana el título porque el epígrafe describe el reclamo de organismos de DDHH contra la domiciliaria de Manader en Brigada II, que es exactamente lo que narra esa crónica; la fecha del epígrafe (febrero de 2016) no coincide con el texto (febrero de 2017). — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#reclamaron-cárcel-común-y-efectiva-para-gabino-manader."
+    },
+    {
+      "key": "069",
+      "caption": "José Marín, dibujado por Juan Britos",
+      "docSlug": "cronicas-desaparecer",
+      "headingSlug": "otra-vez-marín-kilómetro-11",
+      "heading": "OTRA VEZ MARÍN: \"KILÓMETRO 11\"",
+      "confidence": 55,
+      "reasoning": "Confirmo el anclaje: esa sección es la única dedicada por entero a caracterizar a Marín (Cabo Sotelo, el acordeón, su delación en la Sala Negra), aunque nada ata el dibujo de Britos a ese título frente a otras menciones. — Reubicada para respetar el orden de carpeta: se propuso cronicas-violencia-sexual#marín-el-delator."
+    },
+    {
+      "key": "070",
+      "caption": "El 13 de diciembre de 2010 tuvo lugar la primera sentencia en un juicio oral por crímenes del genocidio, en el",
+      "docSlug": "cronicas-desaparecer",
+      "headingSlug": "torturas",
+      "heading": "TORTURAS",
+      "confidence": 55,
+      "reasoning": "Gana el título porque el epígrafe fecha la primera sentencia el 13 de diciembre de 2010 en Brigada I y el título es literalmente \"13.12.10. BRIGADA\". — Reubicada para respetar el orden de carpeta: se propuso las-condenas#131210-brigada."
+    },
+    {
+      "key": "071",
+      "caption": "Alegría luego de las condenas a genocidas en la sentencia de la causa Brigada II, 31 de mayo de 2018",
+      "docSlug": "cronicas-desaparecer",
+      "headingSlug": "calabozos",
+      "heading": "CALABOZOS",
+      "confidence": 55,
+      "reasoning": "El epígrafe fecha las condenas de Brigada II el 31 de mayo de 2018 y el título es literalmente \"31.5.18. BRIGADA II\", que relata el fin de esa causa con altas penas para once imputados. — Reubicada para respetar el orden de carpeta: se propuso las-condenas#31518-brigada-ii."
+    },
+    {
+      "key": "072",
+      "caption": "Declaración de Rodolfo Sobko, Gerardo Delgado y Vicente Canteros en la causa Brigada I",
+      "docSlug": "cronicas-desaparecer",
+      "headingSlug": "vicente-canteros",
+      "heading": "VICENTE CANTEROS",
+      "confidence": 55,
+      "reasoning": "La bajada inmediata a ese título dice \"Declararon tres exdetenidos: Gerardo Delgado, Rodolfo Sobko y Vicente Canteros\", los tres nombres exactos del epígrafe, en el primer juicio (Brigada I). — Reubicada para respetar el orden de carpeta: se propuso cronicas-desaparecer#causa-brigada--24-agosto-2010."
+    },
+    {
+      "key": "073",
+      "caption": "Ramón Meza, comisario general e integrante de la “patota” de la Brigada",
+      "docSlug": "cronicas-desaparecer",
+      "headingSlug": "las-voces-de-la-tortura",
+      "heading": "LAS VOCES DE LA TORTURA",
+      "confidence": 55,
+      "reasoning": "Gana el título porque el epígrafe lo presenta como comisario general e integrante de la patota y ese apartado lo describe literalmente como \"ex comisario general, ya condenado en 2010\". — Reubicada para respetar el orden de carpeta: se propuso genocidas-al-frente#ramón-meza-el-fumigador."
+    },
+    {
+      "key": "074",
+      "caption": "Abogada Susana Chiarotti y licenciada María Zurutuza, especialistas en casos de violencia sexual en contexto d",
+      "docSlug": "cronicas-desaparecer",
+      "headingSlug": "causa-brigada-iii--día-4--15-de-abril-de-2021",
+      "heading": "CAUSA BRIGADA III / DÍA 4 – 15 DE ABRIL DE 2021",
+      "confidence": 55,
+      "reasoning": "Los párrafos que siguen a ese título nombran juntas a la abogada Susana Chiarotti y a la Lic. María Cristina Zurutuza como especialistas en violencia sexual en el terrorismo de Estado, tal como las identifica el epígrafe. — Reubicada para respetar el orden de carpeta: se propuso cronicas-violencia-sexual#la-violencia-sexual-como-delito-autónomo-de-lesa-humanidad."
+    },
+    {
+      "key": "077",
+      "caption": "En la víspera del 24 de marzo de 2018, organismos de DDHH y organizaciones sociales encabezaron un “escrache” ",
+      "docSlug": "una-patota-para-la-miseria-planificada",
+      "headingSlug": null,
+      "heading": "(documento entero)",
+      "confidence": 55,
+      "reasoning": "Gana el título porque el epígrafe describe un escrache de organismos de DDHH y organizaciones sociales contra la domiciliaria de Manader y ese apartado relata la conferencia de repudio con el reclamo de \"cárcel común y efectiva\"; la fecha no coincide (2018 vs. febrero de 2017). — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#reclamo-decárcel-comun."
+    },
+    {
+      "key": "078bis",
+      "caption": "Manader, Patetta, Rodríguez Valiente, Ibarra, en el TOF, el 22 de septiembre de 2017 en el juicio oral Brigada",
+      "docSlug": "genocidas-al-frente",
+      "headingSlug": "militares",
+      "heading": "MILITARES",
+      "confidence": 55,
+      "reasoning": "Ubicación manual: el epígrafe muestra a los cuatro imputados en el TOF durante el juicio Brigada II; ese título trata la defensa de los imputados. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#la-defensa-de-los-imputados."
+    },
+    {
+      "key": "079",
+      "caption": "En la sala de audiencias del TOF, la “barra de la memoria” espera el pronunciamiento del tribunal en la causa ",
+      "docSlug": "genocidas-al-frente",
+      "headingSlug": "consultorìa-bettolli",
+      "heading": "“CONSULTORÌA BETTOLLI",
+      "confidence": 55,
+      "reasoning": "Gana el título porque el epígrafe sitúa la escena en la sala del TOF esperando el fallo de Brigada II en mayo de 2018 y el texto abre con \"El 31 de mayo de 2018 la sentencia fue leída por el presidente del tribunal, Eduardo Belforte (…) La sala estaba colmada\". — Reubicada para respetar el orden de carpeta: se propuso las-condenas#sentencia-juicio-y-castigo-recargado."
+    },
+    {
+      "key": "080",
+      "caption": "La calle saltó y gritó el 12 de diciembre de 2010, con la primeras condenas a ejecutores materiales del plan s",
+      "docSlug": "carcel-comun",
+      "headingSlug": null,
+      "heading": "(documento entero)",
+      "confidence": 55,
+      "reasoning": "Gana el título porque el epígrafe describe la calle festejando las primeras condenas de diciembre de 2010 y allí el texto dice que \"una multitud desbordada por el optimismo copó la calle frente al tribunal\", con \"gritos, música, abrazos\". — Reubicada para respetar el orden de carpeta: se propuso las-condenas#parteaguas."
+    },
+    {
+      "key": "083",
+      "caption": "Planos de los sótanos y fotografías de alguns elementos econtrados por el EAAF en 2008",
+      "docSlug": "alegatos",
+      "headingSlug": "brigada-iii",
+      "heading": "BRIGADA III",
+      "confidence": 55,
+      "reasoning": "La mando al título de la jornada en que declaró el EAAF (cuyo copete anuncia \"Miguel Nieva explicó cómo se hizo el relevamiento de dos sótanos\"), porque el apartado de Nieva quedó tomado por 052 y allí se describe el relevamiento \"planimetral, fotográfico y fílmico\" del epígrafe. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#causa-brigada-i-18102010."
+    },
+    {
+      "key": "086",
+      "caption": "Testimonio de María Presa de Parodi Ocampo en la causa Brigada I",
+      "docSlug": "las-condenas",
+      "headingSlug": "31518-brigada-ii",
+      "heading": "31.5.18. BRIGADA II",
+      "confidence": 55,
+      "reasoning": "El epígrafe nombra el testimonio de María Presa de Parodi Ocampo en la causa Brigada I y ese título es la sección dedicada a la declaración de María Teresa Pressa, viuda de Manuel Parodi Ocampo, en la audiencia del 10 de agosto de 2010. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#maría-teresa-pressa."
+    },
+    {
+      "key": "087",
+      "caption": "El genocida José Marín",
+      "docSlug": "las-condenas",
+      "headingSlug": "8421-brigada-iii",
+      "heading": "8.4.21. BRIGADA III",
+      "confidence": 55,
+      "reasoning": "Desplazada por 028, la foto de archivo de Marín va al título dedicado íntegramente a él, donde el testigo Navarro afirma que \"José Marín (alias 'Cabo Sotelo') tocaba el acordeón\". — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#uno-marín-tocaba-el-acordeón."
+    },
+    {
+      "key": "091",
+      "caption": "Denuncias contra el genocida Meza, durante la causa Brigada I",
+      "docSlug": "las-condenas",
+      "headingSlug": "rubén-héctor-roldán-alcaidía",
+      "heading": "Rubén Héctor Roldán (Alcaidía):",
+      "confidence": 55,
+      "reasoning": "Confirmo el anclaje: la apertura de esa jornada consigna que \"De Ramón Meza se supo que robó un sobre con el dinero de dos sueldos y varios crucifijos de oro a uno de los testigos\", pero no sé qué denuncias concretas reproduce el recorte. — Reubicada para respetar el orden de carpeta: se propuso cronicas-una-casa-con-una-sala-negra#causa-brigada-i-10-agosto-2010."
+    },
+    {
+      "key": "097",
+      "caption": "Rodríguez Valiente, Jorge Ibarra, Gabino Manader y José Marín, en el TOF, el 22 de septiembre de 2017 en el ju",
+      "docSlug": "juicio-y-castigo-ayer-y-hoy",
+      "headingSlug": null,
+      "heading": "(documento entero)",
+      "confidence": 55,
+      "reasoning": "El epígrafe fecha la foto de los imputados en el TOF en septiembre de 2017 y este interludio (sin títulos) está fechado 'septiembre/2017' y narra al cronista fotografiando a un represor sentado en la sala de audiencias del TOF. — Reubicada para respetar el orden de carpeta: se propuso carcel-comun#(documento)."
     },
     {
       "key": "099",
       "caption": "Espacios de la Casa por la Memoria, en las instalaciones del ex ccd Brigada",
-      "docSlug": "juicio-y-castigo-ayer-y-hoy",
-      "headingSlug": "",
-      "heading": "(documento entero)",
-      "confidence": 68,
-      "reasoning": "Confirmo el anclaje: el epígrafe habla de los \"espacios de la Casa por la Memoria\" y este documento sin títulos recorre \"las salas del museo y los distintos espacios del sitio histórico: el área restringida, los sótanos, la Sala Negra y los antiguos calabozos\"."
+      "docSlug": "tribunal-partes-y-penas",
+      "headingSlug": "causa-brigada-ii",
+      "heading": "CAUSA BRIGADA II",
+      "confidence": 55,
+      "reasoning": "Confirmo el anclaje: el epígrafe habla de los \"espacios de la Casa por la Memoria\" y este documento sin títulos recorre \"las salas del museo y los distintos espacios del sitio histórico: el área restringida, los sótanos, la Sala Negra y los antiguos calabozos\". — Reubicada para respetar el orden de carpeta: se propuso juicio-y-castigo-ayer-y-hoy#(documento)."
     }
   ]
 }

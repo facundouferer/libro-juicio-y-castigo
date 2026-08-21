@@ -18,9 +18,11 @@ interface Props {
   docSlug: string;
   title: string;
   section: string;
+  showTitle?: boolean;
+  kicker?: string;
 }
 
-const { docSlug, title, section } = Astro.props;
+const { docSlug, title, section, showTitle = true, kicker } = Astro.props;
 
 /**
  * A document with no headings of its own can still carry one photograph. It
@@ -48,6 +50,18 @@ const SIZES = '(max-width: 900px) 100vw, 42vw';
   </div>
 
   <div class="prose" data-prose>
+    {
+      showTitle && (
+        <header class="doc-head">
+          {kicker && <p class="doc-kicker">{kicker}</p>}
+          {/* `data-doc-title` keeps this out of the plate's heading sequence in
+              book.ts: it names the document, it does not own a photograph. */}
+          <h1 class="doc-title" data-doc-title>
+            <span class="hl">{title}</span>
+          </h1>
+        </header>
+      )
+    }
     {
       base && (
         <figure

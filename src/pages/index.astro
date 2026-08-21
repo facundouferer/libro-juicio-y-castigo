@@ -15,6 +15,7 @@ import Landing from '../components/Landing.astro';
 import ChapterOpening from '../components/ChapterOpening.astro';
 import SplitReader from '../components/SplitReader.astro';
 import Interlude from '../components/Interlude.astro';
+import Colophon from '../components/Colophon.astro';
 import ContentsModal from '../components/ContentsModal.astro';
 import DownloadModal from '../components/DownloadModal.astro';
 import ZoomModal from '../components/ZoomModal.astro';
@@ -26,6 +27,9 @@ const entries = (await getCollection('book')).sort((a, b) => a.data.order - b.da
 const rendered = await Promise.all(
   entries.map(async (entry) => ({ entry, Content: (await render(entry)).Content })),
 );
+
+/** The cover's body is the back-cover text; it closes the book (spec 01, RF-01.3). */
+const cover = rendered.find(({ entry }) => entry.data.pageType === 'landing');
 ---
 
 <Base title={`${BOOK.title} (${BOOK.volume}) — ${BOOK.subtitle}`} isBook>
@@ -39,13 +43,26 @@ const rendered = await Promise.all(
           docSlug: entry.data.docSlug,
           title: entry.data.title,
           section: entry.data.section,
+          showTitle: entry.data.showTitle,
+          kicker: entry.data.kicker,
         };
 
-        if (entry.data.pageType === 'landing') {
+        // The cover carries no prose any more: its body is contratapa copy and
+        // is rendered at the foot of the book instead (spec 01, RF-01.3).
+        if (entry.data.pageType === 'landing') return <Landing />;
+
+        if (entry.data.pageType === 'colophon') {
           return (
-            <Landing>
+            <Colophon {...props}>
               <Content />
-            </Landing>
+            </Colophon>
+          );
+        }
+        if (entry.data.pageType === 'citations') {
+          return (
+            <Interlude {...props} variant="citations">
+              <Content />
+            </Interlude>
           );
         }
         if (entry.data.pageType === 'chapter-opening') {
@@ -68,6 +85,14 @@ const rendered = await Promise.all(
           </SplitReader>
         );
       })
+    }
+
+    {
+      cover && (
+        <section class="blurb" id="contratapa" aria-label="Sobre este libro">
+          <cover.Content />
+        </section>
+      )
     }
 
     <BookFooter />

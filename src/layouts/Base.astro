@@ -6,6 +6,7 @@ import '@fontsource-variable/source-sans-3';
 import '../styles/cpm.css';
 import '../styles/book.css';
 import { BOOK } from '../lib/site.mjs';
+import { paletteCss, ACCENT_BASE } from '../lib/palette.mjs';
 
 interface Props {
   title: string;
@@ -16,7 +17,7 @@ interface Props {
 
 const { title, description = BOOK.description, isBook = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
-const cover = new URL(`${import.meta.env.BASE_URL.replace(/\/$/, '')}/img/fondo-tapa-1600.webp`, Astro.site).href;
+const cover = new URL(`${import.meta.env.BASE_URL.replace(/\/$/, '')}/img/tapa-social.jpg`, Astro.site).href;
 ---
 
 <!doctype html>
@@ -27,7 +28,10 @@ const cover = new URL(`${import.meta.env.BASE_URL.replace(/\/$/, '')}/img/fondo-
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <meta name="theme-color" content="#1e81b0" />
+    <meta name="theme-color" content={ACCENT_BASE} />
+
+    {/* One hue, seven intensities, generated at build time (spec 07). */}
+    <style set:html={paletteCss()}></style>
 
     <meta property="og:type" content="book" />
     <meta property="og:site_name" content={`${BOOK.title} (${BOOK.volume})`} />

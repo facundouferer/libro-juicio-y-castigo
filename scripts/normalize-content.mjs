@@ -10,6 +10,7 @@
  *      every heading in Oswald 700 uppercase, so `**` inside one is noise
  *      that would also pollute the generated anchor id.
  *   3. A short, explicit list of transcription errors is corrected.
+ *   4. The manuscript's footnote convention becomes markup (see markFootnotes).
  *
  * Also emits src/data/headings.json: every heading in the book with the exact
  * anchor id Astro will generate for it. The image map keys on those ids, so
@@ -53,6 +54,50 @@ function cleanHeading(line) {
     .replace(/\s+([.,;:])/g, '$1')
     .trim();
   return `${hashes} ${text}`;
+}
+
+const escapeHtml = (text) =>
+  String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+
+/**
+ * The manuscript marks its footnotes with an all-emphasis line — ***NOTAS PIE
+ * DE PÁGINA*** — followed by one ***N …*** paragraph per note. Rendered as
+ * written, they came out at body size in bold italic, which is exactly what the
+ * editorial pass flagged (spec 02, RF-02.6).
+ *
+ * The emphasis is an authoring convention, not a design decision, so it is
+ * translated here into markup the three editions can style as notes. The `***`
+ * pattern is left alone everywhere else: the same marks are used as legitimate
+ * emphasis inside the chronicles, and restyling them all would be wrong.
+ */
+function markFootnotes(body) {
+  const lines = body.split('\n');
+  const start = lines.findIndex((line) => /^\s*\*\*\*\s*NOTAS?\b[^*]*\*\*\*\s*$/i.test(line));
+  if (start === -1) return body;
+
+  const notes = [];
+  let end = start + 1;
+  for (let i = start + 1; i < lines.length; i += 1) {
+    const line = lines[i].trim();
+    if (!line) continue;
+    const match = /^\*\*\*(.+)\*\*\*$/.exec(line);
+    if (!match) break;
+    notes.push(match[1].trim());
+    end = i + 1;
+  }
+  if (!notes.length) return body;
+
+  const block = [
+    '<aside class="footnotes" aria-label="Notas al pie">',
+    '<p class="footnotes-title">Notas al pie</p>',
+    ...notes.map((note) => `<p>${escapeHtml(note)}</p>`),
+    '</aside>',
+  ].join('\n');
+
+  return [...lines.slice(0, start), block, ...lines.slice(end)].join('\n');
 }
 
 /** Removes the first `count` heading lines, plus the blank lines they leave. */
@@ -104,7 +149,7 @@ for (const [index, entry] of ENTRIES.entries()) {
   let lines = raw.replace(/\r\n/g, '\n').split('\n').map(cleanHeading);
   lines = stripLeadingHeadings(lines, entry.strip);
 
-  const body = lines.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+  const body = markFootnotes(lines.join('\n').replace(/\n{3,}/g, '\n\n').trim());
 
   // Anchor ids must be unique per rendered page, so the slugger resets per file
   // exactly the way Astro's does.
@@ -152,6 +197,9 @@ for (const [index, entry] of ENTRIES.entries()) {
     section: entry.section,
     order: index,
     pageType: entry.pageType,
+    showTitle: entry.showTitle !== false,
+    ...(entry.kicker ? { kicker: entry.kicker } : {}),
+    ...(entry.pending?.length ? { pending: entry.pending } : {}),
     headings,
   });
 
@@ -162,6 +210,8 @@ for (const [index, entry] of ENTRIES.entries()) {
     `order: ${index}`,
     `section: ${escapeYaml(entry.section)}`,
     `pageType: ${escapeYaml(entry.pageType)}`,
+    ...(entry.showTitle === false ? ['showTitle: false'] : []),
+    ...(entry.kicker ? [`kicker: ${escapeYaml(entry.kicker)}`] : []),
     `words: ${words}`,
     `sourceFile: ${escapeYaml(entry.source)}`,
     '---',

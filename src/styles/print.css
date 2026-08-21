@@ -52,8 +52,9 @@ h1, h2, h3, h4, h5, h6 {
   page-break-after: avoid;
   margin: 0 0 2.4mm;
 }
-h1 { font-size: 17pt; margin-top: 9mm; color: #145575; }
-h2 { font-size: 13pt; margin-top: 7mm; color: #145575; }
+/* Titles take the depth of the section they belong to (spec 07, RF-07.3). */
+h1 { font-size: 17pt; margin-top: 9mm; color: var(--section-accent); }
+h2 { font-size: 13pt; margin-top: 7mm; color: var(--section-accent); }
 h3 { font-size: 11pt; margin-top: 5.5mm; }
 h4 { font-size: 9.8pt; margin-top: 4.5mm; }
 
@@ -65,7 +66,7 @@ a { color: inherit; text-decoration: none; }
 blockquote {
   margin: 4mm 0 4mm 4mm;
   padding-left: 4mm;
-  border-left: 0.6mm solid #9fcde3;
+  border-left: 0.6mm solid var(--color-accent-300);
   font-size: 9pt;
   line-height: 1.42;
   break-inside: avoid;
@@ -80,7 +81,7 @@ li { margin-bottom: 1.2mm; }
 hr {
   border: 0;
   height: 0.5mm;
-  background: #9fcde3;
+  background: var(--color-accent-300);
   margin: 6mm auto;
   width: 32mm;
 }
@@ -97,20 +98,46 @@ figure.figure {
   margin: 5mm 0;
   text-align: center;
 }
+
+/* Two formats and no third (spec 03, RF-03.2). A full-page plate takes the
+   whole content box and the text resumes overleaf; a half-page figure claims at
+   most half of it, so a page always carries reading as well as looking. */
+figure.figure.plate-full {
+  break-before: page;
+  page-break-before: always;
+  break-after: page;
+  page-break-after: always;
+  height: var(--page-content-height);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+figure.figure.plate-full img {
+  max-height: 160mm;
+}
+figure.figure.plate-half img {
+  max-height: 84mm;
+}
+
 figure.figure img {
   display: block;
   margin: 0 auto;
   max-width: 100%;
-  /* 180 mm page − caption and surrounding leading. */
-  max-height: 148mm;
+  max-height: 84mm;
   object-fit: contain;
 }
-figure.figure.portrait img { max-height: 148mm; }
-figure.figure.landscape img { max-height: 110mm; }
-figure.figure.q-reduced img { max-height: 96mm; }
-figure.figure.q-low img { max-height: 74mm; }
+/* The quality ceilings still apply inside the chosen format: the eight scans
+   below 200 dpi at A5 stay small, where their softness reads as a small
+   archival print rather than as a fault. */
+figure.figure.q-reduced img { max-height: 78mm; }
+figure.figure.q-low img { max-height: 62mm; }
+figure.figure.plate-full.q-reduced img { max-height: 120mm; }
+figure.figure.plate-full.q-low img { max-height: 96mm; }
 
 figure.figure figcaption {
+  break-before: avoid;
+  page-break-before: avoid;
   margin-top: 1.8mm;
   font-size: 7.4pt;
   line-height: 1.32;
@@ -121,48 +148,110 @@ figure.figure figcaption {
 figure.figure figcaption .credit {
   display: block;
   font-weight: 700;
-  color: #196b93;
+  color: var(--small-text-accent);
 }
 
-/* ── Front matter ───────────────────────────────────────────────────────── */
+/* ── Front matter ───────────────────────────────────────────────────────────
+   Order of precedence (spec 01): portadilla · citas · créditos on the reverse ·
+   índice on one page · first text. Each opens on a recto. */
 
-.page-cover {
+.page-title {
+  break-after: page;
+  page-break-after: always;
+  height: var(--page-content-height);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+/* The building itself, on the front of the book about it (spec 06, RF-06.3). */
+.page-title-photo {
+  margin: 0 0 8mm;
+  max-height: 92mm;
+  overflow: hidden;
+}
+.page-title-photo img {
+  display: block;
+  width: 100%;
+  max-height: 92mm;
+  object-fit: cover;
+  object-position: top;
+}
+
+.page-title h1 {
+  /* Held within 2:1 of the subtitle below (spec 02, RF-02.1). */
+  font-size: 26pt;
+  line-height: 1.14;
+  margin: 0 0 6mm;
+  color: var(--color-accent);
+}
+.page-title .sub {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 15pt;
+  letter-spacing: 0.04em;
+  margin: 0 0 2mm;
+}
+.page-title .kicker { font-style: italic; font-size: 10pt; color: #575d63; }
+/* The publisher's mark closes the half title, at the foot (RF-01.1). */
+.page-title-logo {
+  margin-top: auto;
+  width: 46mm;
+  height: auto;
+}
+
+/* The two epigraphs that open the book carry the argument of the whole volume,
+   so they are set bold and a size up from the body (RF-01.2). */
+.page-citations {
   break-after: page;
   page-break-after: always;
   height: var(--page-content-height);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: left;
 }
-.page-cover h1 {
-  font-size: 30pt;
-  line-height: 1.14;
-  margin: 0 0 6mm;
-  color: #1e81b0;
-}
-.page-cover .sub {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
+.page-citations blockquote {
+  border: 0;
+  margin: 0 0 10mm;
+  padding: 0;
   font-size: 12pt;
-  letter-spacing: 0.04em;
-  margin: 0 0 2mm;
+  font-weight: 700;
+  line-height: 1.38;
+  color: var(--color-accent-700);
 }
-.page-cover .kicker { font-style: italic; font-size: 10pt; color: #575d63; }
-.page-cover .publisher {
-  margin-top: auto;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 8.6pt;
-  letter-spacing: 0.06em;
+.page-citations blockquote p:last-child {
+  font-size: 8.4pt;
+  font-weight: 400;
+  font-style: normal;
   color: #575d63;
+  margin-top: 2.5mm;
 }
 
-.page-blurb {
+/* Credits and legal notice, on the reverse of the citations (RF-01.4). */
+.page-colophon {
   break-after: page;
   page-break-after: always;
+  font-size: 8.4pt;
+  line-height: 1.5;
+  color: #3d4247;
+  text-align: left;
+  hyphens: none;
+}
+.page-colophon p { margin: 0 0 3mm; }
+
+/* A courtesy blank: the reverse of a recto that opens something. It has to be a
+   real page, so it carries the full content height and breaks after itself —
+   an empty section with no height would simply collapse and print nothing. */
+.page-blank {
+  height: var(--page-content-height);
+  break-after: page;
+  page-break-after: always;
+}
+
+/* The back-cover text, which used to open the book and now closes it. */
+.page-blurb {
+  break-before: page;
+  page-break-before: always;
   font-size: 9.4pt;
 }
 .page-blurb h2 { font-size: 12pt; margin-top: 0; }
@@ -174,16 +263,19 @@ figure.figure figcaption .credit {
   page-break-after: always;
 }
 .page-toc h2 { margin-top: 0; }
-.toc-list { list-style: none; margin: 0; padding: 0; font-size: 8.8pt; }
-.toc-list li { margin-bottom: 1.4mm; text-align: left; hyphens: none; }
+/* Sized so the whole list holds on one page (RF-01.5): the editorial pass
+   flagged an index that broke over two pages for the sake of two lines. */
+.toc-list { list-style: none; margin: 0; padding: 0; font-size: 8.4pt; }
+.toc-list li { margin-bottom: 1.1mm; text-align: left; hyphens: none; line-height: 1.28; }
 .toc-list .toc-part {
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 9.2pt;
-  color: #145575;
-  margin-top: 4mm;
+  font-size: 8.8pt;
+  color: var(--color-accent-700);
+  margin-top: 3.2mm;
 }
+.toc-list .toc-part:first-child { margin-top: 0; }
 .toc-list .toc-doc { padding-left: 3mm; }
 .toc-list .toc-h2 { padding-left: 7mm; color: #575d63; font-size: 8.2pt; }
 
@@ -196,35 +288,112 @@ figure.figure figcaption .credit {
   page-break-before: always;
 }
 .chapter-image {
-  height: var(--page-content-height);
+  height: 96mm;
   display: flex;
   align-items: center;
   justify-content: center;
-  break-after: page;
-  page-break-after: always;
-  margin: 0;
+  margin: 0 0 8mm;
 }
 .chapter-image img {
   max-width: 100%;
-  max-height: var(--page-content-height);
+  max-height: 96mm;
   object-fit: contain;
 }
+
+/* The part's title page, then its text overleaf-but-one, then any plate the
+   mapping anchored inside it (spec 03, RF-03.7). */
+.chapter-title-block {
+  height: var(--page-content-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  break-after: page;
+  page-break-after: always;
+}
+.chapter-text {
+  break-before: page;
+  page-break-before: always;
+}
+.chapter-plate {
+  break-before: page;
+  page-break-before: always;
+  height: var(--page-content-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.chapter-plate .plate-solo { margin: 0; }
+.chapter-plate .plate-solo img { max-height: 158mm; }
 .chapter-title-block { text-align: left; }
+
 .chapter-num {
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   font-size: 40pt;
   line-height: 1;
-  color: #cbe4f0;
+  color: var(--color-accent-200);
   margin: 0 0 3mm;
 }
-.chapter-title-block h1 { margin-top: 0; font-size: 22pt; line-height: 1.1; }
-.chapter-blurb {
-  font-size: 9pt;
-  font-style: italic;
-  color: #575d63;
-  margin-bottom: 6mm;
+.chapter-volanta {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 10pt;
+  letter-spacing: 0.08em;
+  color: var(--small-text-accent);
+  margin: 0 0 2.4mm;
   text-align: left;
+}
+.chapter-title-block h1 { margin-top: 0; font-size: 22pt; line-height: 1.1; margin-bottom: 6mm; }
+
+/* ── Document titles ────────────────────────────────────────────────────────
+   The normalizer promotes a document's heading into its frontmatter, and until
+   now nothing put it back on paper: "La memoria y la palabra" and
+   "Introducción" printed untitled (spec 02, RF-02.2). */
+
+.doc-head { margin: 0 0 6mm; }
+.doc-kicker {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 8pt;
+  letter-spacing: 0.07em;
+  color: var(--small-text-accent);
+  margin: 0 0 1.6mm;
+  text-align: left;
+}
+.doc-head .doc-title { margin: 0; font-size: 17pt; }
+
+/* ── Footnotes ──────────────────────────────────────────────────────────────
+   Written in the manuscript as bold italic, which printed them at body size —
+   larger than the text they annotate. They are notes: smaller, roman, ranged
+   left, and held together on one page (spec 02, RF-02.6). */
+
+aside.footnotes {
+  margin-top: 7mm;
+  padding-top: 3mm;
+  border-top: 0.3mm solid var(--color-accent-300);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+aside.footnotes p {
+  font-size: 7.6pt;
+  line-height: 1.36;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  hyphens: none;
+  margin: 0 0 1.8mm;
+  color: #3d4247;
+}
+aside.footnotes .footnotes-title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 8pt;
+  letter-spacing: 0.06em;
+  color: var(--small-text-accent);
+  margin-bottom: 2mm;
 }
 
 /* ── Ordinary documents ─────────────────────────────────────────────────── */
@@ -242,7 +411,7 @@ figure.figure figcaption .credit {
   padding-left: 0;
   font-size: 11pt;
   line-height: 1.34;
-  color: #145575;
+  color: var(--color-accent-700);
 }
 
 /* The stamped page number needs clear space at the foot of every page. */

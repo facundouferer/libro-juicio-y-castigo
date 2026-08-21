@@ -189,12 +189,25 @@ for (const set of SETS) {
   }
 }
 
-// The cover is full-bleed behind the landing type, so it only needs viewport
-// widths — and no print or EPUB derivative.
-const coverSrc = path.join(ROOT, 'src', 'images', 'fondo-tapa.png');
+/*
+ * The cover.
+ *
+ * It used to be a generated collage. In a book that reconstructs facts proved
+ * in court, the image on the front has to be verifiable, so it is now a
+ * photograph of the building itself: the facade of the ex Brigada de
+ * Investigaciones on Marcelo T. de Alvear, today the Casa por la Memoria
+ * (spec 06, RF-06.1 and RF-06.2).
+ *
+ * It is deliberately not one of the book's 105 images — using one of those
+ * would make the same photograph appear twice in the same edition.
+ *
+ * Full-bleed behind the landing type, so it only needs viewport widths, plus
+ * one social crop for the link previews.
+ */
+const coverSrc = path.join(ROOT, 'src', 'edificio', 'frente de la fachada por marcelo t de alvear.jpg');
 const coverDir = path.join(ROOT, 'public', 'img');
 for (const w of [960, 1600, 2400]) {
-  const out = path.join(coverDir, `fondo-tapa-${w}.avif`);
+  const out = path.join(coverDir, `tapa-${w}.avif`);
   if (await isFresh(coverSrc, out)) {
     skipped += 1;
     continue;
@@ -204,12 +217,46 @@ for (const w of [960, 1600, 2400]) {
   );
 }
 for (const w of [960, 1600]) {
-  const out = path.join(coverDir, `fondo-tapa-${w}.webp`);
+  const out = path.join(coverDir, `tapa-${w}.webp`);
   if (await isFresh(coverSrc, out)) {
     skipped += 1;
     continue;
   }
   await emit(sharp(coverSrc).rotate().resize({ width: w, withoutEnlargement: true }), out, (p) => p.webp({ quality: 80 }));
+}
+
+// 1200 × 630 is what the link previews expect; the square original is cropped
+// to it rather than letterboxed (spec 06, RF-06.6).
+const socialOut = path.join(coverDir, 'tapa-social.jpg');
+if (await isFresh(coverSrc, socialOut)) {
+  skipped += 1;
+} else {
+  await emit(
+    sharp(coverSrc).rotate().resize({ width: 1200, height: 630, fit: 'cover', position: 'top' }),
+    socialOut,
+    (p) => p.jpeg({ quality: 82, mozjpeg: true }),
+  );
+}
+
+// The A5 portadilla carries the same photograph (RF-06.3).
+const printCoverOut = path.join(ROOT, 'build', 'print', 'tapa.jpg');
+if (await isFresh(coverSrc, printCoverOut)) {
+  skipped += 1;
+} else {
+  await emit(sharp(coverSrc).rotate().resize({ width: 1800, withoutEnlargement: true }), printCoverOut, (p) =>
+    p.jpeg({ quality: 88, mozjpeg: true }),
+  );
+}
+
+// And so does the EPUB, which had no cover image at all and therefore showed no
+// thumbnail in any library (RF-06.3).
+const epubCoverOut = path.join(ROOT, 'build', 'epub', 'tapa.jpg');
+if (await isFresh(coverSrc, epubCoverOut)) {
+  skipped += 1;
+} else {
+  await emit(sharp(coverSrc).rotate().resize({ width: 1400, withoutEnlargement: true }), epubCoverOut, (p) =>
+    p.jpeg({ quality: 84, mozjpeg: true }),
+  );
 }
 
 const logoOut = path.join(coverDir, 'logo.webp');
