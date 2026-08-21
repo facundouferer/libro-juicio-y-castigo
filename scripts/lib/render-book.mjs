@@ -8,6 +8,7 @@
  */
 
 import { readFile, readdir } from 'node:fs/promises';
+import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
 import { unified } from 'unified';
@@ -20,6 +21,42 @@ import { rehypeAnchorImages } from '../../src/lib/rehype-anchor-images.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..', '..');
 const BOOK_DIR = path.join(ROOT, 'src', 'content', 'book');
+
+function loadJson(relative, fallback) {
+  const file = path.join(ROOT, relative);
+  return existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : fallback;
+}
+
+/**
+ * Openings, interludes and documents without headings of their own carry one
+ * photograph for the whole document. On the site the layouts render it; out
+ * here nothing did, so ten photographs were reaching the reader on screen and
+ * silently missing from the PDF and the EPUB (spec 04, RF-04.6).
+ */
+function documentImages() {
+  const map = loadJson('src/data/image-map.json', { document: {} });
+  const images = loadJson('src/data/images.json', { content: {} });
+  const captions = loadJson('src/data/captions.json', { images: [] });
+  const captionByKey = new Map(captions.images.map((c) => [c.key, c]));
+
+  const out = new Map();
+  for (const [docSlug, key] of Object.entries(map.document ?? {})) {
+    const entry = images.content?.[key];
+    if (!entry) continue;
+    const caption = captionByKey.get(key);
+    out.set(docSlug, {
+      key,
+      width: entry.width,
+      height: entry.height,
+      orientation: entry.orientation ?? 'landscape',
+      quality: entry.printQuality ?? 'full',
+      alt: caption?.caption ?? '',
+      caption: caption?.caption ?? '',
+      credit: caption?.credit ?? '',
+    });
+  }
+  return out;
+}
 
 /** @param {'print'|'epub'} target */
 export async function renderBook(target) {
@@ -37,6 +74,7 @@ export async function renderBook(target) {
     .use(rehypeStringify, { allowDangerousHtml: true });
 
   const files = (await readdir(BOOK_DIR)).filter((f) => f.endsWith('.md')).sort();
+  const plates = documentImages();
   const documents = [];
 
   for (const file of files) {
@@ -54,7 +92,7 @@ export async function renderBook(target) {
       text: m[3].replace(/<[^>]+>/g, '').trim(),
     }));
 
-    documents.push({ file, data, html, headings });
+    documents.push({ file, data, html, headings, plate: plates.get(data.docSlug) ?? null });
   }
 
   documents.sort((a, b) => a.data.order - b.data.order);

@@ -1,0 +1,4 @@
+{
+  "note": "Imágenes que el equipo editorial decidió no imprimir. Ver docs/specs/spec-04-secuencia-de-imagenes.md, RF-04.4. El archivo de imagen NO se borra: sólo se excluye de la colocación, de modo que la decisión es reversible. Las candidatas las lista build/revision-duplicados.md, que genera `npm run map`.",
+  "skip": []
+}

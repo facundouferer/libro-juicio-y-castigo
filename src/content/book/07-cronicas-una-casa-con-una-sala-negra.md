@@ -1,0 +1,734 @@
+---
+title: "Crónicas: una casa con una Sala Negra"
+docSlug: "cronicas-una-casa-con-una-sala-negra"
+order: 7
+section: "una-casa-con-una-sala-negra"
+pageType: "reader"
+words: 24186
+sourceFile: "section01-una-casa-con-una-sala-negra/05. CRÓNICAS 1.md"
+---
+# CAUSA BRIGADA I 7 julio 2010
+
+## “LA TORTURA EN EL CHACO COMENZÓ EN EL 74, CON UN GOBIERNO CONSTITUCIONAL”
+
+**Lo dijo Aníbal Ponti y denunció la complicidad del poder judicial y el político, y estimó que en 1975 el Ejército se hizo cargo de dirigir desde la Brigada la represión ilegal. También declararon los testigos y sobrevivientes María Gregoria Pérez, Eligia Flor y Juan Manuel González.**
+
+La audiencia del 7 de julio de 2010 de la causa Brigada I comenzó a las 9:05 de la mañana y terminó pasadas las 15:00. Fue una jornada extenuante su duración pero más aún por los conmovedores testimonios y por la inédita interrupción del debate a los gritos por parte de uno de los imputados. María Gregoria Pérez relató los abusos sufridos en la Brigada de Investigaciones y las secuelas que la obligaron a someterse a once intervenciones quirúrgicas; Eligia Flor, detenida al día siguiente de la detención de su pareja, se salvó de los apremios ilegales pero vio y oyó las torturas a otros detenidos. Juan Manuel González describió las duras condiciones del régimen carcelario en la Alcaidía policial.
+
+Aníbal Ponti comenzó su declaración a las 12 del mediodía (después de María Gregoria Pérez y Eligia Flor y antes de Juan Manuel González). Sereno y en completo dominio de la situación, unificó a un tiempo el testimonio de su experiencia de cautiverio bajo el terror de Estado y el alegato del militante y dirigente político con una detallada descripción de la génesis y el funcionamiento del terrorismo de Estado en la provincia: “La tortura en el Chaco comenzó en 1974, amparada por el poder político y judicial”, apuntó.
+“Empecé a militar a fines del 68, durante gobierno dictatorial. Lo digo porque me interesa marcar los distintos momentos de la represión. Del 69 al 73 fue una época muy convulsionada del mundo, de Argentina y del Chaco. La represión era callejera, a las movilizaciones en lucha por el regreso de Perón. No existía la tortura en política. Fui varias veces detenido y lo normal era pasar por averiguación de antecedentes y en 48 horas te liberaban”, afirmó.
+
+Fue detenido en abril de 1974 por la patota de la Brigada, sin orden judicial, y torturado. “Mi abogado, el doctor Saúl Acuña, inicia una causa por torturas y consigue que me lleven a Gendarmería. Todo esto originaría una interpelación en la Cámara de Diputados al ministro de Gobierno Tenev por parte del diputado Dri”.
+
+Según el relato de Ponti se comienza a vivir un conflicto muy fuerte en el peronismo con el surgimiento de la Alianza Anticomunista Argentina a nivel nacional y en la provincia, el Comando de Organización  (CdO) para reprimir a militantes del ala izquierda del “movimiento”.  “Comienzan las amenazas de muerte. Un ejemplo de esto fue el tiroteo al comedor universitario. El CdO tenía protección policial y política. Fue una gran campaña de persecución a la Juventud Peronista”.
+
+“Todo esto lo digo para que se conozca que la tortura en el Chaco comenzó en el 74, con un gobierno constitucional”. A esta altura de la declaración todos los imputados seguían con atención las palabras de Ponti, detenido nuevamente en enero de 1975 y alojado en la Alcaidía a disposición del Poder Ejecutivo Nacional. A los siete meses lo trasladarían a la U7 junto con otros 25 o 30 detenidos.  
+“A fines de abril me trasladan a la Brigada. Thomas me recibe con una terrible trompada y me llevan a una oficina, me vendan, me atan de manos y pies sobre una cama y comienzan con la picana en las zonas más sensibles del cuerpo. Había un médico que controlaba que no me dé un paro. Perdí noción del tiempo. Vino Thomas y me sacó la venda y las ataduras y me hizo sentar en la cama y me dice: "¿Me reconocés?".  "Por supuesto, comisario" le dije, y me dice: "Entonces no seas pelotudo, no te hagas pegar al pedo”. En ese momento Ponti manifiesta haber visto a varios de los imputados denunciados por él. Thomas dio la orden de que trajeran a otro detenido, totalmente destruido por la tortura. Le hicieron preguntas, y después se lo llevaron y siguieron con la golpiza. Esta persona se suicidó en la cárcel, tiempo después. “Éramos muchos, entre 30 y 40, todos fuimos torturados por 30 o 20 días. Se divertían, gozaban con el sufrimiento del otro” sostuvo Ponti.
+
+Después relató una conversación con un militar. “Una vez en la Brigada percibí que había una persona que no era de ahí. En esta etapa, no había preocupación de que uno viera las caras. La venda era con la tortura nomás, después te la sacaban. Las charlas eran a cara descubierta. Una vez se presentó un militar, me dio un nombre que no era verdadero; era delgado, alto, de ojos claros. Después supe que su apellido era Pattolli, o Dattolli. Era el hombre que dirigió la tortura en la Brigada. Me hablaba siempre. Cuando sale a la luz la adhesión de la juventud a la organización Montoneros, el Ejército se mete en el tema”. En este momento la pareja Bettolli-Patetta hablaba y se pasaba datos, que el primero anotaba en una carpeta.
+
+“Acá se capacitó durante todo el año 74 a la Brigada", continuó Ponti. Contó que se perfeccionó un equipo para realizar crímenes. Y la vinculación del Ejército con la Brigada se da a partir de mayo de 1975 Y así se incorpora el Ejército a la represión. Mencionó a un militar que tenía el rol de escuchar los testimonios de los torturados. “Thomas y Ceniquel dirigían y Manader, Cardozo, Yedro, Breard, Silva Longui, y los otros ejecutaban”.
+
+“Con la conducción del Ejército y el aval de la justicia en democracia se transformó a la Brigada de Robos y Hurtos, una institución necesaria para que una sociedad se desenvuelva con normalidad, en la Brigada de Investigaciones para la guerra antisubversiva, como la llamaron ellos”.
+
+También denunció el accionar de la Justicia Federal: “La Brigada torturaba y el Juzgado Federal legalizaba la tortura. Mazzoni viene de una militancia de derecha. Me decía que yo iba a estar preso 20 años. Todo esto también se dio con la protección política. La policía dependía de un gobernador que sabía lo que pasaba, junto con el ministro de gobierno y el de acción social”.  
+
+## LA DEGRADACIÓN TOTAL DEL SER
+
+Al momento de su declaración en la causa María Gregoria Pérez, docente jubilada que vive en Corrientes, de aspecto apacible, a sus 65 años tiene un pasado atroz que le marcó el cuerpo, todavía entero a pesar de los golpes y vejámenes sufridos en la peor época de su vida: los 15 días que pasó en la Brigada de Investigaciones después de ser detenida el 21 de octubre de 1975 en Resistencia.  
+“Fui muy torturada. Sufrí humillaciones y degradaciones inconcebibles, porque es inconcebible que hayan existido seres capaces de hacer lo que hicieron. No era solo la muerte, se trató de la degradación total del ser. Me hicieron simulacro de fusilamiento, submarino... Tengo secuelas. He sido intervenida quirúrgicamente 11 veces por problemas renales y ginecológicos. Me anularon, me dijeron que iba a vivir pero que nunca iba a tener hijos, pero sí tuve miles de hijos, en las escuelas en las que enseñé. Mi vida me la han roto pero estoy viva y tengo valores, los mismos de siempre, para poder tener una patria mejor y más justa” afirmó.
+
+Pese a todo lo padecido se la vio muy segura: “No guardé resentimiento ni odio. Esta gente tiene la suerte de un proceso democrático, manifestó en relación a los 12 imputados en la causa: Gabino Manader (muy atento y risueño durante toda la audiencia), Francisco Álvarez ( alias “Cara de Goma” o “Chipacuerito” chupando un chupetín, esta vez sin los lentes de marco cuadrado que usa y mirando el techo distraído), la pareja militar José Bettolli-Luis Alberto Patetta y los policías Meza y Enzo Breard ( apuntando fijamente la mirada a cada testigo), Rodríguez Valiente (siguió la audiencia con atención y anotando en una libreta ), seguidos por los dormilones Lucio Caballero, Héctor Roldán, José Marín y por último Óscar Galarza conversando con algún agente del Servicio Penitenciario Federal (SPF)
+
+Con el tiempo, María Gregoria pudo identificar a varios de los integrantes de la patota. Conoce los nombres de la mayoría por haberlos escuchado llamándose entre ellos. Si bien casi siempre estuvo tabicada, “la capucha es ancha abajo y la venda se afloja", y fueron muchas las ocasiones en las que incluso le quitaban las vendas, todo esto potenciado por “el registro especial de los hechos propio de las situaciones límite”, explicó. “Manader tenía un doble carácter, podía llevarme al baño o acercarme un vaso de agua y después torturarme”, afirmó. Escuchaba a Mirta Clara cuando la torturaban, junto con el sonido de un aparato de radio a todo volumen. “Ella gritaba su nombre, al principio confundía su apellido con su nombre de pila.”
+
+María no tiene claro por qué razón la detuvieron. Cuando preguntaba, le respondían “por subversiva” y eso era todo. Se dedicó a la docencia hasta 1969, cuando comenzó los estudios de enfermería. Después de recibirse trabajó en un hospital. “Dábamos unas charlas para que el enfermo psiquiátrico no sea tratado como un delincuente. Estando en la Brigada Thomas sacó a cuento eso y me dijo que no le gustaba nada. Fui a Ezeiza cuando regresó Perón con un contingente del servicio de salud pública". Le preguntaban por unas monjas que hacían trabajo social; varias veces la llevaron  a declarar al Juzgado Federal, donde Mazzoni junto con el escribiente Reska la intimaban a que firmara una declaración apócrifa y no le concedían el derecho a un abogado. Tampoco querían reconocer las marcas de la tortura que María les mostró. “Eso era lo que podía mostrar, lo de adentro no”.
+
+En una oportunidad la amenazaron con llevarla al Regimiento. En otra, Mazzoni recibió de regalo por parte de Thomas un arma. La desenfundó y la probó. “Cuidado, doctor, que está cargada” le advertía un ayudante, a lo que Mazzoni respondía: “A mí nunca se me escapó un tiro”. Después insistía en preguntarle a María si iba a declarar o no.
+
+Su familia pudo verla una sola vez, poco antes de ser llevada a la Alcaidía, donde llegó muy lastimada y con heridas infectadas. Allí le hicieron la primera intervención a causa de una hemorragia renal y ginecológica. “Por un problema en el oído me hicieron una junta médica. Sé que los médicos fueron amenazados y el informe se perdió” afirmó.
+
+El 19 de noviembre de 1976 la suben a un avión militar junto un numeroso grupo de detenidas hacia Villa Devoto. “Íbamos con la amenaza de que nos iban a tirar al río” remarcó. En Devoto fue recibió la visita del juez Córdoba, junto con la defensora oficial y unos militares. El 22 de junio de 1982 fue liberada.
+
+Cuando finalizó su declaración, la última pregunta fue del fiscal Germán Wiels Pinto: "¿Después de Devoto, cómo fue su vida?". Tomó aire y aguantando el llanto respondió: “Operada, operada, operada”. Un poco antes había dejado claro cómo había hecho para llegar hasta esa silla enfrente al estrado judicial: “Hace muchos años una recordaba todo. Pero luego una tuvo que vivir a su manera. No viví buscando culpables con todo esto en mi cabeza. Los afectos me sostuvieron en todos estos años. Eso y la tranquilidad de saber que una busca justicia”. Cumplida su declaración se levantó y fue al encuentro de su familia.  
+
+## SIETE DÍAS CONTRA LA PARED
+
+Eligia fue detenida el 10 de septiembre de 1975 al momento de ingresar a la pensión de su pareja en esos años, Rubén Vassel, detenido la noche anterior junto a su hermano y los demás ocupantes del departamento que compartían, a una cuadra de la casa de Eligia.  
+Siendo menor de edad estuvo detenida durante una semana en la Brigada, sentada contra una pared, incomunicada. Al llegar pudo ver a Rubén y a su hermano esposados contra un muro, de pie. Le dijeron que le iba a tomar declaración Manader. Le hizo preguntas personales, sobre si tenía o no militancia, y cuáles eran sus ideas políticas. Por las noches dormía en una oficina junto con dos mujeres más. Escuchaba un radiograbador a todo volumen.
+
+Cuando la liberaron, su padre le informó que no podrían volver a la pensión donde vivía porque la casera estaba aterrorizada. El lugar había sido destrozado, era un revoltijo de papeles y muebles rotos. Al día siguiente volvieron a la Brigada para llevarles un desayuno a los muchachos, pero se encontraron con la noticia de que ya no estaban allí. Comenzó entonces un periplo protagonizado por Eligia y su suegra que las llevó a Gendarmería, donde les dijeron que si bien había detenidos no sabían quiénes eran y las remitieron al Ejército, donde les ordenaron que regresaran a Gendarmería. Allí les dijeron que era en la Alcaidía donde debían buscar. Efectivamente, los detenidos estaban en la penitenciaría, pero como no era ese el día de visitas Eligia y la madre de los Vassel volvieron a sus casas sin noticias de los muchachos.
+
+Cuando finalmente pudo concretarse el reencuentro, Eligia preguntó a Rubén si lo habían torturado: “A mí no, pero a Ricardo sí", fue la respuesta”. Cuando sucedió la Masacre de Margarita, Eligia temió lo peor; y si bien Rubén no fue masacrado, tres compañeros suyos de la facultad fueron asesinados ese 13 de diciembre.
+
+## “LA RISA DEL DEMONIO”
+
+La “patota de la Brigada” lo fue a buscar a su casa en Villa Centenario el 11 de septiembre de 1975 Sabían dónde encontrarlo porque el represor Yedro era vecino suyo. Le decían que “la pinta lo delataba como un perejil” y que le convenía “cantar todo o lo iban a llevar con los “federicos”, en alusión a la Policía Federal. En la Brigada lo vendan y le pegan puñetazos. Perejil o no, Juan Manuel González fue liberado recién en 1980, desde la U7, y en el ínterin fue víctima del maltrato dispensado a los presos políticos en varias cárceles de la última dictadura militar.
+
+“Pude identificarlos porque había un policía novato, de apellido Abate, que los llamaba por su nombre, aunque muchas veces ellos mismos lo hacían también. Este agente Abate me trataba bien, y lo sancionaban por ello con mayor carga horaria de la guardia y a veces alojándolo conmigo en el calabozo”.
+
+Al exjuez Luis Ángel Córdoba nunca lo vio. En Gendarmería conoció al secretario Carlos Flores Leyes: se arremangó, sacó una pistola y le dijo a él y a otros detenidos que mejor firmaran una declaración.
+
+En la Alcaidía la cosa no mejoró. La guardia de Octavio Ayala era la “más jodida de todas”. “Sacaban detenidos de las celdas y en el comedor los hacían correr alrededor de las mesas para garrotearlos con las cachiporras. Se ensañaban con los recién llegados. Si eras del interior, peor todavía”.
+
+La tortura era diversa; a veces les dejaban las luces prendidas por la noche para impedirles dormir, o los sacaban de los camastros a las 5 de la mañana para una ducha fría. Recordó que hubo un detenido al que lanzaban contra una pared. Le pegaron tanto que el hombre fue de cuerpo. Monzón era uno de los guardias más sanguinarios. “Era un tipo muy pesado. Le decíamos el Mono, o Carachay, y cuando escuchábamos su risa era como la llegada del demonio”.
+
+Comentando los nombres de los guardias golpeadores (Galaraza, Roldán, Esquivel), González recordó a uno de apellido Álvarez: “Era un tipo apacible, se cruzaba de brazos y no molestaba”, afirmó. Rápidamente desde la defensa se pidió dejar sentado en el acta esos dichos. La querella contraatacó pidiendo mayores precisiones ante la existencia de dos guardias de apellido Álvarez, por lo que el testigo puso las cosas en su lugar: “Había dos Álvarez, uno era este que conté, el otro era Cara de Goma, al que nosotros llamábamos Chipacuerito y era de los que pegaban”.
+
+## BREARD: DESACATADO
+
+Enzo Breard fue otro de los protagonistas de la audiencia en virtud de sus intervenciones a  los  gritos. Ya durante la declaración de María Gregoria había solicitado ser careado con la testigo y sobreviviente. El abogado de la querella Mario Bosch se opuso por considerarlo absolutamente impertinente y revictimizante: “No debe reeditarse el trauma, y debemos respetar la garantía de no repetición del mismo” manifestó, fundamentando su posición con una extensa lista de tratados internacionales y pactos sobre Derechos Humanos, normas positivas del Derecho argentino. “Todo ello con prescindencia del escaso valor de un careo, una prueba superficial de la cual en 20 años de ejercicio en la profesión no conozco tenga mayores resultados” alegó. El Fiscal Germán Wiels Pinto agregó que Breard tuvo la posibilidad de declarar y se negó. El pedido de Breard originó un cuarto intermedio para la discusión del Tribunal, que decidió que la medida no encontraba fundamento y que carecía de utilidad procesal por el tiempo transcurrido.  
+Todo parecía haber quedado ahí, pero cuando Aníbal Ponti estaba declarando, haciendo referencia a los integrantes de Investigaciones, a Breard “se le soltó la cadena” completamente. Desencajado, el imputado por torturas interrumpió a Ponti al grito de: ¡Le quiero contestar mientras levantaba un brazo y uno de los agentes del SPF intentaba calmarlo. Pero no fue necesario. Un indignadísimo juez Alonso le salió al cruce de un modo categórico: “¡Usted cállese ¡Cállese y no hable” le dijo. Sorprendido ante la contundencia del apercibimiento, Breard balbuceó que quería contestar, por lo cual el magistrado insistió en hacerlo callar y le explicó que su turno para hablar había sido durante la declaración indagatoria, y que si quería una ampliación debía solicitarla a través de su abogado. Cuando terminaron las testimoniales Breard fue asistido en su reclamo y sentado frente al juez contó “su verdad”:
+
+—¡Estoy indignado ¡El señor Ponti miente —afirmó ante el tribunal, muy enojado.
+
+—Usted escuche y obedezca. Refiérase al hecho en cuestión que quiere contar —fue la respuesta del juez Alonso.
+
+—Yo presté servicio hasta el 8 de mayo en la Comisaría Tercera. Ponti manifestó haber sido detenido en abril del 75, así que miente cuando me nombra, lo mismo que “la Pérez”—mencionó. Esto originó nuevamente un duro cruce con el juez Alonso, quien lo intimó a no hacer “valoraciones” y simplemente “describir hechos”.
+
+—Está bien, pero qué confianza puedo tener con un Fiscal así —en referencia a Germán Wiels Pinto—; así como mintió Ponti mintió la Pérez y mintió el Fiscal —insistió el imputado. De todos modos, la cosa no pasó de ahí. Un poco más calmado, Breard dio por terminada su declaración y Alonso informó que la audiencia se levantaba hasta su reapertura, el jueves 8 de agosto a las 8:30.
+
+# CAUSA BRIGADA I 8 julio 2010
+
+## UNA MADRE Y SU HIJO DE SIETE MESES TORTURADOS EN LA BRIGADA
+
+**Lo contó el exdetenido político Osvaldo “Valdi” Uferer, uno de los cuatro testigos declarantes durante la jornada. Testimonios de resistencia de los presos políticos a la destrucción física y moral durante la última dictadura cívico-militar.**
+
+El catorceavo día de audiencia de la Causa Brigada tuvo cuatro testigos exdetenidos políticos como protagonistas. Osvaldo “Valdi” Uferer comenzó a declarar a las 11 y 30, después de Horacio Gracogna y Eugenio Domínguez Silva y antes de Oscar Gómez. Por lo que contó, su testimonio fue el más estremecedor de las cuatro declaraciones. En todas pudo comprobarse la abyección de la naturaleza humana al vejar y destruir a un semejante, pero también la entereza y el coraje de hombres y mujeres en condiciones límite.
+
+ “Valdi” Uferer fue detenido en dos ocasiones: a fines del abril de 1975; estuvo en la Brigada de calle Juan B. Justo y de ahí a la Alcaidía por 20 días. La segunda detención ocurrió casi un año después, el 22 de abril de 1976, cuando un patrullero lo levantó en la calle en la zona de Villa Central Norte y lo llevó a la Brigada de Investigaciones por Marcelo T. de Alvear, donde permaneció 31 días en cautiverio.  
+Cuando le preguntaron por qué lo detuvieron no dudó en responder con franqueza y voz clara: “Yo era militante de la Juventud Peronista y miembro de la organización Montoneros. Éramos una organización político militar y tomamos las armas para oponernos a un gobierno que había usurpado la Constitución”. Estuvo siete años preso. Pasó por la Alcaidía, la U7, y la U9 en La Plata. Le hicieron un consejo de guerra por asociación ilícita (los integrantes de la banda eran él y dos tíos suyos, Lorenzo y Angelito Ávalos…) Le dieron la libertad el 19 de diciembre de 1983, desde la U6, en Rawson.
+
+## EL HORROR EN LA CIUDAD
+
+Según precisó, en la “sala negra” de la Brigada los días no tenían una rutina especial. Generalmente se torturaba de noche y cuando llegaba un nuevo detenido. “No es que uno no ve con la venda. Uno se ingenia para ver quiénes son. Y se escucha. Uno diferencia quiénes son los más peligrosos. Vi a Elsa Quiroz, a Horacio Cracogna, a Nora Valladares, a Jorge Migueles muy torturado; también a Franzen: estaba muy mal.
+
+A Parodi Ocampo lo vi tirado en el piso, desmayado”.
+
+Explicó que según su experiencia en la Brigada convivieron dos estructuras: una formal, con Thomas a la cabeza y Meza como subcomisario encargado del área restringida y en la que Rodríguez Valiente tenía el papel de sumariante, y otra subterránea, informal, en la que a Thomas lo seguían muy de cerca Gabino Manader, Cardozo y otros, que mandaban tanto como un jefe e incluso podían contradecir órdenes. Nadie de esa estructura institucional condenó nunca las torturas.
+
+“Yo me preguntaba por qué se torturaba en el centro de la ciudad, enfrente de la plaza  central, donde juegan nuestros niños. Ahora tengo la idea de que esto era un plan premeditado para sembrar el terror”, dijo.
+
+Uferer contó que conoció dos tipos de picana en la Brigada: una de color azul, utilizada por el cabo Marín para aplicarle corriente eléctrica en los testículos a un detenido mientras orinaba y otra de un “naranja subido, como las que se utilizan para el ganado, que hacía un sonido parecido al de la chicharra, que a uno le quedaba grabado”.
+
+Hubo una vez en la que lo torturaron hasta que se desmayó: “Me dejaron tirado en el piso al lado de una puerta vaivén”. Cuando despertó escuchó la voz de Gabino Manader y los gritos de una detenida durante un interrogatorio. “Manader le decía: "Bueno… bueno, terminemos… decime lo que quiero saber y te devuelvo la bombacha, te vestís y listo…”. Como la mujer no respondía la torturaron un poco más, hasta que Manader se cansó y le dijo: “Bueno, ¿sabes qué? Vamos a traer a tu hijo”.
+
+“Esta persona estaba detenida con un bebé de siete meses, continuó Uferer, que estaba tumbado a un costado en el suelo en ese momento. Yo creo que le aplicaron la picana, porque cuando sonaba, el bebé lloraba”.
+
+## LA PATOTA DE LA BRIGADA
+
+Su testimonio fue descriptivo de cómo actuaba la “patota” de la Brigada; “Vi gente con uniforme en la Brigada, pero no cuando a mí me torturaban”, contó. Una vez me llevaron a la oficina de Thomas y estaban el coronel Larrateguy y otro militar. Cardozo me pegaba en la planta del pie con algo duro como un palo. Lo conocía de Barranqueras”. A Breard lo conocía de antes, jugaba al fútbol. Cuando tomaba su guardia les pegaba con un palo a dos detenidas políticas todas las mañanas”.
+
+“Estaban los que torturaban para saber y los que torturaban para destruirlo a uno; Breard era de estos últimos. Marín no estaba en sus cabales, pegaba porque sí”. Además aclaró que vio a Marín tocando el acordeón durante las torturas.
+
+## IDAS Y VUELTAS DE UN ENCUENTRO
+
+Uferer conoció a Patricio Blas Tierno, asesinado en la Masacre de Margarita Belén, durante su cautiverio clandestino en la Brigada. 34 años después, a poco de comenzar el juicio por la Masacre, Valdi conoció al hijo de Patricio, Juan Pablo Tierno, en el mismo edificio, transformado en Casa por la Memoria. Si bien fue la primera vez que se vieron, esa noche en la Casa fue el segundo encuentro de ambos.
+
+“A Patricio Blas Tierno lo trajeron una noche muy lastimado –recordó– con las muñecas atadas con alambre. Con él estaba su compañera, Graciela de la Rosa, con un embarazo incipiente”.
+
+Durante su testimonio en la sala de audiencias del TOF, cerca de Dafne Zamudio –hija de un asesinado en la Masacre –, Juan Pablo Tierno, el hijo de la pareja nombrada, escuchaba atentamente.
+
+## “VERDUGOS DE ALMA”
+
+Con sus hijas y su mujer en la sala de audiencia, Horacio Cracogna contó que fue detenido el 1° de mayo de 1976 a los 21 años en Reconquista, por un pedido de la Policía del Chaco. Trabajaba y estudiaba. Oriundo de Santa Fe, vivía en una pensión en Resistencia. Su hermano estaba preso desde 1975 A Horacio lo ficharon por su militancia en la Facultad de Ingeniería (junto a Luis Barco, asesinado en la Masacre) y también por su pertenencia a grupos de familiares de presos políticos, en razón de la detención de su hermano Oscar en 1975
+
+En las cárceles de la dictadura sufrió el plan sistemático orientado a la destrucción física y moral de los detenidos. Le hicieron dos consejos de guerra con acusaciones generales. Aun así, el desprecio de los guardiacárceles con “alma de verdugos, porque disfrutaban con la tortura” no pudo vencerlo: “Me casé, tengo una hermosa familia, mis hijas saben mi historia y me acompañan” sentenció.
+
+## VIAJE AL FONDO DE LA NOCHE
+
+En la jefatura de Reconquista lo vendan, lo esposan y lo meten en el baúl de un Torino blanco. No lo dejaron despedirse de sus padres. A la madre la volvería a abrazar en 1980, su padre moriría con él preso en la U7. “Calculo que a la altura de Avellaneda, por el tiempo de recorrido, frenan; escucho que hablan entre ellos y uno dice: “Dale, apurate, metele”. Pensó que “era el fin” y que “le pegarían un tiro”, pero lo pasaron al asiento trasero, donde le dieron una paliza “demostrando la valentía que tenían”. Recordó que pasaron por un control policial. Escuchó los saludos entre policías mientras el iba esposado y vendado. “Parece que era algo normal entre las policías de las provincias”.
+
+Lo llevaron a la Brigada por Marcelo T. de Alvear y lo tiraron de los pelos a la sala negra. Estuvo diez días, "No sabíamos si era de día o de noche. Ahí había “actitud de verdugueo constante”. “Caminaban sobre nuestras piernas, nos picaneaban en las encías, y perdone la expresión –mirando a la doctora Badaró, integrante del Tribunal– nos hacían “rascarle las bolas a San Pedro…” (tarea consistente en levantar los brazos y abrir y cerrar los dedos de la mano). “Parece una pavada pero prueben hacerlo sin parar dos minutos y van a ver lo que es…”. Le preguntaban sobre su relación con otros familiares de presos políticos: “Rodríguez Valiente me tomó declaración. Me picaneaban y me preguntaban cosas, después me hicieron firmar un montón de papeles.”
+
+“Con el tiempo canchereábamos y podíamos ver por el rabillo de la venda”. Así fue armando el rompecabezas de la patota. Las voces fueron teniendo un nombre, y después un rostro. Esta situación originó una nueva tortura: “Ellos jugaban con una naranja y amagaban con tirársela a uno, que instintivamente trataba de esquivar el golpe; así se daban cuenta de cuándo mirábamos”. “Marín tocaba el acordeón para tapar las torturas” afirmó.
+
+## ALCAIDÍA. VERDUGO: OCTAVIO AYALA
+
+El 11 de mayo los trasladaron a la Alcaidía. “Ahí la guardia de Octavio Ayala era la más jodida”. Con cada requisa rompían todo, y les desparramaban la yerba y el azúcar sobre las ropas. Había un “tal Barrientos”, gran pegador; su víctima favorita era Eduardo Bustamante: “Le gustaba pegarle porque como era karateca él aguantaba más”.
+
+Permaneció en la Alcaidía hasta el 8 de septiembre de 1976, cuando fue nuevamente trasladado rumbo a la U7.
+
+## U7. VERDUGO: CASCO
+
+En la U7 estuvo en el Pabellón 3, de donde sacan a Mario Cuevas para matarlo en la Masacre de Margarita Belén. Aquí el oficial Casco “el verdugo de alma, o alma de verdugo”. “A ustedes tenemos que aniquilarlos física y mentalmente”, nos decía”. Casco llegó al extremo de proponer que se les negara el mate y los cigarrillos. Cracogna contó que hubo una época en la que a los presos se les entregaba yerba pero no agua caliente. “Igual, conseguimos la manera de calentar el agua, y nunca nos faltó el mate”, contó con orgullo y avisó que se guarda la explicación de cómo lo hacían, con los imputados escuchándolo ahí cerquita, para no “avivar giles”.  
+En este lugar fue donde pensó por segunda vez que lo iban a matar. “Un día viene Casco a buscarme sin decirme nada. Era para hacerme firmar la sentencia del segundo consejo de guerra. La firmé de espaldas, sin sacarme las esposas”.
+
+### REGALO DE CUMPLEAÑOS: ESTADÍA EN LA U9
+
+El 22 de diciembre de 1980 cumplió 25 años. Ese día lo subieron a un avión por primera vez y lo mandaron al sur, a la Prisión Unidad 9 de Rawson. En este tramo del relato la emoción pudo más y con un hilo de voz recordó el reencuentro con su hermano Oscar, quien había pasado 5 años en el penal. “No lo reconocí, estaba chupado, sin dientes, muy deteriorado”. Oscar Cracogna fue un militante de la Juventud Peronista que estuvo 8 años y medio preso. Una de sus hijas nació con problemas en la mandíbula. Cuando lo liberaron viajó a Canadá para tratar a la pequeña, que tuvo padecer varias operaciones. Oscar murió de cáncer hace 5 años (2005).
+
+### ARSENAL DE LITERATURA MARXISTA
+
+El 9 de septiembre de 1975 lo detienen en la casa de su hermano. Lo suben a un Torino blanco y lo llevan a la Brigada, donde lo torturan y le rompen el tabique nasal. Eugenio Domínguez Silva tenía 17 años, estuvo preso “tres años, seis meses y once días” en las peores condiciones en la Alcaidía, hasta que le concedieron libertad con un hábeas corpus el 23 de abril de 1979
+
+Me habían encontrado un maletín con un “arsenal de literatura marxista”; tenía libros sobre la revolución cubana, de Mao y de Lenin y sobre el Che. En la Brigada todos los changos estaban muy demacrados. Iba gente del Ejército periódicamente, a Martínez Segón se lo veía”.
+
+La Cámara judicial que lo absolvió de culpa y cargo convalidó el accionar del juez que encarceló a un menor, al señalar que a su “señoría se le había pasado la minoría de edad del imputado porque el expediente era muy voluminoso”. “Era justificar lo injustificable” comentó el testigo.
+
+Ese 23 de abril del 79 fue liberado en el regimiento de la Liguria, junto con el “Tano” Rossi, a las 12 de la noche. Caminaban por la 9 de julio con miedo de ser asesinados por la espalda, en aplicación de la Ley de Fuga, un método muy utilizado en esos años. “Pero acá estamos, enteros, pese a las vicisitudes y los sueños fallidos, porque a mí me jorobaron la vida, pero pido justicia, para mí y para los compañeros que ya no están” afirmó.  
+
+### PICANA
+
+“Había dos picanas: una era como las que se utilizan para el ganado, hacía un sonido que a uno le quedaba grabado, era como una chicharra”, recordó Valdi Uferer, uno que la conoció de cerca en la sala negra de la Brigada. El otro tipo de picana era una “una de color azul”. Esta última fue utilizada por Marín para vejar a un detenido mientras orinaba. La mención derivó en la exhibición de la picana encontrada en un sótano de la ex Brigada y actual Casa por la Memoria en 2008
+
+Lo que pudo verse desde varios metros de distancia fue algo como una linterna alargada, con un “pico”, una especie de cable que descarga corriente de manera sostenida al hacer contacto con el cuerpo. Los torturadores la usaban en las zonas más sensibles del cuerpo.
+
+La muestra del instrumento de tortura originó un pequeño debate. La defensa pidió averiguar la fecha de fabricación del aparato. El doctor Mañanes, defensor de Enzo Breard, el desacatado de la audiencia del miércoles 8, fundamentó su pedido haciendo referencia a una necesidad de su conciencia: “Quiero apoyar la cabeza en la almohada y estar tranquilo…”, y explicó que ya sea que su defendido resulte condenado o absuelto necesita estar seguro de su autenticidad. 
+
+# CAUSA BRIGADA I 13 julio 2010
+
+## “LA BRIGADA, UN INFIERNO PERMANENTE
+
+**Lo dijo el testigo Daniel Ferracini al describir las torturas de la embarazada Graciela de La Rosa, viuda de Patricio Blas Tierno, asesinado en la Masacre de Margarita Belén . También declararon ex detenidos Daniel Souilhé y Jorge Migueles.**
+
+La última jornada de audiencias de la Causa Brigada (Caballero) antes del receso judicial se desarrolló con tranquilidad y dinamismo. Tuvo como eje las declaraciones de tres testigos: Daniel Souilhé, Daniel Ferracini y Jorge Migueles, quienes con un emocionado testimonio cargado de contenido político, relataron las torturas sufridas y las que presenciaron contra Graciela de La Rosa (con un incipiente embarazo), Nora Valladares y Elsa Quirós en ese “infierno permanente” que fue la Brigada de Investigaciones.
+
+Con la voz ronca por momentos, Daniel Souilhé remarcó “las razones históricas de las luchas y persecuciones” durante las décadas del sesenta y setenta. Fue detenido el 30 de agosto de 1974 en Fontana por un operativo conjunto de Policía y Gendarmería y llevado a la comisaría de Barranqueras, donde señaló haber sido sometido a torturas. “Me dieron una paliza, me orinaron y me hicieron un simulacro de fusilamiento” declaró. Calculó que el castigo se prolongó por casi dos días. No le preguntaban nada, simplemente lo golpeaban. Reconoció al jefe de la Policía Wenceslao Ceniquel antes de que le “pisara la cabeza”. Hacia el final del suplicio le pedían que dijera “dónde estaban las armas”. Lo habían detenido con anterioridad, la primera vez durante la dictadura de Onganía, el 28 de junio de 1968  
+Fue trasladado a la Brigada de Investigaciones, donde le toman una declaración, y permanece allí unos diez días. A comienzos de septiembre fue reubicado en la Alcaidía, donde estuvo hasta diciembre de ese año. La navidad de 1974 la pasó en la Unidad 7, salió en libertad el 22 de junio de 1982
+
+Souilhé comentó su paso por la Alcaidía y los traslados después de 1976 a la Base naval Almirante Zar, (donde ocurrió la Masacre de Trelew, matanza de una veintena de detenidos políticos ejecutada por la Armada el 22 de agosto de 1972; prefiguración de los aciagos días de horror y aniquilamiento, moneda corriente a partir de 1974 con su punto culminante entre  1976-78). Allí “el sistema era no tener sistema” comentó; la rutina carcelaria se rompía en mil pedazos bajo la permanente amenaza de castigos, siempre a merced de la voluntad de los verdugos. En una ocasión fue castigado con el confinamiento durante treinta días desnudo en un calabozo con agua en el piso y temperatura bajo cero. “Hubo 12 casos de suicidios” recordó el testigo.
+
+En este tramo realizó una reseña de las “razones históricas por las cuales luchábamos y por las cuales fuimos detenidos”, abarcó en el relato 50 años de pujas políticas en nuestro país. “Para nosotros la democracia no existía. El golpe de 1955 terminó con la democracia. También con el Ejército sanmartiniano; sus últimos soldados fueron los fusilados el 16 de junio, cuando se levantó el General Valle. Sabíamos que el proceso iba a ser hasta el final, con la Doctrina de Seguridad Nacional pergeñada por el Departamento de Estado norteamericano y la persecución a las mayorías democráticas. En ese marco se desarrolló nuestra lucha”.
+
+## 1973 1976: EL PODER EN LA SOMBRAS
+
+El interregno democrático entre la dictadura de Lanusse y la que comenzó el 24 de marzo de 1976 fue calificado por parte de Souilhé como un “recreo”. En ese ínterin, con la represión centralizada por el Ejército y el plan de exterminio casi listo, el gobierno democrático del peronista Bittel en el Chaco “fue un instrumento; el gobierno de la provincia estaba pintado, y hubo concesiones para retrasar el golpe”.
+
+En una charla con el comandante de Gendarmería Sanchistella conoció cómo operaba el dispositivo de represión estatal a las organizaciones populares y sus integrantes: “La inteligencia la hacía la Policía y la información se la pasaba al Ejército”. Y agregó: “La idea era instaurar el terror y el miedo y sobre esa base destruir la identidad del pueblo argentino, como puede verse en el presente, con el vaciamiento cultural y la devastación de nuestra economía con un salario que no llega al 25% del PBI”.
+
+Fue un testimonio categórico en la explicación de la razón subyacente al plan de exterminio perpetrado en la Brigada y en los más de 500 centros clandestinos de detención organizados en Argentina durante la dictadura, en perfecta sintonía con el testimonio de Aníbal Ponti en la misma causa días anteriores, cuando el exdetenido político y presidente de la Asociación de Familiares de Desaparecidos reveló el comienzo de las torturas en 1974 y la injerencia del Ejército en la Brigada de Investigaciones para adiestrar a la patota en la represión ilegal.
+
+## DIEZ DÍAS EN “UN INFIERNO PERMANENTE”
+
+Daniel Ferracini fue detenido el 15 de mayo de 1976 junto a la pareja que conformaban Graciela de La Rosa y Patricio Blas Tierno. En la Brigada lo separan y lo llevan esposado y vendado a un lugar en la planta alta del edificio, donde le dan una paliza. Estaba en tercer año de la carrera de Ingeniería Civil y participaba en el centro de estudiantes desde la Juventud Universitaria Peronista. La detención le truncó la carrera.
+
+Calcula haber estado con cerca de veinte detenidos. Escuchó la voz de Hugo Rodríguez, Luis Migueles, Rubén Arce y otros. Todos eran alimentados de manera deficiente, y el agua se les negaba seguido a causa de la tortura eléctrica, para evitar que les salieran llagas en la boca o que tuvieran convulsiones a raíz de las reacciones químicas entre el agua y la corriente eléctrica. La atención médica o judicial era inexistente.
+
+Ferracini brindó detalles sobre la “Sala Negra”. Así le llamaban los integrantes de la patota de Investigaciones al lugar donde los detenidos esperaban el turno para ser torturados. Los detenidos permanecían esposados y tabicados y se vivía una situación de permanente agresión; muchas veces eran torturados ahí mismo. “En la Sala Negra no había horario para la tortura, dependía del que estaba de guardia: llegaba uno, abría la puerta y se llevaba un detenido; era algo que le podía suceder a cualquiera en cualquier momento. Nos llamaban con apodos, nombres de animales, para no usar nuestros apellidos ni nombres. Sacaban a la gente y comenzaban a escucharse los golpes, los ruidos y los gemidos. Había un cabo Sotelo que tocaba un acordeón para tapar los gritos. Era un infierno permanente”.
+
+Recuerda a su amiga de veinte años Graciela de la Rosa suplicando que no la maltrataran porque estaba embarazada. “Entonces escucho que le decían que se ponga en cuatro y que se baje los pantalones…”. Después viene un grito de la mujer, Ferracini se vuelve intentando ver qué sucede pero una andanada de patadas y puñetazos lo obliga a abandonar su propósito. “Tengo grabadas las carcajadas de los que estaban ahí”.  Reconoció las voces de Gabino Manader y Rodríguez Valiente.
+
+A Patricio Blas Tierno se lo llevaron, y cuando lo devolvieron lo dejaron tirado en el suelo y sin poder moverse a causa del castigo recibido. “A Nora Valladares la dejaron en un estado calamitoso. No podía levantarse por el dolor”. Una vez le sacaron la venda y lo llevaron a una entrevista con Carlos Thomas y dos policías de la Federal. “Thomas me pegó un par de trompadas y me pidió que colaborase o me iban a seguir torturando”.
+
+## ALCAIDÍA UNA ZONA GRIS
+
+Su estadía en la Alcaidía es una zona gris de su memoria, en razón de no haber sufrido los vejámenes de los que fue víctima en la Brigada. En 1977 lo llevan a la U7; en septiembre de ese año lo sacan y regresa por una semana a la Brigada, donde conoce un sótano en que lo desnudan y atan a una cama para picanearlo. “Querían saber cómo eran las actividades dentro de la cárcel. Era algo ridículo.”  
+En julio de 1976 pasó a disposición del Poder Ejecutivo Nacional. El secretario del Juzgado Federal lo entrevistó una vez. Le hicieron dos consejos de guerra. En el primero lo defendió un militar que no era abogado pero que se encargaría de su defensa por ser un deber encomendado por la Fuerza. “Dijo que no creía en mi inocencia, pero que apelaba a la duda”. Lo condenaron a 25 años. Este consejo fue anulado y en un segundo proceso su defensor alegó que siendo un civil no debía comparecer ante un tribunal militar. Recién a fines de 1983 fueron anuladas la totalidad de las causas y el Juzgado Federal decretó su libertad.
+
+## LA CRUELDAD Y LA IGNORANCIA
+
+El médico cirujano Jorge Migueles de entrada dejó bien en claro su militancia política que comenzó cuando tenía 14 años, continuó en su juventud, cuando entre otras cosas fue uno de los fundadores de las rama juvenil del partido peronista en Goya y Corrientes. En la actualidad es un “cuadro político del gobierno provincial”. Para no dejar dudas, afirmó: “La Juventud Peronista tenía una especial coincidencia con la organización Montoneros”.Contó que las vueltas de la vida lo pusieron en situación de tratar por una dolencia a la hija de uno de sus torturadores. Le dio mucha impotencia que esta mujer no supiera nada de los crímenes cometidos por su padre.  
+Fue detenido un 10 de mayo de 1976 junto con Luis Arturo Franzen en la calle, cerca de las 20:00 por personal de civil que enseguida llamó a un patrullero, en el que los llevaron a la Brigada de Investigaciones, lo vendaron apenas ingresó. Se le presentaron Cardozo y Silva Longhi; el primero le levantó la venda, desafiante. “Sentí que me decía: 'Mirá bien quién es tu dueño'”.
+
+“Me pegaron, me desnudaron y me esposaron hacia atrás. Me aplicaron picana en las zonas erógenas”. Con el conocimiento que le confiere su profesión explicó que en esos sitios, al tener terminaciones nerviosas más finas, la sensibilidad es mayor, por lo cual el resultado es un dolor más fuerte y una “sensación de persistente mortificación”.
+
+“Al tercer día me llevaron a un descampado y me estaquearon como a Tupac Amaru”. Antes le habían puesto un revolver en la sien y gatillado varias veces. Esa vez todo terminó cuando se desmayó, después de un abundante sangrado en la boca. Cuando cayó detenido Patricio Blas Tierno la patota concentró la tortura en él y dio un respiro a Migueles. Ya no le pegaban mañana tarde y noche; así y todo, aclaró que a Arturo Franzen lo torturaron mucho más que a él. “Me sigue llamando la atención la crueldad y satisfacción que evidenciaban. En ningún momento había obediencia debida. Era una diversión”.
+
+## 24 AÑOS Y 11 MESES DE CONDENA
+
+El 20 de mayo de 1976 lo trasladan a la Alcaidía, donde permanece hasta septiembre de ese año. Así se blanquea su situación; aunque sigue encerrado las 24 horas encerrado, sin visitas ni atención médica. Había un guardiacárcel de apellido Pastor que realizaba una prédica insólita en la que maldecía a los detenidos políticos y les decía que estaban todos “condenados al infierno”, relató. Nunca fue sometido a juicio. “Sólo a parodias como los consejos de guerra; no me hicieron saber qué hecho se me endilgaba, fue una condena política, no me dejaron expresarme”, sostuvo.
+
+En 1978 en la U7 un oficial de Inteligencia lo entrevistó y le reconoció que no tenían de qué acusarlo. Le ofreció dejarlo salir del país a cambio de la delación de sus compañeros. Relató que le causó mucha impresión la ignorancia política de los oficiales. “Pensaban que hacían una guerra contra la subversión comunista, y la dictadura era socia de la Rusia Soviética”, afirmó, en referencia a los convenios comerciales entre Argentina y el Kremlin por la venta de cereales, situación que ameritó el veto de la URRS a todas las movidas internacionales de condena al terrorismo de Estado ejercido por Videla y compañía. En 1981 lo pasan a La Plata, donde queda en cautiverio en la U9. Allí vuelve a ser visitado por agentes de Inteligencia. Ante su negativa a traicionar a sus compañeros, Migueles fue condenado a 24 años y once meses, de no haberse reestablecido la democracia todavía debería permanecer en prisión hasta el 2012 Pero la pesadilla terminó antes, y después de una breve estadía en el penal de Rawson fue liberado el 23 de diciembre de 1983, desde la U7.
+
+34 años después de su detención; finalizó el testimonio expresando la  “esperanza de transformar en justicia” esa impotencia que describió al comienzo.
+
+# Causa Brigada I 10 agosto 2010
+
+## LA BRIGADA: “SALIR DE AHÍ, AUNQUE SEA MUERTOS”
+
+**Extensa jornada con cinco testimonios sobre el funcionamiento del centro clandestino de detención, tortura y exterminio instalado en la Brigada de Investigaciones durante la última dictadura cívico-militar.**
+
+En una extenuante jornada que comenzó cerca de las 9 de la mañana y finalizó bien entrada la siesta declararon 5 testigos el  decimoctavo día de audiencia de la Causa Caballero: María Teresa Pressa (viuda de Manuel Parodi Ocampo, asesinado en la MMB), Eduardo Dito Saliva, los periodistas Jorge Giles y Hugo Dedieu y Carlos “Flaco” Páez. De las declaraciones surgieron detalles sobre el funcionamiento del centro clandestino de detención, tortura y exterminio instalado en la Brigada de Investigaciones durante la última dictadura cívico-militar.
+
+De los diez policías y dos militares juzgados, José Marín –alias Cabo Sotelo, conocido por ser el ejecutante de un acordeón para “tapar” los alaridos durante las sesiones de tortura– fue el más nombrado de la jornada en razón de sadismo con los detenidos indefensos, maniatados y tabicados. De Ramón Meza se supo que robó un sobre con el dinero de dos sueldos y varios crucifijos de oro a uno de los testigos. María Teresa Pressa relató su calvario en la Brigada, embarazada de 5 meses y víctima de torturas y vejámenes y a la vez testigo de las palizas propinadas a Parodi Ocampo. Durante la declaración de Jorge Giles se produjo un fuerte cruce entre el juez Alonso y el abogado defensor Ricardo Osuna en razón de las preguntas del letrado, “re-victimizantes” según la jurisprudencia citada por el abogado querellante Mario Bosch.
+
+## María Teresa Pressa
+
+A María Teresa la detuvieron junto con su compañero Manuel Parodi Ocampo el 16 de abril de 1976 en su domicilio por avenida San Martín. Los agentes intervinientes en el operativo saquearon el hogar de la pareja. Rompen muchas cosas y roban cuadros y muebles. “Tenía cuadros muy importantes porque mi padre era pintor; algunos estaban firmados y acompañados de una dedicatoria, como varios de Venturi; muchos de esos cuadros me fueron robados y colgados en la Brigada" afirmó. María militaba en la universidad de Misiones y era empleada del Instituto de previsión social. Después del golpe, el pueblo donde estaba su casa paterna fue secuestrado en su totalidad (“hasta al cura se llevaron preso”) y su nombre apareció en la crónica del diario Territorio de Posadas como una de las personas detenidas, pero ella se salvó porque ya no vivía allí, sino en la capital. Después de ese incidente deciden emigrar hacia Resistencia.
+
+En la Brigada de Investigaciones ella y Parodi Ocampo sufrieron tortura y condiciones denigrantes de cautiverio. Al borde del llanto explicó que la tortura era un fin en sí misma, desprovisto de todo sentido de pesquisa o búsqueda de información; “Todos, de una u otra forma, eran torturados”. Recordó que Larrateguy y Patetta visitaban asiduamente la Brigada.
+
+Recalcó que los criminales de la patota no respetaron ni siquiera a mujeres embarazadas, como ella misma, sometida a “todo tipo de torturas físicas y psicológicas, y vejámenes que preferiría no contar”, ni tampoco a madres con niños pequeños, como una detenida que “estuvo en la Sala Negra, muy torturada; escuché que le decían: “Hablá o sino le damos a tu hijo también”.
+
+Una vez Manader la juntó con Manuel Parodi Ocampo, su esposo. “Me lleva a una oficina donde tenían a Manuel sin camisa, con el pecho todo quemado, descalzo y con un tobillo esposado a la silla; estaba perdido, le sangraba uno de los oídos y Manader le decía: “No la conocés, saludala a tu señora”.
+
+Parodi Ocampo nació en Paraguay y vivió en Posadas, Misiones, desde los 8 años. Su papá fue sereno de la Coca Cola durante 14 años, su mamá era ama de casa. Manuel participó del movimiento estudiantil universitario. Militó en la Juventud Peronista. Muchos lo recuerdan por su capacidad para hablar y discutir en las asambleas estudiantiles: “Era un orador de primera, estudiaba antes de ir a una asamblea”. Fue legalizado como detenido en la U7. La tarde del 12 de diciembre de 1976 lo trasladan junto con otros presos políticos a la Alcaidía de Resistencia.
+
+Fue asesinado en la Masacre de Margarita Belén a los 28 años. El padre de Manuel y el de Arturo Franzen, otro de los militantes masacrados, retiraron sus cuerpos y los llevaron a Posadas.
+
+El cuerpo de Manuel era irreconocible. María José se enteró de su muerte en la cárcel de Villa Devoto, Buenos Aires, donde había sido trasladada en noviembre. El hijo de la pareja fue recuperado y criado por los abuelos. (Fuente: Registro Único por la Verdad  CPM Chaco)
+
+María mencionó a José Marín, alias Cabo Sotelo, policía y guardiacárcel de la Brigada, un tipo hosco que le sacaba ruido al acordeón para tapar los alaridos de los detenidos. Se cuenta de él que antes de pasar sus días en la Alcaidía imputado en la causa vivía en soledad, encerrado en una casa donde no dejó ventana sin enrejar. Este personaje era un sádico que sin decir "agua va" irrumpía en los calabozos y repartía patadas y piñas a los detenidos mientras que les gritaba que eran unos “hijos de puta y que había que matarlos a todos”. “En la sala negra había un señor que tocaba el acordeón –recordó María–: 'Bailen', nos decía, y el que dejaba de bailar era golpeado con una vara de madera”.
+
+## Dito Saliva
+
+“Fui detenido el 13 de abril de 1976 por fuerzas conjuntas, durante la noche, en mi domicilio” comenzó Eduardo “Dito” Saliva, que aclaró al Tribunal que pudo identificar a Manader, Valussi, Ceniquel y varios más. Entre el griterío y las trompadas lo llevan a la Brigada, a “una cosa infernal” donde lo picanean y le dan una golpiza de “ablande” que duró varios días y lo dejó “con el cuerpo totalmente desfigurado, hinchado y lleno de moretones”. En esa “cosa infernal” que fue la Brigada, tal y como la describió, Saliva señaló que vio la violencia desplegada en su máxima dimensión, al punto presenciar a escasa distancia la tortura a un bebé.
+
+Contó que pudo escuchar un interrogatorio de Manader a una joven madre, acompañado del llanto de una criatura. “Habíamos vivido de todo, pero nunca pensamos que podía llegar a ocurrir algo así. Fue algo que nos dejó muy mal. No veíamos la hora de salir de ahí de cualquier manera, aunque sea muertos”.
+
+Además recordó: “Cuando el Cabo Sotelo aparecía con el acordeón se sabía que algo malo estaba pasando o iba a pasar”. El torturador lo hacía cantar el chamamé “Puerto Tirol”, “y como yo no sabía bien la letra, cada vez que me equivocaba me picaneaba”.
+
+Cerró su declaración con una denuncia: la de la complicidad civil con el gobierno militar: “Hubo colaboración civil con la represión, muchos hicieron grandes fortunas, como Juan Alberto García, con contactos muy asiduos con el proceso; cuando veo una mansión entrando al barrio Los Troncos, la veo manchada de sangre. Muchos fueron ideólogos y muchos fueron usufructuarios, todo esto es parte de lo que nos falta para que se haga justicia”.
+
+## Jorge Giles
+
+Su testimonio fue el más extenso; relató en detalle diversos aspectos de su militancia y las condiciones de detención que sufrió en 8 años de presidio que no pudieron doblegar su “identidad de militante político”. Fue detenido en Villa Ángela el 17 de abril de 1975 y torturado en la comisaría local durante un par de días, después de lo cual lo trasladan a la Brigada de Investigaciones por calle Juan B. Justo, lugar del cual tiene “el recuerdo del horror y del infierno de la cobardía humana, de seres humanos totalmente ensañados con la debilidad de uno…”.
+
+No hubo funcionario judicial que aceptara tomarle declaración de las salvajes torturas de las que fue víctima.
+
+“Quiero decir no tengo odios ni rencores, pero el que torturó, mató y desapareció personas debe ser castigado con la máxima pena, y con todo el respeto de la ley. También creo que pensar que solo ellos son los culpables es un reduccionismo. Los señores de la Justicia también tienen que ver, y no es que había una policía o un ejército desbocados y no existía Martínez de Hoz…”.
+
+Al momento de las preguntas de la defensa se produjo una fuerte discusión. El abogado Osuna comenzó a hacer preguntas que eran un calco del interrogatorio al que lo sometían Manader y compañía al testigo cuando era un detenido político. Giles perdió su diplomacia y fue contundente, sin medias tintas en su respuesta: “Le recuerdo que no soy yo el juzgado, sino sus defendidos, yo ya fui juzgado, en todo caso, si me da tiempo, puedo recordar dónde me picaneaban, si en el culo, en el paladar, si en el pecho…”.
+
+Alonso le salió al cruce a Osuna exigiéndole “preguntas directas” y requiriéndole se atenga al expediente. Bosch, desde la querella, trajo a colación un rosario de tratados y jurisprudencia internacional fundamentando su oposición a las preguntas de Osuna por “impertinentes y revictimizantes”, lo que fue concedido por el Tribunal. Al debate le dio cierre el propio Giles, al comentar: “En estos cinco minutos, sentí en el pecho el mismo dolor que sentí cuando me picaneaban”.
+
+Hubo otro cruce–menor– con el abogado Oscar Gómez y su insistencia en encontrarle fallas al relato de Giles sobre cómo lo obligaron a permanecer diez días parado frente a una pared. Gómez atacaba la lógica del relato: cómo lo hizo, cómo fue al baño, comió, bebió, ¿no se durmió?, etc. Giles otra vez categórico: “No probé bocado, apenas algo que tal vez era un caramelo que me pasó un desconocido; al baño me llevaban después de mucho pedir, si me dormí lo sabrán los acusados, cada vez que se me doblaban las rodillas y me caía me levantaban a las patadas” explicó.
+
+## DEDIEU
+
+El periodista misionero Hugo Dedieu fue detenido en la casa en la que vivía con su esposa y sus dos pequeños hijos, por calle Sáenz Peña 530, por un comando de militares y civiles de la patota de Investigaciones liderado por el teniente Martínez Segón, imputado en la Causa Masacre de MB. Durante el allanamiento, el “poliladrón” Ramón robó un sobre con su salario de dos meses y crucifijos de oro.  
+Ser hijo de un oficial de policía que había sido compañero en su juventud de Wenceslao Ceniquel, jefe de la fuerza en los setenta, no le trajo mayor suerte en ese mundo de sadismo sin límite que fue la Brigada. Cuando a los integrantes de la patota les quedó claro que no iba a colaborar, le avisaron: “No solamente te vamos a sacar las uñas a vos, sino también a tu mujer y a tus hijos”. Cerca de su celda pudo ver a Parodi Ocampo y a su esposa, y escuchó los alaridos de Patricio Blas Tierno cuando era torturado.
+
+Una vez, el “Cabo Sotelo” entró a la sala negra muy alterado. “Estaba enojado con sus camaradas, parece, se acercó a mí y me dijo: "¿Sabés quiénes son los hijos de puta que te pegan? Manader, Silva Longhi, Rodríguez Valiente, Caballero, quiero que los sepan porque estos hijos de puta no se la van a llevar de arriba”.
+
+El 20 de mayo del 76 lo trasladan a la Alcaidía. Durante una conversación con el oficial jefe de guardia Chejolán, le pregunta qué iba a pasar con él. El carcelero fue terminante en su respuesta: “Los que tengan escasa vinculación con la subversión van a salir en libertad, los que tengan una vinculación mediana van a estar muchos años presos, y los que estén muy comprometidos van a ser boleta”. Conoció varios penales del país (estuvo en la U7, U9 La Plata, U2- Devoto, U6- Rawson, y los últimos dos días de su experiencia carcelaria en el penal de La Candelaria en 1983).
+
+## CARLOS “FLACO” PÁEZ
+
+Vestido con un impecable traje de color gris, el “Flaco Páez” contó cómo, tempranamente y bajo un gobierno democrático, le tocó conocer en carne propia los comienzos del Estado terrorista.
+
+Fue detenido “el 15 de abril de 1974 a los 17 años en Sáenz Peña, a la una o dos de la mañana”. Lo llevan a la Alcaidía de Sáenz Peña y después a la Alcaidía de Resistencia. En diciembre de 74 lo pasan a la U7. En agosto de 1976 va a U6, en 1980 lo pasan a la U9, y en 1981 le dan libertad vigilada.
+
+En la Alcaidía de Saénz Peña fue torturado con picana eléctrica. Recuerda que dirigía la tortura Wenceslao Ceniquel y participaban Thomas Cardozo Manader y Yedro. Le pegaron tan fuerte que le abrieron la cabeza, le lastimaron la cara y una costilla y los testículos. “Me tiran de boca al suelo y me llevan a un descampado. Me habla un tipo y me pasa algo frío por el cuerpo, me dice: “Mirá pendejo, es triste terminar así, mejor hablá”.
+
+Era una rutina sacarlo de la celda para que identificara fotos. En la Alcaidía de Resistencia no lo golpearon tanto, pero le caminaron por encima y lo insultaron todo el tiempo. Tiene junta médica mandada a hacer por el juez Skidelzky en el 2003 El informe fue extraviado. Las secuelas: el corte en la cabeza le produjo una deformidad en el cráneo, la picana en la zona genital ocasionó con los años un tumor en un testículo, del cual tuvo que ser intervenido quirúrgicamente en 2007
+
+# Brigada I 15/9/2010
+
+## CONSEJOS DE GUERRA: LA (IN) JUSTICIA MILITAR
+
+**Declararon los exdetenidos Eusebio Esquivel y Juan Argañaraz, con testimonios contundentes sobre el autoritarismo y la ilegalidad del gobierno militar. La Causa Brigada Caballero pasa a cuarto intermedio hasta el 20 de septiembre y el jueves sigue la causa Masacre de Margarita Belén. El grupo de letrados pro-dictadura “Abogados por la Justicia y la Concordia” presente en la sala.**
+
+Después del debate recargado con cinco testimonios del martes 14, la vigésimo séptima jornada de la causa que investiga las torturas a militantes políticos en la Brigada de Investigaciones y Alcaidía durante la última dictadura tuvo dos protagonistas: Juan Argañaraz y Eusebio “Chelo” Esquivel (los otros testigos de la fecha presentaron certificaciones médicas que constatan cuadros de salud delicados). Los exdetenidos políticos relataron lo vivido durante los siete años de cautiverio en las cárceles del terrorismo de Estado, las vejaciones, el hambre, la inexistente atención médica y el verdugueo leguleyo de los “consejos de guerra”: parodias de juicios, con militares como “abogados defensores”, que siempre terminaban igual: condenas durísimas por acusaciones generales. La causa continúa el 20 de septiembre con la declaración testimonial de Jorge Campos, Juan Fernández y Antonio Prieto.
+
+Cuatro integrantes del grupo de letrados pro-dictadura “Abogados por la Justicia y la Concordia” presenciaron los debates y saludaron a los imputados y a sus colegas defensores al final de la audiencia. “Esto es una injusticia”, manifestó uno de ellos.
+
+## EUSEBIO “CHELO” ESQUIVEL
+
+El 28 de julio de 1976 Eusebio Esquivel estaba mirando un partido de fútbol con un primo en su casa en Villa Federal. Todo era normal hasta que aparecieron Gabino Manader y José María Cardozo a bordo de un Renault 12; se acabó el futbol y comenzaron las piñas y patadas y Chelo fue trasladado a la Brigada. Con 20 años cumplidos, militaba en la Jotapé y trabajaba vendiendo hamburguesas en la cantina de la Universidad Tecnológica. A partir de su detención comienza una etapa de su vida que se prolongaría hasta 1983 y lo llevaría por distintos presidios del país. En la Brigada estuvo un mes en uno de los calabozos de la planta alta, esposado a un lavatorio. Allí fue víctima y testigo de torturas: “Me bajan a un salón y me picanean. Se me cae la venda y veo que también torturaban al Indio (Mario) Cuevas mientras el Cabo Sotelo (José Marín, imputado) tocaba el acordeón como un opa, con perdón de los opas” relató, sin perder tranquilidad. Los policías le preguntaban por otros militantes y por unos ejemplares de Evita Montonera (publicación de la organización Montoneros) que encontraron cuando lo detuvieron. Al dúo Manader-Cardozo lo conocía de antes, por las razzias que dirigían en los barrios humildes de la periferia resistenciana, contó.
+
+## Militares
+
+También vio a los militares Patetta y Martínez Segón (imputado en la Causa Masacre de Margarita Belén). Del primero de ellos contó que daba órdenes, lo recuerda “petiso y gordito” (en ese momento el abogado defensor Federico Carniel se da vuelta y mira al imputado Patetta, cada vez más obeso, que sonríe. “Y bueh…” le dice el militar, como entregado). A los militares los conocía porque había sido colimba en el Grupo de Artillería 7; ingresó a principios de marzo de 1976 y fue como voluntario a la Escuela de Buceo en Santo Tomé (Santa Fe). En julio de ese año le dan la baja y al poco tiempo lo detienen. “No sé por qué, a lo mejor por ser militante de la Juventud Peronista” afirmó.
+
+## Alcaidía: dos costillas rotas
+
+A fines de agosto lo trasladan a la Alcaidía. Ahí los verdugos eran Octavio Ayala (el guardiacárcel jefe), un penitenciario de apellido Vittorello (fallecido) y los tres imputados en la causa Roldán, Álvarez y Galarza. Pocos días después de la Masacre de Margarita Belén Chelo Esquivel y los detenidos Ricardo Uferer y Ramón “Negro” Luque fueron castigados por miembros de la guardia en una salita de limpieza. “Fue una paliza tremenda, Roldán pegaba con una manopla, estaban Alvarez y Ayala…” precisó el testigo. Contó que pidió ser atendido por el médico de la Alcaidía, el Dr. Rolón, pero el único que lo ayudó fue un enfermero. Le dijo que tenía dos costillas intercostales flotantes y le dio una aspirina para el dolor.
+
+## Gira carcelaria (U7 Resistencia, U9 La Plata, U3 Rawson)
+
+En 1978 el Chelo pasa a la U7, preso a disposición del Poder Ejecutivo Nacional y es trasladado a la U9, en la Plata. Allí lo liberan en 1979, pero por tan solo unos diez días. Un camión del Ejército lo va a buscar a su casa y lo lleva al Grupo de Artillería 7, donde los militares le hacen un Consejo de Guerra y lo condenan a 16 años. Su abogado “defensor” era un almirante de la Armada al que no conoció; tampoco pudo saber de qué se lo acusaba concretamente. Vuelve a la U7 y después en avión viaja hacia el sur a la U3 de Rawson, donde finalmente el 21 de diciembre de 1983 se decide su libertad.
+
+## JUAN ARGAÑARAZ
+
+Fue detenido el 18 de julio de 1976 por policías de civil y militares. Tenía 28 años, era soltero, vivía con su familia y trabajaba como empleado de la Legislatura. Entre los policías que lo detuvieron pudo reconocer, con posterioridad, a Manader, Rodríguez Valiente, Cardozo y Yedro. Estuvo detenido prácticamente toda la dictadura. “Dios fue generoso conmigo y estoy bien físicamente, la única secuela son los siete años, siete meses, 20 días y siete horas que estuve preso” contestó a los abogados de la defensa cuando le preguntaron por secuelas físicas de su paso por la Brigada de Investigaciones Alcaidía-U7 y otras cárceles del país.
+
+En todo ese tiempo lo torturaron, le mataron a varios amigos, le hicieron dos consejos de guerra y tuvo que soportar un régimen alimentario y sanitario diseñado para destruir la moral de los detenidos. De toda esa experiencia pudo extraer un conocimiento del que no tiene dudas: “Tortura no eran solo los golpes, tortura es la detención ilegal y arbitraria, sin noción del tiempo y el espacio, con la incertidumbre absoluta sobre el futuro, con la pérdida del sentido de humanidad y de identidad… Esa es la tortura más grave, eso es peor que los golpes, las picanas y las violaciones” precisó.
+
+## USTED ESTÁ DESPEDIDO
+
+Argañaraz relató que en la Brigada, después de las torturas y de pasar varios días en la “Sala negra” –donde los apremios eran la regla– fue llevado a otra habitación de la Brigada: la “Sala de Situación”, donde le mostraron una pirámide con nombres de militantes detenidos. Supo entonces que prácticamente todos sus compañeros de la Juventud Peronista se encontraban en idéntica situación a la suya.
+
+Después lo pasan a la Alcaidía junto con otros detenidos, entre los que se encontraba Gregorio “Chachi” Quintana, expresidente de la Asociación de Presos Políticos de Chaco y uno de los referentes del impulso a los juicios al terrorismo de Estado, (fallecido en mayo de 2010). “Chachi” fue compañero de celda del declarante: “Estuvo conmigo varios meses, fue duramente torturado, estaba muy dolorido, con marcas en muñecas y tobillos, y pedía remedios que no le daban” relató.
+
+Estando detenido en la Alcaidía recibió un telegrama. Sobre llovido, mojado: un gendarme interventor de la Legislatura le informaba que estaba despedido. En septiembre del 76 es trasladado a la U7 con un contingente de detenidos. Allí soportan un régimen de aislamiento total y en una época llegan a estar 23 horas encerrados, con una hora para higienizarse a las corridas.
+
+## (IN) JUSTICIA MILITAR: 24 AÑOS Y 11 MESES DE CONDENA
+
+En todo el periodo de su detención Argañaraz nunca se entrevistó con un juez; tampoco pudo consultar su expediente, si es que existió. Aun así le hicieron dos consejos de guerra. Los ya nombrados Patetta y Martínez Segón fueron los que lo anoticiaron de los “juicios militares”. En el primero lo condenaron a 24 años y 11 meses, pero el proceso cayó por haberse salteado el paso de la declaración indagatoria. “Los defensores eran militares que no conocíamos, nos decían que nos declarásemos culpables”. Cuando los detenidos se negaron a hacerlo, en el año 1979, durante el segundo consejo el grupo de “procesados” fue llevado a un galpón, donde les quitaron las vendas (pero no las esposas) y un militar de alto rango les advirtió a los gritos que si no deponían su actitud serían fusilados. Después de eso fueron sometidos a una golpiza, como para terminar de convencerlos.
+
+Lo siguiente fue la U9 a fines de 1980, donde pasó dos años más. A principios de 1983 conoció la cárcel de Caseros y en agosto lo enviaron a Rawson, de donde regresó a Resistencia para ser liberado el 21 de diciembre de 1983
+
+Los abogados de la defensa preguntaron con insistencia cómo fue que el testigo reconoce a sus torturadores. Argañaraz explicó que pudo saber cómo se llamaban recién en 1985, gracias a la labor de la Comisión de Derechos Humanos de la Cámara Legislativa. El testigo tuvo que explicar el proceso de identificación: se hizo por dos etapas, primero señaló las fotografías de los represores que pudo reconocer, después le pasaron los datos. Preguntado sobre la posibilidad de reconocer a varios de los imputados describió someramente a Manader tal y como lo recuerda al momento de los hechos y remarcó: “Si este juicio se hubiera hecho veinte años atrás muchos detalles estarían más frescos en la memoria”.
+
+## LA DEFENSA DE LOS IMPUTADOS
+
+Promediaba la declaración de Chelo Esquivel y de pronto ingresaron tres personas que se ubicaron en el sector destinado a los familiares de los imputados. A los presentes la cuestión les llamó la atención porque supuestamente una vez iniciados los debates no se permite el ingreso a la sala hasta un cuarto intermedio, y porque tampoco parecían ser parientes de ninguno de los acusados. Cuando todo terminó y los cuatro visitantes se acercaron a los imputados para intercambiar saludos, todo se aclaró: eran integrantes de la “Asociación Civil de Abogados por la Justicia y la Concordia” fundada en Buenos Aires en 2009, para presionar por la libertad de los militares procesados y detenidos por crímenes de lesa humanidad durante la última dictadura cívico-militar.
+
+El Dr. Alberto Solanet, presidente de la asociación, encabeza una delegación que visita la región y estará presente en la audiencia por la Masacre de Margarita Belén; además darán una conferencia de prensa. Alberto Solanet es presidente de la Corporación de Abogados Católicos y suele escribir en La Nación condenando el aborto, la eutanasia, el matrimonio igualitario, la despenalización del consumo personal de drogas, la experimentación con células madres.
+
+# Causa Brigada I 22 de septiembre de 2010
+
+## EL SOBREVIVIENTE DE LA CASA DE TARZÁN
+
+**Así llamaban al sótano de la Brigada de Investigaciones, donde se torturaba. El testimonio fue de “Mencho” Campos. También declaró “Quito” Fernández en una tranquila jornada. Este martes continúa el juicio con cuatro testigos más.**
+
+Con casi un mes completo de audiencias, la jornada de este lunes del juicio oral y público en el marco de la Causa Brigada Caballero se desarrolló sin sobresaltos, con la presentación de dos de los tres testigos convocados: Jorge “Mencho” Campos y Juan “Quito” Fernández; el otro, Antenor Gauna, se encuentra internado.
+
+La tranquilidad de las audiencias de esta causa contrasta con los álgidos debates en el juicio por la Masacre de Margarita Belén, que incluyen fuertes discusiones entre las partes y evidente malestar de familiares de los imputados.
+
+Los destinos de “Mencho” y “Quito” están entrelazados desde hace casi 40 años: fueron detenidos con un día de diferencia por su militancia en la juventud peronista, pasaron por los mismos presidios en Chaco y el resto del país y recobraron la libertad el 22 de diciembre de 1983 Es más, cuando les hicieron consejo de guerra en 1979, compartieron abogado defensor: Aldo Martínez Segón, imputado en la causa Masacre de Margarita Belén. Este martes, la causa continúa con el testimonio de los exdetenidos Juan Carlos Goya, Mario Arqueros, Ricardo Ilde y José Niveyro.
+
+## LA CASA DE TARZÁN
+
+Campechano y por momentos bordeando la digresión, Jorge Eduardo “Mencho” Campos habló sobre su militancia y su detención, haciendo foco en los días que pasó en la Brigada de Investigaciones.
+
+“Nos incorporamos al movimiento nacional justicialista con el ‘Luche y vuelve’ para traer al general Perón”, fue lo primero que dijo. Por esa militancia fue detenido el 16 de junio de 1976; ironías de la historia, el día en el que se cumplía un nuevo aniversario del bombardeo a Plaza de Mayo, en Buenos Aires, para derrocar el segundo gobierno de Juan Domingo Perón.
+
+Campos tenía 20 años, militaba desde los 14 y trabajaba en el Municipio de Resistencia junto Raúl Figueredo (actualmente desaparecido). Fue llevado a la Brigada de Investigaciones, donde lo garrotearon, le propinaron golpes de puño y le tiraron agua caliente durante toda la noche. Fue una tortura de ablande, recién al otro día conoció “la parte más pesada”: el sótano, al que los torturadores llamaban “‘La casa de Tarzán’, porque los detenidos estábamos en bolas y a los gritos”, relató Campos. Allí lo desnudaron y lo ataron con sogas a la parrilla metálica de una cama para aplicarle corriente eléctrica en el pene, la barriga, los ojos y la boca y quemarle los tobillos con ácido. La electricidad hacía saltar a su cuerpo y le “daba la impresión de que te vas para el otro mundo” contó. Las quemaduras del ácido le dejaron marcas en los tobillos hasta el día de hoy.
+
+En una ocasión, la corcoveada que pegaba su cuerpo hizo que se le desataran los nudos de una mano y pudo sacarse la venda; vio a Gabino Manader, Humberto Caballero, José María Cardozo y Silva Longhi (los dos primeros imputados en la causa, los otros dos fallecidos).
+
+“Manader manejaba una picana como la que se utiliza para las vacas”, precisó Campos, que ya lo conocía como “un policía de la pesada” desde 1974 por la detención de Aníbal Ponti, hecho que generó una interpelación en la Cámara de Diputados.
+
+Explicó que tanto Manader como Carlos Thomas, jefe de la Brigada, eran “hombres públicos, participaban de nuestros actos, camuflados, pero nos conocíamos todos”. Dijo que Ramón Meza (imputado) “era el responsable del área restringida” donde “en varias oportunidades escuchó el acordeón que tocaba (José) Marín (alias Cabo Sotelo)”. Fue muy claro al describir cuál era la tarea de la patota de la Brigada: “La tortura y el verdugueo eran sus tareas específicas” precisó. Le hicieron firmar una declaración con los ojos vendados. Su familia presentó Habeas corpus varias veces, sin resultados.
+
+A principios de julio, después de pasar unos días en la Alcaidía, regresa a la Brigada, donde lo sitúan en los calabozos de la planta alta. Ahí vio a Manuel Parodi Ocampo y su mujer María José Pressa, embarazada, Patricio Blas Tierno y otros. Los guardias les hacían simulacro de fusilamiento y les decían que eran rehenes de guerra. “Pero no era una guerra, era una cacería, ellos tenían un poder omnímodo”, afirmó.
+
+## “SÚBANLO”
+
+Fue detenido el 17 de junio de 1976 en su casa familiar a las 5 de la mañana, “por ser militante de la Juventud Peronista Regional 4tª”. Manader, Cardozo, Silva Longhi y Caballero lo cargan a las patadas en una furgoneta y lo llevan a la Brigada, donde lo recibe Carlos Thomas.  
+“Súbanlo”, fue todo lo que dijo el jefe de la patota de Investigaciones. Fernández pudo verlo porque no lo habían vendado. De los pelos fue arrastrado hacia un altillo: la Sala Negra. Al poco tiempo lo empujaron por la empinada escalera para llevarlo a la parrilla de tortura.“La desesperación es tremenda, se siente una sequedad en todo el cuerpo, me desesperaba por tomar agua y tenía una sensación de que me moría, me preguntaba todo el tiempo ¿qué me hacen? ¿Por qué? Y no aflojaban con los golpes nunca”, fueron las palabras de Fernández para intentar una aproximación a esa experiencia límite.
+
+“La picana te produce una contracción muy fuerte en los músculos, volábamos y nos empujaban para abajo”, explicó. Como consecuencia de los salvajes apremios sufridos Fernández tiene muy dañadas la cuarta y quinta vértebra de la columna.
+
+Ya estaba vendado, pero escuchaba las voces de Manader, Rodríguez Valiente y Thomás mientras lo torturaban: “¿Dónde están las armas?”, le preguntaban. A pedido de la defensa describió a Rodríguez Valiente, presente durante el allanamiento en su domicilio: “Es morocho y alto”.
+
+“Quito” relató que en la Sala de Negra se cruzó con una chica “delgadita, rubia y de ojos celestes” oriunda de Santa Fe. “Acordate de mí”, le dijo la mujer, de apellido Argüello. La torturaron durante toda la siesta y la tarde de ese día. Cuando la regresan a la Sala Negra “la tiraron como si fuera una bolsa de papas”. Contó que sabían que militares visitaban la Brigada y que se llevaban detenidos. Los identificaban porque veían los borceguíes y los pantalones de fajina por el rabillo de los tabiques.
+
+## CAMINITO…
+
+En la alcaidía, Fernández no la pasó mejor: los guardiacárceles hicieron una fila de 70 metros y los recibieron con una “paliza tremenda”. “Eran 50 tipos con bastones y cachiporras, íbamos pasando y nos golpeaban hasta llegar a las celdas”. En la cárcel se vivía un régimen de hacinamiento y encierro. Ahí pudo ver las ampollas en los tobillos de Campos y de Juan Carlos Goya, secuelas del ácido con el que los habían rociado.
+
+En 1979 le hacen un Consejo de Guerra; lo sacan de la U7 junto con otros presos y lo llevan al Regimiento de la Liguria, todos con su correspondiente venda y esposa. Los juzgados eran tratados de “traidores a la patria”. Su abogado defensor era Aldo Martínez Segón, imputado en la causa por la Masacre de Margarita Belén. “Era un militar petisito y chiquitito que me retaba porque no quería firmar una declaración”, contó Fernández, condenado a 24 años de prisión por ese Consejo de Guerra.
+
+# Causa Brigada I 4/10/2010
+
+## “VAMOS A MATAR A TU HIJO”
+
+**Se lo decían en la Brigada a una detenida política embarazada para que entregara a su esposo, en ese momento en la clandestinidad y hoy desaparecido. También declaró Elvio Lorenzo Borrini, exjefe de policía de Formosa y padre de una detenida política. Mañana continúa la Causa Caballero y el miércoles reinicia el juicio por la Masacre de Margarita Belén.**
+
+La primera audiencia de octubre de la causa judicial sobre las torturas a detenidos políticos en la Brigada y en la Alcaidía durante la última dictadura se desarrolló al ritmo de dos testimonios: el de la exdetenida O.Ch., que viajó desde Canadá para declarar, y el del octogenario Elvio Borrini, exjefe de la Policía de Formosa y padre de Gladys, detenida junto con su esposo Roberto “Patón” Grecca (también testigo de la causa) en noviembre de 1976
+
+Esta testigo y sobreviviente estuvo cuatro años presa; pasó por la Brigada de Investigaciones, la Alcaidía y Villa Devoto. Estando embarazada fue sometida a torturas y vejámenes en la Brigada por parte de un grupo de represores, entre quienes pudo identificar a Manader, Patetta y Rodríguez Valiente. Se ensañaron con ella para que les dijera dónde estaba su esposo, al punto de amenazarla con hacerla abortar. Los golpes le ocasionaron una sordera en el oído derecho, pero lo que más la perjudicó fue la “pérdida del vínculo emocional” con su hija a causa de su detención.
+
+Borrini contó las gestiones que realizó para ver a su hija embarazada y asegurar su integridad física. Reconoció que sus conexiones con la Fuerza le allanaron el camino, a diferencia de muchos otros familiares de detenidos políticos, y aun se refirió al plan de extermino sin medias tintas: “Se comentaba en todas partes sobre las torturas en las unidades de Policía y de las Fuerzas Armadas y se hablaba de detenidos que no estaban registrados”, afirmó. Su hija, residente en Buenos Aires, también estaba citada para declarar el día de la fecha, pero justificó su incomparecencia ante el Tribunal.
+
+## MARTIRIO EN LA BRIGADA
+
+Con la voz pausada y cierta tensión que se fue aflojando con el correr de la audiencia, la testigo contó que fue detenida por el Ejército a fines de agosto de 1976 en la casa de sus suegros en Villa Berthet. La esposaron y vendaron y la subieron a un camión que hizo un recorrido con varias paradas, en las cuales eran subidos más detenidos. Atardecía cuando llegaron a la Brigada en Resistencia. “Ahí comenzó el martirio” relató la testigo, que tenía 23 años y estaba embarazada.
+
+En la Brigada la desvistieron y le dieron una paliza. Después le pasaron picana, mientras le gritaban que era una perra, una guacha, una hija de puta. La torturaban para averiguar dónde estaba su esposo, H. R. V., un abogado oriundo de Villa Berthet que integró Montoneros y colaboró con las Ligas Agrarias. Vocouber pasó a la clandestinidad a mediados de 1976, vivió oculto en el monte (Chaco y norte de Santa Fe) junto con otros militantes perseguidos y logró viajar a España en 1978 Se cree que fue secuestrado en 1980 cuando intentaba ingresar al país por Mendoza o por San Juan. Tenía 31 años, y permanece desaparecido.
+
+Preguntada por los nombres de sus torturadores respondió que “eran unos cuantos, pero me acuerdo de Manader y Patetta”. Del primero resaltó su voz de mando, y la “energía, era el jefe”. Lo recuerda “morrudo y no muy alto”. Después sumó a la lista el nombre de Rodríguez Valiente.
+
+En la Brigada sabían que se había encontrado con su esposo una noche en el monte; como ella lo negaba, la tortura recrudecía: “Vamos a matar a tu hijo”, era la amenaza de los hombres sin hombría. O. Ch. recuerda haberse desmayado varias veces, pero lo que más la aterrorizaba era la posibilidad de perder su embarazo.
+
+Sabe que estuvo en un “subsuelo”, porque tenía que subir escaleras para ir al baño. Ese era el momento en el que los integrantes de la patota aprovechaban para abusar sexualmente de las detenidas. “La mayoría de las mujeres que pasaron por la Brigada padecieron lo mismo”, contó.
+
+El secretario del juzgado federal Carlos Flores Leyes y el coronel Larrateguy la interrogaron en la Brigada. Le dijeron que su situación era muy comprometida y que tenía que colaborar; querían sobrevolar el campo a bordo de un helicóptero para que O.Ch. identificara la zona donde se encontraba su cónyuge. Flores Leyes lo conocía porque habían estudiado juntos Abogacía. El coronel Larrateguy, jefe del Área 233 (con jurisdicción sobre Resistencia y su zona de influencia), sería el encargado de liderar el operativo, que nunca se materializó.
+
+“Después de esa reunión la situación se relajó un poco”, relató, que en noviembre fue trasladada a la Alcaidía. “Esto no se terminó”, le advirtieron; la iban a regresar a la Brigada cuando naciera su hijo, “para usarlo de anzuelo en el monte”.
+
+## LA CÁRCEL: ALCAIDÍA / VILLA DEVOTO
+
+El 2 de enero de 1977 por la madrugada, O.Ch. parió a Tatiana. No sabe dónde, la sacaron de la Alcaidía después de mucho insistir y la llevaron a un lugar donde la atendió un ginecólogo, mientras un grupo de soldados hacía guardia en una sala contigua.  
+De regreso en la Alcaidía padeció muy duras condiciones de cautiverio: no tenía leche, ni agua caliente ni pañales. La situación se volvió insostenible; tuvo que entregar a su hijita a su madre. Al poco tiempo fue traslada al penal de Villa Devoto, muy deprimida por la separación. “Nunca más la pude abrazar, la vi a través de un vidrio en una visita”. Cree recordar que en 1978, durante un Consejo de Guerra, tuvo la oportunidad de reencontrarse con su hija, durante una hora. “Mi hija caminaba, corría de aquí para allá…”.
+
+En 1981 la sacan de la cárcel y la llevan a una comisaría de Moreno. La torturan y la amenazan como en la Brigada, con una diferencia: ya no le preguntaban por Vocouber, esta vez se centraban en ella. “Pensábamos que eras una perejil, pero vos estuviste organizada”, le decían. Allí se enteró de que iba a ser sometida a un régimen de libertad vigilada, con la prohibición de regresar a Villa Berthet. “Si denunciás algo a los Derechos Humanos sos boleta”, fue la advertencia con la que inauguró su recobrada libertad.
+
+## EL EXILIO: CANADÁ
+
+Fuera de la cárcel, sus suegros le contaron que su pareja mandaba cartas o llamaba por teléfono de manera esporádica, a veces desde España, otras desde Portugal. La última vez que supieron de él había sido en octubre de 1980 O.Ch. relacionó esto último con el interrogatorio en Moreno, sin preguntas sobre su esposo, y presintió lo peor: “Tuve la corazonada de que jamás volvería a verlo”, contó.  
+Ahí mismo tomó la decisión de salir del país. Pero no le sería fácil, la dictadura que la había torturado salvajemente y que la había apresado durante cuatro años no le permitía abandonar Argentina con su hija, porque la patria potestad de la pequeña la tenía su marido desaparecido. Un abogado le facilitó un subterfugio: podría sacar a la nena del país con la excusa de realizar un chequeo médico en Canadá, donde reside desde entonces.
+
+## ELVIO LORENZO BORRINI – CENIQUEL AL TELÉFONO
+
+Con 80 años cumplidos, Elvio Borrini ingresó a la sala de audiencias de impecable traje negro, con la cabeza rapada y secundado por su abogado personal. Fue jefe de Policía de Formosa y es padre de Graciela Borrini, detenida en noviembre de 1976, cuando estaba embarazada. En un testimonio escueto y preciso relató las gestiones realizadas para salvar a su hija y a su nieta de la maquinaria de exterminio que funcionó en la Brigada de Investigaciones. En 1976 Elvio Lorenzo Borrini estaba retirado de la policía formoseña después de haber llegado a lo más alto del escalafón. En esa época era agente de seguros de varias compañías y gestor de la Caja Nacional de Ahorro. Una mañana lo llama por teléfono el jefe de la Policía del Chaco, Wenceslao Ceniquel, para decirle que su hija y su yerno habían sido detenidos. Con Ceniquel se conocían porque habían trabajado juntos en la Comisaría Primera de Formosa, donde Borrini era su superior jerárquico.
+
+## LA HIJA
+
+Con la noticia de la detención de Gladys, se vino a Resistencia junto con su mujer. Todavía no lo sabía, pero era el inicio de una estadía que duraría cuatro años. Su hija estaba en la Jefatura de Policía; pudo verla por escasos minutos después de entrevistarse con su antiguo subordinado de la Comisaría Primera, devenido capo máximo de la policía. “Ceniquel estaba desencajado por la situación –describió Borrini–: me dijo que mi hija integraba una célula subversiva. Tengo entendido que en el estudio de mi yerno habían encontrado a un montonero”, precisó. Recuerda que Gladys estaba en buenas condiciones, que fue trasladada a la Brigada y que compartió detención con María Julia Morresi, en una habitación apartada de los calabozos. “Me dijeron que eran los aposentos donde descansaba el jefe de Investigaciones”.
+
+Borrini entiende que su condición de policía y exjefe le abrió las puertas y allanó el camino para poder ver a su hija y pedir por su integridad física. “Ella me dijo que el primer día de su detención había sido presionada, que la amenazaban con hacerla abortar con una cuchara en la vagina si no hablaba”.
+
+Muchos familiares acudían a él para lograr algún dato o un permiso de entrevista, pero lo cierto es que era muy poco lo que podía hacer. “No tenía información, porque había un hermetismo total”, describió.
+
+Borrini sabe que existió un Área Restringida en la Brigada; vio el cartel en una visita. “Había comentarios de que allí existía un subsuelo donde tenían detenidos”, afirmó. Manifestó que a su hija la experiencia le acarreó una serie de problemas psicológicos, que fueron superados con la asistencia de profesionales. El hombre fue el impulsor en la Alcaidía de Formosa del régimen de celadoras para el trato con internas, pero en Resistencia su hija padeció el embarazo y el postparto en la Brigada, donde no había personal femenino.  
+Gladys estuvo en la Brigada hasta el nacimiento de su hija, el 21 de febrero de 1976 Al poco tiempo la pasan a disposición del Poder Ejecutivo Nacional y la liberan, para ser detenida nuevamente y trasladada a Prefectura; estuvo mejor allí porque el jefe también era conocido de su padre.
+
+## EL YERNO
+
+A su yerno pudo verlo recién un mes después, en la Alcaidía. Lo vio con dificultad para respirar. “Estoy bien, lo tranquilizó Grecca, tengo una gripe”. Después consiguió por medio de Larrateguy que le permitieran a su consuegra ver a su hijo. La mujer le contó que lo que tenía “Patón” no era una gripe sino dos costillas flojas por las palizas. No le había querido contar a causa del “temperamento” de Borrini padre, que ni lerdo ni perezoso lo encaró a Thomas: “Acá no se tortura a nadie, le dijo, habrá sido obra de los carceleros”. Durante su testimonio Grecca relató que la interpelación a Thomas tuvo como correlato más torturas y palizas.
+
+## LADRONES
+
+Después de mucho insistir logró ingresar al departamento de su hija y su suegro por calle Pío XII; lo habían saqueado, robaron el álbum de casamiento, un grabador, un ropero y joyas de la familia que habían pasado de madre a hija como regalo de casamiento. Cuando Borrini buscó que le devolvieran sus pertenencias, un oficial le manifestó que era “inoficioso”, porque todo lo robado era “botín de guerra de los que participaban en los operativos”.
+
+# Causa Brigada I 18/10/2010
+
+## NIÑOS DETENIDOS EN LA BRIGADA
+
+**El exdetenido Sergio Romero compartió cautiverio con su mujer, su hijo de siete meses y su sobrino. Miguel Nieva explicó cómo se hizo el relevamiento de dos sótanos durante la instrucción de la causa. La audiencia retoma actividad este martes 19 de octubre.**
+
+La jornada 34 de la causa que investiga las torturas en la Brigada de Investigaciones fue tranquila y expeditiva, y como es costumbre comenzó a las 9:30, con una hora de retraso. Sergio Romero y Héctor Costas contaron los horrores que padecieron y presenciaron durante su cautiverio. Romero aportó un dato para nada menor: la permanencia de menores de edad en reclusión en la Brigada. Un caso que se suma a la espantosa lista que integran la familia Caire y el hijo de Nora Valladares. Miguel Nieva, del Equipo Argentino de Antropología Forense (E.A.F.F.), relató cómo se hizo el relevamiento de dos sótanos en el marco de la instrucción de la causa realizada por el juez Piñero.
+
+## SERGIO ROMERO – DETENIDO CON SU MUJER Y SU HIJO
+
+El docente Sergio Romero fue detenido el lunes 26 de mayo de 1977 al mediodía en el colegio Don Orione de Barranqueras, donde realizaba trabajos administrativos. A la Brigada lo ingresaron por la puerta trasera y al pie de una escalera lo vendaron con un pedazo de frazada. Lo subieron y lo dejaron en un rincón, al lado de una “mesa o escritorio” toda la tarde.
+
+En un momento pudo escuchar un sonido; agudizó la audición y percibió que se trataba del llanto de un niño. Era su hijo Diego, que tenía apenas siete meses de vida. Supuso entonces que también su mujer estaba detenida, y protestó. Otro llanto de niño lo percató de que su sobrino también estaba en la Brigada. Una feroz paliza fue la respuesta a sus gritos y recriminaciones.
+
+En otra ocasión, siente barullo en el piso de arriba. Escucha cómo hacen rodar por la escalera a un detenido, al que llamaban “Gringo”, que aterriza cerca de donde estaba él, aterrorizado porque presentía que le mostraban lo que le esperaba en ese lugar. El “Gringo” se llamaba Rogelio Tomasella y era militante de las Ligas Agrarias.
+
+Romero relató que tanto su militancia en el peronismo como su colaboración en el “Ranchón” eran motivo de los interrogatorios y torturas. “Pertenecíamos a una Comisión Vecinal y trabajábamos con la pastoral de la Iglesia Don Orione en barrios periféricos de la zona. Daban clases de apoyo en un galpón reacondicionado que llamaban el “Ranchón”. Allí funcionaba día por medio un comedor para los niños y cada tanto se organizaban peñas folklóricas. “Todo estaba capitaneado por el cura párroco. Él siempre nos decía que no hacía otra cosa que cumplir con el Evangelio y con los documentos del Concilio Vaticano Segundo de Melledín”, en referencia al movimiento de sacerdotes que defendían el compromiso con los pobres y oprimidos. “Nos identificábamos como peronistas. Yo comencé en la Juventud Peronista y después creamos el Peronismo de Base”. Cada tanto recibían la indeseada visita de integrantes del Comando De Organización (CdO), que aparecían para patotear a los vecinos.
+
+Su esposa estuvo cuatro meses detenida. El estrés y los malos tratos que padeció le provocaron la pérdida de la leche, por lo que su hijo de meses tuvo que ser amamantado por otra detenida. Me denigraban todo el tiempo, y me decían que el bebé no era hijo mío”. Relató que su cuñada, también madre y detenida con su hijo, fue abusada y carga con secuelas psicológicas por los vejámenes sufridos.
+
+Mientras el testigo narraba su calvario, su esposa, su hijo Diego y sus sobrinos lo escuchaban desde el sector de público reservado a los familiares de las víctimas. “Durante mucho tiempo le ocultamos (a Diego) lo que había pasado. Cuando fue más grande le contamos lo que pasó”. En agosto de 1977 lo trasladan a la Alcaidía, desde donde es liberado. A los pocos días lo llamaron desde el Juzgado Federal, donde el secretario Reska le dijo que estaba procesado por atentar contra la Ley de Seguridad Nacional y le hizo firmar un acta. Sin embargo, fue sobreseído poco después.
+
+## MANADER-CURSO DE TORTURA EN PARAGUAY
+
+Al momento de identificar a sus verdugos, Romero fue por demás gráfico: “Silva Longhi nos puteaba por cualquier cosa”, contó. Recordó a Yedro, a Rodríguez Valiente (“era alto, tez morena, caminaba muy erguido”). Pero de quien más detalle brindó fue de Gabino Manader: “Todo el mundo hablaba de su calidad como torturador”.
+
+Relató que el imputado en 25 hechos fanfarroneaba con que se había instruido en diversos métodos de tortura en el Paraguay del dictador Alfredo Stroessner, donde había visto cómo los detenidos eran enterrados hasta los hombros, y que después oficiales a caballo y sable en mano les cortaban la cabeza. “Alardeaba sobre eso y nos asustaba muchísimo”. En su aspecto físico lo recuerda de “mediana estatura, medio moreno, bien peinado, siempre con la pistola al cinto”.
+
+## PERSECUCIÓN IMPLACABLE
+
+La pareja fue liberada, pero eso no significó que terminaran sus problemas. La dictadura militar y sus colaboradores civiles se ensañaron con la pareja de docentes al punto de retirarles el título para que no pudieran ejercer su profesión.
+
+“Como el colegio en el que enseñábamos era privado, porque era un colegio religioso, la Ley de Prescindibilidad Docente que había sido elaborada por la secretaria de Educación y el coronel Zucconi no nos afectaba”. Ante esa situación, la persecución pasó a manos del general Albano Harguindeguy, ministro de Interior durante cinco de los siete años que duró la dictadura, con un amplio prontuario de crímenes de lesa humanidad. Harguindeguy cortó por lo sano y directamente les retiró el título y los convirtió en desempleados. Romero debió rebuscarse de mil maneras para mantener a su familia; finalmente un conocido le propuso asociarse en la venta de golosinas y tabaco. Después, un odontólogo lo tomó como administrador de su consultorio. Allí Romero tuvo un encuentro inesperado: Ojeda, el policía que lo había detenido en mayo del 77, acompañó a su hija a una consulta con el médico. Sin embargo, en su ficha no figuraba con ese apellido, sino con su verdadero nombre: Ramón Esteban Meza (imputado). “Esa cara va a ser inolvidable por el resto de mi vida”, dijo.
+
+## HÉCTOR COSTAS – 40 DÍAS EN BRIGADA
+
+Héctor Costas viajó desde Quilmes, provincia de Buenos Aires, para declarar. Fue detenido el 24 de mayo de 1976 en Samuhú a los 32 años de edad. Regresaba de Resistencia en colectivo y fue apresado por Ramón Meza, un oficial de apellido Lobos y un tercer policía. Hacía un mes y medio que estaba en Samuhú con su esposa. Ambos ejercían la docencia en una escuela de la zona. Requisaron su casa y decidieron llevarlo detenido a Resistencia. En un tramo del camino se detienen y Lobos lo invita a escapar: “Andate. Corré por el monte si querés” le propone. Costas no muerde el anzuelo, discuten y finalmente siguen viaje hacia la Brigada, donde lo vendaron y lo hicieron subir unas escaleras.
+
+## LA TORTURA
+
+En la Brigada permaneció cuarenta días detenido. Conoció la abyección extrema de la patota, con “José Marín tocando el acordeón y obligando a los detenidos a cantar.
+
+Recordó la “fortaleza increíble” de Nora Valladares. Dijo además que su  mujer le contó un caso de abuso que retrata el grado de de servidumbre que imperaba en la Brigada: “Gabino Manader violó a una detenida y al día siguiente le dio un saco y le ordenó: “Coseme los botones”.
+
+Habló con “un tal Parodi (Ocampo, asesinado en la Masacre de Margarita Belén) y una chica Pressa, su esposa”. Dijo que se encontró con muchos detenidos, y lo impresionó la extrema juventud de varios. “Yo era joven, tenía 32 años, pero había muchachitos de 15, 16, 17 años…”, todos permanentemente castigados y hacinados sobre pisos sucios por la acumulación de excrementos.
+
+## ENCUENTRO CON PATRICIO BLAS TIERNO
+
+Recuerda tres sesiones de tortura. La primera a los dos días de estar detenido  en uno de los sótanos. En la segunda le dijeron que su mujer “ya había cantado todo” y que tenían su “ficha”, por lo que sabían que era de La Plata. Reconoció la voz de Lucio Humberto Caballero y de Gabino Manader. “La tortura duró mucho, hasta que me desmayé”.
+
+En la tercera lo carearon con Patricio Blas Tierno (fusilado en la Masacre), que estaba muy deteriorado, echado sobre una camilla. Mientras el testigo relataba los pormenores del careo, el hijo de Patricio, Juan Pablo Tierno, lo escuchaba con atención. Costas conocía a Tierno porque era un dirigente de la Juventud Universitaria Peronista en la Plata. Lo recordaba como un tipo fuerte y grandote, pero en ese momento en la Brigada su conocido “tenía un deterioro absoluto, era una piltrafa”. “No dijimos nada. Fueron unos momentos nomás, nos picanearon un poco y me subieron al calabozo”.
+
+## ALCAIDÍA, CONSEJOS DE GUERRA y MARTÍNEZ SEGÓN
+
+Cuarenta días después de ingresar a la Brigada lo enviaron a la Alcaidía, junto con un grupo de detenidos. Fueron recibidos con una paliza y al mes trasladados a la U7. Costas fue liberado el 24 de diciembre de 1982 Estuvo a disposición del Poder Ejecutivo Nacional y le hicieron dos consejos de guerra. “Tuve como abogado defensor angaú –como dicen acá– a Martínez Segón, con quien discutía porque le decía que como civil no me correspondía ser juzgado por un tribunal militar”. Relató que el minúsculo militar (imputado en la causa Masacre Margarita Belén) le decía: “No pidan justicia, pidan clemencia”. Cuando se realizó el consejo Costas insistió con su pedido. Se ganó un castigo de 10 días en un calabozo en la U7 y varias palizas.
+
+Al final de su declaración, recordando su conversación con Martínez Segón, hizo un pedido al tribunal: “Espero que los imputados tengan la justicia que corresponde, que la piedad se la pidan a Dios”.
+
+## MIGUEL NIEVA–E.A.F.F. “LA SANGRE DERRAMADA NO SERÁ NEGOCIADA”
+
+El antropólogo Miguel Nieva llegó a Resistencia en la mañana de ayer para relatar cómo se hizo en febrero de 2008 el relevamiento de dos sótanos en el edificio donde funcionó la Brigada de Investigaciones, en el marco de la instrucción de la causa realizada por el juez Piñero.
+
+De uno de los sótanos (el más grande) se conocía la ubicación, pero del otro solo se tenía certeza de su existencia, tal y como aparecía mencionado en unos planos de obras públicas. El Equipo Argentino de Antropología Forense hizo un relevamiento planimetral, fotográfico y fílmico. “El sótano más grande –identificado como SB1– estaba lleno de agua”, lo que desterró toda posibilidad de dar con rastros biológicos.
+
+El segundo sótano –identificado como SB9– fue descubierto a pocos pasos del primero, golpeando con una barreta sobre el suelo, en la búsqueda del característico sonido a hueco. “Este tenía una superficie de 4 metros por 4, estaba lleno de escombros y se relevaron datos de interés” manifestó el antropólogo, en referencia a los objetos y las inscripciones hallados: una picana a pila, restos de un arma de fuego y dos inscripciones sobre en la pared: “La sangre derramada no será negociada” y “Firmeza y luz, como cristal de roca”. La primera frase era una de las leyendas con las que la generación de los sesenta/setenta honraba a sus mártires y señalaba la imposibilidad de flaquear en la lucha. La segunda forma parte de un poema de Alfredo Jiménez, un poeta mexicano, y también aparece en la obra de José Ingenieros.
+
+Cada uno de los objetos fue exhibido al Tribunal. También fue relevado un desagüe que pasa por el techo (lo que corrobora el testimonio de varios exdetenidos que mencionaron haber sido colgados de un caño) y restos de una instalación eléctrica de las que se utilizan para conexiones aéreas. Además fueron hallados dos sachets de leche y una lata de cerveza marca Henniger sin fecha de elaboración. Esto último llamó poderosamente la atención del abogado defensor Pedro Mañanes, que tomó la latita, la sopesó y espió en su interior.
+
+Al momento de las preguntas, desde la defensa se intentó menoscabar la seriedad de las pericias aludiendo a la presencia o no del juez de Instrucción que supervisó las excavaciones y a la existencia en la actualidad y desde el año 2005 de la Casa por la Memoria en el edificio de Marcelo T. de Alvear 32 Cuando Nieva desterró toda posibilidad de injerencia en los sótanos al responder que los mismos se encontraban cerrados desde 1985, tanto querella como fiscalía al unísono pidieron el consabido “Que conste en actas”. El juez Víctor Alonso hizo lugar al reclamo: “Que quede constancia del pedido a coro”, bromeó.
+
+Cuando el testigo era desocupado de su testimonio por el Tribunal, el abogado de la querella Mario Bosch solicitó al juez Víctor Alonso que se efectúe una inspección ocular en la ex Brigada, pero el magistrado lo paró en secó y negó la posibilidad. Ante la negativa, Bosch insistió con la pertinencia del pedido, dado que Nieva tiene que viajar desde Buenos Aires cada vez que se lo convoca. “Él va a venir”, fue la tajante respuesta –casi una orden– del juez Alonso, la cual originó una cerrada carcajada en todos los presentes, incluido el testigo.
+
+# CAUSA BRIGADA I 26 de octubre de 2010
+
+## EL POLICÍA QUE SE NEGÓ A TORTURAR
+
+**Raúl Alberto Mazaite fue perseguido y cesanteado porque se negó a sumarse a la patota de torturadores de la Brigada de Investigaciones. La defensa pidió que se les permita a los imputados presenciar la inspección ocular en la Alcaidía y la Brigada el 8 y 9 de noviembre. El jueves reinicia la Causa Masacre.**
+
+El último día de audiencia del mes de octubre de la Causa Brigada  tuvo dos testigos retirados de la Policía: Donato Navarro y Raúl Alberto Mazaite. Fueron breves pero contaron hechos fundamentales. El primero se atajó de entrada diciendo que prácticamente no pisó los interiores de la Brigada porque siempre trabajó en el frente del edificio o en la calle, pero aseveró que José Marín tocaba el acordeón. Mazaite ratificó una declaración suya de 2007 en la que cuenta que a principios de 1976 fue intimado por Carlos Thomas (jefe de la Brigada de Investigaciones, imputado en la causa pero fallecido) a sumarse a la plantilla de secuestradores y torturadores que integraban el mismo Thomas, Gabino Manader, José María Cardozo, Rodríguez Valiente y José Marín, entre otros. El oficial pagó cara su negativa: en septiembre de 1976 fue cesanteado y obligado a abandonar la Brigada.
+
+La causa pasó a cuarto intermedio hasta la segunda semana de noviembre y se calcula que falta muy poco para terminar con la etapa de las testimoniales, por lo que tan solo restan los alegatos de las partes para la finalización de la primera causa por crímenes de lesa humanidad en el Chaco (que de todas formas tendrá una secuela: la causa residual que investiga casos de desapariciones en la Brigada).
+
+## RAÚL ALBERTO MAZAITE – “Torturas vox populi en la Brigada”
+
+Alto y flaco, Raúl Alberto Mazaite entró a la sala con paso vacilante y con una abultada carpeta bajo el brazo. Ingresó a la policía en 1968, trabajó en Dirección de Seguridad, en Dirección de Personal y en la Brigada de Investigaciones.
+
+El testigo declaró en 2007 en la etapa de instrucción. A poco de comenzar su testimonio contó que tiene problemas de audición y que acarrea los achaques de un accidente cerebrovascular ocurrido poco tiempo atrás, por lo cual sufre lagunas mentales. “Como que se me entreveran las cosas” explicó.
+
+Para ubicarlo en el relato, el juez Víctor Alonso –presidente del Tribunal que lleva la causa, integrado por los vocales Lucrecia Rojas de Badaró y Manuel Moreira– le preguntó directamente si “supo o no que en la Brigada se torturaba”. Mazaite respondió con evasivas; dijo que todo lo que supo fue que pasaban “cosas raras”, que se enteró “por los medios”, y no pudo recordar la fecha exacta.
+
+Después de una serie de preguntas sin respuesta firme, el juez le pasó la pelota a los abogados de la defensa, pero el plantel en pleno (José Cardozo, Juan Manuel Costilla, Federico Carniel, Ricardo Osuna y José Oscar Gómez) declinó preguntar.
+
+A su turno, la querella del abogado Mario Bosch también tropezó con los baches en la memoria del testigo, por lo cual solicitó la incorporación de la declaración de Mazaite ante el juez de Instrucción, para “refrescarle la memoria”.
+
+Después de que el testigo reconociera su firma en las fojas del grueso expediente, el secretario Francisco Rondán leyó su declaración de 2007 Lo que sigue son los extractos más importantes de esa documental:
+
+“Nunca participé en las torturas, eran vox populi (…) Thomas quería que trabaje con un equipo de tareas integrado por Manader y Cardozo. El comentario era que ellos salían a la calle a buscar gente (…) Me querían a mí en ese “grupo de elite” porque yo era alto y corpulento…”.
+
+De la declaración surge que, como Mazaite se negó a sumarse a la patota de la Brigada, Thomás lo amenazó, y que varias veces lo siguieron para intimidarlo. En septiembre de 1976 la presión sobre el policía llegó a su punto máximo: lo dejaron cesante sin motivo aparente, más que su negativa a manchar el uniforme con crímenes que se cometían en sótanos y calabazos de la Brigada. En otro tramo de su declaración de 2007, el testigo refiere el caso de 4 personas con las que se cruzó circunstancialmente, que le relataron que “la habían pasado muy mal en la Brigada”.
+
+Después de semejante testimonio, el juez Alonso le consultó si tenía por cierta o no la declaración ante el juez de Instrucción. “No me acuerdo, pero lo habré declarado, está mi firma”. 
+
+## DONATO NAVARRO – No entraba a la Brigada ni para ir al baño
+
+El expolicía Donato Navarro relató que cumplió servicio en la Brigada de Investigaciones entre principios de los setenta y comienzo de los 80 Sistemáticamente, el hombre negó cualquier indicio que tuviera que ver con las torturas o los apremios ilegales, pero al mismo tiempo se apresuró en aclarar que, si bien tenía acceso irrestricto a todo el edificio, él siempre estuvo ajeno a la Brigada: “Llegaba a la guardia y salía a trabajar, ni siquiera al baño iba”, afirmó.
+
+Lo suyo era la custodia de los domicilios de jefes de la fuerza o la administración por la noche y la guardia en la entrada de Investigaciones y en determinadas esquinas por la mañana. Aun así su escueto testimonio tuvo tres momentos de interés (dos afirmaciones y una conversación).
+
+## UNO: “MARÍN TOCABA EL ACORDEÓN”
+
+No tuvo problemas en recordar que José Marín (alias “Cabo Sotelo”) tocaba el acordeón. No dijo que lo escuchó en la Brigada, pero afirmó saber que el imputado ejecutaba el instrumento. Varios testimonios señalan a Marín como uno de los más sádicos de la patota de verdugos de la Brigada y lo recuerdan por tocar el acordeón para tapar los alaridos de los supliciados durante las sesiones de tortura. También reconoció haber visto detenidos, un par de veces, sin lograr comunicar ningún detalle adicional, y supo de la permanencia de mujeres “por comentarios”.
+
+## DOS: MANADER Y COMPAÑÍA
+
+Primero dijo que Gabino Manader “trabajaba aparte” y que él nunca supo qué hacía, pero que “siempre estaba trabajando”. Después recordó que el nombrado actuaba junto con el jefe Carlos Thomas (fallecido), con José María Cardozo (fallecido), José Francisco Rodríguez Valiente y Enzo Breard. Todos los nombrados están imputados en la causa. Navarro no dijo nada más al respecto, pero se preocupó en dejar bien claro que él “no sabía nada de ese grupo”.
+
+## TRES: LA PICANA
+
+Hacia el final de su declaración, el juez Alonso le preguntó al testigo si alguna vez había visto una picana.
+
+—No —contestó Navarro.
+
+—¿Sabe qué es una picana? —insistió el juez.
+
+—No —fue la respuesta del policía retirado.
+
+—¿Entonces por qué dice que no vio una picana si no sabe qué es? —inquirió el magistrado, pero Navarro se perdió en una explicación que agregó más confusión y al final admitió no estar seguro de nada.
+
+# CAUSA BRIGADA I 8 de noviembre de 2010
+
+## INSPECCIÓN OCULAR EN LA CASA POR LA MEMORIA
+
+**Con la presencia de varios exdetenidos y del imputado José Rodríguez Valiente se efectivizó la inspección ocular en la Brigada de Investigaciones de la Policía (actual Casa por la Memoria) durante la mañana del lunes 8 de noviembre. El martes la inspección continúa en la Alcaidía, la Jefatura de Policía y la sede de la Brigada por calle Juan B Justo.**
+
+La jornada comenzó temprano pero en el lugar equivocado: la Jefatura de Policía por avenida 25 de Mayo. Después de 10 minutos de espera, llegó la información de que la inspección iniciaba en la actual Casa por la Memoria, es decir, la ex Brigada de Investigaciones durante el apogeo del terrorismo de Estado en Argentina. Cuando querellantes, defensores y fiscales estuvieron presentes en el lugar, el tribunal ingresó al edificio, seguido de las partes y la prensa. Después ingresaron los compañeros y amigos de los testigos, integrantes de los organismos de Derechos Humanos que conforman la Comisión Provincial por la Memoria y trabajadores de la institución. Ya solo faltaba el imputado Rodríguez Valiente (Gabino Manader y José Marín (el “acordeonista”), los otros dos imputados citados para la fecha, finalmente no se presentaron). Para amenizar la espera los abogados defensores Ricardo Osuna, Juan Manuel Costilla y Federico Carniel leían atentamente uno de los banners con unas infografías de la causa con las caras de los imputados y los hechos de torturas por los que se los acusa. El martes 9 continúa la ronda de inspección con el relevamiento de la Alcaidía, a la cual será convocado el exdetenido Carlos “Ratón” Aranda. Al terminar la pesquisa en la Brigada por Marcelo T. de Alvear la comitiva se trasladó a la sede más antigua de la repartición policial: la sede de calle Juan B. Justo, donde no se pudo realizar la inspección ocular por “falta de preparación para el trámite”.
+
+## LA INSPECCIÓN: CINCO LUGARES
+
+Cinco fueron los espacios relevados, si bien –según explicó Rodolfo Sobcko– hubo momentos en los que todo el edificio fue una sola y gran “Área Restringida”:
+
+1 El despacho de Thomas, el jefe de la patota de Investigaciones, sobre el patio interno de la casa, antes de llegar al “Área Restringida”. Ya traspasando el pasillo, hacia la parte posterior del edificio;
+
+2 El sótano sobre el pasillo que da al Área Restringida, a la que se bajaba por una escalera metálica, descubierto por el EAFF en 2008  
+3 El sótano del fondo del edificio, debajo de la que fue “la celda de los perejiles”.
+
+4 Sobre el techo de la celda anteriormente mencionada, se inspeccionaron el primer y segundo piso, donde estaban construidos los calabozos y la “Sala Negra”: la zona de espera para sufrir las sesiones de tortura por parte de Rodríguez Valiente y compañía.5 
+
+La planta alta: en la actualidad se realizan allí las reuniones de organismos y autoridades de la Comisión Provincial por la Memoria y es la sala destinada a la proyección de cine sobre la temática.
+
+### RODRÍGUEZ VALIENTE, DE REGRESO A LA ESCENA DEL CRIMEN
+
+Cuando finalmente llegó, Rodríguez Valiente ingresó por el estacionamiento del edificio, cabizbajo, esposado y con la custodia de los agentes del SPF, que no lo abandonaron en ningún momento. Después de esperar por unos instantes en el fondo del edificio donde funcionó el centro clandestino de detención, la comitiva avanzó hacia el frente para iniciar el día número 38 de la causa por torturas en la Brigada. En una de las salas del frente de la Casa por la Memoria, donde funcionó la sección de Robos y Hurtos –en la actualidad es una de las salas de arte–, el juez Víctor Alonso explicó a los testigos convocados el carácter de la medida procesal: “No es una reconstrucción de los hechos, sino una instrucción judicial para que el tribunal conozca el ámbito geográfico de los hechos”. En hilera, Víctor Giménez, Rodolfo Sobcko, Carlos Aguirre, Valdi Uferer y Jorge Campos –los cinco, sobrevivientes– los escuchaban con respeto y atención. A un pasito nomás, el imputado Rodríguez Valiente, de traje, con las manos cruzadas y flanqueado a un lado por agentes del SPF y al otro por el abogado defensor Juan Manuel Costilla. En representación de la Presidencia de la CPxM Juan Carlos Fernández, hijo de Eduardo Fernández, militante desaparecido que fue visto por última vez en la Brigada a fines de 1976, ofició de “anfitrión” del Tribunal y describió la disposición de las dependencias del centro clandestino en el edificio de la Brigada. Fernández es militante de la agrupación H.IJ.O.S. Chaco y coordinador del Registro Único por la Verdad de la Comisión Provincial por la Memoria. Gabriela Aguirre, la hija del exdetenido Carlitos Aguirre, también participó de la introducción al lugar. A coro, explicando las fechas de la detención de cada uno, los testigos fueron explicando cómo ingresaron y los lugares que conocieron. Rodríguez Valiente escuchó atentamente.
+
+### 1 EL DESPACHO DE THOMAS
+
+En la actualidad la habitación tiene sus paredes repletas de consignas sobre el Juicio y Castigo a los genocidas y fotografías y caricaturas de los imputados; además, es el lugar donde “descansa” un muñeco de 4 metros que simboliza la impunidad (obra de los artistas Alejandro Gallardo y Juan Britos). Carlos Aguirre: “El despacho de Thomas tenía dos entradas: una fuera del Área y otra dentro”.
+
+### 2 EL SÓTANO CHICO
+
+Víctor Giménez describió las dimensiones del sótano (“más o menos tres por tres”) y contó que tenía una escalera de metal. “En este sótano estuve una semana, en esa sala torturaron a Méndez y Lucho Díaz, ahí se torturó salvajemente…”. En el estrecho pasillo no cabía un alfiler, entre testigos, funcionarios judiciales, periodistas e integrantes de la Comisión Provincial por la Memoria. Giménez describía cómo fue que en ese sótano se armó el operativo en el que fue asesinado el correntino Colombo. A espaldas del testigo, Rodríguez Valiente criticó su descripción, a lo que Valdi Uferer (parado al lado del imputado) le contestó con aspereza: “Vos callate, si tenías tu oficina ahí arriba” le contestó, en alusión a la Sala Negra, la zona de torturas por excelencia en la Brigada. El entredicho fue oído por el Juez Alonso, que clausuró la discusión con un terminante “Usted se calla” dirigido al expolicía. Jorge Campos fue el más grafico a la hora de describir el sótano: “Este sótano era la famosa “Casa de Tarzán”. Le decían así porque uno estaba en pelotas y a los gritos” relató. Después, la comitiva avanzó hacia el segundo sótano.
+
+### 3 EL SÓTANO DEL FONDO DEL EDIFICIO
+
+Cuenta Valdi Uferer: “Estuve hasta el 23 de mayo del 76 En abril esto era un patio, había rejas y estaba la estructura de arriba (Sala Negra y calabozos). Aguirre y Uferer explicaron cómo eran los fondos del edificio, con un bañito y una letrina donde ahora hay una cocina. Rodolfo Sobko contó que fue en ese lugar donde se cruzó con Pedro Morel (actualmente desaparecido) y le indicó que tomara su orina para curarse una infección.
+
+Los jueces observaron el sótano mayor a través de una reja de seguridad (el sitio está inundado). Sobcko les indicó cómo era el lugar y describió la instalación eléctrica que había. Dijo que se trababa de un lugar más grande, y que lo diferenciaban del sótano más chico porque a este se bajaba por una escalera de fórmica. “Igual que la Sala Negra, estos sótanos eran para torturar”. Sobre la cuestión, Rodriguez Valiente manifestó que la entrada como tal “no existía”. Dijo que desde siempre estuvo con agua y que había una tabla en el lugar que cerraba el paso.
+
+### 4 LA SALA NEGRA Y LOS CALABOZOS
+
+En fila, testigos, jueces, abogados y compañía subieron por las estrechísimas escaleras del fondo hacia la Sala Negra y los calabozos. Rodríguez Valiente y su séquito de agentes fueron parte del grupo. Valdi Uferer contó que en el lugar había una puerta metálica que chirriaba al abrirse. El sonido era la señal de que se aproximaba la tortura. Ahora en el lugar hay una puerta de madera. Después de traspasar a la oficina contigua, Valdi explicó una de las vivencias más duras de su experiencia carcelaria: “Acá torturaron al nenito de siete meses de  (nombró a una ex detenida)”, contó. Señaló dónde estaba Nora y donde estaba él, tirado en el suelo después de una sesión de tortura que le hizo perder el conocimiento.
+
+Jorge Campos contó los casos de tortura que escuchó en el mismo lugar, y que de allí partían los integrantes de la patota a secuestrar gente. Carlos Aguirre relató que su primera noche de detención la pasó en la Sala Negra, junto con Delicia González (desaparecida en la Masacre de Margarita Belén). Todos coincidieron al señalar que en la habitación estaba la oficina de Rodríguez Valiente. Después siguieron hacia arriba, a los calabozos. En el lugar se ven las instalaciones de las oficinas de APA, todavía quedan en pie un par de mamparas divisorias de oficinas. En mayo de 1976 allí se iniciaba la construcción de los calabozos, contó “Valdi” Uferer. Jorge Campos los vio terminados, en junio de 1976 En noviembre había una pared que dividía en dos el lugar; había además cinco calabozos pequeños. Giménez pudo ver en uno de ellos a Carlos Zamudio, a Fernando Piérola y a Lucho Díaz. Carlos Aguirre estuvo en el calabozo número dos. “Tenía el largo de una colchoneta, una puerta de chapa con rejas arriba, de ancho habrá sido un metro ochenta”. Carlos Aguirre explicó que por la acústica del lugar podían reconocer las voces y los pasos de los torturadores.
+
+### 5 EL “CÓNCLAVE”
+
+El lugar donde Sobcko presenció una cumbre entre los jerarcas militares. “Conocí a Hornos y Larrateguy ahí”, relató el testigo. La segunda vez que le tocó presenciar una esas reuniones fue torturado con “una picana de mayor intensidad”, mientras revisaban sus antecedentes. GVíctor Giménez también fue objeto de este tipo de reuniones: “Querían saber por qué salieron tantos subversivos de la facultad de Arquitectura”, contó.
+
+# CAUSA BRIGADA II – Jueves 24 de noviembre de 2016
+
+## Comenzaron las testimoniales en la causa
+
+**Declararon los exdetenidos políticos Carlos y Julio Aranda. Los hermanos relataron el calvario padecido en los sótanos y calabozos de la Brigada de Investigaciones durante la última dictadura. La causa pasó a cuarto intermedio hasta el jueves 1° de diciembre.**
+
+A sala llena, este jueves comenzó la etapa de testimoniales en el día 13 de la causa Brigada II, por crímenes de lesa humanidad en la ex Brigada de Investigaciones durante la última dictadura cívico militar. En la audiencia de la fecha declararon los hermanos Carlos y Julio Aranda, dos exdetenidos políticos que ya participaron en juicios anteriores y con una destacada militancia en pos de la Memoria histórica y el reclamo de Justicia que brindaron cada un crudo relato de sus respectivas detenciones y cautiverio clandestino en los sótanos y calabozos de la Brigada de Investigaciones y también de la Jefatura de la Policía del Chaco. Como ya es moneda corriente en el juicio, la audiencia comenzó con un retraso de una hora según el horario estipulado con anterioridad (9 h.), y en razón de lo sustancioso de los testimonios, se extendió hasta pasadas las 14 h. La causa pasó a cuarto intermedio hasta el jueves 1° de diciembre, oportunidad en la que es probable que los imputados Gabino Manader y Luis Alberto Patetta presten declaración indagatoria. Luego continuará los días 16 y 22 de diciembre, y el 3, 9 y 10 de febrero. En este proceso figuran como imputados 12 represores del terrorismo de Estado, diez ex policías y dos militares retirados, por la imputación de tormento psíquico y físico agravado por la condición de detenido político de la víctima, privación ilegítima de la libertad, desaparición forzada de personas, y un caso de violación tomado como crimen de lesa humanidad.
+
+## SOBREVIVIENTES
+
+Con un relato conciso y prolijo, primero Julio y luego Carlos, los hermanos Aranda, contaron cómo fue su detención, y las torturas padecidas por ellos y otros detenidos, y lograron identificar a varios de los imputados; Luis Alberto Patetta, Gabino Manader, José Rodríguez Valiente, Ramón Meza, y Héctor Marín (alias cabo Sotelo, el “acordeonista”). Tenían 20 y 21 años cuando fueron detenidos el 3 de noviembre de 1976 a las 3 de la mañana , en su casa familiar en la ciudad de Corrientes, por un grupo de militares y policías, todos de civil, que irrumpieron “a las patadas, con un arsenal, liderados por Luis Alberto Patetta”. Julio, el menor, se despertó “con un arma en la frente y mi hermano que era tomado de los pelos”. Fueron trasladados a la Jefatura de la Policía del Chaco, donde Julio estuvo  varias horas en un rincón; cada tanto le pegan o gatillaban y lo obligaban a permanecer de pie. Carlos no la llevó mejor; lo ataron a los flejes de  una cama metálica y le aplicaron picana eléctrica con saña. Allí fue puesto frente a los detenidos Raúl María Cairé y Reynald Zapata Soñez, para forzar un reconocimiento, pero ninguno cedió. También vio a Carlos Tereszecuk, muy castigado por la tortura, a quien le ordenaron que bañara dado el estado casi terminal en el que lo dejaron los golpes y ultrajes recibidos. A ninguno de los hermanos les fue informado el motivo de la detención, y ambos estuvieron desaparecidos, porque pese a que sus familiares los buscaron por Corrientes y Resistencia, las autoridades les negaron cualquier información sobre su paradero.
+
+## BRIGADA DE INVESTIGACIONES
+
+Poco después de su arribo a la Jefatura los hermanos fueron trasladados a la Brigada de Investigaciones, por separado. En uno de los calabozos del edificio los hermanos se reencontraron, junto con una decena de otros detenidos políticos. Julio relató las torturas padecidas –picana,  golpes, hacinamiento, etc. etc– y las sufridas allí por mismo y también por otros detenidos y detenidas:  Roberto Grecca, Lucho Díaz, Carlos Terezcecuk, Víctor Giménez . Este último “estuvo varios días colgado de unos ganchos, le pegaban en la espalda con unos alambres envueltos en papel” según contó el testigo, que recordó también que “cuando empezaba a sonar el acordeón, sabíamos que se venía la tortura”. En otro pasaje de su declaración explicó que el haber practicado taekwondo lo ayudó a soportar mejor los castigos, al saber cómo preparar el cuerpo ante la inminencia de un golpe; “Patetta sabía pegar, tocaba el estomago y veía cuando uno se ablandaba, y ahí metía el golpe… veíamos estrellitas”. No presenció violaciones, pero las escuchó, “recuerdo las burlas, las degradaciones a las detenidas. Resaltó la valentía de Gladys Borrini, embarazada de 7 meses, detenida en la Brigada; “no la tocaban porque era la hija del jefe de Policía de Formosa; ella les gritaba asesinos, torturadores, violadores”. A Carlos le tomaron declaración Rodríguez Valiente y Silva Longhi y le dijeron que firmara una nota en la que reconocía su pertenencía a la organización Montoneros. “Me negué, y ellos insistieron, y como yo no firmaba me llevaron a una pieza contigua y me dieron una fenomenal paliza, luego me dejaron en un sótano, para ablandarme, y al tiempo me llevaron nuevamente a firmar”. De su paso por la Brigada desatacó “El trato inhumano y cruel, para la destrucción del individuo” y que “Torturaban de modo tal que no se provocara la muerte de la víctima”, para lo cual tenían el asesoramiento del médico Héctor Grillo.
+
+## PATETTA, EL VERDUGO
+
+Finalmente, Julio fue liberado un once de noviembre por la noche, con lo puesto, luego estar casi un mes sin bañarse y desaparecido para su familia. Antes de “soltarlo” el jefe del Área Militar 233, coronel Jorge Larrateguy le advirtió que tendría un régimen de libertad vigilada y algo peor. “A tu hermano lo vamos a hacer boleta” le dijo. Lo primero lo cumplió: durante un año y medio el menor de los Aranda recibió las visitas periódicas de Patetta en el estudio de arquitectura que compartía con su hermano Carlos, en las que el militar lo amedrentaba, y buscaba bajarle el ánimo; “llegaba y dejaba un revolver sobre el tablero de dibujo, se sentaba en un sofá, y me decía “no vayas a visitar a tu hermano, lo tienen en los “chanchos” ( celda de castigo en la U7), lo que podía ser cierto o no , era un hostigamiento constante por parte de él”. A Carlos la libertad le llegaría mucho después, en el 83 Su estadía en la Brigada, el objeto procesal del presente juicio, terminaría en los primeros días de diciembre, cuando junto con una veintena de detenidos fueron trasladados a la Alcaidía. Finalizó su testimonio con palabras de homenaje a Mario Bosch: “Por su hombría de bien, y su desempeño en estos juicios, en los que tuvo un papel fundamental para que se haga justicia”.
+
+## MARIO BOSCH, PRESENTE
+
+Familiares, amigos y compañeros de militancia presenciaron el inicio de las testimoniales, con corbatas con el símbolo del Juicio y Castigo y las siluetas de la Masacre de Margarita Belén, como las que utilizaba Mario Bosch, a modo de homenaje para con el abogado de DDHH y querellante histórico en la causas de lesa humanidad en la región fallecido el 6 de noviembre. El abogado Manuel Brest, de la Secretaría de DDHH de la Nación en Corrientes, tomó el lugar en la querella que llevaba adelante Bosch. Ni bien inició la audiencia el presidente del tribunal Eduardo Belforte dejó a criterio de “los abogados defensores y de  los imputados” el pedido realización  de un minuto de silencio en homenaje al abogado Mario Bosch. El magistrado manifestó que así lo dispuso en orden que no se viera afectado el principio de imparcialidad en el proceso. En representación del grupo de ex policías y militares encartados tomó la palabra José Rodríguez Valiente, quien declinó la posibilidad del homenaje; “Creo que no es el ámbito adecuado un homenaje a una de las partes” adujo. El Fiscal Diego Vigay solicitó decir unas palabras alusivas, pero los jueces, intransigentes,  “mantuvieron el criterio”. La postura de los magistrados del TOF se apartó de lo resuelto por el tribunal federal de Formosa, del juicio Domatto, también por crímenes de lesa humanidad y en el que Mario Bosch llevaba adelante una querella. Allí se permitió un sencillo homenaje y luego el debate prosiguió sin mayores contratiempos.
+
+# CAUSA BRIGADA II Febrero de 2017
+
+## Reclamaron cárcel común y efectiva para Gabino Manader
+
+**Organismos de DDHH y organizaciones sociales reiteraron su repudio a la excarcelación del represor Gabino Manader firmada por el juez de instrucción Juan Manuel Iglesias. Los imputados Luis Alberto Patetta, Manader y José Rodríguez Valiente realizaron ampliaciones indagatorias. La causa pasó a cuarto intermedio hasta el jueves 10, con la declaración de los ex detenidos políticos Juan Carlos Goya y Raúl Junco.** 
+
+“Fue uno de los más salvajes torturadores de la brigada represiva del Chaco. Sádico, perverso, desalmado, toqueteaba y violaba a las compañeras detenidas. Se cansó de torturarme a mí y a María Julia, mi actual compañera”. Así lo recuerda el escritor  y ex detenido político Miguel Ángel Molfino, y el suyo es uno más de los muchos  testimonios  que le confieren sin exagerar el carácter de represor emblema del terrorismo de Estado en la región, uno de los jefes de la temible “Patota de Investigaciones”. Sin embargo, este viernes por la mañana ingresó a la sede del Tribunal Oral Federal de Resistencia, vestido de camisa blanca y pantalones claros, sin esposas, con su inseparable carpeta llena de fojas de expediente, como uno más del montón, tanto, que el oficial de mesa de entrada le preguntó quién era, y él tuvo identificarse,  y luego subir las escaleras hacia la sala de audiencias donde se lo juzga junto con otros once imputados por torturas desapariciones y una violación en la ex Brigada de Investigaciones, el centro clandestino de detención de mayor envergadura en el Nea durante la última dictadura. Gabino Manader, ya condenado en un juicio anterior a 25 años de prisión por torturas en la Brigada no llegó a  la primera jornada del año 2017 del juicio Caballero II desde una celda en la U7 sino desde la comodidad su hogar, en calle Coronel Falcón en las proximidades de la escuela de Policía, gracias a una resolución de excarcelación firmada por el  juez Juan Manuel Iglesias a fines de diciembre pasado y efectiva desde este el jueves 2 de febrero. La medida generó el repudio de organismos de DDHH y organizaciones sociales, que realizaron una conferencia de prensa en la vereda del TOF en la que manifestaron su reclamo de “cárcel común y efectiva” y serios cuestionamientos al juez Iglesias. Desde el ministerio Público adelantaron que se apelará la resolución por considerarla un privilegio sin justificativo.
+
+Durante la audiencia del juicio oral,  la número 17 desde su inicio el 16 de junio pasado, las partes escucharon la ampliación indagatoria de tres imputados, luego de lo cual se pasó a un cuarto intermedio  hasta el jueves 10, oportunidad en la que darán testimonio los ex detenidos políticos Juan Carlos Goya, actual secretario de DDHH de la provincia,  y el poeta Raúl Junco, ambos sobrevivientes que ya testimoniaron en procesos anteriores. Además el militar Luis Alberto Patetta será trasladado desde Campo de Mayo a Resistencia, con motivo de sus reiteradas intervenciones por sistema de video conferencia, en un intento de agilizar los debates.
+
+## IGLESIAS: UN JUEZ EN LA U7
+
+La resolución por la cual se concedió la prisión domiciliaria a Manader lleva la firma del juez de instrucción Juan Manuel Iglesias, quién se acercó junto con la secretaria de ejecución del tribunal Nadia Sasowsky hasta la prisión U7 durante la tarde del jueves 2 de febrero para tramitar la excarcelación de Manader, en un hecho que llamó la atención por la inédita deferencia de un magistrado para con un interno de la U7. Iglesias  (que integra el tribunal que lleva la causa Caballero II junto con los jueces Eduardo Belforte y Aldo Alurralde) hizo carrera en el Poder Judicial de Corrientes, actuó en las jurisdicciones de de Goya y en Mercedes y fue designado para el juzgado de Concepción del Uruguay, pero como no se conformó ese juzgado fue designado para cubrir la vacante en el TOF de Resistencia. Iglesias concedió la excarcelación a Manader en virtud de un supuesto cuadro de  “hipertensión arterial, hipertrofia prostática y trastornos cognitivos” que no fue constatado por el Cuerpo Médico de la Corte Suprema de la Nación, que luego de realizar un examen a Manader  dictaminó: “Se encuentra compensado, sin signos de patologías agudas en evolución, es portador de dislipemia, patología hipertensiva de grado leve y compensada con medicación” y que "la medida privatoria de su libertad en sí misma no debería afectar la evolución de su patología”.No es la primera vez que este juez concede un beneficio a Manader, con anterioridad le concedió un permiso de salida para visitar a su esposa, aquejada por una dolencia que la mantenía “postrada” según alegaron desde la defensa del represor. Esto fue objetado por el Ministerio Público ante la Cámara de Casación, que oportunamente denegó el permiso. Cabe aclarar que el 28 de diciembre pasado la mujer recuperó la salud, y se acercó por sus propios medios al tribunal para notificarse de la resolución de domiciliaria. Desde la fiscalía informaron que apelarán la resolución, pero se descuenta que sólo el trámite puede llevar entre tres y seis meses.
+
+## RECLAMO DE“CÁRCEL COMUN”
+
+Durante la conferencia de repudio Juan Carlos Amarilla, presidente de la Comisión Provincial por la Memoria Chaco afirmó que “Manader cumpliendo condena en la comodidad de su domicilio es una afrenta a las víctimas de sus crímenes y a toda la sociedad, tiene que cumplir condena tras las rejas, de otro modo se tergiversa la Justicia y la Ley”. Dafne Zamudio, de H.I.J.O.S. Chaco  destacó que “el juez Iglesias no tomó en cuenta la resolución de los médicos de la Corte Suprema y sí lo hizo con un informe del Servicio de Asistencia Médica de la U7, formado por integrantes del Sistema Penitenciario Federal, y que no puede equipararse a la par del Cuerpo Médico de la Corte Suprema de la Nación”. Ruben Levrino de la Comisión Permanente de Derechos Humanos advirtió que Iglesias decide beneficiar a Manader en tiempos en los que vuelve la represión a la protesta social y vemos un avance de los mismos grupos civiles que se vieron beneficiados con el golpe de Estado”. Desde los organismos anunciaron que continuarán con el reclamo y que se conformará una mesa de coordinación de convocatoria abierta,  para seguir de cerca los juicios al terrorismo de Estado. 
+
+# CAUSA BRIGADA III /MARTES 13 DE ABRIL
+
+## Con relatos del horror en la Brigada/Alcaidía comenzó la etapa de testimoniales
+
+**En una extensa y por momentos entrecortada- jornada se registraron siete testimonios referentes al dispositivo de secuestros y tortura organizado en torno a la ex Brigada de Investigaciones durante la última dictadura cívico militar. La causa pasó a un cuarto intermedio hasta la mañana de este miércoles, con una lista de ocho testigos.**  
+
+En un escenario atípico raíz de la emergencia sanitaria por coronavirus en la mañana de este martes 13 se desarrolló la segunda jornada del juicio oral denominado causa Brigada / Caballero III por crímenes de lesa humanidad entre los años 1974-1979  a 8 imputados de Ejército, Policía y SPF. Declararon siete personas: Armando Benítez, Escolástica Riveros, Saturnino Ferreyra , Ramón Hanriquez, Eugenio Domínguez Silva, Juan Manuel González y Rolando Azcona, con historias de violencia sufrida a raíz de su militancia política a manos de policías de la Brigada de Investigaciones del Chaco (en su sede por calle Juan B. Justo mayormente) y de personal penitenciario de la Alcaidía policial.
+
+La jornada  que comenzó a las 8 h y se extendió hasta cerca de las 14 – se desarrolló del siguiente modo: en la sala del Tribunal Oral Federal de Resistencia (Hipólito Irigoyen 33 el testigo de turno presencial (en este caso dos de una lista de siete) junto a la licenciada Carolina Fule, psicóloga de la Secretaría de DDHH y Género de Chaco para la contención de testigos sobrevivientes; los magistrados José María Cello y Luciano Lauria del TOF de Santa Fe; el fiscal ad hoc Diego Vigay y el abogado querellante por ya nombrada Secretaría Duilio Ramírez.
+
+Por vía remota, el presidente del Tribunal Rubén Quiñones, del TOF de Formosa, al igual que el resto de las partes; el fiscal Carlos Amad , el defensor oficial Juan Manuel Costilla , el defensor particular Ricardo Osuna , el abogado de la Secretaría de DD HH de la Nación Manuel Brest. Del mismo modo, el grupo de ocho imputados siguió la audiencia desde sus lugares de alojamiento carcelario o como el caso de Gabino Manader y Francisco Álvarez, desde la comodidad de sus domicilios donde cumplen “condena en modalidad hogareña”.  A esta dupla, la más nombrada por los declarantes de la fecha cuando contaban torturas y vejámenes sufridos se suman el teniente primero José Tadeo Betolli, el teniente primero Luis Alberto Pateta, ambos oficiales de Inteligencia del Ejército Argentino; el comisario general Rodríguez Valiente; el sargento José Marín y el suboficial principal Jorge Ibarra todos de la Dirección de Investigaciones de la Policía del Chaco, Francisco Álvarez de la Alcaidía Policial- y el alcalde Pablo Casco, jefe de Guardia de la Cárcel U7.
+
+## ARMANDO BENÍTEZ: “ES BRAVO RECORDAR”
+
+Con menos interferencias que en la víspera, los problemas de conexión, y acoples superponiéndose sobre las declaraciones volvieron a complicar el desarrollo de la audiencia. El primer testigo fue ArmandoBenítez, en modo presencial. “Es bravo recordar de nuevo” comentó. Fue detenido un 16 de octubre de 1974 por un grupo de policías de civil en la vieja estación de ómnibus de Resistencia, en Santa María de Oro y Santiago del Estero, mientras se disponía a viajar hacia Sáenz Peña. Sus captores lo llevaron a un depósito en la terminal y ahí mismo comenzaron con los primeros golpes. “Yo había sido demorado dos veces por hacer pintadas y pegatinas por policías de Investigaciones. De esa época ya lo conocía a Manader y Cardozo, famosos por meter mano”.
+
+Con una trayectoria de exdetenido político a raíz de su paso primero en el peronismo y luego por el Partido Revolucionario de los Trabajadores y de militancia social y de DDHH luego de recobrada la democracia. Comenzó a militar en el peronismo en el año 70 Estudiante secundario, formó una agrupación estudiantil en la escuela industrial, luego de la JP pasó al peronismo de base, y ahí se incorporó al FAS. En un acto denunció al CdO por el tiroteo al comedor estudiantil. En la actualidad integra la Comisión Permanente por los DDHH, una de las organizaciones de derechos humanos que forma parte de la Comisión Provincial por la Memoria Chaco (CPM).  
+Relató que luego de ser detenido la tortura continúo en la Brigada de Investigaciones, en su sede por calle Juan B. Justo. Lo bajaron esposado y lo llevaron a una oficina donde lo desnudaron y sometieron a una golpiza. “(El jefe de Investigaciones Carlos) Thomas se ensañaba, se le ponía la cara colorada, y les mostraba a sus subalternos cómo debían proceder”. Recordó que le preguntaban cantidad de cosas, pero que no les interesaban sus respuestas. “Luego vino lo más feo” afirmó, con la voz ronca por la emoción: “Trajeron a mis dos hermanos menores, a dos primos y a dos tíos. Ahí ya cambió la cosa”. Visiblemente emocionado, hizo una pausa para tomar agua y prosiguió su declaración y una explicación sobre cómo la percepción del tiempo se altera en situaciones límite como las que sufrió: “No recuerdo bien la sucesión cronológica de la golpiza y la tortura. A veces el tiempo parece pasar muy rápido y en otras ocasiones no. Cuando uno espera que lo vengan a buscar para torturarlo a veces el tiempo parece corto y otras no”. El punto culmine de su calvario ocurrió luego de que lo cargaran maniatado y tabicado en una camioneta y lo llevaran lejos, en un viaje de más de media hora según calculó. Lo bajan del vehículo y alcanzó a percibir la brisa propia de la orilla del río, y la quietud de un descampado. “Me pusieron una bolsa de polietileno en la cabeza, me disparaban cerca del oído, querían que les dijera mi nombre de guerra y cosas así, me pasaron picana hasta que me desmayé. Mi cardióloga me dijo que puede haber sido mi primer síncope, luego tuve dos más”.  Cuando despertó tenía la panza muy hinchada y enrojecida, pero “ya ni me dolía relató-; era más el susto, porque parecía que estaba por reventar”.
+
+El 21 de octubre terminó su estadía en la Brigada y fue trasladado a la Alcaidía, un par de días antes eso liberaron a sus hermanos menores de edad. También recordó haber visto el patio de Investigaciones poblado de detenidos, algunos sentados y otros parados y un interrogatorio con un civil, de saco, y un acento “como de porteño o rosarino” que lo amenazó con una picana y le advirtió por sus familiares también detenidos.
+
+Culminó su testimonio con la siguiente declaración: “Agradezco la posibilidad de contar lo que fue esa época. Cuando salí con libertad vigilada había gente que no me quería saludar por miedo.Hoy, de los que me torturaron solamente queda uno con vida. Eso habla de la lentitud de la justicia”.
+
+## MANADER: “HOY TE TOCA”
+
+Los demás testimonios siguieron la misma línea narrativa: detenciones por policías de civil o uniformados pero sin orden judicial, paso por la Brigada de Investigaciones, torturas y privación de las condiciones más elementales; como alimento, higiene, etc. Al momento de denunciar lo ocurrido se topaban con la figura del secretario de juzgado federal Roberto Mazzoni que se negaba a tomar declaraciones y formaba parte del dispositivo de represión.
+
+Escolástica Esperanza, abogada y docente, declaró por vía remota desde Buenos Aires y contó que fue detenida a metros de su casa un 18 de octubre de 1974 Le destrozaron la casa y quisieron obligarla a firmar un acta con falsedades. Ante su negativa a hacerlo terminó en un calabozo en la Brigada, esposada y vendada.“Cuando venía el cabo Sotelo era el terror. Venía y decía: “Che, cuando le vamos a dar máquina?”. Recordó cómo Gabino Manader la golpeaba en la cabeza y le hablaba al oído; “Esta noche te toca, te vamos a violar delante de todos, vos no tenés hijos porque tu marido es un inútil, te vamos a violar delante de él para que aprenda” la amenazaba. De Rodríguez Valiente también recordó golpes y amenazas y que solían preguntarle de modo insistente por Enzo Lauroni, (en la actualidad desaparecido).
+
+En una ocasión en la que consiguió luego de mucho insistir que la dejaran ir al baño pudo ver en el patio a “muchísima gente, era impresionante, estaban tirados en el piso, sucios, con ropa rasgadas, todos vendados”. Entre esa gente vio a su marido sin camisa, con las manos esposadas contra un tronco.
+
+Recuperó la libertad en abril de 1982, pero la presión y la vigilancia persistieron. En ese momento supo que su hermana había sido secuestrada- desaparecida en Buenos Aires durante su cautiverio, y que su familia había sufrido detenciones y hostigamiento.
+
+## “ARSENAL DE LITERATURA MARXISTA”
+
+Saturnino Ferreira, también por vía remota, comentó su convencimiento de haber sido detenido por “una simpatía, una adherencia a una militancia del PRT”. Llevado a la Brigada fue interrogado sin vendas, y recibió una paliza por parte de Cardozo,  Manader y el jefe Carlos Thomas.  “Hasta ese momento yo sabía que estaba allí mi esposa Escolástica Rivero. Jorge Castro y Milagros DEmiryi fueron conmigo a la Brigada” relató. Coincidió en que “nadie ponía límites a los tratos recibidos. Estaba Mazzoni y en presencia de él fuimos golpeados. Evidentemente no había alguien que dijera “paren”.
+
+Eugenio “Yango” Dominguez Silva estuvo detenido durante “3 años 6 meses y 11 días”. Fue condenado con 17 años, y sufrió “mucha violencia, mucha tortura, tengo una rotura de tabique nasal. Hasta hoy en día tengo secuelas”. Nombró a los imputados en el juicio, recordó que hacían sonar un acordeón para tapar los alaridos de los torturados. Además destacó: “La carátula de mi causa decía que me encontraron un “arsenal de literatura” marxista. Esa fue la “mochila” con la que fui condenado. Éramos los leprosos del sistema”.  
+Juan Manuel Gonzáles fue detenido y recibió tortura por corriente eléctrica, golpes secos, en distintas partes del cuerpo. Pudo reconocer entre sus torturados a Ricardo Yedro, vecino de su cuadra, ya fallecido. Consultado por el abogado Duilio Ramírez comentó que Rodríguez Valiente era uno de los que “tenía la voz de mando”.
+
+Ramón Hanríquez fue secuestrado con varios de sus hermanos y hermanas en el interior de Chaco, en su Campo Largo natal. Sufrieron interrogatorios bajo torturas del más variado tipo, en grupo, durante varios días. incomunicados y sin que el resto de sus familiares pudieran saber dónde estaban. Luego fueron trasladados a la Alcaidía. Allí le tocó padecer a Francisco Álvarez quien, junto con los oficiales Ayala, Flores, y Roldán hacían requisas para pegar a detenidos. “Álvarez era quien encabezaba las golpizas, con cachiporras de goma y patadas.
+
+Su testimonio graficó el maltrato como norma en la Alcaidía, sin razón, sin motivo, en un ejercicio institucionalizado de sadismo para la destrucción física y mental de los detenidos. “Y siempre Álvarez encabezando este tipo de acciones. Así era con todos los detenidos, no tenía perdón para nadie”.
+
+El último testigo del día fue Rolando Azcona, detenido por personal de civil y sin orden judicial. Relató que en la Brigada “La acción permanente era lo que popularmente se dice verduguear: no nos dejaban dormir, descansar, Marín se divertía tirando agua caliente de una pava o de un termo, lo que tenía, tiraba por las piernas, tiraba por las manos, no solamente a mí sino con cualquiera”.
+
+“Thomas, Rodríguez Valiente, Marín son los responsables de las torturas que recibí, Manader también. Lo conozco desde hace mucho tiempo porque él tenía su novia cerca de casa”. Además declaró que si bien era militante de la JP, nunca le preguntaron nada referido a su militancia: “ellos querían que identifique a otras personas o que le adjudique hechos que yo no conocía”.

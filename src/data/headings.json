@@ -55,30 +55,51 @@
       "section": "inicio",
       "order": 0,
       "pageType": "landing",
+      "showTitle": false,
       "headings": []
     },
     {
       "slug": "primera-pagina",
-      "title": "Primera página",
+      "title": "Citas",
       "section": "inicio",
       "order": 1,
-      "pageType": "interlude",
+      "pageType": "citations",
+      "showTitle": false,
+      "headings": []
+    },
+    {
+      "slug": "creditos",
+      "title": "Créditos",
+      "section": "inicio",
+      "order": 2,
+      "pageType": "colophon",
+      "showTitle": false,
+      "pending": [
+        "datos de impresión",
+        "ISBN",
+        "licencia copyleft",
+        "ficha de catalogación",
+        "crédito de la fotografía de tapa"
+      ],
       "headings": []
     },
     {
       "slug": "la-memoria-y-la-palabra",
       "title": "La memoria y la palabra: los juicios al genocidio",
       "section": "inicio",
-      "order": 2,
+      "order": 3,
       "pageType": "reader",
+      "showTitle": true,
+      "kicker": "Declaración de los organismos de derechos humanos — CPM Chaco",
       "headings": []
     },
     {
       "slug": "introduccion",
       "title": "Introducción",
       "section": "inicio",
-      "order": 3,
+      "order": 4,
       "pageType": "reader",
+      "showTitle": true,
       "headings": [
         {
           "depth": 2,
@@ -92,8 +113,9 @@
       "slug": "tres-procesos-un-juicio-y-castigo",
       "title": "La Brigada: tres procesos, un juicio y castigo",
       "section": "inicio",
-      "order": 4,
+      "order": 5,
       "pageType": "reader",
+      "showTitle": true,
       "headings": [
         {
           "depth": 2,
@@ -117,7 +139,7 @@
           "depth": 3,
           "text": "CAUSA BRIGADA III (2021)",
           "slug": "causa-brigada-iii-2021",
-          "blocks": 8
+          "blocks": 5
         }
       ]
     },
@@ -125,8 +147,9 @@
       "slug": "en-el-lugar-sin-limites",
       "title": "En el lugar sin límites",
       "section": "una-casa-con-una-sala-negra",
-      "order": 5,
+      "order": 6,
       "pageType": "chapter-opening",
+      "showTitle": true,
       "headings": [
         {
           "depth": 3,
@@ -140,8 +163,9 @@
       "slug": "cronicas-una-casa-con-una-sala-negra",
       "title": "Crónicas: una casa con una Sala Negra",
       "section": "una-casa-con-una-sala-negra",
-      "order": 6,
+      "order": 7,
       "pageType": "reader",
+      "showTitle": true,
       "headings": [
         {
           "depth": 1,
@@ -731,8 +755,9 @@
       "slug": "chachi",
       "title": "Chachi",
       "section": "una-casa-con-una-sala-negra",
-      "order": 7,
+      "order": 8,
       "pageType": "interlude",
+      "showTitle": false,
       "headings": [
         {
           "depth": 1,
@@ -746,16 +771,18 @@
       "slug": "de-victimas-a-sobrevivientes",
       "title": "De víctimas a sobrevivientes",
       "section": "violencia-sexual-como-crimen-de-lesa-humanidad",
-      "order": 8,
+      "order": 9,
       "pageType": "chapter-opening",
+      "showTitle": true,
       "headings": []
     },
     {
       "slug": "salud-mental-y-juicio-y-castigo",
       "title": "Salud mental y juicio y castigo",
       "section": "violencia-sexual-como-crimen-de-lesa-humanidad",
-      "order": 9,
+      "order": 10,
       "pageType": "reader",
+      "showTitle": true,
       "headings": [
         {
           "depth": 2,
@@ -769,8 +796,9 @@
       "slug": "cronicas-violencia-sexual",
       "title": "Crónicas: la violencia sexual como crimen de lesa humanidad",
       "section": "violencia-sexual-como-crimen-de-lesa-humanidad",
-      "order": 10,
+      "order": 11,
       "pageType": "reader",
+      "showTitle": true,
       "headings": [
         {
           "depth": 1,
@@ -1150,8 +1178,9 @@
       "slug": "desaparecer",
       "title": "Desaparecer",
       "section": "desaparecer-en-la-brigada",
-      "order": 11,
+      "order": 12,
       "pageType": "chapter-opening",
+      "showTitle": true,
       "headings": [
         {
           "depth": 2,
@@ -1171,8 +1200,9 @@
       "slug": "cronicas-desaparecer",
       "title": "Crónicas: desaparecer en la Brigada",
       "section": "desaparecer-en-la-brigada",
-      "order": 12,
+      "order": 13,
       "pageType": "reader",
+      "showTitle": true,
       "headings": [
         {
           "depth": 1,
@@ -1318,24 +1348,27 @@
       "slug": "arganaraz-la-tortura-metafisica",
       "title": "Argañaráz: la tortura metafísica",
       "section": "desaparecer-en-la-brigada",
-      "order": 13,
+      "order": 14,
       "pageType": "interlude",
+      "showTitle": true,
       "headings": []
     },
     {
       "slug": "una-patota-para-la-miseria-planificada",
       "title": "Una patota para la miseria planificada",
       "section": "la-patota-de-la-brigada",
-      "order": 14,
+      "order": 15,
       "pageType": "chapter-opening",
+      "showTitle": true,
       "headings": []
     },
     {
       "slug": "genocidas-al-frente",
       "title": "Genocidas al frente",
       "section": "la-patota-de-la-brigada",
-      "order": 15,
+      "order": 16,
       "pageType": "reader",
+      "showTitle": true,
       "headings": [
         {
           "depth": 2,
@@ -1397,24 +1430,27 @@
       "slug": "carcel-comun",
       "title": "Cárcel común",
       "section": "la-patota-de-la-brigada",
-      "order": 16,
+      "order": 17,
       "pageType": "interlude",
+      "showTitle": true,
       "headings": []
     },
     {
       "slug": "condenados",
       "title": "Condenados",
       "section": "juicio-y-castigo",
-      "order": 17,
+      "order": 18,
       "pageType": "chapter-opening",
+      "showTitle": true,
       "headings": []
     },
     {
       "slug": "alegatos",
       "title": "Alegatos",
       "section": "juicio-y-castigo",
-      "order": 18,
+      "order": 19,
       "pageType": "reader",
+      "showTitle": true,
       "headings": [
         {
           "depth": 2,
@@ -1458,8 +1494,9 @@
       "slug": "las-condenas",
       "title": "Las condenas",
       "section": "juicio-y-castigo",
-      "order": 19,
+      "order": 20,
       "pageType": "reader",
+      "showTitle": true,
       "headings": [
         {
           "depth": 1,
@@ -1611,8 +1648,9 @@
       "slug": "los-fallos",
       "title": "Los fallos: fundamentos de las sentencias",
       "section": "juicio-y-castigo",
-      "order": 20,
+      "order": 21,
       "pageType": "reader",
+      "showTitle": true,
       "headings": [
         {
           "depth": 2,
@@ -1644,16 +1682,18 @@
       "slug": "juicio-y-castigo-ayer-y-hoy",
       "title": "Juicio y castigo a la Brigada: ayer y hoy",
       "section": "juicio-y-castigo",
-      "order": 21,
+      "order": 22,
       "pageType": "reader",
+      "showTitle": true,
       "headings": []
     },
     {
       "slug": "una-casa-con-historia",
       "title": "Una casa con historia",
       "section": "anexo",
-      "order": 22,
+      "order": 23,
       "pageType": "reader",
+      "showTitle": true,
       "headings": [
         {
           "depth": 2,
@@ -1673,8 +1713,9 @@
       "slug": "tribunal-partes-y-penas",
       "title": "Tribunal, partes y penas",
       "section": "anexo",
-      "order": 23,
+      "order": 24,
       "pageType": "reader",
+      "showTitle": true,
       "headings": [
         {
           "depth": 2,

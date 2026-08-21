@@ -10,14 +10,18 @@ interface Props {
   docSlug: string;
   title: string;
   section: string;
+  showTitle?: boolean;
+  kicker?: string;
+  /** `citations` is the epigraph page that opens the book (spec 01, RF-01.2). */
+  variant?: 'interlude' | 'citations';
 }
 
-const { docSlug, title, section } = Astro.props;
+const { docSlug, title, section, showTitle = true, kicker, variant = 'interlude' } = Astro.props;
 const image = documentImage(docSlug);
 const SIZES = '(max-width: 900px) 100vw, 46vw';
 ---
 
-<section class="doc interlude" id={docSlug} data-doc={docSlug} data-section={section} aria-label={title}>
+<section class:list={['doc', 'interlude', variant === 'citations' && 'is-citations']} id={docSlug} data-doc={docSlug} data-section={section} aria-label={title}>
   <div class:list={['interlude-inner', !image && 'is-textonly']}>
     {
       image && (
@@ -48,6 +52,14 @@ const SIZES = '(max-width: 900px) 100vw, 46vw';
     }
 
     <div class="interlude-text">
+      {showTitle && (
+        <header class="doc-head">
+          {kicker && <p class="doc-kicker">{kicker}</p>}
+          <h2 class="doc-title" data-doc-title>
+            <span class="hl">{title}</span>
+          </h2>
+        </header>
+      )}
       <slot />
     </div>
   </div>

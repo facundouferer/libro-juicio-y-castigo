@@ -17,6 +17,7 @@ import JSZip from 'jszip';
 import { renderBook, xml } from './lib/render-book.mjs';
 import { SECTIONS } from './manifest.mjs';
 import { BOOK } from '../src/lib/site.mjs';
+import { ACCENT, ACCENT_BASE, SECTION_STEP, SMALL_TEXT_STEP } from '../src/lib/palette.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const EPUB_IMAGES = path.join(ROOT, 'build', 'epub');
@@ -28,6 +29,19 @@ const OUT = path.join(OUT_DIR, 'juicio-y-castigo-en-el-chaco-vol-2.epub');
  * rebuild look like a different work to a library or a reading system.
  */
 const BOOK_ID = 'urn:uuid:8a1d4f22-6c3b-5e7a-9d10-juicioycastigo2';
+
+/**
+ * Per-section tone. The EPUB gets resolved colours rather than custom
+ * properties: reading systems vary in what they support, and a colour that
+ * silently fails to resolve would take the titling with it. The values still
+ * come from src/lib/palette.mjs, so there is only one definition (RF-07.2).
+ */
+const SECTION_RULES = Object.entries(SECTION_STEP)
+  .map(
+    ([id, step]) => `[data-section="${id}"] h1, [data-section="${id}"] h2, [data-section="${id}"] .part-label,
+[data-section="${id}"] .opening-volanta { color: ${ACCENT[step]}; }`,
+  )
+  .join('\n');
 
 const STYLES = `@charset "utf-8";
 
@@ -58,8 +72,8 @@ h1, h2, h3, h4 {
   break-after: avoid;
   margin: 1.4em 0 0.5em;
 }
-h1 { font-size: 1.5em; color: #145575; margin-top: 0; }
-h2 { font-size: 1.22em; color: #145575; }
+h1 { font-size: 1.5em; color: ${ACCENT[700]}; margin-top: 0; }
+h2 { font-size: 1.22em; color: ${ACCENT[700]}; }
 h3 { font-size: 1.06em; }
 h4 { font-size: 0.98em; }
 
@@ -68,12 +82,12 @@ p { margin: 0 0 0.7em; text-indent: 0; }
 blockquote {
   margin: 1.2em 0 1.2em 1em;
   padding-left: 0.9em;
-  border-left: 3px solid #9fcde3;
+  border-left: 3px solid ${ACCENT[300]};
   font-size: 0.94em;
 }
 blockquote p:last-child { margin-bottom: 0; }
 
-hr { border: 0; height: 2px; background: #9fcde3; width: 30%; margin: 1.8em auto; }
+hr { border: 0; height: 2px; background: ${ACCENT[300]}; width: 30%; margin: 1.8em auto; }
 
 /* Images stay inside the screen no matter how the reader rotates it. The
    spec accepts that photographs are the one thing a phone renders small. */
@@ -98,15 +112,17 @@ figure.figure figcaption {
   hyphens: none;
   -epub-hyphens: none;
 }
-figure.figure figcaption .credit { display: block; font-weight: bold; color: #196b93; }
+figure.figure figcaption .credit { display: block; font-weight: bold; color: ${ACCENT[SMALL_TEXT_STEP]}; }
 
-.cover-page { text-align: left; margin-top: 18%; }
-.cover-page h1 { font-size: 2.1em; line-height: 1.12; color: #1e81b0; }
+.cover-page { text-align: left; margin-top: 6%; }
+.cover-photo { display: block; width: 100%; height: auto; margin-bottom: 1.4em; }
+.cover-page h1 { font-size: 2.1em; line-height: 1.12; color: ${ACCENT_BASE}; }
 .cover-page .sub {
   font-family: sans-serif;
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 1.02em;
+  /* Within 2:1 of the title above (spec 02, RF-02.1). */
+  font-size: 1.15em;
   margin: 0.8em 0 0.2em;
 }
 .cover-page .kicker { font-style: italic; color: #575d63; }
@@ -125,14 +141,93 @@ figure.figure figcaption .credit { display: block; font-weight: bold; color: #19
   text-transform: uppercase;
   font-size: 0.82em;
   letter-spacing: 0.08em;
-  color: #196b93;
+  color: ${ACCENT[SMALL_TEXT_STEP]};
   margin: 0 0 0.3em;
   text-align: left;
 }
-.part-blurb { font-style: italic; color: #575d63; margin-bottom: 1.4em; }
+.opening-volanta {
+  font-family: sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.86em;
+  letter-spacing: 0.08em;
+  color: ${ACCENT[SMALL_TEXT_STEP]};
+  margin: 0 0 0.3em;
+  text-align: left;
+}
+.doc-kicker {
+  font-family: sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 0.08em;
+  color: ${ACCENT[SMALL_TEXT_STEP]};
+  margin: 0 0 0.4em;
+  text-align: left;
+}
+
+/* Footnotes: notes, not body copy (spec 02, RF-02.6). */
+aside.footnotes {
+  margin-top: 2em;
+  padding-top: 0.8em;
+  border-top: 1px solid #d9dcdf;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+aside.footnotes p {
+  font-size: 0.82em;
+  line-height: 1.45;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+  hyphens: none;
+  -epub-hyphens: none;
+  color: #3d4247;
+}
+aside.footnotes .footnotes-title {
+  font-family: sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.78em;
+  letter-spacing: 0.06em;
+  color: ${ACCENT[SMALL_TEXT_STEP]};
+  margin-bottom: 0.4em;
+}
+
+/* ── Separators (spec 05) ───────────────────────────────────────────────────
+   Drawn as rules so they read in greyscale, and as ::before pseudo-elements so
+   nothing is added to the document a reading system has to reflow. */
+
+h1.doc-title::before {
+  content: '';
+  display: block;
+  width: 3em;
+  border-top: 3px solid ${ACCENT[500]};
+  margin-bottom: 0.8em;
+}
+h1:not(.doc-title)::before {
+  content: '';
+  display: block;
+  border-top: 1px solid #d9dcdf;
+  margin-bottom: 0.9em;
+}
+h2::before {
+  content: '';
+  display: block;
+  width: 1.6em;
+  border-top: 2px solid ${ACCENT[300]};
+  margin-bottom: 0.5em;
+}
+
+.part-divider { margin-top: 22%; text-align: left; }
+.part-divider h1 { font-size: 1.9em; color: ${ACCENT[700]}; }
+.part-divider h1::before { content: none; }
 
 nav[epub|type~='toc'] ol { list-style: none; padding-left: 1em; }
 nav[epub|type~='toc'] > ol { padding-left: 0; }
+
+/* One family, several intensities — the movement of the book (spec 07). */
+${SECTION_RULES}
 `;
 
 const xhtml = (title, body, extraStyle = '') => `<?xml version="1.0" encoding="utf-8"?>
@@ -158,6 +253,15 @@ function toXhtml(html) {
     .replace(/&(?!(?:[a-zA-Z][a-zA-Z0-9]*|#\d+|#x[0-9a-fA-F]+);)/g, '&amp;')
     .replace(/ (data-[a-z-]+|role|loading|decoding)="[^"]*"/g, '');
 }
+
+/** What each page type is, in the vocabulary a reading system understands. */
+const EPUB_TYPE = {
+  citations: 'epigraph',
+  colophon: 'copyright-page',
+  'chapter-opening': 'chapter',
+  interlude: 'chapter',
+  reader: 'chapter',
+};
 
 async function main() {
   if (!existsSync(EPUB_IMAGES)) {
@@ -197,6 +301,7 @@ async function main() {
     content: xhtml(
       `${BOOK.title} (${BOOK.volume})`,
       `<section class="cover-page" epub:type="titlepage">
+  <img class="cover-photo" src="../images/tapa.jpg" alt="" />
   <h1>${xml(BOOK.title)}<br />${xml(BOOK.volume)}</h1>
   <p class="sub">${xml(BOOK.subtitle)}</p>
   <p class="kicker">${xml(BOOK.kicker)}</p>
@@ -206,17 +311,8 @@ async function main() {
   });
 
   const cover = documents.find((d) => d.data.pageType === 'landing');
-  if (cover?.html) {
-    chapters.push({
-      id: 'contratapa',
-      file: 'text/001-sobre-este-libro.xhtml',
-      title: 'Sobre este libro',
-      depth: 0,
-      content: xhtml('Sobre este libro', `<section><h1>Sobre este libro</h1>${toXhtml(cover.html)}</section>`),
-    });
-  }
 
-  let index = 2;
+  let index = 1;
   let lastSection = null;
 
   for (const doc of documents) {
@@ -225,15 +321,55 @@ async function main() {
     const section = sectionById.get(doc.data.section);
     const parts = [];
 
-    // A part label opens the first document of each movement, so the reader
-    // knows where they are without a separate divider file.
+    // Each part opens with a divider document of its own, so the change of
+    // movement is a page a reader lands on rather than a line above a title
+    // (spec 05, RF-05.3).
     if (doc.data.section !== lastSection && section?.part) {
-      parts.push(`<p class="part-label">${xml(section.part)} — ${xml(section.title)}</p>`);
-      if (section.blurb) parts.push(`<p class="part-blurb">${xml(section.blurb)}</p>`);
+      chapters.push({
+        id: `part${String(index).padStart(3, '0')}`,
+        file: `text/${String(index).padStart(3, '0')}-parte-${section.id}.xhtml`,
+        title: `${section.part} — ${section.title}`,
+        section: doc.data.section,
+        pageType: 'part-divider',
+        depth: 0,
+        content: xhtml(
+          `${section.part} — ${section.title}`,
+          `<section epub:type="part" class="part-divider" data-section="${xml(section.id)}">
+  <p class="part-label">${xml(section.part)}</p>
+  <h1>${xml(section.title)}</h1>
+</section>`,
+        ),
+      });
+      index += 1;
     }
     lastSection = doc.data.section;
 
-    parts.push(`<h1>${xml(doc.data.title)}</h1>`);
+    // The section's name sits above the title as an overline, and its standfirst
+    // no longer prints as page copy (spec 02, RF-02.4 and RF-02.5).
+    if (doc.data.pageType === 'chapter-opening' && section?.title) {
+      parts.push(`<p class="opening-volanta">${xml(section.title)}</p>`);
+    }
+    if (doc.data.kicker) parts.push(`<p class="doc-kicker">${xml(doc.data.kicker)}</p>`);
+    if (doc.data.showTitle !== false) parts.push(`<h1 class="doc-title">${xml(doc.data.title)}</h1>`);
+
+    // A document-wide photograph is bound to the document, not to a heading, so
+    // the anchoring plugin never emits it and the EPUB used to drop it entirely
+    // (spec 04, RF-04.6).
+    if (doc.plate) {
+      const caption = [
+        doc.plate.caption ? xml(doc.plate.caption) : '',
+        doc.plate.credit ? `<span class="credit">${xml(doc.plate.credit)}</span>` : '',
+      ].join('');
+      parts.push(
+        [
+          `<figure class="figure" id="fig-${xml(doc.plate.key)}">`,
+          `<img src="../images/${xml(doc.plate.key)}.jpg" alt="${xml(doc.plate.alt)}" />`,
+          caption ? `<figcaption>${caption}</figcaption>` : '',
+          '</figure>',
+        ].join(''),
+      );
+      usedImages.add(`${doc.plate.key}.jpg`);
+    }
     parts.push(toXhtml(doc.html));
 
     for (const match of doc.html.matchAll(/src="\.\.\/images\/([^"]+)"/g)) usedImages.add(match[1]);
@@ -243,17 +379,39 @@ async function main() {
       file: `text/${String(index).padStart(3, '0')}-${doc.data.docSlug}.xhtml`,
       title: doc.data.title,
       section: doc.data.section,
+      pageType: doc.data.pageType,
       depth: 0,
       headings: doc.headings.filter((h) => h.depth === 2).slice(0, 40),
-      content: xhtml(doc.data.title, `<section epub:type="chapter">\n${parts.join('\n')}\n</section>`),
+      content: xhtml(
+        doc.data.title,
+        `<section epub:type="${EPUB_TYPE[doc.data.pageType] ?? 'chapter'}" data-section="${xml(doc.data.section)}">\n${parts.join('\n')}\n</section>`,
+      ),
     });
     index += 1;
+  }
+
+  // Back-cover copy closes the book instead of opening it (spec 01, RF-01.3).
+  if (cover?.html) {
+    chapters.push({
+      id: 'contratapa',
+      file: `text/${String(index).padStart(3, '0')}-sobre-este-libro.xhtml`,
+      title: 'Sobre este libro',
+      depth: 0,
+      content: xhtml(
+        'Sobre este libro',
+        `<section epub:type="backmatter"><h1>Sobre este libro</h1>${toXhtml(cover.html)}</section>`,
+      ),
+    });
+    for (const match of cover.html.matchAll(/src="\.\.\/images\/([^"]+)"/g)) usedImages.add(match[1]);
   }
 
   for (const chapter of chapters) zip.file(`OEBPS/${chapter.file}`, chapter.content);
 
   // Only the images the book actually anchors are packaged; an unused
   // derivative would be dead weight on a phone.
+  // The cover photograph is referenced by the title page, not by an anchor.
+  usedImages.add('tapa.jpg');
+
   const available = new Set(await readdir(EPUB_IMAGES));
   let imageBytes = 0;
   const packaged = [];
@@ -264,6 +422,9 @@ async function main() {
     imageBytes += data.length;
     packaged.push(name);
   }
+
+  /** Front matter ends where the first text of the book begins. */
+  const bodyStart = chapters.find((c) => c.pageType && !['citations', 'colophon'].includes(c.pageType));
 
   // 2 — navigation document (EPUB 3)
   const navItems = chapters
@@ -293,7 +454,7 @@ ${navItems}
 <nav epub:type="landmarks" hidden="hidden">
   <ol>
     <li><a epub:type="titlepage" href="text/000-portada.xhtml">Portada</a></li>
-    <li><a epub:type="bodymatter" href="${chapters[2]?.file ?? chapters[0].file}">Comienzo</a></li>
+    <li><a epub:type="bodymatter" href="${bodyStart?.file ?? chapters[0].file}">Comienzo</a></li>
   </ol>
 </nav>
 </body>
@@ -332,7 +493,10 @@ ${chapters
     '    <item id="css" href="styles/book.css" media-type="text/css" />',
     ...chapters.map((c) => `    <item id="${c.id}" href="${c.file}" media-type="application/xhtml+xml" />`),
     ...packaged.map(
-      (name, i) => `    <item id="img${String(i).padStart(3, '0')}" href="images/${name}" media-type="image/jpeg" />`,
+      (name, i) =>
+        `    <item id="img${String(i).padStart(3, '0')}" href="images/${name}" media-type="image/jpeg"${
+          name === 'tapa.jpg' ? ' properties="cover-image"' : ''
+        } />`,
     ),
   ].join('\n');
 

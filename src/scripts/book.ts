@@ -100,6 +100,9 @@ function buildPlates() {
     let pendingHeading: HTMLElement | null = null;
 
     for (const node of nodes) {
+      // The document's own title names the text; it owns no photograph and must
+      // not clear the plate the base figure is resting on (spec 02, RF-02.2).
+      if (node.hasAttribute('data-doc-title')) continue;
       if (node.classList.contains('figure')) {
         if (node.hasAttribute('data-doc-default')) continue;
         // The first figure after a heading is pulled back onto the heading.

@@ -138,6 +138,17 @@ export function rehypeAnchorImages(options = {}) {
       const figures = keys.map((key) => buildFigure(key, id)).filter(Boolean);
       if (!figures.length) return;
 
+      // On paper the reading is continuous and a photograph dropped between two
+      // paragraphs breaks it. So the printed editions place a heading's images
+      // at the end of its span — a change of heading, which is a boundary the
+      // reader has already stopped at — instead of spreading them through the
+      // prose (spec 03, RF-03.1). On screen the spreading is the whole point:
+      // the plate advances as the reader scrolls.
+      if (target !== 'web') {
+        siblings.splice(end, 0, ...figures);
+        return;
+      }
+
       // With no room to breathe, the images sit directly under the heading.
       if (slots.length < 2) {
         siblings.splice(index + 1, 0, ...figures);
@@ -211,10 +222,22 @@ export function rehypeAnchorImages(options = {}) {
             )
           : picture;
 
+      // On paper a figure is either a full page or at most half of one; there is
+      // no third size (spec 03, RF-03.2). A tall, print-quality scan earns the
+      // page; everything else — landscape, or softened by its resolution —
+      // takes the half.
+      const printFormat =
+        (entry.orientation ?? 'landscape') === 'portrait' && quality === 'full' ? 'plate-full' : 'plate-half';
+
       const figure = el(
         'figure',
         {
-          className: ['figure', `q-${quality}`, entry.orientation ?? 'landscape'],
+          className: [
+            'figure',
+            `q-${quality}`,
+            entry.orientation ?? 'landscape',
+            ...(target === 'print' ? [printFormat] : []),
+          ],
           id: `fig-${key}`,
           dataAnchor: anchorId,
           dataKey: key,

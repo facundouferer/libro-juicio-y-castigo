@@ -1,0 +1,22 @@
+---
+/**
+ * The credits page: title, imprint and the notice about where the images come
+ * from. It closes the book on screen and sits on the reverse of the citations
+ * page in print (spec 01, RF-01.4).
+ *
+ * Deliberately quiet — small type, ranged left, no photograph.
+ */
+interface Props {
+  docSlug: string;
+  title: string;
+  section: string;
+}
+
+const { docSlug, title, section } = Astro.props;
+---
+
+<section class="doc colophon-page" id={docSlug} data-doc={docSlug} data-section={section} aria-label={title}>
+  <div class="colophon-page-inner">
+    <slot />
+  </div>
+</section>
