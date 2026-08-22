@@ -1,59 +1,31 @@
 ---
 /**
- * A section title page: photograph across the top under a soft curved edge,
- * then the part number, the section's name as an overline and the opening
- * text's own title on the ground below. The opening essay runs under it at
- * reading width.
+ * The text that opens a part.
  *
- * The hierarchy is deliberate (spec 02, RF-02.4): reading "Una casa con una
- * Sala Negra" as the dominant title made the essay beneath it look untitled.
- * The section names the part; the title names the text.
- *
- * In the PDF this splits in two — image on the first page, text on the second —
- * as the spec asks; on screen it is one full-height view.
+ * It used to share a page with the name of its section, which sat above it as
+ * an overline. That arrangement gave the section no cover of its own and made
+ * the essay look like the section (specs-v12, spec 03). The section now has
+ * `PartCover.astro`; what is left here is an ordinary text with its own title,
+ * set wide because these five essays are short and carry the register of the
+ * part they open.
  */
-import { documentImage, SECTIONS } from '../lib/book.mjs';
 
 interface Props {
   docSlug: string;
   title: string;
   section: string;
+  byline?: string;
 }
 
-const { docSlug, title, section } = Astro.props;
-const meta = SECTIONS.find((s) => s.id === section);
-const image = documentImage(docSlug);
-const SIZES = '100vw';
+const { docSlug, title, section, byline } = Astro.props;
 ---
 
-<section class="doc opening" id={docSlug} data-doc={docSlug} data-section={section}>
-  {
-    image && (
-      <figure class="opening-plate">
-        <picture>
-          <source type="image/avif" srcset={image.src.avif} sizes={SIZES} />
-          <source type="image/webp" srcset={image.src.webp} sizes={SIZES} />
-          <img
-            class="washed"
-            src={image.src.fallback}
-            alt={image.alt}
-            role={image.alt ? undefined : 'presentation'}
-            width={image.src.width}
-            height={image.src.height}
-            loading="lazy"
-            decoding="async"
-          />
-        </picture>
-      </figure>
-    )
-  }
-
+<section class="doc opening is-text" id={docSlug} data-doc={docSlug} data-section={section}>
   <div class="opening-body">
-    {meta?.partNumber && <p class="opening-num">{String(meta.partNumber).padStart(2, '0')}</p>}
-    {meta?.title && <p class="opening-volanta">{meta.title}</p>}
     <h2 class="opening-title" data-pagefind-meta={`title:${title}`}>
       <span class="hl">{title}</span>
     </h2>
+    {byline && <p class="doc-byline">{byline}</p>}
     <div class="opening-prose">
       <slot />
     </div>

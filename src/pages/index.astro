@@ -13,6 +13,7 @@ import Controls from '../components/Controls.astro';
 import ScrollHint from '../components/ScrollHint.astro';
 import Landing from '../components/Landing.astro';
 import ChapterOpening from '../components/ChapterOpening.astro';
+import PartCover from '../components/PartCover.astro';
 import SplitReader from '../components/SplitReader.astro';
 import Interlude from '../components/Interlude.astro';
 import Colophon from '../components/Colophon.astro';
@@ -21,6 +22,7 @@ import DownloadModal from '../components/DownloadModal.astro';
 import ZoomModal from '../components/ZoomModal.astro';
 import BookFooter from '../components/BookFooter.astro';
 import { BOOK } from '../lib/site.mjs';
+import { SECTIONS } from '../lib/book.mjs';
 
 const entries = (await getCollection('book')).sort((a, b) => a.data.order - b.data.order);
 
@@ -30,6 +32,25 @@ const rendered = await Promise.all(
 
 /** The cover's body is the back-cover text; it closes the book (spec 01, RF-01.3). */
 const cover = rendered.find(({ entry }) => entry.data.pageType === 'landing');
+
+/**
+ * Where each part's cover goes, and which photograph it carries.
+ *
+ * A part's cover comes immediately before its first document; the photograph is
+ * the one the mapping anchored to the part's opening text, which is where it
+ * used to be squashed above the title (specs-v12, spec 03).
+ */
+const partCovers = new Map();
+const seenSection = new Set();
+for (const { entry } of rendered) {
+  const section = SECTIONS.find((s) => s.id === entry.data.section);
+  if (!section?.part || seenSection.has(section.id)) continue;
+  seenSection.add(section.id);
+  const opening = rendered.find(
+    ({ entry: e }) => e.data.section === section.id && e.data.pageType === 'chapter-opening',
+  );
+  partCovers.set(entry.data.docSlug, { section: section.id, openingSlug: opening?.entry.data.docSlug });
+}
 ---
 
 <Base title={`${BOOK.title} (${BOOK.volume}) — ${BOOK.subtitle}`} isBook>
@@ -45,7 +66,9 @@ const cover = rendered.find(({ entry }) => entry.data.pageType === 'landing');
           section: entry.data.section,
           showTitle: entry.data.showTitle,
           kicker: entry.data.kicker,
+          byline: entry.data.byline,
         };
+        const partCover = partCovers.get(entry.data.docSlug);
 
         // The cover carries no prose any more: its body is contratapa copy and
         // is rendered at the foot of the book instead (spec 01, RF-01.3).
@@ -65,24 +88,29 @@ const cover = rendered.find(({ entry }) => entry.data.pageType === 'landing');
             </Interlude>
           );
         }
-        if (entry.data.pageType === 'chapter-opening') {
-          return (
+        const body =
+          entry.data.pageType === 'chapter-opening' ? (
             <ChapterOpening {...props}>
               <Content />
             </ChapterOpening>
-          );
-        }
-        if (entry.data.pageType === 'interlude') {
-          return (
+          ) : entry.data.pageType === 'interlude' ? (
             <Interlude {...props}>
               <Content />
             </Interlude>
+          ) : (
+            <SplitReader {...props}>
+              <Content />
+            </SplitReader>
           );
-        }
-        return (
-          <SplitReader {...props}>
-            <Content />
-          </SplitReader>
+
+        // Each part opens with a cover of its own (specs-v12, spec 03, RF-03.1).
+        return partCover ? (
+          <>
+            <PartCover section={partCover.section} openingSlug={partCover.openingSlug} />
+            {body}
+          </>
+        ) : (
+          body
         );
       })
     }

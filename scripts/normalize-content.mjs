@@ -22,6 +22,7 @@ import { existsSync } from 'node:fs';
 import path from 'node:path';
 import Slugger from 'github-slugger';
 import { ENTRIES, SECTIONS } from './manifest.mjs';
+import { isVolanta } from '../src/lib/cronicas.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const SRC = path.join(ROOT, 'source', 'content-original');
@@ -100,6 +101,50 @@ function markFootnotes(body) {
   return [...lines.slice(0, start), block, ...lines.slice(end)].join('\n');
 }
 
+/** The little inline markdown a signature block uses, and nothing else. */
+function inlineMarkdown(text) {
+  return escapeHtml(text)
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    .replace(/(^|[^*])\*([^*]+)\*/g, '$1<em>$2</em>');
+}
+
+/**
+ * Moves a text's signature out of the body.
+ *
+ * Both texts of the front matter signed themselves at the foot, so a reader
+ * only learned whose voice it was after finishing. The signature now opens the
+ * text as a `byline` declared in the manifest; what stays at the foot is what
+ * is information rather than signature — the roll of organisations, the date —
+ * set as a note and never repeating the name (specs-v12, spec 02, RF-02.4).
+ */
+function moveSignoff(body, signoff) {
+  if (!signoff) return body;
+
+  let lines = body.split('\n');
+  for (const drop of signoff.drop ?? []) {
+    const at = lines.findIndex((line) => line.trim() === drop.trim());
+    if (at === -1) throw new Error(`La firma ya no coincide: ${drop.slice(0, 48)}…`);
+    lines.splice(at, 1);
+  }
+
+  const start = lines.findIndex((line) => line.trim().startsWith(signoff.start.trim()));
+  if (start === -1) throw new Error(`No encuentro el pie de firma: ${signoff.start.slice(0, 48)}…`);
+
+  const tail = lines
+    .slice(start)
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  const block = [
+    '<aside class="signoff">',
+    ...(signoff.lead ? [`<p class="signoff-lead">${inlineMarkdown(signoff.lead)}</p>`] : []),
+    ...tail.map((line) => `<p>${inlineMarkdown(line)}</p>`),
+    '</aside>',
+  ].join('\n');
+
+  return [...lines.slice(0, start), block].join('\n').replace(/\n{3,}/g, '\n\n').trim();
+}
+
 /** Removes the first `count` heading lines, plus the blank lines they leave. */
 function stripLeadingHeadings(lines, count) {
   if (!count) return lines;
@@ -149,7 +194,10 @@ for (const [index, entry] of ENTRIES.entries()) {
   let lines = raw.replace(/\r\n/g, '\n').split('\n').map(cleanHeading);
   lines = stripLeadingHeadings(lines, entry.strip);
 
-  const body = markFootnotes(lines.join('\n').replace(/\n{3,}/g, '\n\n').trim());
+  const body = moveSignoff(
+    markFootnotes(lines.join('\n').replace(/\n{3,}/g, '\n\n').trim()),
+    entry.signoff,
+  );
 
   // Anchor ids must be unique per rendered page, so the slugger resets per file
   // exactly the way Astro's does.
@@ -158,6 +206,8 @@ for (const [index, entry] of ENTRIES.entries()) {
   let inFence = false;
   let current = null;
   let inBlock = false;
+  /** Whether the previous non-blank line was a heading — see the role below. */
+  let lastWasHeading = false;
 
   for (const line of body.split('\n')) {
     if (/^\s*```/.test(line)) inFence = !inFence;
@@ -170,9 +220,22 @@ for (const [index, entry] of ENTRIES.entries()) {
       // the next one. The image map reads it as capacity: a heading carrying
       // twenty paragraphs can hold a sequence of photographs, one carrying two
       // cannot.
-      current = { depth: match[1].length, text, slug: slugger.slug(text), blocks: 0 };
+      const depth = match[1].length;
+      const slug = slugger.slug(text);
+      // A volanta is not a title: it introduces one. Marking the role here is
+      // what lets the contents panel, the PDF outline and the EPUB navigation
+      // list headlines instead of 34 lines reading «CAUSA BRIGADA I …»
+      // (specs-v12, spec 04, RF-04.5).
+      const volanta = isVolanta(depth, text, slug);
+      current = { depth, text, slug, blocks: 0, ...(volanta ? { role: 'volanta' } : {}) };
+      // The headline is the h2 immediately after a volanta — nothing but the
+      // heading line itself may come between them.
+      if (depth === 2 && headings.at(-1)?.role === 'volanta' && lastWasHeading) {
+        current.role = 'title';
+      }
       headings.push(current);
       inBlock = false;
+      lastWasHeading = true;
       continue;
     }
 
@@ -181,6 +244,7 @@ for (const [index, entry] of ENTRIES.entries()) {
       inBlock = false;
     } else if (!inBlock) {
       inBlock = true;
+      lastWasHeading = false;
       if (current) current.blocks += 1;
     }
   }
@@ -199,6 +263,7 @@ for (const [index, entry] of ENTRIES.entries()) {
     pageType: entry.pageType,
     showTitle: entry.showTitle !== false,
     ...(entry.kicker ? { kicker: entry.kicker } : {}),
+    ...(entry.byline ? { byline: entry.byline } : {}),
     ...(entry.pending?.length ? { pending: entry.pending } : {}),
     headings,
   });
@@ -212,6 +277,7 @@ for (const [index, entry] of ENTRIES.entries()) {
     `pageType: ${escapeYaml(entry.pageType)}`,
     ...(entry.showTitle === false ? ['showTitle: false'] : []),
     ...(entry.kicker ? [`kicker: ${escapeYaml(entry.kicker)}`] : []),
+    ...(entry.byline ? [`byline: ${escapeYaml(entry.byline)}`] : []),
     `words: ${words}`,
     `sourceFile: ${escapeYaml(entry.source)}`,
     '---',

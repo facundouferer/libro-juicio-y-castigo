@@ -4,11 +4,9 @@ docSlug: "en-el-lugar-sin-limites"
 order: 6
 section: "una-casa-con-una-sala-negra"
 pageType: "chapter-opening"
-words: 310
+words: 304
 sourceFile: "section01-una-casa-con-una-sala-negra/04. EN EL LUGAR SIN LÍMITES.md"
 ---
-### EN EL LUGAR SIN LÍMITES
-
 Al comienzo no supo dónde estaba. Lo habían ingresado tabicado con una capucha y esposado y después de que la violencia se incrementara hasta la crueldad extrema de los gritos, de los golpes y de las sacudidas eléctricas, lo habían dejado tirado en un rincón. En la oscuridad y en la incertidumbre, acompañado nada más que por su propio silencio bajo amenaza y por los ecos de alaridos lejanos, de otros como él, pero que no estaban ahí con él.
 Él era el único habitante de una zona alternativa de la realidad que había sido su vida mundana hasta ese momento, al margen de la ley y del más mínimo atisbo de clemencia ante la condición humana o la naturaleza de lo que vive y siente. Años después una sobreviviente diría que ese lugar era  **“el lugar sin límites”**.La **Sala Negra**: un mundo en el sótano de la realidad y desaparecido del tiempo.
 

@@ -36,8 +36,10 @@ body {
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
-  orphans: 3;
-  widows: 3;
+  /* Four, not three: a page that carried a single line was one of the defects
+     the third editorial pass reported (specs-v12, spec 05, RF-05.4). */
+  orphans: 4;
+  widows: 4;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -53,10 +55,41 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 2.4mm;
 }
 /* Titles take the depth of the section they belong to (spec 07, RF-07.3). */
-h1 { font-size: 17pt; margin-top: 9mm; color: var(--section-accent); }
-h2 { font-size: 13pt; margin-top: 7mm; color: var(--section-accent); }
+h1 { font-size: 16pt; margin-top: 9mm; color: var(--section-accent); }
+h2 { font-size: 12pt; margin-top: 7mm; color: var(--section-accent); }
 h3 { font-size: 11pt; margin-top: 5.5mm; }
 h4 { font-size: 9.8pt; margin-top: 4.5mm; }
+
+/* ── The opening of a chronicle ─────────────────────────────────────────────
+   The manuscript writes the volanta as an `h1` and the headline as an `h2`, so
+   taking the size from the level set the volanta a third larger than the title
+   it introduces. The size now comes from the role: 19 pt against 9 pt, a ratio
+   of 2.1 (specs-v12, spec 04, RF-04.4). */
+
+.cronica-head {
+  display: block;
+  margin: 0 0 5mm;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+.cronica-volanta {
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+  font-weight: 600;
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-align: left;
+  hyphens: none;
+  color: var(--small-text-accent);
+  margin: 0 0 1.8mm;
+}
+.cronica-head .cronica-title {
+  font-size: 19pt;
+  line-height: 1.08;
+  margin: 0;
+  color: var(--section-accent);
+}
 
 p { margin: 0 0 2.6mm; }
 strong { font-weight: 700; }
@@ -99,41 +132,76 @@ figure.figure {
   text-align: center;
 }
 
-/* Two formats and no third (spec 03, RF-03.2). A full-page plate takes the
-   whole content box and the text resumes overleaf; a half-page figure claims at
-   most half of it, so a page always carries reading as well as looking. */
-figure.figure.plate-full {
-  break-before: page;
-  page-break-before: always;
-  break-after: page;
-  page-break-after: always;
-  height: var(--page-content-height);
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-figure.figure.plate-full img {
-  max-height: 160mm;
-}
-figure.figure.plate-half img {
-  max-height: 84mm;
-}
+/* Three containers and no fourth (specs-v12, spec 07, RF-07.1).
+
+     box-full        the whole width of the text box. Press photographs, group
+                     shots, the courtroom, the plaza. The dominant format.
+     box-two-thirds  two thirds, centred, nothing alongside. Portraits,
+                     drawings, file photographs.
+     box-page        the whole page: section covers and the plans of the house.
+
+   What this replaces read an aspect ratio where it should have read an
+   editorial decision, and sent about a third of the book to a page of its own. */
 
 figure.figure img {
   display: block;
   margin: 0 auto;
   max-width: 100%;
-  max-height: 84mm;
   object-fit: contain;
 }
-/* The quality ceilings still apply inside the chosen format: the eight scans
+
+figure.figure.box-full { width: 100%; }
+figure.figure.box-full img { width: 100%; max-height: 105mm; }
+/* «El epígrafe alineado abajo a la derecha en cuerpo menor» (RF-07.5). */
+figure.figure.box-full figcaption { text-align: right; }
+
+figure.figure.box-two-thirds { width: 66%; margin-left: auto; margin-right: auto; }
+figure.figure.box-two-thirds img { max-height: 96mm; }
+
+figure.figure.box-page {
+  break-before: page;
+  page-break-before: always;
+  break-after: page;
+  page-break-after: always;
+  height: var(--page-content-height);
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+figure.figure.box-page img { max-height: 160mm; }
+
+/* The quality ceilings still apply inside the chosen container: the eight scans
    below 200 dpi at A5 stay small, where their softness reads as a small
    archival print rather than as a fault. */
 figure.figure.q-reduced img { max-height: 78mm; }
 figure.figure.q-low img { max-height: 62mm; }
-figure.figure.plate-full.q-reduced img { max-height: 120mm; }
-figure.figure.plate-full.q-low img { max-height: 96mm; }
+figure.figure.box-page.q-reduced img { max-height: 120mm; }
+figure.figure.box-page.q-low img { max-height: 96mm; }
+
+/* ── The tail of a chronicle ────────────────────────────────────────────────
+   Every photograph a chronicle owns comes out here, after its last paragraph
+   and before the next chronicle begins (spec 06, RF-06.1). Because each
+   chronicle opens on a recto, that is the space the text leaves at the foot of
+   its last page — which is where the editorial pass asked for it. */
+
+.tail-figures {
+  margin-top: 6mm;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.tail-figures > figure.figure:first-child { margin-top: 0; }
+.tail-figures > figure.figure.box-page:first-child { margin-top: 0; break-before: auto; page-break-before: auto; }
+
+/* A drawing has no background; a photograph is a filled rectangle. Stacked
+   together they make the noise the editorial pass described, so a drawing that
+   would sit against a photograph takes the next page instead (RF-07.6). */
+.tail-figures > figure.figure.is-drawing + figure.figure:not(.is-drawing),
+.tail-figures > figure.figure:not(.is-drawing) + figure.figure.is-drawing {
+  break-before: page;
+  page-break-before: always;
+}
 
 figure.figure figcaption {
   break-before: avoid;
@@ -163,36 +231,31 @@ figure.figure figcaption .credit {
   flex-direction: column;
   text-align: left;
 }
-/* The building itself, on the front of the book about it (spec 06, RF-06.3). */
-.page-title-photo {
-  margin: 0 0 8mm;
-  max-height: 92mm;
-  overflow: hidden;
-}
-.page-title-photo img {
-  display: block;
-  width: 100%;
-  max-height: 92mm;
-  object-fit: cover;
-  object-position: top;
-}
+/* No photograph on the half title (specs-v12, spec 01, RF-01.1): it took more
+   than half the page from the type that has to carry it, and this page is not
+   the cover. The block sits in the upper third and the mark closes it below. */
+.page-title-block { margin-top: 22mm; }
 
 .page-title h1 {
-  /* Held within 2:1 of the subtitle below (spec 02, RF-02.1). */
-  font-size: 26pt;
-  line-height: 1.14;
-  margin: 0 0 6mm;
+  /* 32 pt against the 20 pt below: 1.6:1, the range RF-01.2 fixes. */
+  font-size: 32pt;
+  line-height: 1.1;
+  margin: 0 0 7mm;
   color: var(--color-accent);
 }
 .page-title .sub {
   font-family: 'Oswald', sans-serif;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 15pt;
-  letter-spacing: 0.04em;
-  margin: 0 0 2mm;
+  /* «Causa Brigada I, II, III» is what says what the volume is about; at 15 pt
+     it read as a footnote to the title instead of as its second half. */
+  font-size: 20pt;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  margin: 0 0 4mm;
+  color: var(--color-accent-700);
 }
-.page-title .kicker { font-style: italic; font-size: 10pt; color: #575d63; }
+.page-title .kicker { font-style: italic; font-size: 11pt; color: #575d63; }
 /* The publisher's mark closes the half title, at the foot (RF-01.1). */
 .page-title-logo {
   margin-top: auto;
@@ -279,72 +342,80 @@ figure.figure figcaption .credit {
 .toc-list .toc-doc { padding-left: 3mm; }
 .toc-list .toc-h2 { padding-left: 7mm; color: #575d63; font-size: 8.2pt; }
 
-/* ── Chapter openings ───────────────────────────────────────────────────────
-   The spec is explicit: in the PDF the photograph takes the first page and the
-   text the second. */
+/* ── Section covers ─────────────────────────────────────────────────────────
+   Each part opens with a page of its own (specs-v12, spec 03, RF-03.1). What
+   this replaces put the name of the section as a 10 pt overline above the 22 pt
+   title of its first text, so the section had no threshold at all and the text
+   looked like the section. Now they are two pages: the section on the recto,
+   its photograph on the verso, the text overleaf with its own title. */
 
-.chapter {
+.page-part {
   break-before: page;
   page-break-before: always;
-}
-.chapter-image {
-  height: 96mm;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 0 8mm;
-}
-.chapter-image img {
-  max-width: 100%;
-  max-height: 96mm;
-  object-fit: contain;
-}
-
-/* The part's title page, then its text overleaf-but-one, then any plate the
-   mapping anchored inside it (spec 03, RF-03.7). */
-.chapter-title-block {
-  height: var(--page-content-height);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   break-after: page;
   page-break-after: always;
-}
-.chapter-text {
-  break-before: page;
-  page-break-before: always;
-}
-.chapter-plate {
-  break-before: page;
-  page-break-before: always;
   height: var(--page-content-height);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: left;
 }
-.chapter-plate .plate-solo { margin: 0; }
-.chapter-plate .plate-solo img { max-height: 158mm; }
-.chapter-title-block { text-align: left; }
-
-.chapter-num {
+.part-num {
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
-  font-size: 40pt;
+  font-size: 44pt;
   line-height: 1;
   color: var(--color-accent-200);
-  margin: 0 0 3mm;
+  margin: 0 0 4mm;
 }
-.chapter-volanta {
+.part-label {
   font-family: 'Oswald', sans-serif;
   font-weight: 600;
   text-transform: uppercase;
   font-size: 10pt;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--small-text-accent);
-  margin: 0 0 2.4mm;
+  margin: 0 0 3mm;
   text-align: left;
 }
-.chapter-title-block h1 { margin-top: 0; font-size: 22pt; line-height: 1.1; margin-bottom: 6mm; }
+/* The title of the section is the largest thing on its page, and nothing on
+   that page competes with it (RF-03.1). */
+.page-part .part-title {
+  margin: 0 0 7mm;
+  font-size: 28pt;
+  line-height: 1.06;
+  color: var(--section-accent);
+}
+.part-blurb {
+  font-size: 9pt;
+  line-height: 1.44;
+  color: #3d4247;
+  max-width: 92mm;
+  text-align: left;
+  hyphens: none;
+  margin: 0;
+}
+
+/* The verso of a section cover: its photograph, whole. It used to be a courtesy
+   blank (RF-03.2). */
+.page-plate {
+  height: var(--page-content-height);
+  break-after: page;
+  page-break-after: always;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.page-plate figure.figure.box-page {
+  break-before: auto;
+  page-break-before: auto;
+  break-after: auto;
+  page-break-after: auto;
+  height: auto;
+}
+
+/* The opening text of a part is now an ordinary text with its own page. */
+.doc.opening { break-before: page; page-break-before: always; }
 
 /* ── Document titles ────────────────────────────────────────────────────────
    The normalizer promotes a document's heading into its frontmatter, and until
@@ -363,6 +434,38 @@ figure.figure figcaption .credit {
   text-align: left;
 }
 .doc-head .doc-title { margin: 0; font-size: 17pt; }
+/* The signature, under the title and before the first paragraph, so the voice
+   is identified from the start (specs-v12, spec 02, RF-02.1). */
+.doc-byline {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 8.4pt;
+  letter-spacing: 0.06em;
+  color: var(--small-text-accent);
+  margin: 2mm 0 0;
+  text-align: left;
+  hyphens: none;
+}
+
+/* What stays at the foot: the roll of organisations, the date. Information,
+   not signature — and never repeating the name that is already at the top. */
+aside.signoff {
+  margin-top: 7mm;
+  padding-top: 3mm;
+  border-top: 0.3mm solid var(--color-accent-300);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+aside.signoff p {
+  margin: 0 0 1.2mm;
+  font-size: 8.4pt;
+  line-height: 1.34;
+  text-align: left;
+  hyphens: none;
+  color: #3d4247;
+}
+aside.signoff .signoff-lead { color: var(--small-text-accent); margin-bottom: 2.4mm; }
 
 /* ── Footnotes ──────────────────────────────────────────────────────────────
    Written in the manuscript as bold italic, which printed them at body size —
@@ -399,6 +502,30 @@ aside.footnotes .footnotes-title {
 /* ── Ordinary documents ─────────────────────────────────────────────────── */
 
 .doc { break-before: page; page-break-before: always; }
+/* Every chronicle is a unit of its own and opens its own page — the parity is
+   arranged by scripts/build-pdf.mjs (specs-v12, spec 05, RF-05.2). */
+.doc.cronica { break-before: page; page-break-before: always; }
+/* A page carrying one line of text is what the editorial pass found on page 36.
+   Holding the last paragraph of a text to what precedes it stops the tail of a
+   chronicle from stranding on a page of its own (RF-05.4). */
+.doc > p:last-of-type { break-before: avoid; page-break-before: avoid; }
+
+/* When that is not enough, the text is set a hair tighter until its tail comes
+   back onto the previous page. Four steps, the largest of them 5 % off the
+   book's leading and six thousandths of an em off its tracking — below what a
+   reader notices inside a single text, and what a designer would do by hand.
+   scripts/build-pdf.mjs measures the block at each step and keeps the first
+   that works; a text that none of them rescues is reported and left alone. */
+.doc.is-tight-1 { line-height: 1.44; }
+.doc.is-tight-2 { line-height: 1.42; }
+.doc.is-tight-3 { line-height: 1.40; letter-spacing: -0.003em; }
+.doc.is-tight-4 { line-height: 1.38; letter-spacing: -0.006em; }
+/* And when tightening cannot recover the tail — a short text has too few pages
+   to gain the lines back — the text is opened up instead, so the last page
+   fills rather than strands. On a two-page text an airier setting reads as a
+   decision, which is what it is. */
+.doc.is-loose-1 { line-height: 1.53; }
+.doc.is-loose-2 { line-height: 1.60; }
 .doc.interlude {
   break-before: page;
   page-break-before: always;
@@ -415,4 +542,4 @@ aside.footnotes .footnotes-title {
 }
 
 /* The stamped page number needs clear space at the foot of every page. */
-.doc, .chapter, .page-toc { padding-bottom: 2mm; }
+.doc, .page-toc { padding-bottom: 2mm; }

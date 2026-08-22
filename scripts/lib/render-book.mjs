@@ -18,6 +18,7 @@ import remarkRehype from 'remark-rehype';
 import rehypeSlug from 'rehype-slug';
 import rehypeStringify from 'rehype-stringify';
 import { rehypeAnchorImages } from '../../src/lib/rehype-anchor-images.mjs';
+import { rehypeCronicaHeads } from '../../src/lib/rehype-cronica-heads.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..', '..');
 const BOOK_DIR = path.join(ROOT, 'src', 'content', 'book');
@@ -71,6 +72,10 @@ export async function renderBook(target) {
       // vfile to read it from out here.
       frontmatterOf: (file) => file.data.frontmatter,
     })
+    // After the anchoring, which needs the plain heading tree: this pass folds
+    // each volanta and its headline into one header and takes the volanta out
+    // of the heading sequence (specs-v12, spec 04).
+    .use(rehypeCronicaHeads)
     .use(rehypeStringify, { allowDangerousHtml: true });
 
   const files = (await readdir(BOOK_DIR)).filter((f) => f.endsWith('.md')).sort();
@@ -86,11 +91,16 @@ export async function renderBook(target) {
 
     // Re-derive the heading list from the rendered HTML so the PDF outline and
     // the EPUB navigation use exactly the ids the anchors point at.
-    const headings = [...html.matchAll(/<h([1-4]) id="([^"]+)"[^>]*>(.*?)<\/h\1>/gs)].map((m) => ({
-      depth: Number(m[1]),
-      id: m[2],
-      text: m[3].replace(/<[^>]+>/g, '').trim(),
-    }));
+    // Attribute order is not guaranteed — `cronica-title` carries its class
+    // first — so the id is matched wherever it sits in the tag.
+    const headings = [...html.matchAll(/<h([1-4])\s([^>]*)>(.*?)<\/h\1>/gs)]
+      .map((m) => ({
+        depth: Number(m[1]),
+        id: /\bid="([^"]+)"/.exec(m[2])?.[1] ?? '',
+        cronica: /\bclass="[^"]*\bcronica-title\b/.test(m[2]),
+        text: m[3].replace(/<[^>]+>/g, '').trim(),
+      }))
+      .filter((h) => h.id);
 
     documents.push({ file, data, html, headings, plate: plates.get(data.docSlug) ?? null });
   }

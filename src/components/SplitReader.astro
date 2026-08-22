@@ -20,9 +20,11 @@ interface Props {
   section: string;
   showTitle?: boolean;
   kicker?: string;
+  /** Signature printed below the title and before the first paragraph. */
+  byline?: string;
 }
 
-const { docSlug, title, section, showTitle = true, kicker } = Astro.props;
+const { docSlug, title, section, showTitle = true, kicker, byline } = Astro.props;
 
 /**
  * A document with no headings of its own can still carry one photograph. It
@@ -59,6 +61,7 @@ const SIZES = '(max-width: 900px) 100vw, 42vw';
           <h1 class="doc-title" data-doc-title>
             <span class="hl">{title}</span>
           </h1>
+          {byline && <p class="doc-byline">{byline}</p>}
         </header>
       )
     }

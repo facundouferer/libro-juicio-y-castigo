@@ -22,6 +22,8 @@ import path from 'node:path';
 import { visit } from 'unist-util-visit';
 import Slugger from 'github-slugger';
 import { sources, altFor } from './images.mjs';
+import { isVolanta } from './cronicas.mjs';
+import { containerFor, isDrawing } from './image-format.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..', '..');
 
@@ -93,16 +95,104 @@ export function rehypeAnchorImages(options = {}) {
       const id = node.properties?.id ?? slug;
       if (!node.properties.id) node.properties.id = id;
 
+      const volanta = isVolanta(node.tagName, headingText, id);
+
       const owned = anchors[id] ?? anchors[slug];
-      if (!owned) return;
-      const keys = (Array.isArray(owned) ? owned : [owned]).filter((k) => !used.has(k));
-      if (!keys.length) return;
+      const keys = owned
+        ? (Array.isArray(owned) ? owned : [owned]).filter((k) => !used.has(k))
+        : [];
       for (const k of keys) used.add(k);
 
-      plan.push({ parent, index, keys, id });
+      // Volantas are recorded even with no images of their own: they are the
+      // boundaries of the chronicles, and the chronicle is the unit the printed
+      // editions anchor to (specs-v12, spec 06, RF-06.1).
+      if (!keys.length && !volanta) return;
+      plan.push({ parent, index, keys, id, volanta });
     });
 
-    for (const step of plan.reverse()) insertSequence(step);
+    // A volanta owns no page of its own: the images the map anchored to it
+    // belong to the chronicle it opens, and emitting them where the volanta
+    // sits would put a photograph between a chronicle's title and its first
+    // paragraph — which is exactly what the editorial pass forbade (RF-06.3).
+    for (let i = 0; i < plan.length; i += 1) {
+      if (!plan[i].volanta || !plan[i].keys.length) continue;
+      const next = plan[i + 1];
+      if (next && next.parent === plan[i].parent) {
+        next.keys = [...plan[i].keys, ...next.keys];
+        plan[i].keys = [];
+      }
+    }
+
+    if (target === 'web') {
+      for (const step of [...plan].reverse()) insertSequence(step);
+    } else {
+      insertByChronicle(plan);
+    }
+
+    /**
+     * On paper the unit is the chronicle, not the heading.
+     *
+     * The previous pass already kept photographs off the middle of a paragraph
+     * run by emitting them at the end of each heading's span. It was not
+     * enough: a heading span is a subsection *inside* a chronicle that is still
+     * running, so for a reader the photograph still interrupted it.
+     *
+     * So every image a chronicle owns is held back and emitted once, after its
+     * last paragraph and before the volanta of the next one. Combined with each
+     * chronicle opening on a recto (spec 05), that puts the images in the space
+     * the text leaves at the foot of the last page — «el texto siempre manda».
+     */
+    function insertByChronicle(steps) {
+      const groups = [];
+      /** Headings that belong to no chronicle — see below. */
+      const loose = [];
+      let current = null;
+
+      for (const step of steps) {
+        if (step.volanta) {
+          current = { parent: step.parent, start: step.index, keys: [], ids: [] };
+          groups.push(current);
+        }
+        if (!step.keys.length) continue;
+
+        // Before the first volanta — or in a document with none at all, like
+        // «Los fallos» or «Alegatos» — there is no chronicle to defer to, so the
+        // heading span stays the unit (RF-06.1, exception).
+        if (!current || current.parent !== step.parent) {
+          loose.push(step);
+          continue;
+        }
+        current.keys.push(...step.keys);
+        current.ids.push(step.id);
+      }
+
+      for (const group of groups.reverse()) {
+        if (!group.keys.length) continue;
+        const siblings = group.parent.children;
+
+        // The chronicle runs to the next volanta, or to the end of the document.
+        let end = siblings.length;
+        for (let i = group.start + 1; i < siblings.length; i += 1) {
+          const node = siblings[i];
+          if (node.type !== 'element' || !/^h1$/.test(node.tagName)) continue;
+          if (isVolanta(node.tagName, textOf(node), node.properties?.id)) {
+            end = i;
+            break;
+          }
+        }
+
+        const figures = group.keys.map((key, i) => buildFigure(key, group.ids[i] ?? group.ids[0])).filter(Boolean);
+        if (!figures.length) continue;
+
+        // Grouped rather than loose, so the printed edition can anchor the lot
+        // to the foot of the page the text left free (RF-06.2).
+        siblings.splice(end, 0, el('div', { className: ['tail-figures'] }, figures));
+      }
+
+      // Last, and backwards, so none of the splices above or below moves an
+      // index another one still depends on.
+      for (const step of loose.reverse()) insertSequence(step);
+    }
 
     /**
      * Places a heading's images through the text that follows it rather than
@@ -222,12 +312,11 @@ export function rehypeAnchorImages(options = {}) {
             )
           : picture;
 
-      // On paper a figure is either a full page or at most half of one; there is
-      // no third size (spec 03, RF-03.2). A tall, print-quality scan earns the
-      // page; everything else — landscape, or softened by its resolution —
-      // takes the half.
-      const printFormat =
-        (entry.orientation ?? 'landscape') === 'portrait' && quality === 'full' ? 'plate-full' : 'plate-half';
+      // Three containers and no fourth (specs-v12, spec 07, RF-07.1). What this
+      // replaces sent every well-scanned vertical photograph to a page of its
+      // own — about a third of the book — because the rule read an aspect ratio
+      // where it should have read an editorial decision.
+      const container = containerFor(key, entry, caption);
 
       const figure = el(
         'figure',
@@ -236,7 +325,10 @@ export function rehypeAnchorImages(options = {}) {
             'figure',
             `q-${quality}`,
             entry.orientation ?? 'landscape',
-            ...(target === 'print' ? [printFormat] : []),
+            container,
+            // A drawing has no background: stacked against a photograph it makes
+            // the noise the editorial pass described (spec 07, RF-07.6).
+            ...(isDrawing(caption) ? ['is-drawing'] : []),
           ],
           id: `fig-${key}`,
           dataAnchor: anchorId,

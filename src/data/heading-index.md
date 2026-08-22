@@ -9,7 +9,12 @@ _Juicio y Castigo en el Chaco (Vol II) — sección "Inicio" — landing — 0 t
 (sin títulos: el texto corre sin subdivisiones)
 
 ## primera-pagina
-_Primera página — sección "Inicio" — interlude — 0 títulos_
+_Citas — sección "Inicio" — citations — 0 títulos_
+
+(sin títulos: el texto corre sin subdivisiones)
+
+## creditos
+_Créditos — sección "Inicio" — colophon — 0 títulos_
 
 (sin títulos: el texto corre sin subdivisiones)
 
@@ -19,7 +24,7 @@ _La memoria y la palabra: los juicios al genocidio — sección "Inicio" — rea
 (sin títulos: el texto corre sin subdivisiones)
 
 ## introduccion
-_Introducción — sección "Inicio" — reader — 1 títulos_
+_Juicio y Castigo en el Chaco Vol II. La Brigada — sección "Inicio" — reader — 1 títulos_
 
 - h2 `juicio-y-castigo-en-el-chaco` — JUICIO Y CASTIGO EN EL CHACO
 
@@ -32,9 +37,9 @@ _La Brigada: tres procesos, un juicio y castigo — sección "Inicio" — reader
 - h3 `causa-brigada-iii-2021` — CAUSA BRIGADA III (2021)
 
 ## en-el-lugar-sin-limites
-_En el lugar sin límites — sección "Una casa con una Sala Negra" — chapter-opening — 1 títulos_
+_En el lugar sin límites — sección "Una casa con una Sala Negra" — chapter-opening — 0 títulos_
 
-- h3 `en-el-lugar-sin-límites` — EN EL LUGAR SIN LÍMITES
+(sin títulos: el texto corre sin subdivisiones)
 
 ## cronicas-una-casa-con-una-sala-negra
 _Crónicas: una casa con una Sala Negra — sección "Una casa con una Sala Negra" — reader — 97 títulos_

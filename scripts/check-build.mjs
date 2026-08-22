@@ -10,8 +10,9 @@
  * the build if any of them is absent.
  */
 
-import { readFile, readdir } from 'node:fs/promises';
+import { readFile, readdir, stat } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { ACCENT_HUE, contrastReport } from '../src/lib/palette.mjs';
 
@@ -111,12 +112,56 @@ for (const item of sequence) {
   else seen.set(item.key, item.where);
 }
 
+/**
+ * Two placed images that are the same file.
+ *
+ * The archive numbered two of the Chachi photographs twice, so both copies were
+ * catalogued, both were placed, and both printed — which is what the third
+ * editorial pass reported. Comparing epigraphs never caught it because the two
+ * entries were worded differently; comparing the bytes cannot miss it
+ * (specs-v12, spec 08, RF-08.6).
+ */
+const fileByKey = new Map(captions.images.map((c) => [c.key, c.file]));
+const digest = new Map();
+const identical = [];
+for (const key of placed) {
+  const name = fileByKey.get(key);
+  if (!name) continue;
+  const file = path.join(ROOT, 'src', 'images', 'content', name);
+  if (!existsSync(file)) continue;
+  const sha = createHash('sha1').update(await readFile(file)).digest('hex');
+  if (digest.has(sha)) identical.push(`${key} y ${digest.get(sha)} son el mismo archivo`);
+  else digest.set(sha, key);
+}
+
+/**
+ * The downloads manifest against the files it describes.
+ *
+ * The previous round shipped a PR whose PDF and EPUB were regenerated and whose
+ * manifest was not, so the download panel advertised the size and the page
+ * count of the edition before (specs-v12, spec 09, RF-09.2).
+ */
+const downloads = JSON.parse(await readFile(path.join(ROOT, 'src', 'data', 'downloads.json'), 'utf8'));
+const stale = [];
+for (const file of downloads.files) {
+  const full = path.join(ROOT, 'public', file.path);
+  if (!existsSync(full)) {
+    if (file.bytes) stale.push(`${file.format}: el manifiesto declara ${file.bytes} bytes y el archivo no existe`);
+    continue;
+  }
+  const size = (await stat(full)).size;
+  if (size !== file.bytes) {
+    stale.push(`${file.format}: el manifiesto declara ${file.bytes} bytes y el archivo pesa ${size}`);
+  }
+}
+
 // Editorial material the book still needs. Not a failure: the structure is in
 // place and the text is the editorial team's to supply (spec 01, RF-01.4).
 const pending = headings.entries.filter((entry) => entry.pending?.length);
 
 console.log(`Referencias a assets verificadas: ${references} (${checked.size} archivos distintos)`);
 console.log(`Imágenes del libro ubicadas: ${placed.size} de ${captions.images.length}`);
+console.log(`Descargas: versión ${downloads.version ?? '(sin declarar)'}${downloads.generated ? ` · ${downloads.generated}` : ''}`);
 if (skipped.size) console.log(`Descartadas por decisión editorial: ${skipped.size}`);
 const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
 console.log(`Secuencia en orden de carpeta: ${regressions.length ? plural(regressions.length, 'salto hacia atrás', 'saltos hacia atrás') : 'sí'}`);
@@ -133,6 +178,19 @@ if (repeated.length) {
   failed = true;
   console.error(`\n${plural(repeated.length, 'Imagen repetida', 'Imágenes repetidas')} (spec 04, RF-04.5):`);
   for (const item of repeated) console.error(`  ${item}`);
+}
+
+if (identical.length) {
+  failed = true;
+  console.error(`\nDos claves distintas apuntan al mismo archivo (specs-v12, spec 08, RF-08.6):`);
+  for (const item of identical) console.error(`  ${item}`);
+}
+
+if (stale.length) {
+  failed = true;
+  console.error(`\nEl manifiesto de descargas no coincide con los archivos (specs-v12, spec 09, RF-09.2):`);
+  for (const item of stale) console.error(`  ${item}`);
+  console.error('  Corré: npm run downloads');
 }
 
 if (missing.size) {

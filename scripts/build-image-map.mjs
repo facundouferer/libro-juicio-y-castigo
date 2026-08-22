@@ -30,6 +30,7 @@
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
@@ -278,7 +279,43 @@ const namesOf = (text) =>
       .filter((w) => w.length > 3 && !NOT_A_PERSON.has(w)),
   );
 
+/**
+ * Files that are the same file.
+ *
+ * Comparing epigraphs found nothing here, because the two copies of each Chachi
+ * photograph were catalogued with different wording — and the archive numbered
+ * them twice. Comparing the bytes finds them without ambiguity, and it is what
+ * the third editorial pass asked for (spec 08, RF-08.3).
+ */
+const digests = new Map();
+for (const image of captions.images) {
+  if (!image.file) continue;
+  const file = path.join(ROOT, 'src', 'images', 'content', image.file);
+  if (!existsSync(file)) continue;
+  const sha = createHash('sha1').update(await readFile(file)).digest('hex');
+  if (!digests.has(sha)) digests.set(sha, []);
+  digests.get(sha).push(image);
+}
+
+const identicalFiles = [...digests.entries()]
+  .filter(([, group]) => group.length > 1)
+  .map(([sha, group]) => ({ sha, group }));
+
 const duplicates = [];
+for (const { sha, group } of identicalFiles) {
+  for (let i = 1; i < group.length; i += 1) {
+    duplicates.push({
+      keys: [group[0].key, group[i].key],
+      why: `archivo idéntico byte a byte (sha1 ${sha.slice(0, 8)}…)`,
+      captions: [group[0].caption, group[i].caption],
+      placed: [
+        placement.find((p) => p.key === group[0].key)?.docSlug ?? '(descartada)',
+        placement.find((p) => p.key === group[i].key)?.docSlug ?? '(descartada)',
+      ],
+    });
+  }
+}
+
 const all = captions.images;
 for (let i = 0; i < all.length; i += 1) {
   for (let j = i + 1; j < all.length; j += 1) {
@@ -298,6 +335,8 @@ for (let i = 0; i < all.length; i += 1) {
     else if (sharedNames.length >= 3) why = `mismas personas nombradas: ${sharedNames.join(', ')}`;
 
     if (!why) continue;
+    // Already reported, and with a stronger reason, by the byte comparison.
+    if (duplicates.some((d) => d.keys.includes(a.key) && d.keys.includes(b.key))) continue;
     duplicates.push({
       keys: [a.key, b.key],
       why,
@@ -316,9 +355,10 @@ await writeFile(
   [
     '# Imágenes candidatas a duplicado',
     '',
-    'Generado por `scripts/build-image-map.mjs`. Cada par de abajo comparte epígrafe,',
-    'vocabulario o las personas que nombra. **Ninguna se descarta automáticamente**: la',
-    'decisión es editorial (spec 04, RF-04.4).',
+    'Generado por `scripts/build-image-map.mjs`. Los primeros pares son archivos',
+    'idénticos byte a byte, catalogados dos veces por el archivo (spec 08, RF-08.3);',
+    'los siguientes comparten epígrafe, vocabulario o las personas que nombra.',
+    '**Ninguna se descarta automáticamente**: la decisión es editorial.',
     '',
     'Para descartar una imagen, agregala a `scripts/image-skip.json` con su motivo. El',
     'archivo de imagen no se borra: sólo se excluye de la colocación.',
@@ -356,6 +396,7 @@ await writeFile(
         regressions: regressions.length,
         needsReview: review.length,
         duplicateCandidates: duplicates.length,
+        identicalFiles: identicalFiles.length,
       },
       sequence: placement.map((p) => p.key),
       skipped: [...skipReason].map(([key, reason]) => ({ key, reason })),
@@ -377,6 +418,7 @@ console.log(`  por afinidad:      ${honoured}`);
 console.log(`  por secuencia:     ${paced}`);
 console.log(`Saltos hacia atrás:  ${regressions.length}`);
 console.log(`Para revisar:        ${review.length}`);
+console.log(`Archivos idénticos:  ${identicalFiles.length}`);
 console.log(`Candidatas a duplicado: ${duplicates.length} → build/revision-duplicados.md`);
 
 if (regressions.length) {

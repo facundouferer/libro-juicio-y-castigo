@@ -1,0 +1,66 @@
+---
+/**
+ * The cover of a part: a threshold between one movement of the book and the
+ * next, and nothing else on it.
+ *
+ * What this replaces was an overline. The name of the section sat at 18 px
+ * above the 60 px title of the section's first text, so a reader arriving at
+ * «Una casa con una Sala Negra» met «En el lugar sin límites» instead and the
+ * section had no threshold at all (specs-v12, spec 03, RF-03.1).
+ *
+ * The section's photograph — the one the mapping anchored to its opening text —
+ * is the ground of this page. In the PDF the same photograph takes the verso
+ * behind this cover.
+ */
+import { documentImage, SECTIONS } from '../lib/book.mjs';
+
+interface Props {
+  /** The section this cover opens. */
+  section: string;
+  /** The opening text of the section, whose photograph becomes the ground. */
+  openingSlug?: string;
+}
+
+const { section, openingSlug } = Astro.props;
+const meta = SECTIONS.find((s) => s.id === section);
+const image = openingSlug ? documentImage(openingSlug) : null;
+const SIZES = '100vw';
+---
+
+<section
+  class="doc opening part-cover"
+  id={`parte-${section}`}
+  data-doc={`parte-${section}`}
+  data-section={section}
+  aria-label={meta?.title}
+>
+  {
+    image && (
+      <figure class="opening-plate">
+        <picture>
+          <source type="image/avif" srcset={image.src.avif} sizes={SIZES} />
+          <source type="image/webp" srcset={image.src.webp} sizes={SIZES} />
+          <img
+            class="washed"
+            src={image.src.fallback}
+            alt={image.alt}
+            role={image.alt ? undefined : 'presentation'}
+            width={image.src.width}
+            height={image.src.height}
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+      </figure>
+    )
+  }
+
+  <div class="opening-body">
+    {meta?.partNumber && <p class="opening-num">{String(meta.partNumber).padStart(2, '0')}</p>}
+    {meta?.part && <p class="part-label">{meta.part}</p>}
+    <h2 class="opening-title" data-pagefind-meta={`title:${meta?.title ?? section}`}>
+      <span class="hl">{meta?.title}</span>
+    </h2>
+    {meta?.blurb && <p class="part-blurb">{meta.blurb}</p>}
+  </div>
+</section>

@@ -4,8 +4,8 @@ docSlug: "la-memoria-y-la-palabra"
 order: 3
 section: "inicio"
 pageType: "reader"
-kicker: "Declaración de los organismos de derechos humanos — CPM Chaco"
-words: 1126
+byline: "Por organismos de DDHH de CPM CHACO"
+words: 1121
 sourceFile: "section00_inicio/01. DOC ORGANISMOS. La memoria y la palabra.md"
 ---
 Somos sobrevivientes del terrorismo de Estado, familiares de personas detenidas desaparecidas a raíz de su compromiso político, y militantes que atravesamos, en distintos momentos y de distintas formas, las consecuencias directas del genocidio. Nuestra palabra se construyó en la experiencia, en la pérdida, en la búsqueda y en una lucha sostenida en el tiempo junto a amplios sectores de la sociedad de la que formamos parte.
@@ -53,8 +53,9 @@ Este volumen gira en torno a una “casa” concreta, situada en un punto precis
   
 Sostener la memoria como política de Estado y como práctica comunitaria implica asumir que el pasado no se hereda ni se archiva: se construye colectivamente, todos los días, en diálogo con el presente. Memoria, verdad y justicia no son consignas cerradas, sino condiciones necesarias para una democracia que aspire a ser algo más que una forma vacía.
 
-Organismos de DDHH integrantes de la **CPM CHACO**  
-**Asociación de Ex Detenidos Políticos de Chaco**  
-**Reg. H.I.J.O.S Chaco en la Red Nacional**  
-**Familiares de Detenidos y Desaparecidos por Razones Políticas**  
-**Comisión Permanente por los DDHH.**
+<aside class="signoff">
+<p><strong>Asociación de Ex Detenidos Políticos de Chaco</strong></p>
+<p><strong>Reg. H.I.J.O.S Chaco en la Red Nacional</strong></p>
+<p><strong>Familiares de Detenidos y Desaparecidos por Razones Políticas</strong></p>
+<p><strong>Comisión Permanente por los DDHH.</strong></p>
+</aside>

@@ -22,6 +22,8 @@ const book = defineCollection({
     showTitle: z.boolean().default(true),
     /** Overline printed above the title, e.g. the institutional attribution. */
     kicker: z.string().optional(),
+    /** Signature printed below the title and before the first paragraph. */
+    byline: z.string().optional(),
     words: z.number().int().nonnegative(),
     sourceFile: z.string(),
   }),
