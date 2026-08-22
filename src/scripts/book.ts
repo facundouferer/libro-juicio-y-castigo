@@ -628,7 +628,7 @@ function setupMemory() {
   function save() {
     const line = window.scrollY + window.innerHeight * READING_LINE;
     let current = '';
-    for (const heading of document.querySelectorAll<HTMLElement>('.prose h1, .prose h2, .prose h3, .prose h4, .doc')) {
+    for (const heading of document.querySelectorAll<HTMLElement>('.prose h1, .prose h2, .prose h3, .prose h4, .prose .cronica-volanta, .doc')) {
       if (heading.getBoundingClientRect().top + window.scrollY > line) break;
       if (heading.id) current = heading.id;
     }

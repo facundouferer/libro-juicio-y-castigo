@@ -21,6 +21,12 @@ const PUBLIC = path.join(ROOT, 'public');
 
 const manifest = JSON.parse(await readFile(DATA, 'utf8'));
 
+// Which edition of the book these files are, so a reader who downloaded an
+// earlier one can tell (specs-v12, spec 09, RF-09.3).
+const pkg = JSON.parse(await readFile(path.join(ROOT, 'package.json'), 'utf8'));
+manifest.version = pkg.version.replace(/\.0$/, '');
+manifest.generated = new Date().toISOString().slice(0, 10);
+
 for (const file of manifest.files) {
   const full = path.join(PUBLIC, file.path);
   if (!existsSync(full)) {

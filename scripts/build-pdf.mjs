@@ -22,6 +22,7 @@ import { chromium } from 'playwright-core';
 import { PDFDocument, StandardFonts, rgb, PDFName, PDFNumber, PDFString, PDFArray, PDFDict } from 'pdf-lib';
 import { renderBook, xml } from './lib/render-book.mjs';
 import { SECTIONS } from './manifest.mjs';
+import { containerFor } from '../src/lib/image-format.mjs';
 import { BOOK } from '../src/lib/site.mjs';
 import { paletteCss } from '../src/lib/palette.mjs';
 
@@ -29,6 +30,14 @@ const ROOT = path.resolve(import.meta.dirname, '..');
 const WORK = path.join(ROOT, 'build', 'pdf');
 const OUT_DIR = path.join(ROOT, 'public', 'descargas');
 const OUT = path.join(OUT_DIR, 'juicio-y-castigo-en-el-chaco-vol-2.pdf');
+
+/** Which edition of the book this is (specs-v12, spec 09, RF-09.3). */
+const VERSION = JSON.parse(
+  await readFile(path.join(ROOT, 'package.json'), 'utf8'),
+).version.replace(/\.0$/, '');
+
+/** Fewest lines of text a page may carry (specs-v12, spec 05, RF-05.4). */
+const MIN_LINES = 5;
 
 /** A5 in PDF points (72 per inch): 148 × 210 mm. */
 const PAGE_W = (148 / 25.4) * 72;
@@ -48,17 +57,38 @@ const fontFace = (family, weight, style, file) => `
  * with no headings carry one; the anchoring plugin never emits it because it is
  * bound to the document, not to a heading (spec 04, RF-04.6).
  */
-function plateFigure(plate) {
+function plateFigure(plate, container) {
   if (!plate) return '';
   const caption = [
     plate.caption ? xml(plate.caption) : '',
     plate.credit ? `<span class="credit">${xml(plate.credit)}</span>` : '',
   ].join('');
+  const box = container ?? containerFor(plate.key, plate, { caption: plate.caption });
   return [
-    `<figure class="figure q-${xml(plate.quality)} ${xml(plate.orientation)}" id="fig-${xml(plate.key)}">`,
+    `<figure class="figure q-${xml(plate.quality)} ${xml(plate.orientation)} ${xml(box)}" id="fig-${xml(plate.key)}">`,
     `<img src="img/${xml(plate.key)}.jpg" alt="${xml(plate.alt)}" width="${plate.width}" height="${plate.height}" />`,
     caption ? `<figcaption>${caption}</figcaption>` : '',
     '</figure>',
+  ].join('');
+}
+
+/** A document's own photograph, at the foot of its text (spec 06, RF-06.3). */
+function tailPlate(plate) {
+  const figure = plateFigure(plate);
+  return figure ? `<div class="tail-figures">${figure}</div>` : '';
+}
+
+/** Title, byline and — for the few that still carry one — overline. */
+function docHead(doc) {
+  if (doc.data.showTitle === false && !doc.data.byline) return '';
+  return [
+    '<header class="doc-head">',
+    doc.data.kicker ? `<p class="doc-kicker">${xml(doc.data.kicker)}</p>` : '',
+    doc.data.showTitle === false ? '' : `<h1 class="doc-title">${xml(doc.data.title)}</h1>`,
+    // Below the title and before the first paragraph, so the voice is
+    // identified from the start (specs-v12, spec 02, RF-02.1).
+    doc.data.byline ? `<p class="doc-byline">${xml(doc.data.byline)}</p>` : '',
+    '</header>',
   ].join('');
 }
 
@@ -99,9 +129,12 @@ async function buildHtml() {
   //   portadilla · citas · créditos (reverso) · índice · primer texto
   // What used to open the book — "Sobre este libro" — is back-cover copy and
   // now closes it (RF-01.3).
+  // No photograph inside: this is the half title, not the cover, and the
+  // photograph took more than half the page from the type that has to carry it
+  // (specs-v12, spec 01, RF-01.1). The cover art is untouched — it is still the
+  // cover of the site and of the EPUB.
   body.push(`
 <section class="page-title" id="portadilla">
-  <figure class="page-title-photo"><img src="img/tapa.jpg" alt="" /></figure>
   <div class="page-title-block">
     <h1>${xml(BOOK.title)}<br />${xml(BOOK.volume)}</h1>
     <p class="sub">${xml(BOOK.subtitle)}</p>
@@ -146,82 +179,133 @@ async function buildHtml() {
     outline.push({ marker: `doc-${doc.data.docSlug}`, title: doc.data.title, depth: 0 });
   }
 
-  /** One entry per document, so each can be paginated on its own below. */
+  /**
+   * One entry per block, so each can be paginated on its own below.
+   *
+   * A block used to be a document. That was the wrong unit: three of the 24
+   * documents hold between four and thirteen chronicles each, and inside a
+   * document nothing controlled where a chronicle fell — which is why the
+   * editorial pass found chronicles starting at the foot of a verso on pages
+   * 47, 49, 79, 89 and 94. The block is now the chronicle (specs-v12, spec 05,
+   * RF-05.1), and every one of them opens on a recto.
+   */
   const blocks = [];
   const frontHtml = body.splice(0).join('\n');
+
+  /** The section cover: a recto that carries the part, and its photograph overleaf. */
+  function partBlock(section, plate) {
+    const cover = [
+      `<section class="page-part" id="parte-${xml(section.id)}" data-section="${xml(section.id)}">`,
+      section.partNumber ? `<p class="part-num">${String(section.partNumber).padStart(2, '0')}</p>` : '',
+      `<p class="part-label">${xml(section.part)}</p>`,
+      `<h1 class="part-title">${xml(section.title)}</h1>`,
+      section.blurb ? `<p class="part-blurb">${xml(section.blurb)}</p>` : '',
+      '</section>',
+    ].join('');
+
+    // The verso is the section's photograph, full page. It used to sit squashed
+    // above the title on the same page, where it competed with it; and the
+    // verso it now occupies used to be a courtesy blank (spec 03, RF-03.2).
+    const verso = plate
+      ? `<section class="page-plate" data-section="${xml(section.id)}">${plateFigure(plate, 'box-page')}</section>`
+      : '<section class="page-blank" aria-hidden="true"></section>';
+
+    return {
+      docSlug: `parte-${section.id}`,
+      title: `${section.part} — ${section.title}`,
+      pageType: 'part',
+      kind: 'part',
+      html: `${cover}\n${verso}`,
+    };
+  }
+
+  let lastPart = null;
 
   for (const doc of bodyDocs) {
     body.length = 0;
     const section = sectionById.get(doc.data.section);
+
+    // Each part opens with a cover of its own, so the section stops being an
+    // overline on top of the title of its first text (spec 03, RF-03.1).
+    if (section?.part && doc.data.section !== lastPart) {
+      const opening = bodyDocs.find(
+        (d) => d.data.section === section.id && d.data.pageType === 'chapter-opening',
+      );
+      outline.push({ marker: `parte-${section.id}`, title: `${section.part} — ${section.title}`, depth: 0 });
+      blocks.push(partBlock(section, opening?.plate ?? null));
+      lastPart = doc.data.section;
+    }
+
     outline.push({ marker: `doc-${doc.data.docSlug}`, title: doc.data.title, depth: 0 });
     for (const heading of doc.headings) {
       if (heading.depth > 2) continue;
       outline.push({ marker: heading.id, title: heading.text, depth: heading.depth });
     }
 
+    const head = docHead(doc);
+
     if (doc.data.pageType === 'chapter-opening') {
-      // The opening of a part is a fixed sequence of pages (spec 03, RF-03.7):
-      //   recto — the part: number, section name, the title of the text
-      //   verso — courtesy blank
-      //   recto — the text, whole and with nothing cutting through it
-      // Any photograph the mapping anchored inside the text is lifted out and
-      // shown as a full-page plate afterwards, so it stays in the sequence
-      // without interrupting the reading (RF-03.1).
-      const plates = [...doc.html.matchAll(/<figure class="figure[\s\S]*?<\/figure>/g)].map((m) => m[0]);
-      const prose = doc.html.replace(/<figure class="figure[\s\S]*?<\/figure>/g, '');
-
-      body.push(`<section class="chapter" id="doc-${xml(doc.data.docSlug)}" data-section="${xml(doc.data.section)}">`);
-
-      body.push('<div class="chapter-title-block">');
-      if (doc.plate) {
-        body.push(`<figure class="chapter-image"><img src="img/${xml(doc.plate.key)}.jpg" alt="" /></figure>`);
-      }
-      if (section?.partNumber) {
-        body.push(`<p class="chapter-num">${String(section.partNumber).padStart(2, '0')}</p>`);
-      }
-      if (section?.title) body.push(`<p class="chapter-volanta">${xml(section.title)}</p>`);
-      body.push(`<h1>${xml(doc.data.title)}</h1>`);
-      body.push('</div>');
-
-      body.push('<section class="page-blank" aria-hidden="true"></section>');
-      body.push(`<div class="chapter-text">${prose}</div>`);
-      for (const plate of plates) {
-        body.push(`<div class="chapter-plate">${plate.replace('class="figure', 'class="plate-solo figure')}</div>`);
-      }
-      body.push('</section>');
+      // The photograph moved to the section cover overleaf, so the opening text
+      // is now simply a text: its own page, its own title, nothing above it.
       blocks.push({
         docSlug: doc.data.docSlug,
         title: doc.data.title,
         pageType: doc.data.pageType,
-        html: body.join('\n'),
+        kind: 'doc',
+        html:
+          `<section class="doc opening" id="doc-${xml(doc.data.docSlug)}" data-section="${xml(doc.data.section)}">` +
+          `${head}${doc.html}</section>`,
       });
       continue;
     }
 
-    // Until now the printed edition dropped every document title: the
-    // normalizer promotes the heading into the frontmatter and nothing here put
-    // it back, so "La memoria y la palabra" and "Introducción" ran untitled
-    // (spec 02, RF-02.2).
-    const head =
-      doc.data.showTitle === false
-        ? ''
-        : [
-            '<header class="doc-head">',
-            doc.data.kicker ? `<p class="doc-kicker">${xml(doc.data.kicker)}</p>` : '',
-            `<h1 class="doc-title">${xml(doc.data.title)}</h1>`,
-            '</header>',
-          ].join('');
+    const klass = `doc${doc.data.pageType === 'interlude' ? ' interlude' : ''}`;
+    const open = `<section class="${klass}" id="doc-${xml(doc.data.docSlug)}" data-section="${xml(doc.data.section)}">`;
 
-    body.push(
-      `<section class="doc${doc.data.pageType === 'interlude' ? ' interlude' : ''}" id="doc-${xml(doc.data.docSlug)}" data-section="${xml(doc.data.section)}">${head}${plateFigure(doc.plate)}${doc.html}</section>`,
-    );
-    blocks.push({
-      docSlug: doc.data.docSlug,
-      title: doc.data.title,
-      pageType: doc.data.pageType,
-      html: body.join('\n'),
-    });
+    // A document splits at its chronicles. `parts[0]` is whatever comes before
+    // the first one — a preamble, or nothing at all.
+    const parts = doc.html.split(/(?=<header class="cronica-head">)/);
+    const preamble = parts[0]?.trim() ?? '';
+    const cronicas = parts.slice(1);
+
+    if (!cronicas.length) {
+      blocks.push({
+        docSlug: doc.data.docSlug,
+        title: doc.data.title,
+        pageType: doc.data.pageType,
+        kind: 'doc',
+        // The document's photograph goes after its text, never between the
+        // title and the first paragraph (specs-v12, spec 06, RF-06.3).
+        html: `${open}${head}${doc.html}${tailPlate(doc.plate)}</section>`,
+      });
+      continue;
+    }
+
+    if (head || preamble || doc.plate) {
+      blocks.push({
+        docSlug: doc.data.docSlug,
+        title: doc.data.title,
+        pageType: doc.data.pageType,
+        kind: 'doc',
+        html: `${open}${head}${preamble}${tailPlate(doc.plate)}</section>`,
+      });
+    }
+
+    for (const [i, cronica] of cronicas.entries()) {
+      const id = /<p class="cronica-volanta" id="([^"]+)"/.exec(cronica)?.[1] ?? '';
+      const titular = /<h2[^>]*class="cronica-title"[^>]*>([\s\S]*?)<\/h2>/.exec(cronica)?.[1];
+      const volanta = /<p class="cronica-volanta"[^>]*>([\s\S]*?)<\/p>/.exec(cronica)?.[1] ?? '';
+      const label = (titular ?? volanta).replace(/<[^>]+>/g, '').trim();
+      blocks.push({
+        docSlug: id || `${doc.data.docSlug}-${i}`,
+        title: label || doc.data.title,
+        pageType: doc.data.pageType,
+        kind: 'cronica',
+        html: `${open.replace('class="', 'class="cronica ')}${cronica}</section>`,
+      });
+    }
   }
+
   body.length = 0;
 
   const backHtml = cover?.html
@@ -300,8 +384,15 @@ ${backHtml}
  * change its length, only its offset.
  */
 async function measureBlocks(browser, shell, blocks) {
-  const page = await browser.newPage();
+  // A5 content box at 96 CSS px per inch, under print media. `page.pdf()` would
+  // paginate correctly whatever the viewport, but the DOM measurement below
+  // would not: at the default 1280 px the same text takes a third of the lines,
+  // and every leftover it reported was meaningless.
+  const page = await browser.newPage({ viewport: { width: 450, height: 680 } });
+  await page.emulateMedia({ media: 'print' });
   const counts = [];
+  /** How many lines of text the block's last page carries. See below. */
+  const tails = [];
   // Written into the working directory and loaded from there: `setContent`
   // resolves relative URLs against about:blank, so every `img/…` reference
   // would fail and the measurement would be taken on a book without
@@ -309,7 +400,7 @@ async function measureBlocks(browser, shell, blocks) {
   const scratch = path.join(WORK, 'medicion.html');
   try {
     for (const block of blocks) {
-      await writeFile(scratch, shell(block.html), 'utf8');
+      await writeFile(scratch, shell(typeof block === 'string' ? block : block.html), 'utf8');
       await page.goto(`file://${scratch}`, { waitUntil: 'load', timeout: 120_000 });
       await page.evaluate(() => document.fonts.ready.then(() => true));
       await page.evaluate(async () => {
@@ -318,28 +409,163 @@ async function measureBlocks(browser, shell, blocks) {
         );
       });
       const bytes = await page.pdf({ format: 'A5', printBackground: true, preferCSSPageSize: true, timeout: 180_000 });
-      counts.push((await PDFDocument.load(bytes)).getPageCount());
+      const pages = (await PDFDocument.load(bytes)).getPageCount();
+      counts.push(pages);
+
+      /**
+       * How full the block's last page is.
+       *
+       * Measured here rather than on the assembled book because here it is
+       * exact: the block starts at the top of a page and flows continuously, so
+       * the leftover of its scroll height over whole pages is what lands on the
+       * last one. On the assembled document the same arithmetic is only
+       * proportional, and it reported pages as one-line that in fact carried
+       * twenty-nine.
+       *
+       * A block that forces a page break inside it — a photograph that takes a
+       * page of its own — breaks that assumption, and is not measured.
+       */
+      const html = typeof block === 'string' ? block : block.html;
+      tails.push(
+        /\bbox-page\b/.test(html)
+          ? null
+          : await page.evaluate(
+              (contentPx) => {
+                const height = document.documentElement.scrollHeight;
+                const line = parseFloat(getComputedStyle(document.body).lineHeight) || 14;
+                const whole = Math.max(0, Math.ceil(height / contentPx) - 1);
+                return Math.round(((height - whole * contentPx) / line) * 10) / 10;
+              },
+              (180 / 25.4) * 96,
+            ),
+      );
     }
   } finally {
     await page.close();
   }
+  counts.tails = tails;
   return counts;
 }
 
 /**
- * Decides where a courtesy blank has to go so that every text opens on a recto,
- * and reports the result (RF-03.3, RF-03.4 and RF-03.6).
+ * The last photograph a block carries, promoted to a page of its own.
+ *
+ * Returns null when the block has no tail figures to promote — a text that
+ * carries no photograph, or one whose last figure already takes a full page.
  */
-function planRecto(blocks, counts, frontPages) {
-  const plan = [];
+function promoteLastFigure(html) {
+  const figures = [...html.matchAll(/<figure class="figure ([^"]*)"/g)];
+  const last = figures.at(-1);
+  if (!last || /\bbox-page\b/.test(last[1])) return null;
+  const at = last.index;
+  return html.slice(0, at) + html.slice(at).replace(/\bbox-(full|two-thirds)\b/, 'box-page');
+}
+
+/**
+ * Where every block starts, so that every one of them opens on a recto.
+ *
+ * Chrome does not implement `break-before: recto`, so the parity has to be
+ * arranged by hand. A block that runs an odd number of pages leaves the next
+ * one on a verso, and something has to take up the slack.
+ *
+ * What takes it up is a photograph, not a blank (specs-v12, spec 05, RF-05.3):
+ * the block is measured again with its last figure promoted to a page of its
+ * own, which is where the image wanted to go anyway — after the last paragraph
+ * of the chronicle and before the next one begins (spec 06, RF-06.4). Only when
+ * there is no figure to promote, or promoting it does not fix the parity, does
+ * the block get a courtesy blank behind it.
+ */
+async function planRecto(browser, shell, blocks, counts, frontPages) {
+  const plan = blocks.map((block, i) => ({
+    ...block,
+    pages: counts[i],
+    tail: counts.tails?.[i] ?? null,
+    blank: false,
+    plated: false,
+  }));
+
+  // Candidates: an odd block, with a figure that could take the page instead.
+  const candidates = [];
+  for (const [i, block] of plan.entries()) {
+    if (block.pages % 2 === 0) continue;
+    const promoted = promoteLastFigure(block.html);
+    if (promoted) candidates.push({ i, promoted });
+  }
+
+  if (candidates.length) {
+    const recount = await measureBlocks(browser, shell, candidates.map((c) => c.promoted));
+    for (const [n, candidate] of candidates.entries()) {
+      if (recount[n] % 2 !== 0) continue;
+      plan[candidate.i].html = candidate.promoted;
+      plan[candidate.i].pages = recount[n];
+      plan[candidate.i].tail = recount.tails?.[n] ?? null;
+      plan[candidate.i].plated = true;
+    }
+  }
+
+  await tightenShortTails(browser, shell, plan);
+
   let page = frontPages + 1;
-  for (let i = 0; i < blocks.length; i += 1) {
-    const blank = page % 2 === 0;
-    if (blank) page += 1;
-    plan.push({ ...blocks[i], blank, start: page, pages: counts[i] });
-    page += counts[i];
+  for (const block of plan) {
+    block.blank = page % 2 === 0;
+    if (block.blank) page += 1;
+    block.start = page;
+    page += block.pages;
   }
   return plan;
+}
+
+/**
+ * Pulls a stranded tail back onto the page before it.
+ *
+ * A text that runs two lines over leaves a page with two lines on it — the
+ * defect the editorial pass reported on page 36. The fix is the one a designer
+ * would make by hand: set that text a hair tighter until its last lines come
+ * back. Three steps, the largest of them 4 % off the book's leading, and the
+ * first that works is kept. A text that none of them rescues is reported and
+ * left alone rather than squeezed out of shape (specs-v12, spec 05, RF-05.4).
+ */
+async function tightenShortTails(browser, shell, plan) {
+  const steps = ['is-tight-1', 'is-tight-2', 'is-tight-3', 'is-tight-4', 'is-loose-1', 'is-loose-2'];
+
+  for (let step = 0; step < steps.length; step += 1) {
+    const short = plan.filter(
+      (b) =>
+        b.kind !== 'part' &&
+        b.pages > 1 &&
+        b.tail !== null &&
+        b.tail > 0.2 &&
+        b.tail < MIN_LINES,
+    );
+    if (!short.length) return;
+
+    // The class goes on the block's own section, whatever else it carries —
+    // `doc`, `doc opening`, `cronica doc`, `doc interlude`.
+    const variants = short.map((b) =>
+      b.html.replace('<section class="', `<section class="${steps[step]} `),
+    );
+    const measured = await measureBlocks(browser, shell, variants);
+
+    for (const [n, block] of short.entries()) {
+      const tail = measured.tails?.[n] ?? null;
+      if (process.env.PDF_DEBUG) {
+        console.log(`      ${steps[step]}  ${block.title.slice(0, 34).padEnd(34)} ${block.pages}p/${block.tail} → ${measured[n]}p/${tail}`);
+      }
+      // Worth keeping only when the tail is gone or genuinely fuller.
+      // Accept only a real improvement: the tail absorbed into the page before,
+      // or a last page that now carries a proper amount of reading. Never a
+      // variant that costs a page without fixing anything.
+      if (
+        (measured[n] < block.pages && (tail === null || tail >= MIN_LINES || tail < 0.2)) ||
+        (measured[n] === block.pages && tail !== null && tail >= MIN_LINES)
+      ) {
+        block.html = variants[n];
+        block.pages = measured[n];
+        block.tail = tail;
+        block.tightened = steps[step];
+      }
+    }
+  }
 }
 
 async function main() {
@@ -359,13 +585,26 @@ async function main() {
 
   const browser = await chromium.launch({ channel: 'chrome' });
   try {
-    // First pass: how long is every text, so the courtesy blanks can be placed.
+    // First pass: how long is every block, so the parity can be arranged.
     const counts = await measureBlocks(browser, shell, blocks);
-    const plan = planRecto(blocks, counts, front.length - 1);
+    const plan = await planRecto(browser, shell, blocks, counts, front.length - 1);
     const blanks = plan.filter((b) => b.blank).length;
-    console.log(`Medición: ${blocks.length} textos, ${counts.reduce((a, b) => a + b, 0)} páginas`);
-    console.log(`Blancos de cortesía para abrir en impar: ${blanks}`);
-    for (const b of plan) console.log(`    plan  pág ${String(b.start).padStart(3)}  ${String(b.pages).padStart(3)} pág.  ${b.blank ? 'blanco+' : '       '}${b.title.slice(0, 46)}`);
+    const plated = plan.filter((b) => b.plated).length;
+    const cronicas = plan.filter((b) => b.kind === 'cronica').length;
+    console.log(`Medición: ${blocks.length} bloques (${cronicas} crónicas), ${counts.reduce((a, b) => a + b, 0)} páginas`);
+    const tightened = plan.filter((b) => b.tightened).length;
+    console.log(`Páginas ganadas por una imagen a página completa: ${plated}`);
+    if (tightened) {
+      console.log(`Textos ajustados de interlineado para no dejar una cola suelta: ${tightened}`);
+      for (const b of plan.filter((x) => x.tightened)) {
+        console.log(`    ${b.tightened.padEnd(12)} ${b.title.slice(0, 46)}`);
+      }
+    }
+    console.log(`Blancos de cortesía que quedaron: ${blanks}`);
+    for (const b of plan) {
+      const mark = b.blank ? 'blanco+' : b.plated ? 'imagen+' : '       ';
+      console.log(`    plan  pág ${String(b.start).padStart(3)}  ${String(b.pages).padStart(3)} pág.  ${mark}${b.title.slice(0, 46)}`);
+    }
 
     const html = [
       built.html.slice(0, built.html.indexOf('<body>') + 6),
@@ -427,17 +666,43 @@ async function main() {
     console.log(`Paginado por Chrome: ${(bytes.length / 1024 / 1024).toFixed(1)} MB`);
 
     // A courtesy blank is blank: no folio, no ornament (spec 03, RF-03.4).
-    const blankPages = new Set(plan.filter((b) => b.blank).map((b) => b.start - 1));
-    // A part opens with a fixed sequence — title page, courtesy blank, text —
-    // so the blank inside it sits one page after the start (RF-03.7).
+    const unnumbered = new Set(plan.filter((b) => b.blank).map((b) => b.start - 1));
+    // Nor does a section cover or the photograph on its reverse: a carátula is
+    // read as a threshold, and a folio on it reads as a page of text.
     for (const block of plan) {
-      if (block.pageType === 'chapter-opening') blankPages.add(block.start + 1);
+      if (block.kind !== 'part') continue;
+      unnumbered.add(block.start);
+      unnumbered.add(block.start + 1);
     }
-    await stamp(bytes, markers, outline, firstBody, front, blankPages);
+    await stamp(bytes, markers, outline, firstBody, front, unnumbered);
     reportFront(front, markers.boxes);
     reportRecto(plan);
+    reportShortPages(plan);
   } finally {
     await browser.close();
+  }
+}
+
+/**
+ * Texts whose last page carries almost no text — the «página 36 con una sola
+ * línea» the editorial pass reported (specs-v12, spec 05, RF-05.4).
+ *
+ * A block of a single page is not a defect: the interludes are one page long by
+ * design. Nor is a block whose last page is a photograph. What is reported is a
+ * text that runs over and leaves a line or two stranded behind it.
+ */
+function reportShortPages(plan) {
+  const short = plan.filter(
+    (block) => block.pages > 1 && block.tail !== null && block.tail > 0.2 && block.tail < MIN_LINES,
+  );
+
+  if (!short.length) {
+    console.log(`\nNingún texto deja menos de ${MIN_LINES} líneas en su última página (RF-05.4).`);
+    return;
+  }
+  console.error(`\nTextos que dejan menos de ${MIN_LINES} líneas en su última página (RF-05.4): ${short.length}`);
+  for (const block of short) {
+    console.error(`  pág. ${block.start + block.pages - 1}  ${block.tail} líneas  ${block.title.slice(0, 46)}`);
   }
 }
 
@@ -494,7 +759,7 @@ async function stamp(bytes, { markers, height }, outline, firstBody, front, blan
   const font = await pdf.embedFont(StandardFonts.Helvetica);
 
   pdf.setTitle(`${BOOK.title} (${BOOK.volume}) — ${BOOK.subtitle}`);
-  pdf.setSubject(BOOK.description);
+  pdf.setSubject(`${BOOK.description} Edición ${VERSION}.`);
   pdf.setProducer(BOOK.publisher);
   pdf.setCreator(BOOK.publisher);
   pdf.setLanguage('es-AR');
@@ -505,6 +770,7 @@ async function stamp(bytes, { markers, height }, outline, firstBody, front, blan
     'terrorismo de Estado',
     'juicio y castigo',
     'memoria',
+    `versión ${VERSION}`,
   ]);
 
   // Front matter carries no folio. Rather than hard-coding how many pages it
@@ -549,9 +815,11 @@ async function stamp(bytes, { markers, height }, outline, firstBody, front, blan
 
   const out = await pdf.save({ useObjectStreams: true });
   await writeFile(OUT, out);
+  const pageCount = pages.length;
   console.log(`Números de página estampados: ${printed}`);
   console.log(`Marcadores en el índice interno: ${refs.length}`);
-  console.log(`\nPDF → ${path.relative(ROOT, OUT)}  (${(out.length / 1024 / 1024).toFixed(1)} MB, ${pages.length} páginas)`);
+  console.log(`\nPDF → ${path.relative(ROOT, OUT)}  (${(out.length / 1024 / 1024).toFixed(1)} MB, ${pageCount} páginas)`);
+  return pageCount;
 }
 
 /**

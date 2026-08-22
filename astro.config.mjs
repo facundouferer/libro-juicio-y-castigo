@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import { rehypeAnchorImages } from './src/lib/rehype-anchor-images.mjs';
+import { rehypeCronicaHeads } from './src/lib/rehype-cronica-heads.mjs';
 
 /**
  * GitHub Pages serves a project site from /<repo>/, so both `site` and `base`
@@ -34,7 +35,7 @@ export default defineConfig({
     shikiConfig: { theme: 'github-light' },
     // Runs after Astro's own heading-slug pass, so every heading already has
     // the id the image map targets.
-    rehypePlugins: [rehypeAnchorImages],
+    rehypePlugins: [rehypeAnchorImages, rehypeCronicaHeads],
   },
   devToolbar: { enabled: false },
 });

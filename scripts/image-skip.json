@@ -1,4 +1,13 @@
 {
-  "note": "Imágenes que el equipo editorial decidió no imprimir. Ver docs/specs/spec-04-secuencia-de-imagenes.md, RF-04.4. El archivo de imagen NO se borra: sólo se excluye de la colocación, de modo que la decisión es reversible. Las candidatas las lista build/revision-duplicados.md, que genera `npm run map`.",
-  "skip": []
+  "note": "Imágenes que el equipo editorial decidió no imprimir. Ver docs/specs-v12/spec-08-curaduria-duplicados-y-epigrafes.md, RF-08.4. El archivo de imagen NO se borra: sólo se excluye de la colocación, de modo que la decisión es reversible. Las candidatas las lista build/revision-duplicados.md, que genera `npm run map`.",
+  "skip": [
+    {
+      "key": "061",
+      "reason": "Archivo idéntico byte a byte a 018bis (sha1 c97ee734). El archivo numeró dos veces el mismo retrato de Chachi Quintana y aparecía dos veces en el libro. Se conserva 018bis, que va en la semblanza de Chachi, dentro de su sección."
+    },
+    {
+      "key": "062",
+      "reason": "Archivo idéntico byte a byte a 018bisbis (sha1 cef904e4). Misma fotografía de Chachi con la «caprichosa», catalogada dos veces. Se conserva 018bisbis, en la semblanza."
+    }
+  ]
 }

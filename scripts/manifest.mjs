@@ -80,6 +80,8 @@ export const SECTIONS = [
  * `showTitle: false` marks the handful of documents whose `title` is an
  * internal label rather than an editorial title, so no edition prints it.
  * `kicker` is the overline printed above a title (spec 02, RF-02.3 and RF-02.7).
+ * `byline` is the signature printed *below* the title and before the first
+ * paragraph, so the voice is identified from the start (specs-v12, spec 02).
  */
 export const ENTRIES = [
   {
@@ -128,15 +130,37 @@ export const ENTRIES = [
     title: 'La memoria y la palabra: los juicios al genocidio',
     section: 'inicio',
     pageType: 'reader',
-    kicker: 'Declaración de los organismos de derechos humanos — CPM Chaco',
+    // Not «Declaración»: nobody wrote that word, and an overline announces the
+    // subject, not the authorship. This is a byline and it goes under the title
+    // (spec 02 de specs-v12, RF-02.2).
+    byline: 'Por organismos de DDHH de CPM CHACO',
+    // The text signed itself at the foot. The signature moved up as the byline
+    // above, so what stays down here is the roll of the four organisations —
+    // information, not signature — set as a note (specs-v12, spec 02, RF-02.4).
+    signoff: {
+      drop: ['Organismos de DDHH integrantes de la **CPM CHACO**'],
+      start: '**Asociación de Ex Detenidos Políticos de Chaco**',
+    },
     strip: 1,
   },
   {
     source: 'section00_inicio/02.INTRODUCCIÓN.md',
     slug: 'introduccion',
-    title: 'Introducción',
+    // The text that opens the book carries the title of the book, not the word
+    // «Introducción», which names a function and says nothing (spec 02 de
+    // specs-v12, RF-02.3). The slug does not change: it is the key of the image
+    // map, of the heading index and of every anchor.
+    title: 'Juicio y Castigo en el Chaco Vol II. La Brigada',
     section: 'inicio',
     pageType: 'reader',
+    byline: 'Por Gonzalo Torres',
+    // Same move: the name goes up, the date and the note about the other two
+    // volumes of the series stay at the foot, as a note.
+    signoff: {
+      drop: ['**Gonzalo Torres 12/8/2025**'],
+      start: '*(“Juicio y Castigo en el Chaco” tiene un volumen 1',
+      lead: '12 de agosto de 2025',
+    },
     strip: 1,
   },
   {
@@ -154,7 +178,11 @@ export const ENTRIES = [
     title: 'En el lugar sin límites',
     section: 'una-casa-con-una-sala-negra',
     pageType: 'chapter-opening',
-    strip: 2,
+    // Three, not two: after «PRIMERA PARTE» and «UNA CASA CON UNA SALA NEGRA»
+    // this file carries a third heading with its own title, so the text printed
+    // «EN EL LUGAR SIN LÍMITES» twice — once from the frontmatter and once from
+    // the body. It is the only opening written that way.
+    strip: 3,
   },
   {
     source: 'section01-una-casa-con-una-sala-negra/05. CRÓNICAS 1.md',
@@ -304,3 +332,54 @@ export const ENTRIES = [
     strip: 1,
   },
 ];
+
+/**
+ * Headings whose classification as a volanta has to be forced or denied.
+ *
+ * The default rule — an `h1` that names the causa (`src/lib/cronicas.mjs`) —
+ * classifies the 36 `h1` headings of the manuscript correctly, so this map is
+ * empty. It exists because the rule is a heuristic over prose written by hand
+ * over fifteen years: when a new chronicle does not open the way the others do,
+ * this is where it gets said, and `build/revision-volantas.md` is where it
+ * becomes visible (spec 04 de specs-v12, RF-04.2).
+ *
+ * Keyed by anchor id; `true` forces a volanta, `false` denies it.
+ */
+export const VOLANTA_OVERRIDE = {};
+
+/**
+ * The three containers a photograph can take, and nothing in between
+ * (spec 07 de specs-v12, RF-07.1):
+ *
+ *   box-full        — the full width of the text box. Press photographs, group
+ *                     shots, the courtroom, the plaza. The dominant format.
+ *   box-two-thirds  — two thirds, centred, no text alongside. Portraits,
+ *                     drawings, file photographs.
+ *   box-page        — the whole 119 × 180 mm page.
+ *
+ * The full page is reserved (RF-07.4): the five section-cover photographs and
+ * the plans and surveys of the building. Everything else is assigned by the
+ * default rule and can be corrected here, image by image, without touching
+ * code — `build/revision-formatos.md` lists what the rule decided.
+ */
+export const FULL_PAGE_IMAGES = new Set([
+  // Plans and surveys: they are read, not looked at, and they need the page.
+  '002', // Relevamiento del EAAF, 2008
+  '083', // Planos de los sótanos y elementos hallados por el EAAF
+  '084', // Plano de la vieja casona de Marcelo T. de Alvear 32
+  '085', // Plano de la vieja casona de Marcelo T. de Alvear 32
+  '092', // Planos de los sótanos de la parte trasera
+  '093', // Plano de la ex Brigada
+]);
+
+// The five section-cover photographs also take a full page, but they are not
+// listed here: they get it by construction, on the verso of their part's cover
+// page (spec 03, RF-03.2). Whichever image the map anchors to each opening is
+// the one that lands there, so hard-coding a key would go stale the moment the
+// sequence is recomputed.
+
+/** Per-image overrides of the container the default rule would choose. */
+export const IMAGE_FORMAT = {};
+
+/** An epigraph that describes a drawing, a plan or a file photograph. */
+export const DRAWING_PATTERN = /dibujo|croquis|plano|legajo/i;

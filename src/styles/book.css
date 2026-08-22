@@ -320,20 +320,37 @@ body.is-locked { overflow: hidden; }
   margin: 0;
   max-width: 24ch;
 }
-/* The section's name, demoted to an overline so the opening text's own title
-   leads the page (spec 02, RF-02.4). The standfirst that used to sit under it
-   was editorial metadata, not page copy, and RF-02.5 removed it. */
-.opening-volanta {
+/* ── The cover of a part (specs-v12, spec 03) ───────────────────────────────
+   What was here was an overline: the name of the section at 18 px above the
+   60 px title of the section's first text, so the section had no threshold and
+   the essay looked like the section. The section has its own page now, and on
+   it nothing competes with its title. */
+
+.part-label {
   font-family: var(--font-heading);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   font-size: clamp(13px, 1.4vw, 18px);
   line-height: 1.4;
   color: var(--section-accent);
   margin: 0 0 clamp(10px, 2vh, 18px);
-  max-width: 34ch;
 }
+.part-blurb {
+  margin: clamp(20px, 3.5vh, 38px) 0 0;
+  max-width: 56ch;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.6;
+  color: var(--color-neutral-700);
+}
+.part-cover .opening-title { max-width: 20ch; }
+
+/* The opening text of a part: no photograph of its own — it is on the cover
+   overleaf — so the page starts at the type. */
+.opening.is-text { min-height: 0; padding-top: clamp(40px, 8vh, 110px); }
+.opening.is-text .opening-body { justify-content: flex-start; }
+.opening.is-text .opening-title { font-size: clamp(26px, 3.6vw, 44px); max-width: 26ch; }
+.opening.is-text .doc-byline { margin-top: clamp(14px, 2.4vh, 22px); }
 /* — the document's own title, which only the EPUB used to print (RF-02.2) —
    `.hl` is the house band: once per document over a 300-page scroll it also
    does the work spec 05 asks of a separator between texts. */
@@ -403,6 +420,42 @@ body.is-locked { overflow: hidden; }
   margin-bottom: clamp(22px, 4vh, 40px);
 }
 
+/* ── The opening of a chronicle (specs-v12, spec 04) ────────────────────────
+   The manuscript writes the volanta as an `h1` and the headline as an `h2`, so
+   sizing by level set the volanta half again as large as the title it
+   introduces. The size comes from the role now. */
+
+.prose .cronica-head {
+  display: block;
+  margin-top: clamp(48px, 8vh, 96px);
+  margin-bottom: clamp(18px, 3vh, 32px);
+}
+.prose .cronica-head::before {
+  content: '';
+  display: block;
+  border-top: 1px solid var(--color-divider);
+  margin-bottom: clamp(26px, 4.5vh, 46px);
+}
+.prose .cronica-head:first-child { margin-top: 0; }
+.prose .cronica-head:first-child::before { content: none; }
+
+.prose .cronica-volanta {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(13px, 1.1vw, 16px);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.3;
+  color: var(--small-text-accent);
+  margin: 0 0 var(--space-2);
+}
+.prose .cronica-head .cronica-title {
+  font-size: clamp(30px, 3.4vw, 46px);
+  line-height: 1.06;
+  margin: 0;
+}
+.prose .cronica-head .cronica-title::before { content: none; }
+
 /* Between audiencias inside a chronicle — the body's own h1 (RF-05.2). */
 .prose h1:not(.doc-title)::before {
   content: '';
@@ -422,6 +475,32 @@ body.is-locked { overflow: hidden; }
 }
 .prose h1:first-child::before,
 .prose h2:first-child::before { margin-top: 0; }
+
+/* The signature, under the title and before the first paragraph, so the voice
+   is identified from the start (specs-v12, spec 02, RF-02.1). */
+.doc-byline {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: clamp(12px, 1vw, 15px);
+  color: var(--small-text-accent);
+  margin: var(--space-3) 0 0;
+}
+
+/* What stays at the foot: the roll of organisations, the date. */
+.prose aside.signoff {
+  margin-top: clamp(34px, 6vh, 64px);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-divider);
+}
+.prose aside.signoff p {
+  font-size: 0.9em;
+  line-height: 1.5;
+  margin: 0 0 var(--space-2);
+  color: var(--color-neutral-700);
+}
+.prose aside.signoff .signoff-lead { color: var(--small-text-accent); }
 
 /* Footnotes: notes, not body copy (spec 02, RF-02.6). */
 .prose aside.footnotes {
@@ -918,6 +997,14 @@ dialog.modal.is-closing::backdrop { opacity: 0; }
 }
 .download-option:hover { border-color: var(--color-accent); background: var(--color-accent-100); }
 .download-option:active { transform: scale(0.985); }
+/* Which edition these files are, so a reader who downloaded an earlier one can
+   tell (specs-v12, spec 09, RF-09.3). */
+.download-version {
+  margin: var(--space-2) 0 0;
+  font-size: 0.82em;
+  color: var(--color-neutral-700);
+  text-align: right;
+}
 .download-option .fmt {
   font-family: var(--font-heading);
   font-weight: 700;

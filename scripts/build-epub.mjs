@@ -18,6 +18,7 @@ import { renderBook, xml } from './lib/render-book.mjs';
 import { SECTIONS } from './manifest.mjs';
 import { BOOK } from '../src/lib/site.mjs';
 import { ACCENT, ACCENT_BASE, SECTION_STEP, SMALL_TEXT_STEP } from '../src/lib/palette.mjs';
+import { containerFor } from '../src/lib/image-format.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const EPUB_IMAGES = path.join(ROOT, 'build', 'epub');
@@ -30,6 +31,11 @@ const OUT = path.join(OUT_DIR, 'juicio-y-castigo-en-el-chaco-vol-2.epub');
  */
 const BOOK_ID = 'urn:uuid:8a1d4f22-6c3b-5e7a-9d10-juicioycastigo2';
 
+/** Which edition of the book this is (specs-v12, spec 09, RF-09.3). */
+const VERSION = JSON.parse(
+  await readFile(path.join(path.resolve(import.meta.dirname, '..'), 'package.json'), 'utf8'),
+).version.replace(/\.0$/, '');
+
 /**
  * Per-section tone. The EPUB gets resolved colours rather than custom
  * properties: reading systems vary in what they support, and a colour that
@@ -39,7 +45,7 @@ const BOOK_ID = 'urn:uuid:8a1d4f22-6c3b-5e7a-9d10-juicioycastigo2';
 const SECTION_RULES = Object.entries(SECTION_STEP)
   .map(
     ([id, step]) => `[data-section="${id}"] h1, [data-section="${id}"] h2, [data-section="${id}"] .part-label,
-[data-section="${id}"] .opening-volanta { color: ${ACCENT[step]}; }`,
+[data-section="${id}"] .part-title { color: ${ACCENT[step]}; }`,
   )
   .join('\n');
 
@@ -116,14 +122,18 @@ figure.figure figcaption .credit { display: block; font-weight: bold; color: ${A
 
 .cover-page { text-align: left; margin-top: 6%; }
 .cover-photo { display: block; width: 100%; height: auto; margin-bottom: 1.4em; }
-.cover-page h1 { font-size: 2.1em; line-height: 1.12; color: ${ACCENT_BASE}; }
+.cover-page h1 { font-size: 2.4em; line-height: 1.1; color: ${ACCENT_BASE}; }
 .cover-page .sub {
   font-family: sans-serif;
   font-weight: bold;
   text-transform: uppercase;
-  /* Within 2:1 of the title above (spec 02, RF-02.1). */
-  font-size: 1.15em;
-  margin: 0.8em 0 0.2em;
+  /* «Causa Brigada I, II, III» names what the volume is about; at 1.15em it
+     read as a footnote to the title instead of as its second half
+     (specs-v12, spec 01, RF-01.2). 2.4/1.5 = 1.6:1. */
+  font-size: 1.5em;
+  line-height: 1.16;
+  margin: 0.7em 0 0.3em;
+  color: ${ACCENT[700]};
 }
 .cover-page .kicker { font-style: italic; color: #575d63; }
 .cover-page .publisher {
@@ -145,16 +155,63 @@ figure.figure figcaption .credit { display: block; font-weight: bold; color: ${A
   margin: 0 0 0.3em;
   text-align: left;
 }
-.opening-volanta {
+/* ── The opening of a chronicle (specs-v12, spec 04) ────────────────────────
+   The volanta is written as a level-1 heading and the headline as a level-2
+   one, so sizing by level set the volanta larger than the title it introduces.
+   1.62em against 0.78em: a ratio of 2.1. */
+.cronica-head { display: block; margin: 2em 0 0.9em; }
+.cronica-volanta {
   font-family: sans-serif;
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 0.86em;
-  letter-spacing: 0.08em;
+  font-size: 0.78em;
+  letter-spacing: 0.1em;
+  line-height: 1.3;
   color: ${ACCENT[SMALL_TEXT_STEP]};
-  margin: 0 0 0.3em;
+  margin: 0 0 0.4em;
   text-align: left;
 }
+h2.cronica-title { font-size: 1.62em; line-height: 1.1; margin: 0; }
+h2.cronica-title::before { content: none; }
+
+/* The signature, under the title and before the first paragraph, so the voice
+   is identified from the start (specs-v12, spec 02, RF-02.1). */
+.doc-byline {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 0.07em;
+  color: ${ACCENT[SMALL_TEXT_STEP]};
+  margin: 0.5em 0 1.2em;
+  text-align: left;
+}
+
+/* What stays at the foot: the roll of organisations, the date. */
+aside.signoff {
+  margin-top: 2em;
+  padding-top: 0.8em;
+  border-top: 1px solid #d9dcdf;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+aside.signoff p {
+  font-size: 0.88em;
+  line-height: 1.45;
+  text-align: left;
+  hyphens: none;
+  -epub-hyphens: none;
+  color: #3d4247;
+  margin: 0 0 0.35em;
+}
+aside.signoff .signoff-lead { color: ${ACCENT[SMALL_TEXT_STEP]}; margin-bottom: 0.8em; }
+
+/* ── Image containers (specs-v12, spec 07, RF-07.7) ─────────────────────────
+   The three containers of the printed edition, translated to a reflowable
+   medium: full width, two thirds centred, and the whole width of the view. */
+figure.figure.box-two-thirds { width: 66%; margin-left: auto; margin-right: auto; }
+figure.figure.box-full img, figure.figure.box-page img { width: 100%; height: auto; }
+figure.figure.box-full figcaption { text-align: right; }
+figure.figure.box-page { page-break-before: always; break-before: page; }
 .doc-kicker {
   font-family: sans-serif;
   font-weight: bold;
@@ -220,8 +277,24 @@ h2::before {
 }
 
 .part-divider { margin-top: 22%; text-align: left; }
-.part-divider h1 { font-size: 1.9em; color: ${ACCENT[700]}; }
-.part-divider h1::before { content: none; }
+.part-divider .part-num {
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 3.2em;
+  line-height: 1;
+  color: ${ACCENT[200]};
+  margin: 0 0 0.2em;
+}
+.part-divider .part-title { font-size: 2.1em; line-height: 1.06; margin: 0 0 0.7em; }
+.part-divider .part-title::before { content: none; }
+.part-divider .part-blurb {
+  font-size: 0.92em;
+  line-height: 1.5;
+  color: #3d4247;
+  text-align: left;
+  hyphens: none;
+  -epub-hyphens: none;
+}
 
 nav[epub|type~='toc'] ol { list-style: none; padding-left: 1em; }
 nav[epub|type~='toc'] > ol { padding-left: 0; }
@@ -335,8 +408,10 @@ async function main() {
         content: xhtml(
           `${section.part} — ${section.title}`,
           `<section epub:type="part" class="part-divider" data-section="${xml(section.id)}">
+${section.partNumber ? `  <p class="part-num">${String(section.partNumber).padStart(2, '0')}</p>` : ''}
   <p class="part-label">${xml(section.part)}</p>
-  <h1>${xml(section.title)}</h1>
+  <h1 class="part-title">${xml(section.title)}</h1>
+${section.blurb ? `  <p class="part-blurb">${xml(section.blurb)}</p>` : ''}
 </section>`,
         ),
       });
@@ -344,25 +419,31 @@ async function main() {
     }
     lastSection = doc.data.section;
 
-    // The section's name sits above the title as an overline, and its standfirst
-    // no longer prints as page copy (spec 02, RF-02.4 and RF-02.5).
-    if (doc.data.pageType === 'chapter-opening' && section?.title) {
-      parts.push(`<p class="opening-volanta">${xml(section.title)}</p>`);
-    }
+    // The name of the section used to print again here, as an overline above the
+    // title of its opening text. It has a divider of its own now, so repeating
+    // it said the same thing twice (specs-v12, spec 03, RF-03.5).
     if (doc.data.kicker) parts.push(`<p class="doc-kicker">${xml(doc.data.kicker)}</p>`);
     if (doc.data.showTitle !== false) parts.push(`<h1 class="doc-title">${xml(doc.data.title)}</h1>`);
+    // Below the title and before the first paragraph (specs-v12, spec 02).
+    if (doc.data.byline) parts.push(`<p class="doc-byline">${xml(doc.data.byline)}</p>`);
 
     // A document-wide photograph is bound to the document, not to a heading, so
     // the anchoring plugin never emits it and the EPUB used to drop it entirely
-    // (spec 04, RF-04.6).
+    // (spec 04, RF-04.6). It goes after the text, never between the title and
+    // the first paragraph (specs-v12, spec 06, RF-06.3).
+    const plateParts = [];
     if (doc.plate) {
       const caption = [
         doc.plate.caption ? xml(doc.plate.caption) : '',
         doc.plate.credit ? `<span class="credit">${xml(doc.plate.credit)}</span>` : '',
       ].join('');
-      parts.push(
+      const box =
+        doc.data.pageType === 'chapter-opening'
+          ? 'box-page'
+          : containerFor(doc.plate.key, doc.plate, { caption: doc.plate.caption });
+      plateParts.push(
         [
-          `<figure class="figure" id="fig-${xml(doc.plate.key)}">`,
+          `<figure class="figure ${xml(box)}" id="fig-${xml(doc.plate.key)}">`,
           `<img src="../images/${xml(doc.plate.key)}.jpg" alt="${xml(doc.plate.alt)}" />`,
           caption ? `<figcaption>${caption}</figcaption>` : '',
           '</figure>',
@@ -371,6 +452,7 @@ async function main() {
       usedImages.add(`${doc.plate.key}.jpg`);
     }
     parts.push(toXhtml(doc.html));
+    parts.push(...plateParts);
 
     for (const match of doc.html.matchAll(/src="\.\.\/images\/([^"]+)"/g)) usedImages.add(match[1]);
 
@@ -382,6 +464,8 @@ async function main() {
       pageType: doc.data.pageType,
       depth: 0,
       headings: doc.headings.filter((h) => h.depth === 2).slice(0, 40),
+      // `cronica` marks the headline of a chronicle; the volanta is no longer a
+      // heading at all, so it cannot reach the navigation (specs-v12, spec 04).
       content: xhtml(
         doc.data.title,
         `<section epub:type="${EPUB_TYPE[doc.data.pageType] ?? 'chapter'}" data-section="${xml(doc.data.section)}">\n${parts.join('\n')}\n</section>`,
@@ -513,7 +597,8 @@ ${chapters
     <dc:creator>${xml(BOOK.publisher)}</dc:creator>
     <dc:publisher>${xml(BOOK.publisher)}</dc:publisher>
     <dc:language>es-AR</dc:language>
-    <dc:description>${xml(BOOK.description)}</dc:description>
+    <dc:description>${xml(`${BOOK.description} Edición ${VERSION}.`)}</dc:description>
+    <meta property="schema:version">${xml(VERSION)}</meta>
     <dc:subject>Crímenes de lesa humanidad</dc:subject>
     <dc:subject>Terrorismo de Estado</dc:subject>
     <dc:subject>Derechos humanos</dc:subject>

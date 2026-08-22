@@ -12,11 +12,13 @@ interface Props {
   section: string;
   showTitle?: boolean;
   kicker?: string;
+  /** Signature printed below the title and before the first paragraph. */
+  byline?: string;
   /** `citations` is the epigraph page that opens the book (spec 01, RF-01.2). */
   variant?: 'interlude' | 'citations';
 }
 
-const { docSlug, title, section, showTitle = true, kicker, variant = 'interlude' } = Astro.props;
+const { docSlug, title, section, showTitle = true, kicker, byline, variant = 'interlude' } = Astro.props;
 const image = documentImage(docSlug);
 const SIZES = '(max-width: 900px) 100vw, 46vw';
 ---
@@ -58,6 +60,7 @@ const SIZES = '(max-width: 900px) 100vw, 46vw';
           <h2 class="doc-title" data-doc-title>
             <span class="hl">{title}</span>
           </h2>
+          {byline && <p class="doc-byline">{byline}</p>}
         </header>
       )}
       <slot />

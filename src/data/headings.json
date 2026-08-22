@@ -90,22 +90,23 @@
       "order": 3,
       "pageType": "reader",
       "showTitle": true,
-      "kicker": "Declaración de los organismos de derechos humanos — CPM Chaco",
+      "byline": "Por organismos de DDHH de CPM CHACO",
       "headings": []
     },
     {
       "slug": "introduccion",
-      "title": "Introducción",
+      "title": "Juicio y Castigo en el Chaco Vol II. La Brigada",
       "section": "inicio",
       "order": 4,
       "pageType": "reader",
       "showTitle": true,
+      "byline": "Por Gonzalo Torres",
       "headings": [
         {
           "depth": 2,
           "text": "JUICIO Y CASTIGO EN EL CHACO",
           "slug": "juicio-y-castigo-en-el-chaco",
-          "blocks": 6
+          "blocks": 5
         }
       ]
     },
@@ -150,14 +151,7 @@
       "order": 6,
       "pageType": "chapter-opening",
       "showTitle": true,
-      "headings": [
-        {
-          "depth": 3,
-          "text": "EN EL LUGAR SIN LÍMITES",
-          "slug": "en-el-lugar-sin-límites",
-          "blocks": 3
-        }
-      ]
+      "headings": []
     },
     {
       "slug": "cronicas-una-casa-con-una-sala-negra",
@@ -171,13 +165,15 @@
           "depth": 1,
           "text": "CAUSA BRIGADA I 7 julio 2010",
           "slug": "causa-brigada-i-7-julio-2010",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "“LA TORTURA EN EL CHACO COMENZÓ EN EL 74, CON UN GOBIERNO CONSTITUCIONAL”",
           "slug": "la-tortura-en-el-chaco-comenzó-en-el-74-con-un-gobierno-constitucional",
-          "blocks": 10
+          "blocks": 10,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -207,13 +203,15 @@
           "depth": 1,
           "text": "CAUSA BRIGADA I 8 julio 2010",
           "slug": "causa-brigada-i-8-julio-2010",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "UNA MADRE Y SU HIJO DE SIETE MESES TORTURADOS EN LA BRIGADA",
           "slug": "una-madre-y-su-hijo-de-siete-meses-torturados-en-la-brigada",
-          "blocks": 3
+          "blocks": 3,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -279,13 +277,15 @@
           "depth": 1,
           "text": "CAUSA BRIGADA I 13 julio 2010",
           "slug": "causa-brigada-i-13-julio-2010",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "“LA BRIGADA, UN INFIERNO PERMANENTE",
           "slug": "la-brigada-un-infierno-permanente",
-          "blocks": 5
+          "blocks": 5,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -321,13 +321,15 @@
           "depth": 1,
           "text": "Causa Brigada I 10 agosto 2010",
           "slug": "causa-brigada-i-10-agosto-2010",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "LA BRIGADA: “SALIR DE AHÍ, AUNQUE SEA MUERTOS”",
           "slug": "la-brigada-salir-de-ahí-aunque-sea-muertos",
-          "blocks": 3
+          "blocks": 3,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -363,13 +365,15 @@
           "depth": 1,
           "text": "Brigada I 15/9/2010",
           "slug": "brigada-i-1592010",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "CONSEJOS DE GUERRA: LA (IN) JUSTICIA MILITAR",
           "slug": "consejos-de-guerra-la-in-justicia-militar",
-          "blocks": 3
+          "blocks": 3,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -423,13 +427,15 @@
           "depth": 1,
           "text": "Causa Brigada I 22 de septiembre de 2010",
           "slug": "causa-brigada-i-22-de-septiembre-de-2010",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "EL SOBREVIVIENTE DE LA CASA DE TARZÁN",
           "slug": "el-sobreviviente-de-la-casa-de-tarzán",
-          "blocks": 4
+          "blocks": 4,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -453,13 +459,15 @@
           "depth": 1,
           "text": "Causa Brigada I 4/10/2010",
           "slug": "causa-brigada-i-4102010",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "“VAMOS A MATAR A TU HIJO”",
           "slug": "vamos-a-matar-a-tu-hijo",
-          "blocks": 4
+          "blocks": 4,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -507,13 +515,15 @@
           "depth": 1,
           "text": "Causa Brigada I 18/10/2010",
           "slug": "causa-brigada-i-18102010",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "NIÑOS DETENIDOS EN LA BRIGADA",
           "slug": "niños-detenidos-en-la-brigada",
-          "blocks": 2
+          "blocks": 2,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -567,13 +577,15 @@
           "depth": 1,
           "text": "CAUSA BRIGADA I 26 de octubre de 2010",
           "slug": "causa-brigada-i-26-de-octubre-de-2010",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "EL POLICÍA QUE SE NEGÓ A TORTURAR",
           "slug": "el-policía-que-se-negó-a-torturar",
-          "blocks": 3
+          "blocks": 3,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -609,13 +621,15 @@
           "depth": 1,
           "text": "CAUSA BRIGADA I 8 de noviembre de 2010",
           "slug": "causa-brigada-i-8-de-noviembre-de-2010",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "INSPECCIÓN OCULAR EN LA CASA POR LA MEMORIA",
           "slug": "inspección-ocular-en-la-casa-por-la-memoria",
-          "blocks": 2
+          "blocks": 2,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -663,13 +677,15 @@
           "depth": 1,
           "text": "CAUSA BRIGADA II – Jueves 24 de noviembre de 2016",
           "slug": "causa-brigada-ii--jueves-24-de-noviembre-de-2016",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "Comenzaron las testimoniales en la causa",
           "slug": "comenzaron-las-testimoniales-en-la-causa",
-          "blocks": 2
+          "blocks": 2,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -699,13 +715,15 @@
           "depth": 1,
           "text": "CAUSA BRIGADA II Febrero de 2017",
           "slug": "causa-brigada-ii-febrero-de-2017",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "Reclamaron cárcel común y efectiva para Gabino Manader",
           "slug": "reclamaron-cárcel-común-y-efectiva-para-gabino-manader",
-          "blocks": 3
+          "blocks": 3,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -723,13 +741,15 @@
           "depth": 1,
           "text": "CAUSA BRIGADA III /MARTES 13 DE ABRIL",
           "slug": "causa-brigada-iii-martes-13-de-abril",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "Con relatos del horror en la Brigada/Alcaidía comenzó la etapa de testimoniales",
           "slug": "con-relatos-del-horror-en-la-brigadaalcaidía-comenzó-la-etapa-de-testimoniales",
-          "blocks": 4
+          "blocks": 4,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -804,7 +824,8 @@
           "depth": 1,
           "text": "CAUSA BRIGADA II Viernes 16 de diciembre de 2016",
           "slug": "causa-brigada-ii-viernes-16-de-diciembre-de-2016",
-          "blocks": 1
+          "blocks": 1,
+          "role": "volanta"
         },
         {
           "depth": 2,
@@ -840,13 +861,15 @@
           "depth": 1,
           "text": "Causa Brigada I 20 agosto 2010",
           "slug": "causa-brigada-i-20-agosto-2010",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "Héctor Marín: violaciones en la Brigada",
           "slug": "héctor-marín-violaciones-en-la-brigada",
-          "blocks": 4
+          "blocks": 4,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -894,7 +917,8 @@
           "depth": 1,
           "text": "Causa Brigada I 14/9/2010",
           "slug": "causa-brigada-i-1492010",
-          "blocks": 6
+          "blocks": 6,
+          "role": "volanta"
         },
         {
           "depth": 2,
@@ -930,13 +954,15 @@
           "depth": 1,
           "text": "CAUSA BRIGADA II Febrero 2017",
           "slug": "causa-brigada-ii-febrero-2017",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "La violación, crimen de lesa humanidad",
           "slug": "la-violación-crimen-de-lesa-humanidad",
-          "blocks": 5
+          "blocks": 5,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -972,13 +998,15 @@
           "depth": 1,
           "text": "CAUSA BRIGADA II 16 de febrero 2017",
           "slug": "causa-brigada-ii-16-de-febrero-2017",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "Con la declaración de un testigo, culminaron los debates de febrero",
           "slug": "con-la-declaración-de-un-testigo-culminaron-los-debates-de-febrero",
-          "blocks": 10
+          "blocks": 10,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -990,13 +1018,15 @@
           "depth": 1,
           "text": "CAUSA BRIGADA 1 de marzo de 2017",
           "slug": "causa-brigada-1-de-marzo-de-2017",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "Manader en su domicilio y el juez Iglesias en el Tribunal",
           "slug": "manader-en-su-domicilio-y-el-juez-iglesias-en-el-tribunal",
-          "blocks": 3
+          "blocks": 3,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -1014,13 +1044,15 @@
           "depth": 1,
           "text": "CAUSA BRIGADA II Miércoles 22 de marzo de 2017",
           "slug": "causa-brigada-ii-miércoles-22-de-marzo-de-2017",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "Rossi: testimonio y cátedra de deber cívico",
           "slug": "rossi-testimonio-y-cátedra-de-deber-cívico",
-          "blocks": 5
+          "blocks": 5,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -1038,13 +1070,15 @@
           "depth": 1,
           "text": "CAUSA BRIGADA II Jueves 6 de abril 2017",
           "slug": "causa-brigada-ii-jueves-6-de-abril-2017",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "Declararon dos ex presos políticos y el juicio oral continúa este viernes",
           "slug": "declararon-dos-ex-presos-políticos-y-el-juicio-oral-continúa-este-viernes",
-          "blocks": 3
+          "blocks": 3,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -1074,7 +1108,8 @@
           "depth": 1,
           "text": "CAUSA BRIGADA II Viernes 7 de abril 2017",
           "slug": "causa-brigada-ii-viernes-7-de-abril-2017",
-          "blocks": 5
+          "blocks": 5,
+          "role": "volanta"
         },
         {
           "depth": 2,
@@ -1092,25 +1127,29 @@
           "depth": 1,
           "text": "CAUSA CABALLERO II Jueves 11 de mayo 2017",
           "slug": "causa-caballero-ii-jueves-11-de-mayo-2017",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "Continúa el juicio por crímenes de lesa humanidad en la Brigada",
           "slug": "continúa-el-juicio-por-crímenes-de-lesa-humanidad-en-la-brigada",
-          "blocks": 36
+          "blocks": 36,
+          "role": "title"
         },
         {
           "depth": 1,
           "text": "BRIGADA II 18 de mayo de 2017",
           "slug": "brigada-ii-18-de-mayo-de-2017",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "Culminaron los debates de mayo en el juicio oral",
           "slug": "culminaron-los-debates-de-mayo-en-el-juicio-oral",
-          "blocks": 3
+          "blocks": 3,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -1122,13 +1161,15 @@
           "depth": 1,
           "text": "CAUSA BRIGADA II Viernes 16/6/18",
           "slug": "causa-brigada-ii-viernes-16618",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "La violencia sexual como delito autónomo de lesa humanidad",
           "slug": "la-violencia-sexual-como-delito-autónomo-de-lesa-humanidad",
-          "blocks": 5
+          "blocks": 5,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -1152,13 +1193,15 @@
           "depth": 1,
           "text": "BRIGADA III",
           "slug": "brigada-iii",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "Viernes 16 de abril de 2021",
           "slug": "viernes-16-de-abril-de-2021",
-          "blocks": 7
+          "blocks": 7,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -1208,13 +1251,15 @@
           "depth": 1,
           "text": "CAUSA BRIGADA I 11 agosto 2010",
           "slug": "causa-brigada-i-11-agosto-2010",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "DE SOBREVIVIENTES Y DESAPARECIDOS",
           "slug": "de-sobrevivientes-y-desaparecidos",
-          "blocks": 5
+          "blocks": 5,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -1244,13 +1289,15 @@
           "depth": 1,
           "text": "CAUSA BRIGADA- 24 AGOSTO 2010",
           "slug": "causa-brigada--24-agosto-2010",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "PEDRO Y SARA",
           "slug": "pedro-y-sara",
-          "blocks": 4
+          "blocks": 4,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -1286,13 +1333,15 @@
           "depth": 1,
           "text": "CAUSA BRIGADA III- MIÉRCOLES 14 DE ABRIL DE 2021",
           "slug": "causa-brigada-iii--miércoles-14-de-abril-de-2021",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "LA BRIGADA, DESTINO FINAL DE VARIOS DESAPARECIDOS",
           "slug": "la-brigada-destino-final-de-varios-desaparecidos",
-          "blocks": 3
+          "blocks": 3,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -1316,13 +1365,15 @@
           "depth": 1,
           "text": "CAUSA BRIGADA III / DÍA 4 – 15 DE ABRIL DE 2021",
           "slug": "causa-brigada-iii--día-4--15-de-abril-de-2021",
-          "blocks": 0
+          "blocks": 0,
+          "role": "volanta"
         },
         {
           "depth": 2,
           "text": "EL TRIBUNAL ANUNCIÓ QUE DICTARÁ SENTENCIA EL LUNES 26",
           "slug": "el-tribunal-anunció-que-dictará-sentencia-el-lunes-26",
-          "blocks": 3
+          "blocks": 3,
+          "role": "title"
         },
         {
           "depth": 2,
@@ -1386,7 +1437,8 @@
           "depth": 1,
           "text": "BRIGADA",
           "slug": "brigada",
-          "blocks": 2
+          "blocks": 2,
+          "role": "volanta"
         },
         {
           "depth": 2,
@@ -1398,7 +1450,8 @@
           "depth": 1,
           "text": "BRIGADA II",
           "slug": "brigada-ii",
-          "blocks": 3
+          "blocks": 3,
+          "role": "volanta"
         },
         {
           "depth": 2,
@@ -1416,7 +1469,8 @@
           "depth": 1,
           "text": "BRIGADA III",
           "slug": "brigada-iii",
-          "blocks": 1
+          "blocks": 1,
+          "role": "volanta"
         },
         {
           "depth": 2,
@@ -1502,7 +1556,8 @@
           "depth": 1,
           "text": "13.12.10. BRIGADA",
           "slug": "131210-brigada",
-          "blocks": 10
+          "blocks": 10,
+          "role": "volanta"
         },
         {
           "depth": 2,

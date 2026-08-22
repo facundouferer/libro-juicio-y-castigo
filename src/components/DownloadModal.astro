@@ -40,6 +40,14 @@ const format = (bytes) =>
           </a>
         ))
       }
+      {
+        downloads.version && (
+          <p class="download-version">
+            Versión {downloads.version}
+            {downloads.generated ? ` · ${downloads.generated}` : ''}
+          </p>
+        )
+      }
     </div>
   </div>
 </dialog>

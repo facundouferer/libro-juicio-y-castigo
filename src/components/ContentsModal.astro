@@ -15,6 +15,30 @@ const bySection = SECTIONS.map((section) => ({
   ...section,
   entries: ENTRIES.filter((e) => e.section === section.id),
 })).filter((s) => s.entries.length);
+
+/**
+ * What a reader navigates by is the headline of a chronicle, not its volanta.
+ *
+ * The manuscript writes the volanta as the `h1` and the headline as the `h2`,
+ * so the panel listed 34 entries reading «CAUSA BRIGADA I 7 julio 2010» above
+ * the titles they introduce. A volanta that has a headline is folded into it;
+ * one that opens a chronicle on its own stays, because otherwise that chronicle
+ * would have no entry at all (specs-v12, spec 04, RF-04.5).
+ */
+function navigable(headings) {
+  return headings
+    .map((heading, i) => {
+      if (heading.role !== 'volanta') return heading;
+      const next = headings[i + 1];
+      return next?.role === 'title' ? null : { ...heading, depth: 2 };
+    })
+    .filter(Boolean);
+}
+
+/** The parts that get a cover of their own (specs-v12, spec 03). */
+const partOf = new Map(
+  bySection.filter((s) => s.part).map((s) => [s.entries[0]?.slug, s]),
+);
 ---
 
 <dialog class="modal" id="dlg-contents" aria-labelledby="contents-title">
@@ -38,7 +62,7 @@ const bySection = SECTIONS.map((section) => ({
       />
     </div>
     <p class="contents-hint" id="contents-hint">
-      {ENTRIES.reduce((n, e) => n + e.headings.length, 0)} títulos. Escribí tres letras o más para buscar
+      {ENTRIES.reduce((n, e) => n + navigable(e.headings).length, 0)} títulos. Escribí tres letras o más para buscar
       también dentro del texto.
     </p>
 
@@ -51,10 +75,15 @@ const bySection = SECTIONS.map((section) => ({
             </p>
             {section.entries.map((entry) => (
               <>
+                {partOf.get(entry.slug) && (
+                  <a href={`#parte-${section.id}`} data-depth="doc" data-title={section.title}>
+                    {section.title}
+                  </a>
+                )}
                 <a href={`#${entry.slug}`} data-depth="doc" data-title={entry.title}>
                   {entry.title}
                 </a>
-                {entry.headings.map((heading) => (
+                {navigable(entry.headings).map((heading) => (
                   <a href={`#${heading.slug}`} data-depth={String(heading.depth)} data-title={heading.text}>
                     {heading.text}
                   </a>

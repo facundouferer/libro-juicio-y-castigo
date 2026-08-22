@@ -14,7 +14,7 @@
    
 (IMG\_007\_Tof) Ex presos políticos Eugenio Silva y Horacio Cracogna en el TOF, el 26 de noviembre de 2010/Prensa CPM Chaco   
    
-(IMG\_008\_ María) Ex detenida policía María Julia Morresi, dibujo de Alejandro Gallardo   
+(IMG\_008\_ María) Ex detenida política María Julia Morresi, dibujo de Alejandro Gallardo   
    
 (IMG\_009\_ INSPECCIÓN) Inspección ocular en la ex Brigada, el 8 de noviembre de 2010 / Prensa CPM Chaco   
    

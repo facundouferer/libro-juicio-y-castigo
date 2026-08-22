@@ -1,10 +1,11 @@
 ---
-title: "Introducción"
+title: "Juicio y Castigo en el Chaco Vol II. La Brigada"
 docSlug: "introduccion"
 order: 4
 section: "inicio"
 pageType: "reader"
-words: 1160
+byline: "Por Gonzalo Torres"
+words: 1166
 sourceFile: "section00_inicio/02.INTRODUCCIÓN.md"
 ---
 “Ustedes están muertos en vida, ustedes son los muertos que están vivos”. Se lo dijeron cuando estuvo detenida-desaparecida en un calabozo clandestino durante la última dictadura cívico-militar (1976-83) y logró contarlo en un juicio oral de la democracia, muchos años después. Una historia particular de una sobreviviente que volvió de la “muerte” en el genocidio, y que se inserta en una historia colectiva, la de nuestro pasado reciente.
@@ -44,6 +45,7 @@ En una amarga confirmación de aquella advertencia del siempre vigente Rodolfo W
 
 Este libro se propone intervenir en esa disputa por la representación del genocidio en el presente como un humilde aporte que consiste en confrontar a la falacia oscurecedora negacionista con la palabra luminosa de los y de las sobrevivientes; voces que se alzan desde una experiencia vital heterogénea para testimoniar una verdad histórica que acusa a los criminales del terrorismo de Estado y defiende la posibilidad siempre latente de un país más justo, más solidario, más libre.
 
-**Gonzalo Torres 12/8/2025**
-
-*(“Juicio y Castigo en el Chaco” tiene un volumen 1, que consiste en una antología de crónicas sobre la causa Masacre de Margarita Belén, y tendrá un tercer volumen, referido a las causas Ligas Agrarias, Complicidad civil, Conscriptos, y Masacre de Margarita II  Tozzo)*
+<aside class="signoff">
+<p class="signoff-lead">12 de agosto de 2025</p>
+<p><em>(“Juicio y Castigo en el Chaco” tiene un volumen 1, que consiste en una antología de crónicas sobre la causa Masacre de Margarita Belén, y tendrá un tercer volumen, referido a las causas Ligas Agrarias, Complicidad civil, Conscriptos, y Masacre de Margarita II  Tozzo)</em></p>
+</aside>
