@@ -31,7 +31,7 @@ TDD: off (sin configuración ni runner de tests en el proyecto). Checks funciona
 - [x] **T2 — Preliminares y carátulas** (todas las ediciones). Portadilla sin imagen y título agrandado; citas en mitad superior con firmas más grandes; firma «Por organismos de DDHH de CPM Chaco» antes del texto y más grande; firma de Gonzalo Torres más grande; sin imagen en el índice; carátulas de parte sin número «01» ni copete; verso de carátula en blanco (PDF).
 - [x] **T3 — Caja, márgenes y grilla de línea base** (PDF). Márgenes espejados; renglón único de 12,5 pt; todos los espacios verticales, títulos, epígrafes y alturas de imagen en múltiplos del renglón; eliminar variantes de interlineado `is-tight/is-loose`; bajada de cabeza fija (25 %) en aperturas; distancia idéntica de títulos de sección que abren página; viudas/huérfanas para igualar el pie.
 - [x] **T4 — Bloque de fotos anclado** (PDF). Imágenes del final de crónica en módulos de la grilla, ancladas a cabeza o pie, sin «isletas» centradas; planos/infografías en página impar dedicada; alineación especular en pliegos.
-- [ ] **T5 — PDF de imprenta** (PDF). Sangrado 3 mm, marcas de corte, TrimBox/BleedBox, total múltiplo de 16 con blancos de cortesía.
+- [x] **T5 — PDF de imprenta** (PDF). Sangrado 3 mm, marcas de corte, TrimBox/BleedBox, total múltiplo de 16 con blancos de cortesía.
 - [ ] **T6 — Regenerar ediciones y verificar**. PDF, EPUB y descargas; verificación por contenido de cada tanda del documento; `npm run build` y `npm run check`.
 
 ## Progreso y evidencia
@@ -43,6 +43,9 @@ TDD: off (sin configuración ni runner de tests en el proyecto). Checks funciona
 
 - **T4, corrección tras revisión** (commit fix(pdf)): las figuras que quedaban dentro del texto (002, 037, 066, 078, 083, 084, 094, 095, 096, 098, 099, 100) pasan al bloque de fotos de su bloque; las fichas consecutivas se emparejan en un dúo; dos cajas que no entran juntas comparten página si sus imágenes ceden como máximo un 25 %; en dúo y grilla la imagen llena la celda (50 % del ancho menos medio gutter). PDF 316 págs. (antes 322), aperturas en impar 57/57, 0 líneas fuera de grilla, 0 avisos de simulación; páginas solo de figura por debajo del 50 %: 10 → 5. Hojas: scratchpad book_0..7.png.
 
+- **T4, correcciones 2** (commit b4bf82c): el `height` del atributo `<img>` dejaba un hueco entre imagen y epígrafe en 75 figuras (ahora 0, `height:auto`); la ficha conserva el 50 % sin tope por calidad; la grilla 2×2 usa un marco de imagen igual en todas las celdas. PDF 296 págs., aperturas en impar 57/57, 0 líneas fuera de grilla, 95 págs. de texto terminan en la última línea base.
+- **T5** (commit feat(pdf), misma ruta). `scripts/build-imprenta.mjs` (`npm run pdf:imprenta`) → `build/imprenta/…-imprenta.pdf` (no publicado): hoja 174 × 236 mm, TrimBox A5, BleedBox +3 mm, marcas de corte 0,25 pt fuera del sangrado, 296 págs. + 8 blancas = 304 (múltiplo de 16). Verificado con `pdfinfo -box` y render de la esquina. El fondo es blanco: no hay arte a sangre que extender.
+
 ## Próximo paso
 
-T4 cerrado; sigue T5.
+T6.
