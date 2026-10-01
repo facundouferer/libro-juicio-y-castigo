@@ -32,7 +32,7 @@ TDD: off (sin configuración ni runner de tests en el proyecto). Checks funciona
 - [x] **T3 — Caja, márgenes y grilla de línea base** (PDF). Márgenes espejados; renglón único de 12,5 pt; todos los espacios verticales, títulos, epígrafes y alturas de imagen en múltiplos del renglón; eliminar variantes de interlineado `is-tight/is-loose`; bajada de cabeza fija (25 %) en aperturas; distancia idéntica de títulos de sección que abren página; viudas/huérfanas para igualar el pie.
 - [x] **T4 — Bloque de fotos anclado** (PDF). Imágenes del final de crónica en módulos de la grilla, ancladas a cabeza o pie, sin «isletas» centradas; planos/infografías en página impar dedicada; alineación especular en pliegos.
 - [x] **T5 — PDF de imprenta** (PDF). Sangrado 3 mm, marcas de corte, TrimBox/BleedBox, total múltiplo de 16 con blancos de cortesía.
-- [ ] **T6 — Regenerar ediciones y verificar**. PDF, EPUB y descargas; verificación por contenido de cada tanda del documento; `npm run build` y `npm run check`.
+- [x] **T6 — Regenerar ediciones y verificar**. PDF, EPUB y descargas; verificación por contenido de cada tanda del documento; `npm run build` y `npm run check`.
 
 ## Progreso y evidencia
 
@@ -46,6 +46,8 @@ TDD: off (sin configuración ni runner de tests en el proyecto). Checks funciona
 - **T4, correcciones 2** (commit b4bf82c): el `height` del atributo `<img>` dejaba un hueco entre imagen y epígrafe en 75 figuras (ahora 0, `height:auto`); la ficha conserva el 50 % sin tope por calidad; la grilla 2×2 usa un marco de imagen igual en todas las celdas. PDF 296 págs., aperturas en impar 57/57, 0 líneas fuera de grilla, 95 págs. de texto terminan en la última línea base.
 - **T5** (commit feat(pdf), misma ruta). `scripts/build-imprenta.mjs` (`npm run pdf:imprenta`) → `build/imprenta/…-imprenta.pdf` (no publicado): hoja 174 × 236 mm, TrimBox A5, BleedBox +3 mm, marcas de corte 0,25 pt fuera del sangrado, 296 págs. + 8 blancas = 304 (múltiplo de 16). Verificado con `pdfinfo -box` y render de la esquina. El fondo es blanco: no hay arte a sangre que extender.
 
+- **T6** (ruta: direct inline, acción de build acotada). Versión 1.3.0. `npm run pdf` 296 págs., aperturas en impar 57/57, sin colas < 5 líneas; `npm run pdf:imprenta` 296 + 8 = 304; `npm run epub` ok (104 imágenes, 15,1 MB); `npm run downloads` ok; `npm run build` ok; `npm run check` «Todo en su lugar». Revisión visual por hojas de contacto del libro completo (scratchpad fin_0..4.png). Limitación conocida: quedan páginas de figura con una sola ficha o caja arriba y blanco debajo cuando el bloque de fotos de una crónica tiene una sola imagen (p. ej. págs. 41, 126, 146, 149, 176); 38 páginas de texto cortan 1–3 renglones antes de la base por viudas/huérfanas y títulos.
+
 ## Próximo paso
 
-T6.
+Revisión del usuario sobre el PDF 1.3; push y PR solo cuando el usuario lo pida.
