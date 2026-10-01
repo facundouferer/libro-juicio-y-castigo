@@ -1,7 +1,7 @@
 {
   "name": "juicio-y-castigo-chaco",
   "type": "module",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "private": true,
   "description": "Sitio web del libro Juicio y Castigo en el Chaco (Vol II) — Causa Brigada I, II, III",
   "scripts": {
@@ -12,6 +12,7 @@
     "revision": "node scripts/report-review.mjs && node scripts/report-layout.mjs",
     "check": "node scripts/check-build.mjs",
     "pdf": "node scripts/build-pdf.mjs",
+    "pdf:imprenta": "node scripts/build-imprenta.mjs",
     "epub": "node scripts/build-epub.mjs",
     "downloads": "node scripts/build-downloads.mjs",
     "shots": "node scripts/shoot.mjs",

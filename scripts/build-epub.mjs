@@ -112,13 +112,14 @@ figure.figure img {
 figure.figure figcaption {
   margin-top: 0.4em;
   font-size: 0.76em;
+  font-style: italic;
   line-height: 1.35;
   text-align: left;
   color: #575d63;
   hyphens: none;
   -epub-hyphens: none;
 }
-figure.figure figcaption .credit { display: block; font-weight: bold; color: ${ACCENT[SMALL_TEXT_STEP]}; }
+figure.figure figcaption .credit { display: block; font-style: normal; font-weight: bold; color: ${ACCENT[SMALL_TEXT_STEP]}; }
 
 .cover-page { text-align: left; margin-top: 6%; }
 .cover-photo { display: block; width: 100%; height: auto; margin-bottom: 1.4em; }
@@ -130,8 +131,8 @@ figure.figure figcaption .credit { display: block; font-weight: bold; color: ${A
   /* «Causa Brigada I, II, III» names what the volume is about; at 1.15em it
      read as a footnote to the title instead of as its second half
      (specs-v12, spec 01, RF-01.2). 2.4/1.5 = 1.6:1. */
-  font-size: 1.5em;
-  line-height: 1.16;
+  font-size: 1.9em;
+  line-height: 1.14;
   margin: 0.7em 0 0.3em;
   color: ${ACCENT[700]};
 }
@@ -179,7 +180,7 @@ h2.cronica-title::before { content: none; }
 .doc-byline {
   font-family: sans-serif;
   text-transform: uppercase;
-  font-size: 0.8em;
+  font-size: 1.05em;
   letter-spacing: 0.07em;
   color: ${ACCENT[SMALL_TEXT_STEP]};
   margin: 0.5em 0 1.2em;
@@ -205,13 +206,18 @@ aside.signoff p {
 }
 aside.signoff .signoff-lead { color: ${ACCENT[SMALL_TEXT_STEP]}; margin-bottom: 0.8em; }
 
-/* ── Image containers (specs-v12, spec 07, RF-07.7) ─────────────────────────
-   The three containers of the printed edition, translated to a reflowable
-   medium: full width, two thirds centred, and the whole width of the view. */
-figure.figure.box-two-thirds { width: 66%; margin-left: auto; margin-right: auto; }
-figure.figure.box-full img, figure.figure.box-page img { width: 100%; height: auto; }
-figure.figure.box-full figcaption { text-align: right; }
-figure.figure.box-page { page-break-before: always; break-before: page; }
+/* ── Image scale (fourth editorial pass) ───────────────────────────────────
+   The catalog of the printed edition, translated to a reflowable medium:
+   ficha at half width centred, caja and plano at full width, pairs and the
+   2 × 2 grid as modules of half-width figures. */
+figure.figure.box-ficha { width: 50%; margin-left: auto; margin-right: auto; }
+figure.figure.box-caja img, figure.figure.box-plano img { width: 100%; height: auto; }
+figure.figure.box-plano { page-break-before: always; break-before: page; }
+.fig-module { display: table; width: 100%; table-layout: fixed; border-spacing: 0.6em 0; margin: 1.4em 0; }
+.fig-module > figure.figure { display: table-cell; width: 50%; vertical-align: top; margin: 0; }
+.fig-module > figure.figure img { width: 100%; height: auto; max-height: none; }
+.fig-grid2x2 { display: block; }
+.fig-grid2x2 > figure.figure { display: inline-block; width: 48%; margin: 0 0.5% 1em; vertical-align: top; }
 .doc-kicker {
   font-family: sans-serif;
   font-weight: bold;
@@ -277,24 +283,11 @@ h2::before {
 }
 
 .part-divider { margin-top: 22%; text-align: left; }
-.part-divider .part-num {
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 3.2em;
-  line-height: 1;
-  color: ${ACCENT[200]};
-  margin: 0 0 0.2em;
-}
 .part-divider .part-title { font-size: 2.1em; line-height: 1.06; margin: 0 0 0.7em; }
 .part-divider .part-title::before { content: none; }
-.part-divider .part-blurb {
-  font-size: 0.92em;
-  line-height: 1.5;
-  color: #3d4247;
-  text-align: left;
-  hyphens: none;
-  -epub-hyphens: none;
-}
+
+/* The epigraph page: the authors of the citations, one size up from before. */
+section[epub|type~='epigraph'] blockquote p:last-child { font-size: 1.1em; font-style: normal; color: #575d63; }
 
 nav[epub|type~='toc'] ol { list-style: none; padding-left: 1em; }
 nav[epub|type~='toc'] > ol { padding-left: 0; }
@@ -408,10 +401,8 @@ async function main() {
         content: xhtml(
           `${section.part} — ${section.title}`,
           `<section epub:type="part" class="part-divider" data-section="${xml(section.id)}">
-${section.partNumber ? `  <p class="part-num">${String(section.partNumber).padStart(2, '0')}</p>` : ''}
   <p class="part-label">${xml(section.part)}</p>
   <h1 class="part-title">${xml(section.title)}</h1>
-${section.blurb ? `  <p class="part-blurb">${xml(section.blurb)}</p>` : ''}
 </section>`,
         ),
       });
@@ -439,7 +430,7 @@ ${section.blurb ? `  <p class="part-blurb">${xml(section.blurb)}</p>` : ''}
       ].join('');
       const box =
         doc.data.pageType === 'chapter-opening'
-          ? 'box-page'
+          ? 'box-plano'
           : containerFor(doc.plate.key, doc.plate, { caption: doc.plate.caption });
       plateParts.push(
         [

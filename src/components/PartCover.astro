@@ -9,8 +9,10 @@
  * section had no threshold at all (specs-v12, spec 03, RF-03.1).
  *
  * The section's photograph — the one the mapping anchored to its opening text —
- * is the ground of this page. In the PDF the same photograph takes the verso
- * behind this cover.
+ * is the ground of this page. The PDF keeps the verso blank and carries the
+ * photograph at the tail of the opening text instead.
+ *
+ * No big number and no blurb: label and title only (fourth editorial pass).
  */
 import { documentImage, SECTIONS } from '../lib/book.mjs';
 
@@ -56,11 +58,9 @@ const SIZES = '100vw';
   }
 
   <div class="opening-body">
-    {meta?.partNumber && <p class="opening-num">{String(meta.partNumber).padStart(2, '0')}</p>}
     {meta?.part && <p class="part-label">{meta.part}</p>}
     <h2 class="opening-title" data-pagefind-meta={`title:${meta?.title ?? section}`}>
       <span class="hl">{meta?.title}</span>
     </h2>
-    {meta?.blurb && <p class="part-blurb">{meta.blurb}</p>}
   </div>
 </section>

@@ -6,18 +6,30 @@
  * where a page may break. Chrome paginates this; page numbers and the outline
  * are stamped afterwards by scripts/build-pdf.mjs.
  *
- * The trim is 148 × 210 mm. The content box is therefore 119 mm wide and
- * 180 mm tall, and every image ceiling below is derived from that.
+ * The trim is 148 × 210 mm. The pages are mirrored for binding: the inner
+ * (gutter) margin is 18 mm, the outer 13 mm, so the text box is 117 mm wide on
+ * every page. Its height is an exact whole number of baselines: 40 lines of
+ * --lh (12.5 pt) = 500 pt, with a 42 pt head and a 53 pt foot.
+ *
+ * One baseline unit rules the vertical axis. Every element in the flow takes
+ * a whole multiple of --lh (line-height and margins), so the text of facing
+ * pages lands on the same lines and pages end on the same last baseline.
  */
 
 @page {
   size: A5;
-  /* Asymmetric: the inner margin carries the gutter if this is ever bound. */
-  margin: 14mm 13mm 16mm 16mm;
+  margin: 42pt 13mm 53pt 18mm;
 }
+/* Mirrored: page 1 is a recto, so the gutter is on the left of odd pages. */
+@page :right { margin: 42pt 13mm 53pt 18mm; }
+@page :left { margin: 42pt 18mm 53pt 13mm; }
 
 :root {
-  --page-content-height: 180mm;
+  --lh: 12.5pt;
+  --box-lines: 40;
+  --box-h: calc(var(--box-lines) * var(--lh));
+  /* "Bajada de cabeza": 25 % of the text box, before the title of every opening. */
+  --head-drop: calc(10 * var(--lh));
 }
 
 * { box-sizing: border-box; }
@@ -32,43 +44,52 @@ body {
   color: #1c1f22;
   font-family: 'Source Sans 3', 'Source Sans Pro', Georgia, serif;
   font-size: 9.6pt;
-  line-height: 1.46;
+  /* 9.6 pt on 12.5 pt: 130 %. The one baseline unit of the book. */
+  line-height: var(--lh);
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
-  /* Four, not three: a page that carried a single line was one of the defects
-     the third editorial pass reported (specs-v12, spec 05, RF-05.4). */
-  orphans: 4;
-  widows: 4;
+  orphans: 2;
+  widows: 2;
 }
+
+/* ── Headings ───────────────────────────────────────────────────────────────
+   Type size is free; line-height and spaces are whole baselines, so a heading
+   block is always k × --lh. The space before is padding, not margin: Chrome
+   drops a margin that falls at an unforced page break, and a title that lands
+   on top of a page must keep the same distance wherever it falls. The first
+   element of a section takes none (the section's head drop decides there). */
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Oswald', 'Arial Narrow', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  line-height: 1.12;
+  line-height: var(--lh);
   letter-spacing: 0.005em;
   text-align: left;
   hyphens: none;
   break-after: avoid;
   page-break-after: avoid;
-  margin: 0 0 2.4mm;
+  margin: 0;
 }
 /* Titles take the depth of the section they belong to (spec 07, RF-07.3). */
-h1 { font-size: 16pt; margin-top: 9mm; color: var(--section-accent); }
-h2 { font-size: 12pt; margin-top: 7mm; color: var(--section-accent); }
-h3 { font-size: 11pt; margin-top: 5.5mm; }
-h4 { font-size: 9.8pt; margin-top: 4.5mm; }
+h1 { font-size: 16pt; line-height: calc(2 * var(--lh)); padding-top: calc(2 * var(--lh)); margin-bottom: var(--lh); color: var(--section-accent); }
+h2 { font-size: 12pt; padding-top: var(--lh); color: var(--section-accent); }
+h3 { font-size: 11pt; padding-top: var(--lh); }
+h4 { font-size: 9.8pt; padding-top: var(--lh); }
+section > :first-child,
+.cronica-head > :first-child { padding-top: 0; }
 
 /* ── The opening of a chronicle ─────────────────────────────────────────────
    The manuscript writes the volanta as an `h1` and the headline as an `h2`, so
-   taking the size from the level set the volanta a third larger than the title
+   taking the size from the role set the volanta a third larger than the title
    it introduces. The size now comes from the role: 19 pt against 9 pt, a ratio
-   of 2.1 (specs-v12, spec 04, RF-04.4). */
+   of 2.1 (specs-v12, spec 04, RF-04.4). Volanta 1 line, title 2 lines per
+   line of type, one baseline of air under the block. */
 
 .cronica-head {
   display: block;
-  margin: 0 0 5mm;
+  margin: 0 0 var(--lh);
   break-after: avoid;
   page-break-after: avoid;
 }
@@ -78,136 +99,163 @@ h4 { font-size: 9.8pt; margin-top: 4.5mm; }
   font-size: 9pt;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  line-height: 1.2;
+  line-height: var(--lh);
   text-align: left;
   hyphens: none;
   color: var(--small-text-accent);
-  margin: 0 0 1.8mm;
+  margin: 0;
 }
 .cronica-head .cronica-title {
   font-size: 19pt;
-  line-height: 1.08;
+  line-height: calc(2 * var(--lh));
+  padding-top: 0;
   margin: 0;
   color: var(--section-accent);
 }
 
-p { margin: 0 0 2.6mm; }
+/* Paragraphs run on: a first-line indent instead of a space, so a text keeps
+   every line on the grid however many paragraphs it has. */
+p { margin: 0; }
+p + p { text-indent: 1.2em; }
 strong { font-weight: 700; }
 em { font-style: italic; }
 a { color: inherit; text-decoration: none; }
 
 blockquote {
-  margin: 4mm 0 4mm 4mm;
+  margin: var(--lh) 0 var(--lh) 4mm;
   padding-left: 4mm;
   border-left: 0.6mm solid var(--color-accent-300);
   font-size: 9pt;
-  line-height: 1.42;
-  break-inside: avoid;
-  page-break-inside: avoid;
+  line-height: var(--lh);
 }
-blockquote p { margin-bottom: 2mm; }
-blockquote p:last-child { margin-bottom: 0; }
+blockquote p { margin: 0; }
 
-ul, ol { margin: 0 0 2.6mm; padding-left: 6mm; }
-li { margin-bottom: 1.2mm; }
+ul, ol { margin: var(--lh) 0; padding-left: 6mm; }
+li { margin: 0; }
 
+/* A separator: one baseline of rule, one above and one below. */
 hr {
   border: 0;
-  height: 0.5mm;
-  background: var(--color-accent-300);
-  margin: 6mm auto;
+  height: var(--lh);
+  margin: var(--lh) auto;
   width: 32mm;
+  background: linear-gradient(var(--color-accent-300), var(--color-accent-300)) center / 100% 0.5mm no-repeat;
 }
 
 /* ── Photographs ────────────────────────────────────────────────────────────
-   No image may straddle a page break, and none may exceed one page. The
-   ceilings below leave room for the caption underneath, and the eight scans
-   the manifest marks as low resolution are capped at half a page — at that
-   size their softness reads as a small archival print, not as a defect. */
+   The scale catalog (src/data/image-scale.json, fourth editorial pass):
+
+     box-ficha   50 % of the box, centred. Portraits and individual drawings.
+     box-caja    100 % of the box. The dominant format.
+     box-plano   100 % of the box, on an odd page of its own: the two large plans.
+
+   Pairs (.fig-duo) and the 2 × 2 grid (.fig-grid2x2) are modules of several
+   figures. Every figure — image and caption together — is snapped to a whole
+   number of baselines by scripts/lib/print-layout.mjs before the PDF is made,
+   so the photo block can be stacked on the grid. The ceilings below are
+   expressed in baselines for the same reason, and leave room for a caption. */
 
 figure.figure {
   break-inside: avoid;
   page-break-inside: avoid;
-  margin: 5mm 0;
+  /* A figure that stays inside the text carries one baseline of air above and
+     below; in the photo block the groups set the spacing themselves. */
+  margin: var(--lh) 0;
   text-align: center;
 }
-
-/* Three containers and no fourth (specs-v12, spec 07, RF-07.1).
-
-     box-full        the whole width of the text box. Press photographs, group
-                     shots, the courtroom, the plaza. The dominant format.
-     box-two-thirds  two thirds, centred, nothing alongside. Portraits,
-                     drawings, file photographs.
-     box-page        the whole page: section covers and the plans of the house.
-
-   What this replaces read an aspect ratio where it should have read an
-   editorial decision, and sent about a third of the book to a page of its own. */
-
+.tail-group figure.figure,
+.fig-module > figure.figure { margin: 0; }
 figure.figure img {
   display: block;
+  /* The attributes would otherwise set the height: the box must follow the
+     picture, or the caption floats away from it. */
+  height: auto;
   margin: 0 auto;
   max-width: 100%;
   object-fit: contain;
 }
+/* A portrait never takes more than the width of a ficha. */
+figure.figure.portrait img { max-width: 50%; }
+/* Inside a module the cell is the ficha: the image fills it. */
+.fig-module figure.figure.portrait img { max-width: 100%; }
 
-figure.figure.box-full { width: 100%; }
-figure.figure.box-full img { width: 100%; max-height: 105mm; }
-/* «El epígrafe alineado abajo a la derecha en cuerpo menor» (RF-07.5). */
-figure.figure.box-full figcaption { text-align: right; }
+figure.figure.box-caja { width: 100%; }
+figure.figure.box-caja img { width: 100%; max-height: calc(24 * var(--lh)); }
 
-figure.figure.box-two-thirds { width: 66%; margin-left: auto; margin-right: auto; }
-figure.figure.box-two-thirds img { max-height: 96mm; }
+figure.figure.box-ficha { width: 50%; margin-left: auto; margin-right: auto; }
+figure.figure.box-ficha img { width: 100%; max-width: 100%; max-height: calc(21 * var(--lh)); }
 
-figure.figure.box-page {
-  break-before: page;
-  page-break-before: always;
-  break-after: page;
-  page-break-after: always;
-  height: var(--page-content-height);
-  width: 100%;
+figure.figure.box-plano { width: 100%; }
+figure.figure.box-plano img { width: 100%; max-height: calc(34 * var(--lh)); }
+
+/* Modules. Each figure keeps its own caption; tops are aligned; the gutter is
+   one baseline both ways. */
+.fig-module {
+  display: grid;
+  gap: var(--lh);
+  align-items: start;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-figure.figure.box-page img { max-height: 160mm; }
-
-/* The quality ceilings still apply inside the chosen container: the eight scans
-   below 200 dpi at A5 stay small, where their softness reads as a small
-   archival print rather than as a fault. */
-figure.figure.q-reduced img { max-height: 78mm; }
-figure.figure.q-low img { max-height: 62mm; }
-figure.figure.box-page.q-reduced img { max-height: 120mm; }
-figure.figure.box-page.q-low img { max-height: 96mm; }
-
-/* ── The tail of a chronicle ────────────────────────────────────────────────
-   Every photograph a chronicle owns comes out here, after its last paragraph
-   and before the next chronicle begins (spec 06, RF-06.1). Because each
-   chronicle opens on a recto, that is the space the text leaves at the foot of
-   its last page — which is where the editorial pass asked for it. */
-
-.tail-figures {
-  margin-top: 6mm;
   break-inside: avoid;
   page-break-inside: avoid;
 }
-.tail-figures > figure.figure:first-child { margin-top: 0; }
-.tail-figures > figure.figure.box-page:first-child { margin-top: 0; break-before: auto; page-break-before: auto; }
+.fig-duo, .fig-grid2x2 { grid-template-columns: 1fr 1fr; }
+.fig-module > figure.figure,
+figure.figure.box-ficha.in-module { width: 100%; margin: 0; }
+.fig-module figure.figure img { width: 100%; height: auto; max-width: 100%; max-height: calc(17 * var(--lh)); }
+.fig-grid2x2 figure.figure img { max-height: calc(17 * var(--lh)); object-position: center top; }
 
-/* A drawing has no background; a photograph is a filled rectangle. Stacked
-   together they make the noise the editorial pass described, so a drawing that
-   would sit against a photograph takes the next page instead (RF-07.6). */
-.tail-figures > figure.figure.is-drawing + figure.figure:not(.is-drawing),
-.tail-figures > figure.figure:not(.is-drawing) + figure.figure.is-drawing {
+/* The quality ceilings still apply inside the chosen module: the eight scans
+   below 200 dpi at A5 stay small, where their softness reads as a small
+   archival print rather than as a fault. */
+figure.figure.q-reduced img { max-height: calc(18 * var(--lh)); }
+figure.figure.q-low img { max-height: calc(14 * var(--lh)); }
+/* A ficha keeps its half-box width whatever the scan: no quality cap on it. */
+figure.figure.box-ficha.q-reduced img,
+figure.figure.box-ficha.q-low img { max-height: calc(21 * var(--lh)); }
+.fig-duo figure.figure.q-reduced img { max-height: calc(17 * var(--lh)); }
+.fig-grid2x2 figure.figure.q-reduced img,
+.fig-grid2x2 figure.figure.q-low img { max-height: calc(15 * var(--lh)); }
+.fig-duo figure.figure.q-low img { max-height: calc(17 * var(--lh)); }
+figure.figure.box-plano.q-reduced img { max-height: calc(26 * var(--lh)); }
+
+/* ── The tail of a chronicle ────────────────────────────────────────────────
+   Every photograph a chronicle owns comes out here, after its last paragraph
+   and before the next chronicle begins (spec 06, RF-06.1), as a rigid system:
+
+     · nothing is centred; a group of figures rests on the foot of the text box
+       (when it fits in what the text leaves on its last page) or hangs from
+       the head of a page of its own — so facing pages share the head line;
+     · figures and modules are stacked with a gap of one baseline;
+     · a plano or the 2 × 2 grid takes a page for itself (the plano on a recto).
+
+   The groups are built by scripts/lib/print-layout.mjs, which knows where the
+   text ends; the spacer of the anchored group is inline style, whole baselines. */
+
+.tail-figures { margin: 0; }
+.tail-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lh);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.tail-group.is-next-page {
   break-before: page;
   page-break-before: always;
+}
+/* A courtesy blank inside a chronicle: the plano needs a recto. */
+.tail-group.is-blank {
+  height: var(--box-h);
+  break-inside: auto;
+  break-after: avoid;
 }
 
 figure.figure figcaption {
   break-before: avoid;
   page-break-before: avoid;
-  margin-top: 1.8mm;
+  margin-top: calc(var(--lh) * 0.2);
   font-size: 7.4pt;
+  font-style: italic;
   line-height: 1.32;
   text-align: left;
   color: #575d63;
@@ -215,6 +263,7 @@ figure.figure figcaption {
 }
 figure.figure figcaption .credit {
   display: block;
+  font-style: normal;
   font-weight: 700;
   color: var(--small-text-accent);
 }
@@ -226,36 +275,37 @@ figure.figure figcaption .credit {
 .page-title {
   break-after: page;
   page-break-after: always;
-  height: var(--page-content-height);
+  height: var(--box-h);
   display: flex;
   flex-direction: column;
   text-align: left;
 }
 /* No photograph on the half title (specs-v12, spec 01, RF-01.1): it took more
    than half the page from the type that has to carry it, and this page is not
-   the cover. The block sits in the upper third and the mark closes it below. */
-.page-title-block { margin-top: 22mm; }
+   the cover. The block hangs from the head drop and the mark closes it below. */
+.page-title-block { margin-top: var(--head-drop); }
 
 .page-title h1 {
-  /* 32 pt against the 20 pt below: 1.6:1, the range RF-01.2 fixes. */
-  font-size: 32pt;
-  line-height: 1.1;
-  margin: 0 0 7mm;
+  font-size: 34pt;
+  line-height: calc(3 * var(--lh));
+  padding: 0;
+  margin: 0 0 var(--lh);
   color: var(--color-accent);
 }
 .page-title .sub {
   font-family: 'Oswald', sans-serif;
   font-weight: 600;
   text-transform: uppercase;
-  /* «Causa Brigada I, II, III» is what says what the volume is about; at 15 pt
-     it read as a footnote to the title instead of as its second half. */
-  font-size: 20pt;
-  line-height: 1.14;
-  letter-spacing: 0.03em;
-  margin: 0 0 4mm;
+  /* «Causa Brigada I, II, III» is what says what the volume is about; it was
+     too subordinate to the title, so the fourth editorial pass enlarged it to
+     28 pt against the 34 pt above. */
+  font-size: 28pt;
+  line-height: calc(3 * var(--lh));
+  letter-spacing: 0.02em;
+  margin: 0 0 var(--lh);
   color: var(--color-accent-700);
 }
-.page-title .kicker { font-style: italic; font-size: 11pt; color: #575d63; }
+.page-title .kicker { font-style: italic; font-size: 12pt; line-height: var(--lh); margin: 0; color: #575d63; }
 /* The publisher's mark closes the half title, at the foot (RF-01.1). */
 .page-title-logo {
   margin-top: auto;
@@ -268,26 +318,28 @@ figure.figure figcaption .credit {
 .page-citations {
   break-after: page;
   page-break-after: always;
-  height: var(--page-content-height);
+  height: var(--box-h);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  /* Hangs from the head drop, like every opening. */
+  padding-top: var(--head-drop);
 }
 .page-citations blockquote {
   border: 0;
-  margin: 0 0 10mm;
+  margin: 0 0 calc(2 * var(--lh));
   padding: 0;
   font-size: 12pt;
   font-weight: 700;
-  line-height: 1.38;
+  line-height: calc(1.5 * var(--lh));
   color: var(--color-accent-700);
 }
 .page-citations blockquote p:last-child {
-  font-size: 8.4pt;
+  font-size: 10.5pt;
   font-weight: 400;
   font-style: normal;
   color: #575d63;
-  margin-top: 2.5mm;
+  margin-top: var(--lh);
 }
 
 /* Credits and legal notice, on the reverse of the citations (RF-01.4). */
@@ -295,18 +347,18 @@ figure.figure figcaption .credit {
   break-after: page;
   page-break-after: always;
   font-size: 8.4pt;
-  line-height: 1.5;
+  line-height: var(--lh);
   color: #3d4247;
   text-align: left;
   hyphens: none;
 }
-.page-colophon p { margin: 0 0 3mm; }
+.page-colophon p { margin: 0 0 var(--lh); text-indent: 0; }
 
 /* A courtesy blank: the reverse of a recto that opens something. It has to be a
    real page, so it carries the full content height and breaks after itself —
    an empty section with no height would simply collapse and print nothing. */
 .page-blank {
-  height: var(--page-content-height);
+  height: var(--box-h);
   break-after: page;
   page-break-after: always;
 }
@@ -316,8 +368,9 @@ figure.figure figcaption .credit {
   break-before: page;
   page-break-before: always;
   font-size: 9.4pt;
+  padding-top: var(--head-drop);
 }
-.page-blurb h2 { font-size: 12pt; margin-top: 0; }
+.page-blurb h2 { font-size: 12pt; padding-top: 0; }
 
 /* ── Table of contents ──────────────────────────────────────────────────── */
 
@@ -325,48 +378,40 @@ figure.figure figcaption .credit {
   break-after: page;
   page-break-after: always;
 }
-.page-toc h2 { margin-top: 0; }
-/* Sized so the whole list holds on one page (RF-01.5): the editorial pass
-   flagged an index that broke over two pages for the sake of two lines. */
+.page-toc h2 { padding-top: 0; margin-bottom: var(--lh); }
+/* One baseline per entry: the whole list holds on one page (RF-01.5). The
+   index is the one front text with no head drop, or it would not fit. */
 .toc-list { list-style: none; margin: 0; padding: 0; font-size: 8.4pt; }
-.toc-list li { margin-bottom: 1.1mm; text-align: left; hyphens: none; line-height: 1.28; }
+.toc-list li { margin: 0; text-align: left; hyphens: none; line-height: var(--lh); }
 .toc-list .toc-part {
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 8.8pt;
   color: var(--color-accent-700);
-  margin-top: 3.2mm;
+  margin-top: var(--lh);
 }
 .toc-list .toc-part:first-child { margin-top: 0; }
 .toc-list .toc-doc { padding-left: 3mm; }
 .toc-list .toc-h2 { padding-left: 7mm; color: #575d63; font-size: 8.2pt; }
 
 /* ── Section covers ─────────────────────────────────────────────────────────
-   Each part opens with a page of its own (specs-v12, spec 03, RF-03.1). What
-   this replaces put the name of the section as a 10 pt overline above the 22 pt
-   title of its first text, so the section had no threshold at all and the text
-   looked like the section. Now they are two pages: the section on the recto,
-   its photograph on the verso, the text overleaf with its own title. */
+   Each part opens with a page of its own (specs-v12, spec 03, RF-03.1): the
+   section on the recto (label and title only — no number, no blurb) and a
+   blank verso, the text overleaf with its own title. The title hangs from the
+   head drop — never centred — so every cover starts at the same height. */
 
 .page-part {
   break-before: page;
   page-break-before: always;
   break-after: page;
   page-break-after: always;
-  height: var(--page-content-height);
+  height: var(--box-h);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: var(--head-drop);
   text-align: left;
-}
-.part-num {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 700;
-  font-size: 44pt;
-  line-height: 1;
-  color: var(--color-accent-200);
-  margin: 0 0 4mm;
 }
 .part-label {
   font-family: 'Oswald', sans-serif;
@@ -374,119 +419,90 @@ figure.figure figcaption .credit {
   text-transform: uppercase;
   font-size: 10pt;
   letter-spacing: 0.1em;
+  line-height: var(--lh);
   color: var(--small-text-accent);
-  margin: 0 0 3mm;
+  margin: 0;
   text-align: left;
 }
 /* The title of the section is the largest thing on its page, and nothing on
    that page competes with it (RF-03.1). */
 .page-part .part-title {
-  margin: 0 0 7mm;
+  margin: 0;
+  padding: 0;
   font-size: 28pt;
-  line-height: 1.06;
+  line-height: calc(3 * var(--lh));
   color: var(--section-accent);
 }
-.part-blurb {
-  font-size: 9pt;
-  line-height: 1.44;
-  color: #3d4247;
-  max-width: 92mm;
-  text-align: left;
-  hyphens: none;
-  margin: 0;
-}
-
-/* The verso of a section cover: its photograph, whole. It used to be a courtesy
-   blank (RF-03.2). */
-.page-plate {
-  height: var(--page-content-height);
-  break-after: page;
-  page-break-after: always;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.page-plate figure.figure.box-page {
-  break-before: auto;
-  page-break-before: auto;
-  break-after: auto;
-  page-break-after: auto;
-  height: auto;
-}
-
-/* The opening text of a part is now an ordinary text with its own page. */
-.doc.opening { break-before: page; page-break-before: always; }
 
 /* ── Document titles ────────────────────────────────────────────────────────
    The normalizer promotes a document's heading into its frontmatter, and until
    now nothing put it back on paper: "La memoria y la palabra" and
    "Introducción" printed untitled (spec 02, RF-02.2). */
 
-.doc-head { margin: 0 0 6mm; }
+.doc-head { margin: 0 0 var(--lh); }
 .doc-kicker {
   font-family: 'Oswald', sans-serif;
   font-weight: 600;
   text-transform: uppercase;
   font-size: 8pt;
   letter-spacing: 0.07em;
+  line-height: var(--lh);
   color: var(--small-text-accent);
-  margin: 0 0 1.6mm;
+  margin: 0;
   text-align: left;
 }
-.doc-head .doc-title { margin: 0; font-size: 17pt; }
+.doc-head .doc-title { margin: 0; padding: 0; font-size: 17pt; line-height: calc(2 * var(--lh)); }
 /* The signature, under the title and before the first paragraph, so the voice
    is identified from the start (specs-v12, spec 02, RF-02.1). */
 .doc-byline {
   font-family: 'Oswald', sans-serif;
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 8.4pt;
+  font-size: 11pt;
   letter-spacing: 0.06em;
+  line-height: var(--lh);
   color: var(--small-text-accent);
-  margin: 2mm 0 0;
+  margin: 0;
   text-align: left;
   hyphens: none;
 }
 
 /* What stays at the foot: the roll of organisations, the date. Information,
-   not signature — and never repeating the name that is already at the top. */
-aside.signoff {
-  margin-top: 7mm;
-  padding-top: 3mm;
-  border-top: 0.3mm solid var(--color-accent-300);
+   not signature — and never repeating the name that is already at the top. The
+   rule is drawn as a background so the block stays a whole number of lines. */
+aside.signoff,
+aside.footnotes {
+  margin-top: var(--lh);
+  padding-top: var(--lh);
+  background: linear-gradient(var(--color-accent-300), var(--color-accent-300)) top left / 100% 0.3mm no-repeat;
   break-inside: avoid;
   page-break-inside: avoid;
 }
 aside.signoff p {
-  margin: 0 0 1.2mm;
+  margin: 0;
   font-size: 8.4pt;
-  line-height: 1.34;
+  line-height: var(--lh);
   text-align: left;
+  text-indent: 0;
   hyphens: none;
   color: #3d4247;
 }
-aside.signoff .signoff-lead { color: var(--small-text-accent); margin-bottom: 2.4mm; }
+aside.signoff .signoff-lead { color: var(--small-text-accent); }
 
 /* ── Footnotes ──────────────────────────────────────────────────────────────
    Written in the manuscript as bold italic, which printed them at body size —
    larger than the text they annotate. They are notes: smaller, roman, ranged
    left, and held together on one page (spec 02, RF-02.6). */
 
-aside.footnotes {
-  margin-top: 7mm;
-  padding-top: 3mm;
-  border-top: 0.3mm solid var(--color-accent-300);
-  break-inside: avoid;
-  page-break-inside: avoid;
-}
 aside.footnotes p {
   font-size: 7.6pt;
-  line-height: 1.36;
+  line-height: var(--lh);
   font-style: normal;
   font-weight: 400;
   text-align: left;
+  text-indent: 0;
   hyphens: none;
-  margin: 0 0 1.8mm;
+  margin: 0;
   color: #3d4247;
 }
 aside.footnotes .footnotes-title {
@@ -496,36 +512,31 @@ aside.footnotes .footnotes-title {
   font-size: 8pt;
   letter-spacing: 0.06em;
   color: var(--small-text-accent);
-  margin-bottom: 2mm;
 }
 
-/* ── Ordinary documents ─────────────────────────────────────────────────── */
+/* ── Ordinary documents ─────────────────────────────────────────────────────
+   Every document, chronicle and opening text hangs from the same head drop:
+   a quarter of the text box. Padding, not margin, so it survives the forced
+   break that precedes it. */
 
-.doc { break-before: page; page-break-before: always; }
+.doc {
+  break-before: page;
+  page-break-before: always;
+  padding-top: var(--head-drop);
+}
 /* Every chronicle is a unit of its own and opens its own page — the parity is
    arranged by scripts/build-pdf.mjs (specs-v12, spec 05, RF-05.2). */
 .doc.cronica { break-before: page; page-break-before: always; }
 /* A page carrying one line of text is what the editorial pass found on page 36.
    Holding the last paragraph of a text to what precedes it stops the tail of a
-   chronicle from stranding on a page of its own (RF-05.4). */
+   chronicle from stranding on a page of its own (RF-05.4). When that is not
+   enough, scripts/build-pdf.mjs marks the last paragraphs `.rescue` (a longer
+   widow) or `.rescue-keep` (kept whole): the leading and tracking of the book
+   never change. */
 .doc > p:last-of-type { break-before: avoid; page-break-before: avoid; }
+p.rescue { widows: 5; }
+p.rescue-keep { break-inside: avoid; page-break-inside: avoid; }
 
-/* When that is not enough, the text is set a hair tighter until its tail comes
-   back onto the previous page. Four steps, the largest of them 5 % off the
-   book's leading and six thousandths of an em off its tracking — below what a
-   reader notices inside a single text, and what a designer would do by hand.
-   scripts/build-pdf.mjs measures the block at each step and keeps the first
-   that works; a text that none of them rescues is reported and left alone. */
-.doc.is-tight-1 { line-height: 1.44; }
-.doc.is-tight-2 { line-height: 1.42; }
-.doc.is-tight-3 { line-height: 1.40; letter-spacing: -0.003em; }
-.doc.is-tight-4 { line-height: 1.38; letter-spacing: -0.006em; }
-/* And when tightening cannot recover the tail — a short text has too few pages
-   to gain the lines back — the text is opened up instead, so the last page
-   fills rather than strands. On a two-page text an airier setting reads as a
-   decision, which is what it is. */
-.doc.is-loose-1 { line-height: 1.53; }
-.doc.is-loose-2 { line-height: 1.60; }
 .doc.interlude {
   break-before: page;
   page-break-before: always;
@@ -537,9 +548,6 @@ aside.footnotes .footnotes-title {
   margin-left: 0;
   padding-left: 0;
   font-size: 11pt;
-  line-height: 1.34;
+  line-height: calc(1.5 * var(--lh));
   color: var(--color-accent-700);
 }
-
-/* The stamped page number needs clear space at the foot of every page. */
-.doc, .page-toc { padding-bottom: 2mm; }

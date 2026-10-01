@@ -6,18 +6,18 @@
       "what": "El libro completo, tamaño A5",
       "path": "/descargas/juicio-y-castigo-en-el-chaco-vol-2.pdf",
       "filename": "juicio-y-castigo-en-el-chaco-vol-2.pdf",
-      "bytes": 29729121,
-      "pages": 351
+      "bytes": 29705992,
+      "pages": 296
     },
     {
       "format": "EPUB",
       "what": "Para leer en celular o e-reader",
       "path": "/descargas/juicio-y-castigo-en-el-chaco-vol-2.epub",
       "filename": "juicio-y-castigo-en-el-chaco-vol-2.epub",
-      "bytes": 15861348,
+      "bytes": 15861038,
       "pages": 0
     }
   ],
-  "version": "1.2",
-  "generated": "2026-08-22"
+  "version": "1.3",
+  "generated": "2026-10-01"
 }

@@ -214,7 +214,7 @@ body.is-locked { overflow: hidden; }
   text-transform: uppercase;
   /* Kept within 2:1 of the title above (spec 02, RF-02.1). "Causa Brigada I, II,
      III" names the subject of the book and cannot read as a caption. */
-  font-size: clamp(18px, 2.9vw, 34px);
+  font-size: clamp(22px, 4vw, 46px);
   letter-spacing: 0.04em;
   margin: clamp(18px, 3vh, 30px) 0 0;
   /* White, not a tint: over the palest part of the veil a tinted subtitle
@@ -303,16 +303,6 @@ body.is-locked { overflow: hidden; }
   text-align: center;
   padding: clamp(28px, 5vh, 80px) clamp(20px, 6vw, 120px) clamp(40px, 8vh, 104px);
 }
-.opening-num {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: clamp(52px, 9vw, 122px);
-  line-height: 1;
-  color: color-mix(in srgb, var(--section-accent) 26%, #fff);
-  margin: 0 0 clamp(14px, 3vh, 32px);
-  font-feature-settings: 'tnum' 1;
-}
 .opening-title {
   /* Banded lines need relaxed leading so consecutive .hl rects never intersect. */
   font-size: clamp(28px, 5vw, 60px);
@@ -335,13 +325,6 @@ body.is-locked { overflow: hidden; }
   line-height: 1.4;
   color: var(--section-accent);
   margin: 0 0 clamp(10px, 2vh, 18px);
-}
-.part-blurb {
-  margin: clamp(20px, 3.5vh, 38px) 0 0;
-  max-width: 56ch;
-  font-size: clamp(15px, 1.2vw, 18px);
-  line-height: 1.6;
-  color: var(--color-neutral-700);
 }
 .part-cover .opening-title { max-width: 20ch; }
 
@@ -384,7 +367,7 @@ body.is-locked { overflow: hidden; }
 }
 .interlude.is-citations .interlude-text blockquote p:last-child {
   font-weight: 400;
-  font-size: 0.68em;
+  font-size: 0.82em;
   font-style: normal;
   color: var(--color-neutral-700);
 }
@@ -483,7 +466,7 @@ body.is-locked { overflow: hidden; }
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-size: clamp(12px, 1vw, 15px);
+  font-size: clamp(14px, 1.3vw, 19px);
   color: var(--small-text-accent);
   margin: var(--space-3) 0 0;
 }
@@ -605,6 +588,7 @@ body.is-locked { overflow: hidden; }
 .plate-tools button:active { transform: scale(0.93); }
 
 .plate-caption {
+  font-style: italic;
   position: absolute;
   right: var(--space-4);
   bottom: var(--space-4);
@@ -626,6 +610,7 @@ body.is-locked { overflow: hidden; }
 }
 .plate.has-image .plate-caption { opacity: 1; transform: translateY(0); }
 .plate-caption .credit {
+  font-style: normal;
   display: block;
   margin-top: 3px;
   font-weight: 700;
@@ -713,7 +698,8 @@ body.is-locked { overflow: hidden; }
 /* Anchored figures live in the prose so the document has one source of truth;
    inside the split reader the desktop plate mirrors them, so this copy stays
    hidden and only reappears on a phone (see the mobile block below). */
-.prose .figure { display: none; }
+.prose .figure,
+.prose .fig-module { display: none; }
 
 /* Everywhere else there is no plate to mirror them, so the figure renders
    where it sits — inside a chapter opening's essay or an interlude's column. */
@@ -763,6 +749,38 @@ body.is-locked { overflow: hidden; }
   font-weight: 700;
   color: var(--color-accent-700);
 }
+
+/* Image scale (fourth editorial pass, src/data/image-scale.json). The plate
+   always shows the whole image; this governs the figure where it renders
+   inline — the phone, a chapter opening's essay, an interlude's column.
+     box-ficha   50 % of the column, centred
+     box-caja    100 %
+     box-plano   100 %
+   .fig-duo and .fig-grid2x2 group several figures, 50 % each. */
+.opening-prose .fig-module,
+.interlude-text .fig-module { display: grid; }
+.fig-module {
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  align-items: start;
+  margin: var(--space-6) 0;
+}
+.fig-module .figure { margin: 0; }
+.fig-module .figure button { display: block; width: 100%; }
+.fig-module .figure img { width: 100%; max-width: 100%; height: auto; max-height: none; }
+.opening-prose .figure.box-ficha:not(.in-module),
+.interlude-text .figure.box-ficha:not(.in-module) { width: 50%; margin-left: auto; margin-right: auto; }
+.opening-prose .figure.box-caja img,
+.opening-prose .figure.box-plano img,
+.interlude-text .figure.box-caja img,
+.interlude-text .figure.box-plano img { width: 100%; }
+/* One caption style everywhere: small and italic. */
+.opening-prose .figure figcaption,
+.interlude-text .figure figcaption,
+.fig-module .figure figcaption { font-style: italic; }
+.opening-prose .figure figcaption .credit,
+.interlude-text .figure figcaption .credit { font-style: normal; }
+.fig-module .figure figcaption { display: block; margin-top: var(--space-2); font-size: 12px; line-height: 1.4; color: var(--color-neutral-700); }
 
 /* ══════════════════════════════════════════════════════════════════════════
    4. Interlude — a standalone vignette between chronicle blocks
@@ -1126,6 +1144,9 @@ dialog.modal.is-closing::backdrop { opacity: 0; }
   }
 
   .prose .figure { display: block; margin: var(--space-6) 0; }
+  .prose .fig-module { display: grid; }
+  .prose .fig-module .figure { margin: 0; }
+  .prose .figure.box-ficha:not(.in-module) { width: 50%; margin-left: auto; margin-right: auto; }
   .prose .figure button {
     display: block;
     width: 100%;
@@ -1140,6 +1161,7 @@ dialog.modal.is-closing::backdrop { opacity: 0; }
   /* The caption stays out of the way until the reader opens the image — the
      spec asks for the photograph first, its epigraph on demand. */
   .prose .figure figcaption { display: none; }
+  .prose .fig-module .figure figcaption { display: none; }
 
   .interlude-inner { grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }
   .opening-title { font-size: clamp(26px, 7vw, 40px); }
@@ -1162,6 +1184,7 @@ dialog.modal.is-closing::backdrop { opacity: 0; }
   .reader { grid-template-columns: 1fr; }
   .plate { display: none; }
   .prose .figure { display: block; break-inside: avoid; }
+  .prose .fig-module { display: grid; break-inside: avoid; }
   .prose .figure figcaption { display: block; }
   .landing { min-height: auto; color: var(--color-text); }
   .landing::before, .landing-bg { display: none; }

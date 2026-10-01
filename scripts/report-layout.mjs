@@ -120,9 +120,9 @@ const byContainer = placed.reduce((acc, r) => {
 }, {});
 
 const LABEL = {
-  'box-full': 'Ancho de caja',
-  'box-two-thirds': 'Dos tercios centrado',
-  'box-page': 'Página completa',
+  'box-ficha': 'Ficha (50 % de caja, centrada)',
+  'box-caja': 'Caja (100 %)',
+  'box-plano': 'Plano (100 %, página impar)',
 };
 
 await writeFile(
@@ -130,13 +130,12 @@ await writeFile(
   [
     '# Formato de cada imagen',
     '',
-    'Generado por `scripts/report-layout.mjs`. Tres contenedores y ninguno más',
-    '(spec 07, RF-07.1). La página completa está reservada a las carátulas de',
-    'sección y a los planos del edificio (RF-07.4); el resto se asigna por',
-    'orientación y por lo que dice el epígrafe.',
+    'Generado por `scripts/report-layout.mjs`. La escala de cada imagen sale del',
+    'catálogo `src/data/image-scale.json` (cuarta revisión editorial); lo que el',
+    'catálogo no lista se asigna por orientación.',
     '',
-    'Para cambiar el contenedor de una imagen, agregá su clave a `IMAGE_FORMAT`',
-    'en `scripts/manifest.mjs` con el contenedor que corresponda.',
+    'Para cambiar la escala de una imagen, editá el catálogo; `IMAGE_FORMAT` en',
+    '`scripts/manifest.mjs` queda como excepción manual.',
     '',
     '## Reparto',
     '',
@@ -162,7 +161,7 @@ await writeFile(
 
 console.log(`Volantas de crónica: ${volantas.length} de ${h1s.length} h1  (${alone.length} sin titular)`);
 console.log(`Formatos de imagen:  ${Object.entries(byContainer).map(([k, n]) => `${LABEL[k]} ${n}`).join(' · ')}`);
-if (FULL_PAGE_IMAGES.size !== (byContainer['box-page'] ?? 0)) {
+if (FULL_PAGE_IMAGES.size !== (byContainer['box-plano'] ?? 0)) {
   const missing = [...FULL_PAGE_IMAGES].filter((k) => skipped.has(k));
   if (missing.length) console.log(`  (${missing.length} reservadas a página completa están descartadas: ${missing.join(', ')})`);
 }

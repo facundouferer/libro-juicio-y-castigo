@@ -125,6 +125,11 @@ Lo pagina **Chrome**, no un polyfill: su motor resuelve viudas, huérfanas y cor
 - Ninguna imagen está rotada: no hace falta girar el libro.
 - Los folios arrancan después de la tapa y la contratapa.
 - El índice interno tiene 234 marcadores navegables.
+- Caja de 40 renglones de 12,5 pt, márgenes espejados (lomo 18 mm, corte 13 mm) y fotos de fin de crónica ancladas al pie o a la cabeza de página.
+
+### PDF de imprenta
+
+`npm run pdf:imprenta` (después de `npm run pdf`) toma el PDF final y escribe `build/imprenta/juicio-y-castigo-en-el-chaco-vol-2-imprenta.pdf`, que no se publica: cada página va sobre una hoja de 174 × 236 mm con el corte A5 (`TrimBox`), 3 mm de sangrado (`BleedBox`) y marcas de corte de 0,25 pt en negro registro fuera del sangrado; al final agrega blancos hasta que el total sea múltiplo de 16. El contenido no se escala. El PDF de descarga sigue siendo A5 limpio.
 
 ## El EPUB
 
