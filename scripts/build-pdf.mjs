@@ -456,6 +456,7 @@ async function layoutBlocks(browser, shell, simShell, blocks) {
           const retry = await run(level);
           if (!retry.shortTail && retry.pages <= layout.pages) layout = { ...retry, rescued: level };
         }
+        if (process.env.PDF_DEBUG && layout.debug) console.log(`      grupos: ${layout.debug.join(' ')} text ${layout.textPages}p/${layout.endLines}l`);
         for (const w of layout.warnings) console.warn(`      aviso (${block.title.slice(0, 30)}): ${w}`);
       }
       const html = layout?.html ?? block.html;
@@ -537,6 +538,8 @@ async function main() {
       console.log(`Colas rescatadas (viuda más larga o último párrafo entero): ${rescued.length}`);
       for (const b of rescued) console.log(`    ${b.title.slice(0, 60)}`);
     }
+    const movedFigs = plan.flatMap((b) => (b.layout?.moved ?? []).map((id) => `${id} (${b.title.slice(0, 28)})`));
+    if (movedFigs.length) console.log(`Figuras del texto llevadas al bloque de fotos: ${movedFigs.join(', ')}`);
     const innerBlanks = plan.reduce((a, b) => a + (b.layout?.blankCols.length ?? 0), 0);
     console.log(`Blancos de cortesía entre crónicas: ${blanks}; blancos internos antes de un plano: ${innerBlanks}`);
     for (const b of plan) {

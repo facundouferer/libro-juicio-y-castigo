@@ -173,6 +173,8 @@ figure.figure img {
 }
 /* A portrait never takes more than the width of a ficha. */
 figure.figure.portrait img { max-width: 50%; }
+/* Inside a module the cell is the ficha: the image fills it. */
+.fig-module figure.figure.portrait img { max-width: 100%; }
 
 figure.figure.box-caja { width: 100%; }
 figure.figure.box-caja img { width: 100%; max-height: calc(24 * var(--lh)); }
