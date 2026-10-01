@@ -131,8 +131,8 @@ figure.figure figcaption .credit { display: block; font-style: normal; font-weig
   /* «Causa Brigada I, II, III» names what the volume is about; at 1.15em it
      read as a footnote to the title instead of as its second half
      (specs-v12, spec 01, RF-01.2). 2.4/1.5 = 1.6:1. */
-  font-size: 1.5em;
-  line-height: 1.16;
+  font-size: 1.9em;
+  line-height: 1.14;
   margin: 0.7em 0 0.3em;
   color: ${ACCENT[700]};
 }
@@ -180,7 +180,7 @@ h2.cronica-title::before { content: none; }
 .doc-byline {
   font-family: sans-serif;
   text-transform: uppercase;
-  font-size: 0.8em;
+  font-size: 1.05em;
   letter-spacing: 0.07em;
   color: ${ACCENT[SMALL_TEXT_STEP]};
   margin: 0.5em 0 1.2em;
@@ -283,24 +283,11 @@ h2::before {
 }
 
 .part-divider { margin-top: 22%; text-align: left; }
-.part-divider .part-num {
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 3.2em;
-  line-height: 1;
-  color: ${ACCENT[200]};
-  margin: 0 0 0.2em;
-}
 .part-divider .part-title { font-size: 2.1em; line-height: 1.06; margin: 0 0 0.7em; }
 .part-divider .part-title::before { content: none; }
-.part-divider .part-blurb {
-  font-size: 0.92em;
-  line-height: 1.5;
-  color: #3d4247;
-  text-align: left;
-  hyphens: none;
-  -epub-hyphens: none;
-}
+
+/* The epigraph page: the authors of the citations, one size up from before. */
+section[epub|type~='epigraph'] blockquote p:last-child { font-size: 1.1em; font-style: normal; color: #575d63; }
 
 nav[epub|type~='toc'] ol { list-style: none; padding-left: 1em; }
 nav[epub|type~='toc'] > ol { padding-left: 0; }
@@ -414,10 +401,8 @@ async function main() {
         content: xhtml(
           `${section.part} — ${section.title}`,
           `<section epub:type="part" class="part-divider" data-section="${xml(section.id)}">
-${section.partNumber ? `  <p class="part-num">${String(section.partNumber).padStart(2, '0')}</p>` : ''}
   <p class="part-label">${xml(section.part)}</p>
   <h1 class="part-title">${xml(section.title)}</h1>
-${section.blurb ? `  <p class="part-blurb">${xml(section.blurb)}</p>` : ''}
 </section>`,
         ),
       });

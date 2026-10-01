@@ -192,23 +192,19 @@ async function buildHtml() {
   const blocks = [];
   const frontHtml = body.splice(0).join('\n');
 
-  /** The section cover: a recto that carries the part, and its photograph overleaf. */
-  function partBlock(section, plate) {
+  /** The section cover: a recto with the part label and title, and a blank verso. */
+  function partBlock(section) {
     const cover = [
       `<section class="page-part" id="parte-${xml(section.id)}" data-section="${xml(section.id)}">`,
-      section.partNumber ? `<p class="part-num">${String(section.partNumber).padStart(2, '0')}</p>` : '',
       `<p class="part-label">${xml(section.part)}</p>`,
       `<h1 class="part-title">${xml(section.title)}</h1>`,
-      section.blurb ? `<p class="part-blurb">${xml(section.blurb)}</p>` : '',
       '</section>',
     ].join('');
 
-    // The verso is the section's photograph, full page. It used to sit squashed
-    // above the title on the same page, where it competed with it; and the
-    // verso it now occupies used to be a courtesy blank (spec 03, RF-03.2).
-    const verso = plate
-      ? `<section class="page-plate" data-section="${xml(section.id)}">${plateFigure(plate, 'box-plano')}</section>`
-      : '<section class="page-blank" aria-hidden="true"></section>';
+    // The verso stays blank so the title of the part is not competing with a
+    // photograph (fourth editorial pass). The section's photograph travels to
+    // the tail of the opening text instead (see `tailPlate` below).
+    const verso = '<section class="page-blank" aria-hidden="true"></section>';
 
     return {
       docSlug: `parte-${section.id}`,
@@ -228,11 +224,8 @@ async function buildHtml() {
     // Each part opens with a cover of its own, so the section stops being an
     // overline on top of the title of its first text (spec 03, RF-03.1).
     if (section?.part && doc.data.section !== lastPart) {
-      const opening = bodyDocs.find(
-        (d) => d.data.section === section.id && d.data.pageType === 'chapter-opening',
-      );
       outline.push({ marker: `parte-${section.id}`, title: `${section.part} — ${section.title}`, depth: 0 });
-      blocks.push(partBlock(section, opening?.plate ?? null));
+      blocks.push(partBlock(section));
       lastPart = doc.data.section;
     }
 
@@ -245,8 +238,8 @@ async function buildHtml() {
     const head = docHead(doc);
 
     if (doc.data.pageType === 'chapter-opening') {
-      // The photograph moved to the section cover overleaf, so the opening text
-      // is now simply a text: its own page, its own title, nothing above it.
+      // The section cover and its verso carry no photograph: the part's own
+      // photograph closes the opening text, after its last paragraph.
       blocks.push({
         docSlug: doc.data.docSlug,
         title: doc.data.title,
@@ -254,7 +247,7 @@ async function buildHtml() {
         kind: 'doc',
         html:
           `<section class="doc opening" id="doc-${xml(doc.data.docSlug)}" data-section="${xml(doc.data.section)}">` +
-          `${head}${doc.html}</section>`,
+          `${head}${doc.html}${tailPlate(doc.plate)}</section>`,
       });
       continue;
     }

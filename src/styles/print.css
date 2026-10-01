@@ -253,8 +253,7 @@ figure.figure figcaption .credit {
 .page-title-block { margin-top: 22mm; }
 
 .page-title h1 {
-  /* 32 pt against the 20 pt below: 1.6:1, the range RF-01.2 fixes. */
-  font-size: 32pt;
+  font-size: 34pt;
   line-height: 1.1;
   margin: 0 0 7mm;
   color: var(--color-accent);
@@ -263,15 +262,16 @@ figure.figure figcaption .credit {
   font-family: 'Oswald', sans-serif;
   font-weight: 600;
   text-transform: uppercase;
-  /* «Causa Brigada I, II, III» is what says what the volume is about; at 15 pt
-     it read as a footnote to the title instead of as its second half. */
-  font-size: 20pt;
-  line-height: 1.14;
-  letter-spacing: 0.03em;
-  margin: 0 0 4mm;
+  /* «Causa Brigada I, II, III» is what says what the volume is about; it was
+     too subordinate to the title, so the fourth editorial pass enlarged it to
+     28 pt against the 34 pt above. */
+  font-size: 28pt;
+  line-height: 1.12;
+  letter-spacing: 0.02em;
+  margin: 0 0 5mm;
   color: var(--color-accent-700);
 }
-.page-title .kicker { font-style: italic; font-size: 11pt; color: #575d63; }
+.page-title .kicker { font-style: italic; font-size: 12pt; color: #575d63; }
 /* The publisher's mark closes the half title, at the foot (RF-01.1). */
 .page-title-logo {
   margin-top: auto;
@@ -287,7 +287,10 @@ figure.figure figcaption .credit {
   height: var(--page-content-height);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* The block sits in the upper half of the page, at its optical centre — not
+     centred on the geometric middle and not at the foot. */
+  justify-content: flex-start;
+  padding-top: 24mm;
 }
 .page-citations blockquote {
   border: 0;
@@ -299,11 +302,11 @@ figure.figure figcaption .credit {
   color: var(--color-accent-700);
 }
 .page-citations blockquote p:last-child {
-  font-size: 8.4pt;
+  font-size: 10.5pt;
   font-weight: 400;
   font-style: normal;
   color: #575d63;
-  margin-top: 2.5mm;
+  margin-top: 3mm;
 }
 
 /* Credits and legal notice, on the reverse of the citations (RF-01.4). */
@@ -362,8 +365,9 @@ figure.figure figcaption .credit {
    Each part opens with a page of its own (specs-v12, spec 03, RF-03.1). What
    this replaces put the name of the section as a 10 pt overline above the 22 pt
    title of its first text, so the section had no threshold at all and the text
-   looked like the section. Now they are two pages: the section on the recto,
-   its photograph on the verso, the text overleaf with its own title. */
+   looked like the section. Now they are two pages: the section on the recto
+   (label and title only — no number, no blurb) and a blank verso, the text
+   overleaf with its own title. */
 
 .page-part {
   break-before: page;
@@ -375,14 +379,6 @@ figure.figure figcaption .credit {
   flex-direction: column;
   justify-content: center;
   text-align: left;
-}
-.part-num {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 700;
-  font-size: 44pt;
-  line-height: 1;
-  color: var(--color-accent-200);
-  margin: 0 0 4mm;
 }
 .part-label {
   font-family: 'Oswald', sans-serif;
@@ -402,35 +398,11 @@ figure.figure figcaption .credit {
   line-height: 1.06;
   color: var(--section-accent);
 }
-.part-blurb {
-  font-size: 9pt;
-  line-height: 1.44;
-  color: #3d4247;
-  max-width: 92mm;
-  text-align: left;
-  hyphens: none;
-  margin: 0;
-}
+/* The verso of a part cover is a courtesy blank (.page-blank): the title of the
+   part has nothing to compete with. The part's photograph closes its opening
+   text instead. */
 
-/* The verso of a section cover: its photograph, whole. It used to be a courtesy
-   blank (RF-03.2). */
-.page-plate {
-  height: var(--page-content-height);
-  break-after: page;
-  page-break-after: always;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.page-plate figure.figure.box-page {
-  break-before: auto;
-  page-break-before: auto;
-  break-after: auto;
-  page-break-after: auto;
-  height: auto;
-}
-
-/* The opening text of a part is now an ordinary text with its own page. */
+/* The opening text of a part is an ordinary text with its own page. */
 .doc.opening { break-before: page; page-break-before: always; }
 
 /* ── Document titles ────────────────────────────────────────────────────────
@@ -456,10 +428,10 @@ figure.figure figcaption .credit {
   font-family: 'Oswald', sans-serif;
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 8.4pt;
+  font-size: 11pt;
   letter-spacing: 0.06em;
   color: var(--small-text-accent);
-  margin: 2mm 0 0;
+  margin: 3mm 0 6mm;
   text-align: left;
   hyphens: none;
 }
