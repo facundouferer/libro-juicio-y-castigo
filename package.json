@@ -12,6 +12,7 @@
     "revision": "node scripts/report-review.mjs && node scripts/report-layout.mjs",
     "check": "node scripts/check-build.mjs",
     "pdf": "node scripts/build-pdf.mjs",
+    "pdf:imprenta": "node scripts/build-imprenta.mjs",
     "epub": "node scripts/build-epub.mjs",
     "downloads": "node scripts/build-downloads.mjs",
     "shots": "node scripts/shoot.mjs",
