@@ -25,6 +25,7 @@ import { SECTIONS } from './manifest.mjs';
 import { containerFor } from '../src/lib/image-format.mjs';
 import { BOOK } from '../src/lib/site.mjs';
 import { paletteCss } from '../src/lib/palette.mjs';
+import { layoutInPage } from './lib/print-layout.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const WORK = path.join(ROOT, 'build', 'pdf');
@@ -38,6 +39,22 @@ const VERSION = JSON.parse(
 
 /** Fewest lines of text a page may carry (specs-v12, spec 05, RF-05.4). */
 const MIN_LINES = 5;
+
+/**
+ * The grid. One baseline of 12.5 pt (9.6 pt type on a 130 % leading) and a text
+ * box of exactly 40 of them: 500 pt, between a 42 pt head and a 53 pt foot.
+ * The same numbers are in src/styles/print.css; these are their pixel twins for
+ * the layout pass (96 px per inch).
+ */
+const LH_PX = (12.5 / 72) * 96;
+const BOX_LINES = 40;
+/** The simulated box is a hair shorter than the real one (667.03 px), never taller. */
+const BOX_PX = 667;
+/** Text box width: 148 mm less 18 mm of gutter and 13 mm of outer margin. */
+const BOX_W_MM = 117;
+/** Inner margin, outer margin: the text box sits 3 mm off-centre on each page. */
+const GUTTER_MM = 18;
+const OUTER_MM = 13;
 
 /** A5 in PDF points (72 per inch): 148 × 210 mm. */
 const PAGE_W = (148 / 25.4) * 72;
@@ -346,9 +363,28 @@ ${backHtml}
 </style>
 </head><body>${inner}</body></html>`;
 
+  /**
+   * The same, for the layout pass: one block inside a container that is one text
+   * box wide and tall, so its columns stand in for pages. Chrome ignores a page
+   * break inside a multi-column box, so the forced ones become column breaks.
+   */
+  const simCss = css
+    .replace(/(break-(?:before|after)):\s*page\b/g, '$1: column')
+    .replace(/page-break-(before|after):\s*always/g, 'break-$1: column');
+  const simShell = (inner) => `<!doctype html>
+<html lang="es-AR"><head><meta charset="utf-8" />
+<style>${fonts}</style><style>${paletteCss()}</style><style>${simCss}</style>
+<style>
+  #sim { width: ${BOX_W_MM}mm; height: ${BOX_PX}px; column-width: ${BOX_W_MM}mm; column-gap: 0; column-fill: auto; }
+  #sim > :first-child { break-before: auto !important; }
+  #sim > :last-child, #sim > :last-child > :last-child { break-after: auto !important; }
+</style>
+</head><body><div id="sim">${inner}</div></body></html>`;
+
   return {
     html,
     shell,
+    simShell,
     frontHtml,
     blocks,
     backHtml,
@@ -368,89 +404,76 @@ ${backHtml}
 }
 
 /**
- * How many A5 pages each block takes, measured by paginating it on its own.
+ * Lays every block out and counts its pages.
  *
  * Chrome does not implement `break-before: recto`, so the only way to start
  * every text on an odd page is to know where each one lands and insert the
  * courtesy blanks by hand (spec 03, RF-03.3). Measuring block by block is exact
  * because every block already begins on a fresh page: what precedes it cannot
  * change its length, only its offset.
+ *
+ * Two passes per block. The first runs on a simulated paged copy (see
+ * scripts/lib/print-layout.mjs): it snaps the figures to the baseline grid,
+ * finds where the text ends and builds the anchored photo block, and hands the
+ * block back as static markup. The second prints that markup for real and
+ * counts the pages — the authority; the simulation only has to agree with it.
  */
-async function measureBlocks(browser, shell, blocks) {
-  // A5 content box at 96 CSS px per inch, under print media. `page.pdf()` would
-  // paginate correctly whatever the viewport, but the DOM measurement below
-  // would not: at the default 1280 px the same text takes a third of the lines,
-  // and every leftover it reported was meaningless.
-  const page = await browser.newPage({ viewport: { width: 450, height: 680 } });
-  await page.emulateMedia({ media: 'print' });
-  const counts = [];
-  /** How many lines of text the block's last page carries. See below. */
-  const tails = [];
+async function layoutBlocks(browser, shell, simShell, blocks) {
+  const sim = await browser.newPage({ viewport: { width: 700, height: 900 } });
+  const real = await browser.newPage({ viewport: { width: 450, height: 680 } });
+  await sim.emulateMedia({ media: 'print' });
+  await real.emulateMedia({ media: 'print' });
   // Written into the working directory and loaded from there: `setContent`
   // resolves relative URLs against about:blank, so every `img/…` reference
   // would fail and the measurement would be taken on a book without
   // photographs.
   const scratch = path.join(WORK, 'medicion.html');
-  try {
-    for (const block of blocks) {
-      await writeFile(scratch, shell(typeof block === 'string' ? block : block.html), 'utf8');
-      await page.goto(`file://${scratch}`, { waitUntil: 'load', timeout: 120_000 });
-      await page.evaluate(() => document.fonts.ready.then(() => true));
-      await page.evaluate(async () => {
-        await Promise.all(
-          [...document.images].filter((i) => !i.complete).map((i) => new Promise((r) => (i.onload = i.onerror = r))),
-        );
-      });
-      const bytes = await page.pdf({ format: 'A5', printBackground: true, preferCSSPageSize: true, timeout: 180_000 });
-      const pages = (await PDFDocument.load(bytes)).getPageCount();
-      counts.push(pages);
 
-      /**
-       * How full the block's last page is.
-       *
-       * Measured here rather than on the assembled book because here it is
-       * exact: the block starts at the top of a page and flows continuously, so
-       * the leftover of its scroll height over whole pages is what lands on the
-       * last one. On the assembled document the same arithmetic is only
-       * proportional, and it reported pages as one-line that in fact carried
-       * twenty-nine.
-       *
-       * A block that forces a page break inside it — a photograph that takes a
-       * page of its own — breaks that assumption, and is not measured.
-       */
-      const html = typeof block === 'string' ? block : block.html;
-      tails.push(
-        /\bbox-plano\b/.test(html)
-          ? null
-          : await page.evaluate(
-              (contentPx) => {
-                const height = document.documentElement.scrollHeight;
-                const line = parseFloat(getComputedStyle(document.body).lineHeight) || 14;
-                const whole = Math.max(0, Math.ceil(height / contentPx) - 1);
-                return Math.round(((height - whole * contentPx) / line) * 10) / 10;
-              },
-              (180 / 25.4) * 96,
-            ),
+  const load = async (page, markup) => {
+    await writeFile(scratch, markup, 'utf8');
+    await page.goto(`file://${scratch}`, { waitUntil: 'load', timeout: 120_000 });
+    await page.evaluate(() => document.fonts.ready.then(() => true));
+    await page.evaluate(async () => {
+      await Promise.all(
+        [...document.images].filter((i) => !i.complete).map((i) => new Promise((r) => (i.onload = i.onerror = r))),
       );
+    });
+  };
+
+  const results = [];
+  try {
+    for (const [n, block] of blocks.entries()) {
+      let layout = null;
+      if (block.kind !== 'part') {
+        const run = async (level) => {
+          await load(sim, simShell(block.html));
+          return sim.evaluate(layoutInPage, { lhPx: LH_PX, boxLines: BOX_LINES, rescue: level, minLines: MIN_LINES });
+        };
+        layout = await run(0);
+        // A tail too short to read as a page: ask for a longer widow, then keep
+        // the last paragraph whole (never a tighter setting of the type).
+        for (let level = 1; layout.shortTail && level <= 3; level += 1) {
+          const retry = await run(level);
+          if (!retry.shortTail && retry.pages <= layout.pages) layout = { ...retry, rescued: level };
+        }
+        for (const w of layout.warnings) console.warn(`      aviso (${block.title.slice(0, 30)}): ${w}`);
+      }
+      const html = layout?.html ?? block.html;
+
+      await load(real, shell(html));
+      const bytes = await real.pdf({ format: 'A5', printBackground: true, preferCSSPageSize: true, timeout: 180_000 });
+      const pages = (await PDFDocument.load(bytes)).getPageCount();
+      if (layout && layout.pages !== pages) {
+        console.warn(`      aviso: «${block.title.slice(0, 40)}» simulado ${layout.pages} pág., impreso ${pages}`);
+      }
+      results.push({ html, pages, layout });
+      if ((n + 1) % 10 === 0) console.log(`    ${n + 1}/${blocks.length} bloques`);
     }
   } finally {
-    await page.close();
+    await sim.close();
+    await real.close();
   }
-  counts.tails = tails;
-  return counts;
-}
-
-/**
- * The last photograph a block carries, promoted to a page of its own.
- *
- * Disabled: returns null, so no photograph is promoted to a page of its own.
- */
-function promoteLastFigure() {
-  // The scale catalog (fourth editorial pass) forbids centring an ordinary
-  // photograph on a page of its own: only a plano takes one. The parity is now
-  // taken up by a courtesy blank until the anchored photo block (T4) arranges
-  // the tail of each chronicle.
-  return null;
+  return results;
 }
 
 /**
@@ -458,44 +481,18 @@ function promoteLastFigure() {
  *
  * Chrome does not implement `break-before: recto`, so the parity has to be
  * arranged by hand. A block that runs an odd number of pages leaves the next
- * one on a verso, and something has to take up the slack.
- *
- * What takes it up is a photograph, not a blank (specs-v12, spec 05, RF-05.3):
- * the block is measured again with its last figure promoted to a page of its
- * own, which is where the image wanted to go anyway — after the last paragraph
- * of the chronicle and before the next one begins (spec 06, RF-06.4). Only when
- * there is no figure to promote, or promoting it does not fix the parity, does
- * the block get a courtesy blank behind it.
+ * one on a verso, and the slack is taken up by a courtesy blank (specs-v12,
+ * spec 03, RF-03.3). Inside a block, the plano that must sit on a recto has
+ * already got its own blank from the layout pass.
  */
-async function planRecto(browser, shell, blocks, counts, frontPages) {
+function planRecto(blocks, laidOut, frontPages) {
   const plan = blocks.map((block, i) => ({
     ...block,
-    pages: counts[i],
-    tail: counts.tails?.[i] ?? null,
+    html: laidOut[i].html,
+    pages: laidOut[i].pages,
+    layout: laidOut[i].layout,
     blank: false,
-    plated: false,
   }));
-
-  // Candidates: an odd block, with a figure that could take the page instead.
-  const candidates = [];
-  for (const [i, block] of plan.entries()) {
-    if (block.pages % 2 === 0) continue;
-    const promoted = promoteLastFigure(block.html);
-    if (promoted) candidates.push({ i, promoted });
-  }
-
-  if (candidates.length) {
-    const recount = await measureBlocks(browser, shell, candidates.map((c) => c.promoted));
-    for (const [n, candidate] of candidates.entries()) {
-      if (recount[n] % 2 !== 0) continue;
-      plan[candidate.i].html = candidate.promoted;
-      plan[candidate.i].pages = recount[n];
-      plan[candidate.i].tail = recount.tails?.[n] ?? null;
-      plan[candidate.i].plated = true;
-    }
-  }
-
-  await tightenShortTails(browser, shell, plan);
 
   let page = frontPages + 1;
   for (const block of plan) {
@@ -505,59 +502,6 @@ async function planRecto(browser, shell, blocks, counts, frontPages) {
     page += block.pages;
   }
   return plan;
-}
-
-/**
- * Pulls a stranded tail back onto the page before it.
- *
- * A text that runs two lines over leaves a page with two lines on it — the
- * defect the editorial pass reported on page 36. The fix is the one a designer
- * would make by hand: set that text a hair tighter until its last lines come
- * back. Three steps, the largest of them 4 % off the book's leading, and the
- * first that works is kept. A text that none of them rescues is reported and
- * left alone rather than squeezed out of shape (specs-v12, spec 05, RF-05.4).
- */
-async function tightenShortTails(browser, shell, plan) {
-  const steps = ['is-tight-1', 'is-tight-2', 'is-tight-3', 'is-tight-4', 'is-loose-1', 'is-loose-2'];
-
-  for (let step = 0; step < steps.length; step += 1) {
-    const short = plan.filter(
-      (b) =>
-        b.kind !== 'part' &&
-        b.pages > 1 &&
-        b.tail !== null &&
-        b.tail > 0.2 &&
-        b.tail < MIN_LINES,
-    );
-    if (!short.length) return;
-
-    // The class goes on the block's own section, whatever else it carries —
-    // `doc`, `doc opening`, `cronica doc`, `doc interlude`.
-    const variants = short.map((b) =>
-      b.html.replace('<section class="', `<section class="${steps[step]} `),
-    );
-    const measured = await measureBlocks(browser, shell, variants);
-
-    for (const [n, block] of short.entries()) {
-      const tail = measured.tails?.[n] ?? null;
-      if (process.env.PDF_DEBUG) {
-        console.log(`      ${steps[step]}  ${block.title.slice(0, 34).padEnd(34)} ${block.pages}p/${block.tail} → ${measured[n]}p/${tail}`);
-      }
-      // Worth keeping only when the tail is gone or genuinely fuller.
-      // Accept only a real improvement: the tail absorbed into the page before,
-      // or a last page that now carries a proper amount of reading. Never a
-      // variant that costs a page without fixing anything.
-      if (
-        (measured[n] < block.pages && (tail === null || tail >= MIN_LINES || tail < 0.2)) ||
-        (measured[n] === block.pages && tail !== null && tail >= MIN_LINES)
-      ) {
-        block.html = variants[n];
-        block.pages = measured[n];
-        block.tail = tail;
-        block.tightened = steps[step];
-      }
-    }
-  }
 }
 
 async function main() {
@@ -573,28 +517,30 @@ async function main() {
   await cp(path.join(ROOT, 'public', 'img', 'logo.webp'), path.join(WORK, 'logo.webp'));
 
   const built = await buildHtml();
-  const { outline, firstBody, front, shell, frontHtml, blocks, backHtml } = built;
+  const { outline, firstBody, front, shell, simShell, frontHtml, backHtml } = built;
+  // PDF_ONLY="regex" lays out only the blocks whose title matches: for tuning
+  // the layout without paginating the whole book. The result is not a book.
+  const blocks = process.env.PDF_ONLY
+    ? built.blocks.filter((b) => new RegExp(process.env.PDF_ONLY, 'i').test(b.title))
+    : built.blocks;
 
   const browser = await chromium.launch({ channel: 'chrome' });
   try {
-    // First pass: how long is every block, so the parity can be arranged.
-    const counts = await measureBlocks(browser, shell, blocks);
-    const plan = await planRecto(browser, shell, blocks, counts, front.length - 1);
+    // First pass: lay every block out and count it, so the parity can be arranged.
+    const laidOut = await layoutBlocks(browser, shell, simShell, blocks);
+    const plan = planRecto(blocks, laidOut, front.length - 1);
     const blanks = plan.filter((b) => b.blank).length;
-    const plated = plan.filter((b) => b.plated).length;
     const cronicas = plan.filter((b) => b.kind === 'cronica').length;
-    console.log(`Medición: ${blocks.length} bloques (${cronicas} crónicas), ${counts.reduce((a, b) => a + b, 0)} páginas`);
-    const tightened = plan.filter((b) => b.tightened).length;
-    console.log(`Páginas ganadas por una imagen a página completa: ${plated}`);
-    if (tightened) {
-      console.log(`Textos ajustados de interlineado para no dejar una cola suelta: ${tightened}`);
-      for (const b of plan.filter((x) => x.tightened)) {
-        console.log(`    ${b.tightened.padEnd(12)} ${b.title.slice(0, 46)}`);
-      }
+    console.log(`Medición: ${blocks.length} bloques (${cronicas} crónicas), ${plan.reduce((a, b) => a + b.pages, 0)} páginas`);
+    const rescued = plan.filter((b) => b.layout?.rescued);
+    if (rescued.length) {
+      console.log(`Colas rescatadas (viuda más larga o último párrafo entero): ${rescued.length}`);
+      for (const b of rescued) console.log(`    ${b.title.slice(0, 60)}`);
     }
-    console.log(`Blancos de cortesía que quedaron: ${blanks}`);
+    const innerBlanks = plan.reduce((a, b) => a + (b.layout?.blankCols.length ?? 0), 0);
+    console.log(`Blancos de cortesía entre crónicas: ${blanks}; blancos internos antes de un plano: ${innerBlanks}`);
     for (const b of plan) {
-      const mark = b.blank ? 'blanco+' : b.plated ? 'imagen+' : '       ';
+      const mark = b.blank ? 'blanco+' : '       ';
       console.log(`    plan  pág ${String(b.start).padStart(3)}  ${String(b.pages).padStart(3)} pág.  ${mark}${b.title.slice(0, 46)}`);
     }
 
@@ -610,9 +556,6 @@ async function main() {
     await writeFile(htmlPath, html, 'utf8');
     console.log(`HTML de impresión → ${path.relative(ROOT, htmlPath)} (${(Buffer.byteLength(html) / 1024).toFixed(0)} kB)`);
 
-    // A5 content box: 119 × 180 mm at 96 CSS px per inch. Measuring the flow at
-    // the size it will actually be printed at — and under print media, so the
-    // paged-media rules apply — is what makes the heights below meaningful.
     const page = await browser.newPage({ viewport: { width: 450, height: 680 } });
     await page.emulateMedia({ media: 'print' });
     await page.goto(`file://${htmlPath}`, { waitUntil: 'load', timeout: 180_000 });
@@ -625,28 +568,6 @@ async function main() {
       );
     });
 
-    // Anchor positions, read before the PDF exists, so page numbers can be
-    // resolved from the y offset of each marker once the page count is known.
-    const markers = await page.evaluate(() => {
-      const out = {};
-      for (const el of document.querySelectorAll('[id]')) {
-        out[el.id] = el.getBoundingClientRect().top + window.scrollY;
-      }
-      // Front sections must each hold on a single page; the index especially,
-      // which the editorial pass found broken over two (spec 01, RF-01.5).
-      const boxes = {};
-      for (const selector of ['#indice', '.page-citations', '.page-colophon', '.page-title']) {
-        const el = document.querySelector(selector);
-        if (el) boxes[selector] = el.getBoundingClientRect().height;
-      }
-      // Every front block is full-page and breaks after itself, so the flow
-      // height up to the first text is exactly the front matter's page count.
-      for (const el of document.querySelectorAll('.page-blank, .page-title, .page-citations, .page-colophon, .page-toc')) {
-        boxes[`each:${el.className}`] = el.getBoundingClientRect().height;
-      }
-      return { markers: out, height: document.documentElement.scrollHeight, boxes };
-    });
-
     const bytes = await page.pdf({
       format: 'A5',
       printBackground: true,
@@ -657,17 +578,45 @@ async function main() {
     await writeFile(path.join(WORK, 'raw.pdf'), bytes);
     console.log(`Paginado por Chrome: ${(bytes.length / 1024 / 1024).toFixed(1)} MB`);
 
+    // Front sections must each hold on a single page; the index especially,
+    // which the editorial pass found broken over two (spec 01, RF-01.5).
+    // Measured on screen at the width of the text box.
+    await page.addStyleTag({ content: `html { width: ${BOX_W_MM}mm; }` });
+    const boxes = await page.evaluate(() => {
+      const out = {};
+      for (const selector of ['#indice', '.page-citations', '.page-colophon', '.page-title']) {
+        const el = document.querySelector(selector);
+        if (el) out[selector] = el.getBoundingClientRect().height;
+      }
+      return out;
+    });
+
+    // Where every anchor landed, from the layout pass: block start + the column
+    // the anchor sat in. The first occurrence wins (a document that splits into
+    // chronicles repeats its own id).
+    const markerPages = {};
+    for (const item of front) if (item.id) markerPages[item.id] = item.page - 1;
+    for (const block of plan) {
+      if (block.kind === 'part') markerPages[block.docSlug] ??= block.start - 1;
+      for (const [id, col] of Object.entries(block.layout?.headingCols ?? {})) {
+        markerPages[id] ??= block.start - 1 + col;
+      }
+    }
+
     // A courtesy blank is blank: no folio, no ornament (spec 03, RF-03.4).
     const unnumbered = new Set(plan.filter((b) => b.blank).map((b) => b.start - 1));
     // Nor does a section cover or the photograph on its reverse: a carátula is
     // read as a threshold, and a folio on it reads as a page of text.
     for (const block of plan) {
-      if (block.kind !== 'part') continue;
-      unnumbered.add(block.start);
-      unnumbered.add(block.start + 1);
+      if (block.kind === 'part') {
+        unnumbered.add(block.start);
+        unnumbered.add(block.start + 1);
+      }
+      // The blank that gives a plano its recto, inside a chronicle.
+      for (const col of block.layout?.blankCols ?? []) unnumbered.add(block.start + col);
     }
-    await stamp(bytes, markers, outline, firstBody, front, unnumbered);
-    reportFront(front, markers.boxes);
+    await stamp(bytes, markerPages, outline, front, unnumbered);
+    reportFront(front, boxes);
     reportRecto(plan);
     reportShortPages(plan);
   } finally {
@@ -684,9 +633,7 @@ async function main() {
  * text that runs over and leaves a line or two stranded behind it.
  */
 function reportShortPages(plan) {
-  const short = plan.filter(
-    (block) => block.pages > 1 && block.tail !== null && block.tail > 0.2 && block.tail < MIN_LINES,
-  );
+  const short = plan.filter((block) => block.layout?.shortTail);
 
   if (!short.length) {
     console.log(`\nNingún texto deja menos de ${MIN_LINES} líneas en su última página (RF-05.4).`);
@@ -694,7 +641,7 @@ function reportShortPages(plan) {
   }
   console.error(`\nTextos que dejan menos de ${MIN_LINES} líneas en su última página (RF-05.4): ${short.length}`);
   for (const block of short) {
-    console.error(`  pág. ${block.start + block.pages - 1}  ${block.tail} líneas  ${block.title.slice(0, 46)}`);
+    console.error(`  pág. ${block.start + block.layout.textPages - 1}  ${block.layout.endLines} líneas  ${block.title.slice(0, 46)}`);
   }
 }
 
@@ -709,8 +656,8 @@ function reportRecto(plan) {
   }
 }
 
-/** A5 content box height in CSS pixels — 180 mm at 96 px per inch. */
-const CONTENT_PX = (180 / 25.4) * 96;
+/** The text box height in CSS pixels: 40 baselines of 12.5 pt. */
+const CONTENT_PX = BOX_LINES * LH_PX;
 
 /**
  * The order of precedence, and whether each front page actually holds on the
@@ -745,7 +692,7 @@ function reportFront(front, boxes) {
 }
 
 /** Adds page numbers, the outline and the document metadata. */
-async function stamp(bytes, { markers, height }, outline, firstBody, front, blankPages = new Set()) {
+async function stamp(bytes, markerPages, outline, front, blankPages = new Set()) {
   const pdf = await PDFDocument.load(bytes);
   const pages = pdf.getPages();
   const font = await pdf.embedFont(StandardFonts.Helvetica);
@@ -765,11 +712,6 @@ async function stamp(bytes, { markers, height }, outline, firstBody, front, blan
     `versión ${VERSION}`,
   ]);
 
-  // Front matter carries no folio. Rather than hard-coding how many pages it
-  // takes — which changed with the new order of precedence — the first numbered
-  // page is derived from where the first text of the book actually landed.
-  const pageAt = (offset) =>
-    Math.min(pages.length - 1, Math.max(0, Math.floor((offset / height) * pages.length)));
   // Front matter carries no folio and is exactly `front.length` pages long.
   const FIRST_NUMBERED = front.at(-1)?.page ? front.at(-1).page - 1 : 6;
   let printed = 0;
@@ -781,8 +723,13 @@ async function stamp(bytes, { markers, height }, outline, firstBody, front, blan
     const label = String(i - FIRST_NUMBERED + 1);
     const size = 8;
     const width = font.widthOfTextAtSize(label, size);
+    // Centred on the text box, not on the sheet: the box sits 3 mm off-centre
+    // towards the outer edge (page 1 is a recto, so the gutter is on the left
+    // of odd pages).
+    const recto = (i + 1) % 2 === 1;
+    const centre = PAGE_W / 2 + (((recto ? GUTTER_MM - OUTER_MM : OUTER_MM - GUTTER_MM) / 25.4) * 72) / 2;
     page.drawText(label, {
-      x: (PAGE_W - width) / 2,
+      x: centre - width / 2,
       y: 22,
       size,
       font,
@@ -791,16 +738,11 @@ async function stamp(bytes, { markers, height }, outline, firstBody, front, blan
     printed += 1;
   }
 
-  // Map each anchor's y offset in the flowed document onto a page index. The
-  // mapping is proportional, which is exact enough for an outline: Chrome laid
-  // the same content out at the same scale.
-  const pageOf = pageAt;
-
   const refs = [];
   for (const item of outline) {
-    const offset = markers[item.marker];
-    if (offset === undefined) continue;
-    refs.push({ ...item, page: pageOf(offset) });
+    const target = markerPages[item.marker];
+    if (target === undefined) continue;
+    refs.push({ ...item, page: Math.min(pages.length - 1, Math.max(0, target)) });
   }
 
   if (refs.length) buildOutline(pdf, refs, pages);
