@@ -23,7 +23,7 @@ import { visit } from 'unist-util-visit';
 import Slugger from 'github-slugger';
 import { sources, altFor } from './images.mjs';
 import { isVolanta } from './cronicas.mjs';
-import { containerFor, isDrawing } from './image-format.mjs';
+import { containerFor, isDrawing, moduleOf } from './image-format.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..', '..');
 
@@ -80,6 +80,8 @@ export function rehypeAnchorImages(options = {}) {
 
     const slugger = new Slugger();
     const used = new Set();
+    const warned = new Set();
+    const hoisted = new Set();
 
     // Two passes. The first records where each heading sits and which images it
     // owns; the second inserts, walking backwards so earlier indices stay valid.
@@ -163,7 +165,35 @@ export function rehypeAnchorImages(options = {}) {
           continue;
         }
         current.keys.push(...step.keys);
-        current.ids.push(step.id);
+        current.ids.push(...step.keys.map(() => step.id));
+      }
+
+      // A module whose members the map left in different chronicles of the same
+      // document is gathered into the chronicle that holds its first member:
+      // the brief asks for the lot together, and a grid split across chronicles
+      // is no grid. A module split across documents falls back in buildNodes.
+      for (const group of groups) {
+        for (const key of [...group.keys]) {
+          const mod = moduleOf(key);
+          if (!mod || mod.keys[0] !== key) continue;
+          for (const other of mod.keys.slice(1)) {
+            for (const g of groups) {
+              if (g === group || g.parent !== group.parent) continue;
+              const at = g.keys.indexOf(other);
+              if (at === -1) continue;
+              const [moved] = g.keys.splice(at, 1);
+              const [movedId] = g.ids.splice(at, 1);
+              group.keys.push(moved);
+              group.ids.push(movedId);
+              if (!hoisted.has(mod.keys.join('+'))) {
+                hoisted.add(mod.keys.join('+'));
+                console.warn(
+                  `[rehype-anchor-images] module ${mod.keys.join(' + ')} gathered into one chronicle in «${docSlug}».`,
+                );
+              }
+            }
+          }
+        }
       }
 
       for (const group of groups.reverse()) {
@@ -181,7 +211,7 @@ export function rehypeAnchorImages(options = {}) {
           }
         }
 
-        const figures = group.keys.map((key, i) => buildFigure(key, group.ids[i] ?? group.ids[0])).filter(Boolean);
+        const figures = buildNodes(group.keys, group.ids);
         if (!figures.length) continue;
 
         // Grouped rather than loose, so the printed edition can anchor the lot
@@ -225,7 +255,7 @@ export function rehypeAnchorImages(options = {}) {
         }
       }
 
-      const figures = keys.map((key) => buildFigure(key, id)).filter(Boolean);
+      const figures = buildNodes(keys, [id]);
       if (!figures.length) return;
 
       // On paper the reading is continuous and a photograph dropped between two
@@ -256,7 +286,55 @@ export function rehypeAnchorImages(options = {}) {
       }
     }
 
-    function buildFigure(key, anchorId) {
+    /**
+     * Turns a run of image keys into the nodes that go in the DOM.
+     *
+     * A duo or the 2 × 2 grid is one module: a container with its figures as
+     * children, each keeping its own caption. A module only forms when every
+     * member belongs to the same run — the same chronicle on paper, the same
+     * heading on screen. When a pair is split across runs its members fall back
+     * to individual fichas (50 %) and a warning says so.
+     */
+    function buildNodes(keys, anchorIds) {
+      const anchorOf = (i) => anchorIds[i] ?? anchorIds[0];
+      const nodes = [];
+      const consumed = new Set();
+
+      keys.forEach((key, i) => {
+        if (consumed.has(key)) return;
+        const mod = moduleOf(key);
+        if (!mod) {
+          const figure = buildFigure(key, anchorOf(i));
+          if (figure) nodes.push(figure);
+          return;
+        }
+
+        const present = mod.keys.filter((k) => keys.includes(k) && images.content?.[k]);
+        if (present.length === mod.keys.length) {
+          const members = mod.keys
+            .map((k) => buildFigure(k, anchorOf(keys.indexOf(k)), { inModule: true }))
+            .filter(Boolean);
+          mod.keys.forEach((k) => consumed.add(k));
+          nodes.push(
+            el('div', { className: ['fig-module', mod.kind === 'duo' ? 'fig-duo' : 'fig-grid2x2'] }, members),
+          );
+          return;
+        }
+
+        if (target !== 'web' && !warned.has(mod.keys.join('+'))) {
+          warned.add(mod.keys.join('+'));
+          console.warn(
+            `[rehype-anchor-images] module ${mod.keys.join(' + ')} is split across chronicles in «${docSlug}»; its members fall back to individual fichas.`,
+          );
+        }
+        const figure = buildFigure(key, anchorOf(i), { forceFicha: true });
+        if (figure) nodes.push(figure);
+      });
+
+      return nodes;
+    }
+
+    function buildFigure(key, anchorId, opts = {}) {
       const entry = images.content?.[key];
       if (!entry) return null;
 
@@ -316,7 +394,9 @@ export function rehypeAnchorImages(options = {}) {
       // replaces sent every well-scanned vertical photograph to a page of its
       // own — about a third of the book — because the rule read an aspect ratio
       // where it should have read an editorial decision.
-      const container = containerFor(key, entry, caption);
+      // Members of a module are 50 % wide by definition; the module container
+      // lays them out. A split module member falls back to a ficha.
+      const container = opts.inModule || opts.forceFicha ? 'box-ficha' : containerFor(key, entry, caption);
 
       const figure = el(
         'figure',
@@ -326,6 +406,7 @@ export function rehypeAnchorImages(options = {}) {
             `q-${quality}`,
             entry.orientation ?? 'landscape',
             container,
+            ...(opts.inModule ? ['in-module'] : []),
             // A drawing has no background: stacked against a photograph it makes
             // the noise the editorial pass described (spec 07, RF-07.6).
             ...(isDrawing(caption) ? ['is-drawing'] : []),

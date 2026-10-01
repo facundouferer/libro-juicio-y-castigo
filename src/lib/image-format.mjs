@@ -1,42 +1,70 @@
 /**
- * Which container a photograph takes.
+ * Which module a photograph takes.
  *
- * The editorial pass asked for three, and no fourth (specs-v12, spec 07):
+ * The fourth editorial pass (docs/cambios_1_oct_2026.md) replaced the old
+ * three containers with a scale catalog, `src/data/image-scale.json`, which is
+ * the single source of truth for every edition:
  *
- *   box-full        the full width of the text box. Press photographs, group
- *                   shots, the courtroom, the plaza. The dominant format.
- *   box-two-thirds  two thirds, centred, nothing alongside. Portraits,
- *                   drawings, file photographs.
- *   box-page        the whole page. Reserved.
+ *   box-ficha   50 % of the text box, centred. Portraits and individual
+ *               drawings. Never a full page.
+ *   box-caja    100 % of the text box. Courtroom, press, plans, the site.
+ *   box-plano   100 % of the box, on an odd page of its own in the PDF. The
+ *               two large plans of the building.
  *
- * What it replaces was one line — portrait and well scanned meant a full page —
- * which sent about a third of the book's 105 images to a page of their own. The
- * full page is now a decision, not a side effect of an aspect ratio.
+ * Pairs and the 2 × 2 grid are not containers of one image but modules of
+ * several: the anchoring plugin groups them (see `moduleOf`).
+ *
+ * The old behaviour read an aspect ratio where it should have read an editorial
+ * decision. An image the catalog does not list falls back to orientation —
+ * a vertical individual reads as a ficha, anything else as a caja — and
+ * `IMAGE_FORMAT` in the manifest can still override any of them by hand.
  */
 
-import { DRAWING_PATTERN, FULL_PAGE_IMAGES, IMAGE_FORMAT } from '../../scripts/manifest.mjs';
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
+import { DRAWING_PATTERN, IMAGE_FORMAT } from '../../scripts/manifest.mjs';
 
-export const CONTAINERS = ['box-full', 'box-two-thirds', 'box-page'];
+export const CONTAINERS = ['box-ficha', 'box-caja', 'box-plano'];
+
+const SCALE = JSON.parse(
+  readFileSync(path.resolve(import.meta.dirname, '..', 'data', 'image-scale.json'), 'utf8'),
+);
+
+/** Image key → 'ficha' | 'caja' | 'plano'. */
+export const MODULES = SCALE.modules;
+/** Pairs of keys that sit side by side, in reading order. */
+export const DUOS = SCALE.duos;
+/** Groups of four keys set as a 2 × 2 grid. */
+export const GRIDS = SCALE.grids;
 
 /**
  * @param {string} key                the image key, e.g. '018bis'
  * @param {object} entry              its record in src/data/images.json
  * @param {object} [caption]          its record in src/data/captions.json
- * @returns {'box-full'|'box-two-thirds'|'box-page'}
+ * @returns {'box-ficha'|'box-caja'|'box-plano'}
  */
 export function containerFor(key, entry, caption) {
   const override = IMAGE_FORMAT[key];
   if (override && CONTAINERS.includes(override)) return override;
 
-  // Reserved: the section covers and the plans of the building (RF-07.4).
-  if (FULL_PAGE_IMAGES.has(key)) return 'box-page';
+  const scale = MODULES[key];
+  if (scale) return `box-${scale}`;
 
-  // A drawing has no background and a file photograph is small and vertical:
-  // both read as an object on the page, not as a view through it.
-  if (isDrawing(caption)) return 'box-two-thirds';
-  if ((entry?.orientation ?? 'landscape') === 'portrait') return 'box-two-thirds';
+  // Not in the catalog: a vertical individual or a drawing is a ficha.
+  if (isDrawing(caption) || (entry?.orientation ?? 'landscape') === 'portrait') return 'box-ficha';
+  return 'box-caja';
+}
 
-  return 'box-full';
+/**
+ * The multi-image module a key belongs to, if any.
+ * @returns {{ kind: 'duo'|'grid2x2', keys: string[] } | null}
+ */
+export function moduleOf(key) {
+  const duo = DUOS.find((keys) => keys.includes(key));
+  if (duo) return { kind: 'duo', keys: duo };
+  const grid = GRIDS.find((keys) => keys.includes(key));
+  if (grid) return { kind: 'grid2x2', keys: grid };
+  return null;
 }
 
 /** Whether the archive's epigraph describes a drawing, a plan or a file photo. */

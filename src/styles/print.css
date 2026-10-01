@@ -132,16 +132,14 @@ figure.figure {
   text-align: center;
 }
 
-/* Three containers and no fourth (specs-v12, spec 07, RF-07.1).
+/* The scale catalog (src/data/image-scale.json, fourth editorial pass):
 
-     box-full        the whole width of the text box. Press photographs, group
-                     shots, the courtroom, the plaza. The dominant format.
-     box-two-thirds  two thirds, centred, nothing alongside. Portraits,
-                     drawings, file photographs.
-     box-page        the whole page: section covers and the plans of the house.
+     box-ficha   50 % of the box, centred. Portraits and individual drawings.
+     box-caja    100 % of the box. The dominant format.
+     box-plano   100 % of the box, on a page of its own: the two large plans.
 
-   What this replaces read an aspect ratio where it should have read an
-   editorial decision, and sent about a third of the book to a page of its own. */
+   Pairs (.fig-duo) and the 2 × 2 grid (.fig-grid2x2) are modules of several
+   figures. No image is centred on a page by itself except a plano. */
 
 figure.figure img {
   display: block;
@@ -150,15 +148,13 @@ figure.figure img {
   object-fit: contain;
 }
 
-figure.figure.box-full { width: 100%; }
-figure.figure.box-full img { width: 100%; max-height: 105mm; }
-/* «El epígrafe alineado abajo a la derecha en cuerpo menor» (RF-07.5). */
-figure.figure.box-full figcaption { text-align: right; }
+figure.figure.box-caja { width: 100%; }
+figure.figure.box-caja img { width: 100%; max-height: 105mm; }
 
-figure.figure.box-two-thirds { width: 66%; margin-left: auto; margin-right: auto; }
-figure.figure.box-two-thirds img { max-height: 96mm; }
+figure.figure.box-ficha { width: 50%; margin-left: auto; margin-right: auto; }
+figure.figure.box-ficha img { max-height: 96mm; }
 
-figure.figure.box-page {
+figure.figure.box-plano {
   break-before: page;
   page-break-before: always;
   break-after: page;
@@ -170,15 +166,33 @@ figure.figure.box-page {
   flex-direction: column;
   justify-content: center;
 }
-figure.figure.box-page img { max-height: 160mm; }
+figure.figure.box-plano img { width: 100%; max-height: 160mm; }
 
-/* The quality ceilings still apply inside the chosen container: the eight scans
+/* Modules. Each figure keeps its own caption; tops are aligned. */
+.fig-module {
+  display: grid;
+  gap: 5mm 4mm;
+  align-items: start;
+  margin: 5mm 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.fig-duo { grid-template-columns: 1fr 1fr; }
+.fig-grid2x2 { grid-template-columns: 1fr 1fr; }
+.fig-module > figure.figure,
+figure.figure.box-ficha.in-module { width: 100%; margin: 0; }
+.fig-module figure.figure img { width: 100%; height: auto; max-height: 72mm; }
+.fig-grid2x2 figure.figure img { max-height: 54mm; }
+
+/* The quality ceilings still apply inside the chosen module: the eight scans
    below 200 dpi at A5 stay small, where their softness reads as a small
    archival print rather than as a fault. */
 figure.figure.q-reduced img { max-height: 78mm; }
 figure.figure.q-low img { max-height: 62mm; }
-figure.figure.box-page.q-reduced img { max-height: 120mm; }
-figure.figure.box-page.q-low img { max-height: 96mm; }
+.fig-module figure.figure.q-reduced img { max-height: 72mm; }
+.fig-grid2x2 figure.figure.q-reduced img,
+.fig-grid2x2 figure.figure.q-low img { max-height: 54mm; }
+figure.figure.box-plano.q-reduced img { max-height: 120mm; }
 
 /* ── The tail of a chronicle ────────────────────────────────────────────────
    Every photograph a chronicle owns comes out here, after its last paragraph
@@ -192,7 +206,7 @@ figure.figure.box-page.q-low img { max-height: 96mm; }
   page-break-inside: avoid;
 }
 .tail-figures > figure.figure:first-child { margin-top: 0; }
-.tail-figures > figure.figure.box-page:first-child { margin-top: 0; break-before: auto; page-break-before: auto; }
+.tail-figures > figure.figure.box-plano:first-child { margin-top: 0; break-before: auto; page-break-before: auto; }
 
 /* A drawing has no background; a photograph is a filled rectangle. Stacked
    together they make the noise the editorial pass described, so a drawing that
@@ -208,6 +222,7 @@ figure.figure figcaption {
   page-break-before: avoid;
   margin-top: 1.8mm;
   font-size: 7.4pt;
+  font-style: italic;
   line-height: 1.32;
   text-align: left;
   color: #575d63;
@@ -215,6 +230,7 @@ figure.figure figcaption {
 }
 figure.figure figcaption .credit {
   display: block;
+  font-style: normal;
   font-weight: 700;
   color: var(--small-text-accent);
 }

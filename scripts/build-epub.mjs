@@ -112,13 +112,14 @@ figure.figure img {
 figure.figure figcaption {
   margin-top: 0.4em;
   font-size: 0.76em;
+  font-style: italic;
   line-height: 1.35;
   text-align: left;
   color: #575d63;
   hyphens: none;
   -epub-hyphens: none;
 }
-figure.figure figcaption .credit { display: block; font-weight: bold; color: ${ACCENT[SMALL_TEXT_STEP]}; }
+figure.figure figcaption .credit { display: block; font-style: normal; font-weight: bold; color: ${ACCENT[SMALL_TEXT_STEP]}; }
 
 .cover-page { text-align: left; margin-top: 6%; }
 .cover-photo { display: block; width: 100%; height: auto; margin-bottom: 1.4em; }
@@ -205,13 +206,18 @@ aside.signoff p {
 }
 aside.signoff .signoff-lead { color: ${ACCENT[SMALL_TEXT_STEP]}; margin-bottom: 0.8em; }
 
-/* ── Image containers (specs-v12, spec 07, RF-07.7) ─────────────────────────
-   The three containers of the printed edition, translated to a reflowable
-   medium: full width, two thirds centred, and the whole width of the view. */
-figure.figure.box-two-thirds { width: 66%; margin-left: auto; margin-right: auto; }
-figure.figure.box-full img, figure.figure.box-page img { width: 100%; height: auto; }
-figure.figure.box-full figcaption { text-align: right; }
-figure.figure.box-page { page-break-before: always; break-before: page; }
+/* ── Image scale (fourth editorial pass) ───────────────────────────────────
+   The catalog of the printed edition, translated to a reflowable medium:
+   ficha at half width centred, caja and plano at full width, pairs and the
+   2 × 2 grid as modules of half-width figures. */
+figure.figure.box-ficha { width: 50%; margin-left: auto; margin-right: auto; }
+figure.figure.box-caja img, figure.figure.box-plano img { width: 100%; height: auto; }
+figure.figure.box-plano { page-break-before: always; break-before: page; }
+.fig-module { display: table; width: 100%; table-layout: fixed; border-spacing: 0.6em 0; margin: 1.4em 0; }
+.fig-module > figure.figure { display: table-cell; width: 50%; vertical-align: top; margin: 0; }
+.fig-module > figure.figure img { width: 100%; height: auto; max-height: none; }
+.fig-grid2x2 { display: block; }
+.fig-grid2x2 > figure.figure { display: inline-block; width: 48%; margin: 0 0.5% 1em; vertical-align: top; }
 .doc-kicker {
   font-family: sans-serif;
   font-weight: bold;
@@ -439,7 +445,7 @@ ${section.blurb ? `  <p class="part-blurb">${xml(section.blurb)}</p>` : ''}
       ].join('');
       const box =
         doc.data.pageType === 'chapter-opening'
-          ? 'box-page'
+          ? 'box-plano'
           : containerFor(doc.plate.key, doc.plate, { caption: doc.plate.caption });
       plateParts.push(
         [

@@ -16,6 +16,9 @@
  *   colophon        — credits, legal notice and imprint (spec 01, RF-01.4)
  */
 
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
+
 export const SECTIONS = [
   {
     id: 'inicio',
@@ -348,35 +351,23 @@ export const ENTRIES = [
 export const VOLANTA_OVERRIDE = {};
 
 /**
- * The three containers a photograph can take, and nothing in between
- * (spec 07 de specs-v12, RF-07.1):
+ * The modules a photograph can take (fourth editorial pass):
  *
- *   box-full        — the full width of the text box. Press photographs, group
- *                     shots, the courtroom, the plaza. The dominant format.
- *   box-two-thirds  — two thirds, centred, no text alongside. Portraits,
- *                     drawings, file photographs.
- *   box-page        — the whole 119 × 180 mm page.
+ *   box-ficha  — 50 % of the text box, centred. Portraits, individual drawings.
+ *   box-caja   — the full width of the text box. The dominant format.
+ *   box-plano  — the full width, on an odd page of its own in the PDF.
  *
- * The full page is reserved (RF-07.4): the five section-cover photographs and
- * the plans and surveys of the building. Everything else is assigned by the
- * default rule and can be corrected here, image by image, without touching
- * code — `build/revision-formatos.md` lists what the rule decided.
+ * The catalog that assigns them lives in `src/data/image-scale.json`; the set
+ * below is derived from it so the plans have a single source of truth.
  */
-export const FULL_PAGE_IMAGES = new Set([
-  // Plans and surveys: they are read, not looked at, and they need the page.
-  '002', // Relevamiento del EAAF, 2008
-  '083', // Planos de los sótanos y elementos hallados por el EAAF
-  '084', // Plano de la vieja casona de Marcelo T. de Alvear 32
-  '085', // Plano de la vieja casona de Marcelo T. de Alvear 32
-  '092', // Planos de los sótanos de la parte trasera
-  '093', // Plano de la ex Brigada
-]);
-
-// The five section-cover photographs also take a full page, but they are not
-// listed here: they get it by construction, on the verso of their part's cover
-// page (spec 03, RF-03.2). Whichever image the map anchors to each opening is
-// the one that lands there, so hard-coding a key would go stale the moment the
-// sequence is recomputed.
+const SCALE_CATALOG = JSON.parse(
+  readFileSync(path.join(import.meta.dirname, '..', 'src', 'data', 'image-scale.json'), 'utf8'),
+);
+export const FULL_PAGE_IMAGES = new Set(
+  Object.entries(SCALE_CATALOG.modules)
+    .filter(([, scale]) => scale === 'plano')
+    .map(([key]) => key),
+);
 
 /** Per-image overrides of the container the default rule would choose. */
 export const IMAGE_FORMAT = {};

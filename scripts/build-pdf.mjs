@@ -207,7 +207,7 @@ async function buildHtml() {
     // above the title on the same page, where it competed with it; and the
     // verso it now occupies used to be a courtesy blank (spec 03, RF-03.2).
     const verso = plate
-      ? `<section class="page-plate" data-section="${xml(section.id)}">${plateFigure(plate, 'box-page')}</section>`
+      ? `<section class="page-plate" data-section="${xml(section.id)}">${plateFigure(plate, 'box-plano')}</section>`
       : '<section class="page-blank" aria-hidden="true"></section>';
 
     return {
@@ -427,7 +427,7 @@ async function measureBlocks(browser, shell, blocks) {
        */
       const html = typeof block === 'string' ? block : block.html;
       tails.push(
-        /\bbox-page\b/.test(html)
+        /\bbox-plano\b/.test(html)
           ? null
           : await page.evaluate(
               (contentPx) => {
@@ -450,15 +450,14 @@ async function measureBlocks(browser, shell, blocks) {
 /**
  * The last photograph a block carries, promoted to a page of its own.
  *
- * Returns null when the block has no tail figures to promote — a text that
- * carries no photograph, or one whose last figure already takes a full page.
+ * Disabled: returns null, so no photograph is promoted to a page of its own.
  */
-function promoteLastFigure(html) {
-  const figures = [...html.matchAll(/<figure class="figure ([^"]*)"/g)];
-  const last = figures.at(-1);
-  if (!last || /\bbox-page\b/.test(last[1])) return null;
-  const at = last.index;
-  return html.slice(0, at) + html.slice(at).replace(/\bbox-(full|two-thirds)\b/, 'box-page');
+function promoteLastFigure() {
+  // The scale catalog (fourth editorial pass) forbids centring an ordinary
+  // photograph on a page of its own: only a plano takes one. The parity is now
+  // taken up by a courtesy blank until the anchored photo block (T4) arranges
+  // the tail of each chronicle.
+  return null;
 }
 
 /**
