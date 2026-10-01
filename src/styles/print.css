@@ -167,6 +167,9 @@ figure.figure {
 .fig-module > figure.figure { margin: 0; }
 figure.figure img {
   display: block;
+  /* The attributes would otherwise set the height: the box must follow the
+     picture, or the caption floats away from it. */
+  height: auto;
   margin: 0 auto;
   max-width: 100%;
   object-fit: contain;
@@ -199,17 +202,20 @@ figure.figure.box-plano img { width: 100%; max-height: calc(34 * var(--lh)); }
 .fig-module > figure.figure,
 figure.figure.box-ficha.in-module { width: 100%; margin: 0; }
 .fig-module figure.figure img { width: 100%; height: auto; max-width: 100%; max-height: calc(17 * var(--lh)); }
-.fig-grid2x2 figure.figure img { max-height: calc(17 * var(--lh)); }
+.fig-grid2x2 figure.figure img { max-height: calc(17 * var(--lh)); object-position: center top; }
 
 /* The quality ceilings still apply inside the chosen module: the eight scans
    below 200 dpi at A5 stay small, where their softness reads as a small
    archival print rather than as a fault. */
 figure.figure.q-reduced img { max-height: calc(18 * var(--lh)); }
-figure.figure.q-low img { max-height: calc(17 * var(--lh)); }
-.fig-module figure.figure.q-reduced img { max-height: calc(16 * var(--lh)); }
+figure.figure.q-low img { max-height: calc(14 * var(--lh)); }
+/* A ficha keeps its half-box width whatever the scan: no quality cap on it. */
+figure.figure.box-ficha.q-reduced img,
+figure.figure.box-ficha.q-low img { max-height: calc(21 * var(--lh)); }
+.fig-duo figure.figure.q-reduced img { max-height: calc(17 * var(--lh)); }
 .fig-grid2x2 figure.figure.q-reduced img,
 .fig-grid2x2 figure.figure.q-low img { max-height: calc(15 * var(--lh)); }
-.fig-module figure.figure.q-low img { max-height: calc(13 * var(--lh)); }
+.fig-duo figure.figure.q-low img { max-height: calc(17 * var(--lh)); }
 figure.figure.box-plano.q-reduced img { max-height: calc(26 * var(--lh)); }
 
 /* ── The tail of a chronicle ────────────────────────────────────────────────

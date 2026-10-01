@@ -102,8 +102,28 @@ export function layoutInPage(opts) {
       }
     }
   };
-  const snapAll = () => figures.forEach(snapFigure);
+  // The 2 × 2 grid is laid out as a whole: every cell gets the same image
+  // frame, so both rows and the caption tops line up (see fitGrid).
+  const loose = figures.filter((f) => !f.closest('.fig-grid2x2'));
+  const snapAll = () => loose.forEach(snapFigure);
+  const fitGrid = (grid) => {
+    const figs = [...grid.querySelectorAll('figure.figure')];
+    for (const f of figs) {
+      const img = f.querySelector('img');
+      img.style.maxHeight = 'none';
+      img.style.height = '10px';
+      f.style.paddingBottom = '';
+    }
+    const caps = figs.map((f) => f.getBoundingClientRect().height - 10);
+    const rows = [];
+    for (let k = 0; k < caps.length; k += 2) rows.push(Math.max(caps[k], caps[k + 1] ?? 0));
+    const frame = Math.floor((cap - (rows.length - 1) * lhPx - rows.reduce((a, b) => a + b, 0)) / rows.length - 1);
+    figs.forEach((f) => { f.querySelector('img').style.height = `${frame}px`; });
+    const h = grid.getBoundingClientRect().height;
+    grid.style.paddingBottom = `${Math.ceil(h / lhPx - 1e-3) * lhPx - h}px`;
+  };
   snapAll();
+  (tail ? [...tail.querySelectorAll('.fig-grid2x2')] : []).forEach(fitGrid);
 
   let units = tail ? [...tail.children] : [];
   // A module taller than the box (a long caption on a 2 × 2 grid) shrinks its
@@ -272,9 +292,18 @@ export function layoutInPage(opts) {
   const blankCols = [...root.querySelectorAll('.tail-group.is-blank')].map((el) => colOf(frags(el)[0]));
   if (pages !== pageCount) warnings.push(`expected ${pageCount} pages, simulated ${pages}`);
 
+  // Figures whose image sits short of its box (a gap between picture and caption).
+  const gapFigs = figures.filter((f) => {
+    const img = f.querySelector('img');
+    const b = img.getBoundingClientRect();
+    if (!b.height || !img.naturalWidth) return false;
+    const visual = Math.min(b.height, b.width * (img.naturalHeight / img.naturalWidth));
+    return b.height - visual > 3 && !f.closest('.fig-module');
+  }).length;
   const debug = groups.map((g) => `${g.anchored ? 'A' : 'N'}${g.lines}[${g.units.map((u) => `${u.className.slice(0, 20)}:${u.getBoundingClientRect().height.toFixed(0)}`).join(',')}]`);
   return {
     debug,
+    gapFigs,
     html: root.outerHTML,
     pages,
     expected: pageCount,

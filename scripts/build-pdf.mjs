@@ -540,6 +540,7 @@ async function main() {
     }
     const movedFigs = plan.flatMap((b) => (b.layout?.moved ?? []).map((id) => `${id} (${b.title.slice(0, 28)})`));
     if (movedFigs.length) console.log(`Figuras del texto llevadas al bloque de fotos: ${movedFigs.join(', ')}`);
+    console.log(`Figuras con hueco entre imagen y epígrafe: ${plan.reduce((a, b) => a + (b.layout?.gapFigs ?? 0), 0)}`);
     const innerBlanks = plan.reduce((a, b) => a + (b.layout?.blankCols.length ?? 0), 0);
     console.log(`Blancos de cortesía entre crónicas: ${blanks}; blancos internos antes de un plano: ${innerBlanks}`);
     for (const b of plan) {
