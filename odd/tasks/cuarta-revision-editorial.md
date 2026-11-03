@@ -48,6 +48,8 @@ TDD: off (sin configuración ni runner de tests en el proyecto). Checks funciona
 
 - **T6** (ruta: direct inline, acción de build acotada). Versión 1.3.0. `npm run pdf` 296 págs., aperturas en impar 57/57, sin colas < 5 líneas; `npm run pdf:imprenta` 296 + 8 = 304; `npm run epub` ok (104 imágenes, 15,1 MB); `npm run downloads` ok; `npm run build` ok; `npm run check` «Todo en su lugar». Revisión visual por hojas de contacto del libro completo (scratchpad fin_0..4.png). Limitación conocida: quedan páginas de figura con una sola ficha o caja arriba y blanco debajo cuando el bloque de fotos de una crónica tiene una sola imagen (p. ej. págs. 41, 126, 146, 149, 176); 38 páginas de texto cortan 1–3 renglones antes de la base por viudas/huérfanas y títulos.
 
+- **Pedido del 3 de noviembre de 2026** (inline, sin commit): folio = página del PDF (frente sin número en 1–4 y blancos; el índice y el primer texto sí); retícula 13,5 pt / cuerpo 10 pt / caja de 37 renglones; página 4 con ficha CIP y créditos; índice con puntos guía y folio calculado del plan; citas, firmas y nota de autor (anclada al pie por la pasada de maquetación); epígrafes con punto final. PDF 314 págs. (+6 blancas = 320 en imprenta), aperturas en impar 57/57. Decisiones de criterio: interlíneas de citas y espacios de títulos redondeados a la retícula; títulos de crónica siguen en 19 pt.
+
 ## Próximo paso
 
 Revisión del usuario sobre el PDF 1.3; push y PR solo cuando el usuario lo pida.
