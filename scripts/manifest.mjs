@@ -119,13 +119,7 @@ export const ENTRIES = [
     pageType: 'colophon',
     showTitle: false,
     strip: 1,
-    pending: [
-      'datos de impresión',
-      'ISBN',
-      'licencia copyleft',
-      'ficha de catalogación',
-      'crédito de la fotografía de tapa',
-    ],
+    pending: ['editorial / imprenta', 'ISBN', 'cantidad de páginas de la ficha CIP'],
   },
   {
     source: 'section00_inicio/01. DOC ORGANISMOS. La memoria y la palabra.md',
@@ -163,6 +157,8 @@ export const ENTRIES = [
       drop: ['**Gonzalo Torres 12/8/2025**'],
       start: '*(“Juicio y Castigo en el Chaco” tiene un volumen 1',
       lead: '12 de agosto de 2025',
+      // Printed as the author's note, anchored to the foot of the text box.
+      foot: true,
     },
     strip: 1,
   },
@@ -197,7 +193,7 @@ export const ENTRIES = [
   {
     source: 'section01-una-casa-con-una-sala-negra/06. CHACHI.md',
     slug: 'chachi',
-    title: 'Chachi',
+    title: 'Homenaje a Chachi Quintana',
     section: 'una-casa-con-una-sala-negra',
     pageType: 'interlude',
     // The body opens with its own full title — "CHACHI. Gregorio 'Chachi'

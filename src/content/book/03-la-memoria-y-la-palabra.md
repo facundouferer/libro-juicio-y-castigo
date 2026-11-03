@@ -55,7 +55,7 @@ Sostener la memoria como política de Estado y como práctica comunitaria implic
 
 <aside class="signoff">
 <p><strong>Asociación de Ex Detenidos Políticos de Chaco</strong></p>
-<p><strong>Reg. H.I.J.O.S Chaco en la Red Nacional</strong></p>
+<p><strong>H.I.J.O.S. Regional Chaco en la Red Nacional</strong></p>
 <p><strong>Familiares de Detenidos y Desaparecidos por Razones Políticas</strong></p>
-<p><strong>Comisión Permanente por los DDHH.</strong></p>
+<p><strong>Comisión Permanente por los DDHH</strong></p>
 </aside>

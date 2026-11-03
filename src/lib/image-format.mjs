@@ -71,3 +71,15 @@ export function moduleOf(key) {
 export function isDrawing(caption) {
   return DRAWING_PATTERN.test(String(caption?.caption ?? ''));
 }
+
+
+/**
+ * A caption is a sentence and closes with a full stop (fifth editorial pass).
+ * Left alone when it already ends in terminal punctuation, with or without a
+ * closing quote or bracket after it.
+ */
+export function endSentence(text) {
+  const t = String(text ?? '').trimEnd();
+  if (!t) return t;
+  return /[.!?…][”"»)\]]*$/.test(t) ? t : `${t}.`;
+}

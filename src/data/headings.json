@@ -75,11 +75,9 @@
       "pageType": "colophon",
       "showTitle": false,
       "pending": [
-        "datos de impresión",
+        "editorial / imprenta",
         "ISBN",
-        "licencia copyleft",
-        "ficha de catalogación",
-        "crédito de la fotografía de tapa"
+        "cantidad de páginas de la ficha CIP"
       ],
       "headings": []
     },
@@ -773,7 +771,7 @@
     },
     {
       "slug": "chachi",
-      "title": "Chachi",
+      "title": "Homenaje a Chachi Quintana",
       "section": "una-casa-con-una-sala-negra",
       "order": 8,
       "pageType": "interlude",

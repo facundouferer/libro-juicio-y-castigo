@@ -143,7 +143,7 @@ _Crónicas: una casa con una Sala Negra — sección "Una casa con una Sala Negr
 - h2 `arsenal-de-literatura-marxista-1` — “ARSENAL DE LITERATURA MARXISTA”
 
 ## chachi
-_Chachi — sección "Una casa con una Sala Negra" — interlude — 1 títulos_
+_Homenaje a Chachi Quintana — sección "Una casa con una Sala Negra" — interlude — 1 títulos_
 
 - h1 `chachi-gregorio-chachi-quintana-1955-2010` — CHACHI. Gregorio “Chachi” Quintana 1955-2010.
 

@@ -23,7 +23,7 @@ import { visit } from 'unist-util-visit';
 import Slugger from 'github-slugger';
 import { sources, altFor } from './images.mjs';
 import { isVolanta } from './cronicas.mjs';
-import { containerFor, isDrawing, moduleOf } from './image-format.mjs';
+import { containerFor, endSentence, isDrawing, moduleOf } from './image-format.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..', '..');
 
@@ -343,7 +343,7 @@ export function rehypeAnchorImages(options = {}) {
       const alt = altFor(caption);
 
       const figcaption = [];
-      if (caption?.caption) figcaption.push(text(caption.caption));
+      if (caption?.caption) figcaption.push(text(endSentence(caption.caption)));
       if (caption?.credit) {
         figcaption.push(el('span', { className: ['credit'] }, [text(caption.credit)]));
       }

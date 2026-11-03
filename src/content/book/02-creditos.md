@@ -5,17 +5,28 @@ order: 2
 section: "inicio"
 pageType: "colophon"
 showTitle: false
-words: 110
+words: 267
 sourceFile: "section00_inicio/00c.creditos.md"
 ---
-**Juicio y Castigo en el Chaco (Vol II)**
+<div class="cip">
+<p>Comisión Provincial por la Memoria Chaco</p>
+<p>Juicio y castigo en el Chaco : Vol. 2 : causas Brigada I, II y III, 2010-2026 / Gonzalo Torres... [et al.] ; autoría y edición literaria a cargo de Gonzalo Torres. - 1a ed. - Resistencia : Editorial / Imprenta a confirmar, 2026.</p>
+<p>XXX p. ; 22 x 15 cm.</p>
+<p>ISBN [Pendiente de asignación]</p>
+<p>1. Dictadura Militar. 2. Memoria. 3. Derechos Humanos. I. Torres, Gonzalo, autor y ed. II. Título.</p>
+<p>CDD 323.0982</p>
+</div>
 
-Causa Brigada I, II, III. Crónicas, dibujos y fotografías.
-
-Edición de la Comisión Provincial por la Memoria — Chaco.
-
-Las crónicas reunidas en este volumen provienen de la cobertura periodística de las audiencias de las causas Brigada I, Brigada II y Brigada III, realizadas en Resistencia, Chaco.
-
-Las fotografías, los planos y los dibujos pertenecen a los archivos consignados en el epígrafe de cada imagen. Las que el archivo no epigrafió se publican sin descripción antes que describirlas por conjetura.
-
-Fotografía de tapa: fachada de la ex Brigada de Investigaciones sobre Marcelo T. de Alvear, en Resistencia, hoy Casa por la Memoria.
+<div class="credits">
+<p class="credits-title"><strong>Juicio y Castigo en el Chaco (Vol. II)</strong></p>
+<p>Causas Brigada I, II y III. Crónicas, dibujos y fotografías.</p>
+<p><span class="credit-label">Autoría, textos y edición general:</span> Gonzalo Torres (Prensa CPM Chaco)</p>
+<p><span class="credit-label">Dibujos:</span> Juan Britos, Alejandro Gallardo</p>
+<p><span class="credit-label">Fotografías:</span> Prensa CPM Chaco (varios)</p>
+<p><span class="credit-label">Fotografía de tapa:</span> Fachada de la ex Brigada de Investigaciones sobre Marcelo T. de Alvear, en Resistencia, hoy Casa por la Memoria.</p>
+<p><span class="credit-label">Diseño y diagramación:</span> Facundo Uferer</p>
+<p>Edición institucional de la Comisión Provincial por la Memoria — Chaco.</p>
+<p>Las crónicas reunidas en este volumen provienen de la cobertura periodística de las audiencias de las causas Brigada I, Brigada II y Brigada III, realizadas en Resistencia, Chaco.</p>
+<p>© 2026, Gonzalo Torres (autoría de contenidos). © 2026, Comisión Provincial por la Memoria Chaco (derechos de edición).</p>
+<p>Esta obra se distribuye bajo una licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional (CC BY-SA 4.0). Se permite la copia, redistribución, impresión y adaptación del material para usos educativos, culturales y comunitarios, siempre que se reconozca la autoría original, se indique si se realizaron cambios y se mantenga la misma licencia en las obras derivadas.</p>
+</div>

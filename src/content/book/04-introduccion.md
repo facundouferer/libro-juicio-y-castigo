@@ -5,12 +5,12 @@ order: 4
 section: "inicio"
 pageType: "reader"
 byline: "Por Gonzalo Torres"
-words: 1166
+words: 1167
 sourceFile: "section00_inicio/02.INTRODUCCIÓN.md"
 ---
 “Ustedes están muertos en vida, ustedes son los muertos que están vivos”. Se lo dijeron cuando estuvo detenida-desaparecida en un calabozo clandestino durante la última dictadura cívico-militar (1976-83) y logró contarlo en un juicio oral de la democracia, muchos años después. Una historia particular de una sobreviviente que volvió de la “muerte” en el genocidio, y que se inserta en una historia colectiva, la de nuestro pasado reciente.
 
-De eso tratan las páginas que integran este libro: son el resultado de un trabajo de edición sobre diversas crónicas de la cobertura periodística de tres procesos judiciales realizados en Resistencia, Chaco entre 2010 y 2021  
+De eso tratan las páginas que integran este libro: son el resultado de un trabajo de edición sobre diversas crónicas de la cobertura periodística de tres procesos judiciales realizados en Resistencia, Chaco entre 2010 y 2021.  
 La experiencia genocida desborda los juicios, y los juicios desbordan las crónicas. Cada testimonio abre un territorio donde el pasado interrumpe el presente y lo organiza de otro modo. En esa zona de superposición—entre la memoria y su actualización judicial—se ubica este libro.
 
 Las crónicas seleccionadas abarcan tres procesos judiciales realizados en Chaco entre 2010 y 2021 En ellos, sobrevivientes testimoniaron sobre el accionar de los ejecutores directos de la maquinaria de exterminio en el centro clandestino de detención Brigada de Investigaciones de la Policía del Chaco: los integrantes de la llamada "patota de Investigaciones". Los procesos también alcanzaron a guardiacárceles de la Alcaidía Policial de la provincia del Chaco, acusados por su intervención en distintos tramos del circuito represivo.
@@ -45,7 +45,7 @@ En una amarga confirmación de aquella advertencia del siempre vigente Rodolfo W
 
 Este libro se propone intervenir en esa disputa por la representación del genocidio en el presente como un humilde aporte que consiste en confrontar a la falacia oscurecedora negacionista con la palabra luminosa de los y de las sobrevivientes; voces que se alzan desde una experiencia vital heterogénea para testimoniar una verdad histórica que acusa a los criminales del terrorismo de Estado y defiende la posibilidad siempre latente de un país más justo, más solidario, más libre.
 
-<aside class="signoff">
+<aside class="signoff note-foot">
 <p class="signoff-lead">12 de agosto de 2025</p>
 <p><em>(“Juicio y Castigo en el Chaco” tiene un volumen 1, que consiste en una antología de crónicas sobre la causa Masacre de Margarita Belén, y tendrá un tercer volumen, referido a las causas Ligas Agrarias, Complicidad civil, Conscriptos, y Masacre de Margarita II  Tozzo)</em></p>
 </aside>

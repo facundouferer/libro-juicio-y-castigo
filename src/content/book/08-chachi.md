@@ -1,5 +1,5 @@
 ---
-title: "Chachi"
+title: "Homenaje a Chachi Quintana"
 docSlug: "chachi"
 order: 8
 section: "una-casa-con-una-sala-negra"

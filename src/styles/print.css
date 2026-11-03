@@ -8,8 +8,8 @@
  *
  * The trim is 148 × 210 mm. The pages are mirrored for binding: the inner
  * (gutter) margin is 18 mm, the outer 13 mm, so the text box is 117 mm wide on
- * every page. Its height is an exact whole number of baselines: 40 lines of
- * --lh (12.5 pt) = 500 pt, with a 42 pt head and a 53 pt foot.
+ * every page. Its height is an exact whole number of baselines: 37 lines of
+ * --lh (13.5 pt) = 499.5 pt, with a 42 pt head and a 53.7 pt foot.
  *
  * One baseline unit rules the vertical axis. Every element in the flow takes
  * a whole multiple of --lh (line-height and margins), so the text of facing
@@ -18,18 +18,19 @@
 
 @page {
   size: A5;
-  margin: 42pt 13mm 53pt 18mm;
+  margin: 42pt 13mm 53.7pt 18mm;
 }
 /* Mirrored: page 1 is a recto, so the gutter is on the left of odd pages. */
-@page :right { margin: 42pt 13mm 53pt 18mm; }
-@page :left { margin: 42pt 18mm 53pt 13mm; }
+@page :right { margin: 42pt 13mm 53.7pt 18mm; }
+@page :left { margin: 42pt 18mm 53.7pt 13mm; }
 
 :root {
-  --lh: 12.5pt;
-  --box-lines: 40;
+  --lh: 13.5pt;
+  --box-lines: 37;
   --box-h: calc(var(--box-lines) * var(--lh));
-  /* "Bajada de cabeza": 25 % of the text box, before the title of every opening. */
-  --head-drop: calc(10 * var(--lh));
+  /* "Bajada de cabeza": a quarter of the text box (9 of 37 baselines), before
+     the title of every opening. */
+  --head-drop: calc(9 * var(--lh));
 }
 
 * { box-sizing: border-box; }
@@ -43,8 +44,8 @@ body {
   background: #fff;
   color: #1c1f22;
   font-family: 'Source Sans 3', 'Source Sans Pro', Georgia, serif;
-  font-size: 9.6pt;
-  /* 9.6 pt on 12.5 pt: 130 %. The one baseline unit of the book. */
+  font-size: 10pt;
+  /* 10 pt on 13.5 pt: the one baseline unit of the book. */
   line-height: var(--lh);
   text-align: justify;
   hyphens: auto;
@@ -116,22 +117,28 @@ section > :first-child,
 /* Paragraphs run on: a first-line indent instead of a space, so a text keeps
    every line on the grid however many paragraphs it has. */
 p { margin: 0; }
-p + p { text-indent: 1.2em; }
+p + p { text-indent: 5mm; }
 strong { font-weight: 700; }
 em { font-style: italic; }
 a { color: inherit; text-decoration: none; }
 
+/* Quoted text: 9.5 pt, indented 5 mm on both sides, one baseline of air above
+   and below (the leading stays on the grid of the page). */
 blockquote {
-  margin: var(--lh) 0 var(--lh) 4mm;
-  padding-left: 4mm;
-  border-left: 0.6mm solid var(--color-accent-300);
-  font-size: 9pt;
+  margin: var(--lh) 5mm;
+  padding: 0;
+  border: 0;
+  font-size: 9.5pt;
   line-height: var(--lh);
 }
 blockquote p { margin: 0; }
 
-ul, ol { margin: var(--lh) 0; padding-left: 6mm; }
-li { margin: 0; }
+ul, ol { margin: var(--lh) 0; padding-left: 5mm; }
+/* A numbered list hangs: the numeral sits in the 5 mm indent, the text keeps
+   its own column (sangría francesa). */
+ol { list-style-position: outside; }
+li { margin: 0; text-indent: 0; }
+li p + p { text-indent: 0; }
 
 /* A separator: one baseline of rule, one above and one below. */
 hr {
@@ -254,9 +261,9 @@ figure.figure figcaption {
   break-before: avoid;
   page-break-before: avoid;
   margin-top: calc(var(--lh) * 0.2);
-  font-size: 7.4pt;
+  font-size: 8.5pt;
   font-style: italic;
-  line-height: 1.32;
+  line-height: 11pt;
   text-align: left;
   color: #575d63;
   hyphens: none;
@@ -322,22 +329,23 @@ figure.figure figcaption .credit {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  /* Hangs from the head drop, like every opening. */
-  padding-top: var(--head-drop);
+  /* High on the page: the block sits in the upper half, above the head drop. */
+  padding-top: calc(5 * var(--lh));
 }
 .page-citations blockquote {
   border: 0;
   margin: 0 0 calc(2 * var(--lh));
   padding: 0;
-  font-size: 12pt;
+  font-size: 9.5pt;
   font-weight: 700;
-  line-height: calc(1.5 * var(--lh));
+  line-height: var(--lh);
   color: var(--color-accent-700);
 }
+/* The attribution: 9 pt italic. */
 .page-citations blockquote p:last-child {
-  font-size: 10.5pt;
+  font-size: 9pt;
   font-weight: 400;
-  font-style: normal;
+  font-style: italic;
   color: #575d63;
   margin-top: var(--lh);
 }
@@ -353,6 +361,20 @@ figure.figure figcaption .credit {
   hyphens: none;
 }
 .page-colophon p { margin: 0 0 var(--lh); text-indent: 0; }
+/* Cataloguing-in-publication card: a hairline (0.5 pt) frame at the top of the
+   page. Drawn as an inset shadow so the box stays a whole number of baselines. */
+.page-colophon .cip {
+  box-shadow: inset 0 0 0 0.5pt #1c1f22;
+  padding: calc(var(--lh) * 0.5) 3mm;
+  margin: 0 0 calc(2 * var(--lh));
+  font-size: 8pt;
+  line-height: var(--lh);
+}
+.page-colophon .cip p { margin: 0 0 calc(var(--lh) * 0.5); }
+.page-colophon .cip p:last-child { margin-bottom: 0; }
+.page-colophon .credits { font-size: 8pt; line-height: var(--lh); }
+.page-colophon .credits p { margin: 0 0 calc(var(--lh) * 0.5); }
+.page-colophon .credit-label { font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; }
 
 /* A courtesy blank: the reverse of a recto that opens something. It has to be a
    real page, so it carries the full content height and breaks after itself —
@@ -382,7 +404,12 @@ figure.figure figcaption .credit {
 /* One baseline per entry: the whole list holds on one page (RF-01.5). The
    index is the one front text with no head drop, or it would not fit. */
 .toc-list { list-style: none; margin: 0; padding: 0; font-size: 8.4pt; }
-.toc-list li { margin: 0; text-align: left; hyphens: none; line-height: var(--lh); }
+.toc-list li { margin: 0; text-align: left; hyphens: none; line-height: var(--lh); display: flex; align-items: baseline; }
+/* Title, dotted leader, folio: the number sits flush right on every line. */
+.toc-t { flex: 0 1 auto; }
+.toc-dots { flex: 1 1 auto; min-width: 4mm; margin: 0 1.5mm; border-bottom: 0.6pt dotted #6b7178; transform: translateY(-1.5pt); }
+.toc-n { flex: 0 0 auto; min-width: 7mm; text-align: right; font-variant-numeric: tabular-nums; }
+.toc-part .toc-dots { border-bottom-color: transparent; }
 .toc-list .toc-part {
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
@@ -392,7 +419,7 @@ figure.figure figcaption .credit {
   margin-top: var(--lh);
 }
 .toc-list .toc-part:first-child { margin-top: 0; }
-.toc-list .toc-doc { padding-left: 3mm; }
+.toc-list .toc-doc { padding-left: 5mm; font-weight: 400; }
 .toc-list .toc-h2 { padding-left: 7mm; color: #575d63; font-size: 8.2pt; }
 
 /* ── Section covers ─────────────────────────────────────────────────────────
@@ -429,8 +456,8 @@ figure.figure figcaption .credit {
 .page-part .part-title {
   margin: 0;
   padding: 0;
-  font-size: 28pt;
-  line-height: calc(3 * var(--lh));
+  font-size: 26pt;
+  line-height: calc(2 * var(--lh));
   color: var(--section-accent);
 }
 
@@ -451,16 +478,20 @@ figure.figure figcaption .credit {
   margin: 0;
   text-align: left;
 }
-.doc-head .doc-title { margin: 0; padding: 0; font-size: 17pt; line-height: calc(2 * var(--lh)); }
+.doc-head .doc-title { margin: 0 0 var(--lh); padding: 0; font-size: 26pt; line-height: calc(2 * var(--lh)); }
+.doc-head .doc-title:last-child { margin-bottom: 0; }
 /* The signature, under the title and before the first paragraph, so the voice
    is identified from the start (specs-v12, spec 02, RF-02.1). */
 .doc-byline {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  font-size: 11pt;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 600;
+  text-transform: none;
+  font-variant-caps: small-caps;
+  font-size: 10.5pt;
   letter-spacing: 0.06em;
   line-height: var(--lh);
+  /* With the head's own margin: 2 baselines before the first paragraph. */
+  margin-bottom: var(--lh) !important;
   color: var(--small-text-accent);
   margin: 0;
   text-align: left;
@@ -488,6 +519,20 @@ aside.signoff p {
   color: #3d4247;
 }
 aside.signoff .signoff-lead { color: var(--small-text-accent); }
+
+/* The author's note: 8.5 / 11 pt, ranged at the foot of the text box and
+   marked off by a 0.5 pt rule on its left. The layout pass sets its top margin
+   so that its last line rests on the foot of the box. */
+aside.signoff.note-foot {
+  background: none;
+  border-left: 0.5pt solid #1c1f22;
+  padding: 0 0 0 3mm;
+}
+aside.signoff.note-foot p {
+  font-size: 8.5pt;
+  line-height: 11pt;
+  color: #1c1f22;
+}
 
 /* ── Footnotes ──────────────────────────────────────────────────────────────
    Written in the manuscript as bold italic, which printed them at body size —
