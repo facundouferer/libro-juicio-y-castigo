@@ -187,6 +187,20 @@ export function layoutInPage(opts) {
     if (rescue === 2) paragraphs.slice(-1).forEach((p) => p.classList.add('rescue-keep'));
     if (rescue === 3) paragraphs.slice(-2).forEach((p) => p.classList.add('rescue-keep'));
   }
+  // The author's note rests on the foot of the box: its top margin takes up
+  // whatever the last paragraph leaves, so the note ends on the last baseline.
+  const note = root.querySelector(':scope > aside.note-foot');
+  if (note) {
+    note.style.marginTop = '';
+    const prev = note.previousElementSibling;
+    const prevEnd = prev ? frags(prev).at(-1) : null;
+    const noteFrags = frags(note);
+    if (prevEnd && noteFrags.length === 1) {
+      const room = cap - bottomOf(prevEnd) - noteFrags[0].height;
+      if (colOf(noteFrags[0]) === colOf(prevEnd) && room > 0) note.style.marginTop = `${room - 0.5}px`;
+      else warnings.push('the author note does not fit under the last paragraph');
+    }
+  }
   if (tail) tail.style.display = 'none';
   const lastEl = tail ? tail.previousElementSibling : root.lastElementChild;
   const lastFrags = lastEl ? frags(lastEl) : [];

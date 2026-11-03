@@ -35,6 +35,38 @@ const DATA = path.join(ROOT, 'src', 'data');
  * here is a regex, and nothing rewrites the author's prose.
  */
 const FIXES = {
+  // Fifth editorial pass (pedido del 3 de noviembre de 2026): closing
+  // punctuation of the epigraphs and of the opening texts.
+  'section00_inicio/00b.primera pagina.md': [
+    {
+      from: 'valorización financiera” Clacso, 2006',
+      to: 'valorización financiera”, Clacso, 2006.',
+    },
+    {
+      from: 'más sensibles”*',
+      to: 'más sensibles”.*',
+    },
+    {
+      from: 'Causa Brigada, 7 de julio 2010',
+      to: 'Causa Brigada, 7 de julio de 2010.',
+    },
+  ],
+  'section00_inicio/01. DOC ORGANISMOS. La memoria y la palabra.md': [
+    {
+      from: '**H.I.J.O.S Regional Chaco en la Red Nacional**',
+      to: '**H.I.J.O.S. Regional Chaco en la Red Nacional**',
+    },
+    {
+      from: '**Comisión Permanente por los DDHH.**',
+      to: '**Comisión Permanente por los DDHH**',
+    },
+  ],
+  'section00_inicio/02.INTRODUCCIÓN.md': [
+    {
+      from: 'realizados en Resistencia, Chaco entre 2010 y 2021',
+      to: 'realizados en Resistencia, Chaco entre 2010 y 2021.',
+    },
+  ],
   'section05-juicio-y-castigo/22.PARTES Y PENAS.md': [
     {
       // "Tribunal" was split across the heading and the paragraph below it.
@@ -136,7 +168,7 @@ function moveSignoff(body, signoff) {
     .filter(Boolean);
 
   const block = [
-    '<aside class="signoff">',
+    `<aside class="signoff${signoff.foot ? ' note-foot' : ''}">`,
     ...(signoff.lead ? [`<p class="signoff-lead">${inlineMarkdown(signoff.lead)}</p>`] : []),
     ...tail.map((line) => `<p>${inlineMarkdown(line)}</p>`),
     '</aside>',

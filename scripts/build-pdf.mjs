@@ -22,7 +22,7 @@ import { chromium } from 'playwright-core';
 import { PDFDocument, StandardFonts, rgb, PDFName, PDFNumber, PDFString, PDFArray, PDFDict } from 'pdf-lib';
 import { renderBook, xml } from './lib/render-book.mjs';
 import { SECTIONS } from './manifest.mjs';
-import { containerFor } from '../src/lib/image-format.mjs';
+import { containerFor, endSentence } from '../src/lib/image-format.mjs';
 import { BOOK } from '../src/lib/site.mjs';
 import { paletteCss } from '../src/lib/palette.mjs';
 import { layoutInPage } from './lib/print-layout.mjs';
@@ -41,15 +41,15 @@ const VERSION = JSON.parse(
 const MIN_LINES = 5;
 
 /**
- * The grid. One baseline of 12.5 pt (9.6 pt type on a 130 % leading) and a text
- * box of exactly 40 of them: 500 pt, between a 42 pt head and a 53 pt foot.
+ * The grid. One baseline of 13.5 pt (10 pt type) and a text box of exactly 37 of
+ * them: 499.5 pt, between a 42 pt head and a 53.7 pt foot.
  * The same numbers are in src/styles/print.css; these are their pixel twins for
  * the layout pass (96 px per inch).
  */
-const LH_PX = (12.5 / 72) * 96;
-const BOX_LINES = 40;
+const LH_PX = (13.5 / 72) * 96;
+const BOX_LINES = 37;
 /** The simulated box is a hair shorter than the real one (667.03 px), never taller. */
-const BOX_PX = 667;
+const BOX_PX = 666;
 /** Text box width: 148 mm less 18 mm of gutter and 13 mm of outer margin. */
 const BOX_W_MM = 117;
 /** Inner margin, outer margin: the text box sits 3 mm off-centre on each page. */
@@ -77,7 +77,7 @@ const fontFace = (family, weight, style, file) => `
 function plateFigure(plate, container) {
   if (!plate) return '';
   const caption = [
-    plate.caption ? xml(plate.caption) : '',
+    plate.caption ? xml(endSentence(plate.caption)) : '',
     plate.credit ? `<span class="credit">${xml(plate.credit)}</span>` : '',
   ].join('');
   const box = container ?? containerFor(plate.key, plate, { caption: plate.caption });
@@ -176,17 +176,26 @@ async function buildHtml() {
   // The printed contents page lists parts and documents only; the full
   // 244-heading tree belongs in the PDF outline, not on paper. It has to fit on
   // one page (RF-01.5), so the front matter above it is not listed.
+  // The folio is filled in once the book is paginated (`{{pg:key}}`): with the
+  // PDF page and the printed folio the same number, the contents page reads the
+  // page straight off the plan.
+  const tocLine = (klass, label, key) =>
+    `<li class="${klass}"><span class="toc-t">${xml(label)}</span><span class="toc-dots"></span><span class="toc-n">${key ? `{{pg:${xml(key)}}}` : ''}</span></li>`;
   const toc = ['<section class="page-toc" id="indice"><h2>Índice</h2><ul class="toc-list">'];
   let lastSection = null;
   for (const doc of bodyDocs) {
     if (doc.data.section !== lastSection) {
       const section = sectionById.get(doc.data.section);
       toc.push(
-        `<li class="toc-part">${xml(section?.part ? `${section.part} — ${section.title}` : (section?.title ?? doc.data.section))}</li>`,
+        tocLine(
+          'toc-part',
+          section?.part ? `${section.part} — ${section.title}` : (section?.title ?? doc.data.section),
+          section?.part ? `parte-${section.id}` : null,
+        ),
       );
       lastSection = doc.data.section;
     }
-    toc.push(`<li class="toc-doc">${xml(doc.data.title)}</li>`);
+    toc.push(tocLine('toc-doc', doc.data.title, `doc-${doc.data.docSlug}`));
   }
   toc.push('</ul></section>');
   body.push(toc.join('\n'));
@@ -548,9 +557,34 @@ async function main() {
       console.log(`    plan  pág ${String(b.start).padStart(3)}  ${String(b.pages).padStart(3)} pág.  ${mark}${b.title.slice(0, 46)}`);
     }
 
+    // Where every anchor landed, from the layout pass: block start + the column
+    // the anchor sat in. The first occurrence wins (a document that splits into
+    // chronicles repeats its own id).
+    const markerPages = {};
+    for (const item of front) if (item.id) markerPages[item.id] = item.page - 1;
+    for (const block of plan) {
+      if (block.kind === 'part') markerPages[block.docSlug] ??= block.start - 1;
+      for (const [id, col] of Object.entries(block.layout?.headingCols ?? {})) {
+        markerPages[id] ??= block.start - 1 + col;
+      }
+    }
+
+    // The contents page: every entry carries the page its text opens on, which
+    // is also its printed folio (page 1 of the PDF is folio 1).
+    const missing = [];
+    const filledFront = frontHtml.replace(/\{\{pg:([^}]+)\}\}/g, (_, key) => {
+      const at = markerPages[key];
+      if (at === undefined) {
+        missing.push(key);
+        return '';
+      }
+      return String(at + 1);
+    });
+    if (missing.length) console.warn(`Índice: sin página para ${missing.join(', ')}`);
+
     const html = [
       built.html.slice(0, built.html.indexOf('<body>') + 6),
-      frontHtml,
+      filledFront,
       ...plan.map((b) => `${b.blank ? '<section class="page-blank" aria-hidden="true"></section>\n' : ''}${b.html}`),
       backHtml,
       '</body>\n</html>',
@@ -595,20 +629,15 @@ async function main() {
       return out;
     });
 
-    // Where every anchor landed, from the layout pass: block start + the column
-    // the anchor sat in. The first occurrence wins (a document that splits into
-    // chronicles repeats its own id).
-    const markerPages = {};
-    for (const item of front) if (item.id) markerPages[item.id] = item.page - 1;
-    for (const block of plan) {
-      if (block.kind === 'part') markerPages[block.docSlug] ??= block.start - 1;
-      for (const [id, col] of Object.entries(block.layout?.headingCols ?? {})) {
-        markerPages[id] ??= block.start - 1 + col;
-      }
-    }
-
-    // A courtesy blank is blank: no folio, no ornament (spec 03, RF-03.4).
+    // A courtesy blank is blank: no folio, no ornament (spec 03, RF-03.4). It
+    // still counts: the folio is the PDF page number.
     const unnumbered = new Set(plan.filter((b) => b.blank).map((b) => b.start - 1));
+    // Half title, blanks, epigraphs and credits print no folio either; the
+    // contents page and the first text do.
+    const firstText = front.at(-1)?.page;
+    for (const item of front) {
+      if (item.id !== 'indice' && item.page !== firstText) unnumbered.add(item.page);
+    }
     // Nor does a section cover or the photograph on its reverse: a carátula is
     // read as a threshold, and a folio on it reads as a page of text.
     for (const block of plan) {
@@ -660,7 +689,7 @@ function reportRecto(plan) {
   }
 }
 
-/** The text box height in CSS pixels: 40 baselines of 12.5 pt. */
+/** The text box height in CSS pixels: 37 baselines of 13.5 pt. */
 const CONTENT_PX = BOX_LINES * LH_PX;
 
 /**
@@ -716,15 +745,15 @@ async function stamp(bytes, markerPages, outline, front, blankPages = new Set())
     `versión ${VERSION}`,
   ]);
 
-  // Front matter carries no folio and is exactly `front.length` pages long.
-  const FIRST_NUMBERED = front.at(-1)?.page ? front.at(-1).page - 1 : 6;
+  // Folio = PDF page number, from the first sheet: the count never restarts and
+  // the pages that print no number (blanks, half title, covers) still count.
   let printed = 0;
 
-  for (let i = FIRST_NUMBERED; i < pages.length; i += 1) {
+  for (let i = 0; i < pages.length; i += 1) {
     // `i` is a zero-based index; the plan counts pages from one.
     if (blankPages.has(i + 1)) continue;
     const page = pages[i];
-    const label = String(i - FIRST_NUMBERED + 1);
+    const label = String(i + 1);
     const size = 8;
     const width = font.widthOfTextAtSize(label, size);
     // Centred on the text box, not on the sheet: the box sits 3 mm off-centre
@@ -740,6 +769,14 @@ async function stamp(bytes, markerPages, outline, front, blankPages = new Set())
       color: rgb(0.34, 0.36, 0.39),
     });
     printed += 1;
+  }
+
+  // Chrome leaks the first glyph of the contents page ("Í") into the foot
+  // margin of the page before it. The margin is empty by design, so it is
+  // covered with a white band rather than left as a stray mark on the credits.
+  const toc = front.find((item) => item.id === 'indice');
+  if (toc && pages[toc.page - 2]) {
+    pages[toc.page - 2].drawRectangle({ x: 0, y: 0, width: PAGE_W, height: 60, color: rgb(1, 1, 1) });
   }
 
   const refs = [];
