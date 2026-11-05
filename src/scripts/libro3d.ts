@@ -528,13 +528,20 @@ function fit(w: number, h: number) {
 const portrait = () => camera.aspect < 0.9;
 let focusSide: -1 | 1 = 1; // in portrait one page fills the view
 
+// Wheel zoom: < 1 brings the camera closer. `pan` shifts the top view on the
+// table so the zoom goes towards the point under the cursor.
+const ZOOM_MIN = 0.3;
+const ZOOM_MAX = 1.8;
+let zoom = 1;
+const pan = new THREE.Vector2(); // x, z
+
 function topView() {
   const single = portrait();
-  const d = fit(single ? W : 2 * W, H);
-  const cx = single ? (focusSide * W) / 2 : 0;
+  const d = fit(single ? W : 2 * W, H) * zoom;
+  const cx = (single ? (focusSide * W) / 2 : 0) + pan.x;
   return {
-    pos: new THREE.Vector3(cx, d + BLOCK, 0.0001),
-    target: new THREE.Vector3(cx, BLOCK / 2, 0),
+    pos: new THREE.Vector3(cx, d + BLOCK, pan.y + 0.0001),
+    target: new THREE.Vector3(cx, BLOCK / 2, pan.y),
     up: new THREE.Vector3(0, 0, -1),
   };
 }
@@ -558,7 +565,12 @@ function setView(v: View) {
   look.copy(v.target);
   up.copy(v.up);
 }
+/** Once the book is open the camera eases towards the top view every frame. */
+let follow = false;
+
 function moveCamera(to: View, ms: number) {
+  // Past the opening, the follow loop does the easing (and keeps the zoom).
+  if (follow) return Promise.resolve();
   const p0 = camera.position.clone();
   const t0 = look.clone();
   const u0 = up.clone();
@@ -630,6 +642,37 @@ canvas.addEventListener('pointermove', (e) => {
   ray.setFromCamera(pointer, camera);
   canvas.style.cursor = ray.intersectObjects([right.frontMesh, left.group.children[1]], false).length ? 'pointer' : '';
 });
+// Zoom towards the point of the table under the cursor.
+const tablePlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), -BLOCK / 2);
+const hit = new THREE.Vector3();
+canvas.addEventListener(
+  'wheel',
+  (e) => {
+    if (!opened) return;
+    e.preventDefault();
+    // Lines (Firefox) and pages are scaled to pixels so every device steps alike.
+    const dy = e.deltaY * (e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? 400 : 1);
+    const next = THREE.MathUtils.clamp(zoom * Math.exp(dy * 0.0015), ZOOM_MIN, ZOOM_MAX);
+    if (next === zoom) return;
+    const r = canvas.getBoundingClientRect();
+    pointer.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+    ray.setFromCamera(pointer, camera);
+    const v = topView();
+    if (ray.ray.intersectPlane(tablePlane, hit)) {
+      // Keep the point under the cursor where it is while the distance changes.
+      const k = next / zoom;
+      pan.x += (hit.x - v.target.x) * (1 - k);
+      pan.y += (hit.z - v.target.z) * (1 - k);
+    }
+    zoom = next;
+    // Back at the full view or beyond, the book returns to the centre.
+    if (zoom >= 1) pan.multiplyScalar(Math.max(0, (ZOOM_MAX - zoom) / (ZOOM_MAX - 1)) * 0.5);
+    pan.x = THREE.MathUtils.clamp(pan.x, -W, W);
+    pan.y = THREE.MathUtils.clamp(pan.y, -H / 2, H / 2);
+  },
+  { passive: false },
+);
+
 document.getElementById('libro-next')!.addEventListener('click', () => enqueue(forward));
 document.getElementById('libro-prev')!.addEventListener('click', () => enqueue(backward));
 addEventListener('keydown', (e) => {
@@ -639,6 +682,9 @@ addEventListener('keydown', (e) => {
   } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
     e.preventDefault();
     enqueue(backward);
+  } else if (e.key === '0') {
+    zoom = 1;
+    pan.set(0, 0);
   }
 });
 
@@ -662,6 +708,13 @@ resize();
 if (import.meta.env.DEV) Object.assign(window, { __libro: { camera, scene, renderer, book, look } });
 
 renderer.setAnimationLoop(() => {
+  if (follow) {
+    const v = topView();
+    const k = reduceMotion ? 1 : 0.16;
+    camera.position.lerp(v.pos, k);
+    look.lerp(v.target, k);
+    up.copy(v.up);
+  }
   camera.up.copy(up);
   camera.lookAt(look);
   renderer.render(scene, camera);
@@ -694,6 +747,7 @@ coverTexture()
     await turn(1, 1000);
     await Promise.all([slide, rise]);
     opened = true;
+    follow = true;
     lastAspect = camera.aspect;
     root.classList.add('is-open');
   });
