@@ -50,8 +50,9 @@ body {
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
-  orphans: 2;
-  widows: 2;
+  /* Keep options: never fewer than 3 lines alone at the foot or the top of a page. */
+  orphans: 3;
+  widows: 3;
 }
 
 /* ── Headings ───────────────────────────────────────────────────────────────

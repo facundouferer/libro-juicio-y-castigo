@@ -66,6 +66,26 @@ const FIXES = {
       from: 'realizados en Resistencia, Chaco entre 2010 y 2021',
       to: 'realizados en Resistencia, Chaco entre 2010 y 2021.',
     },
+    {
+      from: 'realizados en Chaco entre 2010 y 2021 En ellos',
+      to: 'realizados en Chaco entre 2010 y 2021. En ellos',
+    },
+  ],
+  // Sixth editorial pass (pedido del 5 de noviembre de 2026): full stops lost
+  // at the end of sentences that close on a year.
+  'section00_inicio/03. TRES PROCESOS, UN JUICIO Y CASTIGO.md': [
+    {
+      from: 'ya que falleció poco después de 2010\n',
+      to: 'ya que falleció poco después de 2010.\n',
+    },
+    {
+      from: 'en junio de 2005 Cabe remarcar',
+      to: 'en junio de 2005. Cabe remarcar',
+    },
+    {
+      from: 'en agosto de 2003 Todo esto',
+      to: 'en agosto de 2003. Todo esto',
+    },
   ],
   'section05-juicio-y-castigo/22.PARTES Y PENAS.md': [
     {
