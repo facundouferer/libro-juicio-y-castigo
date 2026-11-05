@@ -275,6 +275,60 @@ export function layoutInPage(opts) {
     }
   }
 
+  // ── 3b. Full-width figures grow into what their page leaves ───────────────
+  // Only now, with every page decided: a figure marked `.full-width` widens
+  // towards the full text box (its column, inside a pair). All the marked
+  // figures of a page move together from their present width (t = 0) towards
+  // their full width (t = 1), each by the same fraction of its own way, and
+  // the page takes the largest t at which it still holds, captions included.
+  // Width drives the height, so nothing is distorted or cropped, and no figure
+  // ends up smaller than it was.
+  const visibleWidth = (img) => {
+    const r = img.getBoundingClientRect();
+    const ar = img.naturalWidth && img.naturalHeight ? img.naturalWidth / img.naturalHeight : r.width / (r.height || 1);
+    return Math.min(r.width, r.height * ar);
+  };
+  const growGroup = (g) => {
+    const imgs = g.units.flatMap((u) => [...u.querySelectorAll('figure.full-width img')]);
+    if (!imgs.length) return;
+    // One baseline short of the box: a page filled to the last pixel spills
+    // over in the print on rounding alone.
+    const limit = (g.anchored ? remaining - 1 : boxLines) - 1;
+    const figs = imgs.map((img) => img.closest('figure'));
+    const saved = imgs.map((img, k) => [img.style.cssText, figs[k].style.cssText]);
+    tail.style.display = '';
+    const was = imgs.map(visibleWidth);
+    figs.forEach((f) => { if (!f.classList.contains('in-module')) f.style.width = '100%'; });
+    imgs.forEach((img) => Object.assign(img.style, { width: '100%', maxWidth: '100%', maxHeight: 'none', height: '' }));
+    const full = imgs.map((img, k) => Math.max(img.getBoundingClientRect().width, was[k]));
+    const linesNow = () => g.units.reduce((a, u) => a + measureUnit(u), 0) + g.units.length - 1;
+    const tryT = (t) => {
+      imgs.forEach((img, k) => { img.style.width = `${was[k] + t * (full[k] - was[k])}px`; });
+      snapAll();
+      return linesNow() <= limit;
+    };
+    // Binary search on t; the page held at the old sizes, so t = 0 is the floor.
+    let lo = 0;
+    let hi = 1;
+    let fits = tryT(1);
+    if (fits) lo = 1;
+    else {
+      for (let step = 0; step < 9; step += 1) {
+        const mid = (lo + hi) / 2;
+        if (tryT(mid)) lo = mid;
+        else hi = mid;
+      }
+      fits = lo > 0.02 && tryT(lo);
+    }
+    if (!fits) {
+      imgs.forEach((img, k) => { img.style.cssText = saved[k][0]; figs[k].style.cssText = saved[k][1]; });
+      snapAll();
+    }
+    g.lines = linesNow();
+    tail.style.display = 'none';
+  };
+  if (tail) groups.forEach(growGroup);
+
   // ── 4. Build the markup, with a recto for every plano ─────────────────────
   if (tail) {
     tail.style.display = '';

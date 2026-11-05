@@ -369,12 +369,24 @@ export const FULL_PAGE_IMAGES = new Set(
 export const IMAGE_FORMAT = {};
 
 /**
- * Images set to the full width of the text box whatever their scan quality:
- * the low-quality ceiling would otherwise keep them at half a page. Height
- * follows the width (no distortion) and the caption stays on the same page.
- * 002: the EAAF survey of the two basements (pedido del 5 de noviembre de 2026).
+ * Images that grow towards the full width of the text box, whatever their
+ * scale or scan quality. The print layout pass (scripts/lib/print-layout.mjs)
+ * enlarges them only after it has decided which page each one goes on, and
+ * only as far as every figure of that page, captions included, still fits on
+ * it: no image changes page, none is cropped or distorted.
+ * Pedidos del 5 de noviembre de 2026: 002 (pág. 20), then the images of págs.
+ * 24, 34, 41-44, 50, 51, 59, 60, 66, 79, 80, 93, 94, 105, 116, 120, 124, 132,
+ * 140, 154, 158, 184, 185, 199, 205, 213, 219, 220, 225, 231, 234, 238, 244,
+ * 255, 256, 271, 283-288, 299, 301, 302, 309 and 312 of that day's PDF.
  */
-export const FULL_WIDTH_IMAGES = new Set(['002']);
+export const FULL_WIDTH_IMAGES = new Set([
+  '002', '003', '006', '007', '008', '009', '010', '011', '012', '013', '013bis',
+  '014', '015', '016', '017', '021', '022', '026', '027', '028', '032', '033',
+  '035', '036', '037', '038', '039', '041', '049', '050', '057', '058', '064',
+  '065', '068', '069', '070', '071', '072', '073', '075', '076', '077', '078',
+  '078bis', '079', '080', '083', '084', '085', '086', '087', '088', '089', '090',
+  '091', '092', '093', '094', '095', '096', '098', '099',
+]);
 
 /** An epigraph that describes a drawing, a plan or a file photograph. */
 export const DRAWING_PATTERN = /dibujo|croquis|plano|legajo/i;

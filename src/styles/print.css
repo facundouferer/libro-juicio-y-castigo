@@ -225,12 +225,8 @@ figure.figure.box-ficha.q-low img { max-height: calc(21 * var(--lh)); }
 .fig-grid2x2 figure.figure.q-low img { max-height: calc(15 * var(--lh)); }
 .fig-duo figure.figure.q-low img { max-height: calc(17 * var(--lh)); }
 figure.figure.box-plano.q-reduced img { max-height: calc(26 * var(--lh)); }
-/* Set by hand to the full width of the box (FULL_WIDTH_IMAGES in the
-   manifest): no height ceiling, so the picture keeps its proportions at 100 %
-   and the caption below it stays inside the same margins as the text. */
-figure.figure.full-width,
-figure.figure.full-width img { width: 100%; max-width: 100%; }
-figure.figure.full-width img { max-height: none; }
+/* `.full-width` figures (FULL_WIDTH_IMAGES in the manifest) are sized by the
+   layout pass once their page is decided, see scripts/lib/print-layout.mjs. */
 
 /* ── The tail of a chronicle ────────────────────────────────────────────────
    Every photograph a chronicle owns comes out here, after its last paragraph
