@@ -21,12 +21,14 @@
     "dev": "astro dev",
     "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "pages": "node scripts/build-book-pages.mjs"
   },
   "dependencies": {
     "@fontsource-variable/source-sans-3": "^5.3.0",
     "@fontsource/oswald": "^5.3.0",
     "astro": "^5.14.1",
+    "three": "^0.181.0",
     "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {

@@ -26,6 +26,7 @@ export const BOOK = {
   volume: 'Vol II',
   subtitle: 'Causa Brigada I, II, III',
   kicker: 'Crónicas, dibujos y fotografías',
+  author: 'Gonzalo Torres',
   publisher: 'Comisión Provincial por la Memoria — Chaco',
   description:
     'Crónicas de los tres juicios por crímenes de lesa humanidad cometidos en el centro clandestino de detención de la Brigada de Investigaciones de la Policía del Chaco.',
