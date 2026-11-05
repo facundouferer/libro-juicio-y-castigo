@@ -5,9 +5,15 @@
  * narrow screens, but they never leave the corner.
  */
 import Icon from './Icon.astro';
+import { withBase } from '../lib/site.mjs';
 ---
 
 <div class="controls" id="controls">
+  <a class="btn" href={withBase('/libro/')} id="btn-libro">
+    <Icon name="book-open" size={17} />
+    <span class="btn-label">Libro</span>
+  </a>
+
   <button
     class="btn"
     type="button"

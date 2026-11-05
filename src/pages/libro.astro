@@ -1,0 +1,154 @@
+---
+/**
+ * The book as an object: a 3D hardcover on a wooden table, read two pages at a
+ * time from above. The pages are the published PDF, pre-rendered by
+ * scripts/build-book-pages.mjs; the scene lives in src/scripts/libro3d.ts.
+ */
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { BOOK, withBase } from '../lib/site.mjs';
+import { ACCENT_BASE } from '../lib/palette.mjs';
+
+const pdf = withBase('/descargas/juicio-y-castigo-en-el-chaco-vol-2.pdf');
+---
+
+<Base title={`Libro — ${BOOK.title} (${BOOK.volume})`}>
+  <main
+    class="libro"
+    id="libro"
+    data-accent={ACCENT_BASE}
+    data-cover={withBase('/img/tapa-1600.webp')}
+    data-logo={withBase('/img/logo.webp')}
+    data-title={BOOK.title}
+    data-volume={BOOK.volume}
+    data-subtitle={BOOK.subtitle}
+    data-kicker={BOOK.kicker}
+    data-author={`Por ${BOOK.author}`}
+    data-publisher={BOOK.publisher}
+  >
+    <h1 class="visually-hidden">{BOOK.title} ({BOOK.volume}) — {BOOK.author}</h1>
+    <canvas id="libro-canvas" aria-label="Libro en 3D sobre una mesa de madera. Hacé click en una página para pasarla."></canvas>
+
+    <div class="libro-bar">
+      <a class="btn" href={withBase('/')}>
+        <span aria-hidden="true">←</span>
+        <span class="btn-label">Volver al sitio</span>
+      </a>
+      <div class="libro-nav">
+        <button class="btn" type="button" id="libro-prev" aria-label="Página anterior" disabled>‹</button>
+        <span id="libro-page" aria-live="polite">Tapa</span>
+        <button class="btn" type="button" id="libro-next" aria-label="Página siguiente" disabled>›</button>
+      </div>
+      <a class="btn" href={pdf} download>
+        <Icon name="download" size={17} />
+        <span class="btn-label">PDF</span>
+      </a>
+    </div>
+
+    <p class="libro-hint">Hacé click en una página para pasarla</p>
+
+    <div class="libro-fallback">
+      <p>Tu navegador no puede mostrar el libro en 3D.</p>
+      <a class="btn btn-primary" href={pdf}>Abrir el PDF</a>
+    </div>
+  </main>
+</Base>
+
+<style is:global>
+  html:has(.libro),
+  body:has(.libro) {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background: #1b1410;
+  }
+  .libro {
+    position: fixed;
+    inset: 0;
+    color: #fff;
+  }
+  #libro-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    touch-action: manipulation;
+  }
+  .libro.is-ready #libro-canvas { opacity: 1; }
+  .libro-bar {
+    position: absolute;
+    inset: 12px 12px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    pointer-events: none;
+  }
+  .libro-bar > * { pointer-events: auto; }
+  /* Over the table the house buttons would be dark on dark. */
+  .libro-bar > .btn {
+    color: #fff;
+    background: rgb(0 0 0 / 0.45);
+    backdrop-filter: blur(6px);
+    border-color: transparent;
+  }
+  .libro-bar > .btn:hover { background: rgb(0 0 0 / 0.65); }
+  .libro-nav {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-heading);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: rgb(0 0 0 / 0.45);
+    backdrop-filter: blur(6px);
+    border-radius: 999px;
+    padding: 4px 6px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .libro.is-open .libro-nav { opacity: 1; }
+  .libro-nav .btn { min-width: 36px; font-size: 20px; line-height: 1; }
+  #libro-page { min-width: 12ch; text-align: center; }
+  .libro-hint {
+    position: absolute;
+    left: 50%;
+    bottom: 16px;
+    margin: 0;
+    transform: translateX(-50%);
+    font-size: 13px;
+    color: rgb(255 255 255 / 0.7);
+    background: rgb(0 0 0 / 0.4);
+    padding: 6px 12px;
+    border-radius: 999px;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .libro.is-open .libro-hint { opacity: 1; animation: libro-hint 0.6s ease 5s forwards; }
+  @keyframes libro-hint { to { opacity: 0; } }
+  .libro-fallback {
+    display: none;
+    position: absolute;
+    inset: 0;
+    place-content: center;
+    justify-items: center;
+    gap: 16px;
+    text-align: center;
+    padding: 24px;
+  }
+  .libro.no-webgl .libro-fallback { display: grid; }
+  .libro.no-webgl #libro-canvas,
+  .libro.no-webgl .libro-nav,
+  .libro.no-webgl .libro-hint { display: none; }
+  @media (max-width: 560px) {
+    .libro-bar .btn-label { display: none; }
+  }
+</style>
+
+<script>
+  import '../scripts/libro3d.ts';
+</script>
