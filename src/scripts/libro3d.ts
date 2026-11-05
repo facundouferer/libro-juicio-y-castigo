@@ -443,13 +443,16 @@ function layout() {
 }
 
 function updateLabel() {
-  const shown = [turned > 0 ? backOf(turned - 1) : null, frontOf(turned)]
-    .filter((f): f is { page: number } => !!f && 'page' in f)
-    .map((f) => f.page);
+  const faces = portrait()
+    ? [focusSide === -1 ? (turned > 0 ? backOf(turned - 1) : null) : frontOf(turned)] // one page in view
+    : [turned > 0 ? backOf(turned - 1) : null, frontOf(turned)];
+  const shown = faces.filter((f): f is { page: number } => !!f && 'page' in f).map((f) => f.page);
   pageLabel.textContent =
     turned === 0 ? 'Tapa' : shown.length === 2 ? `págs. ${shown[0]}–${shown[1]} de ${PAGE_COUNT}` : shown.length ? `pág. ${shown[0]} de ${PAGE_COUNT}` : 'Contratapa';
-  (document.getElementById('libro-prev') as HTMLButtonElement).disabled = turned <= 1;
-  (document.getElementById('libro-next') as HTMLButtonElement).disabled = turned >= LEAVES;
+  // In portrait, the left page of the last spread can still move on to the right one.
+  const canForward = turned < LEAVES || (portrait() && focusSide === -1);
+  for (const b of document.querySelectorAll<HTMLButtonElement>('[data-libro="prev"]')) b.disabled = turned <= 1;
+  for (const b of document.querySelectorAll<HTMLButtonElement>('[data-libro="next"]')) b.disabled = !canForward;
 }
 
 const ease = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2);
@@ -600,29 +603,25 @@ async function drain() {
   }
 }
 
+function focus(side: -1 | 1) {
+  focusSide = side;
+  updateLabel();
+  return moveCamera(topView(), 450);
+}
+
 async function forward() {
   if (busy) return;
-  if (portrait() && focusSide === -1) {
-    focusSide = 1;
-    return moveCamera(topView(), 450);
-  }
+  if (portrait() && focusSide === -1) return focus(1);
+  const before = turned;
   await turn(1);
-  if (portrait()) {
-    focusSide = -1;
-    moveCamera(topView(), 450);
-  }
+  if (portrait() && turned !== before) focus(-1);
 }
 async function backward() {
   if (busy) return;
-  if (portrait() && focusSide === 1 && turned > 1) {
-    focusSide = -1;
-    return moveCamera(topView(), 450);
-  }
+  if (portrait() && focusSide === 1 && turned > 1) return focus(-1);
+  const before = turned;
   await turn(-1);
-  if (portrait()) {
-    focusSide = 1;
-    moveCamera(topView(), 450);
-  }
+  if (portrait() && turned !== before) focus(1);
 }
 
 canvas.addEventListener('click', (e) => {
@@ -673,8 +672,8 @@ canvas.addEventListener(
   { passive: false },
 );
 
-document.getElementById('libro-next')!.addEventListener('click', () => enqueue(forward));
-document.getElementById('libro-prev')!.addEventListener('click', () => enqueue(backward));
+for (const b of document.querySelectorAll('[data-libro="next"]')) b.addEventListener('click', () => enqueue(forward));
+for (const b of document.querySelectorAll('[data-libro="prev"]')) b.addEventListener('click', () => enqueue(backward));
 addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
     e.preventDefault();
