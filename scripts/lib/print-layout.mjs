@@ -190,6 +190,7 @@ export function layoutInPage(opts) {
   // The author's note rests on the foot of the box: its top margin takes up
   // whatever the last paragraph leaves, so the note ends on the last baseline.
   const note = root.querySelector(':scope > aside.note-foot');
+  let noteFoot = null;
   if (note) {
     note.style.marginTop = '';
     const prev = note.previousElementSibling;
@@ -197,8 +198,14 @@ export function layoutInPage(opts) {
     const noteFrags = frags(note);
     if (prevEnd && noteFrags.length === 1) {
       const room = cap - bottomOf(prevEnd) - noteFrags[0].height;
-      if (colOf(noteFrags[0]) === colOf(prevEnd) && room > 0) note.style.marginTop = `${room - 0.5}px`;
-      else warnings.push('the author note does not fit under the last paragraph');
+      if (colOf(noteFrags[0]) === colOf(prevEnd) && room > 0) {
+        note.style.marginTop = `${room - 0.5}px`;
+        // A margin measured from the last paragraph moves with every line the
+        // print breaks differently from this simulation (widows, orphans), so
+        // the print gets a position counted from the top of the block instead:
+        // the foot of the page the note lands on (see the end of this pass).
+        noteFoot = { note, top: (colOf(noteFrags[0]) + 1) * cap - noteFrags[0].height - 0.5 };
+      } else warnings.push('the author note does not fit under the last paragraph');
     }
   }
   if (tail) tail.style.display = 'none';
@@ -315,6 +322,12 @@ export function layoutInPage(opts) {
     return b.height - visual > 3 && !f.closest('.fig-module');
   }).length;
   const debug = groups.map((g) => `${g.anchored ? 'A' : 'N'}${g.lines}[${g.units.map((u) => `${u.className.slice(0, 20)}:${u.getBoundingClientRect().height.toFixed(0)}`).join(',')}]`);
+  // Out of the flow, the note no longer depends on where the print breaks the
+  // lines above it; only on the page count, which the build already checks.
+  if (noteFoot) {
+    root.style.position = 'relative';
+    Object.assign(noteFoot.note.style, { position: 'absolute', left: '0', right: '0', marginTop: '0', top: `${noteFoot.top}px` });
+  }
   return {
     debug,
     gapFigs,
