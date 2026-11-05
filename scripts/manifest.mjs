@@ -385,9 +385,9 @@ export const IMAGE_FORMAT = {};
  * "después de la página 60 se agregue una página más donde se coloque la
  * segunda imagen de la página 60". 063: the same request for page 194 of the
  * published PDF (196 once 015 took its page). 081: the image of page 258 of
- * the published PDF.
+ * the published PDF. 038: the image of page 126 of the 320-page PDF.
  */
-export const OWN_PAGE_IMAGES = new Set(['015', '063', '081']);
+export const OWN_PAGE_IMAGES = new Set(['015', '038', '063', '081']);
 
 export const FULL_WIDTH_IMAGES = new Set([
   '002', '003', '006', '007', '008', '009', '010', '011', '012', '013', '013bis',
