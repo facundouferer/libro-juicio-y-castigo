@@ -383,9 +383,10 @@ export const IMAGE_FORMAT = {};
  * Images that take a page of their own in the PDF, right after the page they
  * would otherwise share. 015 (Jorge Giles): pedido del 5 de noviembre de 2026,
  * "después de la página 60 se agregue una página más donde se coloque la
- * segunda imagen de la página 60".
+ * segunda imagen de la página 60". 063: the same request for page 194 of the
+ * published PDF (196 once 015 took its page).
  */
-export const OWN_PAGE_IMAGES = new Set(['015']);
+export const OWN_PAGE_IMAGES = new Set(['015', '063']);
 
 export const FULL_WIDTH_IMAGES = new Set([
   '002', '003', '006', '007', '008', '009', '010', '011', '012', '013', '013bis',
