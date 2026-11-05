@@ -368,5 +368,13 @@ export const FULL_PAGE_IMAGES = new Set(
 /** Per-image overrides of the container the default rule would choose. */
 export const IMAGE_FORMAT = {};
 
+/**
+ * Images set to the full width of the text box whatever their scan quality:
+ * the low-quality ceiling would otherwise keep them at half a page. Height
+ * follows the width (no distortion) and the caption stays on the same page.
+ * 002: the EAAF survey of the two basements (pedido del 5 de noviembre de 2026).
+ */
+export const FULL_WIDTH_IMAGES = new Set(['002']);
+
 /** An epigraph that describes a drawing, a plan or a file photograph. */
 export const DRAWING_PATTERN = /dibujo|croquis|plano|legajo/i;
