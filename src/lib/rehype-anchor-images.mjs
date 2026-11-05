@@ -24,7 +24,7 @@ import Slugger from 'github-slugger';
 import { sources, altFor } from './images.mjs';
 import { isVolanta } from './cronicas.mjs';
 import { containerFor, endSentence, isDrawing, moduleOf } from './image-format.mjs';
-import { FULL_WIDTH_IMAGES } from '../../scripts/manifest.mjs';
+import { FULL_WIDTH_IMAGES, OWN_PAGE_IMAGES } from '../../scripts/manifest.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..', '..');
 
@@ -409,6 +409,7 @@ export function rehypeAnchorImages(options = {}) {
             container,
             ...(opts.inModule ? ['in-module'] : []),
             ...(!opts.inModule && FULL_WIDTH_IMAGES.has(key) ? ['full-width'] : []),
+            ...(!opts.inModule && OWN_PAGE_IMAGES.has(key) ? ['own-page'] : []),
             // A drawing has no background: stacked against a photograph it makes
             // the noise the editorial pass described (spec 07, RF-07.6).
             ...(isDrawing(caption) ? ['is-drawing'] : []),

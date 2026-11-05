@@ -379,6 +379,14 @@ export const IMAGE_FORMAT = {};
  * 140, 154, 158, 184, 185, 199, 205, 213, 219, 220, 225, 231, 234, 238, 244,
  * 255, 256, 271, 283-288, 299, 301, 302, 309 and 312 of that day's PDF.
  */
+/**
+ * Images that take a page of their own in the PDF, right after the page they
+ * would otherwise share. 015 (Jorge Giles): pedido del 5 de noviembre de 2026,
+ * "después de la página 60 se agregue una página más donde se coloque la
+ * segunda imagen de la página 60".
+ */
+export const OWN_PAGE_IMAGES = new Set(['015']);
+
 export const FULL_WIDTH_IMAGES = new Set([
   '002', '003', '006', '007', '008', '009', '010', '011', '012', '013', '013bis',
   '014', '015', '016', '017', '021', '022', '026', '027', '028', '032', '033',

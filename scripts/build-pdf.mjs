@@ -21,7 +21,7 @@ import path from 'node:path';
 import { chromium } from 'playwright-core';
 import { PDFDocument, StandardFonts, rgb, PDFName, PDFNumber, PDFString, PDFArray, PDFDict } from 'pdf-lib';
 import { renderBook, xml } from './lib/render-book.mjs';
-import { FULL_WIDTH_IMAGES, SECTIONS } from './manifest.mjs';
+import { FULL_WIDTH_IMAGES, OWN_PAGE_IMAGES, SECTIONS } from './manifest.mjs';
 import { containerFor, endSentence } from '../src/lib/image-format.mjs';
 import { BOOK } from '../src/lib/site.mjs';
 import { paletteCss } from '../src/lib/palette.mjs';
@@ -81,7 +81,7 @@ function plateFigure(plate, container) {
     plate.credit ? `<span class="credit">${xml(plate.credit)}</span>` : '',
   ].join('');
   const box = container ?? containerFor(plate.key, plate, { caption: plate.caption });
-  const grow = FULL_WIDTH_IMAGES.has(plate.key) ? ' full-width' : '';
+  const grow = `${FULL_WIDTH_IMAGES.has(plate.key) ? ' full-width' : ''}${OWN_PAGE_IMAGES.has(plate.key) ? ' own-page' : ''}`;
   return [
     `<figure class="figure q-${xml(plate.quality)} ${xml(plate.orientation)} ${xml(box)}${grow}" id="fig-${xml(plate.key)}">`,
     `<img src="img/${xml(plate.key)}.jpg" alt="${xml(plate.alt)}" width="${plate.width}" height="${plate.height}" />`,

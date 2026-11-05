@@ -219,6 +219,8 @@ export function layoutInPage(opts) {
   // ── 3. Groups ─────────────────────────────────────────────────────────────
   const isPlano = (u) => u.matches('figure.box-plano');
   const isGrid = (u) => u.classList.contains('fig-grid2x2');
+  // Set by hand (OWN_PAGE_IMAGES in the manifest): alone on a page of its own.
+  const isOwnPage = (u) => u.matches('figure.own-page') || !!u.querySelector('figure.own-page');
   const groups = [];
   let i = 0;
   const first = { units: [], lines: 0 };
@@ -226,6 +228,7 @@ export function layoutInPage(opts) {
     i < units.length &&
     !isPlano(units[i]) &&
     !isGrid(units[i]) &&
+    !isOwnPage(units[i]) &&
     // one baseline of air between the text and the figures
     1 + first.lines + (first.units.length ? 1 : 0) + linesOf(units[i]) <= remaining
   ) {
@@ -238,9 +241,9 @@ export function layoutInPage(opts) {
   let page = null;
   for (; i < units.length; i += 1) {
     const u = units[i];
-    if (isPlano(u) || isGrid(u)) {
+    if (isPlano(u) || isGrid(u) || isOwnPage(u)) {
       page = null;
-      groups.push({ units: [u], lines: linesOf(units[i]), plano: isPlano(u) });
+      groups.push({ units: [u], lines: linesOf(units[i]), plano: isPlano(u), own: isOwnPage(u) });
       continue;
     }
     const plain = (x) => x.matches('figure.box-caja');
@@ -262,6 +265,7 @@ export function layoutInPage(opts) {
   const prevGroup = groups.at(-2);
   if (
     lastGroup && prevGroup && !lastGroup.anchored && !prevGroup.anchored && !lastGroup.plano && !prevGroup.plano &&
+    !lastGroup.own && !prevGroup.own &&
     lastGroup.units.length === 1 && lastGroup.units[0].matches('figure.box-ficha') &&
     prevGroup.units.length > 1 && !isGrid(prevGroup.units[0])
   ) {
