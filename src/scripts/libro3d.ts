@@ -56,7 +56,9 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color('#1b1410');
 scene.fog = new THREE.Fog('#1b1410', 6, 14);
 
-const camera = new THREE.PerspectiveCamera(32, 1, 0.05, 50);
+const camera = new THREE.PerspectiveCamera(32, 1, 0.05, 80);
+// Pushes the fog back while the camera is far away in the opening shot.
+let fogShift = 0;
 
 scene.add(new THREE.HemisphereLight('#fff4e0', '#3a2a1c', 1.15));
 const sun = new THREE.DirectionalLight('#fff1dc', 2.1);
@@ -120,14 +122,51 @@ function woodTexture(): THREE.CanvasTexture {
   return tex;
 }
 
+// A whole desk (a page is ~15 cm, so ~125 × 83 cm and 75 cm high) in a dark,
+// empty room. Its top is wide enough that no edge shows in the top view, even
+// fully zoomed out and panned.
+const DESK_W = 8.4;
+const DESK_D = 5.6;
+const DESK_H = 5;
+const TOP_T = 0.24;
+const woodMap = woodTexture();
+// Same grain size as the old 14 × 14 tabletop (1.6 repeats across it).
+const topMap = woodMap.clone();
+topMap.repeat.set((DESK_D / 14) * 1.6, (DESK_W / 14) * 1.6);
 const table = new THREE.Mesh(
-  new THREE.PlaneGeometry(14, 14),
-  new THREE.MeshStandardMaterial({ map: woodTexture(), roughness: 0.62, metalness: 0 }),
+  new THREE.PlaneGeometry(DESK_D, DESK_W),
+  new THREE.MeshStandardMaterial({ map: topMap, roughness: 0.62, metalness: 0 }),
 );
 table.rotation.x = -Math.PI / 2;
 table.rotation.z = Math.PI / 2; // grain runs across the book
 table.receiveShadow = true;
 scene.add(table);
+
+const deskWood = new THREE.MeshStandardMaterial({ map: woodMap, color: '#9a8068', roughness: 0.7, metalness: 0 });
+const deskBox = (w: number, h: number, d: number, x: number, y: number, z: number) => {
+  const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), deskWood);
+  m.position.set(x, y, z);
+  scene.add(m);
+};
+// The slab under the top surface, the apron and four legs.
+deskBox(DESK_W, TOP_T, DESK_D, 0, -TOP_T / 2 - 0.001, 0);
+const LEG = 0.32;
+const legX = DESK_W / 2 - 0.35;
+const legZ = DESK_D / 2 - 0.35;
+const legH = DESK_H - TOP_T;
+for (const sx of [-1, 1]) for (const sz of [-1, 1]) deskBox(LEG, legH, LEG, sx * legX, -TOP_T - legH / 2, sz * legZ);
+const APRON = 0.55;
+for (const sz of [-1, 1]) deskBox(2 * legX, APRON, 0.1, 0, -TOP_T - APRON / 2, sz * (legZ + LEG / 2 - 0.05));
+for (const sx of [-1, 1]) deskBox(0.1, APRON, 2 * legZ, sx * (legX + LEG / 2 - 0.05), -TOP_T - APRON / 2, 0);
+
+// The floor, barely lit, so the desk stands somewhere and the room fades out.
+const floor = new THREE.Mesh(
+  new THREE.PlaneGeometry(60, 60),
+  new THREE.MeshStandardMaterial({ color: '#2a1f18', roughness: 0.95, metalness: 0 }),
+);
+floor.rotation.x = -Math.PI / 2;
+floor.position.y = -DESK_H;
+scene.add(floor);
 
 // ── The cover, drawn from the site's own cover ──────────────────────────────
 
@@ -562,6 +601,16 @@ function farView() {
   return { pos: v.pos.clone().multiplyScalar(2.1).add(new THREE.Vector3(1.2, 0.6, 0)), target: v.target, up: v.up };
 }
 
+/** The establishing shot: the whole desk, standing in the dark room. */
+function wideView() {
+  const s = Math.max(1, (1.6 / camera.aspect) ** 0.7); // step back further on narrow screens
+  return {
+    pos: new THREE.Vector3(6 * s, 3.2 * s, 17 * s),
+    target: new THREE.Vector3(0, -DESK_H * 0.5, 0),
+    up: new THREE.Vector3(0, 1, 0),
+  };
+}
+
 type View = ReturnType<typeof topView>;
 function setView(v: View) {
   camera.position.copy(v.pos);
@@ -581,6 +630,23 @@ function moveCamera(to: View, ms: number) {
     camera.position.lerpVectors(p0, to.pos, k);
     look.lerpVectors(t0, to.target, k);
     up.lerpVectors(u0, to.up, k).normalize();
+  });
+}
+
+/**
+ * Dolly from the establishing shot to the cover along one smooth curve that
+ * passes through the old starting point, so the last stretch is the original
+ * approach. The fog recedes with the camera and is back to normal at the cover.
+ */
+function approach(ms: number) {
+  const views = [wideView(), farView(), coverView()];
+  const pos = new THREE.CatmullRomCurve3(views.map((v) => v.pos), false, 'centripetal');
+  const target = new THREE.CatmullRomCurve3(views.map((v) => v.target), false, 'centripetal');
+  const shift0 = views[0].pos.distanceTo(views[2].pos);
+  return tween(ms, (k) => {
+    pos.getPoint(k, camera.position);
+    target.getPoint(k, look);
+    fogShift = shift0 * (1 - k);
   });
 }
 
@@ -714,6 +780,9 @@ renderer.setAnimationLoop(() => {
     look.lerp(v.target, k);
     up.copy(v.up);
   }
+  const fog = scene.fog as THREE.Fog;
+  fog.near = 6 + fogShift;
+  fog.far = 14 + fogShift;
   camera.up.copy(up);
   camera.lookAt(look);
   renderer.render(scene, camera);
@@ -724,7 +793,8 @@ renderer.setAnimationLoop(() => {
 // Closed, the book sits centred on its cover; open, on its spine.
 book.position.x = -W / 2;
 layout();
-setView(farView());
+setView(wideView());
+fogShift = wideView().pos.distanceTo(coverView().pos);
 
 coverTexture()
   .then((tex) => {
@@ -735,8 +805,9 @@ coverTexture()
   .finally(async () => {
     root.classList.add('is-ready');
     pageTexture(1);
-    // The camera finds the cover…
-    await moveCamera(coverView(), 2200);
+    // The camera takes in the room, then comes down to the cover…
+    await new Promise((r) => setTimeout(r, reduceMotion ? 0 : 900));
+    await approach(4600);
     await new Promise((r) => setTimeout(r, reduceMotion ? 0 : 700));
     // …the cover opens on page 1 while the book slides to its spine…
     const slide = tween(1500, (k) => {
