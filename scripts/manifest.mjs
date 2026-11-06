@@ -385,13 +385,15 @@ export const IMAGE_FORMAT = {};
  * "después de la página 60 se agregue una página más donde se coloque la
  * segunda imagen de la página 60". 063: the same request for page 194 of the
  * published PDF (196 once 015 took its page). 081: the image of page 258 of
- * the published PDF. 038: the image of page 126 of the 320-page PDF.
+ * the published PDF. 038: the image of page 126 of the 320-page PDF. 024bis:
+ * the three images of page 89 of the 322-page PDF shared over two pages — the
+ * pair 023/024 stays, 024bis takes the new page.
  */
-export const OWN_PAGE_IMAGES = new Set(['015', '038', '063', '081']);
+export const OWN_PAGE_IMAGES = new Set(['015', '024bis', '038', '063', '081']);
 
 export const FULL_WIDTH_IMAGES = new Set([
   '002', '003', '006', '007', '008', '009', '010', '011', '012', '013', '013bis',
-  '014', '015', '016', '017', '021', '022', '026', '027', '028', '032', '033',
+  '014', '015', '016', '017', '021', '022', '023', '024', '024bis', '026', '027', '028', '032', '033',
   '035', '036', '037', '038', '039', '041', '049', '050', '057', '058', '063', '064',
   '065', '068', '069', '070', '071', '072', '073', '075', '076', '077', '078',
   '078bis', '079', '080', '081', '083', '084', '085', '086', '087', '088', '089', '090',
